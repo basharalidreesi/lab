@@ -1,3 +1,24 @@
 <!-- introduction -->
 <!doctype html>
 <html lang="en">
+	<head>
+	</head>
+	<body>
+		<div class="mother_container">
+			<nav class="mother_container-navigation_container">
+				<ul class="navigation_container-navigation_list">
+					{% for item in site.pages %}
+						<li class="navigation_list-navigation_list_item">
+							<a href="{{ item.url }}">
+								{{ item.title }}
+							</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</nav>
+			<header class="mother_container-header_container"></header>
+			<section class="mother_container-content_container"></section>
+			<footer class="mother_container-footer_container"></footer>
+		</div>
+	</body>
+</html>
