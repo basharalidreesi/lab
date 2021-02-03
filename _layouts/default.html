@@ -9,7 +9,7 @@
 				<ul class="navigation_container-navigation_list">
 					{% for item in site.pages %}
 						{% if item.navigation_list_item == "yes" %}
-							<li class="navigation_list-navigation_list_item">
+							<li class="navigation_list-navigation_list_item" id="navigation_list_item-{{ item.title }}">
 								<a href="{{ item.url }}">
 									{{ item.title }}
 								</a>
