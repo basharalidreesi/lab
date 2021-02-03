@@ -2,14 +2,28 @@
 <!doctype html>
 <html lang="en">
 	<head>
+		<script>
+			// https://www.sitepoint.com/community/t/random-image-with-css/1785/9
+			if (document.getElementById) {
+				window.onload = swap;
+			};
+			function swap() {
+				var numimages=2;
+				random_logo_array = new Array("https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png", "https://scholar.google.com/intl/en/scholar/images/2x/scholar_logo_64dp.png");  // list them
+				x=(Math.floor(Math.random()*numimages));
+				random_logo =(random_logo_array[x]);
+				document.getElementById("header_graphic").src = "url("+ randomimage +")";
+				console.log(randomimage);
+			}
+		</script>
 	</head>
 	<body>
 		<div class="mother_container">
 			<nav class="mother_container-navigation_container">
-				<ul class="navigation_container-navigation_list">
+				<ul class="navigation_container-navigation_list_wrapper">
 					{% for item in site.pages %}
 						{% if item.navigation_list_item == "yes" %}
-							<li class="navigation_list-navigation_list_item">
+							<li class="navigation_list_wrapper-navigation_list_item">
 								<a href="{{ item.url }}">
 									{{ item.title }}
 								</a>
@@ -19,9 +33,9 @@
 				</ul>
 			</nav>
 			<header class="mother_container-header_container">
-				<div class="header_container-header_anchor">
-					<a href="{{ site.url }}">
-						<img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png">
+				<div class="header_container-header_anchor_wrapper">
+					<a class="header_anchor_wrapper-header_anchor" href="{{ site.url }}">
+						<img src="" class="header_anchor-header_graphic" id="header_graphic">
 					</a>
 				</div>
 			</header>
