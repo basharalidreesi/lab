@@ -1,6 +1,7 @@
 ---
 title: About
 permalink: "/about/"
+position: 1
 navigation_list_item: 'yes'
 layout: page
 ---
