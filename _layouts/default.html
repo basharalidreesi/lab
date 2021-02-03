@@ -9,7 +9,7 @@
 				<ul class="navigation_container-navigation_list">
 					{% for item in site.pages %}
 						{% if item.navigation_list_item == "yes" %}
-							<li class="navigation_list-navigation_list_item" id="navigation_list_item-{{ item.title }}">
+							<li class="navigation_list-navigation_list_item">
 								<a href="{{ item.url }}">
 									{{ item.title }}
 								</a>
@@ -19,7 +19,9 @@
 				</ul>
 			</nav>
 			<header class="mother_container-header_container"></header>
-			<section class="mother_container-content_container"></section>
+			<section class="mother_container-content_container">
+				{{ content }}
+			</section>
 			<footer class="mother_container-footer_container"></footer>
 		</div>
 	</body>
