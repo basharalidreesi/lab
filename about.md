@@ -4,6 +4,7 @@ permalink: "/about/"
 position: 1
 is_navigation_list_item: true
 header_graphic_location: upper
+navigation_list_item_order: 2
 layout: page
 ---
 
