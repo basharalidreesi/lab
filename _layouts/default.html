@@ -10,25 +10,24 @@
 		<link rel="stylesheet" type="text/css" href="/assets/css/style.css" media="screen"/>
 		<script>
 			// https://www.sitepoint.com/community/t/random-image-with-css/1785/9
+			// https://jekyllrb.com/docs/static-files/
+			// https://www.tutorialspoint.com/javascript/array_length.htm
+			// https://talk.jekyllrb.com/t/separate-items-in-array-with-commas-except-last/4041
 			if (document.getElementById) {
 				window.onload = swap;
 			};
 			function swap() {
-				var numimages=9;
 				random_header_graphic_array = new Array(
-					"/assets/graphics/header_graphic_graphics/header_graphic-01.svg",
-					"/assets/graphics/header_graphic_graphics/header_graphic-02.svg",
-					"/assets/graphics/header_graphic_graphics/header_graphic-03.svg",
-					"/assets/graphics/header_graphic_graphics/header_graphic-04.svg",
-					"/assets/graphics/header_graphic_graphics/header_graphic-05.svg",
-					"/assets/graphics/header_graphic_graphics/header_graphic-06.svg",
-					"/assets/graphics/header_graphic_graphics/header_graphic-07.svg",
-					"/assets/graphics/header_graphic_graphics/header_graphic-08.svg",
-					"/assets/graphics/header_graphic_graphics/header_graphic-09.svg"
-				);  // list them
-				x=(Math.floor(Math.random()*numimages));
+					{% assign image_files = site.static_files | where: "image", true %}
+					{% for myimage in image_files %}
+						"{{ myimage.path }}"{% if forloop.last %}{% else %}, {% endif %}
+					{% endfor %}
+				);
+				var header_graphic_number = random_header_graphic_array.length;
+				x = (Math.floor(Math.random() * header_graphic_number));
 				random_header_graphic =(random_header_graphic_array[x]);
 				document.getElementById("header_graphic").src = random_header_graphic;
+				console.log("Loaded " + random_header_graphic + " from total " + header_graphic_number);
 			}
 		</script>
 	</head>
@@ -56,11 +55,6 @@
 			</header>
 			<section class="mother_container-content_container">
 				{{ content }}
-				--
-				{% assign image_files = site.static_files | where: "image", true %}
-{% for myimage in image_files %}
-  {{ myimage.path }}
-{% endfor %}
 			</section>
 			<footer class="mother_container-footer_container"></footer>
 		</div>
