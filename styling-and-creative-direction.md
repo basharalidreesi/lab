@@ -9,6 +9,6 @@ header_graphic_location: upper
 has_footer_container: true
 ---
 
-{% for item in site.projects %}
+{% for item in site.styling-and-creative-direction %}
 	{{ item.title }}
 {% endfor %}
