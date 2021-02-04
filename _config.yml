@@ -16,6 +16,7 @@ defaults:
     path: ''
     type: pages
   values:
+    layout: default
     is_navigation_list_item: false
     navigation_list_item_order: 
     header_graphic_location: upper
@@ -31,6 +32,6 @@ baseurl:
 url: 
 twitter_username: 
 github_username: 
-theme: minima
+theme: 
 plugins:
 - jekyll-feed
