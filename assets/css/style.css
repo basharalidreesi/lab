@@ -99,6 +99,7 @@ html, body {
 .header_anchor_wrapper-header_anchor {
 	width: auto;
 	height: 100%;
+	margin: auto;
 }
 .header_anchor-header_graphic {
 	width: auto;
