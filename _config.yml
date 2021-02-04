@@ -15,7 +15,7 @@ defaults:
   values:
     is_navigation_list_item: false
     header_graphic_location: upper
-email:
+email: 
 description: Jad Toghuj
 author: Jad Toghuj
 baseurl: 
