@@ -65,7 +65,7 @@ html, body {
 }
 .mother_container-navigation_container { }
 .mother_container-header_container { }
-.mother_container-content_container { }
+.mother_container-content_container { background-color: yellow; /* debug */ }
 .mother_container-footer_container { }
 
 /*
