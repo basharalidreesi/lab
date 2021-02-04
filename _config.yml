@@ -21,9 +21,10 @@ plugins:
 - jekyll-feed
 
 defaults:
-	- 	scope:
-			type: "posts"
+	- 
+		scope:
+			type: "pages"
 		values:
 			is_navigation_list_item:
 			header_graphic_location:
-			debug: 
+			debug: has worked
