@@ -14,7 +14,7 @@ defaults:
     type: pages
   values:
     is_navigation_list_item: false
-    navigation_list_item_order:
+    navigation_list_item_order: 
     header_graphic_location: upper
 - scope:
     path: assets/graphics/header_graphic_graphics
