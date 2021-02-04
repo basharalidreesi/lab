@@ -19,3 +19,11 @@ github_username: jekyll
 theme: minima
 plugins:
 - jekyll-feed
+
+defaults:
+	- 	scope:
+			type: "pages"
+		values:
+			is_navigation_list_item:
+			header_graphic_location:
+			debug: 
