@@ -76,11 +76,7 @@ html, body {
 .mother_container-navigation_container { }
 .mother_container-header_container {
 	position: sticky;
-	top: calc(
-		(var(--universal_answer) * var(--universal_answer_multiplier)) /* header padding-top */
-		+ (var(--universal_answer) * var(--universal_answer_multiplier)) /* header padding-bottom */
-		+ (var(--font_size)) /* header text height */
-	);
+	top: 0;
 }
 .mother_container-content_container { }
 .mother_container-footer_container { }
