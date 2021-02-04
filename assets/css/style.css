@@ -1,3 +1,24 @@
-body {
-	background-color: yellow;
+/*
+┌─────────BEGIN─────────┐
+│						│
+│	UNIVERSAL RESETS	│
+│						│
+└───────────────────────┘
+*/
+html, body {
+	margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+	overscroll-behavior: none;
+}
+* {
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin: 0;
+	font-size: 100%;
+	text-align: left;
+	line-height: 100%;
 }
