@@ -6,7 +6,7 @@ is_navigation_list_item: true
 navigation_list_item_order: 2
 header_graphic_location: upper
 has_footer_container: false
-layout: page
+layout: default
 ---
 
 This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
