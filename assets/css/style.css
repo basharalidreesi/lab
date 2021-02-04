@@ -79,7 +79,10 @@ html, body {
 	top: 0;
 }
 .mother_container-content_container { }
-.mother_container-footer_container { }
+.mother_container-footer_container {
+	position: sticky;
+	bottom: 0;
+}
 
 /*
 ┌─BEGIN─────────────────┐
