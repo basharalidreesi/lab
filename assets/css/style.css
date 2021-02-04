@@ -170,6 +170,12 @@ html, body {
 	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 	border-bottom: 1px solid #000;
 }
+.project_list_wrapper-client_list_wrapper-project_list_item-client_list_item:hover {
+	background-color: #000;
+}
+.project_list_wrapper-client_list_wrapper-project_list_item-client_list_item:hover > * {
+	color: #fff;
+}
 
 /*
 ┌─BEGIN─────────────────┐
