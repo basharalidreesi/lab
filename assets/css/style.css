@@ -95,11 +95,11 @@ html, body {
 	background-color: yellow; /* debug */
 	height: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2  * 5);
 	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+	text-align: center;
 }
 .header_anchor_wrapper-header_anchor {
 	width: auto;
 	height: 100%;
-	text-align: center;
 }
 .header_anchor-header_graphic {
 	width: auto;
