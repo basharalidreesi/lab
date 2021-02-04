@@ -5,8 +5,10 @@
 │			│
 └─BEGIN─────────────────┘
 */
---universal_answer: 1vw;
---universal_answer_multiplier: 2;
+:root {
+	--universal_answer: 1vw;
+	--universal_answer_multiplier: 2;
+}
 
 /*
 ┌─BEGIN─────────────────┐
@@ -31,6 +33,17 @@ html, body {
 	font-size: 100%;
 	text-align: left;
 	line-height: 100%;
+}
+
+/*
+┌─BEGIN─────────────────┐
+│			│
+│ TYPOGRAPHY STYLES	│
+│			│
+└─BEGIN─────────────────┘
+*/
+.--text_align_center {
+	text-align: center;
 }
 
 /*
