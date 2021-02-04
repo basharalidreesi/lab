@@ -77,6 +77,7 @@ html, body {
 	list-style-position: inside;
 	padding-top: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 	padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier));
+	border-bottom: 1px solid #000;
 }
 .navigation_list_wrapper-navigation_list_item {
 	flex: 1 1 0;
