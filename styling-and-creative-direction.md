@@ -11,8 +11,8 @@ has_footer_container: true
 
 <ol class="content_container-project_list_wrapper-client_list_wrapper">
 	{% for item in site.styling-and-creative-direction %}
-		<li class="project_list_wrapper-project_list_item-client_list_item">
-			<a class="--color_black --font_size_universal_answer_single --text_align_center" href="{{ item.url }}">
+		<li class="project_list_wrapper-project_list_item-client_list_item --text_align_center">
+			<a class="--color_black --font_size_universal_answer_single" href="{{ item.url }}">
 				{{ item.title }}
 			</a>
 		</li>
