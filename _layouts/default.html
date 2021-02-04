@@ -24,8 +24,7 @@
 				x = (Math.floor(Math.random() * header_graphic_number));
 				random_header_graphic =(random_header_graphic_array[x]);
 				document.getElementById("header_graphic").src = random_header_graphic;
-				console.log("Loaded " + random_header_graphic);
-				console.log("Successful!");
+				console.log("Loaded " + random_header_graphic + " from total " + header_graphic_number);
 			}
 		</script>
 	</head>
@@ -53,11 +52,6 @@
 			</header>
 			<section class="mother_container-content_container">
 				{{ content }}
-				<p>Begin test</p>
-				{% assign image_files = site.static_files | where: "image", true %}
-				{% for myimage in image_files %}
-				  "{{ myimage.path }}"{% if forloop.last %}{% else %}, {% endif %}
-				{% endfor %}
 			</section>
 			<footer class="mother_container-footer_container"></footer>
 		</div>
