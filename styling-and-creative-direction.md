@@ -8,10 +8,7 @@ navigation_list_item_order: 1
 header_graphic_location: upper
 has_footer_container: true
 ---
-
-<header class="content_container-page_header">
-	<h1 class="--text_align_center">{{ site.title }} ⟶ {{ page.title }}</h1>
-</header>
+{% include page_header.html %}
 <ol class="content_container-project_list_wrapper-client_list_wrapper">
 	{% for item in site.styling-and-creative-direction %}
 		<li class="project_list_wrapper-client_list_wrapper-project_list_item-client_list_item --text_align_center">
