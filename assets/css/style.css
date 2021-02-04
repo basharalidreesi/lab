@@ -63,8 +63,14 @@ html, body {
 	display: flex;
 	flex-flow: column nowrap;
 }
-.mother_container-navigation_container { }
-.mother_container-header_container { }
+.mother_container-navigation_container {
+	position: sticky;
+	top: 0;
+}
+.mother_container-header_container {
+	position: sticky;
+	top: 0;
+}
 .mother_container-content_container { }
 .mother_container-footer_container { }
 
@@ -76,8 +82,6 @@ html, body {
 └─BEGIN─────────────────┘
 */
 .navigation_container-navigation_list_wrapper {
-	position: sticky;
-	top: 0;
 	display: flex;
 	flex-flow: row wrap;
 	padding: 0;
@@ -117,8 +121,6 @@ html, body {
 .header_container-header_anchor_wrapper_central { /* centralised header */ }
 .header_container-header_anchor_wrapper_upper {
 	/* maybe make it so that .header_anchor-header_graphic's visibility is hidden and set the graphic as a CSS background-image? */
-	position: sticky;
-	top: 0;
 	height: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2  * 5);
 	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	text-align: center;
