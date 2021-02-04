@@ -22,7 +22,7 @@ plugins:
 
 defaults:
 	- 	scope:
-			type: "pages"
+			type: "posts"
 		values:
 			is_navigation_list_item:
 			header_graphic_location:
