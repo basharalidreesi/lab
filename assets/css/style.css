@@ -96,8 +96,14 @@ html, body {
 	height: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2  * 5);
 	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 }
-.header_anchor_wrapper-header_anchor { }
-.header_anchor-header_graphic { }
+.header_anchor_wrapper-header_anchor {
+	width: 100%;
+	height: 100%;
+}
+.header_anchor-header_graphic {
+	width: 100%;
+	height: 100%;
+}
 
 /*
 ┌─BEGIN─────────────────┐
