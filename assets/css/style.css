@@ -135,21 +135,21 @@ html, body {
 │			│
 └─BEGIN─────────────────┘
 */
-.content_container-project_list_wrapper {
+.content_container-project_list_wrapper-client_list_wrapper {
 	display: flex;
 	flex-flow: column nowrap;
 	padding: 0;
 	list-style: none;
 	list-style-position: inside;
 }
-.content_container-project_list_wrapper:first-child {
+.content_container-project_list_wrapper-client_list_wrapper:first-child {
 	border-top: 1px solid #000;
 }
-.project_list_wrapper-project_list_item {
+.project_list_wrapper-project_list_item-client_list_item {
 	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 	border-bottom: 1px solid #000;
 }
-.project_list_wrapper-project_list_item a {
+.project_list_wrapper-project_list_item-client_list_item a {
 	/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 	text-decoration: none;
 	background-image: linear-gradient(currentColor, currentColor);
@@ -158,7 +158,7 @@ html, body {
 	background-size: 0% 2px;
 	transition: background-size 0.25s;
 }
-.project_list_wrapper-project_list_item a:hover {
+.project_list_wrapper-project_list_item-client_list_item a:hover {
 	/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 	background-size: 100% 2px;
 }
