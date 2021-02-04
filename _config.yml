@@ -16,7 +16,7 @@ defaults:
     is_navigation_list_item: false
     header_graphic_location: upper
 - scope:
-    path: "assets/graphics/header_graphic_graphics"
+    path: assets/graphics/header_graphic_graphics
   values:
     image: true
 email: 
