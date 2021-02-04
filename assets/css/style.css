@@ -142,4 +142,6 @@ html, body {
 │			│
 └─BEGIN─────────────────┘
 */
-/* none yet */
+.footer_container-footer_text_wrapper {
+	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
+}
