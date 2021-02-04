@@ -173,18 +173,9 @@ html, body {
 	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 	border-bottom: 1px solid #000;
 }
-.project_list_wrapper-client_list_wrapper-project_list_item-client_list_item a {
-	/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
-	text-decoration: none;
-	background-image: linear-gradient(currentColor, currentColor);
-	background-position: 0% 100%;
-	background-repeat: no-repeat;
-	background-size: 0% 2px;
-	transition: background-size 0.25s;
-}
-.project_list_wrapper-client_list_wrapper-project_list_item-client_list_item a:hover {
-	/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
-	background-size: 100% 2px;
+.content_container-project_list_wrapper-client_list_wrapper a:hover {
+	background-color: #000;
+	color: #fff;
 }
 
 /*
