@@ -82,6 +82,7 @@ html, body {
 .navigation_list_wrapper-navigation_list_item {
 	flex: 1 1 0; /* stress test this with a higher number of listed pages */
 }
+.--active_navigation_list_item { }
 
 /*
 ┌─BEGIN─────────────────┐
