@@ -10,5 +10,5 @@ has_footer_container: true
 ---
 
 {% for item in site.projects %}
-	<p>{{ item.title }}</p>
+	{{ item.title }}
 {% endfor %}
