@@ -9,9 +9,10 @@ header_graphic_location: upper
 has_footer_container: true
 ---
 
+<!-- {% include page_header.html %} -->
 <ol class="content_container-project_list_wrapper-client_list_wrapper">
 	{% for item in site.social-media-and-content-creation %}
-		<li class="project_list_wrapper-project_list_item-client_list_item --text_align_center">
+		<li class="project_list_wrapper-client_list_wrapper-project_list_item-client_list_item --text_align_center">
 			<a class="--color_black --font_size_universal_answer_single" href="{{ item.url }}">
 				{{ item.title }}
 			</a>
