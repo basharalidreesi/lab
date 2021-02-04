@@ -16,6 +16,7 @@ defaults:
     is_navigation_list_item: false
     navigation_list_item_order: 
     header_graphic_location: upper
+    has_footer_container: false
 - scope:
     path: assets/graphics/header_graphic_graphics
   values:
