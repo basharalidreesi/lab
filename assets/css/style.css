@@ -146,8 +146,7 @@ html, body {
 	border-top: 1px solid #000;
 }
 .project_list_wrapper-project_list_item {
-	padding-top: calc(var(--universal_answer) * var(--universal_answer_multiplier));
-	padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier));
+	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 	border-bottom: 1px solid #000;
 }
 .project_list_wrapper-project_list_item a {
