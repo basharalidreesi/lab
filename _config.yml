@@ -31,6 +31,6 @@ baseurl:
 url: 
 twitter_username: 
 github_username: 
-theme: minima
+theme:
 plugins:
 - jekyll-feed
