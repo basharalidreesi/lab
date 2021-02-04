@@ -5,6 +5,7 @@ position: 1
 is_navigation_list_item: true
 navigation_list_item_order: 2
 header_graphic_location: upper
+has_footer_container: false
 layout: page
 ---
 
