@@ -45,6 +45,9 @@ html, body {
 .--text_align_center {
 	text-align: center;
 }
+.--color_black {
+	color: black;
+}
 
 /*
 ┌─BEGIN─────────────────┐
