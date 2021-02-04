@@ -10,8 +10,8 @@ collections:
     output: true
 defaults:
 - scope:
-    path: ""
-    type: "pages"
+    path: ''
+    type: pages
   values:
     is_navigation_list_item: false
     header_graphic_location: upper
