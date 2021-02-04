@@ -46,11 +46,20 @@ html, body {
 .--color_black {
 	color: black;
 }
+.--font_size_universal_answer_single {
+	font-size: calc(var(--font_size));
+}
+.--font_size_universal_answer_double {
+	font-size: calc(var(--font_size) * 2);
+}
 .--text_align_center {
 	text-align: center;
 }
-.--padding_bottom_universal_answer {
+.--padding_bottom_universal_answer_single {
 	padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+}
+.--padding_bottom_universal_answer_double {
+	padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 }
 
 /*
