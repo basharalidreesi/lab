@@ -9,4 +9,6 @@ header_graphic_location: upper
 has_footer_container: true
 ---
 
-Just some sample content
+{% for item in site.social-media-and-content-creation %}
+	{{ item.title }}
+{% endfor %}

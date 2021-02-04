@@ -2,6 +2,9 @@
 title: Jad Toghuj
 timezone: UTC
 collections:
+  social-media-and-content-creation:
+    title: Clients
+    output: true
   posts:
     title: Posts
     output: true
