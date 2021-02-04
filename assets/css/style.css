@@ -173,10 +173,6 @@ html, body {
 	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 	border-bottom: 1px solid #000;
 }
-.content_container-project_list_wrapper-client_list_wrapper a:hover {
-	background-color: #000;
-	color: #fff;
-}
 
 /*
 ┌─BEGIN─────────────────┐
