@@ -80,7 +80,7 @@ html, body {
 	border-bottom: 1px solid #000;
 }
 .navigation_list_wrapper-navigation_list_item {
-	flex: 1 1 0;
+	flex: 1 1 0; /* stress test this with a higher number of listed pages */
 }
 
 /*
@@ -90,7 +90,7 @@ html, body {
 │			│
 └─BEGIN─────────────────┘
 */
-.header_container-header_anchor_wrapper_central { }
+.header_container-header_anchor_wrapper_central { /* centralised header */ }
 .header_container-header_anchor_wrapper_upper {
 	/* maybe make it so that .header_anchor-header_graphic's visibility is hidden and set the graphic as a CSS background-image? */
 	height: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2  * 5);
