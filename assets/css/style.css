@@ -73,15 +73,16 @@ html, body {
 	display: flex;
 	flex-flow: column nowrap;
 }
-.mother_container-navigation_container { }
+.mother_container-navigation_container { background-color: #fff; /* debug */ }
 .mother_container-header_container {
 	position: sticky;
 	top: 0;
 }
-.mother_container-content_container { }
+.mother_container-content_container { background-color: #fff; /* debug */ }
 .mother_container-footer_container {
 	position: sticky;
 	bottom: 0;
+	z-index: -1;
 }
 
 /*
