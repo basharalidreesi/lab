@@ -91,7 +91,13 @@ html, body {
 └─BEGIN─────────────────┘
 */
 .header_container-header_anchor_wrapper_central { }
-.header_container-header_anchor_wrapper_upper { }
+.header_container-header_anchor_wrapper_upper {
+	height: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2  * 3);
+	margin-top: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+	margin-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+	margin-left: auto;
+	margin-right: auto;
+}
 .header_anchor_wrapper-header_anchor { }
 .header_anchor-header_graphic { }
 
