@@ -18,7 +18,7 @@ defaults:
 email: 
 description: Jad Toghuj
 author: Jad Toghuj
-baseurl: /lab
+baseurl: "/lab"
 url: basharalidreesi.com
 twitter_username: 
 github_username: 
