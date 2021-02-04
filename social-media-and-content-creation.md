@@ -12,7 +12,7 @@ has_footer_container: true
 <ol class="content_container-project_list_wrapper-client_list_wrapper">
 	{% for item in site.social-media-and-content-creation %}
 		<li class="project_list_wrapper-project_list_item-client_list_item">
-			<a class="--color_black --font_size_universal_answer_double" href="{{ item.url }}">
+			<a class="--color_black --font_size_universal_answer_single" href="{{ item.url }}">
 				{{ item.title }}
 			</a>
 		</li>
