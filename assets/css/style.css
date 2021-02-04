@@ -77,7 +77,7 @@ html, body {
 .mother_container-header_container {
 	position: sticky;
 	top: 0;
-	point-events: none;
+	pointer-events: none;
 }
 .mother_container-content_container { background-color: #fff; /* debug */ }
 .mother_container-footer_container {
