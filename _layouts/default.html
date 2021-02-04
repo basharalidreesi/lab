@@ -56,11 +56,11 @@
 			</header>
 			<section class="mother_container-content_container">
 				{{ content }}
-				--
+				<p>Begin test</p>
 				{% assign image_files = site.static_files | where: "image", true %}
-{% for myimage in image_files %}
-  {{ myimage.path }}
-{% endfor %}
+				{% for myimage in image_files %}
+				  "{{ myimage.path }}"{% if forloop.last %}{% else %}, 
+				{% endfor %}
 			</section>
 			<footer class="mother_container-footer_container"></footer>
 		</div>
