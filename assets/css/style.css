@@ -77,7 +77,6 @@ html, body {
 .mother_container-header_container {
 	position: sticky;
 	top: 0;
-	pointer-events: none;
 }
 .mother_container-content_container { background-color: #fff; /* debug */ }
 .mother_container-footer_container {
@@ -144,6 +143,9 @@ html, body {
 .header_anchor-header_graphic {
 	width: auto;
 	height: 100%;
+	box-shadow: 10px 10px 5px red;
+  -webkit-box-shadow: 10px 10px 5px red;
+  -moz-box-shadow: 10px 10px 5px red;
 }
 
 /*
