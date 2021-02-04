@@ -14,8 +14,18 @@
 				window.onload = swap;
 			};
 			function swap() {
-				var numimages=2;
-				random_header_graphic_array = new Array("https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png", "https://scholar.google.com/intl/en/scholar/images/2x/scholar_logo_64dp.png");  // list them
+				var numimages=9;
+				random_header_graphic_array = new Array(
+					"/assets/graphics/header_graphic_graphics/header_graphic-01.svg",
+					"/assets/graphics/header_graphic_graphics/header_graphic-02.svg",
+					"/assets/graphics/header_graphic_graphics/header_graphic-03.svg",
+					"/assets/graphics/header_graphic_graphics/header_graphic-04.svg",
+					"/assets/graphics/header_graphic_graphics/header_graphic-05.svg"
+					"/assets/graphics/header_graphic_graphics/header_graphic-06.svg"
+					"/assets/graphics/header_graphic_graphics/header_graphic-07.svg"
+					"/assets/graphics/header_graphic_graphics/header_graphic-08.svg"
+					"/assets/graphics/header_graphic_graphics/header_graphic-09.svg"
+				);  // list them
 				x=(Math.floor(Math.random()*numimages));
 				random_header_graphic =(random_header_graphic_array[x]);
 				document.getElementById("header_graphic").src = random_header_graphic;
