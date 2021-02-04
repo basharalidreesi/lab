@@ -35,7 +35,8 @@
 		<div class="mother_container">
 			<nav class="mother_container-navigation_container">
 				<ul class="navigation_container-navigation_list_wrapper">
-					{% for item in site.pages | sort: 'navigation_list_item_order' %}
+					{% assign sorted = (site.pages | sort: 'navigation_list_item_order') %}
+					{% for item in sorted %}
 						{% if item.is_navigation_list_item == true %}
 							<li class="navigation_list_wrapper-navigation_list_item --text_align_center">
 								<a href="{{ item.url }}">
