@@ -162,7 +162,7 @@ html, body {
 	list-style: none;
 	list-style-position: inside;
 }
-.content_container-project_list_wrapper-client_list_wrapper:first-child {
+.project_list_wrapper-client_list_wrapper-project_list_item-client_list_item:first-child {
 	border-top: 1px solid #000;
 }
 .project_list_wrapper-client_list_wrapper-project_list_item-client_list_item {
