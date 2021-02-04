@@ -10,7 +10,7 @@ has_footer_container: true
 ---
 
 <header class="content_container-page_header">
-	<h1>{{ site.title }} ⟶ {{ page.title }}</h1>
+	<h1 class="--text_align_center">{{ site.title }} ⟶ {{ page.title }}</h1>
 </header>
 <ol class="content_container-project_list_wrapper-client_list_wrapper">
 	{% for item in site.styling-and-creative-direction %}
