@@ -21,7 +21,7 @@
 			<nav class="mother_container-navigation_container">
 				<ul class="navigation_container-navigation_list_wrapper">
 					{% for item in site.pages %}
-						{% if item.is_navigation_list_item == "true" %}
+						{% if item.is_navigation_list_item == true %}
 							<li class="navigation_list_wrapper-navigation_list_item">
 								<a href="{{ item.url }}">
 									{{ item.title }}
