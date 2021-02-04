@@ -1,9 +1,21 @@
 /*
-┌─────────────BEGIN─────────────┐
-│				│
-│	UNIVERSAL RESETS	│
-│				│
-└───────────────────────────────┘
+┌─BEGIN─────────────────┐
+│			│
+│ VARIABLE DECLARATIONS	│
+│			│
+└─BEGIN─────────────────┘
+*/
+:root {
+	--universal_answer: 1vw;
+	--universal_answer_multiplier: 2;
+}
+
+/*
+┌─BEGIN─────────────────┐
+│			│
+│ UNIVERSAL RESETS	│
+│			│
+└─BEGIN─────────────────┘
 */
 html, body {
 	margin: 0;
@@ -22,3 +34,92 @@ html, body {
 	text-align: left;
 	line-height: 100%;
 }
+
+/*
+┌─BEGIN─────────────────┐
+│			│
+│ TYPOGRAPHY STYLES	│
+│			│
+└─BEGIN─────────────────┘
+*/
+.--text_align_center {
+	text-align: center;
+}
+
+/*
+┌─BEGIN─────────────────┐
+│			│
+│ CONTAINER STYLING	│
+│			│
+└─BEGIN─────────────────┘
+*/
+.mother_container {
+	display: flex;
+	flex-flow: column nowrap;
+}
+.mother_container-navigation_container { }
+.mother_container-header_container { }
+.mother_container-content_container { }
+.mother_container-footer_container { }
+
+/*
+┌─BEGIN─────────────────┐
+│			│
+│ NAVIGATION STYLING	│
+│			│
+└─BEGIN─────────────────┘
+*/
+.navigation_container-navigation_list_wrapper {
+	display: flex;
+	flex-flow: row wrap;
+	padding: 0;
+	list-style: none;
+	list-style-position: inside;
+	padding-top: calc(var(--universal_answer) * var(--universal_answer_multiplier));
+	padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier));
+	border-bottom: 1px solid #000;
+}
+.navigation_list_wrapper-navigation_list_item {
+	flex: 1 1 0;
+}
+
+/*
+┌─BEGIN─────────────────┐
+│			│
+│ HEADER STYLING	│
+│			│
+└─BEGIN─────────────────┘
+*/
+.header_container-header_anchor_wrapper_central { }
+.header_container-header_anchor_wrapper_upper {
+	/* maybe make it so that .header_anchor-header_graphic's visibility is hidden and set the graphic as a CSS background-image? */
+	height: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2  * 5);
+	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+	text-align: center;
+}
+.header_anchor_wrapper-header_anchor {
+	width: auto;
+	height: 100%;
+}
+.header_anchor-header_graphic {
+	width: auto;
+	height: 100%;
+}
+
+/*
+┌─BEGIN─────────────────┐
+│			│
+│ CONTENT STYLING	│
+│			│
+└─BEGIN─────────────────┘
+*/
+/* none yet */
+
+/*
+┌─BEGIN─────────────────┐
+│			│
+│ FOOTER STYLING	│
+│			│
+└─BEGIN─────────────────┘
+*/
+/* none yet */
