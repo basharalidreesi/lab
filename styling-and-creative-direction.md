@@ -8,4 +8,6 @@ navigation_list_item_order: 1
 header_graphic_location: upper
 has_footer_container: true
 ---
-
+{% for item in site.projects %}
+	<p>{{ item.title }}</p>
+{% endfor %}
