@@ -143,10 +143,26 @@ html, body {
 	list-style: none;
 	list-style-position: inside;
 }
+.content_container-project_list_wrapper:first-child {
+	border-top: 1px solid #000;
+}
 .project_list_wrapper-project_list_item {
 	padding-top: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 	padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 	border-bottom: 1px solid #000;
+}
+.project_list_wrapper-project_list_item a {
+	/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
+	text-decoration: none;
+	background-image: linear-gradient(currentColor, currentColor);
+	background-position: 0% 100%;
+	background-repeat: no-repeat;
+	background-size: 0% 2px;
+	transition: background-size 0.25s;
+}
+.project_list_wrapper-project_list_item a:hover {
+	/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
+	background-size: 100% 2px;
 }
 
 /*
