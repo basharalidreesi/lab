@@ -8,7 +8,12 @@ navigation_list_item_order: 3
 header_graphic_location: upper
 has_footer_container: true
 ---
-
-{% for item in site.social-media-and-content-creation %}
-	{{ item.title }}
-{% endfor %}
+<ol class="content_container-project_list_wrapper-client_list_wrapper">
+	{% for item in site.social-media-and-content-creation %}
+		<li class="project_list_wrapper-project_list_item-client_list_item">
+			<a class="--color_black" href="{{ item.url }}">
+				{{ item.title }}
+			</a>
+		</li>
+	{% endfor %}
+</ol>
