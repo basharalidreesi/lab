@@ -1,5 +1,5 @@
 ---
-title: Your awesome title
+title: Jad Toghuj
 timezone: UTC
 collections:
   posts:
@@ -15,14 +15,13 @@ defaults:
   values:
     is_navigation_list_item: false
     header_graphic_location: upper
-email: your-email@example.com
-description: Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for Google search
-  results) and in your feed.xml site description.
+email:
+description: Jad Toghuj
+author: Jad Toghuj
 baseurl: 
 url: 
-twitter_username: jekyllrb
-github_username: jekyll
+twitter_username: 
+github_username: 
 theme: minima
 plugins:
 - jekyll-feed
