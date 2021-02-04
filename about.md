@@ -3,6 +3,7 @@ title: About
 permalink: "/about/"
 position: 1
 is_navigation_list_item: true
+navigation_list_item_order: 2
 header_graphic_location: upper
 layout: page
 ---
