@@ -39,7 +39,7 @@
 					{% for item in sorted %}
 						{% if item.is_navigation_list_item == true %}
 							<li class="navigation_list_wrapper-navigation_list_item {% if item.url == page.url %}--active_navigation_list_item{% endif %} --text_align_center">
-								<a class="--color_black --font_size_universal_answer_single" href="{{ item.url }}">
+								<a class="--color_black" href="{{ item.url }}">
 									{{ item.title }}
 								</a>
 							</li>
