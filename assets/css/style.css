@@ -8,6 +8,7 @@
 :root {
 	--universal_answer: 1vw;
 	--universal_answer_multiplier: 2;
+	--font_size: 1vw;
 }
 
 /*
@@ -69,7 +70,11 @@ html, body {
 }
 .mother_container-header_container {
 	position: sticky;
-	top: 0;
+	top: calc(
+		(var(--universal_answer) * var(--universal_answer_multiplier)) /* header padding-top */
+		+ (var(--universal_answer) * var(--universal_answer_multiplier)) /* header padding-bottom */
+		+ (var(--font_size)) /* header text height */
+	);
 }
 .mother_container-content_container { }
 .mother_container-footer_container { }
