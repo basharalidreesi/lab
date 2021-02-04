@@ -136,7 +136,18 @@ html, body {
 │			│
 └─BEGIN─────────────────┘
 */
-/* none yet */
+.content_container-project_list_wrapper {
+	display: flex;
+	flex-flow: column nowrap;
+	padding: 0;
+	list-style: none;
+	list-style-position: inside;
+}
+.project_list_wrapper-project_list_item {
+	padding-top: calc(var(--universal_answer) * var(--universal_answer_multiplier));
+	padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier));
+	border-bottom: 1px solid #000;
+}
 
 /*
 ┌─BEGIN─────────────────┐
