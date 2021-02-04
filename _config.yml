@@ -15,7 +15,6 @@ defaults:
   values:
     is_navigation_list_item: 
     header_graphic_location: 
-    debug: has worked
 email: your-email@example.com
 description: Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for Google search
