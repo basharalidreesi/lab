@@ -81,8 +81,7 @@ html, body {
 	padding: 0;
 	list-style: none;
 	list-style-position: inside;
-	padding-top: calc(var(--universal_answer) * var(--universal_answer_multiplier));
-	padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier));
+	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 	border-bottom: 1px solid #000;
 }
 .navigation_list_wrapper-navigation_list_item {
