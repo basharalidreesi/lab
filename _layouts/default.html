@@ -9,10 +9,10 @@
 			};
 			function swap() {
 				var numimages=2;
-				random_logo_array = new Array("https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png", "https://scholar.google.com/intl/en/scholar/images/2x/scholar_logo_64dp.png");  // list them
+				random_header_graphic_array = new Array("https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png", "https://scholar.google.com/intl/en/scholar/images/2x/scholar_logo_64dp.png");  // list them
 				x=(Math.floor(Math.random()*numimages));
-				random_logo =(random_logo_array[x]);
-				document.getElementById("header_graphic").src = random_logo;
+				random_header_graphic =(random_header_graphic_array[x]);
+				document.getElementById("header_graphic").src = random_header_graphic;
 			}
 		</script>
 	</head>
@@ -35,7 +35,6 @@
 				<div class="header_container-header_anchor_wrapper{% if page.header_graphic_location == "central" %}_central{% endif %}{% if page.header_graphic_location == "upper" %}_upper{% endif %}">
 					<a class="header_anchor_wrapper-header_anchor" href="{{ site.url }}">
 						<img class="header_anchor-header_graphic" id="header_graphic" alt="Logo">
-						{{ page.header_graphic_location }}
 					</a>
 				</div>
 			</header>
