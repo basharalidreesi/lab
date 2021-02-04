@@ -38,7 +38,7 @@ html, body {
 /*
 ┌─BEGIN─────────────────┐
 │			│
-│ TYPOGRAPHY STYLES	│
+│ SNIPPET STYLING	│
 │			│
 └─BEGIN─────────────────┘
 */
@@ -47,6 +47,9 @@ html, body {
 }
 .--text_align_center {
 	text-align: center;
+}
+.--padding_bottom_universal_answer {
+	padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 }
 
 /*
