@@ -15,6 +15,10 @@ defaults:
   values:
     is_navigation_list_item: false
     header_graphic_location: upper
+- scope:
+    path: assets/graphics/header_graphic_graphics
+  values:
+    image: true
 email: 
 description: Jad Toghuj
 author: Jad Toghuj
