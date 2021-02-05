@@ -216,7 +216,7 @@ html, body {
 		padding-top: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	}
 	.tag_list_wrapper-tag_list_item {
-		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
+		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		border: 1px solid #000;
 		border-radius: 500px;
 	}
