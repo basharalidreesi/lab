@@ -213,14 +213,14 @@ html, body {
 		padding-top: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 		justify-content: center;
 		align-items: center;
-		margin-top: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 * -1);
+		margin-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 * -1);
 	}
 	.tag_list_wrapper-tag_list_item {
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		border: 1px solid #000;
 		border-radius: 500px;
 		background-color: #fff;
-		margin-top: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+		margin-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	}
 	.tag_list_wrapper-tag_list_item:not(:first-child) {
 		margin-right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
