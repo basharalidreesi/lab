@@ -27,7 +27,11 @@ defaults:
 - scope:
     path: assets/graphics/header_graphic_graphics
   values:
-    image: true
+    header_graphic: true
+- scope:
+    path: assets/graphics/showcase_tile_graphics
+  values:
+    showcase_tile: true
 email: 
 description: Jad Toghuj
 author: Jad Toghuj
