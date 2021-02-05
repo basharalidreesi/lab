@@ -202,6 +202,8 @@ html, body {
 	.project_list_wrapper-client_list_wrapper-project_list_item-client_list_item {
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 		border-bottom: 1px solid #000;
+		display: flex;
+		flex-flow: column nowrap;
 	}
 
 /*
