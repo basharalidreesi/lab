@@ -239,11 +239,12 @@ html, body {
 	.content_container-look_cascade_outer_wrapper {
 		display: flex;
 		flex-flow: column nowrap;
-		height: 100%; /* debug */
+		height: auto; /* debug */
 		background-color: yellow; /* debug */
 	}
 	.content_container-look_cascade_inner_wrapper {
-		flex: 1 1 auto;
+		flex: 1 1 auto; /* debug */
+		height: auto; /* debug */
 		display: flex;
 		flex-flow: row nowrap;
 		padding: 0;
