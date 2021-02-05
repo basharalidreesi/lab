@@ -249,7 +249,7 @@ html, body {
 		padding: 0;
 		list-style: none;
 		list-style-position: inside;
-		height: 100vh; /* debug */
+		height: calc(100vh - 200px); /* debug */
 		position: absolute;
 		bottom: 0;
 	}
