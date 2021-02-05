@@ -25,6 +25,7 @@ defaults:
     has_footer_container: false
 - scope:
     path: styling-and-creative-direction
+    type: pages
   values:
     layout: project
 - scope:
