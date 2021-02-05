@@ -10,7 +10,7 @@ has_footer_container: true
 ---
 
 <!-- {%- include page_header.html -%} -->
-<ol class="content_container-project_list_wrapper-client_list_wrapper">
+<ul class="content_container-project_list_wrapper-client_list_wrapper">
 	{%- for item in site.social-media-and-content-creation -%}
 		<li class="project_list_wrapper-client_list_wrapper-project_list_item-client_list_item">
 			<a class="--anchor_styling" href="{{- item.url -}}">
@@ -27,4 +27,4 @@ has_footer_container: true
 			{%- endif -%}
 		</li>
 	{%- endfor -%}
-</ol>
+</ul>
