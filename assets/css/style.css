@@ -87,7 +87,7 @@ html, body {
 }
 .mother_container-content_container {
 	background-color: #fff;
-	background-color: red; /* debug */
+	background-color: yellow; /* debug */
 }
 .mother_container-footer_container {
 	position: sticky;
@@ -247,6 +247,7 @@ html, body {
 		list-style: none;
 		list-style-position: inside;
 		height: 100vh; /* debug */
+		border: 1px solid red; /* debug */
 	}
 	.look_cascade_wrapper-look_cascade_graphic_card {
 		height: 100%; /* debug */
