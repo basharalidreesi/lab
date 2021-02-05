@@ -250,13 +250,10 @@ html, body {
 		list-style-position: inside;
 		/* height: calc(100vh - var(--universal_answer) * 10 - 20px); debug */
 		background-color: yellow; /* debug */
+		height: 100px; /* debug */
 	}
-	.look_cascade_wrapper-look_cascade_graphic_card {
-		height: 100%;
-	}
-	.look_cascade_graphic_card-look_cascade_graphic_card_graphic {
-		height: 100%;
-	}
+	.look_cascade_wrapper-look_cascade_graphic_card { }
+	.look_cascade_graphic_card-look_cascade_graphic_card_graphic { }
 
 /*
 ┌─BEGIN─────────────────┐
