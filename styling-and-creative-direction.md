@@ -18,7 +18,7 @@ has_footer_container: true
 			</a>
 			<ul>
 				<li>
-					{{ item.tags | split: " " }}
+					{{ item.tags }}
 				</li>
 			</ul>
 		</li>
