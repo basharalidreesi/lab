@@ -3,10 +3,10 @@ layout: default
 ---
 
 This is written in project.html
+<br/>
 {% assign image_files = site.static_files | where: "project_graphic", true %}
 {% for myimage in image_files %}
-		<p>{{ page.title }}</p>
-		<p>{{ page.path }}</p>
+		<p>{{ page.title | downcase | replace: " ", "_" }}</p>
 		<p>{{ myimage.path }}</p>
 		<br/>
 {% endfor %}
