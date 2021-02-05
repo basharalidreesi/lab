@@ -32,7 +32,6 @@ html, body {
 	-webkit-box-sizing: border-box;
 	margin: 0;
 	font-size: 100%;
-	font-size: var(--font_size); /* debug */
 	text-align: left;
 	line-height: 100%;
 }
@@ -242,11 +241,11 @@ html, body {
 	.content_container-look_cascade_wrapper {
 		display: flex;
 		flex-flow: row nowrap;
-		height: calc(100vh - var(--universal_answer) * 10 - 20px); /* debug */
-		background-color: yellow; /* debug */
 		padding: 0;
 		list-style: none;
 		list-style-position: inside;
+		/* height: calc(100vh - var(--universal_answer) * 10 - 20px); debug */
+		background-color: yellow; /* debug */
 	}
 	.look_cascade_wrapper-look_cascade_graphic_card {
 		height: 100%;
