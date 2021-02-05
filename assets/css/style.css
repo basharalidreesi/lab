@@ -85,9 +85,7 @@ html, body {
 	position: sticky;
 	top: 0;
 }
-.mother_container-content_container {
-	height: 200px; /* debug */
-}
+.mother_container-content_container { /* height doesn't seem to work here */ }
 .mother_container-footer_container {
 	position: sticky;
 	bottom: 0;
@@ -245,6 +243,7 @@ html, body {
 		list-style: none;
 		list-style-position: inside;
 		background-color: green; /* debug */
+		height: 200px; /* debug */
 	}
 	.look_cascade_wrapper-look_cascade_graphic_card {
 		height: 100%;
