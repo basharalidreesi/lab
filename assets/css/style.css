@@ -31,7 +31,7 @@ html, body {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	margin: 0;
-	font-size: var(--font_size);
+	font-size: 100%;
 	text-align: left;
 	line-height: 100%;
 }
@@ -88,6 +88,7 @@ html, body {
 .mother_container-content_container {
 	height: 100%;
 	background-color: #fff;
+	background-color: red; /* debug */
 }
 .mother_container-footer_container {
 	position: sticky;
@@ -250,9 +251,10 @@ html, body {
 		height:
 			calc(
 				100vh /* screen height */
-				- ((var(--universal_answer) * var(--universal_answer_multiplier) * 2) /* navigation padding */
-				+ (var(--universal_answer) * var(--universal_answer_multiplier) / 2) /* navigation line-height */
-				+ (var(--universal_answer) * var(--universal_answer_multiplier) / 2  * 5)) /* header height */
+				- (var(--universal_answer) * var(--universal_answer_multiplier) * 2) /* navigation padding */
+				- (var(--universal_answer) * var(--universal_answer_multiplier) / 2) /* navigation line-height */
+				- (var(--universal_answer) * var(--universal_answer_multiplier) / 2  * 5) /* header height */
+				- 2px
 			);
 	}
 	.look_cascade_wrapper-look_cascade_graphic_card {
