@@ -78,9 +78,6 @@ html, body {
 	display: flex;
 	flex-flow: column nowrap;
 }
-.mother_container-navigation_container, .mother_container-header_container, .mother_container-footer_container {
-	flex: 0 1 0; /* debug */
-}
 .mother_container-navigation_container {
 	background-color: #fff;
 }
@@ -88,10 +85,7 @@ html, body {
 	position: sticky;
 	top: 0;
 }
-.mother_container-content_container {
-	background-color: #green;
-	flex: 1 0 0; /* debug */
-}
+.mother_container-content_container { }
 .mother_container-footer_container {
 	position: sticky;
 	bottom: 0;
@@ -250,6 +244,7 @@ html, body {
 		list-style-position: inside;
 		/* height: calc(100vh - var(--universal_answer) * 10 - 20px); debug */
 		height: 100px; /* debug */
+		background-color: green; /* debug */
 	}
 	.look_cascade_wrapper-look_cascade_graphic_card { }
 	.look_cascade_graphic_card-look_cascade_graphic_card_graphic { }
