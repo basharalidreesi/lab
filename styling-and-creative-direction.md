@@ -17,9 +17,11 @@ has_footer_container: true
 				{{ item.title }}
 			</a>
 			<ul>
-				<li>
-					{{ item.tags }}
-				</li>
+				{% for tag in item.tags %}
+					<li>
+						{{ tag }}
+					</li>
+				{% endfor %}
 			</ul>
 		</li>
 	{% endfor %}
