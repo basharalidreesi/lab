@@ -241,13 +241,12 @@ html, body {
 		flex-direction: column;
 	}
 	.content_container-look_cascade_inner_wrapper {
-		flex: 1; /* debug */
+		flex: 1 1 100px; /* debug */
 		display: flex;
 		flex-flow: row nowrap;
 		padding: 0;
 		list-style: none;
 		list-style-position: inside;
-		height: auto; /* debug */
 		background-color: green; /* debug */
 	}
 	.look_cascade_wrapper-look_cascade_graphic_card {
