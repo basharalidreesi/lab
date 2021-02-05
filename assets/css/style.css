@@ -246,9 +246,9 @@ html, body {
 		height:
 			calc(
 				100vh /* screen height */
-				- ((var(--universal_answer) * var(--universal_answer_multiplier)) /* navigation padding */
+				- ((var(--universal_answer) * var(--universal_answer_multiplier) * 2) /* navigation padding */
 				+ 1em /* navigation line-height */
-				+ (var(--universal_answer) * var(--universal_answer_multiplier) / 2) /* header padding */
+				+ (var(--universal_answer) * var(--universal_answer_multiplier) / 2 * 2) /* header padding */
 				+ (var(--universal_answer) * var(--universal_answer_multiplier) / 2  * 5)) /* header graphic height */
 			);
 	}
