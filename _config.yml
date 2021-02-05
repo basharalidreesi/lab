@@ -16,7 +16,7 @@ collections:
     output: true
 defaults:
 - scope:
-    path: ""
+    path: ''
   values:
     layout: default
     is_navigation_list_item: false
