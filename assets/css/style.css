@@ -81,18 +81,22 @@ html, body {
 	flex-flow: column nowrap;
 }
 .mother_container-navigation_container {
+	display: flex;
 	background-color: #fff;
 }
 .mother_container-header_container {
+	display: flex;
 	position: sticky;
 	top: 0;
 }
 .mother_container-content_container {
+	display: flex;
 	background-color: #fff;
 	height: 100%;
 	width: 100%;
 }
 .mother_container-footer_container {
+	display: flex;
 	position: sticky;
 	bottom: 0;
 	z-index: -1;
