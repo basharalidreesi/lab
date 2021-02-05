@@ -38,7 +38,7 @@
 					{%- assign sorted = (site.pages | sort: 'navigation_list_item_order') -%}
 					{%- for item in sorted -%}
 						{%- if item.is_navigation_list_item == true -%}
-							<li class="navigation_list_wrapper-navigation_list_item {%- if item.url == page.url -%}--active_navigation_list_item{%- endif -%} --text_align_center">
+							<li class="navigation_list_wrapper-navigation_list_item {%- if item.url == page.url -%}--active_navigation_list_item{%- endif -%}">
 								<a class="--anchor_styling" href="{{- item.url -}}">
 									{{- item.title -}}
 								</a>
