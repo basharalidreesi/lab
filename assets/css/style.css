@@ -247,10 +247,10 @@ html, body {
 		list-style: none;
 		list-style-position: inside;
 		height: 100vh; /* debug */
-		border: 1px solid red; /* debug */
 	}
 	.look_cascade_wrapper-look_cascade_graphic_card {
 		height: 100%; /* debug */
+		border: 1px solid red; /* debug */
 	}
 	.look_cascade_graphic_card-look_cascade_graphic_card_graphic {
 		height: 100%; /* debug */
