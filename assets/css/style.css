@@ -88,6 +88,7 @@ html, body {
 .mother_container-content_container {
 	height: 100%;
 	background-color: #fff;
+	background-color: red; /* debug */
 }
 .mother_container-footer_container {
 	position: sticky;
