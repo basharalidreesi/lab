@@ -207,6 +207,14 @@ html, body {
 		justify-content: center;
 		align-items: center;
 	}
+	.project_list_wrapper-client_list_wrapper-tag_list_wrapper {
+		display: flex;
+		flex-flow: row wrap;
+		padding: 0;
+		list-style: none;
+		list-style-position: inside;
+	}
+	.tag_list_wrapper-tag_list_item { }
 
 /*
 ┌─BEGIN─────────────────┐
