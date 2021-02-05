@@ -6,10 +6,11 @@ layout: default
 <br/>
 {% assign image_files = site.static_files | where: "project_graphic", true %}
 {% for myimage in image_files %}
-		{% assign title = page.title %}
-		<p>{{ title | downcase | replace: " ", "_" }}</p>
-		<p>{{ myimage.path | replace: "/", " " }}</p>
-		{% if myimage.path contains "{{ title }}" %}
+		{% assign title = page.title | downcase | replace: " ", "_" %}
+		{% assign path = myimage.path | replace: "/", " " %}
+		<p>{{ title }}</p>
+		<p>{{ path }}</p>
+		{% if path contains title %}
 			This file is contained.
 		{% endif %}
 		<br/>
