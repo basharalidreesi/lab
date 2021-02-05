@@ -16,8 +16,7 @@ collections:
     output: true
 defaults:
 - scope:
-    path: ''
-    type: pages
+    path: ""
   values:
     layout: default
     is_navigation_list_item: false
