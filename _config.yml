@@ -24,7 +24,7 @@ defaults:
     header_graphic_location: upper
     has_footer_container: false
 - scope:
-    path: 'styling-and-creative-direction'
+    path: styling-and-creative-direction
   values:
     layout: project
 - scope:
