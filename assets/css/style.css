@@ -73,12 +73,16 @@ html, body {
 	display: flex;
 	flex-flow: column nowrap;
 }
-.mother_container-navigation_container { background-color: #fff; /* debug */ }
+.mother_container-navigation_container {
+	background-color: #fff;
+}
 .mother_container-header_container {
 	position: sticky;
 	top: 0;
 }
-.mother_container-content_container { background-color: #fff; /* debug */ }
+.mother_container-content_container {
+	background-color: #fff;
+}
 .mother_container-footer_container {
 	position: sticky;
 	bottom: 0;
@@ -206,7 +210,7 @@ html, body {
 		flex-flow: column nowrap;
 		justify-content: center;
 		align-items: center;
-		background-color: red; /* debug */
+		background-color: #fff;
 	}
 	.project_list_wrapper-client_list_wrapper-tag_list_wrapper {
 		display: flex;
