@@ -20,7 +20,9 @@ has_footer_container: true
 				<ul class="project_list_wrapper-client_list_wrapper-tag_list_wrapper">
 					{% for tag in item.tags %}
 						<li class="tag_list_wrapper-tag_list_item">
-							{{ tag }}
+							<a class="--anchor_styling" href="">
+								{{ tag }}
+							</a>
 						</li>
 					{% endfor %}
 				</ul>
