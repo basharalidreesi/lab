@@ -29,6 +29,11 @@ defaults:
   values:
     layout: project
 - scope:
+    path: ''
+    type: social-media-and-content-creation
+  values:
+    layout: client
+- scope:
     path: assets/graphics/header_graphic_graphics
   values:
     header_graphic: true
