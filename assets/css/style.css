@@ -89,7 +89,7 @@ html, body {
 	top: 0;
 }
 .mother_container-content_container {
-	background-color: #fff;
+	background-color: #green;
 	flex: 1 0 0; /* debug */
 }
 .mother_container-footer_container {
