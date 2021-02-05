@@ -36,7 +36,6 @@ html, body {
 	text-align: left;
 	line-height: 100%;
 }
-* { border: 1px solid red; } /* debug */
 
 /*
 ┌─BEGIN─────────────────┐
@@ -81,26 +80,18 @@ html, body {
 	flex-flow: column nowrap;
 }
 .mother_container-navigation_container {
-	display: flex;
-	flex-flow: column nowrap;
 	background-color: #fff;
 }
 .mother_container-header_container {
-	display: flex;
-	flex-flow: column nowrap;
 	position: sticky;
 	top: 0;
 }
 .mother_container-content_container {
-	display: flex;
-	flex-flow: column nowrap;
-	background-color: #fff;
-	height: 100%;
 	width: 100%;
+	height: 100%;
+	background-color: #fff;
 }
 .mother_container-footer_container {
-	display: flex;
-	flex-flow: column nowrap;
 	position: sticky;
 	bottom: 0;
 	z-index: -1;
@@ -122,7 +113,7 @@ html, body {
 	list-style-position: inside;
 	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 	border-bottom: 1px solid #000;
-	justify-content: center;
+	justify-content: space-evenly;
 	align-items: center;
 }
 .navigation_list_wrapper-navigation_list_item {
@@ -260,6 +251,7 @@ html, body {
 		list-style: none;
 		list-style-position: inside;
 		height: 100vh;
+		font-size: 100;
 	}
 	.look_cascade_wrapper-look_cascade_graphic_card {
 		height: 100%;
