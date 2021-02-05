@@ -112,6 +112,8 @@ html, body {
 	list-style-position: inside;
 	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 	border-bottom: 1px solid #000;
+	justify-content: center;
+	align-items: center;
 }
 .navigation_list_wrapper-navigation_list_item {
 	flex: 1; /* stress test this with a higher number of listed pages */
