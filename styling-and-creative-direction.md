@@ -16,7 +16,8 @@ has_footer_container: true
 			<a class="--color_black --font_size_universal_answer_single" href="{{ item.url }}">
 				{{ item.title }}
 			</a>
-			{% if item.tags != '' %}
+			{% capture tags_size %}{{ item.tags | size }}{% endcapture %}
+			{% if tags_size > 0 %}
 				<ul class="project_list_wrapper-client_list_wrapper-tag_list_wrapper">
 					{% for tag in item.tags %}
 						<li class="tag_list_wrapper-tag_list_item">
