@@ -218,7 +218,7 @@ html, body {
 		padding: 0;
 		list-style: none;
 		list-style-position: inside;
-		padding-top: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+		padding-top: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 	}
 	.tag_list_wrapper-tag_list_item {
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
