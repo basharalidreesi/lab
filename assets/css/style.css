@@ -238,13 +238,10 @@ html, body {
 	*/
 	.content_container-look_cascade_outer_wrapper {
 		display: flex;
-		flex-flow: column nowrap;
-		height: auto; /* debug */
-		background-color: yellow; /* debug */
+		flex-direction: column;
 	}
 	.content_container-look_cascade_inner_wrapper {
-		flex: 1 1 auto; /* debug */
-		height: auto; /* debug */
+		flex: 1; /* debug */
 		display: flex;
 		flex-flow: row nowrap;
 		padding: 0;
