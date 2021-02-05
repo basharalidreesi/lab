@@ -77,6 +77,7 @@ html, body {
 .mother_container {
 	display: flex;
 	flex-flow: column nowrap;
+	height: 100%;
 }
 .mother_container-navigation_container {
 	background-color: #fff;
@@ -236,20 +237,14 @@ html, body {
 	│			│
 	└─BEGIN─────────────────┘
 	*/
-	.content_container-look_cascade_outer_wrapper {
-		display: flex;
-		flex-direction: column;
-	}
-	.content_container-look_cascade_inner_wrapper {
-		flex-grow: 1; /* debug */
-		flex-shrink: 1; /* debug */
+	.content_container-look_cascade_wrapper {
 		display: flex;
 		flex-flow: row nowrap;
 		padding: 0;
 		list-style: none;
 		list-style-position: inside;
 		background-color: green; /* debug */
-		height: 500px; /* debug */
+		height: 100%;
 	}
 	.look_cascade_wrapper-look_cascade_graphic_card {
 		height: 100%; /* debug */
