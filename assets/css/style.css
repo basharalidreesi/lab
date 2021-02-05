@@ -87,9 +87,8 @@ html, body {
 }
 .mother_container-content_container {
 	display: flex;
-	flex-flow: column nowrap;
-	min-height: 100%;
-	max-height: 100%;
+	flex-flow: row nowrap;
+	height: 100%;
 }
 .mother_container-footer_container {
 	position: sticky;
@@ -242,7 +241,6 @@ html, body {
 	└─BEGIN─────────────────┘
 	*/
 	.content_container-look_cascade_wrapper {
-		flex: 1 1 auto;
 		display: flex;
 		flex-flow: row nowrap;
 		padding: 0;
