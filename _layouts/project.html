@@ -2,14 +2,14 @@
 layout: default
 ---
 
-This is written in project.html
+<p>This is written in project.html</p>
 <br/>
 {% assign image_files = site.static_files | where: "project_graphic", true %}
 {% for myimage in image_files %}
 		{% assign title = page.title %}
 		<p>{{ title | downcase | replace: " ", "_" }}</p>
 		<p>{{ myimage.path }}</p>
-		{% if title contains {{ myimage.path }} %}
+		{% if title contains "{{ myimage.path }}" %}
 			This file is contained.
 		{% endif %}
 		<br/>
