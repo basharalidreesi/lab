@@ -248,14 +248,7 @@ html, body {
 		list-style: none;
 		list-style-position: inside;
 		background-color: green; /* debug */
-		height:
-			calc(
-				100vh /* screen height */
-				- (var(--universal_answer) * var(--universal_answer_multiplier) * 2) /* navigation padding */
-				- (var(--universal_answer) * var(--universal_answer_multiplier) / 2) /* navigation line-height */
-				- (var(--universal_answer) * var(--universal_answer_multiplier) / 2  * 5) /* header height */
-				- 2px
-			);
+		height: 100vh; /* debug */
 	}
 	.look_cascade_wrapper-look_cascade_graphic_card {
 		height: 100%; /* debug */
