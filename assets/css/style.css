@@ -218,9 +218,12 @@ html, body {
 	.tag_list_wrapper-tag_list_item {
 		border: 1px solid #000;
 	}
-	.tag_list_wrapper-tag_list_item:not(:first-child):not(:last-child) {
+	.tag_list_wrapper-tag_list_item:not(:first-child) {
 		padding-left: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		padding-right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+	}
+	.tag_list_wrapper-tag_list_item:last-child {
+		padding-right: 0;
 	}
 
 /*
