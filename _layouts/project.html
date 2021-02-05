@@ -11,7 +11,9 @@ layout: default
 		<p>{{ title }}</p>
 		<p>{{ path }}</p>
 		{% if path contains title %}
-			This file is contained.
+			<p>This file is contained.</p>
+			{% else %}
+			<p>This file is not contained.</p>
 		{% endif %}
 		<br/>
 {% endfor %}
