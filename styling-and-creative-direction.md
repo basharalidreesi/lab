@@ -16,13 +16,15 @@ has_footer_container: true
 			<a class="--color_black --font_size_universal_answer_single" href="{{ item.url }}">
 				{{ item.title }}
 			</a>
-			<ul class="project_list_wrapper-client_list_wrapper-tag_list_wrapper">
-				{% for tag in item.tags %}
-					<li class="tag_list_wrapper-tag_list_item">
-						{{ tag }}
-					</li>
-				{% endfor %}
-			</ul>
+			{% if item.tags == nil %}
+				<ul class="project_list_wrapper-client_list_wrapper-tag_list_wrapper">
+					{% for tag in item.tags %}
+						<li class="tag_list_wrapper-tag_list_item">
+							{{ tag }}
+						</li>
+					{% endfor %}
+				</ul>
+			{% endif %}
 		</li>
 	{% endfor %}
 </ol>
