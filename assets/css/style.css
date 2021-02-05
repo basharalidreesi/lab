@@ -87,11 +87,13 @@ html, body {
 }
 .mother_container-content_container {
 	height: 100%;
+	background-color: #fff;
 }
 .mother_container-footer_container {
 	position: sticky;
 	bottom: 0;
 	z-index: -1;
+	background-color: #fff;
 }
 
 /*
@@ -249,7 +251,7 @@ html, body {
 			calc(
 				100vh /* screen height */
 				- ((var(--universal_answer) * var(--universal_answer_multiplier) * 2) /* navigation padding */
-				+ 1em /* navigation line-height */
+				+ (var(--universal_answer) * var(--universal_answer_multiplier) / 2) /* navigation line-height */
 				+ (var(--universal_answer) * var(--universal_answer_multiplier) / 2  * 5)) /* header height */
 			);
 	}
