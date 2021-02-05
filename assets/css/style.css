@@ -221,8 +221,10 @@ html, body {
 		border-radius: 500px;
 	}
 	.tag_list_wrapper-tag_list_item:not(:first-child) {
-		margin-left: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		margin-right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+	}
+	.tag_list_wrapper-tag_list_item:nth-child(2) {
+		margin-left: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	}
 	.tag_list_wrapper-tag_list_item:last-child {
 		margin-right: 0;
