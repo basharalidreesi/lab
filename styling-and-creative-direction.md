@@ -9,22 +9,22 @@ header_graphic_location: upper
 has_footer_container: true
 ---
 
-<!-- {% include page_header.html %} -->
-<ol class="content_container-project_list_wrapper-client_list_wrapper">
-	{% for item in site.styling-and-creative-direction %}
+<!-- {%- include page_header.html -%} -->
+<ul class="content_container-project_list_wrapper-client_list_wrapper">
+	{%- for item in site.styling-and-creative-direction -%}
 		<li class="project_list_wrapper-client_list_wrapper-project_list_item-client_list_item">
-			<a class="--anchor_styling" href="{{ item.url }}">
-				{{ item.title }}
+			<a class="--anchor_styling" href="{{- item.url -}}">
+				{{- item.title -}}
 			</a>
-			{% if item.tags != empty %}
+			{%- if item.tags != empty -%}
 				<ul class="project_list_wrapper-client_list_wrapper-tag_list_wrapper">
-					{% for tag in item.tags %}
+					{%- for tag in item.tags -%}
 						<li class="tag_list_wrapper-tag_list_item">
-							{{ tag }}
+							{{- tag -}}
 						</li>
-					{% endfor %}
+					{%- endfor -%}
 				</ul>
-			{% endif %}
+			{%- endif -%}
 		</li>
-	{% endfor %}
-</ol>
+	{%- endfor -%}
+</ul>
