@@ -250,6 +250,7 @@ html, body {
 				100vh /* screen height */
 				- ((var(--universal_answer) * var(--universal_answer_multiplier) * 2) /* navigation padding */
 				+ 1em /* navigation line-height */
+				+ 1px
 				+ (var(--universal_answer) * var(--universal_answer_multiplier) / 2  * 5)) /* header height */
 			);
 	}
