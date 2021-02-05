@@ -36,6 +36,7 @@ html, body {
 	text-align: left;
 	line-height: 100%;
 }
+* { border: 1px solid red; } /* debug */
 
 /*
 ┌─BEGIN─────────────────┐
@@ -88,7 +89,6 @@ html, body {
 }
 .mother_container-content_container {
 	background-color: #fff;
-	background-color: yellow; /* debug */
 }
 .mother_container-footer_container {
 	position: sticky;
@@ -249,16 +249,13 @@ html, body {
 		padding: 0;
 		list-style: none;
 		list-style-position: inside;
-		height: calc(100vh - 200px); /* debug */
-		position: absolute;
-		bottom: 0;
+		height: 100vh;
 	}
 	.look_cascade_wrapper-look_cascade_graphic_card {
-		height: 100%; /* debug */
-		border: 1px solid red; /* debug */
+		height: 100%;
 	}
 	.look_cascade_graphic_card-look_cascade_graphic_card_graphic {
-		height: 100%; /* debug */
+		height: 100%;
 	}
 
 /*
