@@ -89,6 +89,7 @@ html, body {
 	height: 100%;
 	background-color: #fff;
 	background-color: red; /* debug */
+	margin: 0;
 }
 .mother_container-footer_container {
 	position: sticky;
@@ -252,7 +253,6 @@ html, body {
 	}
 	.look_cascade_wrapper-look_cascade_graphic_card {
 		height: 100%; /* debug */
-		margin: 0; /* debug */
 	}
 	.look_cascade_graphic_card-look_cascade_graphic_card_graphic {
 		height: 100%; /* debug */
