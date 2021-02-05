@@ -251,7 +251,7 @@ html, body {
 		list-style: none;
 		list-style-position: inside;
 		height: 100vh;
-		font-size: 100;
+		font-size: 0;
 	}
 	.look_cascade_wrapper-look_cascade_graphic_card {
 		height: 100%;
