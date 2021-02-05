@@ -87,8 +87,6 @@ html, body {
 	top: 0;
 }
 .mother_container-content_container {
-	position: sticky;
-	top: 0;
 	background-color: #fff;
 	background-color: yellow; /* debug */
 }
@@ -116,7 +114,7 @@ html, body {
 	border-bottom: 1px solid #000;
 }
 .navigation_list_wrapper-navigation_list_item {
-	flex: 1 1 0; /* stress test this with a higher number of listed pages */
+	flex: 1 0 auto; /* stress test this with a higher number of listed pages */
 }
 .--active_navigation_list_item a {
 	/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
