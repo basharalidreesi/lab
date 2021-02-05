@@ -85,9 +85,7 @@ html, body {
 	position: sticky;
 	top: 0;
 }
-.mother_container-content_container {
-	background-color: #fff;
-}
+.mother_container-content_container { /* height doesn't seem to work here */ }
 .mother_container-footer_container {
 	position: sticky;
 	bottom: 0;
@@ -244,14 +242,23 @@ html, body {
 		padding: 0;
 		list-style: none;
 		list-style-position: inside;
-		/* height: calc(100vh - var(--universal_answer) * 10 - 20px); debug */
-		background-color: yellow; /* debug */
+		background-color: green; /* debug */
+		height:
+			calc(
+				100vh /* screen height */
+				- (var(--universal_answer) * var(--universal_answer_multiplier)) /* navigation padding-top */
+				- (var(--universal_answer) * var(--universal_answer_multiplier)) /* navigation padding-bottom */
+				- 1em /* navigation line-height */
+				- (var(--universal_answer) * var(--universal_answer_multiplier) / 2) /* header padding-top */
+				- (var(--universal_answer) * var(--universal_answer_multiplier) / 2) /* header padding-bottom */
+				- (var(--universal_answer) * var(--universal_answer_multiplier) / 2  * 5) /* header graphic height */
+			); /* debug */
 	}
 	.look_cascade_wrapper-look_cascade_graphic_card {
-		height: 100%;
+		height: 100%; /* debug */
 	}
 	.look_cascade_graphic_card-look_cascade_graphic_card_graphic {
-		height: 100%;
+		height: 100%; /* debug */
 	}
 
 /*
