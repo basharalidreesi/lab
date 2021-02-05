@@ -16,6 +16,7 @@ has_footer_container: true
 			<a class="--color_black --font_size_universal_answer_single" href="{{ item.url }}">
 				{{ item.title }}
 			</a>
+			{{ item.tags }}
 		</li>
 	{% endfor %}
 </ol>
