@@ -33,16 +33,16 @@ html, body {
 	text-align: left;
 	line-height: 100%;
 }
-html {
+html, body {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 }
-/* *, *:before, *:after {
+*, *:before, *:after {
 	-webkit-box-sizing: inherit;
 	-moz-box-sizing: inherit;
 	box-sizing: inherit;
-} */
+}
 
 /*
 ┌─BEGIN─────────────────┐
