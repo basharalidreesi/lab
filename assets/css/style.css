@@ -79,7 +79,7 @@ html, body {
 	flex-flow: column nowrap;
 }
 .mother_container-navigation_container, .mother_container-header_container, .mother_container-footer_container {
-	flex: 0 1 auto; /* debug */
+	flex: 0 1 0; /* debug */
 }
 .mother_container-navigation_container {
 	background-color: #fff;
@@ -90,7 +90,7 @@ html, body {
 }
 .mother_container-content_container {
 	background-color: #fff;
-	flex: 1 0 auto; /* debug */
+	flex: 1 0 0; /* debug */
 }
 .mother_container-footer_container {
 	position: sticky;
