@@ -18,7 +18,7 @@
 			};
 			function swap() {
 				random_header_graphic_array = new Array(
-					{% assign image_files = site.static_files | where: "image", true %}
+					{% assign image_files = site.static_files | where: "header_graphic", true %}
 					{% for myimage in image_files %}
 						"{{ myimage.path }}"{% if forloop.last %}{% else %}, {% endif %}
 					{% endfor %}
