@@ -5,7 +5,8 @@ layout: default
 This is written in project.html
 {% assign image_files = site.static_files | where: "project_graphic", true %}
 {% for myimage in image_files %}
-	{% if myimage.path contains {{ page.title }} | downcase | replace: " ", "_" %}
+		<p>{{ page.title }}</p>
+		<p>{{ page.path }}</p>
 		<p>{{ myimage.path }}</p>
-	{% endif %}
+		<br/>
 {% endfor %}
