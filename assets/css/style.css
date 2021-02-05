@@ -248,6 +248,7 @@ html, body {
 		list-style-position: inside;
 		background-color: green; /* debug */
 		height: 100vh; /* debug */
+		bottom: 0;
 	}
 	.look_cascade_wrapper-look_cascade_graphic_card {
 		height: 100%; /* debug */
