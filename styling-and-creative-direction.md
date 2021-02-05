@@ -12,10 +12,17 @@ has_footer_container: true
 <!-- {% include page_header.html %} -->
 <ol class="content_container-project_list_wrapper-client_list_wrapper">
 	{% for item in site.styling-and-creative-direction %}
-		<li class="project_list_wrapper-client_list_wrapper-project_list_item-client_list_item --text_align_center">
+		<li class="project_list_wrapper-client_list_wrapper-project_list_item-client_list_item">
 			<a class="--color_black --font_size_universal_answer_single" href="{{ item.url }}">
 				{{ item.title }}
 			</a>
+			<ul class="project_list_wrapper-client_list_wrapper-tag_list_wrapper">
+				{% for tag in item.tags %}
+					<li class="tag_list_wrapper-tag_list_item">
+						{{ tag }}
+					</li>
+				{% endfor %}
+			</ul>
 		</li>
 	{% endfor %}
 </ol>
