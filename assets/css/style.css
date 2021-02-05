@@ -152,44 +152,57 @@ html, body {
 │			│
 └─BEGIN─────────────────┘
 */
-.content_container-page_header {
-	padding-top: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
-	padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier));
-}
-
-.content_container-showcase_wrapper {
-	height: 100%;
-	display: flex;
-	flex-flow: row wrap;
-	font-size: 0;
-}
-.showcase_wrapper-showcase_tile {
-	flex: 0 0 33.33333333333333333333vw;
-	height: 33.33333333333333333333vw;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.content_container-project_list_wrapper-client_list_wrapper {
-	display: flex;
-	flex-flow: column nowrap;
-	padding: 0;
-	list-style: none;
-	list-style-position: inside;
-}
-.project_list_wrapper-client_list_wrapper-project_list_item-client_list_item:first-child {
-	border-top: 1px solid #000;
-}
-.project_list_wrapper-client_list_wrapper-project_list_item-client_list_item {
-	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
-	border-bottom: 1px solid #000;
-}
-.project_list_wrapper-client_list_wrapper-project_list_item-client_list_item:hover {
-	background-color: #000;
-}
-.project_list_wrapper-client_list_wrapper-project_list_item-client_list_item:hover > * {
-	color: #fff;
-}
+	/*
+	┌─BEGIN─────────────────┐
+	│			│
+	│ PAGE HEADER STYLING	│
+	│			│
+	└─BEGIN─────────────────┘
+	*/
+	.content_container-page_header {
+		padding-top: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier));
+	}
+	/*
+	┌─BEGIN─────────────────┐
+	│			│
+	│ SHOWCASE STYLING	│
+	│			│
+	└─BEGIN─────────────────┘
+	*/
+	.content_container-showcase_wrapper {
+		height: 100%;
+		display: flex;
+		flex-flow: row wrap;
+		font-size: 0;
+	}
+	.showcase_wrapper-showcase_tile {
+		flex: 0 0 33.33333333333333333333vw;
+		height: 33.33333333333333333333vw;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	/*
+	┌─BEGIN─────────────────────────┐
+	│				│
+	│ PROJECT & CLIENT LIST STYLING	│
+	│				│
+	└─BEGIN─────────────────────────┘
+	*/
+	.content_container-project_list_wrapper-client_list_wrapper {
+		display: flex;
+		flex-flow: column nowrap;
+		padding: 0;
+		list-style: none;
+		list-style-position: inside;
+	}
+	.project_list_wrapper-client_list_wrapper-project_list_item-client_list_item:first-child {
+		border-top: 1px solid #000;
+	}
+	.project_list_wrapper-client_list_wrapper-project_list_item-client_list_item {
+		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
+		border-bottom: 1px solid #000;
+	}
 
 /*
 ┌─BEGIN─────────────────┐
