@@ -85,7 +85,9 @@ html, body {
 	position: sticky;
 	top: 0;
 }
-.mother_container-content_container { /* height doesn't seem to work here */ }
+.mother_container-content_container {
+	height: 100%;
+}
 .mother_container-footer_container {
 	position: sticky;
 	bottom: 0;

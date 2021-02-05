@@ -14,20 +14,3 @@ layout: default
 		{% endif %}
 	{% endfor %}
 </ul>
-<!--
-<p>This is written in project.html</p>
-<br/>
-{% assign image_files = site.static_files | where: "project_graphic", true %}
-{% for myimage in image_files %}
-		{% assign title = page.title | downcase | replace: " ", "_" %}
-		{% assign path = myimage.path | replace: "/", " " %}
-		<p>{{ title }}</p>
-		<p>{{ path }}</p>
-		{% if path contains title %}
-			<p>This file is contained.</p>
-			{% else %}
-			<p>This file is not contained.</p>
-		{% endif %}
-		<br/>
-{% endfor %}
--->
