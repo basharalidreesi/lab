@@ -241,7 +241,8 @@ html, body {
 	.content_container-look_cascade_wrapper {
 		display: flex;
 		flex-flow: row nowrap;
-		height: 100%;
+		height: calc(100vh - var(--universal_answer) * 10); /* debug */
+		background-color: yellow; /* debug */
 	}
 	.look_cascade_wrapper-look_cascade_graphic_card {
 	}
