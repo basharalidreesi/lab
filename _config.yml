@@ -17,7 +17,6 @@ collections:
 defaults:
 - scope:
     path: ''
-    type: pages
   values:
     layout: default
     is_navigation_list_item: false
