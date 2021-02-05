@@ -9,7 +9,7 @@ layout: default
 		{%- assign title = page.title | downcase | replace: " ", "_" -%}
 		{%- if path contains title -%}
 			<li class="look_cascade_wrapper-look_cascade_graphic_card">	
-				<img class="look_cascade_graphic_card-look_cascade_graphic_card_graphic" src="{{ myimage.path }}">
+				<img class="look_cascade_graphic_card-look_cascade_graphic_card_graphic" src="{{- myimage.path -}}">
 			</li>
 		{%- endif -%}
 	{%- endfor -%}
