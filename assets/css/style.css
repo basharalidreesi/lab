@@ -78,6 +78,7 @@ html, body {
 	display: flex;
 	flex-flow: column nowrap;
 }
+.mother_container-navigation_container, .mother_container-header_container, .mother_container-footer_container {  }
 .mother_container-navigation_container {
 	background-color: #fff;
 }
@@ -87,6 +88,7 @@ html, body {
 }
 .mother_container-content_container {
 	background-color: #fff;
+	min-height: 100%; /* debug */
 }
 .mother_container-footer_container {
 	position: sticky;
@@ -246,7 +248,6 @@ html, body {
 		list-style-position: inside;
 		/* height: calc(100vh - var(--universal_answer) * 10 - 20px); debug */
 		background-color: yellow; /* debug */
-		max-height: 100%; /* debug */
 	}
 	.look_cascade_wrapper-look_cascade_graphic_card {
 		height: 100%;
