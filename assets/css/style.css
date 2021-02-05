@@ -242,7 +242,7 @@ html, body {
 	.content_container-look_cascade_wrapper {
 		display: flex;
 		flex-flow: row nowrap;
-		height: calc(100vh - var(--universal_answer) * 10); /* debug */
+		height: calc(100vh - var(--universal_answer) * 10 - 1px); /* debug */
 		background-color: yellow; /* debug */
 		padding: 0;
 		list-style: none;
