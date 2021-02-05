@@ -41,6 +41,10 @@ defaults:
     path: assets/graphics/showcase_tile_graphics
   values:
     showcase_tile: true
+- scope:
+    path: assets/graphics/project_graphics
+  values:
+    project_graphic: true
 email: 
 description: Jad Toghuj
 author: Jad Toghuj

@@ -9,6 +9,5 @@ tags:
 - yet another
 - and another
 - also another lol
-layout: project
 ---
 
