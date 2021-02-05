@@ -247,7 +247,7 @@ html, body {
 		list-style: none;
 		list-style-position: inside;
 		/* height: calc(100vh - var(--universal_answer) * 10 - 20px); debug */
-		height: 100px; /* debug */
+		height: 100%; /* debug */
 		background-color: green; /* debug */
 	}
 	.look_cascade_wrapper-look_cascade_graphic_card {
