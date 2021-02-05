@@ -85,7 +85,11 @@ html, body {
 	position: sticky;
 	top: 0;
 }
-.mother_container-content_container { }
+.mother_container-content_container {
+	display: flex;
+	flex-flow: column nowrap;
+	flex: 1 0 auto;
+}
 .mother_container-footer_container {
 	position: sticky;
 	bottom: 0;
