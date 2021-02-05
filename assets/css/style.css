@@ -243,13 +243,13 @@ html, body {
 		background-color: yellow; /* debug */
 	}
 	.content_container-look_cascade_inner_wrapper {
+		/* flex-grow: 1; temp */
 		display: flex;
 		flex-flow: row nowrap;
 		padding: 0;
 		list-style: none;
 		list-style-position: inside;
 		background-color: green; /* debug */
-		height: 200px; /* debug */
 	}
 	.look_cascade_wrapper-look_cascade_graphic_card {
 		height: 100%;
