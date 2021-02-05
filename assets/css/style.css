@@ -246,12 +246,10 @@ html, body {
 		height:
 			calc(
 				100vh /* screen height */
-				- ((var(--universal_answer) * var(--universal_answer_multiplier)) /* navigation padding-top */
-				- (var(--universal_answer) * var(--universal_answer_multiplier)) /* navigation padding-bottom */
+				- (var(--universal_answer) * var(--universal_answer_multiplier)) /* navigation padding */
 				- 1em /* navigation line-height */
-				- (var(--universal_answer) * var(--universal_answer_multiplier) / 2) /* header padding-top */
-				- (var(--universal_answer) * var(--universal_answer_multiplier) / 2) /* header padding-bottom */
-				- (var(--universal_answer) * var(--universal_answer_multiplier) / 2  * 5)) /* header graphic height */
+				- (var(--universal_answer) * var(--universal_answer_multiplier) / 2) /* header padding */
+				- (var(--universal_answer) * var(--universal_answer_multiplier) / 2  * 5) /* header graphic height */
 			);
 	}
 	.look_cascade_wrapper-look_cascade_graphic_card {
