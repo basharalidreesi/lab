@@ -231,6 +231,25 @@ html, body {
 	.tag_list_wrapper-tag_list_item:last-child {
 		margin-right: 0;
 	}
+	/*
+	┌─BEGIN─────────────────┐
+	│			│
+	│ LOOK CASCADE STYLING	│
+	│			│
+	└─BEGIN─────────────────┘
+	*/
+	.content_container-look_cascade_wrapper {
+		display: flex;
+		flex-flow: row nowrap;
+		height: calc(100vh - var(--universal_answer) * 10); /* debug */
+		background-color: yellow; /* debug */
+	}
+	.look_cascade_wrapper-look_cascade_graphic_card {
+		height: 100%;
+	}
+	.look_cascade_graphic_card-look_cascade_graphic_card_graphic {
+		height: 100%;
+	}
 
 /*
 ┌─BEGIN─────────────────┐
