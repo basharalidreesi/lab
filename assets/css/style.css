@@ -77,8 +77,6 @@ html, body {
 .mother_container {
 	display: flex;
 	flex-flow: column nowrap;
-	min-height: 100%;
-	max-height: 100%;
 }
 .mother_container-navigation_container {
 	background-color: #fff;
@@ -245,6 +243,16 @@ html, body {
 		list-style: none;
 		list-style-position: inside;
 		background-color: green; /* debug */
+		height:
+			calc(
+				100vh /* screen height */
+				- (var(--universal_answer) * var(--universal_answer_multiplier)) /* navigation padding-top */
+				- (var(--universal_answer) * var(--universal_answer_multiplier)) /* navigation padding-bottom */
+				- 1em /* navigation line-height */
+				- (var(--universal_answer) * var(--universal_answer_multiplier) / 2) /* header padding-top */
+				- (var(--universal_answer) * var(--universal_answer_multiplier) / 2) /* header padding-bottom */
+				- (var(--universal_answer) * var(--universal_answer_multiplier) / 2  * 5) /* header graphic height */
+			); /* debug */
 	}
 	.look_cascade_wrapper-look_cascade_graphic_card {
 		height: 100%; /* debug */
