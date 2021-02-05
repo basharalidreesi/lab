@@ -31,6 +31,7 @@ html, body {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	margin: 0;
+	padding: 0;
 	font-size: 100%;
 	text-align: left;
 	line-height: 100%;
@@ -111,9 +112,11 @@ html, body {
 	list-style-position: inside;
 	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 	border-bottom: 1px solid #000;
+	justify-content: center;
+	align-items: center;
 }
 .navigation_list_wrapper-navigation_list_item {
-	flex: 1 1 0; /* stress test this with a higher number of listed pages */
+	flex: 1; /* stress test this with a higher number of listed pages */
 }
 .--active_navigation_list_item a {
 	/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
@@ -247,6 +250,8 @@ html, body {
 		list-style: none;
 		list-style-position: inside;
 		height: 100vh; /* debug */
+		position: absolute;
+		bottom: 0;
 	}
 	.look_cascade_wrapper-look_cascade_graphic_card {
 		height: 100%; /* debug */
