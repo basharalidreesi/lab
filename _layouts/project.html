@@ -1,7 +1,18 @@
 ---
 layout: default
 ---
-
+<ul class="content_container-look_cascade_wrapper">
+	{% assign image_files = site.static_files | where: "project_graphic", true %}
+	{% for myimage in image_files %}
+		{% assign title = page.title | downcase | replace: " ", "_" %}
+		{% assign path = myimage.path | replace: "/", " " %}
+		{% if path contains title %}
+			<img src="{{ path }}" height="100">
+		{% endif %}
+		<br/>
+	{% endfor %}
+</ul>
+<!--
 <p>This is written in project.html</p>
 <br/>
 {% assign image_files = site.static_files | where: "project_graphic", true %}
@@ -17,3 +28,4 @@ layout: default
 		{% endif %}
 		<br/>
 {% endfor %}
+-->
