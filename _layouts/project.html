@@ -9,7 +9,7 @@ layout: default
 		{% assign title = page.title %}
 		<p>{{ title | downcase | replace: " ", "_" }}</p>
 		<p>{{ myimage.path }}</p>
-		{% if title contains "{{ myimage.path }}" %}
+		{% if myimage.path contains {{ title }} %}
 			This file is contained.
 		{% endif %}
 		<br/>
