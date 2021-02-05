@@ -219,6 +219,7 @@ html, body {
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		border: 1px solid #000;
 		border-radius: 500px;
+		background-color: #fff;
 	}
 	.tag_list_wrapper-tag_list_item:not(:first-child) {
 		margin-right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
@@ -228,6 +229,9 @@ html, body {
 	}
 	.tag_list_wrapper-tag_list_item:last-child {
 		margin-right: 0;
+	}
+	.tag_list_wrapper-tag_list_item:hover {
+		filter: invert(1);
 	}
 
 /*
