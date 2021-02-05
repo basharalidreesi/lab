@@ -157,6 +157,8 @@ html, body {
 	padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 }
 .content_container-showcase_wrapper {
+	width: 100%;
+	height: 100%;
 	display: flex;
 	flex-flow: row wrap;
 	font-size: 0;
