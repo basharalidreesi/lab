@@ -43,15 +43,6 @@ html, body {
 │			│
 └─BEGIN─────────────────┘
 */
-.--color_black {
-	color: black;
-}
-.--font_size_universal_answer_single {
-	font-size: calc(var(--font_size));
-}
-.--font_size_universal_answer_double {
-	font-size: calc(var(--font_size) * 2);
-}
 .--text_align_center {
 	text-align: center;
 }
@@ -60,6 +51,20 @@ html, body {
 }
 .--padding_bottom_universal_answer_double {
 	padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier));
+}
+.--anchor_styling {
+	color: #000;
+	/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
+	text-decoration: none;
+	background-image: linear-gradient(currentColor, currentColor);
+	background-position: 0% 100%;
+	background-repeat: no-repeat;
+	background-size: 0% 2px;
+	transition: background-size 0.25s;
+}
+.--anchor_styling:hover {
+	/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
+	background-size: 100% 2px;
 }
 
 /*
@@ -107,19 +112,6 @@ html, body {
 }
 .navigation_list_wrapper-navigation_list_item {
 	flex: 1 1 0; /* stress test this with a higher number of listed pages */
-}
-.navigation_list_wrapper-navigation_list_item a {
-	/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
-	text-decoration: none;
-	background-image: linear-gradient(currentColor, currentColor);
-	background-position: 0% 100%;
-	background-repeat: no-repeat;
-	background-size: 0% 2px;
-	transition: background-size 0.25s;
-}
-.navigation_list_wrapper-navigation_list_item a:hover {
-	/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
-	background-size: 100% 2px;
 }
 .--active_navigation_list_item a {
 	/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */

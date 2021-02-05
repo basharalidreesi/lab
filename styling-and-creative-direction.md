@@ -13,14 +13,16 @@ has_footer_container: true
 <ol class="content_container-project_list_wrapper-client_list_wrapper">
 	{% for item in site.styling-and-creative-direction %}
 		<li class="project_list_wrapper-client_list_wrapper-project_list_item-client_list_item">
-			<a class="--color_black --font_size_universal_answer_single" href="{{ item.url }}">
+			<a class="--anchor_styling" href="{{ item.url }}">
 				{{ item.title }}
 			</a>
 			{% if item.tags != empty %}
 				<ul class="project_list_wrapper-client_list_wrapper-tag_list_wrapper">
 					{% for tag in item.tags %}
 						<li class="tag_list_wrapper-tag_list_item">
-							{{ tag }}
+							<a class="--anchor_styling" href="">
+								{{ tag }}
+							</a>
 						</li>
 					{% endfor %}
 				</ul>
