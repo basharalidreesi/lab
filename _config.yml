@@ -25,9 +25,9 @@ defaults:
     has_footer_container: false
 - scope:
     path: ''
-    type: 'styling-and-creative-direction'
+    type: styling-and-creative-direction
   values:
-    layout: 'project'
+    layout: project
 - scope:
     path: assets/graphics/header_graphic_graphics
   values:
