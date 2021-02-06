@@ -31,7 +31,6 @@ html, body {
 	padding: 0;
 	font-size: 100%;
 	text-align: left;
-	font-size: var(--font_size);
 	line-height: 100%;
 }
 html {
