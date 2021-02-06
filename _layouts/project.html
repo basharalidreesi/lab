@@ -17,12 +17,12 @@ layout: default
 <script>
 	// https://dev.to/samthor/divert-vertical-scroll-to-the-side-3id0
 	// handle up/down scrollwheel on the scroller, as most folks don't have horizontal scroll
-	// look_cascade_wrapper.addEventListener('wheel', (ev) => {
-	//	if (!ev.ctrlKey) {
-	//		ev.preventDefault();  // stop scrolling in another direction
-	//		look_cascade_wrapper.scrollLeft += (ev.deltaY + ev.deltaX);
-	//	}
-	//});
+	 look_cascade_wrapper.addEventListener('wheel', (ev) => {
+		if (!ev.ctrlKey) {
+			ev.preventDefault();  // stop scrolling in another direction
+			look_cascade_wrapper.scrollLeft += (ev.deltaY + ev.deltaX);
+		}
+	});
 	document.getElementById('navigation_container').addEventListener('wheel', (ev) => {
 		if (!ev.ctrlKey) {
 			ev.preventDefault();
@@ -30,12 +30,6 @@ layout: default
 		}
 	});
 	document.getElementById('header_container').addEventListener('wheel', (ev) => {
-		if (!ev.ctrlKey) {
-			ev.preventDefault();
-			look_cascade_wrapper.scrollLeft += (ev.deltaY + ev.deltaX);
-		}
-	});
-	document.getElementById('content_container').addEventListener('wheel', (ev) => {
 		if (!ev.ctrlKey) {
 			ev.preventDefault();
 			look_cascade_wrapper.scrollLeft += (ev.deltaY + ev.deltaX);
