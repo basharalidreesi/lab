@@ -33,7 +33,7 @@ html, body {
 	text-align: left;
 	line-height: 100%;
 }
-html, body {
+html {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -43,6 +43,7 @@ html, body {
 	-moz-box-sizing: inherit;
 	box-sizing: inherit;
 }
+* { border: 1px solid red; /* debug */ }
 
 /*
 ┌─BEGIN─────────────────┐
