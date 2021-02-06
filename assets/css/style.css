@@ -280,6 +280,12 @@ html {
 		transform: translateX(-50%);
 		width: 100%;
 	}
+	.look_cascade_graphic_card-look_cascade_graphic_card_caption:first-child {
+		top: 0;
+	}
+	.look_cascade_graphic_card-look_cascade_graphic_card_caption:last-child {
+		bottom: 0;
+	}
 
 /*
 ┌─BEGIN─────────────────┐
