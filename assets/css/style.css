@@ -155,7 +155,6 @@ html {
 .header_anchor-header_graphic {
 	width: auto;
 	height: 100%;
-	display: block;
 }
 
 /*
@@ -264,6 +263,8 @@ html {
 	.look_cascade_wrapper-look_cascade_graphic_card {
 		position: relative;
 		height: 100%;
+		background-color: beige;
+		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 	}
 	.look_cascade_graphic_card-look_cascade_graphic_card_graphic {
 		display: block;
