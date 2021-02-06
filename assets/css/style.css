@@ -261,7 +261,9 @@ html {
 		height:
 			calc(
 				100vh
-				- (var(--universal_answer) * var(--universal_answer_multiplier) / 2 * 5) /* navigation height */
+				- (var(--universal_answer) * var(--universal_answer_multiplier)) /* navigation padding-top */
+				- 1em /* navigation line-height */
+				- (var(--universal_answer) * var(--universal_answer_multiplier)) /* navigation padding-bottom */
 				- (var(--universal_answer) * var(--universal_answer_multiplier) / 2 * 5) /* header height */
 			);
 	}
