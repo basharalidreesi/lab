@@ -257,7 +257,12 @@ html {
 		list-style: none;
 		list-style-position: inside;
 		font-size: 0;
-		height: 100%;
+		height: 
+			calc(
+				100vh
+				- (var(--universal_answer) * var(--universal_answer_multiplier) / 2 * 5) /* navigation height */
+				- (var(--universal_answer) * var(--universal_answer_multiplier) / 2 * 5) /* header height */
+			);
 	}
 	.look_cascade_wrapper-look_cascade_graphic_card {
 		height: 100%;
