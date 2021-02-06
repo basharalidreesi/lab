@@ -90,7 +90,6 @@ html {
 }
 .--mother_container_min_max_height > .mother_container-content_container {
 	flex: 1;
-	background-color: yellow;
 }
 .mother_container-navigation_container {
 	background-color: #fff;
@@ -156,6 +155,7 @@ html {
 .header_anchor-header_graphic {
 	width: auto;
 	height: 100%;
+	display: block;
 }
 
 /*
