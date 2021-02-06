@@ -273,6 +273,12 @@ html {
 		display: block;
 		height: 100%;
 	}
+	.look_cascade_graphic_card-look_cascade_graphic_card_caption {
+		position: absolute;
+		background-color: aquamarine;
+		left: 50%;
+		transform: translateX(-50%);
+	}
 
 /*
 ┌─BEGIN─────────────────┐
