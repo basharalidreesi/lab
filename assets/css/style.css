@@ -266,6 +266,8 @@ html {
 		height: 100%;
 		background-color: beige;
 		border: 1px solid black;
+		min-width: 25%;
+		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		margin-left: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		
 	}
