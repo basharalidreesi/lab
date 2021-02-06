@@ -256,10 +256,10 @@ html {
 	└─BEGIN─────────────────┘
 	*/
 	.content_container-look_cascade_wrapper {
-		width: 100%;
-		height: 100%;
 		display: flex;
 		flex-flow: row nowrap;
+		height: calc(100vh - (var(--universal_answer) * var(--universal_answer_multiplier) / 2) * 10);
+		overflow-y: scroll;
 	}
 	.look_cascade_wrapper-look_cascade_graphic_card {
 		position: relative;
