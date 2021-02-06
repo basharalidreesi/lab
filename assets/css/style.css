@@ -89,12 +89,6 @@ html {
 	min-height: 100vh;
 	max-height: 100vh;
 }
-.--mother_container_min_max_height > * {
-	flex-shrink: 0;
-}
-.--mother_container_min_max_height .mother_container-content_container {
-	flex-grow: 1;
-}
 .mother_container-navigation_container {
 	background-color: #fff;
 }
@@ -107,6 +101,7 @@ html {
 	height: 100%;
 	background-color: #fff;
 	background-color: yellow;
+	flex: 1;
 }
 .mother_container-footer_container {
 	position: sticky;
