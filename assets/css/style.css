@@ -85,6 +85,9 @@ html {
 	display: flex;
 	flex-flow: column nowrap;
 }
+.--mother_container_min_max_height {
+	height: 100vh;
+}
 .mother_container-navigation_container {
 	background-color: #fff;
 }
@@ -96,6 +99,8 @@ html {
 	width: 100%;
 	height: 100%;
 	background-color: #fff;
+	background-color: yellow;
+	flex: 1;
 }
 .mother_container-footer_container {
 	position: sticky;
@@ -257,12 +262,13 @@ html {
 		list-style: none;
 		list-style-position: inside;
 		font-size: 0;
-		height: 
-			calc(
-				100vh
-				- (var(--universal_answer) * var(--universal_answer_multiplier) / 2 * 5) /* navigation height */
-				- (var(--universal_answer) * var(--universal_answer_multiplier) / 2 * 5) /* header height */
-			);
+		/* height: 
+		/*	calc(
+		/*		100vh
+		/*		- (var(--universal_answer) * var(--universal_answer_multiplier) / 2 * 5) /* navigation height */
+		/*		- (var(--universal_answer) * var(--universal_answer_multiplier) / 2 * 5) /* header height */
+		/*	); */
+		height: 100%;
 	}
 	.look_cascade_wrapper-look_cascade_graphic_card {
 		height: 100%;

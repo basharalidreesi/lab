@@ -23,16 +23,19 @@ defaults:
     navigation_list_item_order: 
     header_graphic_location: upper
     has_footer_container: false
+    is_fullscreen_page: false
 - scope:
     path: ''
     type: styling-and-creative-direction
   values:
     layout: project
+    is_fullscreen_page: true
 - scope:
     path: ''
     type: social-media-and-content-creation
   values:
     layout: client
+    is_fullscreen_page: true
 - scope:
     path: assets/graphics/header_graphic_graphics
   values:
