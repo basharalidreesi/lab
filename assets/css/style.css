@@ -279,6 +279,7 @@ html {
 		left: 50%;
 		transform: translateX(-50%);
 		width: 100%;
+		text-align: center;
 	}
 	.look_cascade_graphic_card-look_cascade_graphic_card_caption:first-child {
 		top: 0;
