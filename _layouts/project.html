@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class="content_container-look_cascade_wrapper --horizontal_scroll">
+<div class="content_container-look_cascade_wrapper" id="horizontal_scroll">
 	{% assign image_files = site.static_files | where: "project_graphic", true %}
 	{% for myimage in image_files %}
 		{% assign path = myimage.path | replace: "/", " " %}
@@ -17,10 +17,10 @@ layout: default
 <script>
 	// https://dev.to/samthor/divert-vertical-scroll-to-the-side-3id0
 	// handle up/down scrollwheel on the scroller, as most folks don't have horizontal scroll
-	document.getElementsByClassName("--horizontal_scroll").addEventListener('wheel', (ev) => {
+	horizontal_scroll.addEventListener('wheel', (ev) => {
 		if (!ev.ctrlKey) {
 			ev.preventDefault();  // stop scrolling in another direction
-			document.getElementsByClassName("content_container-look_cascade_wrapper").scrollLeft += (ev.deltaY + ev.deltaX);
+			horizontal_scroll.scrollLeft += (ev.deltaY + ev.deltaX);
 		}
 	});
 </script>
