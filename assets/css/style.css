@@ -266,11 +266,10 @@ html {
 	}
 	.look_cascade_wrapper-look_cascade_graphic_card {
 		height: 100%;
-		width: 100%;
+		border: 1px solid #000; /* debug */
 	}
 	.look_cascade_graphic_card-look_cascade_graphic_card_graphic {
 		height: 100%;
-		width: 100%;
 	}
 
 /*
