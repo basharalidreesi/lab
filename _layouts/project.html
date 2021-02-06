@@ -13,14 +13,14 @@ layout: default
 			</div>
 		{% endif %}
 	{% endfor %}
+	<script>
+		// https://dev.to/samthor/divert-vertical-scroll-to-the-side-3id0
+		// handle up/down scrollwheel on the scroller, as most folks don't have horizontal scroll
+		horizontalScroll.addEventListener('wheel', (ev) => {
+			if (!ev.ctrlKey) {
+				ev.preventDefault();  // stop scrolling in another direction
+				horizontalScroll.scrollLeft += (ev.deltaY + ev.deltaX);
+			}
+		});
+	</script>
 </div>
-<script>
-	// https://dev.to/samthor/divert-vertical-scroll-to-the-side-3id0
-	// handle up/down scrollwheel on the scroller, as most folks don't have horizontal scroll
-	horizontalScroll.addEventListener('wheel', (ev) => {
-		if (!ev.ctrlKey) {
-			ev.preventDefault();  // stop scrolling in another direction
-			horizontalScroll.scrollLeft += (ev.deltaY + ev.deltaX);
-		}
-	});
-</script>
