@@ -274,13 +274,10 @@ html {
 		/*		- (var(--universal_answer) * var(--universal_answer_multiplier) / 2 * 5) /* navigation height */
 		/*		- (var(--universal_answer) * var(--universal_answer_multiplier) / 2 * 5) /* header height */
 		/*	); */
-		height: auto;
 	}
 	.look_cascade_wrapper-look_cascade_graphic_card {
-		height: 100%;
 	}
 	.look_cascade_graphic_card-look_cascade_graphic_card_graphic {
-		height: 100%;
 	}
 
 /*
