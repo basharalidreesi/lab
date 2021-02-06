@@ -98,6 +98,8 @@ html {
 	height: 100%;
 	background-color: #fff;
 	flex: 1; /* debug */
+	height: 200px; /* debug */
+	background-color: yellow; /* debug */
 }
 .mother_container-footer_container {
 	position: sticky;
