@@ -84,6 +84,7 @@ html {
 .mother_container {
 	display: flex;
 	flex-flow: column nowrap;
+	max-height: 100vh;
 }
 .--mother_container_min_max_height {
 	max-height: 100vh;
