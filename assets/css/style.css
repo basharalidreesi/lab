@@ -85,14 +85,14 @@ html {
 	display: flex;
 	flex-flow: column nowrap;
 }
---mother_container_min_max_height {
+.--mother_container_min_max_height {
 	min-height: 100vh;
 	max-height: 100vh;
 }
---mother_container_min_max_height > * {
+.--mother_container_min_max_height > * {
 	flex-shrink: 0;
 }
---mother_container_min_max_height .mother_container-content_container {
+.--mother_container_min_max_height .mother_container-content_container {
 	flex-grow: 1;
 }
 .mother_container-navigation_container {
@@ -106,6 +106,7 @@ html {
 	width: 100%;
 	height: 100%;
 	background-color: #fff;
+	background-color: yellow;
 }
 .mother_container-footer_container {
 	position: sticky;
