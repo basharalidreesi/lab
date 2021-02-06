@@ -4,9 +4,9 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>{{- site.title -}} | {{- page.title -}}</title>
-		<meta name="description" content="{{- site.description -}}">
-		<meta name="author" content="{{- site.author -}}">
+		<title>{{ site.title }} | {{ page.title }}</title>
+		<meta name="description" content="{{ site.description }}">
+		<meta name="author" content="{{ site.author }}">
 		<!-- <link rel="shortcut icon" type="image/jpg" href=""/> -->
 		<link rel="stylesheet" type="text/css" href="/assets/css/style.css" media="screen"/>
 		<script>
@@ -19,10 +19,10 @@
 			};
 			function swap() {
 				random_header_graphic_array = new Array(
-					{%- assign image_files = site.static_files | where: "header_graphic", true -%}
-					{%- for myimage in image_files -%}
-						"{{- myimage.path -}}"{%- if forloop.last -%}{%- else -%}, {%- endif -%}
-					{%- endfor -%}
+					{% assign image_files = site.static_files | where: "header_graphic", true %}
+					{% for myimage in image_files %}
+						"{{ myimage.path }}"{% if forloop.last %}{% else %}, {% endif %}
+					{% endfor %}
 				);
 				var header_graphic_number = random_header_graphic_array.length;
 				x = (Math.floor(Math.random() * header_graphic_number));
@@ -33,36 +33,36 @@
 		</script>
 	</head>
 	<body>
-		<div class="mother_container {%- if page.is_fullscreen_page == true -%}mother_container-min_max_height{% endif %}">
+		<div class="mother_container {% if page.is_fullscreen_page == true %}mother_container-min_max_height{% endif %}">
 			<nav class="mother_container-navigation_container">
 				<ul class="navigation_container-navigation_list_wrapper">
-					{%- assign sorted = (site.pages | sort: 'navigation_list_item_order') -%}
-					{%- for item in sorted -%}
-						{%- if item.is_navigation_list_item == true -%}
-							<li class="navigation_list_wrapper-navigation_list_item {%- if item.url == page.url -%}--active_navigation_list_item{%- endif -%} --text_align_center">
-								<a class="--anchor_styling" href="{{- item.url -}}">
-									{{- item.title -}}
+					{% assign sorted = (site.pages | sort: 'navigation_list_item_order') %}
+					{% for item in sorted %}
+						{% if item.is_navigation_list_item == true %}
+							<li class="navigation_list_wrapper-navigation_list_item {% if item.url == page.url %}--active_navigation_list_item{% endif %} --text_align_center">
+								<a class="--anchor_styling" href="{{ item.url }}">
+									{{ item.title }}
 								</a>
 							</li>
-						{%- endif -%}
-					{%- endfor -%}
+						{% endif %}
+					{% endfor %}
 				</ul>
 			</nav>
 			<header class="mother_container-header_container">
-				<div class="header_container-header_anchor_wrapper{%- if page.header_graphic_location == "central" -%}_central{%- endif -%}{%- if page.header_graphic_location == "upper" -%}_upper{%- endif -%}">
-					<a class="header_anchor_wrapper-header_anchor" href="{{- site.url -}}">
+				<div class="header_container-header_anchor_wrapper{% if page.header_graphic_location == "central" %}_central{% endif %}{% if page.header_graphic_location == "upper" %}_upper{% endif %}">
+					<a class="header_anchor_wrapper-header_anchor" href="{{ site.url }}">
 						<img class="header_anchor-header_graphic" id="header_graphic" alt="Logo">
 					</a>
 				</div>
 			</header>
 			<section class="mother_container-content_container">
-				{{- content -}}
+				{{ content }}
 			</section>
-			{%- if page.has_footer_container == true -%}
+			{% if page.has_footer_container == true %}
 				<footer class="mother_container-footer_container">
-					{%- include footer.html -%}
+					{% include footer.html %}
 				</footer>
-			{%- endif -%}
+			{% endif %}
 		</div>
 	</body>
 </html>
