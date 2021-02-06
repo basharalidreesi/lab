@@ -89,7 +89,7 @@ html {
 	height: 100vh;
 }
 .--mother_container_min_max_height > * {
-	flex-shrink: 0;
+	flex-shrink: 1;
 }
 .--mother_container_min_max_height > .mother_container-content_container {
 	flex-grow: 1;
