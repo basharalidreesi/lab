@@ -33,7 +33,7 @@
 		</script>
 	</head>
 	<body>
-		<div class="mother_container">
+		<div class="mother_container {%- if page.is_fullscreen_page == true -%}mother_container-min_max_height{% endif %}">
 			<nav class="mother_container-navigation_container">
 				<ul class="navigation_container-navigation_list_wrapper">
 					{%- assign sorted = (site.pages | sort: 'navigation_list_item_order') -%}
