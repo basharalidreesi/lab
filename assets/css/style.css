@@ -86,6 +86,9 @@ html {
 	flex-flow: column nowrap;
 	min-height: 100vh; /* debug */
 }
+.mother_container > * {
+	flex-shrink: 0;
+}
 .mother_container-navigation_container {
 	background-color: #fff;
 }
@@ -98,7 +101,8 @@ html {
 	/* height: 100%; */
 	/* max-height: 100%; */ /* debug */
 	background-color: #fff;
-	flex: 1 1 100%; /* debug */
+	flex-grow: 1;
+	/* flex: 1 1 100%; /* debug */
 	/* height: 200px; /* debug */
 	background-color: yellow; /* debug */
 }
