@@ -262,7 +262,7 @@ html {
 			calc(
 				100vh
 				- (var(--universal_answer) * var(--universal_answer_multiplier)) /* navigation padding-top */
-				- (var(--universal_answer) * var(--universal_answer_multiplier) / 2) /* navigation line-height */
+				- (var(--universal_answer) * var(--universal_answer_multiplier) / 2) /* navigation line-height */ /* this needs revewing */
 				- (var(--universal_answer) * var(--universal_answer_multiplier)) /* navigation padding-bottom */
 				- (var(--universal_answer) * var(--universal_answer_multiplier) / 2 * 5) /* header height */
 			);
@@ -273,7 +273,7 @@ html {
 	}
 	.look_cascade_graphic_card-look_cascade_graphic_card_graphic {
 		height: 100%;
-		width: auto;
+		width: 100%;
 	}
 
 /*
