@@ -8,7 +8,6 @@
 :root {
 	--universal_answer: 1vw;
 	--universal_answer_multiplier: 2;
-	--font_size: 1vw;
 }
 
 /*
@@ -30,7 +29,6 @@ html, body {
 	margin: 0;
 	padding: 0;
 	font-size: 100%;
-	font-size: var(--font_size);
 	text-align: left;
 	line-height: 100%;
 }
@@ -262,15 +260,13 @@ html {
 		height:
 			calc(
 				100vh
-				- (var(--universal_answer) * var(--universal_answer_multiplier)) /* navigation padding-top */
-				- (var(--universal_answer) * var(--universal_answer_multiplier) / 2) /* navigation line-height */ /* this needs revewing */
-				- (var(--universal_answer) * var(--universal_answer_multiplier)) /* navigation padding-bottom */
+				- (var(--universal_answer) * var(--universal_answer_multiplier) / 2 * 5) /* navigation height */
 				- (var(--universal_answer) * var(--universal_answer_multiplier) / 2 * 5) /* header height */
 			);
 	}
 	.look_cascade_wrapper-look_cascade_graphic_card {
 		height: 100%;
-		width: auto;
+		width: 100%;
 	}
 	.look_cascade_graphic_card-look_cascade_graphic_card_graphic {
 		height: 100%;
