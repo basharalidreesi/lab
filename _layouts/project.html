@@ -2,15 +2,15 @@
 layout: default
 ---
 
-<div class="content_container-look_cascade_wrapper">
+<ul class="content_container-look_cascade_wrapper">
 	{% assign image_files = site.static_files | where: "project_graphic", true %}
 	{% for myimage in image_files %}
 		{% assign path = myimage.path | replace: "/", " " %}
 		{% assign title = page.title | downcase | replace: " ", "_" %}
 		{% if path contains title %}
-			<div class="look_cascade_wrapper-look_cascade_graphic_card">	
+			<li class="look_cascade_wrapper-look_cascade_graphic_card">	
 				<img class="look_cascade_graphic_card-look_cascade_graphic_card_graphic" src="{{ myimage.path }}">
-			</div>
+			</li>
 		{% endif %}
 	{% endfor %}
-</div>
+</ul>
