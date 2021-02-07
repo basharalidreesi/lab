@@ -30,7 +30,7 @@ html, body {
 * {
 	margin: 0;
 	padding: 0;
-	font-size: 100%;
+	font-size: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	text-align: left;
 	line-height: 100%;
 }
@@ -137,8 +137,6 @@ body {
 .navigation_list_wrapper-navigation_list_item {
 	flex: 1; /* stress test this with a higher number of listed pages */
 	white-space: nowrap; /* debug */
-	overflow: hidden; /* debug */
-	text-overflow: ellipsis; /* debug */
 }
 .--active_navigation_list_item a {
 	/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
@@ -246,6 +244,7 @@ body {
 		border: 1px solid #000;
 		border-radius: 500px;
 		margin-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+		background-color: var(--secondary_colour);
 	}
 	.tag_list_wrapper-tag_list_item:not(:first-child) {
 		margin-right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
@@ -315,7 +314,6 @@ body {
 	.look_gallery_wrapper-look_gallery_graphic_card {
 		position: relative;
 		height: 100%;
-		margin: auto;
 	}
 	.look_gallery_graphic_card-look_gallery_graphic_card_graphic {
 		display: block;
