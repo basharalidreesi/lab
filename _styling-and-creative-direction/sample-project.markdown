@@ -10,6 +10,6 @@ tags:
 - and another
 - also another lol
 position: 0
-is_navigation_list_item: true
+is_navigation_list_item: false
 ---
 
