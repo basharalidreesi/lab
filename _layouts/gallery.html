@@ -8,8 +8,8 @@ layout: default
 	{% assign title = page.title | downcase | replace: " ", "_" %}
 	{% assign url = page.url | replace: "/", " " | replace: "-", "_" | remove: "styling_and_creative_direction" | remove: ".html" | remove: title %}
 	<p>Image path is: {{ path }}</p>
-	<p>Page title is: {{ title }}</p>
-	<p>Page URL is: {{ url }}</p>
+	<p>Look is: {{ title }}</p>
+	<p>Project is: {{ url }}</p>
 	{% if path contains url %}
 		<p>This is contained!</p>
 	{% else %}
