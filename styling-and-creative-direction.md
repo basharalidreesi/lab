@@ -11,7 +11,7 @@ has_footer_container: true
 
 <!-- {%- include page_header.html -%} -->
 <ul class="content_container-project_list_wrapper-client_list_wrapper">
-	{%- for item in site.styling-and-creative-direction where is_look_page, false -%}
+	{%- for item in site.styling-and-creative-direction where: "is_look_page", false -%}
 		<li class="project_list_wrapper-client_list_wrapper-project_list_item-client_list_item">
 			<a class="--anchor_styling" href="{{- item.url -}}">
 				{{- item.title -}}
