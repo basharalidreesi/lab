@@ -9,8 +9,8 @@ layout: default
 		{% assign title = page.title | downcase | replace: " ", "_" %}
 		{% if path contains title %}
 			<figure class="look_cascade_wrapper-look_cascade_graphic_card">	
-				<figcaption class="look_cascade_graphic_card-look_cascade_graphic_card_caption">{{ myimage.basename }}</figcaption>
-				<a href="">
+				<figcaption class="look_cascade_graphic_card-look_cascade_graphic_card_caption">{{ page.path | append: {{ myimage.basename }}</figcaption>
+				<a href="{{ page.path | append: {{ myimage.basename }}">
 					<img class="look_cascade_graphic_card-look_cascade_graphic_card_graphic" src="{{ myimage.path }}">
 				</a>
 				<figcaption class="look_cascade_graphic_card-look_cascade_graphic_card_caption">Heading 2</figcaption>
