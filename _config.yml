@@ -32,7 +32,7 @@ defaults:
     path: ''
     type: styling-and-creative-direction
   values:
-    layout: project
+    layout: cascade
     is_fullscreen_page: true
     is_look_page: false
 - scope:
