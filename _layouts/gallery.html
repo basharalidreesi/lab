@@ -8,5 +8,9 @@ This is written in gallery.html
 
 {% assign image_files = site.static_files | where: "look_gallery_graphic", true %}
 {% for myimage in image_files %}
-	{{ myimage.path }}
+	{% assign path = myimage.path | replace: "/", " " %}
+	{% assign title = page.title | downcase | replace: " ", "_" %}
+	<p>{{ myimage.path }}</p>
+	<p>{{ title }}</p>
+	<p>{{ path }}</p>
 {% endfor %}
