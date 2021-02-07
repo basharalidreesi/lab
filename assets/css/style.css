@@ -10,7 +10,8 @@
 	--universal_answer_multiplier: 2;
 	--primary_colour: #91a3b0;
 	--secondary_colour: #eceff1;
-	--border_colour: blue;
+	--border_colour: #000;
+	--text_colour: #000;
 }
 
 /*
