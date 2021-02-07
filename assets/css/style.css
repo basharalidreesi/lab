@@ -128,9 +128,9 @@ html {
 }
 .navigation_list_wrapper-navigation_list_item {
 	flex: 1; /* stress test this with a higher number of listed pages */
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
+	white-space: nowrap; /* debug */
+	overflow: hidden; /* debug */
+	text-overflow: ellipsis; /* debug */
 }
 .--active_navigation_list_item a {
 	/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
@@ -280,7 +280,7 @@ html {
 	}
 	.look_cascade_graphic_card-look_cascade_graphic_card_caption {
 		position: absolute;
-		background-color: aquamarine;
+		background-color: aquamarine; /* debug */
 		left: 50%;
 		transform: translateX(-50%);
 		width: 100%;
