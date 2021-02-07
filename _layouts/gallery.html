@@ -11,7 +11,9 @@ layout: default
 	<p>Page title is: {{ title }}</p>
 	<p>Page URL is: {{ url }}</p>
 	{% if path contains url %}
-		<h1>This is contained!</h1>
+		<p>This is contained!</p>
+	{% else %}
+		<p>This is not contained :(</p>
 	{% endif %}
 	<br>
 {% endfor %}
