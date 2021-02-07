@@ -10,7 +10,7 @@ layout: default
 		{% if path contains title %}
 			<figure class="look_cascade_wrapper-look_cascade_graphic_card">	
 				<!-- <figcaption class="look_cascade_graphic_card-look_cascade_graphic_card_caption">{{ myimage.basename }}</figcaption> -->
-				<a href="{{ page.url | remove: ".html" | append: "/" | append: myimage.basename | append: ".html" }}">
+				<a href="{{ page.url | remove: ".html" | append: "/" | append: myimage.basename | downcase | replace: " ", "-" | append: ".html" }}">
 					<img class="look_cascade_graphic_card-look_cascade_graphic_card_graphic" src="{{ myimage.path }}">
 				</a>
 				<!-- <figcaption class="look_cascade_graphic_card-look_cascade_graphic_card_caption">Heading 2</figcaption> -->

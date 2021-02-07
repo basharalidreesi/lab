@@ -293,6 +293,28 @@ html {
 	.look_cascade_graphic_card-look_cascade_graphic_card_caption:last-child {
 		bottom: 0;
 	}
+	/*
+	┌─BEGIN─────────────────┐
+	│			│
+	│ LOOK GALLERY STYLING	│
+	│			│
+	└─BEGIN─────────────────┘
+	*/
+	.content_container-look_gallery_wrapper {
+		display: flex;
+		flex-flow: row nowrap;
+		height: calc(100vh - (var(--universal_answer) * var(--universal_answer_multiplier) / 2) * 10);
+		overflow-y: scroll;
+	}
+	.look_gallery_wrapper-look_gallery_graphic_card {
+		position: relative;
+		height: 100%;
+		margin: auto;
+	}
+	.look_gallery_graphic_card-look_gallery_graphic_card_graphic {
+		display: block;
+		height: 100%;
+	}
 
 /*
 ┌─BEGIN─────────────────┐

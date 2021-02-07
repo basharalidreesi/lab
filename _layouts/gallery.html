@@ -2,5 +2,38 @@
 layout: default
 ---
 
-This is written in gallery.html
-{{ content }}
+<div class="content_container-look_gallery_wrapper" id="look_gallery_wrapper">
+	{% assign image_files = site.static_files | where: "look_gallery_graphic", true %}
+	{% for myimage in image_files %}
+		{% assign path = myimage.path | replace: "/", " " %}
+		{% assign look = page.title | downcase | replace: " ", "_" %}
+		{% assign project = page.url | replace: "/", " " | replace: "-", "_" | remove: "styling_and_creative_direction" | remove: ".html" | remove: look | remove: " " | append: " " %}
+		{% if path contains project and path contains look %}
+			<figure class="look_gallery_wrapper-look_gallery_graphic_card">
+				<img class="look_gallery_graphic_card-look_gallery_graphic_card_graphic" src="{{ myimage.path }}">
+			</figure>
+		{% endif %}
+	{% endfor %}
+</div>
+<script>
+	// https://dev.to/samthor/divert-vertical-scroll-to-the-side-3id0
+	// handle up/down scrollwheel on the scroller, as most folks don't have horizontal scroll
+	 look_gallery_wrapper.addEventListener('wheel', (ev) => {
+		if (!ev.ctrlKey) {
+			ev.preventDefault();  // stop scrolling in another direction
+			look_gallery_wrapper.scrollLeft += (ev.deltaY + ev.deltaX);
+		}
+	});
+	document.getElementById('navigation_container').addEventListener('wheel', (ev) => {
+		if (!ev.ctrlKey) {
+			ev.preventDefault();
+			look_gallery_wrapper.scrollLeft += (ev.deltaY + ev.deltaX);
+		}
+	});
+	document.getElementById('header_container').addEventListener('wheel', (ev) => {
+		if (!ev.ctrlKey) {
+			ev.preventDefault();
+			look_gallery_wrapper.scrollLeft += (ev.deltaY + ev.deltaX);
+		}
+	});
+</script>
