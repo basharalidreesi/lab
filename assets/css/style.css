@@ -8,6 +8,8 @@
 :root {
 	--universal_answer: 1em;
 	--universal_answer_multiplier: 2;
+	--primary_colour: #91a3b0;
+	--secondary_colour: #eceff1;
 }
 
 /*
@@ -28,7 +30,7 @@ html, body {
 * {
 	margin: 0;
 	padding: 0;
-	font-size: 100%;
+	font-size: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	text-align: left;
 	line-height: 100%;
 }
@@ -105,18 +107,14 @@ body {
 	flex: 1;
 }
 .mother_container-navigation_container {
-	background-color: #fff;
+	background-color: var(--secondary_colour);
 }
 .mother_container-header_container {
 	position: sticky;
 	top: 0;
 }
-.mother_container-content_container {
-	background-color: #fff;
-}
-.mother_container-footer_container {
-	background-color: #fff;
-}
+.mother_container-content_container { }
+.mother_container-footer_container { }
 
 /*
 ┌─BEGIN─────────────────┐
@@ -139,8 +137,6 @@ body {
 .navigation_list_wrapper-navigation_list_item {
 	flex: 1; /* stress test this with a higher number of listed pages */
 	white-space: nowrap; /* debug */
-	overflow: hidden; /* debug */
-	text-overflow: ellipsis; /* debug */
 }
 .--active_navigation_list_item a {
 	/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
@@ -231,7 +227,6 @@ body {
 		flex-flow: column nowrap;
 		justify-content: center;
 		align-items: center;
-		background-color: #fff;
 	}
 	.project_list_wrapper-client_list_wrapper-tag_list_wrapper {
 		display: flex;
@@ -248,8 +243,8 @@ body {
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		border: 1px solid #000;
 		border-radius: 500px;
-		background-color: #fff;
 		margin-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+		background-color: var(--secondary_colour);
 	}
 	.tag_list_wrapper-tag_list_item:not(:first-child) {
 		margin-right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
@@ -319,7 +314,6 @@ body {
 	.look_gallery_wrapper-look_gallery_graphic_card {
 		position: relative;
 		height: 100%;
-		margin: auto;
 	}
 	.look_gallery_graphic_card-look_gallery_graphic_card_graphic {
 		display: block;
