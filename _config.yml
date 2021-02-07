@@ -5,9 +5,6 @@ collections:
   social-media-and-content-creation:
     title: Clients
     output: true
-  looks:
-    title: Looks
-    output: true
   posts:
     title: Posts
     output: true
