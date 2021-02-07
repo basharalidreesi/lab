@@ -19,11 +19,15 @@ defaults:
     path: ''
   values:
     layout: default
-    is_navigation_list_item: false
-    navigation_list_item_order: 
     header_graphic_location: upper
     has_footer_container: false
     is_fullscreen_page: false
+- scope:
+    path: ''
+    type: pages
+  values:
+    is_navigation_list_item: false
+    navigation_list_item_order: 
 - scope:
     path: ''
     type: styling-and-creative-direction
