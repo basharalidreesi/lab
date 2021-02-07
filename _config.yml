@@ -35,12 +35,12 @@ defaults:
     is_fullscreen_page: true
     is_listed_project: true
 - scope:
-    path: '*'
+    path: "*"
     type: styling-and-creative-direction
   values:
     layout: project
     is_fullscreen_page: true
-    is_listed_project: false 
+    is_listed_project: false
 - scope:
     path: ''
     type: social-media-and-content-creation
