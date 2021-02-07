@@ -50,9 +50,13 @@ defaults:
   values:
     showcase_tile: true
 - scope:
-    path: assets/graphics/project_graphics
+    path: assets/graphics/look_cascade_graphics
   values:
-    project_graphic: true
+    look_cascade_graphic: true
+- scope:
+    path: assets/graphics/look_gallery_graphics
+  values:
+    look_card_graphic: true
 email: 
 description: Jad Toghuj
 author: Jad Toghuj
