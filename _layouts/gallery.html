@@ -6,8 +6,9 @@ layout: default
 {% for myimage in image_files %}
 	{% assign path = myimage.path | replace: "/", " " %}
 	{% assign title = page.title | downcase | replace: " ", "_" %}
+	{% assign url = page.url | replace: "/", " " | replace: "-", "_" | remove: "styling_and_creative_direction" | remove: ".html" %}
 	<p>Image path is: {{ path }}</p>
 	<p>Page title is: {{ title }}</p>
-	<p>Page URL is: {{ page.url | replace: "/", " " | replace: "-", "_" }}</p>
+	<p>Page URL is: {{ url }}</p>
 	<br>
 {% endfor %}
