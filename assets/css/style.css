@@ -6,7 +6,7 @@
 └─BEGIN─────────────────┘
 */
 :root {
-	--universal_answer: 1vw;
+	--universal_answer: 1em;
 	--universal_answer_multiplier: 2;
 }
 
@@ -226,7 +226,7 @@ html {
 		padding: 0;
 		list-style: none;
 		list-style-position: inside;
-		padding-top: calc(var(--universal_answer) * var(--universal_answer_multiplier));
+		padding-top: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		justify-content: center;
 		align-items: center;
 		margin-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 * -1);
