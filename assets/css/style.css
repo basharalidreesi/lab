@@ -6,7 +6,7 @@
 └─BEGIN─────────────────┘
 */
 :root {
-	--universal_answer: 1vw;
+	--universal_answer: 1em;
 	--universal_answer_multiplier: 2;
 }
 
@@ -128,6 +128,9 @@ html {
 }
 .navigation_list_wrapper-navigation_list_item {
 	flex: 1; /* stress test this with a higher number of listed pages */
+	white-space: nowrap; /* debug */
+	overflow: hidden; /* debug */
+	text-overflow: ellipsis; /* debug */
 }
 .--active_navigation_list_item a {
 	/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
@@ -226,7 +229,7 @@ html {
 		padding: 0;
 		list-style: none;
 		list-style-position: inside;
-		padding-top: calc(var(--universal_answer) * var(--universal_answer_multiplier));
+		padding-top: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		justify-content: center;
 		align-items: center;
 		margin-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 * -1);
@@ -267,11 +270,28 @@ html {
 		border: 1px solid black;
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		margin-left: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
-		
+	}
+	.look_cascade_wrapper-look_cascade_graphic_card:only-child {
+		margin: auto; /* debug */
 	}
 	.look_cascade_graphic_card-look_cascade_graphic_card_graphic {
 		display: block;
 		height: 100%;
+	}
+	.look_cascade_graphic_card-look_cascade_graphic_card_caption {
+		position: absolute;
+		background-color: aquamarine; /* debug */
+		left: 50%;
+		transform: translateX(-50%);
+		width: 100%;
+		height: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+		text-align: center;
+	}
+	.look_cascade_graphic_card-look_cascade_graphic_card_caption:first-child {
+		top: 0;
+	}
+	.look_cascade_graphic_card-look_cascade_graphic_card_caption:last-child {
+		bottom: 0;
 	}
 
 /*
