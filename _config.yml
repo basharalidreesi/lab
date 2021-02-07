@@ -11,6 +11,7 @@ collections:
   styling-and-creative-direction:
     title: Projects
     output: true
+    permalink: /:collection/:name
   uploads:
     title: Uploads
     output: true
