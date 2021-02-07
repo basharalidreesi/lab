@@ -261,7 +261,7 @@ html {
 		overflow-y: scroll;
 		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	}
-	.content_container-look_cascade_wrapper > .look_cascade_wrapper-look_cascade_graphic_card:only-child {
+	.content_container-look_cascade_wrapper > .look_cascade_wrapper-look_cascade_graphic_card:nth-child(1):last-child {
 		justify-content: center;
 	}
 	.look_cascade_wrapper-look_cascade_graphic_card {
