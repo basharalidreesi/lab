@@ -8,13 +8,13 @@ layout: default
 		{% assign path = myimage.path | replace: "/", " " %}
 		{% assign title = page.title | downcase | replace: " ", "_" %}
 		{% if path contains title %}
-			<a href="">
-				<figure class="look_cascade_wrapper-look_cascade_graphic_card">	
-					<figcaption class="look_cascade_graphic_card-look_cascade_graphic_card_caption">Heading 1</figcaption>
+			<figure class="look_cascade_wrapper-look_cascade_graphic_card">	
+				<figcaption class="look_cascade_graphic_card-look_cascade_graphic_card_caption">Heading 1</figcaption>
+				<a href="">
 					<img class="look_cascade_graphic_card-look_cascade_graphic_card_graphic" src="{{ myimage.path }}">
-					<figcaption class="look_cascade_graphic_card-look_cascade_graphic_card_caption">Heading 2</figcaption>
-				</figure>
-			</a>
+				</a>
+				<figcaption class="look_cascade_graphic_card-look_cascade_graphic_card_caption">Heading 2</figcaption>
+			</figure>
 		{% endif %}
 	{% endfor %}
 </div>
