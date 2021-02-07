@@ -261,13 +261,15 @@ html {
 		overflow-y: scroll;
 		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	}
+	.content_container-look_cascade_wrapper > .look_cascade_wrapper-look_cascade_graphic_card:only-child {
+		justify-content: center;
+	}
 	.look_cascade_wrapper-look_cascade_graphic_card {
 		position: relative;
 		height: 100%;
 		border: 1px solid black;
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		margin-left: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
-		
 	}
 	.look_cascade_graphic_card-look_cascade_graphic_card_graphic {
 		display: block;
