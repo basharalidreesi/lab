@@ -10,7 +10,7 @@ layout: default
 	<p>Image path is: {{ path }}</p>
 	<p>Look is: {{ look }}</p>
 	<p>Project is: {{ project }}</p>
-	{% if path contains project %}
+	{% if path contains project and path contains look %}
 		<p>This is contained!</p>
 	{% else %}
 		<p>This is not contained :(</p>
