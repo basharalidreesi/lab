@@ -6,6 +6,7 @@
 └─BEGIN─────────────────┘
 */
 :root {
+	--font_size: 1em;
 	--universal_answer: 1em;
 	--universal_answer_multiplier: 2;
 	--primary_colour: #91a3b0;
@@ -32,7 +33,7 @@ html, body {
 * {
 	margin: 0;
 	padding: 0;
-	font-size: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+	font-size: var(--font_size);
 	text-align: left;
 	line-height: 100%;
 }
