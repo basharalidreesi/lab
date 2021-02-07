@@ -7,13 +7,8 @@ layout: default
 	{% assign path = myimage.path | replace: "/", " " %}
 	{% assign look = page.title | downcase | replace: " ", "_" %}
 	{% assign project = page.url | replace: "/", " " | replace: "-", "_" | remove: "styling_and_creative_direction" | remove: ".html" | remove: look | remove: " " | append: " " %}
-	<p>Image path is: {{ path }}</p>
-	<p>Look is: {{ look }}</p>
-	<p>Project is: {{ project }}</p>
 	{% if path contains project and path contains look %}
-		<p>This is contained!</p>
-	{% else %}
-		<p>This is not contained :(</p>
+		<img src="{{ myimage.path }}">
 	{% endif %}
 	<br>
 {% endfor %}
