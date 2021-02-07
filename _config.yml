@@ -56,7 +56,7 @@ defaults:
 - scope:
     path: assets/graphics/look_gallery_graphics
   values:
-    look_card_graphic: true
+    look_gallery_graphic: true
 email: 
 description: Jad Toghuj
 author: Jad Toghuj
