@@ -271,7 +271,7 @@ body {
 	.look_cascade_wrapper-look_cascade_graphic_card {
 		position: relative;
 		height: 100%;
-		border: 1px solid black;
+		border: 1px solid var(--border_colour);
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		margin-left: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	}
