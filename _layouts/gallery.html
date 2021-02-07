@@ -10,5 +10,8 @@ layout: default
 	<p>Image path is: {{ path }}</p>
 	<p>Page title is: {{ title }}</p>
 	<p>Page URL is: {{ url }}</p>
+	{% if path contains url %}
+		<h1>This is contained!</h1>
+	{% end %}
 	<br>
 {% endfor %}
