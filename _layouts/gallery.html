@@ -4,3 +4,16 @@ layout: default
 
 This is written in gallery.html
 {{ content }}
+
+<div class="content_container-look_gallery_wrapper" id="look_gallery_wrapper">
+	{% assign image_files = site.static_files | where: "look_gallery_graphic", true %}
+	{% for myimage in image_files %}
+		{% assign path = myimage.path | replace: "/", " " %}
+		{% assign title = page.title | downcase | replace: " ", "_" %}
+		<!-- // {% if path contains title %} -->
+			<figure class="look_gallery_wrapper-look_gallery_graphic_card">
+					<img class="look_gallery_graphic_card-look_gallery_graphic_card_graphic" src="{{ myimage.path }}">
+			</figure>
+		<!-- // {% endif %} -->
+	{% endfor %}
+</div>
