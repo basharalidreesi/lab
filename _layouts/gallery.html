@@ -6,11 +6,11 @@ layout: default
 {% for myimage in image_files %}
 	{% assign path = myimage.path | replace: "/", " " %}
 	{% assign look = page.title | downcase | replace: " ", "_" %}
-	{% assign project = page.url | replace: "/", " " | replace: "-", "_" | remove: "styling_and_creative_direction" | remove: ".html" | remove: look %}
+	{% assign project = page.url | replace: "/", " " | replace: "-", "_" | remove: "styling_and_creative_direction" | remove: ".html" | remove: look | remove: " " %}
 	<p>Image path is: {{ path }}</p>
 	<p>Look is: {{ look }}</p>
 	<p>Project is: {{ project }}</p>
-	{% if path contains "sample_project" %}
+	{% if path contains project %}
 		<p>This is contained!</p>
 	{% else %}
 		<p>This is not contained :(</p>
