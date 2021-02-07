@@ -30,6 +30,7 @@ defaults:
   values:
     layout: project
     is_fullscreen_page: true
+    is_look_page: false
 - scope:
     path: ''
     type: social-media-and-content-creation
