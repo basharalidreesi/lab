@@ -35,7 +35,7 @@ defaults:
     is_fullscreen_page: true
     is_listed_project: true
 - scope:
-    path: styling-and-creative-direction
+    path: '*'
     type: styling-and-creative-direction
   values:
     layout: project
