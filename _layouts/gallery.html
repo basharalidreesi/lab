@@ -8,6 +8,6 @@ layout: default
 	{% assign title = page.title | downcase | replace: " ", "_" %}
 	<p>Image path is: {{ myimage.path }}</p>
 	<p>Page title is: {{ title }}</p>
-	<p>Page categories are: {{ page.categories }}</p>
+	<p>Page URL is: {{ page.url }}</p>
 	<br>
 {% endfor %}
