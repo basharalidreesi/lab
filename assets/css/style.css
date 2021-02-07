@@ -75,6 +75,19 @@ html {
 }
 
 /*
+┌─BEGIN─────────┐
+│		│
+│ BODY STYLING	│
+│		│
+└─BEGIN─────────┘
+*/
+body {
+	background: linear-gradient(0deg, var(--primary_colour) 10%, rgba(255,255,255,1) 100%);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+/*
 ┌─BEGIN─────────────────┐
 │			│
 │ CONTAINER STYLING	│
@@ -102,9 +115,6 @@ html {
 	background-color: #fff;
 }
 .mother_container-footer_container {
-	position: sticky;
-	bottom: 0;
-	z-index: -1;
 	background-color: #fff;
 }
 
