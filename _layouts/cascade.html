@@ -14,9 +14,10 @@ layout: default
 				{% assign graphic_path = myimage.path | remove_first: "/" | replace: "/", ", " | split: ", " %}
 				{% assign page_url = page.url | remove_first: "/" | replace: "/", ", " | split: ", " %}
 				<p>Image path is: {{ graphic_path }}</p>
-				<p>Image category (project) is: {{ graphic_path[3] }}</p>
-				<p>Image name (subproject) is: {{ graphic_path[4] }}</p>
-				<p>URL says: {{ page_url[1] }}, {{ page_url[2] }}</p>
+				<p>Image category is: {{ graphic_path[3] }}</p>
+				<p>Image subcategory is: {{ graphic_path[4] }}</p>
+				<p>URL category is: {{ page_url[1] }}, {{ page_url[2] }}</p>
+				<p>URL subcategory is: {{ page_url[2] }}</p>
 				<br>
 				<br>
 				<p>Path is {{ path }}</p>
