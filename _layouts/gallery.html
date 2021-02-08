@@ -12,7 +12,7 @@ layout: default
 			<figure class="gallery_wrapper-gallery_graphic_card">
 				<p>This is a gallery</p>
 				{% assign graphic_path = myimage.path | remove_first: "/" | replace: "/", ", " | split: ", " %}
-				{% assign page_url = page.url | remove_first: "/" | replace: "/", ", " %}
+				{% assign page_url = page.url | remove_first: "/" | replace: "/", ", " | split: ", " %}
 				<p>Image path is: {{ graphic_path }}</p>
 				<p>Image category (project) is: {{ graphic_path[3] }}</p>
 				<p>Image name (subproject) is: {{ graphic_path[4] }}</p>
