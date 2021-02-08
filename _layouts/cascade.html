@@ -11,7 +11,7 @@ layout: default
 			<figure class="cascade_wrapper-cascade_graphic_card">	
 				<!-- <figcaption class="cascade_graphic_card-cascade_graphic_card_caption">{{ myimage.basename }}</figcaption> -->
 				<p>This is a cascade</p>
-				<p>Image path is {{ myimage.path | remove_first: "/" | replace: "/", ", " }}</p>
+				<p>Image path is {{ myimage.path | remove_first: "/" | replace: "/", ", " | split: ", " }}</p>
 				<br>
 				<p>Path is {{ path }}</p>
 				<p>Path is {{ title }}</p>
