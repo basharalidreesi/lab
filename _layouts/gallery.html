@@ -10,10 +10,10 @@ layout: default
 		{% assign project = page.url | replace: "/", " " | replace: "-", "_" | remove: "styling_and_creative_direction" | remove: ".html" | remove: look | remove: " " | append: " " %}
 		{% if path contains project and path contains look %}
 			<figure class="gallery_wrapper-gallery_graphic_card">
-				<p>This is a gallery</p>
+				<!-- <p>This is a gallery</p> -->
 				{% assign graphic_path = myimage.path | remove_first: "/" | replace: "/", ", " | split: ", " %}
 				{% assign page_url = page.url | remove_first: "/" | replace: "/", ", " | split: ", " %}
-				<p>Image path is: {{ graphic_path }}</p>
+				<!-- <p>Image path is: {{ graphic_path }}</p>
 				<p>Image category is: {{ graphic_path[3] }}</p>
 				<p>Image subcategory is: {{ graphic_path[4] }}</p>
 				<p>URL category is: {{ page_url[1] }}, {{ page_url[2] }}</p>
@@ -22,7 +22,7 @@ layout: default
 				<br>
 				<p>Path is: {{ path }}</p>
 				<p>Look is: {{ look }}</p>
-				<p>Project is: {{ project }}</p>
+				<p>Project is: {{ project }}</p> -->
 				<img class="gallery_graphic_card-gallery_graphic_card_graphic" src="{{ myimage.path }}">
 			</figure>
 		{% endif %}
