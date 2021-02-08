@@ -34,7 +34,7 @@ defaults:
   values:
     layout: cascade
     is_fullscreen_page: true
-    is_look_page: false
+    is_listed_project: true
 - scope:
     path: ''
     type: social-media-and-content-creation
@@ -50,13 +50,13 @@ defaults:
   values:
     showcase_tile: true
 - scope:
-    path: assets/graphics/look_cascade_graphics
+    path: assets/graphics/cascade_graphics
   values:
-    look_cascade_graphic: true
+    cascade_graphic: true
 - scope:
-    path: assets/graphics/look_gallery_graphics
+    path: assets/graphics/gallery_graphics
   values:
-    look_gallery_graphic: true
+    gallery_graphic: true
 email: 
 description: Jad Toghuj
 author: Jad Toghuj
