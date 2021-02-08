@@ -63,6 +63,20 @@ html {
 .--text_align_center {
 	text-align: center;
 }
+.--standard_text_styling {
+	font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	font-weight: 200;
+	font-size: var(--font_size);
+}
+.--text_styling_1 {
+	font-size: 1.25em;
+}
+.--text_styling_2 {
+	font-size: 1.5em;
+}
+.--text_styling_3 {
+	font-size: 2em;
+}
 .--padding_bottom_universal_answer_single {
 	padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 }
