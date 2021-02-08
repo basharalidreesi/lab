@@ -11,6 +11,11 @@ layout: default
 		{% if path contains project and path contains look %}
 			<figure class="gallery_wrapper-gallery_graphic_card">
 				<p>This is a gallery</p>
+				{% assign graphic_path = myimage.path | remove_first: "/" | replace: "/", ", " | split: ", " %}
+				<p>Image path is {{ graphic_path }}</p>
+				<p>Image category (project) is {{ graphic_path[3] }}</p>
+				<p>Image name is (subproject) {{ graphic_path[4] }}</p>
+				<br>
 				<p>Path is: {{ path }}</p>
 				<p>Look is: {{ look }}</p>
 				<p>Project is: {{ project }}</p>
