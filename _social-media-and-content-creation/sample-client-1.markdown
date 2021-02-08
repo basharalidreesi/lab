@@ -6,3 +6,11 @@ tags:
 ---
 
 Hmmmm
+
+This is funny
+
+This is not funny
+
+What is funny?
+
+This is definitely a sample post
