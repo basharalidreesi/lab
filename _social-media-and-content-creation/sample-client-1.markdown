@@ -5,12 +5,18 @@ tags:
 - tag
 ---
 
-Hmmmm
+potato
 
-This is funny
+tomato
 
-This is not funny
+cherry
 
-What is funny?
+peach
 
-This is definitely a sample post
+eggplant
+
+pear
+
+date
+
+banana
