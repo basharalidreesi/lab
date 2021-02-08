@@ -37,6 +37,7 @@ html, body {
 	font-size: var(--font_size);
 	text-align: left;
 	line-height: 100%;
+	overscroll-behavior: none; /* for horizontal scrolling */
 }
 html {
 	box-sizing: border-box;
