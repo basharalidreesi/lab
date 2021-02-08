@@ -5,8 +5,7 @@ layout: default
 This is written in client.html
 <br>
 {% assign entire_content = page.content %}
-<!-- {% assign content_array = entire_content | newline_to_br | strip_newlines | strip | replace: "<br /><br />", "<br />" | split: "<br />" %} -->
-{% assign content_array = entire_content | newline_to_br | replace: "<br>", "BREAK!" | split: "BREAK!" %}
+{% assign content_array = entire_content | newline_to_br | strip_newlines | strip | replace: "<br><br>", "<br>" | split: "<br>" %}
 <p>Entire content is:</p>
 <code>{{ entire_content }}</code>
 <br>
