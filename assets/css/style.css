@@ -280,33 +280,33 @@ body {
 	/*
 	┌─BEGIN─────────────────┐
 	│			│
-	│ LOOK CASCADE STYLING	│
+	│ CASCADE STYLING	│
 	│			│
 	└─BEGIN─────────────────┘
 	*/
-	.content_container-look_cascade_wrapper {
+	.content_container-cascade_wrapper {
 		display: flex;
 		flex-flow: row nowrap;
 		height: calc(100vh - (var(--universal_answer) * var(--universal_answer_multiplier) / 2) * 10); /* fix height */
 		overflow-y: scroll;
 		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	}
-	.look_cascade_wrapper-look_cascade_graphic_card {
+	.cascade_wrapper-cascade_graphic_card {
 		position: relative;
 		height: 100%;
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		margin-left: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		background-color: var(--secondary_colour);
 	}
-	.look_cascade_graphic_card-look_cascade_graphic_card_graphic {
+	.cascade_graphic_card-cascade_graphic_card_graphic {
 		display: block;
 		height: 100%;
 	}
-	/* .look_cascade_wrapper-look_cascade_graphic_card:only-child {
+	/* .cascade_wrapper-cascade_graphic_card:only-child {
 		margin: auto;
 	} */
 	/*
-	.look_cascade_graphic_card-look_cascade_graphic_card_caption {
+	.cascade_graphic_card-cascade_graphic_card_caption {
 		position: absolute;
 		background-color: aquamarine;
 		left: 50%;
@@ -315,31 +315,31 @@ body {
 		height: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		text-align: center;
 	}
-	.look_cascade_graphic_card-look_cascade_graphic_card_caption:first-child {
+	.cascade_graphic_card-cascade_graphic_card_caption:first-child {
 		top: 0;
 	}
-	.look_cascade_graphic_card-look_cascade_graphic_card_caption:last-child {
+	.cascade_graphic_card-cascade_graphic_card_caption:last-child {
 		bottom: 0;
 	} */
 	/*
 	┌─BEGIN─────────────────┐
 	│			│
-	│ LOOK GALLERY STYLING	│
+	│ GALLERY STYLING	│
 	│			│
 	└─BEGIN─────────────────┘
 	*/
-	.content_container-look_gallery_wrapper {
+	.content_container-gallery_wrapper {
 		display: flex;
 		flex-flow: row nowrap;
 		height: calc(100vh - (var(--universal_answer) * var(--universal_answer_multiplier) / 2) * 10); /* fix height */
 		overflow-y: scroll;
 	}
-	.look_gallery_wrapper-look_gallery_graphic_card {
+	.gallery_wrapper-gallery_graphic_card {
 		position: relative;
 		height: 100%;
 		background-color: var(--secondary_colour);
 	}
-	.look_gallery_graphic_card-look_gallery_graphic_card_graphic {
+	.gallery_graphic_card-gallery_graphic_card_graphic {
 		display: block;
 		height: 100%;
 	}
