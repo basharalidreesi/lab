@@ -2,21 +2,21 @@
 layout: default
 ---
 
-<div class="content_container-look_cascade_wrapper" id="look_cascade_wrapper">
-	{% assign image_files = site.static_files | where: "look_cascade_graphic", true %}
+<div class="content_container-cascade_wrapper" id="cascade_wrapper">
+	{% assign image_files = site.static_files | where: "cascade_graphic", true %}
 	{% for myimage in image_files %}
 		{% assign path = myimage.path | replace: "/", " " %}
 		{% assign title = page.title | downcase | replace: " ", "_" %}
 		{% if path contains title %}
-			<figure class="look_cascade_wrapper-look_cascade_graphic_card">	
-				<!-- <figcaption class="look_cascade_graphic_card-look_cascade_graphic_card_caption">{{ myimage.basename }}</figcaption> -->
+			<figure class="cascade_wrapper-cascade_graphic_card">	
+				<!-- <figcaption class="cascade_graphic_card-cascade_graphic_card_caption">{{ myimage.basename }}</figcaption> -->
 				<p>This is a cascade</p>
 				<p>Path is {{ path }}</p>
 				<p>Path is {{ title }}</p>
 				<a href="{{ page.url | remove: ".html" | append: "/" | append: myimage.basename | downcase | replace: " ", "-" | append: ".html" }}">
-					<img class="look_cascade_graphic_card-look_cascade_graphic_card_graphic" src="{{ myimage.path }}">
+					<img class="cascade_graphic_card-cascade_graphic_card_graphic" src="{{ myimage.path }}">
 				</a>
-				<!-- <figcaption class="look_cascade_graphic_card-look_cascade_graphic_card_caption">Heading 2</figcaption> -->
+				<!-- <figcaption class="cascade_graphic_card-cascade_graphic_card_caption">Heading 2</figcaption> -->
 			</figure>
 		{% endif %}
 	{% endfor %}
@@ -24,22 +24,22 @@ layout: default
 <script>
 	// https://dev.to/samthor/divert-vertical-scroll-to-the-side-3id0
 	// handle up/down scrollwheel on the scroller, as most folks don't have horizontal scroll
-	 look_cascade_wrapper.addEventListener('wheel', (ev) => {
+	 cascade_wrapper.addEventListener('wheel', (ev) => {
 		if (!ev.ctrlKey) {
 			ev.preventDefault();  // stop scrolling in another direction
-			look_cascade_wrapper.scrollLeft += (ev.deltaY + ev.deltaX);
+			cascade_wrapper.scrollLeft += (ev.deltaY + ev.deltaX);
 		}
 	});
 	document.getElementById('navigation_container').addEventListener('wheel', (ev) => {
 		if (!ev.ctrlKey) {
 			ev.preventDefault();
-			look_cascade_wrapper.scrollLeft += (ev.deltaY + ev.deltaX);
+			cascade_wrapper.scrollLeft += (ev.deltaY + ev.deltaX);
 		}
 	});
 	document.getElementById('header_container').addEventListener('wheel', (ev) => {
 		if (!ev.ctrlKey) {
 			ev.preventDefault();
-			look_cascade_wrapper.scrollLeft += (ev.deltaY + ev.deltaX);
+			cascade_wrapper.scrollLeft += (ev.deltaY + ev.deltaX);
 		}
 	});
 </script>
