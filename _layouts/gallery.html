@@ -12,10 +12,11 @@ layout: default
 			<figure class="gallery_wrapper-gallery_graphic_card">
 				<p>This is a gallery</p>
 				{% assign graphic_path = myimage.path | remove_first: "/" | replace: "/", ", " | split: ", " %}
+				{% assign page_url = page.url | remove_first: "/" | replace: "/", ", " %}
 				<p>Image path is: {{ graphic_path }}</p>
 				<p>Image category (project) is: {{ graphic_path[3] }}</p>
 				<p>Image name (subproject) is: {{ graphic_path[4] }}</p>
-				<p>URL says: {{ page.url | remove_first: "/" | replace: "/", ", " }}</p>
+				<p>URL says: {{ page_url[1] }}, {{ page_url[2] }}</p>
 				<br>
 				<p>Path is: {{ path }}</p>
 				<p>Look is: {{ look }}</p>
