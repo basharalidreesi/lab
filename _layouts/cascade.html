@@ -11,7 +11,10 @@ layout: default
 			<figure class="cascade_wrapper-cascade_graphic_card">	
 				<!-- <figcaption class="cascade_graphic_card-cascade_graphic_card_caption">{{ myimage.basename }}</figcaption> -->
 				<p>This is a cascade</p>
-				<p>Image path is {{ myimage.path | remove_first: "/" | replace: "/", ", " | split: ", " }}</p>
+				{% assign graphic_path = myimage.path | remove_first: "/" | replace: "/", ", " | split: ", " %}
+				<p>Image path is {{ graphic_path }}</p>
+				<p>Image category (project) is {{ graphic_path[3] }}</p>
+				<p>Image name is (subproject) {{ graphic_path[4] }}</p>
 				<br>
 				<p>Path is {{ path }}</p>
 				<p>Path is {{ title }}</p>
