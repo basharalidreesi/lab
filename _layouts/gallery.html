@@ -2,19 +2,19 @@
 layout: default
 ---
 
-<div class="content_container-look_gallery_wrapper" id="look_gallery_wrapper">
-	{% assign image_files = site.static_files | where: "look_gallery_graphic", true %}
+<div class="content_container-gallery_wrapper" id="gallery_wrapper">
+	{% assign image_files = site.static_files | where: "gallery_graphic", true %}
 	{% for myimage in image_files %}
 		{% assign path = myimage.path | replace: "/", " " %}
 		{% assign look = page.title | downcase | replace: " ", "_" %}
 		{% assign project = page.url | replace: "/", " " | replace: "-", "_" | remove: "styling_and_creative_direction" | remove: ".html" | remove: look | remove: " " | append: " " %}
 		{% if path contains project and path contains look %}
-			<figure class="look_gallery_wrapper-look_gallery_graphic_card">
+			<figure class="gallery_wrapper-gallery_graphic_card">
 				<p>This is a gallery</p>
 				<p>Path is: {{ path }}</p>
 				<p>Look is: {{ look }}</p>
 				<p>Project is: {{ project }}</p>
-				<img class="look_gallery_graphic_card-look_gallery_graphic_card_graphic" src="{{ myimage.path }}">
+				<img class="gallery_graphic_card-gallery_graphic_card_graphic" src="{{ myimage.path }}">
 			</figure>
 		{% endif %}
 	{% endfor %}
@@ -22,22 +22,22 @@ layout: default
 <script>
 	// https://dev.to/samthor/divert-vertical-scroll-to-the-side-3id0
 	// handle up/down scrollwheel on the scroller, as most folks don't have horizontal scroll
-	 look_gallery_wrapper.addEventListener('wheel', (ev) => {
+	 gallery_wrapper.addEventListener('wheel', (ev) => {
 		if (!ev.ctrlKey) {
 			ev.preventDefault();  // stop scrolling in another direction
-			look_gallery_wrapper.scrollLeft += (ev.deltaY + ev.deltaX);
+			gallery_wrapper.scrollLeft += (ev.deltaY + ev.deltaX);
 		}
 	});
 	document.getElementById('navigation_container').addEventListener('wheel', (ev) => {
 		if (!ev.ctrlKey) {
 			ev.preventDefault();
-			look_gallery_wrapper.scrollLeft += (ev.deltaY + ev.deltaX);
+			gallery_wrapper.scrollLeft += (ev.deltaY + ev.deltaX);
 		}
 	});
 	document.getElementById('header_container').addEventListener('wheel', (ev) => {
 		if (!ev.ctrlKey) {
 			ev.preventDefault();
-			look_gallery_wrapper.scrollLeft += (ev.deltaY + ev.deltaX);
+			gallery_wrapper.scrollLeft += (ev.deltaY + ev.deltaX);
 		}
 	});
 </script>
