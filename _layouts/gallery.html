@@ -10,9 +10,10 @@ layout: default
 		{% assign project = page.url | replace: "/", " " | replace: "-", "_" | remove: "styling_and_creative_direction" | remove: ".html" | remove: look | remove: " " | append: " " %}
 		{% if path contains project and path contains look %}
 			<figure class="look_gallery_wrapper-look_gallery_graphic_card">
-				<!-- <p>Path is: {{ path }}</p> /* better way to narrow path down */
+				<p>This is a gallery</p>
+				<p>Path is: {{ path }}</p>
 				<p>Look is: {{ look }}</p>
-				<p>Project is: {{ project }}</p> -->
+				<p>Project is: {{ project }}</p>
 				<img class="look_gallery_graphic_card-look_gallery_graphic_card_graphic" src="{{ myimage.path }}">
 			</figure>
 		{% endif %}
