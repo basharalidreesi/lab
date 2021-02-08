@@ -175,7 +175,7 @@ body {
 .header_container-header_anchor_wrapper_central { /* centralised header */ }
 .header_container-header_anchor_wrapper_upper {
 	/* maybe make it so that .header_anchor-header_graphic's visibility is hidden and set the graphic as a CSS background-image? */
-	height: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2  * 5);
+	height: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2  * 5); /* fix height */
 	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	text-align: center;
 }
@@ -287,7 +287,7 @@ body {
 	.content_container-look_cascade_wrapper {
 		display: flex;
 		flex-flow: row nowrap;
-		height: calc(100vh - (var(--universal_answer) * var(--universal_answer_multiplier) / 2) * 10);
+		height: calc(100vh - (var(--universal_answer) * var(--universal_answer_multiplier) / 2) * 10); /* fix height */
 		overflow-y: scroll;
 		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	}
@@ -331,12 +331,13 @@ body {
 	.content_container-look_gallery_wrapper {
 		display: flex;
 		flex-flow: row nowrap;
-		height: calc(100vh - (var(--universal_answer) * var(--universal_answer_multiplier) / 2) * 10);
+		height: calc(100vh - (var(--universal_answer) * var(--universal_answer_multiplier) / 2) * 10); /* fix height */
 		overflow-y: scroll;
 	}
 	.look_gallery_wrapper-look_gallery_graphic_card {
 		position: relative;
 		height: 100%;
+		background-color: var(--secondary_colour);
 	}
 	.look_gallery_graphic_card-look_gallery_graphic_card_graphic {
 		display: block;
