@@ -34,7 +34,7 @@ defaults:
   values:
     layout: cascade
     is_fullscreen_page: true
-    is_listed_project: true
+    is_list_item: true
 - scope:
     path: ''
     type: social-media-and-content-creation
