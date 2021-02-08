@@ -5,10 +5,10 @@ layout: default
 This is written in client.html
 <br>
 {% assign entire_content = page.content %}
-{% assign content_array = page.entire_content | newline_to_br | strip_newlines %}
+{% assign content_array = entire_content | newline_to_br | strip_newlines %}
 <p>Entire content is:</p>
 <code>{{ entire_content }}</code>
 <br>
-<p>Contant array is:</p>
+<p>Content array is:</p>
 <code>{{ content_array }}</code>
 <br>
