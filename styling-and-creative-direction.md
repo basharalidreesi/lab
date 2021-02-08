@@ -14,7 +14,7 @@ has_footer_container: true
 	{% for item in site.styling-and-creative-direction %}
 		{% if item.is_look_page == false %}
 			<li class="project_list_wrapper-client_list_wrapper-project_list_item-client_list_item">
-				<a class="--anchor_styling" href="{{ item.url }}">
+				<a class="--anchor_styling --standard_text_styling --text_styling_3" href="{{ item.url }}">
 					{{ item.title }}
 				</a>
 				{% if item.tags != empty %}
