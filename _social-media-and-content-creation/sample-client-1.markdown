@@ -5,11 +5,11 @@ tags:
 - tag
 ---
 
-!title
+!title 
 
-!footer
+!footer  
 
-!text
+!text   
 
 !text
 !linkto
