@@ -7,8 +7,8 @@ layout: default
 ---
 <h1>Each block is:</h1>
 {% for block in content_array %}
-	{% assign block_array = block | newline_to_br | strip_newlines | split: "<br />" %}
-	<pre><strong>- {{ block }}</strong></pre>
+	{% assign block_array = block | split: "<br />" %}
+	<pre><strong>{{ block }}</strong></pre>
 	<pre>	First item here is {{ block_array[0] }}</pre>
 	<pre>	Second item here is {{ block_array[1] }}</pre>
 	<pre>	Third item here is {{ block_array[2] }}</pre>
