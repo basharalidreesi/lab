@@ -12,7 +12,9 @@ layout: default
 			{% if line contains "!linkto" %}
 				{% assign link = line | remove_first: "!linkto" | remove: "<p>" | remove: "</p>" %}
 				<a href="{{ link }}">
-					{% include conditionals.html %}
+					{% if line contains "!text" %}
+						<p>{{ line | remove_first: "!text" | remove: "<p>" | remove: "</p>" }}</p>
+					{% endif %}
 				</a>
 			{% endif %}
 		{% endfor %}
