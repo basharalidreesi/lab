@@ -6,7 +6,7 @@ layout: default
 {% for block in page_content %}
 	<pre>***</pre>
 	{% assign item = block | split: "<br />" %}
-	{% assign identifier = item[0] | split: " " | remove: "<p>" | remove: "</p>" %}
+	{% assign identifier = item[0] | split: " " %}
 	{% assign declaration = identifier[1] %}
 	{% if block contains "!linkto" %}
 		{% for line in item %}
