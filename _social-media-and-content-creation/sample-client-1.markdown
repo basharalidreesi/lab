@@ -5,7 +5,8 @@ tags:
 - tag
 ---
 
-!subtitle This is a sample subtitle
+!subtitle This is line 1 of a sample subtitle
+!subtitle This is line 2 of a sample subtitle
 
 !footer   Some sample credits here
 
