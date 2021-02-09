@@ -47,11 +47,11 @@ end of this fucking array
 
 !text 
 
-!image !linkto
+!image !& !linkto
 
-!text !linkto
+!text !& !linkto
 
-!image !caption
+!image !& !caption
 
 !image !caption !linkto
 
