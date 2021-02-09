@@ -15,7 +15,7 @@ layout: default
 	<pre>	Fourth item here is {{ block_array[3] }}</pre>
 	{% if block_array[0] contains "<p>!title" %}
 		<pre>	This has been recognised as a title block.</pre>
-		<pre>	The title is {{ block_array[0] | remove_first: "!title" | strip }}
+		<pre>	The title is {{ block_array[0] | remove_first: "!title" | strip }}</pre>
 	{% elsif block_array[0] == "<p>!footer</p>" or block_array[0] == "<p>!footer" %}
 		<pre>	This has been recognised as a footer block.</pre>
 	{% elsif block_array[0] == "<p>!text</p>" or block_array[0] == "<p>!text" %}
