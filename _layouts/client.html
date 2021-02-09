@@ -12,17 +12,17 @@ layout: default
 <br>
 {% for line in content_array %}
 	<p>- {{ line }}</p>
-	{% assign line_array = {{ line }} | strip | split: "!&" | %}
-	{% if line_array[0] == "!title" %}
+	{% assign line_array = {{ line }} | split: " " %}
+	{% if line_array[1] == "!title" %}
 		<pre>	This is a title!</pre>
 	{% endif %}
-	{% if line_array[0] == "!footer" %}
+	{% if line_array[1] == "!footer" %}
 		<pre>	This is a footer!</pre>
 	{% endif %}
-	{% if line_array[0] == "!text" %}
+	{% if line_array[1] == "!text" %}
 		<pre>	This is some text!</pre>
 	{% endif %}
-	{% if line_array[0] == "!image" %}
+	{% if line_array[1] == "!image" %}
 		<pre>	This is an image!</pre>
 	{% endif %}
 {% endfor %}
