@@ -4,60 +4,46 @@ layout: default
 
 {% assign entire_content = page.content %}
 {% assign content_array = entire_content | newline_to_br | strip_newlines | split: "<br /><br />" %}
----
-<p>Entire content is:</p>
+<h1>Entire content is:</h1>
 <pre>{{ entire_content }}</pre>
-<br>
 ---
-<p>Content array is:</p>
+<h1>Content array is:</h1>
 <pre>{{ content_array }}</pre>
-<br>
 ---
-<p>Each item is:</p>
+<h1>Each item is:</h1>
 {% for line in content_array %}
-	<pre>	- {{ line | strip }}</pre>
+	<pre>- {{ line | strip }}</pre>
 {% endfor %}
-<br>
 ---
-<p>First item is:</p>
+<h1>First item is:</h1>
 <pre>{{ content_array[0] }}</pre>
-<br>
 ---
-<p>Second item is:</p>
+<h1>Second item is:</h1>
 <pre>{{ content_array[1] }}</pre>
-<br>
 ---
-<p>Third item is:</p>
+<h1>Third item is:</h1>
 <pre>{{ content_array[2] }}</pre>
-<br>
 ---
-<p>Fourth item is:</p>
+<h1>Fourth item is:</h1>
 <pre>{{ content_array[3] }}</pre>
-<br>
 ---
-<p>Fifth item is:</p>
+<h1>Fifth item is:</h1>
 <pre>{{ content_array[4] }}</pre>
-<br>
 ---
-<p>Sixth item is:</p>
+<h1>Sixth item is:</h1>
 <pre>{{ content_array[5] }}</pre>
-<br>
 ---
-<p>Seventh item is:</p>
+<h1>Seventh item is:</h1>
 <pre>{{ content_array[6] }}</pre>
-<br>
 ---
-<p>Eighth item is:</p>
+<h1>Eighth item is:</h1>
 <pre>{{ content_array[7] }}</pre>
-<br>
 ---
-<p>Ninth item is:</p>
+<h1>Ninth item is:</h1>
 <pre>{{ content_array[8] }}</pre>
-<br>
 ---
-<p>Tenth item is:</p>
+<h1>Tenth item is:</h1>
 <pre>{{ content_array[9] }}</pre>
-<br>
 ---
 <!-- {% for line in content_array %}
 	<p>- {{ line }}</p>
