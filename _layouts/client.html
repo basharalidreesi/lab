@@ -7,7 +7,7 @@ layout: default
 	<pre>***</pre>
 	{% assign item = block | split: "<br />" %}
 	{% if block contains "!linkto" %}
-		<p>This block contains a link.</p>
+		<pre>	This block contains a link.</pre>
 		{% for line in item %}
 			{% if line contains "!linkto" %}
 				{% assign link = line | remove_first: "!linkto" | remove: "<p>" | remove: "</p>" %}
@@ -20,7 +20,7 @@ layout: default
 		{% endfor %}
 	{% endif %}
 	{% if block contains "!source" %}
-		<p>This block contains a source.</p>
+		<pre>	This block contains a source.</pre>
 		{% for line in item %}
 			{% if line contains "!source" %}
 				{% assign source = line | remove_first: "!linkto" | remove: "<p>" | remove: "</p>" %}
