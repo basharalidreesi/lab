@@ -16,7 +16,7 @@ tags:
 !text This is a text card. It will have this line in it.
 
 !text This is another text card. It contains this line,
-!text along with the line below it.
+!text along with this line below it.
 
 !text This is a text card, but it should link to
 !linkto this-link
