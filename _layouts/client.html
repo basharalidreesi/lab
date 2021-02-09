@@ -24,6 +24,7 @@ layout: default
 		{% endfor %}
 		<pre>	This block contains a source, which is ({{ source[0] }})</pre>
 	{% endif %}
+	{{ declaration }}
 	{% case declaration %}
 		{% when "!text" %}
 			<pre>	This text card will link to {{ link }}</pre>
@@ -31,14 +32,7 @@ layout: default
 			<pre>	This image card will link to {{ link }}</pre>
 	{% endcase %}
 
-
-
-----
-----
-----
-
-
-	{% for line in item %}
+<!--	{% for line in item %}
 		{% if line contains "!title" %}
 			<p>{{ line | remove_first: "!title" | remove: "<p>" | remove: "</p>" }}</p>
 		{% elsif line contains "!footer" %}
@@ -48,5 +42,5 @@ layout: default
 		{% elsif block contains "!linkto" and line contains "!text" %}
 			<a href="{{ link }}"><p>{{ line | remove_first: "!text" | remove: "<p>" | remove: "</p>" }}</p></a>
 		{% endif %}
-	{% endfor %}
+	{% endfor %} -->
 {% endfor %}
