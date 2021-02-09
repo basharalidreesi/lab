@@ -14,17 +14,17 @@ layout: default
 	<pre>	Third item here is {{ block_array[2] }}</pre>
 	<pre>	Fourth item here is {{ block_array[3] }}</pre>
 	{% if block_array[0] == "!title" %}
-		<h1>This has been recognised as a <pre>title</pre> block.</h1>
+		<pre>	This has not been recognised as a title block.</pre>
 	{% elsif block_array[0] == "!footer" %}
-		<h1>This has been recognised as a <pre>footer</pre> block.</h1>
+		<pre>	This has not been recognised as a footer block.</pre>
 	{% elsif block_array[0] == "!text" %}
-		<h1>This has been recognised as a <pre>text</pre> block.</h1>
+		<pre>	This has not been recognised as a text block.</pre>
 	{% elsif block_array[0] == "!image" %}
-		<h1>This has been recognised as an <pre>image</pre> block.</h1>
+		<pre>	This has not been recognised as an image block.</pre>
 	{% elsif block_array[0] == "!embed" %}
-		<h1>This has been recognised as an <pre>embed</pre> block.</h1>
+		<pre>	This has not been recognised as an embed block.</pre>
 	{% else %}
-		<h1>This has not been recognised as any known type of block.</h1>
+		<pre>	This has not been recognised as any known type of block.</pre>
 	{% endif %}
 {% endfor %}
 ---
