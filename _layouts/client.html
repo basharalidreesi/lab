@@ -2,24 +2,20 @@
 layout: default
 ---
 
-{% assign entire_content = page.content %}
-{% assign content_array = entire_content | newline_to_br | strip_newlines | split: "<br /><br />" %}
-<h1>Each block is:</h1>
+{% assign content_array = page.content | newline_to_br | strip_newlines | split: "<br /><br />" %}
 {% for block in content_array %}
----
-	{% assign block_array = block | split: "<br />" %}
-	{% assign item_array = block_array | split: "<br />" %}
-	{% for item in item_array %}
-		{% if item contains "<p>!subtitle" %}
-			<pre>	This subtitle reads: {{ item | remove_first: "!subtitle" | strip_html | strip }}</pre>
-		{% endif %}
-		---
+***
+	{% assign item = block | split: "<br />" %}
+	{% for line in item %}
+		{{ line}}
 	{% endfor %}
-	<!-- <pre><strong>{{ block }}</strong></pre>
+{% endfor %}
+<!--
+	<pre><strong>{{ block }}</strong></pre>
 	<pre>	First item is {{ block_array[0] }}</pre>
 	<pre>	Second item is {{ block_array[1] }}</pre>
 	<pre>	Third item is {{ block_array[2] }}</pre>
-	<pre>	Fourth item is {{ block_array[3] }}</pre> -->
+	<pre>	Fourth item is {{ block_array[3] }}</pre>
 	{% if block_array[0] contains "<p>!subtitle" %}
 		<pre>	This has been recognised as a subtitle block and will be appended to the title card.</pre>
 		<pre>	It reads: {{ block_array[0] | remove_first: "!subtitle" | strip_html | strip }}</pre>
