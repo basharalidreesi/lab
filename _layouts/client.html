@@ -4,13 +4,15 @@ layout: default
 
 {% assign content_array = page.content | newline_to_br | strip_newlines | split: "<br /><br />" %}
 {% for block in content_array %}
-	<pre>*** Begin Card ***</pre>
+	<pre>***</pre>
 	{% assign item = block | split: "<br />" %}
 	{% for line in item %}
 		{% if line contains "!title" %}
 			<p>{{ line | remove_first: "!title" | remove: "<p>" | remove: "</p>" }}</p>
 		{% elsif line contains "!footer" %}
 			<p>{{ line | remove_first: "!footer" | remove: "<p>" | remove: "</p>" }}</p>
+		{% elsif line contains "!text" %}
+			<p>{{ line | remove_first: "!text" | remove: "<p>" | remove: "</p>" }}</p>
 		{% endif %}
 	{% endfor %}
 {% endfor %}
