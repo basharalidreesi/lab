@@ -6,7 +6,7 @@ layout: default
 {% for block in content_array %}
 	<pre>***</pre>
 	{% assign item = block | split: "<br />" %}
-	{% assign pre_declaration = item | split: " " %}
+	{% assign pre_declaration = item | split: '"' %}
 	{% assign declaration = pre_declaration[1] %}
 	{% if block contains "!linkto" %}
 		{% for line in item %}
