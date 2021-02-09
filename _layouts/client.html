@@ -18,8 +18,9 @@ layout: default
 	{% elsif line_array[0] == "!text" %}
 		{% if line_array[1] == "!linkto" %}
 			<pre>	This is recognised as some text with a link!</pre>
+		{% else %}
+			<pre>	This is recognised as some text!</pre>
 		{% endif %}
-		<pre>	This is recognised as some text!</pre>
 	{% elsif line_array[0] == "!image" %}
 		<pre>	This is recognised as an image!</pre>
 	{% else %}
