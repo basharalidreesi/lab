@@ -4,7 +4,7 @@ layout: default
 
 {% assign content_array = page.content | newline_to_br | strip_newlines | split: "<br /><br />" %}
 {% for block in content_array %}
-	<pre>***</pre>
+	<pre>*** Begin Card ***</pre>
 	{% assign item = block | split: "<br />" %}
 	{% for line in item %}
 		{% if line contains "!title" %}
