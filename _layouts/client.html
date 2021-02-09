@@ -7,41 +7,41 @@ This is written in client.html
 {% assign entire_content = page.content %}
 {% assign content_array = entire_content | replace: "    ", " " | replace: "  ", " " | strip_html | newline_to_br | strip_newlines | replace: "<br /><br />", "<br />" | split: "<br />" %}
 <p>Entire content is:</p>
-<code>{{ entire_content }}</code>
+<p>{{ entire_content }}</p>
 <br>
 <p>Content array is:</p>
-<code>{{ content_array }}</code>
+<p>{{ content_array }}</p>
 <br>
 <p>Array position 0 is:</p>
-<code>{{ content_array[0] }}</code>
+<p>{{ content_array[0] }}</p>
 <br>
 <p>Array position 1 is:</p>
-<code>{{ content_array[1] }}</code>
+<p>{{ content_array[1] }}</p>
 <br>
 <p>Array position 2 is:</p>
-<code>{{ content_array[2] }}</code>
+<p>{{ content_array[2] }}</p>
 <br>
 <p>Array position 3 is:</p>
-<code>{{ content_array[3] }}</code>
+<p>{{ content_array[3] }}</p>
 <br>
 <p>Array position 4 is:</p>
-<code>{{ content_array[4] }}</code>
+<p>{{ content_array[4] }}</p>
 <br>
 <p>Array position 5 is:</p>
-<code>{{ content_array[5] }}</code>
+<p>{{ content_array[5] }}</p>
 <br>
 <p>Array position 6 is:</p>
-<code>{{ content_array[6] }}</code>
+<p>{{ content_array[6] }}</p>
 <br>
 <p>Array position 7 is:</p>
-<code>{{ content_array[7] }}</code>
+<p>{{ content_array[7] }}</p>
 <br>
 <p>Array position 8 is:</p>
-<code>{{ content_array[8] }}</code>
+<p>{{ content_array[8] }}</p>
 <br>
 <p>Array position 9 is:</p>
-<code>{{ content_array[9] }}</code>
+<p>{{ content_array[9] }}</p>
 <br>
 <p>Array position 10 is:</p>
-<code>{{ content_array[10] }}</code>
+<p>{{ content_array[10] }}</p>
 <br>
