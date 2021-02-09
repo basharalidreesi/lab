@@ -7,7 +7,7 @@ layout: default
 ---
 <h1>Each block is:</h1>
 {% for block in content_array %}
-	{% assign block_array = block | split: "<br />" %}
+	{% assign block_array = block | split: "<br />" | compact %}
 	<pre><strong>- {{ block }}</strong></pre>
 	<pre>	First item here is {{ block_array[0] }}</pre>
 	<pre>	Second item here is {{ block_array[1] }}</pre>
@@ -23,6 +23,8 @@ layout: default
 		<h1>This has been recognised as an <pre>image</pre> block.</h1>
 	{% elsif block_array[0] == "!embed" %}
 		<h1>This has been recognised as an <pre>embed</pre> block.</h1>
+	{% else %}
+		<h1>This has not been recognised as any known type of block.</h1>
 	{% endif %}
 {% endfor %}
 ---
