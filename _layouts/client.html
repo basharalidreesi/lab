@@ -12,11 +12,23 @@ layout: default
 			{% if line contains "!linkto" %}
 				{% assign link = line | remove_first: "!linkto" | remove: "<p>" | remove: "</p>" %}
 				<a href="{{ link }}">
-				   {{ block }}
+					{% include conditionals.html %}
 				</a>
 			{% endif %}
 		{% endfor %}
 	{% endif %}
+	{% if block contains "!source" %}
+		<p>This block contains a source.</p>
+		{% for line in item %}
+			{% if line contains "!source" %}
+				{% assign source = line | remove_first: "!linkto" | remove: "<p>" | remove: "</p>" %}
+				{% include conditionals.html %}
+			{% endif %}
+		{% endfor %}
+	{% endif %}
+
+
+
 	{% for line in item %}
 		{% if line contains "!title" %}
 			<p>{{ line | remove_first: "!title" | remove: "<p>" | remove: "</p>" }}</p>
