@@ -78,7 +78,7 @@ html {
 	font-size: 1.5em;
 }
 .--text_styling_3 {
-	font-size: 2em;
+	font-size: 1.5em;
 }
 .--padding_bottom_universal_answer_single {
 	padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
