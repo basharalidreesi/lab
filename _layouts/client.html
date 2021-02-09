@@ -7,12 +7,23 @@ layout: default
 ---
 <h1>Each block is:</h1>
 {% for block in content_array %}
-	{% assign block_array = block | strip | split: "<br />" %}
-	<pre>- {{ block }}</pre>
+	{% assign block_array = block | split: "<br />" %}
+	<pre><strong>- {{ block }}</strong></pre>
 	<pre>	First item here is {{ block_array[0] }}</pre>
 	<pre>	Second item here is {{ block_array[1] }}</pre>
 	<pre>	Third item here is {{ block_array[2] }}</pre>
 	<pre>	Fourth item here is {{ block_array[3] }}</pre>
+	{% if block_array[0] == "!title" %}
+		<h1>This has been recognised as a <pre>title</pre> block.</h1>
+	{% if block_array[0] == "!footer" %}
+		<h1>This has been recognised as a <pre>footer</pre> block.</h1>
+	{% if block_array[0] == "!text" %}
+		<h1>This has been recognised as a <pre>text</pre> block.</h1>
+	{% elsif block_array[0] == "!image" %}
+		<h1>This has been recognised as an <pre>image</pre> block.</h1>
+	{% elsif block_array[0] == "!embed" %}
+		<h1>This has been recognised as an <pre>embed</pre> block.</h1>
+	{% endif %}
 {% endfor %}
 ---
 <h1>Entire content is:</h1>
