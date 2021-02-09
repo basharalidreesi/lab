@@ -22,18 +22,18 @@ tags:
 !linkto this-link
 
 !image
+!source some-source
+
+!image
+!linkto that-link
 !source
 
 !image
-!linkto
-!source
-
-!image
-!source
+!source another-source
 !caption
 
 !image
-!linkto
+!linkto how-about-this-link
 !caption
 !source
 
