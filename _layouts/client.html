@@ -8,11 +8,11 @@ layout: default
 {% for block in content_array %}
 ---
 	{% assign block_array = block | split: "<br />" %}
-	<pre><strong>{{ block | remove: "<p>" | remove: "</p>" }}</strong></pre>
-	<pre>	First item here is {{ block_array[0] }}</pre>
-	<pre>	Second item here is {{ block_array[1] }}</pre>
-	<pre>	Third item here is {{ block_array[2] }}</pre>
-	<pre>	Fourth item here is {{ block_array[3] }}</pre>
+	<pre><strong>{{ block }}</strong></pre>
+	<pre>	First item here is {{ block_array[0] | remove: "<p>" | remove: "</p>" }}</pre>
+	<pre>	Second item here is {{ block_array[1] | remove: "<p>" | remove: "</p>" }}</pre>
+	<pre>	Third item here is {{ block_array[2] | remove: "<p>" | remove: "</p>" }}</pre>
+	<pre>	Fourth item here is {{ block_array[3] | remove: "<p>" | remove: "</p>" }}</pre>
 	{% if block_array[0] == "<p>!title</p>" or block_array[0] == "<p>!title" %}
 		<pre>	This has been recognised as a title block.</pre>
 	{% elsif block_array[0] == "<p>!footer</p>" or block_array[0] == "<p>!footer" %}
