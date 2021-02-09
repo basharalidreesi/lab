@@ -12,7 +12,7 @@ layout: default
 				{% assign link = line | remove_first: "!linkto" | remove: "<p>" | remove: "</p>" | strip %}
 			{% endif %}
 		{% endfor %}
-		<pre>	This block contains a link, which is {{ link }}</pre>
+		<pre>	This block contains a link, which is ({{ link }})</pre>
 	{% endif %}
 	{% if block contains "!source" %}
 		<pre>	This block contains a source.</pre>
