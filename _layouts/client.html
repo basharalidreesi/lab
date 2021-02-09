@@ -20,7 +20,7 @@ layout: default
 				{% assign source = line | remove_first: "!source" | strip_html %}
 			{% endif %}
 		{% endfor %}
-		<pre>	This block contains a source, which is ({{ source[0] }})</pre>
+		<pre>	This block contains a source, which is ({{ source }})</pre>
 	{% endif %}
 
 
