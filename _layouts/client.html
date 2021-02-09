@@ -13,15 +13,15 @@ layout: default
 	<pre>	Second item here is {{ block_array[1] }}</pre>
 	<pre>	Third item here is {{ block_array[2] }}</pre>
 	<pre>	Fourth item here is {{ block_array[3] }}</pre>
-	{% if block_array[0] == "<p>!title</p>" %}
+	{% if block_array[0] == "<p>!title</p>" or block_array[0] == "<p>!title" %}
 		<pre>	This has been recognised as a title block.</pre>
-	{% elsif block_array[0] == "<p>!footer</p>" %}
+	{% elsif block_array[0] == "<p>!footer</p>" or block_array[0] == "<p>!footer" %}
 		<pre>	This has been recognised as a footer block.</pre>
-	{% elsif block_array[0] == "<p>!text</p>" %}
+	{% elsif block_array[0] == "<p>!text</p>" or block_array[0] == "<p>!text" %}
 		<pre>	This has been recognised as a text block.</pre>
-	{% elsif block_array[0] == "<p>!image</p>" %}
+	{% elsif block_array[0] == "<p>!image</p>" or block_array[0] == "<p>!image" %}
 		<pre>	This has been recognised as an image block.</pre>
-	{% elsif block_array[0] == "<p>!embed</p>" %}
+	{% elsif block_array[0] == "<p>!embed</p>" or block_array[0] == "<p>!embed" %}
 		<pre>	This has been recognised as an embed block.</pre>
 	{% else %}
 		<pre>	This has not been recognised as any known type of block.</pre>
