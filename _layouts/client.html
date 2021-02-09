@@ -7,7 +7,7 @@ layout: default
 ---
 <h1>Each block is:</h1>
 {% for block in content_array %}
-	{% assign block_array = block | split: "<br />" | remove_first: "<br />" %}
+	{% assign block_array = block | split: "<br />" %}
 	<pre><strong>- {{ block }}</strong></pre>
 	<pre>	First item here is {{ block_array[0] }}</pre>
 	<pre>	Second item here is {{ block_array[1] }}</pre>
