@@ -12,9 +12,9 @@ layout: default
 		{% elsif line contains "!footer" %}
 			<p>{{ line | remove_first: "!footer" | remove: "<p>" | remove: "</p>" }}</p>
 		{% elsif line contains "!text" %}
-			<p>{{ line | remove_first: "!text" | remove: "<p>" | remove: "</p>" }}</p>
+			<p><a href="{{ link }}">{{ line | remove_first: "!text" | remove: "<p>" | remove: "</p>" }}</a></p>
 		{% elsif line contains "!linkto" %}
-			<p>{{ line | remove_first: "!linkto" | remove: "<p>" | remove: "</p>" }}</p>
+			{% assign link = line | remove_first: "!linkto" | remove: "<p>" | remove: "</p>" %}
 		{% endif %}
 	{% endfor %}
 {% endfor %}
