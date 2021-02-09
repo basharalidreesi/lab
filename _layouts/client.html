@@ -7,17 +7,12 @@ layout: default
 	<pre>***</pre>
 	{% assign item = block | split: "<br />" %}
 	{% if block contains "!linkto" %}
-		<pre>	This block contains a link.</pre>
 		{% for line in item %}
 			{% if line contains "!linkto" %}
 				{% assign link = line | remove_first: "!linkto" | remove: "<p>" | remove: "</p>" %}
-				<a href="{{ link }}">
-					{% if line contains "!text" %}
-						<p>{{ line | remove_first: "!text" | remove: "<p>" | remove: "</p>" }}</p>
-					{% endif %}
-				</a>
 			{% endif %}
 		{% endfor %}
+		<pre>	This block contains a link, which is {{ link }}</pre>
 	{% endif %}
 	{% if block contains "!source" %}
 		<pre>	This block contains a source.</pre>
