@@ -5,7 +5,7 @@ tags:
 - tag
 ---
 
-!title Very special title
+!subtitle Very special title
 
 !footer  
 
