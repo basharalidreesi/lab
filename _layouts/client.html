@@ -6,8 +6,9 @@ layout: default
 {% for block in content_array %}
 	<pre>***</pre>
 	{% assign item = block | split: "<br />" %}
-	{% assign pre_declaration = item | split: '"' %}
-	{% assign declaration = pre_declaration[1] | split: " " %}
+	{% assign pre_pre_declaration = item | split: '"' %}
+	{% assign pre_declaration = pre_declaration[1] | split: " " %}
+	{% assign declaration = pre_declaration[0] %}
 	{% if block contains "!linkto" %}
 		{% for line in item %}
 			{% if line contains "!linkto" %}
@@ -24,8 +25,8 @@ layout: default
 		{% endfor %}
 		<pre>	This block contains a source, which is ({{ source[0] }})</pre>
 	{% endif %}
-	{{ declaration[0] }}
-	{% case declaration.first %}
+	{{ declaration }}
+	{% case declaration %}
 		{% when "!text" %}
 			<pre>	This text card will link to {{ link }}</pre>
 		{% when "!image" %}
