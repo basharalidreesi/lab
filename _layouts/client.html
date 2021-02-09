@@ -7,9 +7,6 @@ layout: default
 <p>Entire content is:</p>
 <p>{{ entire_content }}</p>
 <br>
-<p>Content array is:</p>
-<p>{{ content_array }}</p>
-<br>
 {% for line in content_array %}
 	<p>- {{ line }}</p>
 	{% assign line_array = line | split: " " %}
