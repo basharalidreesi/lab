@@ -15,14 +15,13 @@ layout: default
 	{% assign line_array = {{ line }} | split: " " %}
 	{% if line_array[1] == "!title" %}
 		<pre>	This is a title!</pre>
-	{% endif %}
-	{% if line_array[1] == "!footer" %}
+	{% elseif line_array[1] == "!footer" %}
 		<pre>	This is a footer!</pre>
-	{% endif %}
-	{% if line_array[1] == "!text" %}
+	{% elseif line_array[1] == "!text" %}
 		<pre>	This is some text!</pre>
-	{% endif %}
-	{% if line_array[1] == "!image" %}
+	{% elseif line_array[1] == "!image" %}
 		<pre>	This is an image!</pre>
+	{% else %}
+		<pre>	This is unrecognised.</pre>
 	{% endif %}
 {% endfor %}
