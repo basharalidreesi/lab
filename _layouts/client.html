@@ -7,7 +7,7 @@ layout: default
 	<pre>***</pre>
 	{% assign item = block | split: "<br />" %}
 	{% assign pre_declaration = item | split: " " %}
-	{% assign declaration = pre_declaration[0] %}
+	{% assign declaration = pre_declaration[1] %}
 	{% if block contains "!linkto" %}
 		{% for line in item %}
 			{% if line contains "!linkto" %}
