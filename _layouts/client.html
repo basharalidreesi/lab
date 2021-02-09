@@ -8,11 +8,14 @@ layout: default
 {% for block in content_array %}
 ---
 	{% assign block_array = block | split: "<br />" %}
-	<pre><strong>{{ block }}</strong></pre>
+	{% for item in block_array %}
+		<pre>	Contains {{ item }}</pre>
+	{% endfor %}
+	<!-- <pre><strong>{{ block }}</strong></pre>
 	<pre>	First item is {{ block_array[0] }}</pre>
 	<pre>	Second item is {{ block_array[1] }}</pre>
 	<pre>	Third item is {{ block_array[2] }}</pre>
-	<pre>	Fourth item is {{ block_array[3] }}</pre>
+	<pre>	Fourth item is {{ block_array[3] }}</pre> -->
 	{% if block_array[0] contains "<p>!subtitle" %}
 		<pre>	This has been recognised as a subtitle block and will be appended to the title card.</pre>
 		<pre>	It reads: {{ block_array[0] | remove_first: "!subtitle" | strip_html | strip }}</pre>
