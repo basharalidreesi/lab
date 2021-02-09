@@ -9,15 +9,16 @@ layout: default
 ---
 	{% assign block_array = block | split: "<br />" %}
 	<pre><strong>{{ block }}</strong></pre>
-	<pre>	First item here is {{ block_array[0] }}</pre>
-	<pre>	Second item here is {{ block_array[1] }}</pre>
-	<pre>	Third item here is {{ block_array[2] }}</pre>
-	<pre>	Fourth item here is {{ block_array[3] }}</pre>
-	{% if block_array[0] contains "<p>!title" %}
-		<pre>	This has been recognised as a title block.</pre>
-		<pre>	The title is {{ block_array[0] | remove_first: "!title" | strip_html | strip }}</pre>
-	{% elsif block_array[0] == "<p>!footer</p>" or block_array[0] == "<p>!footer" %}
-		<pre>	This has been recognised as a footer block.</pre>
+	<pre>	First item is {{ block_array[0] }}</pre>
+	<pre>	Second item is {{ block_array[1] }}</pre>
+	<pre>	Third item is {{ block_array[2] }}</pre>
+	<pre>	Fourth item is {{ block_array[3] }}</pre>
+	{% if block_array[0] contains "<p>!subtitle" %}
+		<pre>	This has been recognised as a subtitle block and will be appended to the title card.</pre>
+		<pre>	It reads: {{ block_array[0] | remove_first: "!subtitle" | strip_html | strip }}</pre>
+	{% elsif block_array[0] contains "<p>!footer" %}
+		<pre>	This has been recognised as a footer block and will be prepended to the footer card.</pre>
+		<pre>	It reads: {{ block_array[0] | remove_first: "!footer" | strip_html | strip }}</pre>
 	{% elsif block_array[0] == "<p>!text</p>" or block_array[0] == "<p>!text" %}
 		<pre>	This has been recognised as a text block.</pre>
 	{% elsif block_array[0] == "<p>!image</p>" or block_array[0] == "<p>!image" %}
