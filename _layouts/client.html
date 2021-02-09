@@ -14,12 +14,6 @@ layout: default
 				{% assign link = line | remove_first: "!linkto" | remove: "<p>" | remove: "</p>" | strip %}
 			{% endif %}
 		{% endfor %}
-		{% case declaration %}
-			{% when "!text" %}
-				<pre>	This text card will link to {{ link }}</pre>
-			{% when "!image" %}
-				<pre>	This image card will link to {{ link }}</pre>
-		{% endcase %}
 		<pre>	This block contains a link, which is ({{ link }})</pre>
 	{% endif %}
 	{% if block contains "!source" %}
@@ -30,6 +24,18 @@ layout: default
 		{% endfor %}
 		<pre>	This block contains a source, which is ({{ source[0] }})</pre>
 	{% endif %}
+	{% case declaration %}
+		{% when "!text" %}
+			<pre>	This text card will link to {{ link }}</pre>
+		{% when "!image" %}
+			<pre>	This image card will link to {{ link }}</pre>
+	{% endcase %}
+
+
+
+----
+----
+----
 
 
 	{% for line in item %}
