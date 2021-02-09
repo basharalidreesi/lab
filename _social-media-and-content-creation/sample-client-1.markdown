@@ -5,64 +5,28 @@ tags:
 - tag
 ---
 
-        
-   
-      
-
-   potato
-tomato                
-
- cherry
-
- peach                  
-
-   eggplant 
-
-pear
-
-date
-
-banana
-
-                        
- 
-
-
-
-kiwi
-
-
-
-
-
-apple
-
-
-
-end of this fucking array
-
 !title
 
-!image
+!footer
 
-!text 
+!text
 
-!image !& !linkto
-
-!text !& !linkto
-
-!image !& !caption
-
-!image !caption !linkto
+!text !linkto
 
 !text !illustrate
 
-!text ! illustrate !linkto
+!text !illustrate !linkto
+
+!image !source
+
+!image !source !linkto
+
+!image !source !caption
+
+!image !source !caption !linkto
 
 !embed !source
 
 !embed !caption !source
 
 !embed !illustrate !source
-
-!footer 
