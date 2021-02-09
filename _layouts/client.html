@@ -12,7 +12,7 @@ layout: default
 <br>
 {% for line in content_array %}
 	<p>- {{ line }}</p>
-	{% assign line_array = {{ line }} | split: " " | compact %}
+	{% assign line_array = {{ line }} | strip | split: "!&" | %}
 	{% if line_array[0] == "!title" %}
 		<pre>	This is a title!</pre>
 	{% endif %}
