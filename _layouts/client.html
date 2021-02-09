@@ -10,6 +10,7 @@ layout: default
 		{% for line in item %}
 			{% if line contains "!linkto" %}
 				<p>this is the link line</p>
+				{% assign link = line | remove_first: "!linkto" | remove: "<p>" | remove: "</p>" %}
 			{% endif %}
 		{% endfor %}
 	{% endif %}
