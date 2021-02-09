@@ -12,7 +12,7 @@ layout: default
 <br>
 <p>Each line is:</p>
 {% for line in content_array %}
-	<pre>	- {{ line }}</pre>
+	<pre>	- {{ line | strip_newlines }}</pre>
 {% endfor %}
 <!-- {% for line in content_array %}
 	<p>- {{ line }}</p>
