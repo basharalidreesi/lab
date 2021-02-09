@@ -10,10 +10,16 @@ layout: default
 <p>Content array is:</p>
 <pre>{{ content_array }}</pre>
 <br>
-<p>Each line is:</p>
+<p>Each item is:</p>
 {% for line in content_array %}
 	<pre>	- {{ line | strip }}</pre>
 {% endfor %}
+<br>
+<p>First item is:</p>
+<pre>{{ content_array[0] }}</pre>
+<br>
+<p>Second item is:</p>
+<pre>{{ content_array[1] }}</pre>
 <!-- {% for line in content_array %}
 	<p>- {{ line }}</p>
 	{% assign line_array = line | split: " " %}
