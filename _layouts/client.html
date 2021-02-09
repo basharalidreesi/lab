@@ -11,6 +11,9 @@ layout: default
 		{% for line in item %}
 			{% if line contains "!linkto" %}
 				{% assign link = line | remove_first: "!linkto" | remove: "<p>" | remove: "</p>" %}
+				<a href="{{ link }}">
+				   {{ block }}
+				</a>
 			{% endif %}
 		{% endfor %}
 	{% endif %}
