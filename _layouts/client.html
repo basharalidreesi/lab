@@ -4,9 +4,11 @@ layout: default
 
 {% assign content_array = page.content | newline_to_br | strip_newlines | split: "<br /><br />" %}
 {% for block in content_array %}
-<pre>***</pre>
+	<pre>***</pre>
 	{% assign item = block | split: "<br />" %}
 	{% for line in item %}
-		<p>{{ line }}</p>
+		{% if line contains "<p>!title" %}
+			<p>The following will be added to the title card: {{ line | remove_first: "!title" }}</p>
+		{% endif %}
 	{% endfor %}
 {% endfor %}
