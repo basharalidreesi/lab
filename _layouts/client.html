@@ -12,42 +12,17 @@ layout: default
 <br>
 {% for line in content_array %}
 	<p>- {{ line }}</p>
+	{% assign line_array = {{ line }} | split: " " %}
+	{% if line_array[0] == "!title" %}
+		<pre>	This is a title!</pre>
+	{% endif %}
+	{% if line_array[0] == "!footer" %}
+		<pre>	This is a footer!</pre>
+	{% endif %}
+	{% if line_array[0] == "!text" %}
+		<pre>	This is some text!</pre>
+	{% endif %}
+	{% if line_array[0] == "!image" %}
+		<pre>	This is an image!</pre>
+	{% endif %}
 {% endfor %}
-
-
-
-
-
-<p>Array position 0 is:</p>
-<p>{{ content_array[0] }}</p>
-<br>
-<p>Array position 1 is:</p>
-<p>{{ content_array[1] }}</p>
-<br>
-<p>Array position 2 is:</p>
-<p>{{ content_array[2] }}</p>
-<br>
-<p>Array position 3 is:</p>
-<p>{{ content_array[3] }}</p>
-<br>
-<p>Array position 4 is:</p>
-<p>{{ content_array[4] }}</p>
-<br>
-<p>Array position 5 is:</p>
-<p>{{ content_array[5] }}</p>
-<br>
-<p>Array position 6 is:</p>
-<p>{{ content_array[6] }}</p>
-<br>
-<p>Array position 7 is:</p>
-<p>{{ content_array[7] }}</p>
-<br>
-<p>Array position 8 is:</p>
-<p>{{ content_array[8] }}</p>
-<br>
-<p>Array position 9 is:</p>
-<p>{{ content_array[9] }}</p>
-<br>
-<p>Array position 10 is:</p>
-<p>{{ content_array[10] }}</p>
-<br>
