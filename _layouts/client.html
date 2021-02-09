@@ -13,7 +13,7 @@ layout: default
 	<pre>	Second item here is {{ block_array[1] }}</pre>
 	<pre>	Third item here is {{ block_array[2] }}</pre>
 	<pre>	Fourth item here is {{ block_array[3] }}</pre>
-	{% if block_array[0] | strip_html == "!title" %}
+	{% if block_array[0] == "<p>!title</p>" %}
 		<pre>	This has been recognised as a title block.</pre>
 	{% elsif block_array[0] == "!footer" %}
 		<pre>	This has been recognised as a footer block.</pre>
