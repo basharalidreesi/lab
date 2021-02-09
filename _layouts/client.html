@@ -5,9 +5,11 @@ layout: default
 {% assign entire_content = page.content %}
 {% assign content_array = entire_content | newline_to_br | strip_newlines | replace: "<br /><br />", "<br />" | split: "<br />" %}
 <p>Entire content is:</p>
-<p>{{ entire_content }}</p>
+<pre>{{ entire_content }}</pre>
 <br>
-{% for line in content_array %}
+<p>Content array is:</p>
+<pre>{{ content_array }}</pre>
+<!-- {% for line in content_array %}
 	<p>- {{ line }}</p>
 	{% assign line_array = line | split: " " %}
 	<pre>	{{ line_array }}</pre>
@@ -26,4 +28,4 @@ layout: default
 	{% else %}
 		<pre>	This is unrecognised.</pre>
 	{% endif %}
-{% endfor %}
+{% endfor %} -->
