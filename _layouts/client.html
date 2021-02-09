@@ -8,10 +8,12 @@ layout: default
 {% for block in content_array %}
 ---
 	{% assign block_array = block | split: "<br />" %}
-	{% for item in block_array %}
+	{% assign item_array = block_array | split: "<br />" %}
+	{% for item in item_array %}
 		{% if item contains "<p>!subtitle" %}
 			<pre>	This subtitle reads: {{ item | remove_first: "!subtitle" | strip_html | strip }}</pre>
 		{% endif %}
+		---
 	{% endfor %}
 	<!-- <pre><strong>{{ block }}</strong></pre>
 	<pre>	First item is {{ block_array[0] }}</pre>
