@@ -2,8 +2,6 @@
 layout: default
 ---
 
-This is written in client.html
-<br>
 {% assign entire_content = page.content %}
 {% assign content_array = entire_content | strip_html | newline_to_br | strip_newlines | replace: "<br /><br />", "<br />" | split: "<br />" %}
 <p>Entire content is:</p>
@@ -12,6 +10,14 @@ This is written in client.html
 <p>Content array is:</p>
 <p>{{ content_array }}</p>
 <br>
+{% for line in content_array %}
+	<p>- {{ item }}</p>
+{% endfor %}
+
+
+
+
+
 <p>Array position 0 is:</p>
 <p>{{ content_array[0] }}</p>
 <br>
