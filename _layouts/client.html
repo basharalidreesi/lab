@@ -7,6 +7,6 @@ layout: default
 <pre>***</pre>
 	{% assign item = block | split: "<br />" %}
 	{% for line in item %}
-		{{ line }}
+		<p>{{ line }}</p>
 	{% endfor %}
 {% endfor %}
