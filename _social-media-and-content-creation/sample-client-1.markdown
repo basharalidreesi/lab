@@ -41,4 +41,28 @@ apple
 
 end of this fucking array
 
-!picture
+!title
+
+!image
+
+!text 
+
+!image !linkto
+
+!text !linkto
+
+!image !caption
+
+!image !caption !linkto
+
+!text !illustrate
+
+!text ! illustrate !linkto
+
+!embed !source
+
+!embed !caption !source
+
+!embed !illustrate !source
+
+!footer 
