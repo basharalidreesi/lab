@@ -3,12 +3,17 @@ layout: default
 ---
 
 {% assign entire_content = page.content %}
-{% assign content_array = entire_content | newline_to_br | strip_newlines | replace: "<br /><br />", "<br />" | split: "<br />" %}
+{% assign content_array = entire_content %}
 <p>Entire content is:</p>
 <pre>{{ entire_content }}</pre>
 <br>
 <p>Content array is:</p>
 <pre>{{ content_array }}</pre>
+<br>
+<p>Each line is:</p>
+{% for line in content_array %}
+	<pre>	- {{ line }}</pre>
+{% endfor %}
 <!-- {% for line in content_array %}
 	<p>- {{ line }}</p>
 	{% assign line_array = line | split: " " %}
