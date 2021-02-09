@@ -5,9 +5,9 @@ tags:
 - tag
 ---
 
-!subtitle Very special title
+!subtitle This is a sample subtitle
 
-!footer  
+!footer   Some sample credits here
 
 !text   
 
