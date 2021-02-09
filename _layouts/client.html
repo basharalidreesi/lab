@@ -24,8 +24,8 @@ layout: default
 		{% endfor %}
 		<pre>	This block contains a source, which is ({{ source[0] }})</pre>
 	{% endif %}
-	{{ declaration }}
-	{% case declaration %}
+	{{ declaration[0] }}
+	{% case declaration.first %}
 		{% when "!text" %}
 			<pre>	This text card will link to {{ link }}</pre>
 		{% when "!image" %}
