@@ -13,6 +13,7 @@ layout: default
 {% for line in content_array %}
 	<p>- {{ line }}</p>
 	{% assign line_array = {{ line }} | split: " " %}
+	<pre>	{{ line_array }}</pre>
 	{% if line_array[0] == "!title" %}
 		<pre>	This is recognised as a title!</pre>
 	{% elsif line_array[0] == "!footer" %}
