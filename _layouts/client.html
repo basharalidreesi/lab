@@ -6,14 +6,15 @@ layout: default
 {% for block in content_array %}
 	<pre>***</pre>
 	{% assign item = block | split: "<br />" %}
-	{% assign declaration = item | split: " " %}
+	{% assign pre_declaration = item | split: " " %}
+	{% assign declaration = pre_declaration[0] %}
 	{% if block contains "!linkto" %}
 		{% for line in item %}
 			{% if line contains "!linkto" %}
 				{% assign link = line | remove_first: "!linkto" | remove: "<p>" | remove: "</p>" | strip %}
 			{% endif %}
 		{% endfor %}
-		{% case declaration[0] %}
+		{% case declaration %}
 			{% when "!text" %}
 				<pre>	This text card will link to {{ link }}</pre>
 			{% when "!image" %}
