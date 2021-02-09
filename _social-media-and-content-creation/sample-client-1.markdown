@@ -19,7 +19,7 @@ tags:
 !text along with the line below it.
 
 !text This is a text card, but it should link to
-!linkto this link
+!linkto this-link
 
 !image
 !source
