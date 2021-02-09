@@ -9,12 +9,11 @@ layout: default
 ---
 	{% assign block_array = block | split: "<br />" %}
 	<pre><strong>{{ block }}</strong></pre>
-	<pre>	Debug first is {{ block_array.first }}</pre>
 	<pre>	First item here is {{ block_array[0] }}</pre>
 	<pre>	Second item here is {{ block_array[1] }}</pre>
 	<pre>	Third item here is {{ block_array[2] }}</pre>
 	<pre>	Fourth item here is {{ block_array[3] }}</pre>
-	{% if block_array[0] == "!title" %}
+	{% if block_array[0] == "\n !title" %}
 		<pre>	This has been recognised as a title block.</pre>
 	{% elsif block_array[0] == "!footer" %}
 		<pre>	This has been recognised as a footer block.</pre>
