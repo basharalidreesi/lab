@@ -15,12 +15,11 @@ layout: default
 		<pre>	This block contains a link, which is ({{ link }})</pre>
 	{% endif %}
 	{% if block contains "!source" %}
-		<pre>	This block contains a source.</pre>
 		{% for line in item %}
 			{% if line contains "!source" %}
-				{% assign source = line | remove_first: "!linkto" | remove: "<p>" | remove: "</p>" %}
-				{% include conditionals.html %}
+				{% assign source = line | remove_first: "!linkto" | remove: "<p>" | remove: "</p>" | strip %}
 			{% endif %}
+		<pre>	This block contains a source, which is ({{ source }})</pre>
 		{% endfor %}
 	{% endif %}
 
