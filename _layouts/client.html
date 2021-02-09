@@ -7,9 +7,10 @@ layout: default
 <pre>***</pre>
 	{% assign item = block | split: "<br />" %}
 	{% for line in item %}
-		{{ line}}
+		{{ line }}
 	{% endfor %}
 {% endfor %}
+
 <!--
 	<pre><strong>{{ block }}</strong></pre>
 	<pre>	First item is {{ block_array[0] }}</pre>
