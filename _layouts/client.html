@@ -9,7 +9,7 @@ layout: default
 	{% if block contains "!linkto" %}
 		{% for line in item %}
 			{% if line contains "!linkto" %}
-				{% assign link = line | remove_first: "!linkto" | remove: "<p>" | remove: "</p>" %}
+				{% assign link = line | remove_first: "!linkto" | remove: "<p>" | remove: "</p>" | strip %}
 			{% endif %}
 		{% endfor %}
 		<pre>	This block contains a link, which is {{ link }}</pre>
