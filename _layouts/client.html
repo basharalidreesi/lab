@@ -13,6 +13,10 @@ layout: default
 <h1>Each block is:</h1>
 {% for block in content_array %}
 	<pre>- {{ block | strip }}</pre>
+	<pre>	First item here is {{ block[0] }}</pre>
+	<pre>	Second item here is {{ block[1] }}</pre>
+	<pre>	Third item here is {{ block[2] }}</pre>
+	<pre>	Fourth item here is {{ block[3] }}</pre>
 {% endfor %}
 ---
 <h1>First block is:</h1>
@@ -51,6 +55,12 @@ layout: default
 <h1>Twelfth block is:</h1>
 <pre>{{ content_array[11] }}</pre>
 ---
+
+
+
+
+
+
 <!-- {% for line in content_array %}
 	<p>- {{ line }}</p>
 	{% assign line_array = line | split: " " %}
