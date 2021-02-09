@@ -7,7 +7,9 @@ layout: default
 	<pre>***</pre>
 	{% assign item = block | split: "<br />" %}
 	{% if block contains "!linkto" %}
-			<p>this block contains a link</p>
+		{% for link_line in item where item contains "!linkto" %}
+			<p>this is the link line</p>
+		{% endfor %}
 	{% endif %}
 	{% for line in item %}
 		{% if line contains "!title" %}
