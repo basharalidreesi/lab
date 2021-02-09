@@ -3,7 +3,7 @@ layout: default
 ---
 
 {% assign entire_content = page.content %}
-{% assign content_array = entire_content | strip_html | newline_to_br | strip_newlines | replace: "<br /><br />", "<br />" | split: "<br />" %}
+{% assign content_array = entire_content | newline_to_br | strip_newlines | replace: "<br /><br />", "<br />" | split: "<br />" %}
 <p>Entire content is:</p>
 <p>{{ entire_content }}</p>
 <br>
