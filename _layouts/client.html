@@ -17,7 +17,7 @@ layout: default
 	{% if block contains "!source" %}
 		{% for line in item %}
 			{% if line contains "!source" %}
-				{% assign source = line | remove_first: "!source" | remove: "<p>" | remove: "</p>" | remove: "<img src=&quot;" | split: "&quot; alt=&quot;" | strip %}
+				{% assign source = line | remove_first: "!source" | strip_html %}
 			{% endif %}
 		{% endfor %}
 		<pre>	This block contains a source, which is ({{ source[0] }})</pre>
