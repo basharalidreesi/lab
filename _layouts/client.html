@@ -8,7 +8,7 @@ layout: default
 	{% assign item = block | split: "<br />" %}
 	{% for line in item %}
 		{% if line contains "!title" %}
-			<p>The following will be added to the title card: {{ line | remove_first: "!title" }}</p>
+			<p>The following will be added to the title card: {{ line | remove_first: "!title" | remove: "<p>" | remove: "</p>" }}</p>
 		{% endif %}
 	{% endfor %}
 {% endfor %}
