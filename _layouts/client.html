@@ -25,7 +25,7 @@ layout: default
 	{% if block contains "!source" and block contains "!embed" %}
 		{% for line in item %}
 			{% if line contains "!source" %}
-				{% assign source = line | remove_first: "!source" | replace: "<p>", "<div>" | replace: "</p>", "</div>" %}
+				{% assign source = line | remove_first: "!source" | remove: "<iframe" | remove: "></iframe>" %}
 			{% endif %}
 		{% endfor %}
 	{% endif %}
@@ -67,7 +67,7 @@ layout: default
 			{% endif %}
 		{% when "!embed" %}
 			{% if block contains "!source" %}
-				{{ source }}
+				<iframe>{{ source }}</iframe>
 			{% endif %}
 	{% endcase %}
 {% endfor %}
