@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class="content_container-gallery_wrapper">
+<div class="content_container-cascade_wrapper">
 	{% assign page_content = page.content | newline_to_br | strip_newlines | split: "<br /><br />" %}
 	{% for block in page_content %}
 		{% assign item = block | split: "<br />" %}
@@ -36,22 +36,19 @@ layout: default
 				{% endif %}
 			{% endfor %}
 		{% endif %}
+		<header class="cascade_wrapper-title_card">
+			<h1>{{ page.title }}</h1>
+			{% case declaration %}
+				{% when "!title" %}
+					{% for line in item %}
+						<h2>{{ line | remove_first: "!title" | remove: "<p>" | remove: "</p>" }}</h2>
+					{% endfor %}
+			{% endcase %}
+		</header>
 		{% case declaration %}
-			{% when "!title" %}
-				<div class="classname">
-					{% for line in item %}
-							<p>{{ line | remove_first: "!title" | remove: "<p>" | remove: "</p>" }}</p>
-					{% endfor %}
-				</div>
-			{% when "!footer" %}
-				<div class="classname">
-					{% for line in item %}
-						<p>{{ line | remove_first: "!footer" | remove: "<p>" | remove: "</p>" }}</p>
-					{% endfor %}
-				</div>
 			{% when "!text" %}
 				{% if block contains "!linkto" %}
-					<div class="classname">
+					<div class="cascade_wrapper-anchored_text_card">
 						<a href="{{ link }}">
 							{% for line in item %}
 								<p>{{ line | remove_first: "!text" | remove: "<p>" | remove: "</p>" | remove: "!linkto" | remove: link | strip }}</p>
@@ -59,7 +56,7 @@ layout: default
 						</a>
 					</div>
 				{% else %}
-					<div class="classname">
+					<div class="cascade_wrapper-text_card">
 						{% for line in item %}
 								<p>{{ line | remove_first: "!text" | remove: "<p>" | remove: "</p>" }}</p>
 						{% endfor %}
@@ -67,7 +64,7 @@ layout: default
 				{% endif %}
 			{% when "!image" %}
 				{% if block contains "!linkto" %}
-					<figure class="gallery_wrapper-gallery_graphic_card">
+					<figure class="cascade_wrapper-anchored_graphic_card">
 						{% if block contains "!caption" %}
 							<figcaption>
 								{% for line in item %}
@@ -78,11 +75,11 @@ layout: default
 							</figcaption>
 						{% endif %}
 						<a href="{{ link }}">
-							<img class="gallery_graphic_card-gallery_graphic_card_graphic" src="{{ source[0] }}">
+							<img class="graphic_card-image" src="{{ source[0] }}">
 						</a>
 					</figure>
 				{% else %}
-					<figure class="gallery_wrapper-gallery_graphic_card">
+					<figure class="cascade_wrapper-graphic_card">
 						{% if block contains "!caption" %}
 							<figcaption>
 								{% for line in item %}
@@ -92,30 +89,45 @@ layout: default
 								{% endfor %}
 							</figcaption>
 						{% endif %}		
-						<img class="gallery_graphic_card-gallery_graphic_card_graphic" src="{{ source[0] }}">
+						<img class="graphic_card-image" src="{{ source[0] }}">
 					</figure>
 				{% endif %}
 			{% when "!embedyoutube" %}
 				{% if block contains "!source" %}
-					<div class="classname" style="width: 100%; height: 100%">
+					<div class="cascade_wrapper-embed_card">
 						<iframe src="https://www.youtube.com/embed/{{ source[1] | slice: 0, 11 }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</div>
 				{% endif %}
 			{% when "!embedvimeo" %}
 				{% if block contains "!source" %}
-					<div class="classname" style="width: 100%; height: 100%">
+					<div class="cascade_wrapper-embed_card">
 						<iframe src="https://player.vimeo.com/video/{{ source[1] }}?title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 					</div>
 				{% endif %}
 			{% when "!empty" %}
 				{% if block contains "!linkto" %}
-					<a href="{{ link }}">
-						<p>empty with link</p>
-					</a>
+					<div class="cascade_wrapper-anchored_empty_card">
+						<a href="{{ link }}">
+							<p>empty with link</p>
+						</a>
+					</div>
 				{% else %}
-					<p>empty</p>
+					<div class="cascade_wrapper-empty_card">
+						<a href="{{ link }}">
+							<p>empty with link</p>
+						</a>
+					</div>
 				{% endif %}
 
 		{% endcase %}
+		<footer class="cascade_wrapper-footer_card">
+			{% case declaration %}
+				{% when "!footer" %}
+					{% for line in item %}
+						<p>{{ line | remove_first: "!title" | remove: "<p>" | remove: "</p>" }}</p>
+					{% endfor %}
+			{% endcase %}
+			{% include footer.html %}
+		</footer>
 	{% endfor %}
 </div>
