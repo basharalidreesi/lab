@@ -11,7 +11,7 @@ is_for_navigation: true
 <ul class="content_container-list_page_wrapper">
 	{% assign sorted = site.social-media-and-content-creation | sort: "position" %}
 	{% for item in sorted %}
-		{% if item.is_list_item = true %}
+		{% if item.is_list_item == true %}
 			<li class="list_page_wrapper-list_page_item">
 				<a class="--anchor_styling --standard_text_styling --text_styling_3" href="{{ item.url }}">
 					{{ item.title }}
