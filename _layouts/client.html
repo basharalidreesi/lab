@@ -37,11 +37,15 @@ layout: default
 			{% endfor %}
 		{% endif %}
 		{% if block contains "!caption" %}
-			{% for line in item %}
-				{% if line contains "!caption" %}
-					<p>{{ line | remove_first: "!caption" | remove: "<p>" | remove: "</p>" }}</p>
-				{% endif %}
-			{% endfor %}
+			<figcaption>
+				{% for line in item %}
+					{% if line contains "!caption" %}
+						{% capture caption_line %}
+							{{ line | remove_first: "!caption" | remove: "<p>" | remove: "</p>" }}
+						{% endcapture %}
+					{% endif %}
+				{% endfor %}
+			</figcaption>
 		{% endif %}
 		{% case declaration %}
 			{% when "!title" %}
@@ -74,13 +78,15 @@ layout: default
 				{% endif %}
 			{% when "!image" %}
 				{% if block contains "!linkto" %}
-					<a href="{{ link }}">
-						<figure class="gallery_wrapper-gallery_graphic_card">
+					<figure class="gallery_wrapper-gallery_graphic_card">
+						{{ caption_line }}
+						<a href="{{ link }}">
 							<img src="{{ source[0] }}">
-						</figure>
-					</a>
+						</a>
+					</figure>
 				{% else %}
 					<figure class="gallery_wrapper-gallery_graphic_card">
+						{{ caption_line }}
 						<img class="gallery_graphic_card-gallery_graphic_card_graphic" src="{{ source[0] }}">
 					</figure>
 				{% endif %}
