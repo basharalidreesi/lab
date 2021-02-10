@@ -8,7 +8,7 @@ position: 0
 
 !image
 !source ![showcase_tile_graphic-03.png](/uploads/showcase_tile_graphic-03.png)
-!linkto https://google.com
+!linkto nested-test-project
 
 !image
 !source ![showcase_tile_graphic-06.png](/uploads/showcase_tile_graphic-06.png)
