@@ -12,6 +12,7 @@ position: 0
 
 !image
 !source ![showcase_tile_graphic-06.png](/uploads/showcase_tile_graphic-06.png)
+!caption Fuck
 
 !text This is a text.
 !text Another line.
