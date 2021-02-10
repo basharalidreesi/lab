@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+
 <div class="content_container-cascade_wrapper">
 	{% assign page_content = page.content | newline_to_br | strip_newlines | split: "<br /><br />" %}
 	{% for block in page_content %}
