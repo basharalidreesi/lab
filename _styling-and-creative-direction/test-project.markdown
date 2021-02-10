@@ -6,8 +6,6 @@ tags:
 position: 0
 ---
 
-{{ page.path }}
-
 !image
 !source ![showcase_tile_graphic-03.png](/uploads/showcase_tile_graphic-03.png)
 !linkto https://google.com
