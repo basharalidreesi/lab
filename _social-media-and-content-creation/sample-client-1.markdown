@@ -18,7 +18,9 @@ tags:
 !text This is another text card. It contains this line,
 !text along with this line below it.
 
-!text This is a text card, but it should link to
+!text This is yet another text card.
+!text However, it should link to
+!text Did you see it?
 !linkto this-link
 
 !image
