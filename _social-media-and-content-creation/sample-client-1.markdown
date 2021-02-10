@@ -23,6 +23,11 @@ tags:
 !text Did you see it?
 !linkto this-link
 
+!text Here is another text card.
+!linkto its-usual-place
+!text This time, the !linkto isn't in 
+
+
 !image
 !source ![Screen Shot 2021-02-04 at 19.23.27.png](/uploads/Screen%20Shot%202021-02-04%20at%2019.23.27.png)
 
