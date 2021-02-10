@@ -48,7 +48,7 @@ layout: default
 				<a href="{{ link }}">
 					{% if block contains "!caption" %}
 						{% for line in item %}
-							<p>{{ line | remove_first: "!caption" | remove: "<p>" | remove: "</p>" | remove: "!linkto" | remove: "!source" | remove: link | remove: source | strip }}</p>
+							<p>{{ line | remove_first: "!caption" | remove_first: "!image" | remove: "<p>" | remove: "</p>" | remove: "!linkto" | remove: "!source" | remove: link | remove: source | strip }}</p>
 						{% endfor %}
 					{% endif %}
 					<img src="{{ source[0] }}">
@@ -56,7 +56,7 @@ layout: default
 			{% else %}
 				{% if block contains "!caption" %}
 					{% for line in item %}
-						<p>{{ line | remove_first: "!caption" | remove: "<p>" | remove: "</p>" | remove: "!source" | remove: source | strip }}</p>
+						<p>{{ line | remove_first: "!caption" | remove_first: "!image" | remove: "<p>" | remove: "</p>" | remove: "!source" | remove: source | strip }}</p>
 					{% endfor %}
 				{% endif %}
 				<img src="{{ source[0] }}">
