@@ -34,7 +34,7 @@
 		<div class="mother_container {% if page.is_fullscreen = true %}--mother_container_min_max_height{% endif %}">
 			<nav class="mother_container-navigation_container" id="navigation_container">
 				<ul class="navigation_container-navigation_list_wrapper">
-					{% assign sorted = (site.pages | sort: "order") %}
+					{% assign sorted = site.pages | sort: "position" %}
 					{% for item in sorted %}
 						{% if item.is_for_navigation = true %}
 							<li class="navigation_list_wrapper-navigation_list_item {% if item.url == page.url %}--active_navigation_list_item{% endif %} --text_align_center">
