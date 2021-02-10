@@ -26,6 +26,7 @@ layout: default
 		{% for line in item %}
 			{% if line contains "!caption" %}
 				{% assign caption = line | remove_first: "!caption" | remove: "<p>" | remove: "</p>" | strip %}
+				{% capture html_caption %}<p>{{ caption }}</p>{% endcapture %}
 			{% endif %}
 		{% endfor %}
 	{% endif %}
