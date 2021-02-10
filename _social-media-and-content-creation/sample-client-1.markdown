@@ -36,7 +36,7 @@ tags:
 !linkto https://yahoo.com
 
 !image
-!caption
+!caption This image is captioned blablablablabla
 !source ![Screen Shot 2021-02-10 at 11.13.41.png](/uploads/Screen%20Shot%202021-02-10%20at%2011.13.41.png)
 
 !image
