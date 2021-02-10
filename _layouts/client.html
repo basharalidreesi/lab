@@ -25,8 +25,7 @@ layout: default
 	{% if block contains "!caption" %}
 		{% for line in item %}
 			{% if line contains "!caption" %}
-				{% assign caption = line | remove_first: "!caption" | remove: "<p>" | remove: "</p>" | strip %}
-				{% capture html_caption %}<p>{{ caption }}</p>{% endcapture %}
+				{% assign captioned = true %}
 			{% endif %}
 		{% endfor %}
 	{% endif %}
@@ -54,7 +53,14 @@ layout: default
 		{% when "!image" %}
 			{% if block contains "!linkto" %}
 				<a href="{{ link }}">
-					{{ html_caption }}
+					{% case captioned %}
+						{% when true %}
+							{% for line in item %}
+								<p>{{ line | remove_first: "!caption" | remove_first: "!image" | remove: "<p>" | remove: "</p>" | remove: "!linkto" | remove: "!source" | remove: link | remove: source | strip }}</p>
+							{% endfor %}
+						{% when false %}
+							<p>This image is not captioned.</p>
+					{% endcase %}
 					<img src="{{ source[0] }}">
 				</a>
 			{% else %}
