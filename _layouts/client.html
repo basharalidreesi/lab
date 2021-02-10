@@ -14,7 +14,7 @@ layout: default
 				{% assign link = line | remove_first: "!linkto" | remove: "<p>" | remove: "</p>" | strip %}
 			{% endif %}
 		{% endfor %}
-		<pre>	This block contains a link, which is ({{ link }})</pre>
+		<pre>This {{ declaration }} will link to ({{ link }})</pre>
 	{% endif %}
 	{% if block contains "!source" %}
 		{% for line in item %}
@@ -22,14 +22,11 @@ layout: default
 				{% assign source = line | remove_first: "!source" | remove: "<p>" | remove: "</p>" | remove: "<" | remove : ">" | remove: "img src=" | remove: '"' | split: " " %}
 			{% endif %}
 		{% endfor %}
-		<pre>	This block contains a source, which is ({{ source[0] }})</pre>
+		<pre>This {{ declaration }} will be sourced from ({{ source[0] }})</pre>
 	{% endif %}
-	{{ declaration }}
 	{% case declaration %}
 		{% when "!text" %}
-			<pre>	This text card will link to {{ link }}</pre>
 		{% when "!image" %}
-			<pre>	This image card will link to {{ link }}</pre>
 	{% endcase %}
 
 <!--	{% for line in item %}
