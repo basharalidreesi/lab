@@ -34,6 +34,7 @@ tags:
 !image
 !source ![Screen Shot 2021-02-10 at 11.12.30.png](/uploads/Screen%20Shot%202021-02-10%20at%2011.12.30.png)
 !linkto https://yahoo.com
+!caption test
 
 !image
 !caption This image is captioned blablablablabla
