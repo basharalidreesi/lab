@@ -5,12 +5,15 @@ collections:
   social-media-and-content-creation:
     title: Clients
     output: true
+    permalink: pretty 
   posts:
     title: Posts
     output: true
+    permalink: pretty 
   styling-and-creative-direction:
     title: Projects
     output: true
+    permalink: pretty
   uploads:
     title: Uploads
     output: true
