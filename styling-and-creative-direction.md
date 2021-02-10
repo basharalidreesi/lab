@@ -6,6 +6,7 @@ position: 1
 has_bottom_footer: true
 is_for_navigation: true
 ---
+
 {{ page.path }}
 <!-- {% include page_header.html %} -->
 <ul class="content_container-list_page_wrapper">
