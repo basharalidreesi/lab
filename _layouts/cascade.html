@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class="content_container-gallery_wrapper" id="cascade_wrapper">
+<div class="content_container-cascade_wrapper" id="cascade_wrapper">
 	{% assign image_files = site.static_files | where: "cascade_graphic", true %}
 	{% for myimage in image_files %}
 		{% assign path = myimage.path | replace: "/", " " %}
