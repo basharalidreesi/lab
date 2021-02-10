@@ -25,25 +25,19 @@ tags:
 !source ![Screen Shot 2021-02-04 at 19.23.27.png](/uploads/Screen%20Shot%202021-02-04%20at%2019.23.27.png)
 
 !image
-!linkto that-link
-!source
+!linkto https://yahoo.com
+!source ![Screen Shot 2021-02-10 at 11.12.30.png](/uploads/Screen%20Shot%202021-02-10%20at%2011.12.30.png)
 
 !image
-!source another-source
 !caption
+!source ![Screen Shot 2021-02-10 at 11.13.41.png](/uploads/Screen%20Shot%202021-02-10%20at%2011.13.41.png)
 
 !image
-!linkto how-about-this-link
 !caption
-!source
+!linkto https://google.com
+!source ![Screen Shot 2021-02-10 at 11.13.02.png](/uploads/Screen%20Shot%202021-02-10%20at%2011.13.02.png)
 
 !embed
-!source
+!source ![Screen Shot 2021-02-10 at 11.13.07.png](/uploads/Screen%20Shot%202021-02-10%20at%2011.13.07.png)
 
-!embed
-!caption
-!source
-
-!embed
-!illustrate
-!source
+!empty
