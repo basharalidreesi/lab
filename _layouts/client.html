@@ -69,9 +69,11 @@ layout: default
 				{% if block contains "!linkto" %}
 					<figure class="gallery_wrapper-gallery_graphic_card">
 						{% for line in item %}
-							{% if line contains "!caption" %}
+							{% if block contains "!caption" %}
 								<figcaption>
+								{% if line contains "!caption" %}	
 									{{ line | remove_first: "!caption" | remove: "<p>" | remove: "</p>" }}
+								{% endif %}
 								</figcaption>
 							{% endif %}
 						{% endfor %}
@@ -82,9 +84,11 @@ layout: default
 				{% else %}
 					<figure class="gallery_wrapper-gallery_graphic_card">
 						{% for line in item %}
-							{% if line contains "!caption" %}
+							{% if block contains "!caption" %}
 								<figcaption>
+								{% if line contains "!caption" %}	
 									{{ line | remove_first: "!caption" | remove: "<p>" | remove: "</p>" }}
+								{% endif %}
 								</figcaption>
 							{% endif %}
 						{% endfor %}
