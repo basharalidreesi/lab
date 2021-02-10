@@ -19,44 +19,38 @@ defaults:
     path: ''
   values:
     layout: default
-    header_graphic_location: upper
-    has_footer_container: false
-    is_fullscreen_page: false
+    header_location: upper
+    has_bottom_footer: false
+    is_fullscreen: false
 - scope:
     path: ''
     type: pages
   values:
-    is_navigation_list_item: false
-    navigation_list_item_order: 
+    layout: list
+    is_for_navigation: false
+    order: 
 - scope:
     path: ''
     type: styling-and-creative-direction
   values:
     layout: cascade
-    is_fullscreen_page: true
-    is_list_item: true
+    is_fullscreen: true
+    is_listed: true
 - scope:
     path: ''
     type: social-media-and-content-creation
   values:
-    layout: client
-    is_fullscreen_page: true
+    layout: cascade
+    is_fullscreen: true
+    is_listed: true
 - scope:
-    path: assets/graphics/header_graphic_graphics
+    path: assets/graphics/header_graphics
   values:
     header_graphic: true
 - scope:
-    path: assets/graphics/showcase_tile_graphics
+    path: assets/graphics/showcase_tiles
   values:
     showcase_tile: true
-- scope:
-    path: assets/graphics/cascade_graphics
-  values:
-    cascade_graphic: true
-- scope:
-    path: assets/graphics/gallery_graphics
-  values:
-    gallery_graphic: true
 email: 
 description: Jad Toghuj
 author: Jad Toghuj
