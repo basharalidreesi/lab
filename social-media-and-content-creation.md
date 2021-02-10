@@ -9,3 +9,4 @@ header_graphic_location: upper
 has_footer_container: true
 ---
 
+{% include list.html %}
