@@ -1,10 +1,8 @@
 <!-- {% include page_header.html %} -->
 <ul class="content_container-list_page_wrapper">
 	{% assign collections = site.collections %}
-	{{ collections }}
 	{% assign collection = page.collection %}
-	{{ collection }}
-	{% assign sorted = site.[page.collection] %}
+	{% assign sorted = site.collection %}
 	{% for item in sorted %}
 		{% if item.is_list_item = true %}
 			<li class="list_page_wrapper-list_page_item">
