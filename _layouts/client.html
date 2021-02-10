@@ -26,7 +26,17 @@ layout: default
 	{% endif %}
 	{% case declaration %}
 		{% when "!text" %}
-			<h1>TEXT</h1>
+			{% if block contains "!linkto" %}
+				<a href="{{ link }}">
+					{% for line in item %}
+						<p>{{ line | remove_first: "!text" | remove: "<p>" | remove: "</p>" }}</p>
+					{% endfor %}
+				</a>
+			{% else %}
+				{% for line in item %}
+					<p>{{ line | remove_first: "!text" | remove: "<p>" | remove: "</p>" }}</p>
+				{% endfor %}
+			{% endif %}
 		{% when "!image" %}
 			<h1>IMAGE</h1>
 	{% endcase %}
