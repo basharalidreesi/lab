@@ -14,6 +14,12 @@ layout: default
 				{% assign link = line | remove_first: "!linkto" | remove: "<p>" | remove: "</p>" | strip %}
 			{% endif %}
 		{% endfor %}
+		{% case declaration %}
+			{% when "!text" %}
+				<h1>TEXT</h1>
+			{% when "!image" %}
+				<h1>IMAGE</h1>
+		{% endcase %}
 		<pre>This {{ declaration }} will link to ({{ link }})</pre>
 	{% endif %}
 	{% if block contains "!source" %}
