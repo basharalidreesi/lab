@@ -31,7 +31,7 @@
 		</script>
 	</head>
 	<body>
-		<div class="mother_container {% if page.is_fullscreen = true %}--mother_container_min_max_height{% endif %}">
+		<div class="mother_container {% if page.is_fullscreen == true %}--mother_container_min_max_height{% endif %}">
 			<nav class="mother_container-navigation_container" id="navigation_container">
 				<ul class="navigation_container-navigation_list_wrapper">
 					{% assign sorted = site.pages | sort: "position" %}
