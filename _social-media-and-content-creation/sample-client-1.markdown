@@ -47,6 +47,6 @@ tags:
 !source ![Screen Shot 2021-02-10 at 11.13.02.png](/uploads/Screen%20Shot%202021-02-10%20at%2011.13.02.png)
 
 !embed
-!source <iframe width="560" height="315" src="https://www.youtube.com/embed/nqCSxyudKHY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+!source https://www.youtube.com/watch?v=nqCSxyudKHY
 
 !empty
