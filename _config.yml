@@ -26,7 +26,7 @@ defaults:
     path: ''
     type: pages
   values:
-    layout: list
+    layout: default
     is_for_navigation: false
     order: 
 - scope:
