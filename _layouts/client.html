@@ -14,7 +14,6 @@ layout: default
 				{% assign link = line | remove_first: "!linkto" | remove: "<p>" | remove: "</p>" | strip %}
 			{% endif %}
 		{% endfor %}
-		<pre>This {{ declaration }} will link to ({{ link }})</pre>
 	{% endif %}
 	{% if block contains "!source" %}
 		{% for line in item %}
@@ -22,7 +21,6 @@ layout: default
 				{% assign source = line | remove_first: "!source" | remove: "<p>" | remove: "</p>" | remove: "<" | remove : ">" | remove: "img src=" | remove: '"' | split: " " %}
 			{% endif %}
 		{% endfor %}
-		<pre>This {{ declaration }} will be sourced from ({{ source[0] }})</pre>
 	{% endif %}
 	{% case declaration %}
 		{% when "!title" %}
@@ -54,16 +52,4 @@ layout: default
 				<img src="{{ source[0] }}">
 			{% endif %}
 	{% endcase %}
-
-<!--	{% for line in item %}
-		{% if line contains "!title" %}
-			<p>{{ line | remove_first: "!title" | remove: "<p>" | remove: "</p>" }}</p>
-		{% elsif line contains "!footer" %}
-			<p>{{ line | remove_first: "!footer" | remove: "<p>" | remove: "</p>" }}</p>
-		{% elsif line contains "!text" %}
-			<p>{{ line | remove_first: "!text" | remove: "<p>" | remove: "</p>" }}</p>
-		{% elsif block contains "!linkto" and line contains "!text" %}
-			<a href="{{ link }}"><p>{{ line | remove_first: "!text" | remove: "<p>" | remove: "</p>" }}</p></a>
-		{% endif %}
-	{% endfor %} -->
 {% endfor %}
