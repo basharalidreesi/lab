@@ -9,7 +9,7 @@ is_for_navigation: true
 
 <!-- {% include page_header.html %} -->
 <ul class="content_container-list_page_wrapper">
-	{% assign sorted = site.styling-and-creative-direction | sort: "position" %}
+	{% assign sorted = site.styling-and-creative-direction | sort: "position" %} <!-- must filter nested pages somehow -->
 	{% for item in sorted %}
 		{% if item.is_listed == true %}
 			<li class="list_page_wrapper-list_page_item">
