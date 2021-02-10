@@ -15,10 +15,17 @@ layout: default
 			{% endif %}
 		{% endfor %}
 	{% endif %}
-	{% if block contains "!source" %}
+	{% if block contains "!source" and block contains "!image" %}
 		{% for line in item %}
 			{% if line contains "!source" %}
 				{% assign source = line | remove_first: "!source" | remove: "<p>" | remove: "</p>" | remove: "<" | remove : ">" | remove: "img src=" | remove: '"' | split: " " %}
+			{% endif %}
+		{% endfor %}
+	{% endif %}
+	{% if block contains "!source" and block contains "!embed" %}
+		{% for line in item %}
+			{% if line contains "!source" %}
+				{% assign source = line | remove_first: "!source" | remove: "<p>" | remove: "</p>" %}
 			{% endif %}
 		{% endfor %}
 	{% endif %}
@@ -60,7 +67,7 @@ layout: default
 			{% endif %}
 		{% when "!embed" %}
 			{% if block contains "!source" %}
-				{{ source[0] }}
+				{{ source }}
 			{% endif %}
 	{% endcase %}
 {% endfor %}
