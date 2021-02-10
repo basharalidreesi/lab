@@ -36,7 +36,7 @@
 				<ul class="navigation_container-navigation_list_wrapper">
 					{% assign sorted = site.pages | sort: "position" %}
 					{% for item in sorted %}
-						{% if item.is_for_navigation = true %}
+						{% if item.is_for_navigation == true %}
 							<li class="navigation_list_wrapper-navigation_list_item {% if item.url == page.url %}--active_navigation_list_item{% endif %} --text_align_center">
 								<a class="--anchor_styling --standard_text_styling --text_styling_1" href="{{ item.url }}">
 									{{ item.title }}
@@ -56,7 +56,7 @@
 			<main class="mother_container-content_container" id="content_container">
 				{{ content }}
 			</main>
-			{% if page.has_bottom_footer = true %}
+			{% if page.has_bottom_footer == true %}
 				<footer class="mother_container-footer_container">
 					{% include footer.html %}
 				</footer>
