@@ -29,7 +29,7 @@ layout: default
 			{% if block contains "!linkto" %}
 				<a href="{{ link }}">
 					{% for line in item %}
-						<p>{{ line | remove_first: "!text" | remove: "<p>" | remove: "</p>" }}</p>
+						<p>{{ line | remove_first: "!text" | remove: "<p>" | remove: "</p>" | remove: "!linkto" | remove: link }}</p>
 					{% endfor %}
 				</a>
 			{% else %}
