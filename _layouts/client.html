@@ -25,6 +25,14 @@ layout: default
 		<pre>This {{ declaration }} will be sourced from ({{ source[0] }})</pre>
 	{% endif %}
 	{% case declaration %}
+		{% when "!title" %}
+			{% for line in item %}
+				<p>{{ line | remove_first: "!title" | remove: "<p>" | remove: "</p>" }}</p>
+			{% endfor %}
+		{% when "!footer" %}
+			{% for line in item %}
+				<p>{{ line | remove_first: "!footer" | remove: "<p>" | remove: "</p>" }}</p>
+			{% endfor %}
 		{% when "!text" %}
 			{% if block contains "!linkto" %}
 				<a href="{{ link }}">
