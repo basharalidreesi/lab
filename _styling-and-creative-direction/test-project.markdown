@@ -9,3 +9,13 @@ position: 0
 !image
 !source ![showcase_tile_graphic-03.png](/uploads/showcase_tile_graphic-03.png)
 !linkto https://google.com
+
+!image
+!source ![showcase_tile_graphic-06.png](/uploads/showcase_tile_graphic-06.png)
+!linkto https://google.com
+
+!text This is a text.
+!text Another line.
+
+!text This is a text.
+!text Another line.
