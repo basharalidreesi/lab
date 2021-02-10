@@ -28,7 +28,6 @@ defaults:
   values:
     layout: default
     is_for_navigation: false
-    order: 
 - scope:
     path: ''
     type: styling-and-creative-direction
