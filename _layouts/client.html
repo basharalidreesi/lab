@@ -1,93 +1,94 @@
 ---
 layout: default
 ---
-
-{% assign page_content = page.content | newline_to_br | strip_newlines | split: "<br /><br />" %}
-{% for block in page_content %}
-	<pre>***</pre>
-	{% assign item = block | split: "<br />" %}
-	{% assign identifier = item[0] | split: " " %}
-	{% assign declaration = identifier[0] | remove: "<p>" | remove: "</p>" %}
-	{% if block contains "!linkto" %}
-		{% for line in item %}
-			{% if line contains "!linkto" %}
-				{% assign link = line | remove_first: "!linkto" | remove: "<p>" | remove: "</p>" | strip %}
-			{% endif %}
-		{% endfor %}
-	{% endif %}
-	{% if block contains "!source" and block contains "!image" %}
-		{% for line in item %}
-			{% if line contains "!source" %}
-				{% assign source = line | remove_first: "!source" | remove: "<p>" | remove: "</p>" | remove: "<" | remove : ">" | remove: "img src=" | remove: '"' | split: " " %}
-			{% endif %}
-		{% endfor %}
-	{% endif %}
-	{% if block contains "!source" and block contains "!embedyoutube" %}
-		{% for line in item %}
-			{% if line contains "!source" %}
-				{% assign source = line | remove_first: "!source" | remove: "<p>" | remove: "</p>" | split: "v=" | split: ".be/" %}
-			{% endif %}
-		{% endfor %}
-	{% endif %}
-	{% if block contains "!source" and block contains "!embedvimeo" %}
-		{% for line in item %}
-			{% if line contains "!source" %}
-				{% assign source = line | remove_first: "!source" | remove: "<p>" | remove: "</p>" | split: ".com/" %}
-			{% endif %}
-		{% endfor %}
-	{% endif %}
-	{% if block contains "!caption" %}
-		{% for line in item %}
-			{% if line contains "!caption" %}
-				<p>{{ line | remove_first: "!caption" | remove: "<p>" | remove: "</p>" }}</p>
-			{% endif %}
-		{% endfor %}
-	{% endif %}
-	{% case declaration %}
-		{% when "!title" %}
+<div class="content_container-cascade_wrapper">
+	{% assign page_content = page.content | newline_to_br | strip_newlines | split: "<br /><br />" %}
+	{% for block in page_content %}
+		<pre>***</pre>
+		{% assign item = block | split: "<br />" %}
+		{% assign identifier = item[0] | split: " " %}
+		{% assign declaration = identifier[0] | remove: "<p>" | remove: "</p>" %}
+		{% if block contains "!linkto" %}
 			{% for line in item %}
-				<p>{{ line | remove_first: "!title" | remove: "<p>" | remove: "</p>" }}</p>
+				{% if line contains "!linkto" %}
+					{% assign link = line | remove_first: "!linkto" | remove: "<p>" | remove: "</p>" | strip %}
+				{% endif %}
 			{% endfor %}
-		{% when "!footer" %}
+		{% endif %}
+		{% if block contains "!source" and block contains "!image" %}
 			{% for line in item %}
-				<p>{{ line | remove_first: "!footer" | remove: "<p>" | remove: "</p>" }}</p>
+				{% if line contains "!source" %}
+					{% assign source = line | remove_first: "!source" | remove: "<p>" | remove: "</p>" | remove: "<" | remove : ">" | remove: "img src=" | remove: '"' | split: " " %}
+				{% endif %}
 			{% endfor %}
-		{% when "!text" %}
-			{% if block contains "!linkto" %}
-				<a href="{{ link }}">
-					{% for line in item %}
-						<p>{{ line | remove_first: "!text" | remove: "<p>" | remove: "</p>" | remove: "!linkto" | remove: link | strip }}</p>
-					{% endfor %}
-				</a>
-			{% else %}
+		{% endif %}
+		{% if block contains "!source" and block contains "!embedyoutube" %}
+			{% for line in item %}
+				{% if line contains "!source" %}
+					{% assign source = line | remove_first: "!source" | remove: "<p>" | remove: "</p>" | split: "v=" | split: ".be/" %}
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+		{% if block contains "!source" and block contains "!embedvimeo" %}
+			{% for line in item %}
+				{% if line contains "!source" %}
+					{% assign source = line | remove_first: "!source" | remove: "<p>" | remove: "</p>" | split: ".com/" %}
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+		{% if block contains "!caption" %}
+			{% for line in item %}
+				{% if line contains "!caption" %}
+					<p>{{ line | remove_first: "!caption" | remove: "<p>" | remove: "</p>" }}</p>
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+		{% case declaration %}
+			{% when "!title" %}
 				{% for line in item %}
-					<p>{{ line | remove_first: "!text" | remove: "<p>" | remove: "</p>" }}</p>
+					<p>{{ line | remove_first: "!title" | remove: "<p>" | remove: "</p>" }}</p>
 				{% endfor %}
-			{% endif %}
-		{% when "!image" %}
-			{% if block contains "!linkto" %}
-				<a href="{{ link }}">
+			{% when "!footer" %}
+				{% for line in item %}
+					<p>{{ line | remove_first: "!footer" | remove: "<p>" | remove: "</p>" }}</p>
+				{% endfor %}
+			{% when "!text" %}
+				{% if block contains "!linkto" %}
+					<a href="{{ link }}">
+						{% for line in item %}
+							<p>{{ line | remove_first: "!text" | remove: "<p>" | remove: "</p>" | remove: "!linkto" | remove: link | strip }}</p>
+						{% endfor %}
+					</a>
+				{% else %}
+					{% for line in item %}
+						<p>{{ line | remove_first: "!text" | remove: "<p>" | remove: "</p>" }}</p>
+					{% endfor %}
+				{% endif %}
+			{% when "!image" %}
+				{% if block contains "!linkto" %}
+					<a href="{{ link }}">
+						<img src="{{ source[0] }}">
+					</a>
+				{% else %}
 					<img src="{{ source[0] }}">
-				</a>
-			{% else %}
-				<img src="{{ source[0] }}">
-			{% endif %}
-		{% when "!embedyoutube" %}
-			{% if block contains "!source" %}
-				<iframe src="https://www.youtube.com/embed/{{ source[1] | slice: 0, 11 }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			{% endif %}
-		{% when "!embedvimeo" %}
-			{% if block contains "!source" %}
-				<iframe src="https://player.vimeo.com/video/{{ source[1] }}?title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-			{% endif %}
-		{% when "!empty" %}
-			{% if block contains "!linkto" %}
-				<a href="{{ link }}">
-					<p>empty with link</p>
-				</a>
-			{% else %}
-				<p>empty</p>
-			{% endif %}
-			
-	{% endcase %}
-{% endfor %}
+				{% endif %}
+			{% when "!embedyoutube" %}
+				{% if block contains "!source" %}
+					<iframe src="https://www.youtube.com/embed/{{ source[1] | slice: 0, 11 }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				{% endif %}
+			{% when "!embedvimeo" %}
+				{% if block contains "!source" %}
+					<iframe src="https://player.vimeo.com/video/{{ source[1] }}?title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+				{% endif %}
+			{% when "!empty" %}
+				{% if block contains "!linkto" %}
+					<a href="{{ link }}">
+						<p>empty with link</p>
+					</a>
+				{% else %}
+					<p>empty</p>
+				{% endif %}
+
+		{% endcase %}
+	{% endfor %}
+</div>
