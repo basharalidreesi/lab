@@ -40,7 +40,7 @@ tags:
 !source ![Screen Shot 2021-02-10 at 11.13.41.png](/uploads/Screen%20Shot%202021-02-10%20at%2011.13.41.png)
 
 !image
-!caption
+!caption HERE IS A CAPTION LOL
 !linkto https://google.com
 !source ![Screen Shot 2021-02-10 at 11.13.02.png](/uploads/Screen%20Shot%202021-02-10%20at%2011.13.02.png)
 
