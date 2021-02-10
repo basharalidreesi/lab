@@ -72,7 +72,7 @@ layout: default
 							<figcaption>
 								{% for line in item %}
 									{% if line contains "!caption" %}	
-										{{ line | remove_first: "!caption" | remove: "<p>" | remove: "</p>" }}
+										<p>{{ line | remove_first: "!caption" | remove: "<p>" | remove: "</p>" }}</p>
 									{% endif %}
 								{% endfor %}
 							</figcaption>
@@ -87,7 +87,7 @@ layout: default
 							<figcaption>
 								{% for line in item %}
 									{% if line contains "!caption" %}	
-										{{ line | remove_first: "!caption" | remove: "<p>" | remove: "</p>" }}
+										<p>{{ line | remove_first: "!caption" | remove: "<p>" | remove: "</p>" }}</p>
 									{% endif %}
 								{% endfor %}
 							</figcaption>
