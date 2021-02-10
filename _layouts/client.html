@@ -58,20 +58,9 @@ layout: default
 			{% else %}
 				<img src="{{ source[0] }}">
 			{% endif %}
+		{% when "!embed" %}
+			{% if block contains "!source" %}
+				<iframe src="{{ source[0] }}"></iframe>
+			{% endif %}
 	{% endcase %}
 {% endfor %}
-
-{% comment %}
-
-	{% if block contains "!caption" %}
-		{% for line in item %}
-			<p>{{ line | remove_first: "!caption" | remove_first: "!image" | remove: "<p>" | remove: "</p>" | remove: "!linkto" | remove: "!source" | remove: link | remove: source | strip }}</p>
-		{% endfor %}
-	{% endif %}
-	{% if block contains "!caption" %}
-		{% for line in item %}
-			<p>{{ line | remove_first: "!caption" | remove_first: "!image" | remove: "<p>" | remove: "</p>" | remove: "!source" | remove: source | strip }}</p>
-		{% endfor %}
-	{% endif %}
-
-{% endcomment %}
