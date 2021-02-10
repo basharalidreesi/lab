@@ -53,7 +53,7 @@ layout: default
 					{% case captioned %}
 						{% when true %}
 							{% for line in item %}
-								<p>{{ line | remove_first: "!caption" | remove_first: "!image" | remove: "<p>" | remove: "</p>" | remove: "!linkto" | remove: "!source" | remove: link | remove: source[0] | remove: source[1] | strip }}</p>
+								<p>{{ line | remove_first: "!caption" | remove_first: "!image" | remove: "<p>" | remove: "</p>" | remove: "!linkto" | remove: "!source" | remove: link | remove: "img" | strip }}</p>
 							{% endfor %}
 						{% when false %}
 							<p>This image is not captioned.</p>
@@ -64,7 +64,7 @@ layout: default
 				{% case captioned %}
 					{% when true %}
 						{% for line in item %}
-							<p>{{ line | remove_first: "!caption" | remove_first: "!image" | remove: "<p>" | remove: "</p>" | remove: "!linkto" | remove: "!source" | remove: link | remove: source[0] | strip }}</p>
+							<p>{{ line | remove_first: "!caption" | remove_first: "!image" | remove: "<p>" | remove: "</p>" | remove: "!linkto" | remove: "!source" | remove: link | remove: "img" | strip }}</p>
 						{% endfor %}
 					{% when false %}
 						<p>This image is not captioned.</p>
