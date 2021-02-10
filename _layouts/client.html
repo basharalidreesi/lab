@@ -55,10 +55,10 @@ layout: default
 							{% for line in item %}
 								<p>{{ line | remove_first: "!caption" | remove_first: "!image" | remove: "<p>" | remove: "</p>" | remove: "!linkto" | remove: "!source" | remove: link | remove: source | strip }}</p>
 							{% endfor %}
-							<img src="{{ source[0] }}">
+							{% comment %}<img src="{{ source[0] }}">{% endcomment %}
 						{% when false %}
 							<p>This image is not captioned.</p>
-							<img src="{{ source[0] }}">
+							{% comment %}<img src="{{ source[0] }}">{% endcomment %}
 					{% endcase %}
 				</a>
 			{% else %}
@@ -67,10 +67,10 @@ layout: default
 						{% for line in item %}
 							<p>{{ line | remove_first: "!caption" | remove_first: "!image" | remove: "<p>" | remove: "</p>" | remove: "!linkto" | remove: "!source" | remove: link | remove: source | strip }}</p>
 						{% endfor %}
-						<img src="{{ source[0] }}">
+						{% comment %}<img src="{{ source[0] }}">{% endcomment %}
 					{% when false %}
 						<p>This image is not captioned.</p>
-						<img src="{{ source[0] }}">
+						{% comment %}<img src="{{ source[0] }}">{% endcomment %}
 				{% endcase %}
 			{% endif %}
 	{% endcase %}
