@@ -68,7 +68,7 @@ layout: default
 		{% when "!embed" %}
 			{% if block contains "!source" %}
 				<pre>{{ source[1] }}</pre>
-				<iframe {{ source }}></iframe>
+				<iframe src="https://www.youtube.com/embed/{{ source[1] }}"></iframe>
 			{% endif %}
 	{% endcase %}
 {% endfor %}
