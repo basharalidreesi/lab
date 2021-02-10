@@ -38,7 +38,13 @@ layout: default
 				{% endfor %}
 			{% endif %}
 		{% when "!image" %}
-			<h1>IMAGE</h1>
+			{% if block contains "!linkto" and block contains "!source" %}
+				<a href="{{ link }}">
+					<img src="{{ source[0] }}">
+				</a>
+			{% else %}
+				<img src="{{ source[0] }}">
+			{% endif %}
 	{% endcase %}
 
 <!--	{% for line in item %}
