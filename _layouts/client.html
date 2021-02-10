@@ -3,7 +3,6 @@ layout: default
 ---
 
 {% assign page_content = page.content | newline_to_br | strip_newlines | split: "<br /><br />" %}
-{% assign captioned = false %}
 {% for block in page_content %}
 	<pre>***</pre>
 	{% assign item = block | split: "<br />" %}
@@ -24,7 +23,11 @@ layout: default
 		{% endfor %}
 	{% endif %}
 	{% if block contains "!caption" %}
-		{% assign captioned = true %}
+		{% for line in item %}
+			{% if line contains "!caption" %}
+				<p>{{ line | remove_first: "!caption" | remove: "<p>" | remove: "</p>" }}</p>
+			{% endif %}
+		{% endfor %}
 	{% endif %}
 	{% case declaration %}
 		{% when "!title" %}
@@ -50,25 +53,9 @@ layout: default
 		{% when "!image" %}
 			{% if block contains "!linkto" %}
 				<a href="{{ link }}">
-					{% case captioned %}
-						{% when true %}
-							{% for line in item %}
-								<p>{{ line | remove_first: "!caption" | remove_first: "!image" | remove: "<p>" | remove: "</p>" | remove: "!linkto" | remove: "!source" | remove: link | remove: "img" | strip }}</p>
-							{% endfor %}
-						{% when false %}
-							<p>This image is not captioned.</p>
-					{% endcase %}
 					<img src="{{ source[0] }}">
 				</a>
 			{% else %}
-				{% case captioned %}
-					{% when true %}
-						{% for line in item %}
-							<p>{{ line | remove_first: "!caption" | remove_first: "!image" | remove: "<p>" | remove: "</p>" | remove: "!linkto" | remove: "!source" | remove: link | remove: "img" | strip }}</p>
-						{% endfor %}
-					{% when false %}
-						<p>This image is not captioned.</p>
-				{% endcase %}
 				<img src="{{ source[0] }}">
 			{% endif %}
 	{% endcase %}
