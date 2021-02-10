@@ -32,8 +32,8 @@ tags:
 !source ![Screen Shot 2021-02-04 at 19.23.27.png](/uploads/Screen%20Shot%202021-02-04%20at%2019.23.27.png)
 
 !image
-!linkto https://yahoo.com
 !source ![Screen Shot 2021-02-10 at 11.12.30.png](/uploads/Screen%20Shot%202021-02-10%20at%2011.12.30.png)
+!linkto https://yahoo.com
 
 !image
 !caption
