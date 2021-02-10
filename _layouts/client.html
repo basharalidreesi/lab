@@ -60,13 +60,13 @@ layout: default
 				</div>
 			{% when "!text" %}
 				{% if block contains "!linkto" %}
-					<a href="{{ link }}">
-						<div class="classname">
+					<div class="classname">
+						<a href="{{ link }}">
 							{% for line in item %}
 								<p>{{ line | remove_first: "!text" | remove: "<p>" | remove: "</p>" | remove: "!linkto" | remove: link | strip }}</p>
 							{% endfor %}
-						</div>
-					</a>
+						</a>
+					</div>
 				{% else %}
 					<div class="classname">
 						{% for line in item %}
