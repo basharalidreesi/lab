@@ -97,11 +97,15 @@ layout: default
 				{% endif %}
 			{% when "!embedyoutube" %}
 				{% if block contains "!source" %}
-					<iframe src="https://www.youtube.com/embed/{{ source[1] | slice: 0, 11 }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<div class="classname" style="width: 100%; height: 100%">
+						<iframe src="https://www.youtube.com/embed/{{ source[1] | slice: 0, 11 }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
 				{% endif %}
 			{% when "!embedvimeo" %}
 				{% if block contains "!source" %}
-					<iframe src="https://player.vimeo.com/video/{{ source[1] }}?title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+					<div class="classname" style="width: 100%; height: 100%">
+						<iframe src="https://player.vimeo.com/video/{{ source[1] }}?title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+					</div>
 				{% endif %}
 			{% when "!empty" %}
 				{% if block contains "!linkto" %}
