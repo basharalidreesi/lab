@@ -68,10 +68,14 @@ layout: default
 			{% when "!image" %}
 				{% if block contains "!linkto" %}
 					<a href="{{ link }}">
-						<img src="{{ source[0] }}">
+						<figure class="gallery_wrapper-gallery_graphic_card">
+							<img src="{{ source[0] }}">
+						</figure>
 					</a>
 				{% else %}
-					<img src="{{ source[0] }}">
+					<figure class="gallery_wrapper-gallery_graphic_card">
+						<img class="gallery_graphic_card-gallery_graphic_card_graphic" src="{{ source[0] }}">
+					</figure>
 				{% endif %}
 			{% when "!embedyoutube" %}
 				{% if block contains "!source" %}
