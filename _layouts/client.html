@@ -55,10 +55,11 @@ layout: default
 							{% for line in item %}
 								<p>{{ line | remove_first: "!caption" | remove_first: "!image" | remove: "<p>" | remove: "</p>" | remove: "!linkto" | remove: "!source" | remove: link | remove: source | strip }}</p>
 							{% endfor %}
+							<img src="{{ source[0] }}">
 						{% when false %}
 							<p>This image is not captioned.</p>
+							<img src="{{ source[0] }}">
 					{% endcase %}
-					<img src="{{ source[0] }}">
 				</a>
 			{% else %}
 				{% case captioned %}
@@ -66,10 +67,11 @@ layout: default
 						{% for line in item %}
 							<p>{{ line | remove_first: "!caption" | remove_first: "!image" | remove: "<p>" | remove: "</p>" | remove: "!linkto" | remove: "!source" | remove: link | remove: source | strip }}</p>
 						{% endfor %}
+						<img src="{{ source[0] }}">
 					{% when false %}
 						<p>This image is not captioned.</p>
+						<img src="{{ source[0] }}">
 				{% endcase %}
-				<img src="{{ source[0] }}" style="width: 100%;">
 			{% endif %}
 	{% endcase %}
 {% endfor %}
