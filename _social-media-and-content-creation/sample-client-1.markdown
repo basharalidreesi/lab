@@ -25,7 +25,7 @@ tags:
 
 !text Here is another text card.
 !linkto its-usual-place
-!text This time, the !linkto isn't in 
+!text This time, the link isn't in 
 
 
 !image
