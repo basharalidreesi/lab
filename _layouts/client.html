@@ -67,7 +67,7 @@ layout: default
 			{% endif %}
 		{% when "!embed" %}
 			{% if block contains "!source" %}
-				{{ source }}
+				<pre>{{ source }}</pre>
 				<iframe {{ source }}></iframe>
 			{% endif %}
 	{% endcase %}
