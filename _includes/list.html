@@ -1,7 +1,6 @@
 <!-- {% include page_header.html %} -->
 <ul class="content_container-list_page_wrapper">
-	{% assign pages = site.pages | where: "collection", page.collection %}
-	{% assign sorted = pages | sort: "position" %}
+	{% assign sorted = site.{{ page.collection }} | sort: "position" %}
 	{% for item in sorted %}
 		{% if item.is_list_item = true %}
 			<li class="list_page_wrapper-list_page_item">
