@@ -80,7 +80,7 @@ layout: default
 		{% when "!embedvimeo" %}
 			{% if block contains "!source" %}
 				<pre>{{ source[1] }}</pre>
-				<iframe src="https://player.vimeo.com/video/{{ source[1] }}"></iframe>
+				<iframe src="https://player.vimeo.com/video/{{ source[1] }}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 			{% endif %}
 	{% endcase %}
 {% endfor %}
