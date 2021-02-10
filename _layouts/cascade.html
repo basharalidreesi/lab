@@ -36,7 +36,7 @@ layout: default
 				{% endif %}
 			{% endfor %}
 		{% endif %}
-		<header class="cascade_wrapper-title_card">
+		<!-- <header class="cascade_wrapper-title_card">
 			<h1>{{ page.title }}</h1>
 			{% case declaration %}
 				{% when "!title" %}
@@ -44,7 +44,7 @@ layout: default
 						<h2>{{ line | remove_first: "!title" | remove: "<p>" | remove: "</p>" }}</h2>
 					{% endfor %}
 			{% endcase %}
-		</header>
+		</header> -->
 		{% case declaration %}
 			{% when "!text" %}
 				{% if block contains "!linkto" %}
@@ -120,7 +120,7 @@ layout: default
 				{% endif %}
 
 		{% endcase %}
-		<footer class="cascade_wrapper-footer_card">
+		<!-- <footer class="cascade_wrapper-footer_card">
 			{% case declaration %}
 				{% when "!footer" %}
 					{% for line in item %}
@@ -128,6 +128,6 @@ layout: default
 					{% endfor %}
 			{% endcase %}
 			{% include footer.html %}
-		</footer>
+		</footer> -->
 	{% endfor %}
 </div>
