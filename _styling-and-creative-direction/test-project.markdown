@@ -19,5 +19,5 @@ position: 0
 !text This is a text.
 !text Another line.
 
-!embed
+!embedyoutube
 !source https://www.youtube.com/watch?v=817R3ApVFok
