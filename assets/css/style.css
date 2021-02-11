@@ -83,10 +83,7 @@ html {
 	background-size: 100% 2px;
 }
 .--footer_text_styling {
-	font-family: var(--footer_text_font);
-	font-weight: normal;
 	text-align: center;
-	font-size: 1em;
 	padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 }
 .--list_text_styling {
@@ -99,7 +96,7 @@ html {
 	font-family: var(--tag_text_font);
 	font-weight: normal;
 	text-align: center;
-	font-size: 1em;
+	font-size: 0.75em;
 }
 .--anchor_styling {
 	color: #000;
