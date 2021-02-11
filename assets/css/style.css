@@ -90,7 +90,7 @@ html {
 	font-family: var(--list_text_font);
 	font-weight: 200;
 	text-align: center;
-	font-size: 1.25em;
+	font-size: 1.5em;
 }
 .--tag_text_styling {
 	font-family: var(--tag_text_font);
