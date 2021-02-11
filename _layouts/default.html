@@ -37,8 +37,8 @@
 					{% assign sorted = site.pages | sort: "position" %}
 					{% for item in sorted %}
 						{% if item.is_for_navigation == true %}
-							<li class="navigation_list_wrapper-navigation_list_item">
-								<a class="--anchor_styling --navigation_text_styling {% if item.url == page.url %}--active_navigation_text_styling{% endif %}" href="{{ item.url }}">
+							<li class="navigation_list_wrapper-navigation_list_item --navigation_text_styling">
+								<a class="--anchor_styling {% if item.url == page.url %}--active_navigation_text_styling{% endif %}" href="{{ item.url }}">
 									{{ item.title }}
 								</a>
 							</li>
