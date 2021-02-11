@@ -19,11 +19,11 @@ is_for_navigation: true
 				{% if item.tags != empty %}
 					<ul class="list_page_item-list_page_item_tag_list">
 						{% for tag in item.tags %}
-							<li class="list_page_item_tag_list-list_page_item_tag --tag_text_styling">
-								<a href="" class="--anchor_styling">
+							<a href="" class="--anchor_styling">
+								<li class="list_page_item_tag_list-list_page_item_tag --tag_text_styling">
 									{{ tag }}
-								</a>
-							</li>
+								</li>
+							</a>
 						{% endfor %}
 					</ul>
 				{% endif %}
