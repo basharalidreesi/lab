@@ -289,7 +289,6 @@ body {
 		border: 1px solid var(--border_colour);
 		border-radius: 500px;
 		margin-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
-		background-color: var(--secondary_colour);
 	}
 	.list_page_item_tag_list-list_page_item_tag:not(:first-child) {
 		margin-right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
@@ -299,6 +298,10 @@ body {
 	}
 	.list_page_item_tag_list-list_page_item_tag:last-child {
 		margin-right: 0;
+	}
+	.list_page_item_tag_list-list_page_item_tag:hover {
+		background-color: #000; /* rename */
+		color: #fff; /* rename */
 	}
 	/*
 	┌─BEGIN─────────────────┐
