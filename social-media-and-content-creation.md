@@ -12,8 +12,8 @@ is_for_navigation: true
 	{% assign sorted = site.social-media-and-content-creation | sort: "position" %}
 	{% for item in sorted %}
 		{% if item.is_listed == true %}
-			<li class="list_page_wrapper-list_page_item">
-				<a class="--anchor_styling --list_text_styling" href="{{ item.url }}">
+			<li class="list_page_wrapper-list_page_item --list_text_styling">
+				<a class="--anchor_styling" href="{{ item.url }}">
 					{{ item.title }}
 				</a>
 				{% if item.tags != empty %}
