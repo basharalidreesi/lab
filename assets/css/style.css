@@ -1,3 +1,15 @@
+@font-face {
+    font-family: "Code New Roman";
+    src: url("/assets/fonts/code_new_roman/code_new_roman-regular.eot");
+    src: url("/assets/fonts/code_new_roman/code_new_roman-regular.eot?#iefix") format("embedded-opentype"),
+         url("/assets/fonts/code_new_roman/code_new_roman-regular.woff2") format("woff2"),
+         url("/assets/fonts/code_new_roman/code_new_roman-regular.woff") format("woff"),
+         url("/assets/fonts/code_new_roman/code_new_roman-regular.ttf") format("truetype"),
+         url("/assets/fonts/code_new_roman/code_new_roman-regular.svg#code_new_romanregular") format("svg");
+    font-weight: normal;
+    font-style: normal;
+
+}
 /*
 ┌─BEGIN─────────────────┐
 │			│
@@ -14,7 +26,10 @@
 	/* --secondary_colour: #eceff1; */
 	--border_colour: #000;
 	--text_colour: #000;
-	--font_family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	--navigation_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	--footer_text_font: "Code New Roman", monospace;
+	--list_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	--tag_text_font: "Code New Roman", monospace;
 }
 
 /*
@@ -63,28 +78,31 @@ html {
 │			│
 └─BEGIN─────────────────┘
 */
-.--text_align_center {
-	text-align: center;
-}
-.--standard_text_styling {
-	font-family: var(--font_family);
+.--navigation_text_styling {
+	font-family: var(--navigation_text_font);
 	font-weight: 200;
-	font-size: var(--font_size);
-}
-.--text_styling_1 {
+	text-align: center;
 	font-size: 1.25em;
 }
-.--text_styling_2 {
-	font-size: 1.5em;
+.--active_navigation_text_styling a {
+	/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
+	background-size: 100% 2px;
 }
-.--text_styling_3 {
-	font-size: 1.5em;
-}
-.--padding_bottom_universal_answer_single {
+.--footer_text_styling {
+	text-align: center;
 	padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 }
-.--padding_bottom_universal_answer_double {
-	padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier));
+.--list_text_styling {
+	font-family: var(--list_text_font);
+	font-weight: 200;
+	text-align: center;
+	font-size: 1.5em;
+}
+.--tag_text_styling {
+	font-family: var(--tag_text_font);
+	font-weight: normal;
+	text-align: center;
+	font-size: 1em;
 }
 .--anchor_styling {
 	color: #000;
@@ -125,10 +143,10 @@ body {
 	display: flex;
 	flex-flow: column nowrap;
 }
-.--mother_container_min_max_height {
+.--mother_container_fullscreen {
 	height: 100vh;
 }
-.--mother_container_min_max_height > .mother_container-content_container {
+.--mother_container_fullscreen > .mother_container-content_container {
 	flex: 1;
 }
 .mother_container-navigation_container { /* background-color: var(--secondary_colour); */ /* debug */ }
@@ -160,10 +178,6 @@ body {
 .navigation_list_wrapper-navigation_list_item {
 	flex: 1; /* stress test this with a higher number of listed pages */
 	white-space: nowrap; /* debug */
-}
-.--active_navigation_list_item a {
-	/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
-	background-size: 100% 2px;
 }
 
 /*
@@ -267,7 +281,6 @@ body {
 		border: 1px solid var(--border_colour);
 		border-radius: 500px;
 		margin-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
-		background-color: var(--secondary_colour);
 	}
 	.list_page_item_tag_list-list_page_item_tag:not(:first-child) {
 		margin-right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
@@ -277,6 +290,10 @@ body {
 	}
 	.list_page_item_tag_list-list_page_item_tag:last-child {
 		margin-right: 0;
+	}
+	.list_page_item_tag_list-list_page_item_tag:hover {
+		background-color: #000; /* rename */
+		color: #fff; /* rename */
 	}
 	/*
 	┌─BEGIN─────────────────┐
