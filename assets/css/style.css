@@ -1,3 +1,21 @@
+@font-face {
+	font-family: "Code New Roman";
+	src: url("/assets/fonts/code_new_roman/code_new_roman-regular.woff"), url("/assets/fonts/code_new_roman/code_new_roman-regular.woff2");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Code New Roman";
+	src: url("/assets/fonts/code_new_roman/code_new_roman-italic.woff"), url("/assets/fonts/code_new_roman/code_new_roman-italic.woff2");
+	font-weight: normal;
+	font-style: italic;
+}
+@font-face {
+	font-family: "Code New Roman";
+	src: url("/assets/fonts/code_new_roman/code_new_roman-bold.woff"), url("/assets/fonts/code_new_roman/code_new_roman-bold.woff2");
+	font-weight: bold;
+	font-style: normal;
+}
 /*
 ┌─BEGIN─────────────────┐
 │			│
@@ -15,6 +33,7 @@
 	--border_colour: #000;
 	--text_colour: #000;
 	--font_family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	--tag_styling_font_family: "Code New Roman", monospace;
 }
 
 /*
@@ -63,6 +82,9 @@ html {
 │			│
 └─BEGIN─────────────────┘
 */
+.--tag_styling {
+	font-family: var(--tag_styling_font_family);
+}
 .--text_align_center {
 	text-align: center;
 }
