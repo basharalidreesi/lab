@@ -1,3 +1,10 @@
+/*
+┌─BEGIN─────────────────────────┐
+│				│
+│ @FONT-FACE DECLARATIONS	│
+│				│
+└─BEGIN─────────────────────────┘
+*/
 @font-face {
     font-family: "Code New Roman";
     src: url("/assets/fonts/code_new_roman/code_new_roman-regular.eot");
@@ -9,6 +16,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 /*
 ┌─BEGIN─────────────────┐
 │			│
@@ -73,50 +81,60 @@ html {
 /*
 ┌─BEGIN─────────────────┐
 │			│
-│ SNIPPET STYLING	│
+│ STYLING SNIPPETS	│
 │			│
 └─BEGIN─────────────────┘
 */
-.--navigation_text_styling {
-	font-family: var(--navigation_text_font);
-	font-weight: 200;
-	text-align: center;
-	font-size: 1.25em;
-}
-.--active_navigation_text_styling a {
-	/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
-	background-size: 100% 2px;
-}
-.--footer_text_styling {
-	text-align: center;
-	padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
-}
-.--list_text_styling {
-	font-family: var(--list_text_font);
-	font-weight: 200;
-	text-align: center;
-	font-size: 1.5em;
-}
-.--tag_text_styling {
-	font-family: var(--tag_text_font);
-	font-weight: normal;
-	text-align: center;
-	font-size: 1em;
-}
-.--anchor_styling {
-	color: inherit;
-	/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
-	text-decoration: none;
-	background-image: linear-gradient(currentColor, currentColor);
-	background-position: 0% 100%;
-	background-repeat: no-repeat;
-	background-size: 0% 2px;
-	transition: background-size 0.25s;
-}
-.--anchor_styling:hover {
-	/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
-	background-size: 100% 2px;
-}
+	/*
+	┌─BEGIN─────────┐
+	│		│
+	│ TEXT STYLING	│
+	│		│
+	└─BEGIN─────────┘
+	*/
+	.--navigation_text_styling {
+		font-family: var(--navigation_text_font);
+		font-weight: 200;
+		text-align: center;
+		font-size: 1.25em;
+	}
+	.--footer_text_styling {
+		text-align: center;
+		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+	}
+	.--list_text_styling {
+		font-family: var(--list_text_font);
+		font-weight: 200;
+		text-align: center;
+		font-size: 1.5em;
+	}
+	.--tag_text_styling {
+		font-family: var(--tag_text_font);
+		font-weight: normal;
+		text-align: center;
+		font-size: 1em;
+	}
+	/*
+	┌─BEGIN─────────────────┐
+	│			│
+	│ ANCHOR STYLING	│
+	│			│
+	└─BEGIN─────────────────┘
+	*/
+	.--anchor_styling {
+		color: inherit;
+		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
+		text-decoration: none;
+		background-image: linear-gradient(currentColor, currentColor);
+		background-position: 0% 100%;
+		background-repeat: no-repeat;
+		background-size: 0% 2px;
+		transition: background-size 0.25s;
+	}
+	.--anchor_styling:hover {
+		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
+		background-size: 100% 2px;
+	}
 
 /*
 ┌─BEGIN─────────┐
@@ -148,7 +166,7 @@ body {
 .--mother_container_fullscreen > .mother_container-content_container {
 	flex: 1;
 }
-.mother_container-navigation_container { /* background-color: var(--secondary_colour); */ /* debug */ }
+.mother_container-navigation_container { }
 .mother_container-header_container {
 	position: sticky;
 	top: 0;
@@ -178,6 +196,10 @@ body {
 	flex: 1; /* stress test this with a higher number of listed pages */
 	white-space: nowrap; /* debug */
 }
+.--active_navigation_text_styling a {
+	/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
+	background-size: 100% 2px;
+}
 
 /*
 ┌─BEGIN─────────────────┐
@@ -186,7 +208,7 @@ body {
 │			│
 └─BEGIN─────────────────┘
 */
-.header_container-header_anchor_wrapper_central { /* centralised header */ }
+.header_container-header_anchor_wrapper_central { /* central header */ }
 .header_container-header_anchor_wrapper_upper {
 	/* maybe make it so that .header_anchor-header_graphic's visibility is hidden and set the graphic as a CSS background-image? */
 	height: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2  * 5); /* fix height */
