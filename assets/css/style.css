@@ -330,12 +330,11 @@ body {
 		overflow-y: scroll;
 	}
 	.cascade_wrapper-title_card { }
-	.cascade_wrapper-text_card { }
+	.cascade_wrapper-text_card { flex: auto; /* debug */ }
 	.cascade_wrapper-anchored_text_card { }
 	.cascade_wrapper-graphic_card {
 		position: relative;
 		height: 100%;
-		background-color: var(--secondary_colour);
 	}
 	.graphic_card-graphic_card_image {
 		display: block;
