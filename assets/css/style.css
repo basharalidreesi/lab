@@ -331,6 +331,11 @@ body {
 	}
 	.cascade_wrapper-title_card { }
 	.cascade_wrapper-text_card { }
+	.cascade_wrapper-text_card:after {
+		content: "";
+		display: block;
+		padding-bottom: 100%;
+	}
 	.cascade_wrapper-anchored_text_card { }
 	.cascade_wrapper-graphic_card {
 		position: relative;
