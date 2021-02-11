@@ -96,7 +96,7 @@ html {
 	font-family: var(--tag_text_font);
 	font-weight: normal;
 	text-align: center;
-	font-size: 0.75em;
+	font-size: 1em;
 }
 .--anchor_styling {
 	color: #000;
