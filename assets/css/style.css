@@ -21,6 +21,7 @@
 	--border_colour: #000;
 	--text_colour: #000;
 	--navigation_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	--footer_text_font: "Code New Roman", monospace;
 	--list_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--tag_text_font: "Code New Roman", monospace;
 }
@@ -82,7 +83,11 @@ html {
 	background-size: 100% 2px;
 }
 .--footer_text_styling {
+	font-family: var(--footer_text_font);
+	font-weight: normal;
 	text-align: center;
+	font-size: 0.75em;
+	padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 }
 .--list_text_styling {
 	font-family: var(--list_text_font);
