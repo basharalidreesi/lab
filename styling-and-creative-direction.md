@@ -12,14 +12,14 @@ is_for_navigation: true
 	{% assign sorted = site.styling-and-creative-direction | sort: "position" %} <!-- must filter nested pages somehow -->
 	{% for item in sorted %}
 		{% if item.is_listed == true %}
-			<li class="list_page_wrapper-list_page_item">
-				<a class="--anchor_styling --standard_text_styling --text_styling_3" href="{{ item.url }}">
+			<li class="list_page_wrapper-list_page_item --list_text_styling">
+				<a class="--anchor_styling" href="{{ item.url }}">
 					{{ item.title }}
 				</a>
 				{% if item.tags != empty %}
 					<ul class="list_page_item-list_page_item_tag_list">
 						{% for tag in item.tags %}
-							<li class="list_page_item_tag_list-list_page_item_tag --tag_styling">
+							<li class="list_page_item_tag_list-list_page_item_tag --tag_text_styling">
 								{{ tag }}
 							</li>
 						{% endfor %}
