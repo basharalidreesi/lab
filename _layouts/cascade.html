@@ -2,8 +2,16 @@
 layout: default
 ---
 
-{{ page.path }}
 <div class="content_container-cascade_wrapper" id="cascade_wrapper">
+	<!-- <header class="cascade_wrapper-title_card">
+		<h1>{{ page.title }}</h1>
+		{% case declaration %}
+			{% when "!title" %}
+				{% for line in item %}
+					<h2>{{ line | remove_first: "!title" | remove: "<p>" | remove: "</p>" }}</h2>
+				{% endfor %}
+		{% endcase %}
+	</header> -->
 	{% assign page_content = page.content | newline_to_br | strip_newlines | split: "<br /><br />" %}
 	{% for block in page_content %}
 		{% assign item = block | split: "<br />" %}
@@ -37,15 +45,6 @@ layout: default
 				{% endif %}
 			{% endfor %}
 		{% endif %}
-		<!-- <header class="cascade_wrapper-title_card">
-			<h1>{{ page.title }}</h1>
-			{% case declaration %}
-				{% when "!title" %}
-					{% for line in item %}
-						<h2>{{ line | remove_first: "!title" | remove: "<p>" | remove: "</p>" }}</h2>
-					{% endfor %}
-			{% endcase %}
-		</header> -->
 		{% case declaration %}
 			{% when "!text" %}
 				{% if block contains "!linkto" %}
@@ -67,28 +66,28 @@ layout: default
 				{% if block contains "!linkto" %}
 					<figure class="cascade_wrapper-anchored_graphic_card">
 						{% if block contains "!caption" %}
-							<figcaption>
+							<!-- <figcaption>
 								{% for line in item %}
 									{% if line contains "!caption" %}	
 										<p>{{ line | remove_first: "!caption" | remove: "<p>" | remove: "</p>" }}</p>
 									{% endif %}
 								{% endfor %}
-							</figcaption>
+							</figcaption> -->
 						{% endif %}
 						<a href="{{ link }}">
-							<img class="graphic_card-image" src="{{ source[0] }}">
+							<img class="graphic_card-graphic_card_image" src="{{ source[0] }}">
 						</a>
 					</figure>
 				{% else %}
 					<figure class="cascade_wrapper-graphic_card">
 						{% if block contains "!caption" %}
-							<figcaption>
+							<!-- <figcaption>
 								{% for line in item %}
 									{% if line contains "!caption" %}	
 										<p>{{ line | remove_first: "!caption" | remove: "<p>" | remove: "</p>" }}</p>
 									{% endif %}
 								{% endfor %}
-							</figcaption>
+							</figcaption> -->
 						{% endif %}		
 						<img class="graphic_card-graphic_card_image" src="{{ source[0] }}">
 					</figure>
@@ -107,30 +106,25 @@ layout: default
 				{% endif %}
 			{% when "!empty" %}
 				{% if block contains "!linkto" %}
-					<div class="cascade_wrapper-anchored_empty_card">
+					<!-- <div class="cascade_wrapper-anchored_empty_card">
 						<a href="{{ link }}">
-							<p>empty with link</p>
 						</a>
-					</div>
+					</div> -->
 				{% else %}
-					<div class="cascade_wrapper-empty_card">
-						<a href="{{ link }}">
-							<p>empty with link</p>
-						</a>
-					</div>
+					<div class="cascade_wrapper-empty_card"></div>
 				{% endif %}
 
 		{% endcase %}
-		<!-- <footer class="cascade_wrapper-footer_card">
-			{% case declaration %}
-				{% when "!footer" %}
-					{% for line in item %}
-						<p>{{ line | remove_first: "!title" | remove: "<p>" | remove: "</p>" }}</p>
-					{% endfor %}
-			{% endcase %}
-			{% include footer.html %}
-		</footer> -->
 	{% endfor %}
+	<!-- <footer class="cascade_wrapper-footer_card">
+		{% case declaration %}
+			{% when "!footer" %}
+				{% for line in item %}
+					<p>{{ line | remove_first: "!title" | remove: "<p>" | remove: "</p>" }}</p>
+				{% endfor %}
+		{% endcase %}
+		{% include footer.html %}
+	</footer> -->
 </div>
 <script>
 	// https://dev.to/samthor/divert-vertical-scroll-to-the-side-3id0

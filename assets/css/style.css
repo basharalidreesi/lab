@@ -1,3 +1,10 @@
+/*
+┌─BEGIN─────────────────────────┐
+│				│
+│ @FONT-FACE DECLARATIONS	│
+│				│
+└─BEGIN─────────────────────────┘
+*/
 @font-face {
     font-family: "Code New Roman";
     src: url("/assets/fonts/code_new_roman/code_new_roman-regular.eot");
@@ -8,8 +15,8 @@
          url("/assets/fonts/code_new_roman/code_new_roman-regular.svg#code_new_romanregular") format("svg");
     font-weight: normal;
     font-style: normal;
-
 }
+
 /*
 ┌─BEGIN─────────────────┐
 │			│
@@ -27,9 +34,13 @@
 	--border_colour: #000;
 	--text_colour: #000;
 	--navigation_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	--navigation_text_font_size: 1.25em;
 	--footer_text_font: "Code New Roman", monospace;
+	--footer_text_font_size: 1em;
 	--list_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	--list_text_font_size: 1.5em;
 	--tag_text_font: "Code New Roman", monospace;
+	--tag_text_font_size: 1em;
 }
 
 /*
@@ -74,50 +85,63 @@ html {
 /*
 ┌─BEGIN─────────────────┐
 │			│
-│ SNIPPET STYLING	│
+│ STYLING SNIPPETS	│
 │			│
 └─BEGIN─────────────────┘
 */
-.--navigation_text_styling {
-	font-family: var(--navigation_text_font);
-	font-weight: 200;
-	text-align: center;
-	font-size: 1.25em;
-}
-.--active_navigation_text_styling a {
-	/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
-	background-size: 100% 2px;
-}
-.--footer_text_styling {
-	text-align: center;
-	padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
-}
-.--list_text_styling {
-	font-family: var(--list_text_font);
-	font-weight: 200;
-	text-align: center;
-	font-size: 1.5em;
-}
-.--tag_text_styling {
-	font-family: var(--tag_text_font);
-	font-weight: normal;
-	text-align: center;
-	font-size: 1em;
-}
-.--anchor_styling {
-	color: #000;
-	/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
-	text-decoration: none;
-	background-image: linear-gradient(currentColor, currentColor);
-	background-position: 0% 100%;
-	background-repeat: no-repeat;
-	background-size: 0% 2px;
-	transition: background-size 0.25s;
-}
-.--anchor_styling:hover {
-	/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
-	background-size: 100% 2px;
-}
+	/*
+	┌─BEGIN─────────┐
+	│		│
+	│ TEXT STYLING	│
+	│		│
+	└─BEGIN─────────┘
+	*/
+	.--navigation_text_styling {
+		font-family: var(--navigation_text_font);
+		font-weight: 200;
+		text-align: center;
+		font-size: var(--navigation_text_font_size);
+	}
+	.--footer_text_styling {
+		font-family: var(--footer_text_font);
+		font-weight: normal;
+		text-align: center;
+		font-size: var(--footer_text_font_size);
+		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+	}
+	.--list_text_styling {
+		font-family: var(--list_text_font);
+		font-weight: 200;
+		text-align: center;
+		font-size: var(--list_text_font_size);
+	}
+	.--tag_text_styling {
+		font-family: var(--tag_text_font);
+		font-weight: normal;
+		text-align: center;
+		font-size: var(--tag_text_font_size);
+	}
+	/*
+	┌─BEGIN─────────────────┐
+	│			│
+	│ ANCHOR STYLING	│
+	│			│
+	└─BEGIN─────────────────┘
+	*/
+	.--anchor_styling {
+		color: inherit;
+		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
+		text-decoration: none;
+		background-image: linear-gradient(currentColor, currentColor);
+		background-position: 0% 100%;
+		background-repeat: no-repeat;
+		background-size: 0% 2px;
+		transition: background-size 0.25s;
+	}
+	.--anchor_styling:hover {
+		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
+		background-size: 100% 2px;
+	}
 
 /*
 ┌─BEGIN─────────┐
@@ -149,7 +173,7 @@ body {
 .--mother_container_fullscreen > .mother_container-content_container {
 	flex: 1;
 }
-.mother_container-navigation_container { /* background-color: var(--secondary_colour); */ /* debug */ }
+.mother_container-navigation_container { }
 .mother_container-header_container {
 	position: sticky;
 	top: 0;
@@ -166,7 +190,7 @@ body {
 */
 .navigation_container-navigation_list_wrapper {
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: row nowrap; /* nowrap for debug */
 	padding: 0;
 	list-style: none;
 	list-style-position: inside;
@@ -179,6 +203,10 @@ body {
 	flex: 1; /* stress test this with a higher number of listed pages */
 	white-space: nowrap; /* debug */
 }
+.--active_navigation_text_styling a {
+	/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
+	background-size: 100% 2px;
+}
 
 /*
 ┌─BEGIN─────────────────┐
@@ -187,10 +215,15 @@ body {
 │			│
 └─BEGIN─────────────────┘
 */
-.header_container-header_anchor_wrapper_central { /* centralised header */ }
+.header_container-header_anchor_wrapper_central { /* central header */ }
 .header_container-header_anchor_wrapper_upper {
 	/* maybe make it so that .header_anchor-header_graphic's visibility is hidden and set the graphic as a CSS background-image? */
-	height: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2  * 5); /* fix height */
+	height:
+		calc(	0px /* initial value for debug */
+			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
+			+ var(--navigation_text_font_size) /* navigation text line height */
+		);
 	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	text-align: center;
 }
@@ -305,24 +338,92 @@ body {
 	.content_container-cascade_wrapper {
 		display: flex;
 		flex-flow: row nowrap;
-		height: calc(100vh - (var(--universal_answer) * var(--universal_answer_multiplier) / 2) * 10); /* recalculate height with em */
+		height:
+			calc(	100vh /* screen height */
+				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
+				+ var(--navigation_text_font_size)) /* navigation text line height */
+				* 2) /* header height */
+				- 1px /* idk why but there's an extra pixel */
+			);
 		overflow-y: scroll;
 	}
 	.cascade_wrapper-title_card { }
-	.cascade_wrapper-text_card { }
-	.cascade_wrapper-anchored_text_card { }
+	.cascade_wrapper-text_card {
+		flex: 1 0 auto;
+		min-width:
+			calc(	100vh /* screen height */
+				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
+				+ var(--navigation_text_font_size)) /* navigation text line height */
+				* 2) /* header height */
+				- 1px /* idk why but there's an extra pixel */
+			);
+		max-width: 50vw;
+		display: flex;
+		flex-flow: column wrap;
+		justify-content: center;
+		align-items: center;
+		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
+	}
+	.cascade_wrapper-anchored_text_card {
+		flex: 1 0 auto;
+		min-width:
+			calc(	100vh /* screen height */
+				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
+				+ var(--navigation_text_font_size)) /* navigation text line height */
+				* 2) /* header height */
+				- 1px /* idk why but there's an extra pixel */
+			);
+		max-width: 50vw;
+		display: flex;
+		flex-flow: column wrap;
+		justify-content: center;
+		align-items: center;
+		border: 1px solid var(--border_colour);
+		margin: calc(var(--universal_answer) * var(--universal_answer_multiplier));
+		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
+		margin-top: 0;
+	}
 	.cascade_wrapper-graphic_card {
 		position: relative;
 		height: 100%;
-		background-color: var(--secondary_colour);
+	}
+	.cascade_wrapper-anchored_graphic_card {
+		position: relative;
+		height: calc(100% - (var(--universal_answer) * var(--universal_answer_multiplier)));
+		margin: calc(var(--universal_answer) * var(--universal_answer_multiplier));
+		margin-top: 0;
+	}
+	.cascade_wrapper-anchored_graphic_card + .cascade_wrapper-anchored_graphic_card {
+		margin-left: 0;
+	}
+	.cascade_wrapper-anchored_graphic_card:hover {
+		background: linear-gradient(0deg, var(--primary_colour) 10%, rgba(255,255,255,1) 100%);
+		box-shadow: inset 0 0 calc(var(--universal_answer) * var(--universal_answer_multiplier)) calc(var(--universal_answer) * var(--universal_answer_multiplier)) var(--primary_colour);
+	}
+	.cascade_wrapper-anchored_graphic_card .graphic_card-graphic_card_image {
+		border: 1px solid var(--border_colour);
+		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 	}
 	.graphic_card-graphic_card_image {
 		display: block;
 		height: 100%;
 	}
-	.cascade_wrapper-anchored_graphic_card { }
 	.cascade_wrapper-embed_card { }
-	.cascade_wrapper-empty_card { }
+	.cascade_wrapper-empty_card {
+		flex: 1 0 auto;
+		min-width:
+			calc(	100vh /* screen height */
+				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
+				+ var(--navigation_text_font_size)) /* navigation text line height */
+				* 2) /* header height */
+				- 1px /* idk why but there's an extra pixel */
+			);
+		max-width: 50vw;
+	}
 	.cascade_wrapper-anchored_empty_card { }
 
 /*
