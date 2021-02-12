@@ -359,8 +359,8 @@ body {
 		height: 100%;
 	}
 	.cascade_wrapper-anchored_graphic_card .graphic_card-graphic_card_image {
-		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
-		padding-top: 0;
+		margin: calc(var(--universal_answer) * var(--universal_answer_multiplier));
+		margin-top: 0;
 		border: 1px solid var(--border_colour);
 	}
 	.graphic_card-graphic_card_image {
