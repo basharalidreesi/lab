@@ -101,15 +101,15 @@ layout: default
 				{% endif %}
 			{% when "!embedyoutube" %}
 				{% if block contains "!source" %}
-					<div class="cascade_wrapper-embed_card">
+					<!-- <div class="cascade_wrapper-embed_card">
 						<iframe src="https://www.youtube.com/embed/{{ source[1] | slice: 0, 11 }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					</div>
+					</div> -->
 				{% endif %}
 			{% when "!embedvimeo" %}
 				{% if block contains "!source" %}
-					<div class="cascade_wrapper-embed_card">
+					<!-- <div class="cascade_wrapper-embed_card">
 						<iframe src="https://player.vimeo.com/video/{{ source[1] }}?title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-					</div>
+					</div> -->
 				{% endif %}
 			{% when "!empty" %}
 				<div class="cascade_wrapper-empty_card" {% if block contains "!background" %} style="background-color: {{ background }};" {% endif %}></div>
