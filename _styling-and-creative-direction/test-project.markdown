@@ -18,11 +18,11 @@ primary_colour: pink
 !empty
 !background blue
 
-!empty
-!background blue
-
 !image
 !source ![IMG_1110.jpeg](/uploads/IMG_1110.jpeg)
+
+!empty
+!background blue
 
 !image
 !source ![IMG_1109.jpeg](/uploads/IMG_1109.jpeg)
