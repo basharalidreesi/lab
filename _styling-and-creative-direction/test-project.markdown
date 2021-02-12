@@ -16,6 +16,7 @@ position: 0
 
 !text This is a text.
 !text Another line.
+!linkto nowhere
 
 !text This is a text.
 !text Another line.
