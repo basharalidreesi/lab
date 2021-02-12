@@ -28,11 +28,12 @@
 	--font_size: 1em;
 	--universal_answer: 1em;
 	--universal_answer_multiplier: 2;
-	--primary_colour: #91a3b0;
-	--secondary_colour: #fff;
+	/* see ./_config.yml and ./_layouts/default.html for the below commented-out variables */
+	/* --primary_colour: #91a3b0; */
+	/* --secondary_colour: #fff; */
 	/* --secondary_colour: #eceff1; */
-	--border_colour: #000;
-	--text_colour: #000;
+	/* --border_colour: #000; */
+	/* --text_colour: #000; */
 	--navigation_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--navigation_text_font_size: 1.25em;
 	--footer_text_font: "Code New Roman", monospace;
