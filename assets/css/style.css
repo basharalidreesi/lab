@@ -331,16 +331,19 @@ body {
 	}
 	.cascade_wrapper-title_card { }
 	.cascade_wrapper-text_card {
-		flex: 0 0 calc(100vh - (var(--universal_answer) * var(--universal_answer_multiplier) / 2) * 10); /* recalculate width with em */
+		flex: 1 0 auto;
+		min-width: calc(100vh - (var(--universal_answer) * var(--universal_answer_multiplier) / 2) * 10); /* recalculate width with em */
+		max-width: 50vw;
 		display: flex;
 		flex-flow: column wrap;
 		justify-content: center;
 		align-items: center;
-		background-color: #fff; /* debug */
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 	}
 	.cascade_wrapper-anchored_text_card {
-		flex: 0 0 calc(100vh - (var(--universal_answer) * var(--universal_answer_multiplier) / 2) * 10); /* recalculate width with em */
+		flex: 1 0 auto;
+		min-width: calc(100vh - (var(--universal_answer) * var(--universal_answer_multiplier) / 2) * 10); /* recalculate width with em */
+		max-width: 50vw;
 		display: flex;
 		flex-flow: column wrap;
 		justify-content: center;
