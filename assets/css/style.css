@@ -339,7 +339,7 @@ body {
 		background-color: #fff; /* debug */
 	}
 	.cascade_wrapper-anchored_text_card {
-		flex: 0 0 calc(100vh - (var(--universal_answer) * var(--universal_answer_multiplier) / 2) * 10); /* recalculate width with em */
+		flex: 0 0 calc(100vh - (var(--universal_answer) * var(--universal_answer_multiplier) / 2) * 10 / 2); /* recalculate width with em */
 		display: flex;
 		flex-flow: column wrap;
 		justify-content: center;
