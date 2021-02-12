@@ -337,6 +337,7 @@ body {
 		justify-content: center;
 		align-items: center;
 		background-color: #fff; /* debug */
+		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 	}
 	.cascade_wrapper-anchored_text_card {
 		flex: 0 0 calc(100vh - (var(--universal_answer) * var(--universal_answer_multiplier) / 2) * 10); /* recalculate width with em */
@@ -346,6 +347,7 @@ body {
 		align-items: center;
 		border: 1px solid var(--border_colour);
 		margin: calc(var(--universal_answer) * var(--universal_answer_multiplier));
+		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 		margin-top: 0;
 	}
 	.cascade_wrapper-graphic_card {
