@@ -36,8 +36,11 @@
 	--navigation_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--navigation_text_font_size: 1.25em;
 	--footer_text_font: "Code New Roman", monospace;
+	--footer_text_font_size: 1em;
 	--list_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	--list_text_font_size: 1.5em;
 	--tag_text_font: "Code New Roman", monospace;
+	--tag_text_font_size: 1em;
 }
 
 /*
@@ -100,20 +103,23 @@ html {
 		font-size: var(--navigation_text_font_size);
 	}
 	.--footer_text_styling {
+		font-family: var(--footer_text_font);
+		font-weight: normal;
 		text-align: center;
+		font-size: var(--footer_text_font_size);
 		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	}
 	.--list_text_styling {
 		font-family: var(--list_text_font);
 		font-weight: 200;
 		text-align: center;
-		font-size: 1.5em;
+		font-size: var(--list_text_font_size);
 	}
 	.--tag_text_styling {
 		font-family: var(--tag_text_font);
 		font-weight: normal;
 		text-align: center;
-		font-size: 1em;
+		font-size: var(--tag_text_font_size);
 	}
 	/*
 	┌─BEGIN─────────────────┐
