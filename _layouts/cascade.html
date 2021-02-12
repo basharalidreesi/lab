@@ -3,6 +3,15 @@ layout: default
 ---
 
 <div class="content_container-cascade_wrapper" id="cascade_wrapper">
+	<!-- <header class="cascade_wrapper-title_card">
+		<h1>{{ page.title }}</h1>
+		{% case declaration %}
+			{% when "!title" %}
+				{% for line in item %}
+					<h2>{{ line | remove_first: "!title" | remove: "<p>" | remove: "</p>" }}</h2>
+				{% endfor %}
+		{% endcase %}
+	</header> -->
 	{% assign page_content = page.content | newline_to_br | strip_newlines | split: "<br /><br />" %}
 	{% for block in page_content %}
 		{% assign item = block | split: "<br />" %}
@@ -36,15 +45,6 @@ layout: default
 				{% endif %}
 			{% endfor %}
 		{% endif %}
-		<!-- <header class="cascade_wrapper-title_card">
-			<h1>{{ page.title }}</h1>
-			{% case declaration %}
-				{% when "!title" %}
-					{% for line in item %}
-						<h2>{{ line | remove_first: "!title" | remove: "<p>" | remove: "</p>" }}</h2>
-					{% endfor %}
-			{% endcase %}
-		</header> -->
 		{% case declaration %}
 			{% when "!text" %}
 				{% if block contains "!linkto" %}
@@ -120,16 +120,16 @@ layout: default
 				{% endif %}
 
 		{% endcase %}
-		<!-- <footer class="cascade_wrapper-footer_card">
-			{% case declaration %}
-				{% when "!footer" %}
-					{% for line in item %}
-						<p>{{ line | remove_first: "!title" | remove: "<p>" | remove: "</p>" }}</p>
-					{% endfor %}
-			{% endcase %}
-			{% include footer.html %}
-		</footer> -->
 	{% endfor %}
+	<!-- <footer class="cascade_wrapper-footer_card">
+		{% case declaration %}
+			{% when "!footer" %}
+				{% for line in item %}
+					<p>{{ line | remove_first: "!title" | remove: "<p>" | remove: "</p>" }}</p>
+				{% endfor %}
+		{% endcase %}
+		{% include footer.html %}
+	</footer> -->
 </div>
 <script>
 	// https://dev.to/samthor/divert-vertical-scroll-to-the-side-3id0
