@@ -98,7 +98,6 @@ html {
 		font-weight: 200;
 		text-align: center;
 		font-size: var(--navigation_text_font_size);
-		/* white-space: nowrap; /* debug */
 	}
 	.--footer_text_styling {
 		text-align: center;
@@ -185,7 +184,7 @@ body {
 */
 .navigation_container-navigation_list_wrapper {
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: row nowrap; /* nowrap for debug */
 	padding: 0;
 	list-style: none;
 	list-style-position: inside;
