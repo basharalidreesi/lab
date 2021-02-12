@@ -9,7 +9,7 @@ position: 0
 !image
 !source ![look-02.png](/uploads/look-02.png)
 !linkto here
-!background yellow
+!background #fff
 
 !empty
 !background blue
