@@ -6,3 +6,6 @@ has_bottom_footer: true
 
 !image
 !source ![card-4.png](/uploads/card-4.png)
+
+!text Hello
+!background red
