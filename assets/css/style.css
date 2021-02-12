@@ -345,7 +345,7 @@ body {
 		justify-content: center;
 		align-items: center;
 		background-color: #fff; /* debug */
-		margin: calc((var(--universal_answer) * var(--universal_answer_multiplier));
+		margin: calc(var(--universal_answer) * var(--universal_answer_multiplier))
 	}
 	.cascade_wrapper-graphic_card {
 		position: relative;
