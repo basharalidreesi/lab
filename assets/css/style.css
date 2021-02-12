@@ -34,6 +34,7 @@
 	--border_colour: #000;
 	--text_colour: #000;
 	--navigation_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	--navigation_text_font_size: 1.25em;
 	--footer_text_font: "Code New Roman", monospace;
 	--list_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--tag_text_font: "Code New Roman", monospace;
@@ -96,7 +97,7 @@ html {
 		font-family: var(--navigation_text_font);
 		font-weight: 200;
 		text-align: center;
-		font-size: 1.25em;
+		font-size: var(--navigation_text_font_size);
 	}
 	.--footer_text_styling {
 		text-align: center;
@@ -211,7 +212,12 @@ body {
 .header_container-header_anchor_wrapper_central { /* central header */ }
 .header_container-header_anchor_wrapper_upper {
 	/* maybe make it so that .header_anchor-header_graphic's visibility is hidden and set the graphic as a CSS background-image? */
-	height: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2  * 5); /* recalculate height with em */
+	height:
+		calc(	0 /* initial value for debug */
+			+ (var(--universal_answer) * var(--universal_answer_multiplier)) /* navigation padding-top */
+			+ (var(--universal_answer) * var(--universal_answer_multiplier)) /* navigation padding-bottom */
+			+ (var(--navigation_text_font_size)) /* navigation line height */
+		);
 	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	text-align: center;
 }
