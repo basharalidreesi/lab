@@ -331,7 +331,8 @@ body {
 	}
 	.list_page_item_tag_list-list_page_item_tag:hover {
 		background-color: var(--text_colour);
-		color: #fff; /* rename */
+		mix-blend-mode: difference;
+		color: #fff;
 	}
 	/*
 	┌─BEGIN─────────────────┐
