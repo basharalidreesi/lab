@@ -333,6 +333,7 @@ body {
 	.cascade_wrapper-text_card {
 		flex: 0 0 calc(100vh - (var(--universal_answer) * var(--universal_answer_multiplier) / 2) * 10); /* recalculate width with em */
 		display: flex;
+		flex-flow: column wrap;
 		justify-content: center;
 		align-items: center;
 		background-color: #fff; /* debug */
