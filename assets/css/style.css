@@ -360,9 +360,9 @@ body {
 		margin: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 		margin-top: 0;
 	}
-	.cascade_wrapper-anchored_graphic_card:hover {
-		-webkit-box-shadow: inset 0px 0px calc(var(--universal_answer) * var(--universal_answer_multiplier) /2) calc(var(--universal_answer) * var(--universal_answer_multiplier)) var(--border_colour);
-		box-shadow: inset 0px 0px calc(var(--universal_answer) * var(--universal_answer_multiplier) /2) calc(var(--universal_answer) * var(--universal_answer_multiplier)) var(--border_colour);
+	.cascade_wrapper-anchored_graphic_card:hover > .graphic_card-graphic_card_image {
+		-webkit-box-shadow: inset 0px 0px calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2) calc(var(--universal_answer) * var(--universal_answer_multiplier)) var(--border_colour);
+		box-shadow: inset 0px 0px calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2) calc(var(--universal_answer) * var(--universal_answer_multiplier)) var(--border_colour);
 	}
 	.cascade_wrapper-anchored_graphic_card .graphic_card-graphic_card_image {
 		border: 1px solid var(--border_colour);
