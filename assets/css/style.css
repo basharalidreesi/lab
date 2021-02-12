@@ -344,8 +344,9 @@ body {
 		flex-flow: column wrap;
 		justify-content: center;
 		align-items: center;
-		background-color: #fff; /* debug */
-		margin: calc(var(--universal_answer) * var(--universal_answer_multiplier))
+		border: 1px solid var(--border_colour);
+		margin: calc(var(--universal_answer) * var(--universal_answer_multiplier));
+		margin-top: 0;
 	}
 	.cascade_wrapper-graphic_card {
 		position: relative;
