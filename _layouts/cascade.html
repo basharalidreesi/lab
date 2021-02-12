@@ -58,14 +58,14 @@ layout: default
 					<div class="cascade_wrapper-anchored_text_card" {% if block contains "!background" %} style="background-color: {{ background }};" {% endif %}>
 						<a href="{{ link }}">
 							{% for line in item %}
-								<p>{{ line | remove_first: "!text" | remove: "<p>" | remove: "</p>" | remove: "!linkto" | remove: link | strip }}</p>
+								<p>{{ line | remove_first: "!text" | remove: "<p>" | remove: "</p>" | remove: "!linkto" | remove: link | remove: "!background" | remove: background | strip }}</p>
 							{% endfor %}
 						</a>
 					</div>
 				{% else %}
 					<div class="cascade_wrapper-text_card" {% if block contains "!background" %} style="background-color: {{ background }};" {% endif %}>
 						{% for line in item %}
-								<p>{{ line | remove_first: "!text" | remove: "<p>" | remove: "</p>" }}</p>
+								<p>{{ line | remove_first: "!text" | remove: "<p>" | remove: "</p>" | remove: "!background" | remove: background | strip }}</p>
 						{% endfor %}
 					</div>
 				{% endif %}
