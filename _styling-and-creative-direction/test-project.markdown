@@ -11,7 +11,7 @@ position: 0
 !linkto here
 
 !empty
-!background #000
+!background #000000
 
 !image
 !source ![IMG_1109.jpeg](/uploads/IMG_1109.jpeg)
