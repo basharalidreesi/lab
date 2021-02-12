@@ -9,9 +9,13 @@ position: 0
 !image
 !source ![look-02.png](/uploads/look-02.png)
 !linkto here
+!background yellow
 
 !empty
-!background #000000
+!background #000
+
+!empty
+!background #fff
 
 !image
 !source ![IMG_1109.jpeg](/uploads/IMG_1109.jpeg)

@@ -112,15 +112,7 @@ layout: default
 					</div>
 				{% endif %}
 			{% when "!empty" %}
-				{% if block contains "!linkto" %}
-					<!-- <div class="cascade_wrapper-anchored_empty_card">
-						<a href="{{ link }}">
-						</a>
-					</div> -->
-				{% else %}
-					<div class="cascade_wrapper-empty_card" {% if block contains "!background" %} style="background-color: {{ background }};" {% endif %}></div>
-				{% endif %}
-
+				<div class="cascade_wrapper-empty_card" {% if block contains "!background" %} style="background-color: {{ background }};" {% endif %}></div>
 		{% endcase %}
 	{% endfor %}
 	<!-- <footer class="cascade_wrapper-footer_card">
