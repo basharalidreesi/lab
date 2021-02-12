@@ -1,7 +1,7 @@
 ---
 title: About
 permalink: "/about/"
-position: 2
+position: 1
 is_for_navigation: true
 ---
 
