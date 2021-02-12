@@ -55,7 +55,7 @@ layout: default
 		{% case declaration %}
 			{% when "!text" %}
 				{% if block contains "!linkto" %}
-					<div class="cascade_wrapper-anchored_text_card">
+					<div class="cascade_wrapper-anchored_text_card" {% if block contains "!background" %} style="background-color: {{ background }};" {% endif %}>
 						<a href="{{ link }}">
 							{% for line in item %}
 								<p>{{ line | remove_first: "!text" | remove: "<p>" | remove: "</p>" | remove: "!linkto" | remove: link | strip }}</p>
@@ -63,7 +63,7 @@ layout: default
 						</a>
 					</div>
 				{% else %}
-					<div class="cascade_wrapper-text_card">
+					<div class="cascade_wrapper-text_card" {% if block contains "!background" %} style="background-color: {{ background }};" {% endif %}>
 						{% for line in item %}
 								<p>{{ line | remove_first: "!text" | remove: "<p>" | remove: "</p>" }}</p>
 						{% endfor %}
@@ -71,7 +71,7 @@ layout: default
 				{% endif %}
 			{% when "!image" %}
 				{% if block contains "!linkto" %}
-					<figure class="cascade_wrapper-anchored_graphic_card">
+					<figure class="cascade_wrapper-anchored_graphic_card" {% if block contains "!background" %} style="background-color: {{ background }};" {% endif %}>
 						{% if block contains "!caption" %}
 							<!-- <figcaption>
 								{% for line in item %}
@@ -86,7 +86,7 @@ layout: default
 						</a>
 					</figure>
 				{% else %}
-					<figure class="cascade_wrapper-graphic_card">
+					<figure class="cascade_wrapper-graphic_card" {% if block contains "!background" %} style="background-color: {{ background }};" {% endif %}>
 						{% if block contains "!caption" %}
 							<!-- <figcaption>
 								{% for line in item %}
