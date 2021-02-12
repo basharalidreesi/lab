@@ -412,7 +412,19 @@ body {
 		height: 100%;
 	}
 	.cascade_wrapper-embed_card { }
-	.cascade_wrapper-empty_card { }
+	.cascade_wrapper-empty_card {
+		flex: 1 0 auto;
+		min-width:
+			calc(	100vh /* screen height */
+				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
+				+ var(--navigation_text_font_size)) /* navigation text line height */
+				* 2) /* header height */
+				- 1px /* idk why but there's an extra pixel */
+			);
+		max-width: 50vw;
+		background-color: #fff; /* debug */
+	}
 	.cascade_wrapper-anchored_empty_card { }
 
 /*
