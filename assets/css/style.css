@@ -360,6 +360,9 @@ body {
 		margin: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 		margin-top: 0;
 	}
+	.cascade_wrapper-anchored_graphic_card + .cascade_wrapper-anchored_graphic_card {
+		margin-left: 0;
+	}
 	.cascade_wrapper-anchored_graphic_card .graphic_card-graphic_card_image:hover {
 		-webkit-box-shadow: inset 0px 0px calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2) calc(var(--universal_answer) * var(--universal_answer_multiplier)) var(--primary_colour);
 		box-shadow: inset 0px 0px calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2) calc(var(--universal_answer) * var(--universal_answer_multiplier)) var(--primary_colour);
