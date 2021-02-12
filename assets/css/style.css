@@ -98,12 +98,14 @@ html {
 	└─BEGIN─────────┘
 	*/
 	.--navigation_text_styling {
+		color: var(--text_colour);
 		font-family: var(--navigation_text_font);
 		font-weight: 200;
 		text-align: center;
 		font-size: var(--navigation_text_font_size);
 	}
 	.--footer_text_styling {
+		color: var(--text_colour);
 		font-family: var(--footer_text_font);
 		font-weight: normal;
 		text-align: center;
@@ -111,12 +113,14 @@ html {
 		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	}
 	.--list_text_styling {
+		color: var(--text_colour);
 		font-family: var(--list_text_font);
 		font-weight: 200;
 		text-align: center;
 		font-size: var(--list_text_font_size);
 	}
 	.--tag_text_styling {
+		color: var(--text_colour);
 		font-family: var(--tag_text_font);
 		font-weight: normal;
 		text-align: center;
@@ -130,7 +134,7 @@ html {
 	└─BEGIN─────────────────┘
 	*/
 	.--anchor_styling {
-		color: inherit;
+		color: var(--text_colour);
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 		text-decoration: none;
 		background-image: linear-gradient(currentColor, currentColor);
