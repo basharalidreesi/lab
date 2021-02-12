@@ -213,10 +213,10 @@ body {
 .header_container-header_anchor_wrapper_upper {
 	/* maybe make it so that .header_anchor-header_graphic's visibility is hidden and set the graphic as a CSS background-image? */
 	height:
-		calc(	0 /* initial value for debug */
-			+ (var(--universal_answer) * var(--universal_answer_multiplier)) /* navigation padding-top */
-			+ (var(--universal_answer) * var(--universal_answer_multiplier)) /* navigation padding-bottom */
-			+ (var(--navigation_text_font_size)) /* navigation line height */
+		calc(	0px /* initial value for debug */
+			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
+			+ var(--navigation_text_font_size) /* navigation text line height */
 		);
 	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	text-align: center;
