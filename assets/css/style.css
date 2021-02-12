@@ -98,6 +98,7 @@ html {
 		font-weight: 200;
 		text-align: center;
 		font-size: var(--navigation_text_font_size);
+		white-space: nowrap; /* debug */
 	}
 	.--footer_text_styling {
 		text-align: center;
@@ -195,7 +196,7 @@ body {
 }
 .navigation_list_wrapper-navigation_list_item {
 	flex: 1; /* stress test this with a higher number of listed pages */
-	white-space: nowrap; /* debug */
+	/* white-space: nowrap; /* debug */
 }
 .--active_navigation_text_styling a {
 	/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
