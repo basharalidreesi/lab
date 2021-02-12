@@ -45,6 +45,13 @@ layout: default
 				{% endif %}
 			{% endfor %}
 		{% endif %}
+		{% if block contains "!background" %}
+			{% for line in item %}
+				{% if line contains "!background" %}
+					{% assign background = line | remove_first: "!background" | remove: "<p>" | remove: "</p>" | strip %}
+				{% endif %}
+			{% endfor %}
+		{% endif %}
 		{% case declaration %}
 			{% when "!text" %}
 				{% if block contains "!linkto" %}
@@ -111,7 +118,7 @@ layout: default
 						</a>
 					</div> -->
 				{% else %}
-					<div class="cascade_wrapper-empty_card"></div>
+					<div class="cascade_wrapper-empty_card" {% if block contains "!background" %} style="background-color: {{ background }};" {% endif %}></div>
 				{% endif %}
 
 		{% endcase %}
