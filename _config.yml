@@ -19,6 +19,8 @@ defaults:
     path: ''
   values:
     layout: default
+    primary_colour: "#91a3b0"
+    secondary_colour: "#fff"
     header_location: upper
     has_bottom_footer: false
     is_fullscreen: false
