@@ -369,6 +369,7 @@ body {
 	}
 	.cascade_wrapper-anchored_graphic_card .graphic_card-graphic_card_image {
 		border: 1px solid var(--border_colour);
+		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 	}
 	.graphic_card-graphic_card_image {
 		display: block;
