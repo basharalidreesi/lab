@@ -332,7 +332,13 @@ body {
 	.content_container-cascade_wrapper {
 		display: flex;
 		flex-flow: row nowrap;
-		height: calc(100vh - (var(--universal_answer) * var(--universal_answer_multiplier) / 2) * 10); /* recalculate height with em */
+		height:
+			calc(	100vh /* screen height */
+				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
+				+ var(--navigation_text_font_size)) /* navigation text line height */
+				* 2) /* header height */
+			);
 		overflow-y: scroll;
 	}
 	.cascade_wrapper-title_card { }
