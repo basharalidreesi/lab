@@ -4,6 +4,7 @@ date: 2021-02-03 23:35:00 Z
 permalink: "/styling-and-creative-direction/"
 position: 1
 primary_colour: pink
+secondary_colour: aquamarine
 border_colour: blue
 text_colour: red
 has_bottom_footer: true
