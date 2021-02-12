@@ -326,7 +326,7 @@ body {
 		margin-right: 0;
 	}
 	.list_page_item_tag_list-list_page_item_tag:hover {
-		background-color: #000; /* rename */
+		background-color: var(--text_colour);
 		color: #fff; /* rename */
 	}
 	/*
