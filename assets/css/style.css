@@ -394,8 +394,7 @@ body {
 		margin-left: 0;
 	}
 	.cascade_wrapper-anchored_graphic_card:hover {
-		-webkit-box-shadow: inset 0px 0px calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2) calc(var(--universal_answer) * var(--universal_answer_multiplier)) var(--primary_colour);
-		box-shadow: inset 0px 0px calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2) calc(var(--universal_answer) * var(--universal_answer_multiplier)) var(--primary_colour);
+		background: linear-gradient(180deg, var(--primary_colour) 10%, rgba(255,255,255,1) 100%);
 	}
 	.cascade_wrapper-anchored_graphic_card .graphic_card-graphic_card_image {
 		border: 1px solid var(--border_colour);
