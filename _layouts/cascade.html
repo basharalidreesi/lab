@@ -106,17 +106,12 @@ layout: default
 				{% endif %}
 			{% when "!empty" %}
 				{% if block contains "!linkto" %}
-					<div class="cascade_wrapper-anchored_empty_card">
+					<!-- <div class="cascade_wrapper-anchored_empty_card">
 						<a href="{{ link }}">
-							<p>empty with link</p>
 						</a>
-					</div>
+					</div> -->
 				{% else %}
-					<div class="cascade_wrapper-empty_card">
-						<a href="{{ link }}">
-							<p>empty with link</p>
-						</a>
-					</div>
+					<div class="cascade_wrapper-empty_card"></div>
 				{% endif %}
 
 		{% endcase %}
