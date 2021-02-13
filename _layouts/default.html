@@ -47,6 +47,11 @@
 				//	}
 				// {% endif %}
 			}
+			{% if page.header_location == "central" %}
+				var header = document.getElementById("header_graphic");
+				var bounding = header.getBoundingClientRect();
+				console.log(bounding);
+			{% endif %}
 		</script>
 	</head>
 	<body>
