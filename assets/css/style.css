@@ -178,7 +178,16 @@ body {
 	flex: 1;
 }
 .mother_container-navigation_container { /* no styling rules */ }
-.mother_container-header_container_central { /* no styling rules */ }
+.mother_container-header_container_central {
+	position: sticky;
+	top: 0;
+	height:
+		calc(	100vh /* screen height */
+			- (var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
+			+ var(--navigation_text_font_size)) /* navigation text line height */
+		);
+}
 .mother_container-header_container_upper {
 	position: sticky;
 	top: 0;
