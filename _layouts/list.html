@@ -1,8 +1,9 @@
 ---
 layout: default
 ---
-
+{{ page.collection }}
 {% for collection in site.collections %}
+	{{ collection.label }}
 	{% if collection.label == page.collection %}
 		{% for post in collection.docs %}
 			{{ post.title }}
