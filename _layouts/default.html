@@ -39,12 +39,12 @@
 					// https://stackoverflow.com/questions/190852/how-can-i-get-file-extensions-with-javascript
 					extension = random_header_graphic.split(".").pop();
 					if(extension == "svg") {
-						document.getElementById("header_graphic").style.opacity = 0;
-						document.getElementById("header_graphic").style.backgroundColor = "{{ page.text_colour }}";
-						document.getElementById("header_graphic").style.mask = "url("+ random_header_graphic +") no-repeat center";
-						document.getElementById("header_graphic").style.webkitMask = "url("+ random_header_graphic +") no-repeat center";
-						document.getElementById("header_graphic").style.maskSize = "cover";
-						document.getElementById("header_graphic").style.webkitMaskSize = "cover";
+						document.getElementById("header_graphic").style.visibility = "hidden";
+						document.getElementById("pseudo_header_graphic").style.backgroundColor = "{{ page.text_colour }}";
+						document.getElementById("pseudo_header_graphic").style.mask = "url("+ random_header_graphic +") no-repeat center";
+						document.getElementById("pseudo_header_graphic").style.webkitMask = "url("+ random_header_graphic +") no-repeat center";
+						document.getElementById("pseudo_header_graphic").style.maskSize = "cover";
+						document.getElementById("pseudo_header_graphic").style.webkitMaskSize = "cover";
 					}
 				{% endif %}
 			}
@@ -70,6 +70,7 @@
 				<div class="header_container-header_anchor_wrapper{% if page.header_location == "central" %}_central{% endif %}{% if page.header_location == "upper" %}_upper{% endif %}">
 					<a class="header_anchor_wrapper-header_anchor" href="{{ site.url }}">
 						<img class="header_anchor-header_graphic" id="header_graphic" alt="Header">
+						<div class="header_anchor-pseudo_header_graphic" id="pseudo_header_graphic">
 					</a>
 				</div>
 			</header>
