@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{{ site[page.collection] }}
+{{ site.[page.collection] }}
 {% assign pages = site.documents %}
 {% for item_of_pages in pages %}
 	{% assign page_path = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" %}
