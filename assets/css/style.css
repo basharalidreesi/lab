@@ -28,11 +28,12 @@
 	--font_size: 1em;
 	--universal_answer: 1em;
 	--universal_answer_multiplier: 2;
-	--primary_colour: #91a3b0;
-	--secondary_colour: #fff;
+	/* see ./_config.yml and ./_layouts/default.html for the below commented-out variables */
+	/* --primary_colour: #91a3b0; */
+	/* --secondary_colour: #fff; */
 	/* --secondary_colour: #eceff1; */
-	--border_colour: #000;
-	--text_colour: #000;
+	/* --border_colour: #000; */
+	/* --text_colour: #000; */
 	--navigation_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--navigation_text_font_size: 1.25em;
 	--footer_text_font: "Code New Roman", monospace;
@@ -97,12 +98,14 @@ html {
 	└─BEGIN─────────┘
 	*/
 	.--navigation_text_styling {
+		color: var(--text_colour);
 		font-family: var(--navigation_text_font);
 		font-weight: 200;
 		text-align: center;
 		font-size: var(--navigation_text_font_size);
 	}
 	.--footer_text_styling {
+		color: var(--text_colour);
 		font-family: var(--footer_text_font);
 		font-weight: normal;
 		text-align: center;
@@ -110,12 +113,14 @@ html {
 		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	}
 	.--list_text_styling {
+		color: var(--text_colour);
 		font-family: var(--list_text_font);
 		font-weight: 200;
 		text-align: center;
 		font-size: var(--list_text_font_size);
 	}
 	.--tag_text_styling {
+		color: var(--text_colour);
 		font-family: var(--tag_text_font);
 		font-weight: normal;
 		text-align: center;
@@ -129,7 +134,7 @@ html {
 	└─BEGIN─────────────────┘
 	*/
 	.--anchor_styling {
-		color: inherit;
+		color: var(--text_colour);
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 		text-decoration: none;
 		background-image: linear-gradient(currentColor, currentColor);
@@ -151,7 +156,7 @@ html {
 └─BEGIN─────────┘
 */
 body {
-	background: linear-gradient(0deg, var(--primary_colour) 10%, rgba(255,255,255,1) 100%);
+	background: linear-gradient(0deg, var(--primary_colour) 10%, var(--secondary_colour) 100%);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 }
@@ -325,8 +330,8 @@ body {
 		margin-right: 0;
 	}
 	.list_page_item_tag_list-list_page_item_tag:hover {
-		background-color: #000; /* rename */
-		color: #fff; /* rename */
+		background-color: var(--text_colour);
+		color: var(--secondary_colour);
 	}
 	/*
 	┌─BEGIN─────────────────┐
