@@ -181,8 +181,8 @@ body {
 .mother_container-header_container_central {
 	position: sticky;
 	top: 0;
-	height:
-		calc(	100vh /* screen height */
+	margin-top:
+		calc(	50vh /* screen half height */
 			- (var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
 			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
 			+ var(--navigation_text_font_size)) /* navigation text line height */
