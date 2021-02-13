@@ -53,7 +53,5 @@ tags:
 !source https://vimeo.com/336812660
 
 !empty
-!linkto here
 
 !empty
-!text blabla
