@@ -7,10 +7,10 @@ layout: default
 	{% for collection in site.collections %}
 		{% if collection.label == page_path %}
 			{% assign items = collection.docs | sort: "position" %}
-			{% for item in documents %}
+			{% for item in items %}
 				{% assign item_path = item.path | remove_first: "_" | split: "/" %}
 				{% unless item_path[2] %}
-					<a class="--anchor_styling --list_text_styling" href="{{ document.url }}">
+					<a class="--anchor_styling --list_text_styling" href="{{ item.url }}">
 						<li class="list_page_wrapper-list_page_item">		
 							{{ item.title }}
 							{% if item.tags != empty %}		
