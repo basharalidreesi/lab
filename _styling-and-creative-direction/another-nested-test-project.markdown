@@ -9,11 +9,15 @@ position: 1
 !linkto
 !background
 !caption ⟵
+!border ⟵
+!glow ⟵
 
 !text
 !linkto
 !background
 !color ⟵
+!border ⟵
+!glow ⟵
 
 !embed ⟵
 !source
