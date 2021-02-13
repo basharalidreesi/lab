@@ -183,10 +183,9 @@ body {
 	top: 0;
 	height:
 		calc(	100vh /* screen height */
-			- ((var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+			- (var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
 			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
 			+ var(--navigation_text_font_size)) /* navigation text line height */
-			* 1) /* control */
 		);
 }
 .mother_container-header_container_upper {
@@ -230,8 +229,7 @@ body {
 │			│
 └─BEGIN─────────────────┘
 */
-.header_container-header_wrapper_central {
-}
+.header_container-header_wrapper_central { }
 .header_container-header_wrapper_upper {
 	/* maybe make it so that .header_anchor-header_graphic's visibility is hidden and set the graphic as a CSS background-image? */
 	height:
@@ -243,11 +241,11 @@ body {
 	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	text-align: center;
 }
-.header_wrapper-header_anchor {
+.header_container-header_wrapper_upper .header_wrapper-header_anchor {
 	width: auto;
 	height: 100%;
 }
-.header_anchor-header_graphic {
+.header_container-header_wrapper_upper .header_wrapper-header_anchor .header_anchor-header_graphic {
 	width: auto;
 	height: 100%;
 }
