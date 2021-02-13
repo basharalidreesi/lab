@@ -48,9 +48,15 @@
 				// {% endif %}
 			}
 			{% if page.header_location == "central" %}
-				var header = document.getElementById("header_graphic");
-				var bounding = header.getBoundingClientRect();
-				console.log(bounding);
+				// get the sticky element
+				const stickyElm = document.getElementById("header_graphic")
+
+				const observer = new IntersectionObserver( 
+				([e]) => e.target.classList.toggle('isSticky', e.intersectionRatio < 1),
+				{threshold: [1]}
+				);
+			 
+				observer.observe(stickyElm)
 			{% endif %}
 		</script>
 	</head>
