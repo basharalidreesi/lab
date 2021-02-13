@@ -4,7 +4,8 @@ layout: default
 
 {% for collection in site.collections %}
 	<h1>{{ collection.label }}</h1>
-	{% for post in collection.docs %}
-		<p>{{ post.title }}: {{ post.position }}</p>
+	{% assign documents = collection.docs | sort: "position" %}
+	{% for document in documents %}
+		<p>{{ document.title }}: {{ document.position }}</p>
 	{% endfor %}
 {% endfor %}
