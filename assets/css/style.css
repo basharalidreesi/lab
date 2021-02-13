@@ -229,7 +229,16 @@ body {
 │			│
 └─BEGIN─────────────────┘
 */
-.header_container-header_wrapper_central { }
+.header_container-header_wrapper_central {
+	height:
+		calc(	0px /* initial value for debug */
+			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
+			+ var(--navigation_text_font_size) /* navigation text line height */
+		);
+	padding: 0;
+	text-align: center;
+}
 .header_container-header_wrapper_upper {
 	/* maybe make it so that .header_anchor-header_graphic's visibility is hidden and set the graphic as a CSS background-image? */
 	height:
