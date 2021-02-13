@@ -4,5 +4,5 @@ layout: default
 
 {% assign pages = site.documents | where: "collection", page.collection %}
 {% for item in pages %}
-	<p>{{ item }}</p>
+	<p>{{ item.title }}</p>
 {% endfor %}
