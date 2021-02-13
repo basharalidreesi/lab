@@ -5,6 +5,6 @@ layout: default
 {% assign pages = site.documents %}
 {% for item in pages %}
 	<p>Title: {{ item.title }}</p>
-	<p>Dir: {{ item.dir }}</p>
+	<p>Dir: {{ item.path }}</p>
 	<p>Coll: {{ item.collection }}</p>
 {% endfor %}
