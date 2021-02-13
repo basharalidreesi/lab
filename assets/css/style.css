@@ -250,11 +250,11 @@ body {
 	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	text-align: center;
 }
-.header_container-header_wrapper_upper .header_wrapper-header_anchor {
+.header_wrapper-header_anchor {
 	width: auto;
 	height: 100%;
 }
-.header_container-header_wrapper_upper .header_wrapper-header_anchor .header_anchor-header_graphic {
+.header_anchor-header_graphic {
 	width: auto;
 	height: 100%;
 }
