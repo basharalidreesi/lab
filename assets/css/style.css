@@ -180,7 +180,7 @@ body {
 .mother_container-navigation_container { /* no styling rules */ }
 .mother_container-header_container_central {
 	position: sticky;
-	top: 0;
+	top: -1px; /* debug */
 	margin-top:
 		calc(	50vh /* screen half height */
 			- (var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
@@ -201,6 +201,9 @@ body {
 			+ var(--navigation_text_font_size)) /* half of header height (identical to navigation height) */
 			/ 2 ) /* half of header height (identical to navigation height) */
 		);
+}
+.isSticky {
+	padding: 1em;
 }
 .mother_container-header_container_upper {
 	position: sticky;
