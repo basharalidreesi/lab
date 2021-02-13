@@ -9,6 +9,9 @@ layout: default
 	{% if item_path[0] == page_path %}
 		<h1>Yes — same collection</h1>
 	{% endif %}
+	{% if item_path[1] != empty and item_path[2] == empty %}
+		<h1>Yes — listed</h1>
+	{% endif %}
 	<pre>Item title:		{{ item.title }}</pre>
 	<pre>Item path[0]:		{{ item_path[0] }}</pre>
 	<pre>Item path[1]:		{{ item_path[1] }}</pre>
