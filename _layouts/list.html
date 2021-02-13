@@ -6,24 +6,24 @@ layout: default
 	{% assign page_path = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" %}
 	{% for collection in site.collections %}
 		{% if collection.label == page_path %}
-			{% assign documents = collection.docs | sort: "position" %}
-			{% for document in documents %}
-				{% assign document_path = document.path | remove_first: "_" | split: "/" %}
-				{% unless document_path[2] %}
-					<li class="list_page_wrapper-list_page_item">		
-						<a class="--anchor_styling --list_text_styling" href="{{ document.url }}">
-							{{ document.title }}
-						</a>
-						{% if document.tags != empty %}		
-							<ul class="list_page_item-list_page_item_tag_list">		
-								{% for tag in document.tags %}		
-									<li class="list_page_item_tag_list-list_page_item_tag --tag_text_styling">		
-										{{ tag }}		
-									</li>		
-								{% endfor %}		
-							</ul>
-						{% endif %}
-					</li>
+			{% assign items = collection.docs | sort: "position" %}
+			{% for item in documents %}
+				{% assign item_path = item.path | remove_first: "_" | split: "/" %}
+				{% unless item_path[2] %}
+					<a class="--anchor_styling --list_text_styling" href="{{ document.url }}">
+						<li class="list_page_wrapper-list_page_item">		
+							{{ item.title }}
+							{% if item.tags != empty %}		
+								<ul class="list_page_item-list_page_item_tag_list">		
+									{% for tag in item.tags %}		
+										<li class="list_page_item_tag_list-list_page_item_tag --tag_text_styling">		
+											{{ tag }}		
+										</li>		
+									{% endfor %}		
+								</ul>
+							{% endif %}
+						</li>
+					</a>
 				{% endunless %}
 			{% endfor %}
 		{% endif %}
