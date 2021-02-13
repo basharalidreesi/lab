@@ -2,6 +2,8 @@
 layout: default
 ---
 
+<!-- partially from https://mmistakes.github.io/minimal-mistakes/docs/layouts/ -->
+<!-- partially from https://github.com/mmistakes/minimal-mistakes/blob/master/docs/_pages/collection-archive.html -->
 <ul class="content_container-list_page_wrapper">
 	{% assign page_path = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" %}
 	{% for collection in site.collections %}
