@@ -2,9 +2,7 @@
 layout: default
 ---
 
-{% assign pages = site.documents %}
+{% assign pages = site.documents | where: pages.collection, page.collection %}
 {% for item in pages %}
-	{% if item.collection == page.collection %}
-		<p>{{ item }}</p>
-	{% endif %}
+	<p>{{ item }}</p>
 {% endfor %}
