@@ -4,7 +4,7 @@ layout: default
 
 {% assign pages = site.documents %}
 {% for item in pages %}
-	{% if item.collection == page.collection %}
-		<p>{{ item.title }}</p>
-	{% endif %}
+	<p>Title: {{ item.title }}</p>
+	<p>Dir: {{ item.dir }}</p>
+	<p>Coll: {{ item.collection }}</p>
 {% endfor %}
