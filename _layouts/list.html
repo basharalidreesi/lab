@@ -7,11 +7,11 @@ layout: default
 	{% assign page_path = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" %}
 	{% assign item_path = item.path | remove_first: "_" | split: "/" %}
 	{% if item_path[0] == page_path %}
-		<h1>Yes — same collection</h1>
+		{% unless item_path[2] %}
+			<h1>Yes — same collection</h1>
+			<h1>Yes — listed</h1>
+		{% endunless %}
 	{% endif %}
-	{% unless item_path[2] %}
-		<h1>Yes — listed</h1>
-	{% endunless %}
 	<pre>Item title:		{{ item.title }}</pre>
 	<pre>Item path[0]:		{{ item_path[0] }}</pre>
 	<pre>Item path[1]:		{{ item_path[1] }}</pre>
