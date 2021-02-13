@@ -2,12 +2,9 @@
 layout: default
 ---
 
-{{ page.collection }}
 {% for collection in site.collections %}
-	{{ collection.label }}
-	{% if collection.label == page.collection %}
-		{% for post in collection.docs %}
-			{{ post.title }}
-		{% endfor %}
-	{% endif %}	
+	<h1>{{ collection.label }}</h1>
+	{% for post in collection.docs %}
+		<p>{{ post.title }}</p>
+	{% endfor %}
 {% endfor %}
