@@ -7,12 +7,9 @@ layout: default
 	{% assign path = page.dir | split: "/" %}
 	{% assign collection = item.collection %}
 	{% if path[1] == collection %}
-		<h1>Yes</h1>
-	{% else %}
-		<h1>No</h1>
+		<pre>Item title:		{{ item.title }}</pre>
+		<pre>Item coll:		{{ collection }}</pre>
+		<pre>This dir:		{{ path[1] }}</pre>
+		<br />
 	{% endif %}
-	<pre>Item title:	{{ item.title }}</pre>
-	<pre>This dir:		{{ path[1] }}</pre>
-	<pre>Item coll:		{{ collection }}</pre>
-	<br />
 {% endfor %}
