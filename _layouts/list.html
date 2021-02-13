@@ -12,4 +12,9 @@ layout: default
       {% capture written_label %}{{ label }}{% endcapture %}
     {% endif %}
   {% endunless %}
+  {% for post in collection.docs %}
+    {% unless collection.output == false or collection.label == "posts" %}
+      {{ post.title }}
+    {% endunless %}
+  {% endfor %}
 {% endfor %}
