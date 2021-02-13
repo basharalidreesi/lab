@@ -9,7 +9,9 @@ layout: default
 		{% assign documents = collection.docs | sort: "position" %}
 		{% for document in documents %}
 			{% assign document_path = document.path | remove_first: "_" | split: "/" %}
-			<p>{{ document.title }} : {{ document_path }} : {{ document.position }}</p>
+			{% unless document_path[2] %}
+				<pre>{{ document.title }} : {{ document.position }}</pre>
+			{% endunless %}
 		{% endfor %}
 	{% endif %}
 {% endfor %}
