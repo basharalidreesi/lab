@@ -75,7 +75,7 @@
 			<main class="mother_container-content_container" id="content_container">
 				{{ content }}
 			</main>
-			{% if page.has_bottom_footer == true %}
+			{% if page.is_fullscreen == false %}
 				<footer class="mother_container-footer_container">
 					{% include footer.html %}
 				</footer>
