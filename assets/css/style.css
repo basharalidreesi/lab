@@ -178,7 +178,8 @@ body {
 	flex: 1;
 }
 .mother_container-navigation_container { /* no styling rules */ }
-.mother_container-header_container {
+.mother_container-header_container_central { /* no styling rules */ }
+.mother_container-header_container_upper {
 	position: sticky;
 	top: 0;
 }
