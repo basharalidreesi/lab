@@ -28,12 +28,11 @@
 	--font_size: 1em;
 	--universal_answer: 1em;
 	--universal_answer_multiplier: 2;
-	/* see ./_config.yml and ./_layouts/default.html for the below commented-out variables */
-	/* --primary_colour: #91a3b0; */
-	/* --secondary_colour: #fff; */
-	/* --secondary_colour: #eceff1; */
-	/* --border_colour: #000; */
-	/* --text_colour: #000; */
+	/* --primary_colour: #91a3b0; */ /* see ./_config.yml and ./_layouts/default.html */
+	/* --secondary_colour: #fff; */ /* see ./_config.yml and ./_layouts/default.html */
+	/* --secondary_colour: #eceff1; */ /* old */
+	/* --border_colour: #000; */ /* see ./_config.yml and ./_layouts/default.html */
+	/* --text_colour: #000; */ /* see ./_config.yml and ./_layouts/default.html */
 	--navigation_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--navigation_text_font_size: 1.25em;
 	--footer_text_font: "Code New Roman", monospace;
@@ -57,7 +56,7 @@ html, body {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	overscroll-behavior: none; /* for horizontal scrolling */
+	/* overscroll-behavior: none; */ /* for horizontal scrolling */ /* not sure if working -- for later */
 }
 * {
 	margin: 0;
@@ -65,7 +64,7 @@ html, body {
 	font-size: var(--font_size);
 	text-align: left;
 	line-height: 100%;
-	overscroll-behavior: none; /* for horizontal scrolling */
+	/* overscroll-behavior: none; */ /* for horizontal scrolling */ /* not sure if working -- for later */
 }
 html {
 	box-sizing: border-box;
@@ -178,13 +177,13 @@ body {
 .--mother_container_fullscreen > .mother_container-content_container {
 	flex: 1;
 }
-.mother_container-navigation_container { }
+.mother_container-navigation_container { /* no styling rules */ }
 .mother_container-header_container {
 	position: sticky;
 	top: 0;
 }
-.mother_container-content_container { }
-.mother_container-footer_container { }
+.mother_container-content_container { /* no styling rules */ }
+.mother_container-footer_container { /* no styling rules */ }
 
 /*
 ┌─BEGIN─────────────────┐
