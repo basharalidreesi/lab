@@ -2,8 +2,8 @@
 layout: default
 ---
 
-{% assign pages = site.documents | sort: page.position %}
-{% for item in pages %}
+{% assign pages = site.documents %}
+{% for item in pages | sort: item.position %}
 	{% assign page_path = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" %}
 	{% assign item_path = item.path | remove_first: "_" | split: "/" %}
 	{% if item_path[0] == page_path %}
