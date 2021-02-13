@@ -4,8 +4,10 @@ layout: default
 
 {% assign pages = site.documents %}
 {% for item in pages %}
+	{% assign path = item.path | remove_first: "_" | split: "/" %}
+	{% assign collection = item.collection %}
 	<pre>Title: {{ item.title }}</pre>
-	<pre>Dir: {{ item.path }}</pre>
-	<pre>Coll: {{ item.collection }}</pre>
+	<pre>Dir: {{ path[0] }}</pre>
+	<pre>Coll: {{ collection }}</pre>
 	<br />
 {% endfor %}
