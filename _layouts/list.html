@@ -3,7 +3,7 @@ layout: default
 ---
 
 <ul class="content_container-list_page_wrapper">
-	{% for item in site.pages | sort: "position" %}
+	{% for item in site.pages %}
 		{% if item.collection == page.collection %}
 			{% if item.is_listed == true %}
 				<li class="list_page_wrapper-list_page_item">
