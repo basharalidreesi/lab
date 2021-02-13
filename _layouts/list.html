@@ -4,8 +4,7 @@ layout: default
 
 {% for collection in site.collections %}
 	<h1>{{ collection.label }}</h1>
-	<h1 style="color: green;">{{ collection.docs.position }}</h1>
 	{% for post in collection.docs %}
-		<p>{{ post.title }}</p>
+		<p>{{ post.title }}: {{ post.position }}</p>
 	{% endfor %}
 {% endfor %}
