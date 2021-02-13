@@ -3,7 +3,7 @@ layout: default
 ---
 
 <ul class="content_container-list_page_wrapper">		
-	{% assign sorted = site.collections[page.collection] | sort: "position" %} <!-- must filter nested pages somehow -->		
+	{% assign sorted = site.collections.[page.collection] | sort: "position" %} <!-- must filter nested pages somehow -->		
 	{% for item in sorted %}		
 		{% if item.is_listed == true %}		
 			<li class="list_page_wrapper-list_page_item">		
