@@ -24,7 +24,6 @@ defaults:
     border_colour: "#000"
     text_colour: "#000"
     header_location: upper
-    has_bottom_footer: false
     is_fullscreen: false
 - scope:
     path: ''
