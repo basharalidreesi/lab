@@ -49,7 +49,7 @@
 			}
 			{% if page.header_location == "central" %}
 				// get the sticky element
-				const stickyElm = document.getElementById("header_graphic");
+				const stickyElm = document.getElementById("test");
 
 				const observer = new IntersectionObserver( 
 				([e]) => e.target.classList.toggle('isSticky', e.intersectionRatio < 1),
@@ -61,7 +61,7 @@
 		</script>
 	</head>
 	<body>
-		<div class="mother_container {% if page.is_fullscreen == true %}--mother_container_fullscreen{% endif %}">
+		<div class="mother_container {% if page.is_fullscreen == true %}--mother_container_fullscreen{% endif %}" {% if page.is_fullscreen == true %} id="test" {% endif %}>
 			<nav class="mother_container-navigation_container" id="navigation_container">
 				<ul class="navigation_container-navigation_list_wrapper">
 					{% assign sorted = site.pages | sort: "position" %}
