@@ -3,22 +3,28 @@ layout: default
 ---
 
 {% assign pages = site.documents %}
-{% for item in pages %}
+{% for item_of_pages in pages %}
 	{% assign page_path = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" %}
-	{% assign item_path = item.path | remove_first: "_" | split: "/" %}
+	{% assign item_path = item_of_pages.path | remove_first: "_" | split: "/" %}
 	{% if item_path[0] == page_path %}
 		{% unless item_path[2] %}
 			<h1>Yes — same collection</h1>
 			<h1>Yes — listed</h1>
-			<pre>Item title:		{{ item.title }}</pre>
+			<pre>Item title:		{{ item_of_pages.title }}</pre>
 			<pre>Item path[0]:		{{ item_path[0] }}</pre>
 			<pre>Item path[1]:		{{ item_path[1] }}</pre>
 			<pre>Item path[2]:		{{ item_path[2] }}</pre>
 			<pre>Item path[3]:		{{ item_path[3] }}</pre>
 			<pre>This path:		{{ page_path }}</pre>
 			<br />
-			{% assign yesses = item.title %}
-			{{ yesses }}
+			{% assign collections = site.collections | sort: "position" %}
+			{% for item_of_collections in collections %}
+				{% if item_of_collections.title == item_of_pages.title %}
+					<h1>{{ item_of_collections.title }}</h1>
+				{% endif %}
+			{% endfor %}
+			<br />
+			<br />
 		{% endunless %}
 	{% endif %}
 {% endfor %}
