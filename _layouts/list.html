@@ -9,9 +9,7 @@ layout: default
 		<h1>{{ collection.label }}</h1>
 		{% assign documents = collection.docs | sort: "position" %}
 		{% for document in documents %}
-			{% unless item_path[2] %}
-				<p>{{ document.title }}: {{ document.position }}</p>
-			{% endunless %}
+			<p>{{ document.title }} : {{ document.path }} : {{ document.position }}</p>
 		{% endfor %}
 	{% endif %}
 {% endfor %}
