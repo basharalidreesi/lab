@@ -186,20 +186,16 @@ body {
 			- (var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
 			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
 			+ var(--navigation_text_font_size)) /* navigation text line height */
-			- ((var(--universal_answer) * var(--universal_answer_multiplier) /* remove half of header height (identical to navigation height) */
-			+ var(--universal_answer) * var(--universal_answer_multiplier) /* remove half of header height (identical to navigation height) */
-			+ var(--navigation_text_font_size)) /* remove half of header height (identical to navigation height) */
-			/ 2 ) /* remove half of header height (identical to navigation height) */
+			- ((var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to navigation height) */
+			+ var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to navigation height) */
+			+ var(--navigation_text_font_size)) /* half of header height (identical to navigation height) */
+			/ 2 ) /* half of header height (identical to navigation height) */
 		);
 	margin-bottom:
 		calc(	50vh /* screen half height */
-			+ (var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+			- (var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
 			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
 			+ var(--navigation_text_font_size)) /* navigation text line height */
-			+ ((var(--universal_answer) * var(--universal_answer_multiplier) /* remove half of header height (identical to navigation height) */
-			+ var(--universal_answer) * var(--universal_answer_multiplier) /* remove half of header height (identical to navigation height) */
-			+ var(--navigation_text_font_size)) /* remove half of header height (identical to navigation height) */
-			/ 2 ) /* remove half of header height (identical to navigation height) */
 		);
 }
 .mother_container-header_container_upper {
