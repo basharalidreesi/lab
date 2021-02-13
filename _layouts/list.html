@@ -6,7 +6,7 @@ layout: default
 {% for item in pages %}
 	{% assign path = item.path | remove_first: "_" | split: "/" %}
 	{% assign collection = item.collection %}
-	{% if path[0] == collection %}
+	{% if path[0] == page.collection %}
 		<h1>Yes</h1>
 	{% else %}
 		<h1>No</h1>
