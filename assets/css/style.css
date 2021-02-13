@@ -186,9 +186,9 @@ body {
 			- (var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
 			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
 			+ var(--navigation_text_font_size)) /* navigation text line height */
-			- (var(--universal_answer) * var(--universal_answer_multiplier)
+			- ((var(--universal_answer) * var(--universal_answer_multiplier)
 			+ var(--universal_answer) * var(--universal_answer_multiplier)
-			+ var(--navigation_text_font_size)
+			+ var(--navigation_text_font_size))
 			/ 2 ) /* half of header height */
 		);
 	margin-bottom:
@@ -196,9 +196,9 @@ body {
 			- (var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
 			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
 			+ var(--navigation_text_font_size)) /* navigation text line height */
-			- (var(--universal_answer) * var(--universal_answer_multiplier)
+			- ((var(--universal_answer) * var(--universal_answer_multiplier)
 			+ var(--universal_answer) * var(--universal_answer_multiplier)
-			+ var(--navigation_text_font_size)
+			+ var(--navigation_text_font_size))
 			/ 2 ) /* half of header height */
 		);
 }
