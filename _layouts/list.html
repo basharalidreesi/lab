@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{% assign pages = site.documents %}
+{% assign pages = site.documents | sort: "position" %}
 {% for item in pages %}
 	{% assign page_path = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" %}
 	{% assign item_path = item.path | remove_first: "_" | split: "/" %}
@@ -10,13 +10,13 @@ layout: default
 		{% unless item_path[2] %}
 			<h1>Yes — same collection</h1>
 			<h1>Yes — listed</h1>
+			<pre>Item title:		{{ item.title }}</pre>
+			<pre>Item path[0]:		{{ item_path[0] }}</pre>
+			<pre>Item path[1]:		{{ item_path[1] }}</pre>
+			<pre>Item path[2]:		{{ item_path[2] }}</pre>
+			<pre>Item path[3]:		{{ item_path[3] }}</pre>
+			<pre>This path:		{{ page_path }}</pre>
+			<br />
 		{% endunless %}
 	{% endif %}
-	<pre>Item title:		{{ item.title }}</pre>
-	<pre>Item path[0]:		{{ item_path[0] }}</pre>
-	<pre>Item path[1]:		{{ item_path[1] }}</pre>
-	<pre>Item path[2]:		{{ item_path[2] }}</pre>
-	<pre>Item path[3]:		{{ item_path[3] }}</pre>
-	<pre>This path:		{{ page_path }}</pre>
-	<br />
 {% endfor %}
