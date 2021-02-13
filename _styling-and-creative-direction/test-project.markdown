@@ -8,7 +8,7 @@ position: 0
 
 !image
 !source ![look-02.png](/uploads/look-02.png)
-!linkto here
+!linkto test-project/nested-test-project.html
 !background pink
 
 !image
