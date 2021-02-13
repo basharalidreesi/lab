@@ -183,9 +183,10 @@ body {
 	top: 0;
 	height:
 		calc(	100vh /* screen height */
-			- (var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+			- ((var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
 			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
 			+ var(--navigation_text_font_size)) /* navigation text line height */
+			* 1) /* control */
 		);
 }
 .mother_container-header_container_upper {
