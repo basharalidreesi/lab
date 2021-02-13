@@ -6,7 +6,7 @@ layout: default
 {% for item in pages %}
 	{% assign page_path = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" %}
 	{% assign item_path = item.path | remove_first: "_" | split: "/" %}
-	{% if item_path[0] == page_path[0] %}
+	{% if item_path[0] == page_path %}
 		<h1>Yes — same collection</h1>
 	{% endif %}
 	<pre>Item title:		{{ item.title }}</pre>
