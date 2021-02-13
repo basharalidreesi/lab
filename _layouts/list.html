@@ -1,0 +1,10 @@
+---
+layout: default
+---
+
+{% assign pages = site.pages %}
+{% for item in pages %}
+	{% if item.collection == page.collection %}
+		<p>{{ item }}</p>
+	{% endif %}
+{% endfor %}
