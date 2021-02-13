@@ -5,6 +5,6 @@ tags:
 - tag
 - another tag
 - also another tag
-position: 1
+position: 2
 ---
 
