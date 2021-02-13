@@ -230,9 +230,6 @@ body {
 └─BEGIN─────────────────┘
 */
 .header_container-header_wrapper_central {
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 .header_container-header_wrapper_upper {
 	/* maybe make it so that .header_anchor-header_graphic's visibility is hidden and set the graphic as a CSS background-image? */
