@@ -5,6 +5,7 @@ layout: default
 <ul class="content_container-list_page_wrapper">
 	{% for item in site.pages %}
 		{% if item.collection == page.collection and item.is_listed == true %}
+			{{ item.collection }} {{ page.collection }}
 			<li class="list_page_wrapper-list_page_item">
 				<a class="--anchor_styling --list_text_styling" href="{{ item.url }}">
 					{{ item.title }}
