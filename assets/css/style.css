@@ -433,6 +433,7 @@ body {
 		height: calc(100% - (var(--universal_answer) * var(--universal_answer_multiplier)));
 		margin: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 		margin-top: 0;
+		border-radius: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	}
 	.cascade_wrapper-anchored_graphic_card + .cascade_wrapper-anchored_graphic_card {
 		margin-left: 0;
