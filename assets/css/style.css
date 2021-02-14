@@ -35,7 +35,7 @@
 	/* --text_colour: #000; */ /* see ./_config.yml and ./_layouts/default.html */
 	--navigation_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--navigation_text_font_size: 1.25em;
-	--footer_text_font: serif;
+	--footer_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--footer_text_font_size: 1em;
 	--list_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--list_text_font_size: 1.5em;
@@ -106,7 +106,7 @@ html {
 	.--footer_text_styling {
 		color: var(--text_colour);
 		font-family: var(--footer_text_font);
-		font-weight: normal;
+		font-weight: 200;
 		text-align: center;
 		font-size: var(--footer_text_font_size);
 		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
@@ -134,6 +134,7 @@ html {
 	*/
 	.--anchor_styling {
 		color: var(--text_colour);
+		display: inline-block;
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 		text-decoration: none;
 		background-image: linear-gradient(currentColor, currentColor);
