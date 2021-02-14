@@ -35,7 +35,7 @@
 	/* --text_colour: #000; */ /* see ./_config.yml and ./_layouts/default.html */
 	--navigation_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--navigation_text_font_size: 1.25em;
-	--footer_text_font: "Code New Roman", monospace;
+	--footer_text_font: serif;
 	--footer_text_font_size: 1em;
 	--list_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--list_text_font_size: 1.5em;
