@@ -52,10 +52,17 @@ layout: default
 				{% endif %}
 			{% endfor %}
 		{% endif %}
+		{% if block contains "!border" %}
+			{% for line in item %}
+				{% if line contains "!background" %}
+					{% assign border = line | remove_first: "!border" | remove: "<p>" | remove: "</p>" | strip %}
+				{% endif %}
+			{% endfor %}
+		{% endif %}
 		{% case declaration %}
 			{% when "!text" %}
 				{% if block contains "!linkto" %}
-					<div class="cascade_wrapper-anchored_text_card" {% if block contains "!background" %} style="background-color: {{ background }};" {% endif %}>
+					<div class="cascade_wrapper-anchored_text_card" style="{% if block contains "!background" %} background-color: {{ background }}; {% endif %} {% if block contains "!border" %} --border_colour: {{ border }}; {% endif %}">
 						<a href="{{ link }}">
 							{% for line in item %}
 								<p>{{ line | remove_first: "!text" | remove: "<p>" | remove: "</p>" | remove: "!linkto" | remove: link | remove: "!background" | remove: background | strip }}</p>
@@ -63,7 +70,7 @@ layout: default
 						</a>
 					</div>
 				{% else %}
-					<div class="cascade_wrapper-text_card" {% if block contains "!background" %} style="background-color: {{ background }};" {% endif %}>
+					<div class="cascade_wrapper-text_card" style="{% if block contains "!background" %} background-color: {{ background }}; {% endif %} {% if block contains "!border" %} --border_colour: {{ border }}; {% endif %}">
 						{% for line in item %}
 								<p>{{ line | remove_first: "!text" | remove: "<p>" | remove: "</p>" | remove: "!background" | remove: background | strip }}</p>
 						{% endfor %}
@@ -71,7 +78,7 @@ layout: default
 				{% endif %}
 			{% when "!image" %}
 				{% if block contains "!linkto" %}
-					<figure class="cascade_wrapper-anchored_graphic_card" {% if block contains "!background" %} style="background-color: {{ background }};" {% endif %}>
+					<figure class="cascade_wrapper-anchored_graphic_card" style="{% if block contains "!background" %} background-color: {{ background }}; {% endif %} {% if block contains "!border" %} --border_colour: {{ border }}; {% endif %}">
 						{% if block contains "!caption" %}
 							<!-- <figcaption>
 								{% for line in item %}
@@ -86,7 +93,7 @@ layout: default
 						</a>
 					</figure>
 				{% else %}
-					<figure class="cascade_wrapper-graphic_card" {% if block contains "!background" %} style="background-color: {{ background }};" {% endif %}>
+					<figure class="cascade_wrapper-graphic_card" {% if block contains "!background" %} style="{% if block contains "!background" %} background-color: {{ background }}; {% endif %} {% if block contains "!border" %} --border_colour: {{ border }}; {% endif %}">
 						{% if block contains "!caption" %}
 							<!-- <figcaption>
 								{% for line in item %}
@@ -112,7 +119,7 @@ layout: default
 					</div> -->
 				{% endif %}
 			{% when "!empty" %}
-				<div class="cascade_wrapper-empty_card" {% if block contains "!background" %} style="background-color: {{ background }};" {% endif %}></div>
+				<div class="cascade_wrapper-empty_card" style="{% if block contains "!background" %} background-color: {{ background }}; {% endif %} {% if block contains "!border" %} --border_colour: {{ border }}; {% endif %}"></div>
 		{% endcase %}
 	{% endfor %}
 	<!-- <footer class="cascade_wrapper-footer_card">
