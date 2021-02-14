@@ -54,7 +54,7 @@ layout: default
 		{% endif %}
 		{% if block contains "!border" %}
 			{% for line in item %}
-				{% if line contains "!background" %}
+				{% if line contains "!border" %}
 					{% assign border = line | remove_first: "!border" | remove: "<p>" | remove: "</p>" | strip %}
 				{% endif %}
 			{% endfor %}
