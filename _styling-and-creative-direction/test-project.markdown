@@ -15,6 +15,7 @@ border_colour: blue
 
 !image
 !source ![IMG_1111.jpeg](/uploads/IMG_1111.jpeg)
+!border peachpuff
 
 !empty
 !background blue
