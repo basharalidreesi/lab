@@ -36,11 +36,13 @@ defaults:
     type: styling-and-creative-direction
   values:
     layout: cascade
+    is_fullscreen: true
 - scope:
     path: ''
     type: social-media-and-content-creation
   values:
     layout: cascade
+    is_fullscreen: true
 - scope:
     path: assets/graphics/header_graphics
   values:
