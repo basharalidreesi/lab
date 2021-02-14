@@ -9,12 +9,10 @@ position: 0
 !image
 !source ![look-02.png](/uploads/look-02.png)
 !linkto test-project/nested-test-project.html
-!background pink
-!border transparent
+!background yellow
 
 !image
 !source ![IMG_1111.jpeg](/uploads/IMG_1111.jpeg)
-!border peachpuff
 
 !empty
 !background blue
