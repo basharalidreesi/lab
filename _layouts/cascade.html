@@ -93,7 +93,7 @@ layout: default
 						</a>
 					</figure>
 				{% else %}
-					<figure class="cascade_wrapper-graphic_card" {% if block contains "!background" %} style="{% if block contains "!background" %} background-color: {{ background }}; {% endif %} {% if block contains "!border" %} --border_colour: {{ border }}; {% endif %}">
+					<figure class="cascade_wrapper-graphic_card" style="{% if block contains "!background" %} background-color: {{ background }}; {% endif %} {% if block contains "!border" %} --border_colour: {{ border }}; {% endif %}">
 						{% if block contains "!caption" %}
 							<!-- <figcaption>
 								{% for line in item %}
