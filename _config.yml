@@ -30,7 +30,7 @@ defaults:
     type: pages
   values:
     layout: default
-    is_listed: true
+    is_listed: false
 - scope:
     path: ''
     type: styling-and-creative-direction
