@@ -419,7 +419,7 @@ body {
 		justify-content: center;
 		align-items: center;
 		border: 1px solid var(--border_colour);
-		border-radius: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+		border-radius: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 		margin: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 		margin-top: 0;
@@ -433,7 +433,7 @@ body {
 		height: calc(100% - (var(--universal_answer) * var(--universal_answer_multiplier)));
 		margin: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 		margin-top: 0;
-		border-radius: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+		border-radius: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 	}
 	.cascade_wrapper-anchored_graphic_card + .cascade_wrapper-anchored_graphic_card {
 		margin-left: 0;
@@ -444,7 +444,7 @@ body {
 	}
 	.cascade_wrapper-anchored_graphic_card .graphic_card-graphic_card_image {
 		border: 1px solid var(--border_colour);
-		border-radius: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+		border-radius: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 	}
 	.graphic_card-graphic_card_image {
