@@ -10,6 +10,7 @@ position: 4
 !source ![look-02.png](/uploads/look-02.png)
 !linkto test-project/nested-test-project.html
 !background pink
+!border red
 
 !image
 !source ![IMG_1111.jpeg](/uploads/IMG_1111.jpeg)
