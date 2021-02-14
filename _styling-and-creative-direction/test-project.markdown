@@ -28,6 +28,7 @@ position: 4
 !source ![IMG_1109.jpeg](/uploads/IMG_1109.jpeg)
 !linkto here
 !background orange
+!border transparent
 
 !image
 !source ![IMG_1121.jpeg](/uploads/IMG_1121.jpeg)
