@@ -5,18 +5,18 @@ layout: default
 <script>
 	function filter(event) {
 		var tag = event.target;
-		var tag_content = tag.innerHTML;
+		var tag_content = tag.textContent;
 		var list_items = document.getElementsByClassName("list_page_item-list_page_item_tag_list");
 		var all_tags = document.getElementsByClassName("list_page_item_tag_list-list_page_item_tag");
 		for (var i = 0, length = list_items.length; i < length; i++) {
-			if (list_items[i].innerHTML.indexOf(tag_content) != -1) {
+			if (list_items[i].textContent.indexOf(tag_content) != -1) {
 				list_items[i].parentElement.classList.add("--active_list_page_item");
 			} else {
 				list_items[i].parentElement.classList.remove("--active_list_page_item");
 			}
 		}
 		for (var j = 0, length = all_tags.length; j < length; j++) {
-			if (all_tags[j].innerHTML.indexOf(tag_content) != -1) {
+			if (all_tags[j].textContent.indexOf(tag_content) != -1) {
 				all_tags[j].classList.add("--active_list_page_item_tag");
 				all_tags[j].children[0].style.display = "block";
 				all_tags[j].children[0].style.opacity = "1";
@@ -24,7 +24,7 @@ layout: default
 				all_tags[j].classList.remove("--active_list_page_item_tag");
 			}
 		}
-		console.log("Filter " + tag.textContent + ".");
+		console.log("Filter " + tag.split(" ").join(""));
 	}
 	function unfilter(event) {
 		var list_items = document.getElementsByClassName("list_page_item-list_page_item_tag_list");
