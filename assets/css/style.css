@@ -82,7 +82,7 @@ html {
 	text-rendering: geometricPrecision;
 }
 img {
-	point-events: none;
+	pointer-events: none;
 	user-select: none;
 }
 
