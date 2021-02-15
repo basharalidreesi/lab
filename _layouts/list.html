@@ -7,7 +7,7 @@ layout: default
 		var tag = event.target.innerHTML;
 		var tags = document.getElementsByClassName("list_page_item_tag_list-list_page_item_tag");
 		console.log("Filtering " + tag + ".");
-		for (var i = 0, length = tags.length; i <= length; i++) {
+		for (var i = 0, length = tags.length; i < length; i++) {
 			if (tags[i].innerHTML.indexOf(tag) != -1) {
 				tags[i].parentElement.parentElement.style.backgroundColor = "yellow";
 			} else {
