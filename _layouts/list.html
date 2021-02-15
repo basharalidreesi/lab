@@ -5,7 +5,8 @@ layout: default
 <script>
 	function filter(event) {
 		var tag = event.target.innerHTML;
-		console.log("Filtering " + tag + ".");
+		var all_tags = document.getElementByClassName("list_page_item_tag_list-list_page_item_tag").innerHTML;
+		console.log("Filtering " + tag + "from " + all_tags + ".");
 	}
 </script>
 <!-- partially from https://mmistakes.github.io/minimal-mistakes/docs/layouts/ -->
