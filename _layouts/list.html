@@ -10,6 +10,8 @@ layout: default
 		for (var i = 0, length = ts.length; i < length; ++i) {
 			if (ts[i].textContent.indexOf(t) > -1) {
 				ts[i].parentElement.parentElement.style.backgroundColor = "yellow";
+			} else {
+				ts[i].parentElement.parentElement.style.backgroundColor = "pink";
 			}
 		}
 	}
