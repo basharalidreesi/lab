@@ -5,8 +5,13 @@ layout: default
 <script>
 	function filter(event) {
 		var tag = event.target.innerHTML;
-		const tags = Array.from(document.getElementsByClassName("list_page_item_tag_list-list_page_item_tag"));
+		var tags = document.getElementsByClassName("list_page_item_tag_list-list_page_item_tag");
 		console.log("Filtering " + tag + "from " + tags.textContent + ".");
+		for (var i = 0, length = tags.length; i < length; ++i) {
+			if (tags[i].innerHTML.indexOf(tag) > -1){
+				tags.style.backgroundColor: "yellow";
+			}
+		}
 	}
 </script>
 <!-- partially from https://mmistakes.github.io/minimal-mistakes/docs/layouts/ -->
