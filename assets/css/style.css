@@ -471,6 +471,10 @@ body {
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 		margin-top: 0;
 	}
+	.cascade_wrapper-anchored_text_card:hover {
+		background: linear-gradient(0deg, var(--primary_colour) 10%, rgba(255,255,255,0) 100%);
+		box-shadow: inset 0 0 calc(var(--universal_answer) * var(--universal_answer_multiplier)) calc(var(--universal_answer) * var(--universal_answer_multiplier)) var(--primary_colour);
+	}
 	.cascade_wrapper-graphic_card {
 		position: relative;
 		height: 100%;
