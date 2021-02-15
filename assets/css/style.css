@@ -370,6 +370,13 @@ body {
 		background-color: var(--text_colour);
 		color: var(--secondary_colour);
 	}
+	.--active_list_page_item {
+		background-color: yellow;
+	}
+	.--active_list_page_item_tag {
+		background-color: var(--text_colour);
+		color: var(--secondary_colour);
+	}
 	/*
 	┌─BEGIN─────────────────┐
 	│			│
