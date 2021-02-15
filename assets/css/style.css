@@ -393,6 +393,7 @@ body {
 		width: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		background-color: var(--text_colour);
 		border-radius: 500px;
+		transition: all 0.25s;
 	}
 	.list_page_item_tag-tag_unfilter::after, .list_page_item_tag-tag_unfilter::before {
 		content: "";
