@@ -32,6 +32,7 @@ layout: default
 		}
 		for (var j = 0, length = all_tags.length; j < length; j++) {
 			all_tags[j].classList.remove("--active_list_page_item_tag");
+			all_tags[j].children[0].removeAttribute("style");
 		}
 	}
 </script>
