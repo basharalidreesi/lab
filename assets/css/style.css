@@ -397,6 +397,12 @@ body {
 		left: 0;
 		top: calc(50% - 1px);
 	}
+	.list_page_item_tag-tag_unfilter::before {
+		transform: rotate(45deg);
+	}
+	.list_page_item_tag-tag_unfilter::after {
+		transform: rotate(-45deg);
+	}
 	/*
 	┌─BEGIN─────────────────┐
 	│			│
