@@ -26,7 +26,7 @@ layout: default
 							<ul class="list_page_item-list_page_item_tag_list">		
 								{% for tag in item.tags %}		
 									<li class="list_page_item_tag_list-list_page_item_tag --tag_text_styling" onClick="filter(event)">		
-										{{ tag | strip_newlines | strip }}		
+										{{ tag | remove: "<p>" | remove: "</p>" }}		
 									</li>		
 								{% endfor %}		
 							</ul>
