@@ -383,6 +383,8 @@ body {
 		position: absolute;
 		top: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / -2);
 		right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / -2);
+		height: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
+		width: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
 		background-color: var(--text_colour);
 		border-radius: 500px;
 	}
