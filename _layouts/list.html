@@ -6,7 +6,7 @@ layout: default
 	function filter(event) {
 		var tag = event.target.innerHTML;
 		const tags = Array.from(document.getElementsByClassName("list_page_item_tag_list-list_page_item_tag"));
-		console.log("Filtering " + tag + "from " + tags + ".");
+		console.log("Filtering " + tag + "from " + tags.textContent + ".");
 	}
 </script>
 <!-- partially from https://mmistakes.github.io/minimal-mistakes/docs/layouts/ -->
