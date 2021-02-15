@@ -10,16 +10,16 @@ layout: default
 		var all_tags = document.getElementsByClassName("list_page_item_tag_list-list_page_item_tag");
 		for (var i = 0, length = list_item.length; i < length; i++) {
 			if (list_item[i].innerHTML.indexOf(tag_content) != -1) {
-				list_item[i].parentElement.addClass("--active_list_page_item");
+				list_item[i].parentElement.classList.add("--active_list_page_item");
 			} else {
-				list_item[i].parentElement.removeClass("--active_list_page_item");
+				list_item[i].parentElement.classList.remove("--active_list_page_item");
 			}
 		}
 		for (var j = 0, length = all_tags.length; j < length; j++) {
 			if (all_tags[j].innerHTML.indexOf(tag_content) != -1) {
-				all_tags[j].addClass("--active_list_page_item_tag");
+				all_tags[j].classList.add("--active_list_page_item_tag");
 			} else {
-				all_tags[j].removeClass("--active_list_page_item_tag");
+				all_tags[j].classList.remove("--active_list_page_item_tag");
 			}
 		}
 	}
