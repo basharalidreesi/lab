@@ -4,11 +4,8 @@ layout: default
 
 <script>
 	function filter(event) {
-		var tag = event.target;
-		var tag_content = tag.innerHTML;
-		console.log("Filtering " + tag_content + ".");
-		tag.style.backgroundColor = "{{ text_colour }}";
-		tag.style.color = "{{ secondary_colour }}";
+		var tag = event.target.innerHTML;
+		console.log("Filtering " + tag + ".");
 	}
 </script>
 <!-- partially from https://mmistakes.github.io/minimal-mistakes/docs/layouts/ -->
@@ -29,7 +26,7 @@ layout: default
 							<ul class="list_page_item-list_page_item_tag_list">		
 								{% for tag in item.tags %}		
 									<li class="list_page_item_tag_list-list_page_item_tag --tag_text_styling" onClick="filter(event)">		
-										{{ tag }}		
+										{{ tag | strip_newlines | strip }}		
 									</li>		
 								{% endfor %}		
 							</ul>
