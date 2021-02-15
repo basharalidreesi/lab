@@ -59,12 +59,20 @@ layout: default
 				{% endif %}
 			{% endfor %}
 		{% endif %}
+		{% if block contains "!color" or block contains "!colour" %}
+			{% for line in item %}
+				{% if line contains "!color" or line contains "!colour" %}
+					{% assign colour = line | remove_first: "!color" | remove_first: "!colour" | remove: "<p>" | remove: "</p>" | strip %}
+				{% endif %}
+			{% endfor %}
+		{% endif %}
 		{% case declaration %}
 			{% when "!text" %}
 				<div class="cascade_wrapper-text_card" 
 					style="
 						{% if block contains "!background" %} background-color: {{ background }}; {% endif %}
 						{% if block contains "!border" %} border: 1px solid {{ border }}; {% endif %}
+						{% if block contains "!color" or block contains "!colour" %} --text_colour: {{ colour }} {% endif %}
 					">
 					{% for line in item %}
 						{% if line contains "!text" %}
