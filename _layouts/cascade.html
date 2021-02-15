@@ -62,13 +62,13 @@ layout: default
 		{% case declaration %}
 			{% when "!text" %}
 				{% if block contains "!linkto" %}
-					<a href="{{ link }}">
-						<div class="cascade_wrapper-anchored_text_card" style="{% if block contains "!background" %} background-color: {{ background }}; {% endif %} {% if block contains "!border" %} --border_colour: {{ border }}; {% endif %}">
+					<div class="cascade_wrapper-anchored_text_card" style="{% if block contains "!background" %} background-color: {{ background }}; {% endif %} {% if block contains "!border" %} --border_colour: {{ border }}; {% endif %}">
+						<a href="{{ link }}">	
 							{% for line in item %}
 								<p>{{ line | remove_first: "!text" | remove: "<p>" | remove: "</p>" | remove: "!linkto" | remove: link | remove: "!background" | remove: background | strip }}</p>
 							{% endfor %}
-						</div>
-					</a>
+						</a>
+					</div>
 				{% else %}
 					<div class="cascade_wrapper-text_card" style="{% if block contains "!background" %} background-color: {{ background }}; {% endif %} {% if block contains "!border" %} --border_colour: {{ border }}; {% endif %}">
 						{% for line in item %}
