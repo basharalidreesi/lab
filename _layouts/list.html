@@ -12,14 +12,14 @@ layout: default
 			if (list_item[i].innerHTML.indexOf(tag_content) != -1) {
 				list_item[i].parentElement.style.backgroundColor = "yellow";
 			} else {
-				list_item.parentElement.removeAttribute("style");
+				list_item.parentElement.style.backgroundColor = "transparent";
 			}
 		}
 		for (var j = 0, length = all_tags.length; j < length; j++) {
 			if (all_tags[j].innerHTML.indexOf(tag_content) != -1) {
 				all_tags[j].style.backgroundColor = "pink";
 			} else {
-				all_tags.removeAttribute("style");
+				all_tags.backgroundColor = "transparent";
 			}
 		}
 	}
