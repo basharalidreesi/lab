@@ -27,10 +27,10 @@ layout: default
 		var list_items = document.getElementsByClassName("list_page_item-list_page_item_tag_list");
 		var all_tags = document.getElementsByClassName("list_page_item_tag_list-list_page_item_tag");
 		for (var i = 0, length = list_items.length; i < length; i++) {
-			list_items.parentElement.classList.remove("--active_list_page_item");
+			list_items[i].parentElement.classList.remove("--active_list_page_item");
 		}
 		for (var j = 0, length = all_tags.length; j < length; j++) {
-			all_tags.classList.remove("--active_list_page_item_tag");
+			all_tags[j].classList.remove("--active_list_page_item_tag");
 		}
 	}
 </script>
