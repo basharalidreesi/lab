@@ -31,17 +31,10 @@ layout: default
 				{% endif %}
 			{% endfor %}
 		{% endif %}
-		{% if block contains "!source" and block contains "!embedyoutube" %}
+		{% if block contains "!source" and block contains "!embed" %}
 			{% for line in item %}
 				{% if line contains "!source" %}
 					{% assign source = line | remove_first: "!source" | remove: "<p>" | remove: "</p>" | split: "v=" | split: ".be/" %}
-				{% endif %}
-			{% endfor %}
-		{% endif %}
-		{% if block contains "!source" and block contains "!embedvimeo" %}
-			{% for line in item %}
-				{% if line contains "!source" %}
-					{% assign source = line | remove_first: "!source" | remove: "<p>" | remove: "</p>" | split: ".com/" %}
 				{% endif %}
 			{% endfor %}
 		{% endif %}
@@ -61,28 +54,24 @@ layout: default
 		{% endif %}
 		{% case declaration %}
 			{% when "!text" %}
-				{% if block contains "!linkto" %}
-					<div class="cascade_wrapper-anchored_text_card" style="{% if block contains "!background" %} background-color: {{ background }}; {% endif %} {% if block contains "!border" %} --border_colour: {{ border }}; {% endif %}">
-						<a href="{{ link }}">	
-							{% for line in item %}
-								{% if line contains "!text" %}
-									<p>{{line | remove_first: "!text" | remove: "<p>" | remove: "</p>" | strip }}</p>
-								{% endif %}
-							{% endfor %}
-						</a>
-					</div>
-				{% else %}
-					<div class="cascade_wrapper-text_card" style="{% if block contains "!background" %} background-color: {{ background }}; {% endif %} {% if block contains "!border" %} --border_colour: {{ border }}; {% endif %}">
-						{% for line in item %}
-							{% if line contains "!text" %}
-								<p>{{line | remove_first: "!text" | remove: "<p>" | remove: "</p>" | strip }}</p>
-							{% endif %}
-						{% endfor %}
-					</div>
-				{% endif %}
+				<div class="cascade_wrapper-text_card" 
+					style="
+						{% if block contains "!background" %} background-color: {{ background }}; {% endif %}
+						{% if block contains "!border" %} border: 1px solid {{ border }}; {% endif %}
+					">
+					{% for line in item %}
+						{% if line contains "!text" %}
+							<p>{{line | remove_first: "!text" | remove: "<p>" | remove: "</p>" | strip }}</p>
+						{% endif %}
+					{% endfor %}
+				</div>
 			{% when "!image" %}
 				{% if block contains "!linkto" %}
-					<figure class="cascade_wrapper-anchored_graphic_card" style="{% if block contains "!background" %} background-color: {{ background }}; {% endif %} {% if block contains "!border" %} --border_colour: {{ border }}; {% endif %}">
+					<figure class="cascade_wrapper-anchored_graphic_card"
+						style="
+							{% if block contains "!background" %} background-color: {{ background }}; {% endif %}
+							{% if block contains "!border" %} border: 1px solid {{ border }}; {% endif %}
+						">
 						{% if block contains "!caption" %}
 							<!-- <figcaption>
 								{% for line in item %}
@@ -97,7 +86,11 @@ layout: default
 						</a>
 					</figure>
 				{% else %}
-					<figure class="cascade_wrapper-graphic_card" style="{% if block contains "!background" %} background-color: {{ background }}; {% endif %} {% if block contains "!border" %} --border_colour: {{ border }}; {% endif %}">
+					<figure class="cascade_wrapper-graphic_card"
+						style="
+							{% if block contains "!background" %} background-color: {{ background }}; {% endif %}
+							{% if block contains "!border" %} border: 1px solid {{ border }}; {% endif %}
+						">
 						{% if block contains "!caption" %}
 							<!-- <figcaption>
 								{% for line in item %}
@@ -123,7 +116,11 @@ layout: default
 					</div> -->
 				{% endif %}
 			{% when "!empty" %}
-				<div class="cascade_wrapper-empty_card" style="{% if block contains "!background" %} background-color: {{ background }}; {% endif %} {% if block contains "!border" %} --border_colour: {{ border }}; {% endif %}"></div>
+				<div class="cascade_wrapper-empty_card"
+					style="
+						{% if block contains "!background" %} background-color: {{ background }}; {% endif %}
+						{% if block contains "!border" %} border: 1px solid {{ border }}; {% endif %}
+					"></div>
 		{% endcase %}
 	{% endfor %}
 	<!-- <footer class="cascade_wrapper-footer_card">
