@@ -7,12 +7,19 @@ layout: default
 		var tag = event.target;
 		var tag_content = tag.innerHTML;
 		var list_item = document.getElementsByClassName("list_page_item-list_page_item_tag_list");
-		// var all_tags = document.getElementsByClassName("list_page_item_tag_list-list_page_item_tag");
-		for (var i = 0, length = list_item.length; i < length; i++) {
+		var all_tags = document.getElementsByClassName("list_page_item_tag_list-list_page_item_tag");
+		for (var i = 0, ilength = list_item.length; i < ilength; i++) {
 			if (list_item[i].innerHTML.indexOf(tag_content) != -1) {
 				list_item[i].parentElement.style.backgroundColor = "yellow";
+				for (var j = 0, jlength = all_tags.length; j < jlength; j++) {
+					if (all_tags[j].innerHTML.indexOf(tag_content) != -1) {
+						all_tags[j].style.backgroundColor = "pink";
+					} else {
+						all_tags[j].style.removeAttribute("style");
+					}
+				}
 			} else {
-				list_item[i].parentElement.style.backgroundColor = "transparent";
+				list_item[i].parentElement.removeAttribute("style");
 			}
 		}
 	}
