@@ -3,13 +3,13 @@ layout: default
 ---
 
 <script>
-	function filter(event) {
+	function filterr(event) {
 		var tag = event.target.textContent;
 		var tags = document.getElementsByClassName("list_page_item_tag_list-list_page_item_tag");
 		console.log("Filtering " + tag + ".");
 		for (var i = 0, length = tags.length; i < length; ++i) {
 			if (tags[i].textContent.indexOf(tag) > -1){
-				tags.style.backgroundColor: "yellow";
+				tag.style.backgroundColor: "yellow";
 			}
 		}
 	}
@@ -31,7 +31,7 @@ layout: default
 						{% if item.tags != empty %}		
 							<ul class="list_page_item-list_page_item_tag_list">		
 								{% for tag in item.tags %}		
-									<li class="list_page_item_tag_list-list_page_item_tag --tag_text_styling" onClick="filter(event)">		
+									<li class="list_page_item_tag_list-list_page_item_tag --tag_text_styling" onClick="filterr(event)">		
 										{{ tag }}		
 									</li>		
 								{% endfor %}		
