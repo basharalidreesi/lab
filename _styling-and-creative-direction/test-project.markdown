@@ -46,10 +46,12 @@ secondary_colour: "#e1e1e1"
 !background aqua
 !linkto lol
 !border red
+!colour blue
 
 !text This is some text
 !text This is another line
 !background aquamarine
+!color green
 
 !embedyoutube
 !source https://www.youtube.com/watch?v=817R3ApVFok
