@@ -371,7 +371,7 @@ body {
 		color: var(--secondary_colour);
 	}
 	.--active_list_page_item {
-		background-color: yellow;
+		box-shadow: inset 0 0 calc(var(--universal_answer) * var(--universal_answer_multiplier)) calc(var(--universal_answer) * var(--universal_answer_multiplier)) var(--primary_colour);
 	}
 	.--active_list_page_item_tag {
 		background-color: var(--text_colour);
