@@ -5,7 +5,7 @@ layout: default
 <script>
 	function filter(event) {
 		var tag = event.target.innerHTML;
-		const tags = Array.from(document.getElementsByClassName("list_page_item_tag_list-list_page_item_tag")).innerHTML;
+		const tags = Array.from(document.getElementsByClassName("list_page_item_tag_list-list_page_item_tag").innerHTML);
 		console.log("Filtering " + tag + "from " + tags + ".");
 	}
 </script>
