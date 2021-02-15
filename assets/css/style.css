@@ -358,7 +358,7 @@ body {
 		border: 1px solid var(--border_colour);
 		border-radius: 500px;
 		margin-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
-		cursor: pointer;
+		cursor: help;
 		background-color: transparent;
 		transition: all 0.25s;
 	}
@@ -393,6 +393,7 @@ body {
 		width: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		background-color: var(--text_colour);
 		border-radius: 50%;
+		cursor: pointer;
 	}
 	.list_page_item_tag-tag_unfilter::after, .list_page_item_tag-tag_unfilter::before {
 		content: "";
