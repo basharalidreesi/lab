@@ -392,9 +392,9 @@ body {
 		content: "";
 		position: absolute;
 		height: 2px;
-		width: 100%;
+		width: calc(100% - 2px);
 		background-color: var(--secondary_colour);
-		left: 0;
+		left: calc(50% - 1px);
 		top: calc(50% - 1px);
 	}
 	.list_page_item_tag-tag_unfilter::before {
