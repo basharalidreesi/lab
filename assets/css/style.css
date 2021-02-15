@@ -380,6 +380,7 @@ body {
 		color: var(--secondary_colour);
 	}
 	.list_page_item_tag-tag_unfilter {
+		display: none;
 		position: absolute;
 		top: calc(var(--universal_answer) * var(--universal_answer_multiplier) / -2 / 2);
 		right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / -2);
@@ -392,9 +393,9 @@ body {
 		content: "";
 		position: absolute;
 		height: 2px;
-		width: calc(100% - 2px);
+		width: calc(100% - 4px);
 		background-color: var(--secondary_colour);
-		left: calc(50% - 1px);
+		left: 2px;
 		top: calc(50% - 1px);
 	}
 	.list_page_item_tag-tag_unfilter::before {
