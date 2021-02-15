@@ -12,12 +12,12 @@ layout: default
 		for (var i = 0, length = list_item.length; i < length; i++) {
 			if (list_item[i].innerHTML.indexOf(tag_content) != -1) {
 				list_item[i].parentElement.style.backgroundColor = "yellow";
-				for (var i = 0, length = all_tags.length; i < length; i++) {
+				for (var i = 0, lengthh = all_tags.length; i < lengthh; i++) {
 					if (all_tags[i].innerHTML.indexOf(tag_content) != -1) {
 						all_tags[i].style.backgroundColor = "{{ text_colour }}";
 						all_tags[i].style.color = "{{ secondary_colour }}";
 					} else {
-						all_tags[i].style.backgroundColor = "transparent";
+						// all_tags[i].style.backgroundColor = "transparent";
 					}
 				}
 			} else {
