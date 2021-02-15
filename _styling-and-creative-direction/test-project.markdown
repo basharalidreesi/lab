@@ -11,6 +11,7 @@ secondary_colour: "#e1e1e1"
 !image
 !source ![look-02.png](/uploads/look-02.png)
 !linkto test-project/nested-test-project.html
+!glow red
 
 !empty
 !background #ffb200
