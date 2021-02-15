@@ -4,11 +4,11 @@ layout: default
 
 <script>
 	function filter(event) {
-		var t = event.target.textContent;
+		var t = event.target.innerHTML;
 		var ts = document.getElementsByClassName("list_page_item_tag_list-list_page_item_tag");
 		console.log("Filtering " + t + ".");
-		for (var i = 0, length = ts.length; i < length; ++i) {
-			if (ts[i].textContent.indexOf(t) > -1) {
+		for (var i = 0, l = ts.length; i < l; i++) {
+			if (ts[i].innerHTML.indexOf(t) > -1) {
 				ts[i].parentElement.parentElement.style.backgroundColor = "yellow";
 			} else {
 				ts[i].parentElement.parentElement.style.backgroundColor = "pink";
