@@ -394,6 +394,8 @@ body {
 		height: 2px;
 		width: 100%;
 		background-color: var(--secondary_colour);
+		left: 0;
+		top: calc(50% - 1px);
 	}
 	/*
 	┌─BEGIN─────────────────┐
