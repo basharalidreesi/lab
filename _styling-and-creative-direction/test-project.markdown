@@ -17,7 +17,7 @@ secondary_colour: "#e1e1e1"
 
 !image
 !source ![IMG_1111.jpeg](/uploads/IMG_1111.jpeg)
-!background white
+!border white
 
 !empty
 !background #ffb200
