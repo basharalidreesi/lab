@@ -10,10 +10,10 @@ layout: default
 		console.log("Filtering " + tag_content + ".");
 		for (var i = 0, length = list_item.length; i < length; i++) {
 			if (list_item[i].innerHTML.indexOf(tag_content) != -1) {
-				list_item[i].parentElement.style.visibility = "visible";
+				list_item[i].parentElement.style.display = "block";
 				tag.style.backgroundColor = "blue";
 			} else {
-				list_item[i].parentElement.style.visibility = "hidden";
+				list_item[i].parentElement.style.display = "hidden";
 			}
 		}
 	}
