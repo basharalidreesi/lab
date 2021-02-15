@@ -339,6 +339,8 @@ body {
 		flex-flow: column nowrap;
 		justify-content: center;
 		align-items: center;
+		background-color: transparent;
+		transition: background-color 0.25s;
 	}
 	.list_page_item-list_page_item_tag_list {
 		display: flex;
