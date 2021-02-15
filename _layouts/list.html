@@ -10,6 +10,8 @@ layout: default
 		for (var i = 0, length = tags.length; i < length; ++i) {
 			if (tags[i].textContent.indexOf(tag) > -1){
 				tags[i].parentElement.parentElement.style.backgroundColor = "yellow";
+			} else {
+				tags[i].parentElement.parentElement.style.backgroundColor = "transparent";
 			}
 		}
 	}
