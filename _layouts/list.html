@@ -7,13 +7,20 @@ layout: default
 		var tag = event.target;
 		var tag_content = tag.innerHTML;
 		var list_item = document.getElementsByClassName("list_page_item-list_page_item_tag_list");
+		var all_tags = document.getElementsByClassName("list_page_item_tag_list-list_page_item_tag");
 		console.log("Filtering " + tag_content + ".");
 		for (var i = 0, length = list_item.length; i < length; i++) {
 			if (list_item[i].innerHTML.indexOf(tag_content) != -1) {
-				// list_item[i].parentElement.style.display = "block";
-				tag.style.backgroundColor = "blue";
+				list_item[i].parentElement.style.display = "yellow";
+				for (var i = 0, length = all_tags.length; i < length; i++) {
+					if (all_tags[i].innerHTML.indexOf(tag_content) != -1) {
+						all_tags[i].style.backgroundColor = "pink";
+					} else {
+						all_tags[i].style.backgroundColor = "transparent";
+					}
+				}
 			} else {
-				list_item[i].parentElement.style.display = "none";
+				list_item[i].parentElement.style.backgroundColor = "transparent";
 			}
 		}
 	}
