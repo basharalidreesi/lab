@@ -359,6 +359,8 @@ body {
 		border-radius: 500px;
 		margin-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		cursor: pointer;
+		background-color: transparent;
+		transition: all 0.25s;
 	}
 	.list_page_item_tag_list-list_page_item_tag:not(:first-child) {
 		margin-right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
