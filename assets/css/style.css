@@ -81,6 +81,10 @@ html {
 	-ms-text-size-adjust: none;
 	text-rendering: geometricPrecision;
 }
+img {
+	point-events: none;
+	user-select: none;
+}
 
 /*
 ┌─BEGIN─────────────────┐
