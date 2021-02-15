@@ -4,10 +4,11 @@ layout: default
 
 <script>
 	function filter(event) {
-		var tag = event.target.innerHTML;
-		console.log("Filtering " + tag + ".");
-		event.target.style.backgroundColor = "{{ text_colour }}";
-		event.target.style.Color = "{{ secondary_colour }}";
+		var tag = event.target;
+		var tag_content = tag.innerHTML;
+		console.log("Filtering " + tag_content + ".");
+		tag.style.backgroundColor = "{{ text_colour }}";
+		tag.style.color = "{{ secondary_colour }}";
 	}
 </script>
 <!-- partially from https://mmistakes.github.io/minimal-mistakes/docs/layouts/ -->
