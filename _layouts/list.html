@@ -3,8 +3,8 @@ layout: default
 ---
 
 <script>
-	function filter(event) {
-		console.log("Filtering " + event.target.innerHTML + ".");
+	function filter(tag) {
+		console.log("Filtering " + tag.target.innerHTML + ".");
 	}
 </script>
 <!-- partially from https://mmistakes.github.io/minimal-mistakes/docs/layouts/ -->
@@ -24,8 +24,8 @@ layout: default
 						{% if item.tags != empty %}		
 							<ul class="list_page_item-list_page_item_tag_list">		
 								{% for tag in item.tags %}		
-									<li class="list_page_item_tag_list-list_page_item_tag --tag_text_styling" onClick="filter(event)">		
-										{{ tag | strip }}		
+									<li class="list_page_item_tag_list-list_page_item_tag --tag_text_styling" onClick="filter(tag)">		
+										{{ tag }}		
 									</li>		
 								{% endfor %}		
 							</ul>
