@@ -386,15 +386,13 @@ body {
 	}
 	.list_page_item_tag-tag_unfilter {
 		display: none;
-		opacity: 0;
 		position: absolute;
 		top: calc(var(--universal_answer) * var(--universal_answer_multiplier) / -2 / 2);
 		right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / -2);
 		height: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		width: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		background-color: var(--text_colour);
-		border-radius: 500px;
-		transition: opacity 0.25s;
+		border-radius: 50%;
 	}
 	.list_page_item_tag-tag_unfilter::after, .list_page_item_tag-tag_unfilter::before {
 		content: "";
