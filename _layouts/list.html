@@ -23,6 +23,10 @@ layout: default
 			}
 		}
 	}
+	function unfilter() {
+		document.getElementsByClassName("list_page_item-list_page_item_tag_list").classList.remove("--active_list_page_item");
+		document.getElementsByClassName("list_page_item_tag_list-list_page_item_tag").classList.remove("--active_list_page_item_tag");
+	}
 </script>
 <!-- partially from https://mmistakes.github.io/minimal-mistakes/docs/layouts/ -->
 <!-- partially from https://github.com/mmistakes/minimal-mistakes/blob/master/docs/_pages/collection-archive.html -->
@@ -42,7 +46,8 @@ layout: default
 							<ul class="list_page_item-list_page_item_tag_list">		
 								{% for tag in item.tags %}		
 									<li class="list_page_item_tag_list-list_page_item_tag --tag_text_styling" onClick="filter(event)">		
-										{{ tag }}		
+										{{ tag }}
+										<div class="list_page_item_tag-tag_unfilter" onclick="unfilter()"></div>
 									</li>		
 								{% endfor %}		
 							</ul>
