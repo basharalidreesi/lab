@@ -6,8 +6,6 @@ tags:
 position: 0
 primary_colour: "#8f00ff"
 secondary_colour: "#e1e1e1"
-border_colour: "#ffb200"
-text_colour: "#ffb200"
 ---
 
 !image
@@ -15,16 +13,19 @@ text_colour: "#ffb200"
 !linkto test-project/nested-test-project.html
 
 !empty
+!background #ffb200
 
 !image
 !source ![IMG_1111.jpeg](/uploads/IMG_1111.jpeg)
 
 !empty
+!background #ffb200
 
 !image
 !source ![IMG_1110.jpeg](/uploads/IMG_1110.jpeg)
 
 !empty
+!background #ffb200
 
 !image
 !source ![IMG_1109.jpeg](/uploads/IMG_1109.jpeg)
