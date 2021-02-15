@@ -14,12 +14,11 @@ layout: default
 				for (var j = 0, jlength = all_tags.length; j < jlength; j++) {
 					if (all_tags[j].innerHTML.indexOf(tag_content) != -1) {
 						all_tags[j].style.backgroundColor = "pink";
-					} else {
-						all_tags[j].style.removeAttribute("style");
 					}
 				}
 			} else {
-				list_item[i].parentElement.removeAttribute("style");
+				list_item.parentElement.removeAttribute("style");
+				all_tags.removeAttribute("style");
 			}
 		}
 	}
