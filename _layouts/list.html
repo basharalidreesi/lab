@@ -5,7 +5,20 @@ layout: default
 <script>
 	function filter(event) {
 		var tag = event.target.innerHTML;
-		console.log("Filtering " + tag + ".");
+		tags = new Array(
+			{% for collection in site.collections %}
+				{% if collection.label == page_path %}
+					{% assign items = collection.docs %}
+					{% for item in items %}
+						{% assign item_path = item.path | remove_first: "_" | split: "/" %}
+						{% unless item_path[2] %}	
+							{{ tag }}			
+						{% endunless %}
+					{% endfor %}
+				{% endif %}
+			{% endfor %}
+		);
+		console.log("Filtering " + tag + "from " + tags + ".");
 	}
 </script>
 <!-- partially from https://mmistakes.github.io/minimal-mistakes/docs/layouts/ -->
@@ -26,7 +39,7 @@ layout: default
 							<ul class="list_page_item-list_page_item_tag_list">		
 								{% for tag in item.tags %}		
 									<li class="list_page_item_tag_list-list_page_item_tag --tag_text_styling" onClick="filter(event)">		
-										{{ tag | remove: "<p>" | remove: "</p>" }}		
+										{{ tag }}		
 									</li>		
 								{% endfor %}		
 							</ul>
