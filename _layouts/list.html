@@ -24,8 +24,14 @@ layout: default
 		}
 	}
 	function unfilter() {
-		document.getElementsByClassName("list_page_item-list_page_item_tag_list").classList.remove("--active_list_page_item");
-		document.getElementsByClassName("list_page_item_tag_list-list_page_item_tag").classList.remove("--active_list_page_item_tag");
+		var list_item = document.getElementsByClassName("list_page_item-list_page_item_tag_list");
+		var all_tags = document.getElementsByClassName("list_page_item_tag_list-list_page_item_tag");
+		for (var i = 0, length = list_item.length; i < length; i++) {
+			list_item[i].classList.remove("--active_list_page_item");
+		}
+		for (var j = 0, length = all_tags.length; j < length; j++) {
+			all_tags[j].classList.remove("--active_list_page_item_tag");
+		}
 	}
 </script>
 <!-- partially from https://mmistakes.github.io/minimal-mistakes/docs/layouts/ -->
