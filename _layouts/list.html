@@ -5,8 +5,9 @@ layout: default
 <script>
 	function filter(event) {
 		var tag = event.target.innerHTML;
-		var tags = document.getElementsByClassName("list_page_item_tag_list-list_page_item_tag").textContent;
-		console.log("Filtering " + tag + "from " + tags + ".");
+		console.log("Filtering " + tag + ".");
+		event.target.style.backgroundColor = "{{ text_colour }}";
+		event.target.style.Color = "{{ secondary_colour }}";
 	}
 </script>
 <!-- partially from https://mmistakes.github.io/minimal-mistakes/docs/layouts/ -->
