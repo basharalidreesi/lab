@@ -9,7 +9,7 @@ layout: default
 		console.log("Filtering " + tag + ".");
 		for (var i = 0, length = tags.length; i < length; ++i) {
 			if (tags[i].textContent.indexOf(tag) > -1){
-				console.log("Found");
+				tags[i].style.backgroundColor = "yellow";
 			}
 		}
 	}
