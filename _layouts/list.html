@@ -24,6 +24,7 @@ layout: default
 				all_tags[j].classList.remove("--active_list_page_item_tag");
 			}
 		}
+		console.log("Successfully filtered " + tag_content);
 	}
 	function unfilter(event) {
 		var list_items = document.getElementsByClassName("list_page_item-list_page_item_tag_list");
@@ -35,6 +36,7 @@ layout: default
 			all_tags[j].classList.remove("--active_list_page_item_tag");
 			all_tags[j].children[0].removeAttribute("style");
 		}
+		console.log("Successfully unfiltered " + tag.textContent);
 	}
 </script>
 <!-- partially from https://mmistakes.github.io/minimal-mistakes/docs/layouts/ -->
