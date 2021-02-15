@@ -11,10 +11,11 @@ layout: default
 		console.log("Filtering " + tag_content + ".");
 		for (var i = 0, length = list_item.length; i < length; i++) {
 			if (list_item[i].innerHTML.indexOf(tag_content) != -1) {
-				list_item[i].parentElement.style.display = "yellow";
+				list_item[i].parentElement.style.backgroundColor = "yellow";
 				for (var i = 0, length = all_tags.length; i < length; i++) {
 					if (all_tags[i].innerHTML.indexOf(tag_content) != -1) {
-						all_tags[i].style.backgroundColor = "pink";
+						all_tags[i].style.backgroundColor = "{{ text_colour }}";
+						all_tags[i].style.color = "{{ secondary_colour }}";
 					} else {
 						all_tags[i].style.backgroundColor = "transparent";
 					}
