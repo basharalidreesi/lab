@@ -43,6 +43,7 @@ secondary_colour: "#e1e1e1"
 !text This is another line
 !background aqua
 !linkto lol
+!border red
 
 !text This is some text
 !text This is another line
