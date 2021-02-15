@@ -4,16 +4,17 @@ layout: default
 
 <script>
 	function filter(event) {
-		var tag = event.target.innerHTML;
-		var tags = document.getElementsByClassName("list_page_item-list_page_item_tag_list");
-		console.log("Filtering " + tag + ".");
-		for (var i = 0, length = tags.length; i < length; i++) {
-			if (tags[i].innerHTML.indexOf(tag) != -1) {
-				tags[i].parentElement.style.backgroundColor = "peachpuff";
-				tags[i].style.backgroundColor = "blue";
+		var tag = event.target;
+		var tag_content = tag.innerHTML;
+		var list_item = document.getElementsByClassName("list_page_item-list_page_item_tag_list");
+		console.log("Filtering " + tag_content + ".");
+		for (var i = 0, length = list_item.length; i < length; i++) {
+			if (list_item[i].innerHTML.indexOf(tag_content) != -1) {
+				list_item[i].parentElement.style.backgroundColor = "peachpuff";
+				tag.style.backgroundColor = "blue";
 			} else {
-				tags[i].parentElement.style.backgroundColor = "transparent";
-				tags[i].style.backgroundColor = "transparent";
+				list_item[i].parentElement.style.backgroundColor = "transparent";
+				tag.style.backgroundColor = "transparent";
 			}
 		}
 	}
