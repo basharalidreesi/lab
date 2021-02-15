@@ -372,7 +372,8 @@ body {
 		color: var(--secondary_colour);
 	}
 	.--active_list_page_item {
-		box-shadow: inset 0 0 calc(var(--universal_answer) * var(--universal_answer_multiplier)) calc(var(--universal_answer) * var(--universal_answer_multiplier)) var(--secondary_colour);
+		/* box-shadow: inset 0 0 calc(var(--universal_answer) * var(--universal_answer_multiplier)) calc(var(--universal_answer) * var(--universal_answer_multiplier)) var(--secondary_colour); */
+		background-color: var(--secondary_colour);
 	}
 	.--active_list_page_item_tag {
 		position: relative;
