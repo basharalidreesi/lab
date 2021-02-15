@@ -24,20 +24,20 @@ layout: default
 				{% endif %}
 			{% endfor %}
 		{% endif %}
-		{% if block contains "!source" and block contains "!image" %}
+		{% if block contains "!image" and block contains "!source" %}
 			{% for line in item %}
 				{% if line contains "!source" %}
 					{% assign source = line | remove_first: "!source" | remove: "<p>" | remove: "</p>" | remove: "<" | remove : ">" | remove: "img src=" | remove: '"' | split: " " %}
 				{% endif %}
 			{% endfor %}
 		{% endif %}
-		{% if block contains "!source" and block contains "!embed" %}
+		<!-- {% if block contains "!source" and block contains "!embed" %}
 			{% for line in item %}
 				{% if line contains "!source" %}
 					{% assign source = line | remove_first: "!source" | remove: "<p>" | remove: "</p>" | split: "v=" | split: ".be/" %}
 				{% endif %}
 			{% endfor %}
-		{% endif %}
+		{% endif %} -->
 		{% if block contains "!background" %}
 			{% for line in item %}
 				{% if line contains "!background" %}
@@ -49,6 +49,13 @@ layout: default
 			{% for line in item %}
 				{% if line contains "!border" %}
 					{% assign border = line | remove_first: "!border" | remove: "<p>" | remove: "</p>" | strip %}
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+		{% if block contains "!glow" %}
+			{% for line in item %}
+				{% if line contains "!glow" %}
+					{% assign glow = line | remove_first: "!glow" | remove: "<p>" | remove: "</p>" | strip %}
 				{% endif %}
 			{% endfor %}
 		{% endif %}
@@ -71,6 +78,7 @@ layout: default
 						style="
 							{% if block contains "!background" %} background-color: {{ background }}; {% endif %}
 							{% if block contains "!border" %} border: 1px solid {{ border }}; {% endif %}
+							{% if block contains "!glow" %} --primary_colour: {{ glow }}; {% endif %}
 						">
 						{% if block contains "!caption" %}
 							<!-- <figcaption>
