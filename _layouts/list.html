@@ -19,6 +19,7 @@ layout: default
 			if (all_tags[j].innerHTML.indexOf(tag_content) != -1) {
 				all_tags[j].classList.add("--active_list_page_item_tag");
 				all_tags[j].children[0].style.display = "block";
+				all_tags[j].children[0].style.visibility = "visibile";
 			} else {
 				all_tags[j].classList.remove("--active_list_page_item_tag");
 			}
