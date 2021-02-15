@@ -379,8 +379,7 @@ body {
 		background-color: var(--text_colour);
 		color: var(--secondary_colour);
 	}
-	.--active_list_page_item_tag::after{
-		content: "\00d7"; /* This will render the 'X' */
+	.list_page_item_tag-tag_unfilter {
 		position: absolute;
 		top: calc(var(--universal_answer) * var(--universal_answer_multiplier) / -2 / 2);
 		right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / -2);
