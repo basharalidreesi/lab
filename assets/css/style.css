@@ -388,6 +388,13 @@ body {
 		background-color: var(--text_colour);
 		border-radius: 500px;
 	}
+	.list_page_item_tag-tag_unfilter::after, .list_page_item_tag-tag_unfilter::before {
+		content: "";
+		position: absolute;
+		height: 2px;
+		width: 100%;
+		background-color: var(--secondary_colour);
+	}
 	/*
 	┌─BEGIN─────────────────┐
 	│			│
