@@ -17,6 +17,11 @@
 			}
 		</style>
 		<script>
+			// https://medium.com/@susiekim9/how-to-compensate-for-the-ios-viewport-unit-bug-46e78d54af0d
+			window.onresize = function() {
+				document.body.height = window.innerHeight;
+				window.onresize();
+			}
 			// https://www.sitepoint.com/community/t/random-image-with-css/1785/9
 			// https://www.tutorialspoint.com/javascript/array_length.htm
 			if (document.getElementById) {
