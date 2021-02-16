@@ -307,7 +307,8 @@ body {
 	transition: padding 0.25s;
 }
 .header_container-header_wrapper_central_sticky {
-	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+	padding-top: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+	padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 }
 .header_container-header_wrapper_upper {
 	/* maybe make it so that .header_anchor-header_graphic's visibility is hidden and set the graphic as a CSS background-image? */
