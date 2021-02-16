@@ -55,8 +55,8 @@ baseurl:
 url: 
 description: Jad Toghuj
 author: Jad Toghuj
-email: 
-instagram: 
+email: jadtoghuj@gmail.com
+instagram: "@jadtoghuj"
 theme: 
 plugins:
 - jekyll-feed
