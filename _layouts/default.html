@@ -71,17 +71,16 @@
 						<img class="header_anchor-header_graphic" id="header_graphic" alt="Header">
 					</a>
 				</div>
-				<script>
-					// get the sticky element
-					const stickyElm = document.querySelector('.mother_container-header_container_central')
-
-					const observer = new IntersectionObserver( 
-					([e]) => e.target.classList.toggle('isSticky', e.intersectionRatio < 1),
-					{threshold: [1]}
-					);
-
-					observer.observe(stickyElm)
-				</script>
+				{% if page.header_location == "central" %}
+					<script>
+						const header = document.getElementById("header_container");
+						const observer = new IntersectionObserver( 
+						([e]) => e.target.classList.add("mother_container-header_container_central_sticky", e.intersectionRatio < 1),
+						{threshold: [1]}
+						);
+						observer.observe(header)
+					</script>
+				{% endif %}
 			</header>
 			<main class="mother_container-content_container" id="content_container">
 				{{ content }}
