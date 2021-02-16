@@ -43,6 +43,10 @@
 	--tag_text_font_size: 1em;
 }
 
+.isSticky {
+	background-color: red;
+}
+
 /*
 ┌─BEGIN─────────────────┐
 │			│
