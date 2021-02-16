@@ -340,6 +340,11 @@ body {
 		background-repeat: no-repeat;
 		background-size: cover;
 	}
+	.showcase_wrapper-showcase_tile a {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
 	/*
 	┌─BEGIN─────────────────┐
 	│			│
