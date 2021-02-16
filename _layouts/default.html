@@ -50,10 +50,10 @@
 			// get the sticky element
 			const stickyElm = document.querySelector('.mother_container-header_container_central')
 
-			const observer = new IntersectionObserver( 
-				([e]) => e.target.classList.toggle('isSticky', e.intersectionRatio < 1),
-				{threshold: [1]}
-			);
+			observer = new IntersectionObserver((entry, observer) => {
+			  console.log('entry:', entry);
+			  console.log('observer:', observer);
+			});
 
 			observer.observe(stickyElm)
 		</script>
