@@ -51,7 +51,7 @@
 	</head>
 	<body>
 		<div class="mother_container {% if page.is_fullscreen == true %}--mother_container_fullscreen{% endif %}">
-			<nav class="mother_container-navigation_container" id="navigation_container">
+			<nav class="mother_container-navigation_container{% if page.header_location == "central" %}_central{% endif %}{% if page.header_location == "upper" %}_upper{% endif %}" id="navigation_container">
 				<ul class="navigation_container-navigation_list_wrapper">
 					{% assign sorted = site.pages | sort: "position" %}
 					{% for item in sorted %}
