@@ -73,12 +73,12 @@
 				</div>
 				{% if page.header_location == "central" %}
 					<script>
-						const header = document.getElementById("header_container");
-						const header_inner = document.getElementsByClassName("header_container-header_wrapper_central");
+						const header = document.getElementById('header_container');
 						const observer = new IntersectionObserver( 
-						([e]) => header_inner.classList.add("header_container-header_wrapper_central_sticky", e.intersectionRatio < 1),
-						{threshold: [1]}
+							([e]) => e.target.children[0].classList.add('header_container-header_wrapper_central_sticky', e.intersectionRatio < 1),
+							{threshold: [1]}
 						);
+	
 						observer.observe(header);
 					</script>
 				{% endif %}
