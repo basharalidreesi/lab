@@ -179,40 +179,46 @@ body {
 .--mother_container_fullscreen {
 	height: 100vh;
 }
-.--mother_container_fullscreen > .mother_container-content_container {
-	flex: 1;
+.mother_container-navigation_container_upper {
+	order: 1;
 }
-.mother_container-navigation_container { /* no styling rules */ }
-.mother_container-header_container_central {
+.mother_container-navigation_container_central {
+	order: 2;
+}
+.mother_container-header_container_upper {
+	order: 2;
 	position: sticky;
 	top: 0;
+}
+.mother_container-header_container_central {
+	order: 1;
+	position: sticky;
+	top: -1px;
 	margin-top:
 		calc(	50vh /* screen half height */
-			- (var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
-			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
-			+ var(--navigation_text_font_size)) /* navigation text line height */
+			- ((var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to navigation height) */
+			+ var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to navigation height) */
+			+ var(--navigation_text_font_size)) /* half of header height (identical to navigation height) */
+			/ 2 ) /* half of header height (identical to navigation height) */
+			+ 1px /* compensate for top: -1px */
+		);
+	margin-bottom:
+		calc(	50vh /* screen half height */
 			- ((var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to navigation height) */
 			+ var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to navigation height) */
 			+ var(--navigation_text_font_size)) /* half of header height (identical to navigation height) */
 			/ 2 ) /* half of header height (identical to navigation height) */
 		);
-	margin-bottom:
-		calc(	50vh /* screen half height */
-			- (var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
-			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
-			+ var(--navigation_text_font_size)) /* navigation text line height */
-			+ ((var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to navigation height) */
-			+ var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to navigation height) */
-			+ var(--navigation_text_font_size)) /* half of header height (identical to navigation height) */
-			/ 2 ) /* half of header height (identical to navigation height) */
-		);
 }
-.mother_container-header_container_upper {
-	position: sticky;
-	top: 0;
+.mother_container-content_container {
+	order: 3;
 }
-.mother_container-content_container { /* no styling rules */ }
-.mother_container-footer_container { /* no styling rules */ }
+.--mother_container_fullscreen > .mother_container-content_container {
+	flex: 1;
+}
+.mother_container-footer_container {
+	order: 4;
+}
 
 /*
 ┌─BEGIN─────────────────┐
@@ -231,6 +237,11 @@ body {
 	border-bottom: 1px solid var(--border_colour);
 	justify-content: space-evenly;
 	align-items: center;
+}
+.mother_container-navigation_container_central > .navigation_container-navigation_list_wrapper {
+	border-top: 1px solid var(--border_colour);
+	box-shadow: 0 0 calc(var(--universal_answer) * var(--universal_answer_multiplier) * 2) calc(var(--universal_answer) * var(--universal_answer_multiplier)) var(--secondary_colour);
+	background-color: var(--secondary_colour);
 }
 .navigation_list_wrapper-navigation_list_item {
 	flex: 1; /* stress test this with a higher number of listed pages */
@@ -255,8 +266,12 @@ body {
 			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
 			+ var(--navigation_text_font_size) /* navigation text line height */
 		);
-	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+	padding: 0;
 	text-align: center;
+	transition: padding 0.25s;
+}
+.header_container-header_wrapper_central_sticky {
+	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 }
 .header_container-header_wrapper_upper {
 	/* maybe make it so that .header_anchor-header_graphic's visibility is hidden and set the graphic as a CSS background-image? */
