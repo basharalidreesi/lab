@@ -268,7 +268,7 @@ body {
 		);
 	padding: 0;
 	text-align: center;
-	transition: padding 0.5s;
+	transition: padding 0.25s;
 }
 .header_container-header_wrapper_central_sticky {
 	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
