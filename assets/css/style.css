@@ -191,6 +191,7 @@ body {
 .mother_container {
 	display: flex;
 	flex-flow: column nowrap;
+	height: 100%;
 }
 .--mother_container_fullscreen {
 	height: 100vh;
