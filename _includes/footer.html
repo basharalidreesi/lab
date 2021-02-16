@@ -1,17 +1,19 @@
-<div class="footer_container-footer_wrapper">
-	<p class="--footer_text_styling">
-		Jad Toghuj
-	</p>
-	<address class="--footer_text_styling">
-		@jad.toghuj
-	</address>
-	<address class="--footer_text_styling">
-		jadtoghuj@gmail.com
-	</address>
-	<p class="--footer_text_styling">
-		© 2021 Jad Toghuj. All rights reserved.
-	</p>
-	<p class="--footer_text_styling">
-		By Basabees for Batabeet
-	</p>
-</div>
+<p class="--footer_text_styling">
+	{{ site.author }}
+</p>
+<address class="--footer_text_styling">
+	{{ site.instagram }}
+</address>
+<address class="--footer_text_styling">
+	{{ site.email }}
+</address>
+<p class="--footer_text_styling --no_bottom_padding">
+	{% assign year = site.time | date: '%Y' %}
+	&copy; 2021 {% if year != "2021" %} – {{ year }} {% endif %} Jad Toghuj
+</p>
+<p class="--footer_text_styling">
+	All rights reserved
+</p>
+<p class="--footer_text_styling --no_bottom_padding">
+	By Basabees for Batabeet
+</p>
