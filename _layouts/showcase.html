@@ -5,6 +5,13 @@ layout: default
 <div class="content_container-showcase_wrapper">
 	{% assign showcase_tiles = site.static_files | where: "showcase_tile", true %}
 	{% for tile in showcase_tiles %}
-		<div class="showcase_wrapper-showcase_tile" style="background-image: url({{ tile.path }})"></div>
+		{% if tile.name contains "!linkto" %}
+			{% assign link = tile.name | split: "!linkto" %}
+			<a href="{{ link[1] }}">
+				<div class="showcase_wrapper-showcase_tile" style="background-image: url({{ tile.path }})"></div>
+			</a>
+		{% else %}
+			<div class="showcase_wrapper-showcase_tile" style="background-image: url({{ tile.path }})"></div>
+		{% endif %}
 	{% endfor %}
 </div>
