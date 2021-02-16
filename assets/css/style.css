@@ -151,6 +151,16 @@ img:not(.header_anchor-header_graphic) {
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 		background-size: 100% 2px;
 	}
+	/*
+	┌─BEGIN─────────────────┐
+	│			│
+	│ MISCELLANEOUS STYLING	│
+	│			│
+	└─BEGIN─────────────────┘
+	*/
+	.--no_bottom_padding {
+		padding-bottom: 0;
+	}
 
 /*
 ┌─BEGIN─────────┐
