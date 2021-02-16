@@ -55,9 +55,9 @@
 				<ul class="navigation_container-navigation_list_wrapper">
 					{% assign sorted = site.pages | sort: "position" %}
 					{% for item in sorted %}
-						{% if item.is_for_navigation == true %}
-							<li class="navigation_list_wrapper-navigation_list_item --navigation_text_styling">
-								<a class="--anchor_styling {% if item.url == page.url %}--active_navigation_text_styling{% endif %}" href="{{ item.url }}">
+						{% if item.is_listed == true %}
+							<li class="navigation_list_wrapper-navigation_list_item --navigation_text_styling {% if item.url == page.url %}--active_navigation_text_styling{% endif %}">
+								<a class="--anchor_styling" href="{{ item.url }}">
 									{{ item.title }}
 								</a>
 							</li>
@@ -65,8 +65,8 @@
 					{% endfor %}
 				</ul>
 			</nav>
-			<header class="mother_container-header_container" id="header_container">
-				<div class="header_container-header_anchor_wrapper{% if page.header_location == "central" %}_central{% endif %}{% if page.header_location == "upper" %}_upper{% endif %}">
+			<header class="mother_container-header_container{% if page.header_location == "central" %}_central{% endif %}{% if page.header_location == "upper" %}_upper{% endif %}" id="header_container">
+				<div class="header_container-header_wrapper{% if page.header_location == "central" %}_central{% endif %}{% if page.header_location == "upper" %}_upper{% endif %}">
 					<a class="header_anchor_wrapper-header_anchor" href="{{ site.url }}">
 						<img class="header_anchor-header_graphic" id="header_graphic" alt="Header">
 					</a>
@@ -75,7 +75,7 @@
 			<main class="mother_container-content_container" id="content_container">
 				{{ content }}
 			</main>
-			{% if page.has_bottom_footer == true %}
+			{% if page.is_fullscreen == false %}
 				<footer class="mother_container-footer_container">
 					{% include footer.html %}
 				</footer>

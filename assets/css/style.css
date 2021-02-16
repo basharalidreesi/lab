@@ -35,7 +35,7 @@
 	/* --text_colour: #000; */ /* see ./_config.yml and ./_layouts/default.html */
 	--navigation_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--navigation_text_font_size: 1.25em;
-	--footer_text_font: "Code New Roman", monospace;
+	--footer_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--footer_text_font_size: 1em;
 	--list_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--list_text_font_size: 1.5em;
@@ -81,6 +81,10 @@ html {
 	-ms-text-size-adjust: none;
 	text-rendering: geometricPrecision;
 }
+img:not(.header_anchor-header_graphic) {
+	pointer-events: none;
+	user-select: none;
+}
 
 /*
 ┌─BEGIN─────────────────┐
@@ -106,7 +110,7 @@ html {
 	.--footer_text_styling {
 		color: var(--text_colour);
 		font-family: var(--footer_text_font);
-		font-weight: normal;
+		font-weight: 200;
 		text-align: center;
 		font-size: var(--footer_text_font_size);
 		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
@@ -134,6 +138,7 @@ html {
 	*/
 	.--anchor_styling {
 		color: var(--text_colour);
+		display: inline-block;
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 		text-decoration: none;
 		background-image: linear-gradient(currentColor, currentColor);
@@ -178,7 +183,31 @@ body {
 	flex: 1;
 }
 .mother_container-navigation_container { /* no styling rules */ }
-.mother_container-header_container {
+.mother_container-header_container_central {
+	position: sticky;
+	top: 0;
+	margin-top:
+		calc(	50vh /* screen half height */
+			- (var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
+			+ var(--navigation_text_font_size)) /* navigation text line height */
+			- ((var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to navigation height) */
+			+ var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to navigation height) */
+			+ var(--navigation_text_font_size)) /* half of header height (identical to navigation height) */
+			/ 2 ) /* half of header height (identical to navigation height) */
+		);
+	margin-bottom:
+		calc(	50vh /* screen half height */
+			- (var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
+			+ var(--navigation_text_font_size)) /* navigation text line height */
+			+ ((var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to navigation height) */
+			+ var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to navigation height) */
+			+ var(--navigation_text_font_size)) /* half of header height (identical to navigation height) */
+			/ 2 ) /* half of header height (identical to navigation height) */
+		);
+}
+.mother_container-header_container_upper {
 	position: sticky;
 	top: 0;
 }
@@ -219,8 +248,17 @@ body {
 │			│
 └─BEGIN─────────────────┘
 */
-.header_container-header_anchor_wrapper_central { /* central header */ }
-.header_container-header_anchor_wrapper_upper {
+.header_container-header_wrapper_central {
+	height:
+		calc(	0px /* initial value for debug */
+			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
+			+ var(--navigation_text_font_size) /* navigation text line height */
+		);
+	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+	text-align: center;
+}
+.header_container-header_wrapper_upper {
 	/* maybe make it so that .header_anchor-header_graphic's visibility is hidden and set the graphic as a CSS background-image? */
 	height:
 		calc(	0px /* initial value for debug */
@@ -231,7 +269,7 @@ body {
 	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	text-align: center;
 }
-.header_anchor_wrapper-header_anchor {
+.header_wrapper-header_anchor {
 	width: auto;
 	height: 100%;
 }
@@ -301,6 +339,8 @@ body {
 		flex-flow: column nowrap;
 		justify-content: center;
 		align-items: center;
+		background-color: transparent;
+		transition: background-color 0.25s;
 	}
 	.list_page_item-list_page_item_tag_list {
 		display: flex;
@@ -318,6 +358,9 @@ body {
 		border: 1px solid var(--border_colour);
 		border-radius: 500px;
 		margin-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+		cursor: help;
+		background-color: transparent;
+		transition: all 0.25s;
 	}
 	.list_page_item_tag_list-list_page_item_tag:not(:first-child) {
 		margin-right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
@@ -331,6 +374,43 @@ body {
 	.list_page_item_tag_list-list_page_item_tag:hover {
 		background-color: var(--text_colour);
 		color: var(--secondary_colour);
+	}
+	.--active_list_page_item {
+		/* box-shadow: inset 0 0 calc(var(--universal_answer) * var(--universal_answer_multiplier)) calc(var(--universal_answer) * var(--universal_answer_multiplier)) var(--secondary_colour); */
+		background-color: var(--secondary_colour);
+	}
+	.--active_list_page_item_tag {
+		position: relative;
+		background-color: var(--text_colour);
+		color: var(--secondary_colour);
+	}
+	.list_page_item_tag-tag_unfilter {
+		display: none;
+		opacity: 0;
+		position: absolute;
+		top: calc(var(--universal_answer) * var(--universal_answer_multiplier) / -2 / 2);
+		right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / -2);
+		height: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+		width: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+		background-color: var(--text_colour);
+		border-radius: 50%;
+		cursor: pointer;
+		transition: opacity 0.25s;
+	}
+	.list_page_item_tag-tag_unfilter::after, .list_page_item_tag-tag_unfilter::before {
+		content: "";
+		position: absolute;
+		height: 2px;
+		width: calc(100% - 4px);
+		background-color: var(--secondary_colour);
+		left: 2px;
+		top: calc(50% - 1px);
+	}
+	.list_page_item_tag-tag_unfilter::before {
+		transform: rotate(45deg);
+	}
+	.list_page_item_tag-tag_unfilter::after {
+		transform: rotate(-45deg);
 	}
 	/*
 	┌─BEGIN─────────────────┐
@@ -386,9 +466,14 @@ body {
 		justify-content: center;
 		align-items: center;
 		border: 1px solid var(--border_colour);
+		border-radius: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		margin: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 		margin-top: 0;
+	}
+	.cascade_wrapper-anchored_text_card:hover {
+		background: linear-gradient(0deg, var(--primary_colour) 10%, rgba(255,255,255,0) 100%);
+		box-shadow: inset 0 0 calc(var(--universal_answer) * var(--universal_answer_multiplier)) calc(var(--universal_answer) * var(--universal_answer_multiplier)) var(--primary_colour);
 	}
 	.cascade_wrapper-graphic_card {
 		position: relative;
@@ -399,9 +484,7 @@ body {
 		height: calc(100% - (var(--universal_answer) * var(--universal_answer_multiplier)));
 		margin: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 		margin-top: 0;
-	}
-	.cascade_wrapper-anchored_graphic_card + .cascade_wrapper-anchored_graphic_card {
-		margin-left: 0;
+		border-radius: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	}
 	.cascade_wrapper-anchored_graphic_card:hover {
 		background: linear-gradient(0deg, var(--primary_colour) 10%, rgba(255,255,255,0) 100%);
@@ -409,6 +492,7 @@ body {
 	}
 	.cascade_wrapper-anchored_graphic_card .graphic_card-graphic_card_image {
 		border: 1px solid var(--border_colour);
+		border-radius: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 	}
 	.graphic_card-graphic_card_image {
@@ -427,6 +511,18 @@ body {
 				- 1px /* idk why but there's an extra pixel */
 			);
 		max-width: 50vw;
+	}
+	.cascade_wrapper-anchored_graphic_card + .cascade_wrapper-anchored_graphic_card {
+		margin-left: 0;
+	}
+	.cascade_wrapper-anchored_graphic_card + .cascade_wrapper-anchored_text_card {
+		margin-left: 0;
+	}
+	.cascade_wrapper-anchored_text_card + .cascade_wrapper-anchored_graphic_card {
+		margin-left: 0;
+	}
+	.cascade_wrapper-anchored_text_card + .cascade_wrapper-anchored_text_card {
+		margin-left: 0;
 	}
 
 /*

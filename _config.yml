@@ -2,14 +2,14 @@
 title: Jad Toghuj
 timezone: UTC
 collections:
-  social-media-and-content-creation:
-    title: Clients
-    output: true
   posts:
     title: Posts
     output: true
+  social-media-and-content-creation:
+    title: Social Media & Content Creation
+    output: true
   styling-and-creative-direction:
-    title: Projects
+    title: Styling & Creative Direction
     output: true
   uploads:
     title: Uploads
@@ -24,28 +24,25 @@ defaults:
     border_colour: "#000"
     text_colour: "#000"
     header_location: upper
-    has_bottom_footer: false
     is_fullscreen: false
 - scope:
     path: ''
     type: pages
   values:
     layout: default
-    is_for_navigation: false
+    is_listed: false
 - scope:
     path: ''
     type: styling-and-creative-direction
   values:
     layout: cascade
     is_fullscreen: true
-    is_listed: true
 - scope:
     path: ''
     type: social-media-and-content-creation
   values:
     layout: cascade
     is_fullscreen: true
-    is_listed: true
 - scope:
     path: assets/graphics/header_graphics
   values:

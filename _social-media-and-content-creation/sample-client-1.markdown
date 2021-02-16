@@ -2,7 +2,9 @@
 title: Sample Client 1
 date: 2021-02-04 17:30:00 Z
 tags:
-- tag
+- apple
+- orange
+position: 1
 ---
 
 !title This is line 1 to be added to the title card
