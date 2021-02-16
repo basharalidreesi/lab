@@ -164,7 +164,6 @@ layout: default
 		}
 	});
 	cascade_wrapper.addEventListener('scroll', (ev) => {
-		ev.preventDefault();  // stop scrolling in another direction
 		cascade_wrapper.scrollLeft += (ev.deltaY + ev.deltaX);
 	});
 	document.getElementById('navigation_container').addEventListener('wheel', (ev) => {
