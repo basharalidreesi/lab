@@ -243,6 +243,9 @@ body {
 	justify-content: space-evenly;
 	align-items: center;
 }
+.mother_container-navigation_container_central > .navigation_container-navigation_list_wrapper {
+	border-top: 1px solid var(--border_colour);
+}
 .navigation_list_wrapper-navigation_list_item {
 	flex: 1; /* stress test this with a higher number of listed pages */
 	white-space: nowrap; /* debug */
