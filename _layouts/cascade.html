@@ -158,7 +158,8 @@ layout: default
 			cascade_wrapper.scrollLeft += (ev.deltaY + ev.deltaX);
 		}
 	});
-	cascade_wrapper.addEventListener('scroll', (ev) => {
+	cascade_wrapper.addEventListener('touchstart', (ev) => {
+		ev.preventDefault();
 		cascade_wrapper.scrollLeft += (ev.deltaY + ev.deltaX);
 	});
 	document.getElementById('navigation_container').addEventListener('wheel', (ev) => {
