@@ -239,7 +239,7 @@ body {
 }
 .mother_container-navigation_container_central > .navigation_container-navigation_list_wrapper {
 	border-top: 1px solid var(--border_colour);
-	box-shadow: 0 0 calc(var(--universal_answer) * var(--universal_answer_multiplier) * 2) calc(var(--universal_answer) * var(--universal_answer_multiplier) * 2) var(--secondary_colour);
+	box-shadow: 0 0 calc(var(--universal_answer) * var(--universal_answer_multiplier) * 2) calc(var(--universal_answer) * var(--universal_answer_multiplier)) var(--secondary_colour);
 	background-color: var(--secondary_colour);
 }
 .navigation_list_wrapper-navigation_list_item {
