@@ -280,6 +280,8 @@ body {
 .navigation_list_wrapper-navigation_list_item {
 	flex: 1; /* stress test this with a higher number of listed pages */
 	white-space: nowrap; /* debug */
+	overflow: hidden; /* debug */
+	text-overflow: ellipsis; /* debug */
 }
 .--active_navigation_text_styling a {
 	/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
@@ -325,6 +327,9 @@ body {
 .header_anchor-header_graphic {
 	width: auto;
 	height: 100%;
+	max-width: 100vw;
+	padding-left: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+	padding-right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 }
 
 /*
