@@ -153,6 +153,12 @@ layout: default
 	// https://dev.to/samthor/divert-vertical-scroll-to-the-side-3id0
 	// handle up/down scrollwheel on the scroller, as most folks don't have horizontal scroll
 	 cascade_wrapper.addEventListener('wheel', (ev) => {
+		if("ontouchstart" in window){
+			ev.addEventListener('touchstart', touchStartHandler);
+			ev.addEventListener('touchmove', touchMoveHandler);
+			ev.addEventListener('touchend', touchEndHandler);
+			cascade_wrapper.scrollLeft += (ev.deltaY + ev.deltaX);
+		}
 		if (!ev.ctrlKey) {
 			ev.preventDefault();  // stop scrolling in another direction
 			cascade_wrapper.scrollLeft += (ev.deltaY + ev.deltaX);
