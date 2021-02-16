@@ -158,7 +158,7 @@ layout: default
 			cascade_wrapper.scrollLeft += (ev.deltaY + ev.deltaX);
 		}
 	});
-	cascade_wrapper.addEventListener('touchmove', (ev) => {
+	cascade_wrapper.addEventListener('scroll', (ev) => {
 		ev.preventDefault();
 		cascade_wrapper.scrollLeft += (ev.deltaY + ev.deltaX);
 	});
