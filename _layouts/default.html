@@ -75,7 +75,7 @@
 					<script>
 						const header = document.getElementById("header_container");
 						const observer = new IntersectionObserver( 
-						([e]) => document.getElementsByClassName(".header_container-header_wrapper_central").classList.add("header_container-header_wrapper_central_sticky", e.intersectionRatio < 1),
+						([e]) => document.getElementsByClassName("header_container-header_wrapper_central").classList.add("header_container-header_wrapper_central_sticky", e.intersectionRatio < 1),
 						{threshold: [1]}
 						);
 						observer.observe(header)
