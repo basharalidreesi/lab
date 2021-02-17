@@ -18,15 +18,15 @@ layout: default
 						{% endif %}
 						{% if line contains "!background" %}
 							{% assign background = line | remove_first: "!background" | remove: "<p>" | remove: "</p>" | strip %}
-							<style> .content_container-cascade_wrapper { background-color: {{ background }}; } </style>
+							<style> .cascade_wrapper-title_card { background-color: {{ background }}; } </style>
 						{% endif %}
 						{% if line contains "!border" %}
 							{% assign border = line | remove_first: "!border" | remove: "<p>" | remove: "</p>" | strip %}
-							<style> .content_container-cascade_wrapper { border: 1px solid {{ border }}; } </style>
+							<style> .cascade_wrapper-title_card { border: 1px solid {{ border }}; } </style>
 						{% endif %}
 						{% if line contains "!color" or block contains "!colour" %}
 							{% assign colour = line | remove_first: "!colour" | remove: "<p>" | remove: "</p>" | strip %}
-							<style> .content_container-cascade_wrapper { --text_colour: {{ colour }}; } </style>
+							<style> .cascade_wrapper-title_card { --text_colour: {{ colour }}; } </style>
 						{% endif %}
 					{% endfor %}
 			{% endcase %}
