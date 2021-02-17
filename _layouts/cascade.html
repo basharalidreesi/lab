@@ -16,19 +16,19 @@ layout: default
 						{% if line contains "!title" %}
 							<h2 class="--title_card_text_styling">{{ line | remove_first: "!title" | remove: "<p>" | remove: "</p>" | strip }}</h2>
 						{% endif %}
+						{% if line contains "!background" %}
+							{% assign background = line | remove_first: "!background" | remove: "<p>" | remove: "</p>" | strip %}
+							<style> .content_container-cascade_wrapper { background-color: {{ background }}; } </style>
+						{% endif %}
+						{% if line contains "!border" %}
+							{% assign border = line | remove_first: "!border" | remove: "<p>" | remove: "</p>" | strip %}
+							<style> .content_container-cascade_wrapper { border: 1px solid {{ border }}; } </style>
+						{% endif %}
+						{% if line contains "!color" or block contains "!colour" %}
+							{% assign colour = line | remove_first: "!colour" | remove: "<p>" | remove: "</p>" | strip %}
+							<style> .content_container-cascade_wrapper { --text_colour: {{ colour }}; } </style>
+						{% endif %}
 					{% endfor %}
-					{% if line contains "!background" %}
-						{% assign background = line | remove_first: "!background" | remove: "<p>" | remove: "</p>" | strip %}
-						<style> .content_container-cascade_wrapper { background-color: {{ background }}; } </style>
-					{% endif %}
-					{% if line contains "!border" %}
-						{% assign border = line | remove_first: "!border" | remove: "<p>" | remove: "</p>" | strip %}
-						<style> .content_container-cascade_wrapper { border: 1px solid {{ border }}; } </style>
-					{% endif %}
-					{% if line contains "!color" or block contains "!colour" %}
-						{% assign colour = line | remove_first: "!colour" | remove: "<p>" | remove: "</p>" | strip %}
-						<style> .content_container-cascade_wrapper { --text_colour: {{ colour }}; } </style>
-					{% endif %}
 			{% endcase %}
 		{% endfor %}
 	</header>
@@ -171,23 +171,23 @@ layout: default
 			{% assign declaration = identifier[0] | remove: "<p>" | remove: "</p>" %}
 			{% case declaration %}
 				{% when "!footer" %}
-				{% for line in item %}
-					{% if line contains "!footer" %}
-						<p class="--footer_text_styling">{{ line | remove_first: "!footer" | remove: "<p>" | remove: "</p>" | strip }}</p>
-					{% endif %}
-					{% if line contains "!background" %}
-						{% assign background = line | remove_first: "!background" | remove: "<p>" | remove: "</p>" | strip %}
-						<style> .cascade_wrapper-footer_card { background-color: {{ background }}; } </style>
-					{% endif %}
-					{% if line contains "!border" %}
-						{% assign border = line | remove_first: "!border" | remove: "<p>" | remove: "</p>" | strip %}
-						<style> .cascade_wrapper-footer_card { border: 1px solid {{ border }}; } </style>
-					{% endif %}
-					{% if line contains "!color" or block contains "!colour" %}
-						{% assign colour = line | remove_first: "!colour" | remove: "<p>" | remove: "</p>" | strip %}
-						<style> ,cascade_wrapper-footer_card { --text_colour: {{ colour }}; } </style>
-					{% endif %}
-				{% endfor %}
+					{% for line in item %}
+						{% if line contains "!footer" %}
+							<p class="--footer_text_styling">{{ line | remove_first: "!footer" | remove: "<p>" | remove: "</p>" | strip }}</p>
+						{% endif %}
+						{% if line contains "!background" %}
+							{% assign background = line | remove_first: "!background" | remove: "<p>" | remove: "</p>" | strip %}
+							<style> .cascade_wrapper-footer_card { background-color: {{ background }}; } </style>
+						{% endif %}
+						{% if line contains "!border" %}
+							{% assign border = line | remove_first: "!border" | remove: "<p>" | remove: "</p>" | strip %}
+							<style> .cascade_wrapper-footer_card { border: 1px solid {{ border }}; } </style>
+						{% endif %}
+						{% if line contains "!color" or block contains "!colour" %}
+							{% assign colour = line | remove_first: "!colour" | remove: "<p>" | remove: "</p>" | strip %}
+							<style> ,cascade_wrapper-footer_card { --text_colour: {{ colour }}; } </style>
+						{% endif %}
+					{% endfor %}
 			{% endcase %}
 		{% endfor %}
 		{% include footer.html %}
