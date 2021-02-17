@@ -10,32 +10,32 @@ primary_colour: peachpuff
 !title This is a test project
 !title Made by [people who make test projects](http://google.com)
 !background azure
-!border red
 !color blue
 
 !footer
-!background lightcyan
-!border yellow
-!color purple
+!background azure
 
 !image
 !source ![look-02.png](/uploads/look-02.png)
 !linkto test-project/nested-test-project.html
 
 !empty
+!background azure
 
 !image
 !source ![IMG_1111.jpeg](/uploads/IMG_1111.jpeg)
 
 !empty
+!background azure
 
 !image
 !source ![IMG_1110.jpeg](/uploads/IMG_1110.jpeg)
 
 !empty
+!background azure
 
 !image
- !source ![IMG_1109.jpeg](/uploads/IMG_1109.jpeg)
+!source ![IMG_1109.jpeg](/uploads/IMG_1109.jpeg)
 
 !image
 !source ![IMG_1121.jpeg](/uploads/IMG_1121.jpeg)
