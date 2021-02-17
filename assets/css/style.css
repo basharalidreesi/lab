@@ -614,7 +614,7 @@ body {
 				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
 				+ var(--navigation_text_font_size)) /* navigation text line height */
 				* 2) /* header height */
-				- 1px) /* idk why but there's an extra pixel */
+				- 2px) /* idk why but there's an extra pixel */
 				* 1.78 /* aspect ratio */
 			);
 		min-width:
@@ -623,7 +623,7 @@ body {
 				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
 				+ var(--navigation_text_font_size)) /* navigation text line height */
 				* 2) /* header height */
-				- 1px) /* idk why but there's an extra pixel */
+				- 2px) /* idk why but there's an extra pixel */
 				* 1.78 /* aspect ratio */
 			);
 		max-width: 100vw;
