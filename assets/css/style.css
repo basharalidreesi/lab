@@ -92,6 +92,9 @@ img:not(.header_anchor-header_graphic) {
 	pointer-events: none;
 	user-select: none;
 }
+address {
+	font-style: normal;
+}
 
 /*
 ┌─BEGIN─────────────────┐
@@ -121,6 +124,7 @@ img:not(.header_anchor-header_graphic) {
 		text-align: center;
 		font-size: var(--footer_text_font_size);
 		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+		line-height: 200%;
 	}
 	.--list_text_styling {
 		color: var(--text_colour);
@@ -157,6 +161,12 @@ img:not(.header_anchor-header_graphic) {
 	.--anchor_styling:hover {
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 		background-size: 100% 2px;
+	}
+	.--hyperlink_styling {
+		display: inline;
+		border: 1px solid var(--border_colour);
+		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2 / 2);
+		border-radius: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
 	}
 	/*
 	┌─BEGIN─────────────────┐
