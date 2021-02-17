@@ -600,7 +600,14 @@ body {
 	.cascade_wrapper-embed_card {
 		overflow: hidden;
 		position: relative;
-		width:100%;
+		min-width:
+			calc(	(var(--vh, 1vh) * 100) /* screen height */
+				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
+				+ var(--navigation_text_font_size)) /* navigation text line height */
+				* 2) /* header height */
+				* (9 / 16)
+			);
 	}
 	.cascade_wrapper-embed_card::after {
 		padding-top: 56.25%;
@@ -611,7 +618,14 @@ body {
 		position: absolute;
 		top: 0;
 		left: 0;
-		width: 100%;
+		width:
+			calc(	(var(--vh, 1vh) * 100) /* screen height */
+				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
+				+ var(--navigation_text_font_size)) /* navigation text line height */
+				* 2) /* header height */
+				* (9 / 16)
+			);
 		height: 100%;
 		display: block;
 	}
