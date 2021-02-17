@@ -42,7 +42,7 @@
 	--tag_text_font: "Code New Roman", monospace;
 	--tag_text_font_size: 1rem;
 	--text_card_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-	--text_card_text_font_size: 1.5rem;
+	--text_card_text_font_size: 1.25rem;
 }
 
 /*
@@ -565,7 +565,7 @@ body {
 				* 2) /* header height */
 				- 1px /* idk why but there's an extra pixel */
 			);
-		max-width: 50vw;
+		max-width: 75vw;
 		display: flex;
 		flex-flow: column wrap;
 		justify-content: center;
@@ -616,7 +616,7 @@ body {
 				* 2) /* header height */
 				- 1px /* idk why but there's an extra pixel */
 			);
-		max-width: 50vw;
+		max-width: 75vw;
 	}
 	.cascade_wrapper-anchored_graphic_card + .cascade_wrapper-anchored_graphic_card {
 		margin-left: 0;
