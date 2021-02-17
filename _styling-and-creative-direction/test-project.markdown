@@ -10,9 +10,6 @@ primary_colour: peachpuff
 !title This is a test project
 !title Made by [people who make test projects](http://google.com)
 
-!footer Thank you for visiting this test project
-!footer It was made by [people who make test projects](http://google.com)
-
 !image
 !source ![look-02.png](/uploads/look-02.png)
 !linkto test-project/nested-test-project.html
