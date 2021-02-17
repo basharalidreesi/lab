@@ -185,6 +185,8 @@ address {
 	.--anchor_styling {
 		color: var(--text_colour);
 		display: inline;
+		font-family: inherit;
+		font-size: inherit;
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 		text-decoration: none;
 		background-image: linear-gradient(currentColor, currentColor);
@@ -199,6 +201,8 @@ address {
 	}
 	.--hyperlink_styling {
 		display: inline;
+		font-family: inherit;
+		font-size: inherit;
 		border: 1px solid var(--border_colour);
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2 / 2);
 		padding-left: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
