@@ -4,8 +4,7 @@ date: 2021-02-10 19:47:00 Z
 tags:
 - test tag
 position: 10
-primary_colour: "#8f00ff"
-secondary_colour: "#e1e1e1"
+primary_colour: peachpuff
 ---
 
 !title This is a test project
