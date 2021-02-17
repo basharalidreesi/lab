@@ -41,6 +41,10 @@
 	--list_text_font_size: 1.5rem;
 	--tag_text_font: "Code New Roman", monospace;
 	--tag_text_font_size: 1rem;
+	--title_card_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	--title_card_text_font_size: 1.5rem;
+	--footer_card_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	--footer_card_text_font_size: 1.25rem;
 	--text_card_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--text_card_text_font_size: 1.25rem;
 }
@@ -142,6 +146,24 @@ address {
 		text-align: center;
 		font-size: var(--tag_text_font_size);
 	}
+	.--title_card_text_styling {
+		color: var(--text_colour);
+		font-family: var(--title_card_text_font);
+		font-weight: 200;
+		text-align: center;
+		font-size: var(--title_card_text_font_size);
+		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+		line-height: 200%;
+	}
+	.--footer_card_text_styling {
+		color: var(--text_colour);
+		font-family: var(--footer_card_text_font);
+		font-weight: 200;
+		text-align: center;
+		font-size: var(--footer_card_text_font_size);
+		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+		line-height: 200%;
+	}
 	.--text_card_text_styling {
 		color: var(--text_colour);
 		font-family: var(--text_card_text_font);
@@ -151,7 +173,7 @@ address {
 		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		line-height: 200%;
 	}
-	.--text_card_text_styling a, .cascade_wrapper-footer_card p a {
+	.--text_card_text_styling a, .--footer_card_text_styling a, .--title_card_text_styling a {
 		display: inline;
 		border: 1px solid var(--border_colour);
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2 / 2);
@@ -169,7 +191,7 @@ address {
 		background-size: 0% 2px;
 		transition: background-size 0.25s;
 	}
-	.--text_card_text_styling a:hover, .cascade_wrapper-footer_card p a:hover  {
+	.--text_card_text_styling a:hover, .--footer_card_text_styling a:hover, .--title_card_text_styling a:hover  {
 		background-color: var(--secondary_colour);
 		cursor: alias;
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
