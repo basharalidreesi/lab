@@ -158,7 +158,7 @@ address {
 	│			│
 	└─BEGIN─────────────────┘
 	*/
-	.--anchor_styling {
+	.--anchor_styling, .--text_card_text_styling {
 		color: var(--text_colour);
 		display: inline;
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
@@ -169,17 +169,17 @@ address {
 		background-size: 0% 2px;
 		transition: background-size 0.25s;
 	}
-	.--anchor_styling:hover {
+	.--anchor_styling:hover, .--text_card_text_styling a:hover {
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 		background-size: 100% 2px;
 	}
-	.--hyperlink_styling {
+	.--hyperlink_styling, .--text_card_text_styling {
 		display: inline;
 		border: 1px solid var(--border_colour);
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2 / 2);
 		border-radius: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
 	}
-	.--hyperlink_styling:hover {
+	.--hyperlink_styling:hover, .--text_card_text_styling a:hover {
 		background-color: var(--secondary_colour);
 		cursor: alias;
 	}
