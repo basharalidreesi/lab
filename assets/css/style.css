@@ -155,7 +155,9 @@ address {
 		display: inline;
 		border: 1px solid var(--border_colour);
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2 / 2);
-		border-radius: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
+		padding-left: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
+		padding-right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
+		border-radius: 5000px;
 		color: var(--text_colour);
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 		text-decoration: none;
@@ -199,7 +201,7 @@ address {
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2 / 2);
 		padding-left: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
 		padding-right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
-		border-radius: 5000px
+		border-radius: 5000px;
 	}
 	.--hyperlink_styling:hover {
 		background-color: var(--secondary_colour);
