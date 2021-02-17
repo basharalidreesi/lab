@@ -609,23 +609,25 @@ body {
 	}
 	.cascade_wrapper-embed_card {
 		flex: 1 0 auto;
-		/* padding: 56.25% 0 0 0; */
+		/* padding: 56.25% 0 0 0; */ /* debug */
 		position: relative;
 		min-width:
 			calc(	(100vh /* screen height */
 				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
 				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
 				+ var(--navigation_text_font_size)) /* navigation text line height */
-				* 2)) /* header height */
-				* 1.5625
+				* 2) /* header height */
+				- 1px) /* idk why but there's an extra pixel */
+				* 1.78
 			);
 		min-width:
 			calc(	((var(--vh, 1vh) * 100) /* screen height */
 				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
 				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
 				+ var(--navigation_text_font_size)) /* navigation text line height */
-				* 2)) /* header height */
-				* 1.5625
+				* 2) /* header height */
+				- 1px) /* idk why but there's an extra pixel */
+				* 1.78
 			);
 	}
 	.cascade_wrapper-embed_card iframe {
