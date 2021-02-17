@@ -36,7 +36,7 @@ layout: default
 				{% if line contains "!source" %}
 					{% if line contains "youtube.com" %}
 						{% assign source = line | remove_first: "!source" | remove: "<p>" | remove: "</p>" | split: "v=" %}
-					{% elsif line contains "youtube.be" %}
+					{% elsif line contains "youtu.be" %}
 						{% assign source = line | remove_first: "!source" | remove: "<p>" | remove: "</p>" | split: ".be/" %}
 					{% elsif line contains "vimeo.com" %}
 						{% assign source = line | remove_first: "!source" | remove: "<p>" | remove: "</p>" | split: ".com/" %}
