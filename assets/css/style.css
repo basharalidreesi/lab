@@ -151,7 +151,7 @@ address {
 		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		line-height: 200%;
 	}
-	.--text_card_text_styling a {
+	.--text_card_text_styling a, .--footer_text_styling p a {
 		display: inline;
 		border: 1px solid var(--border_colour);
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2 / 2);
@@ -169,7 +169,7 @@ address {
 		background-size: 0% 2px;
 		transition: background-size 0.25s;
 	}
-	.--text_card_text_styling a:hover {
+	.--text_card_text_styling a:hover, .--footer_text_styling p a:hover  {
 		background-color: var(--secondary_colour);
 		cursor: alias;
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
