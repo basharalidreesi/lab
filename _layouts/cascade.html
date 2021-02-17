@@ -185,7 +185,7 @@ layout: default
 						{% endif %}
 						{% if line contains "!color" or block contains "!colour" %}
 							{% assign colour = line | remove_first: "!colour" | remove: "<p>" | remove: "</p>" | strip %}
-							<style> ,cascade_wrapper-footer_card { --text_colour: {{ colour }}; } </style>
+							<style> .cascade_wrapper-footer_card { --text_colour: {{ colour }}; } </style>
 						{% endif %}
 					{% endfor %}
 			{% endcase %}
