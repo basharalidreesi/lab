@@ -170,6 +170,7 @@ address {
 	}
 	.--hyperlink_styling:hover {
 		background-color: var(--secondary_colour);
+		pointer: alias;
 	}
 	/*
 	┌─BEGIN─────────────────┐
