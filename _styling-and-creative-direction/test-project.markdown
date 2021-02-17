@@ -9,6 +9,8 @@ primary_colour: peachpuff
 
 !title This is a test project
 !title Made by [people who make test projects](http://google.com)
+!background black
+!color white
 
 !footer This is a footer
 !footer Brought to you by [people who make test projects](tesssst)
