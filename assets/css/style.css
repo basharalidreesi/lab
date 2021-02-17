@@ -608,8 +608,6 @@ body {
 		height: 100%;
 	}
 	.cascade_wrapper-embed_card {
-		flex: 1 0 auto;
-		/* padding: 56.25% 0 0 0; */ /* debug */
 		position: relative;
 		min-width:
 			calc(	(100vh /* screen height */
@@ -629,6 +627,8 @@ body {
 				- 1px) /* idk why but there's an extra pixel */
 				* 1.78
 			);
+		max-width: 100vw;
+		background-color: #000;
 	}
 	.cascade_wrapper-embed_card iframe {
 		position: absolute;
