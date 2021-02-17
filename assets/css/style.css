@@ -598,7 +598,12 @@ body {
 		height: 100%;
 	}
 	.cascade_wrapper-embed_card {
-		padding-bottom: calc(var(--aspect-ratio, 0.5625) * 100%);
+		min-width: calc(var(--aspect-ratio, 0.5625) * 100%);
+	}
+	.cascade_wrapper-embed_card iframe {
+		width: 100%;
+		height: 100%;
+		display: block;
 	}
 	.cascade_wrapper-empty_card {
 		flex: 1 0 auto;
