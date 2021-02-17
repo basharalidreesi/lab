@@ -631,8 +631,8 @@ body {
 		position: absolute;
 		top: 0;
 		left: 0;
-		width: 100%;
-		height: calc(100% + 1px);
+		width: calc(100% + 1px);
+		height: 100%;
 		display: block;
 	}
 	.cascade_wrapper-empty_card {
