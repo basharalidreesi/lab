@@ -15,12 +15,27 @@ layout: default
 				<style>
 					.cascade_wrapper-title_card {
 						{% if block contains "!background" %}
+							{% for line in item %}
+								{% if line contains "!background" %}
+									{% assign background = line | remove_first: "!background" | remove: "<p>" | remove: "</p>" | strip %}
+								{% endif %}
+							{% endfor %}
 							background-color: {{ background }};
 						{% endif %}
 						{% if block contains "!border" %}
+							{% for line in item %}
+								{% if line contains "!border" %}
+									{% assign border = line | remove_first: "!border" | remove: "<p>" | remove: "</p>" | strip %}
+								{% endif %}
+							{% endfor %}
 							border: 1px solid {{ border }};
 						{% endif %}
 						{% if block contains "!color" or block contains "!colour" %}
+							{% for line in item %}
+								{% if line contains "!color" or block contains "!colour" %}
+									{% assign colour = line | remove_first: "!colour" | remove: "<p>" | remove: "</p>" | strip %}
+								{% endif %}
+							{% endfor %}
 							--text_colour: {{ colour }}
 						{% endif %}
 					}
