@@ -40,7 +40,7 @@ primary_colour: peachpuff
 !background azure
 
 !text This is some text
-!text This is another line
+!text This is [another line](test)
 !background aquamarine
 
 !image
