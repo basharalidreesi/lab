@@ -192,7 +192,8 @@ address {
 		transition: background-size 0.25s;
 	}
 	.--text_card_text_styling a:hover, .--footer_card_text_styling a:hover, .--title_card_text_styling a:hover  {
-		background-color: var(--secondary_colour);
+		background-color: var(--text_colour);
+		color: var(--secondary_colour);
 		cursor: alias;
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 		background-size: 100% 2px;
