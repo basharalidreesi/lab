@@ -25,7 +25,7 @@ layout: default
 							<style> .cascade_wrapper-title_card { border: 1px solid {{ border }}; } </style>
 						{% endif %}
 						{% if line contains "!color" or block contains "!colour" %}
-							{% assign colour = line | remove_first: "!colour" | remove: "<p>" | remove: "</p>" | strip %}
+							{% assign colour = line | remove_first: "!color" | remove_first: "!colour" | remove: "<p>" | remove: "</p>" | strip %}
 							<style> .cascade_wrapper-title_card { --text_colour: {{ colour }}; } </style>
 						{% endif %}
 					{% endfor %}
@@ -184,7 +184,7 @@ layout: default
 							<style> .cascade_wrapper-footer_card { border: 1px solid {{ border }}; } </style>
 						{% endif %}
 						{% if line contains "!color" or block contains "!colour" %}
-							{% assign colour = line | remove_first: "!colour" | remove: "<p>" | remove: "</p>" | strip %}
+							{% assign colour = line | remove_first: "!color" | remove_first: "!colour" | remove: "<p>" | remove: "</p>" | strip %}
 							<style> .cascade_wrapper-footer_card { --text_colour: {{ colour }}; } </style>
 						{% endif %}
 					{% endfor %}
