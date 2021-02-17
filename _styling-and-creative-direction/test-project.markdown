@@ -49,5 +49,11 @@ secondary_colour: "#e1e1e1"
 !source ![look-02.png](/uploads/look-02.png)
 !linkto here
 
-!embedyoutube
+!embed
 !source https://www.youtube.com/watch?v=817R3ApVFok
+
+!embed
+!source https://youtu.be/s4g8jLCCxIc
+
+!embed
+!source https://vimeo.com/76979871
