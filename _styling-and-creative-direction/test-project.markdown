@@ -5,7 +5,6 @@ tags:
 - test tag
 position: 10
 primary_colour: peachpuff
-secondary_colour: "#e1e1e1"
 ---
 
 !image
