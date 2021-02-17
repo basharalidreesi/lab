@@ -128,8 +128,8 @@ layout: default
 			{% when "!embed" %}
 				{% if block contains "!source" %}
 					{% if block contains "youtube.com" or block contains "youtu.be" %}
-						<div class="cascade_wrapper-embed_card" style="position:relative;padding-bottom:56.25%;">
-							<iframe style="width:100%;height:100%;position:absolute;left:0px;top:0px;" frameborder="0" width="100%" height="100%" src="https://www.youtube.com/embed/{{ source[1] | slice: 0, 11 }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<div class="cascade_wrapper-embed_card">
+							<iframe frameborder="0" width="100%" height="100%" src="https://www.youtube.com/embed/{{ source[1] | slice: 0, 11 }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 						</div>
 					{% elsif block contains "vimeo.com" %}
 						<div class="cascade_wrapper-embed_card">
