@@ -328,7 +328,7 @@ body {
 .header_anchor-header_graphic {
 	width: auto;
 	height: 100%;
-	max-width: 100vw;
+	max-width: calc(100vw - (var(--universal_answer) * var(--universal_answer_multiplier) / 2) - (var(--universal_answer) * var(--universal_answer_multiplier) / 2));
 	padding-left: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	padding-right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 }
