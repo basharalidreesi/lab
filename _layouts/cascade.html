@@ -76,7 +76,7 @@ layout: default
 					">
 					{% for line in item %}
 						{% if line contains "!text" %}
-							<p>{{line | remove_first: "!text" | remove: "<p>" | remove: "</p>" | strip }}</p>
+							<p class="--text_card_text_styling">{{line | remove_first: "!text" | remove: "<p>" | remove: "</p>" | strip }}</p>
 						{% endif %}
 					{% endfor %}
 				</div>
