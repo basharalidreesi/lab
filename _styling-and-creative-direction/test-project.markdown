@@ -9,6 +9,10 @@ primary_colour: peachpuff
 
 !title This is a test project
 !title Made by [people who make test projects](http://google.com)
+!background azure
+
+!footer
+!background lightcyan
 
 !image
 !source ![look-02.png](/uploads/look-02.png)
