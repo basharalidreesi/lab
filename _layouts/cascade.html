@@ -31,13 +31,18 @@ layout: default
 				{% endif %}
 			{% endfor %}
 		{% endif %}
-		<!-- {% if block contains "!source" and block contains "!embed" %}
+		{% if block contains "!source" and block contains "!embed" %}
 			{% for line in item %}
 				{% if line contains "!source" %}
-					{% assign source = line | remove_first: "!source" | remove: "<p>" | remove: "</p>" | split: "v=" | split: ".be/" %}
+					{% if line contains "youtube.com" %}
+						{% assign source = line | remove_first: "!source" | remove: "<p>" | remove: "</p>" | split: "v=" %}
+					{% elsif line contains "youtube.be" %}
+						{% assign source = line | remove_first: "!source" | remove: "<p>" | remove: "</p>" | split: ".be/" %}
+					{% elsif line contains "vimeo.com" %}
+						{% assign source = line | remove_first: "!source" | remove: "<p>" | remove: "</p>" | split: ".com/" %}
 				{% endif %}
 			{% endfor %}
-		{% endif %} -->
+		{% endif %}
 		{% if block contains "!background" %}
 			{% for line in item %}
 				{% if line contains "!background" %}
@@ -119,17 +124,17 @@ layout: default
 						<img class="graphic_card-graphic_card_image" src="{{ source[0] }}">
 					</figure>
 				{% endif %}
-			{% when "!embedyoutube" %}
+			{% when "!embed" %}
 				{% if block contains "!source" %}
-					<!-- <div class="cascade_wrapper-embed_card">
-						<iframe src="https://www.youtube.com/embed/{{ source[1] | slice: 0, 11 }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					</div> -->
-				{% endif %}
-			{% when "!embedvimeo" %}
-				{% if block contains "!source" %}
-					<!-- <div class="cascade_wrapper-embed_card">
-						<iframe src="https://player.vimeo.com/video/{{ source[1] }}?title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-					</div> -->
+					{% if block contains "youtube.com" or block contains "youtube.be" %}
+						<div class="cascade_wrapper-embed_card">
+							<iframe src="https://www.youtube.com/embed/{{ source[1] | slice: 0, 11 }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+					{% elsif block contains "vimeo.com" %}
+						<div class="cascade_wrapper-embed_card">
+							<iframe src="https://player.vimeo.com/video/{{ source[1] }}?title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+						</div>
+					{% endif %}
 				{% endif %}
 			{% when "!empty" %}
 				<div class="cascade_wrapper-empty_card"
