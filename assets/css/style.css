@@ -168,6 +168,9 @@ address {
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2 / 2);
 		border-radius: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
 	}
+	.--hyperlink_styling:hover {
+		background-color: var(--secondary_colour);
+	}
 	/*
 	┌─BEGIN─────────────────┐
 	│			│
