@@ -197,7 +197,9 @@ address {
 		display: inline;
 		border: 1px solid var(--border_colour);
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2 / 2);
-		border-radius: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
+		padding-left: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
+		padding-right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
+		border-radius: 5000px
 	}
 	.--hyperlink_styling:hover {
 		background-color: var(--secondary_colour);
@@ -462,7 +464,7 @@ body {
 	.list_page_item_tag_list-list_page_item_tag {
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		border: 1px solid var(--border_colour);
-		border-radius: 500px;
+		border-radius: 5000px;
 		margin-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		cursor: help;
 		background-color: transparent;
