@@ -575,7 +575,7 @@ body {
 		justify-content: center;
 		align-items: center;
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
-		overflow: hidden;
+		/* overflow: hidden; */ /* debug */
 	}
 	.cascade_wrapper-graphic_card {
 		position: relative;
