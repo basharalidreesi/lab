@@ -37,8 +37,9 @@ secondary_colour: "#e1e1e1"
 !source ![look-02.png](/uploads/look-02.png)
 !linkto here
 
-!text This is some text
+!text [This is some text](http://google.com)
 !text This is another line
+!background azure
 
 !text This is some text
 !text This is another line
