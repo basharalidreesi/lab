@@ -12,7 +12,8 @@ primary_colour: peachpuff
 !background azure
 !color blue
 
-!footer
+!footer This is a footer
+!footer Brought to you by [people who make test projects](tesssst)
 !background azure
 
 !image
