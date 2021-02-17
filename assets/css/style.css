@@ -16,6 +16,17 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: "Code New Roman";
+    src: url("/assets/fonts/code_new_roman/code_new_roman-bold.eot");
+    src: url("/assets/fonts/code_new_roman/code_new_roman-bold.eot?#iefix") format("embedded-opentype"),
+         url("/assets/fonts/code_new_roman/code_new_roman-bold.woff2") format("woff2"),
+         url("/assets/fonts/code_new_roman/code_new_roman-bold.woff") format("woff"),
+         url("/assets/fonts/code_new_roman/code_new_roman-bold.ttf") format("truetype"),
+         url("/assets/fonts/code_new_roman/code_new_roman-bold.svg#code_new_romanbold") format("svg");
+    font-weight: bold;
+    font-style: normal;
+}
 
 /*
 ┌─BEGIN─────────────────┐
@@ -142,7 +153,7 @@ address {
 	.--tag_text_styling {
 		color: var(--text_colour);
 		font-family: var(--tag_text_font);
-		font-weight: normal;
+		font-weight: bold;
 		text-align: center;
 		font-size: var(--tag_text_font_size);
 	}
