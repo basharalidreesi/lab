@@ -10,6 +10,8 @@ primary_colour: peachpuff
 !title This is a test project
 !title Made by [people who make test projects](http://google.com)
 !background azure
+!border red
+!color blue
 
 !footer
 !background lightcyan
