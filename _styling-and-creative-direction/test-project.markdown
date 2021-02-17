@@ -44,6 +44,7 @@ secondary_colour: "#e1e1e1"
 !text This is some text
 !text This is another line
 !background aquamarine
+!color red
 
 !embedyoutube
 !source https://www.youtube.com/watch?v=817R3ApVFok
