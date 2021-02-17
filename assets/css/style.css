@@ -149,7 +149,7 @@ address {
 	*/
 	.--anchor_styling {
 		color: var(--text_colour);
-		display: inline-block;
+		display: inline;
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 		text-decoration: none;
 		background-image: linear-gradient(currentColor, currentColor);
