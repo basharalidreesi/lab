@@ -25,7 +25,7 @@
 └─BEGIN─────────────────┘
 */
 :root {
-	--font_size: 1em;
+	--font_size: 15px;
 	--universal_answer: 1em;
 	--universal_answer_multiplier: 2;
 	/* --primary_colour: #91a3b0; */ /* see ./_config.yml and ./_layouts/default.html */
@@ -159,6 +159,8 @@ address {
 		padding-right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
 		border-radius: 5000px;
 		color: var(--text_colour);
+		font-family: inherit;
+		font-size: inherit;
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 		text-decoration: none;
 		background-image: linear-gradient(currentColor, currentColor);
