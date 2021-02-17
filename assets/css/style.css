@@ -611,12 +611,20 @@ body {
 		position: relative;
 		height: 100%;
 		min-width:
+			calc(	100vh /* screen height */
+				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
+				+ var(--navigation_text_font_size)) /* navigation text line height */
+				* 2) /* header height */
+				* (9 / 16) /* aspect ratio */
+			);
+		min-width:
 			calc(	(var(--vh, 1vh) * 100) /* screen height */
 				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
 				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
 				+ var(--navigation_text_font_size)) /* navigation text line height */
 				* 2) /* header height */
-				- 1px /* idk why but there's an extra pixel */
+				* (9 / 16) /* aspect ratio */
 			);
 	}
 	.cascade_wrapper-embed_card iframe {
