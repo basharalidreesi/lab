@@ -167,6 +167,8 @@ address {
 		border: 1px solid var(--border_colour);
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2 / 2);
 		border-radius: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
+		background-color: transparent;
+		transition: background-color 0.25s;
 	}
 	.--hyperlink_styling:hover {
 		background-color: var(--secondary_colour);
