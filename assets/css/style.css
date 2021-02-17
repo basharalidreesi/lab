@@ -544,8 +544,7 @@ body {
 				* 2) /* header height */
 				- 1px /* idk why but there's an extra pixel */
 			);
-		overflow-y: scroll;
-		margin-right: calc(var(--universal_answer) * var(--universal_answer_multiplier));
+		overflow-x: scroll;
 	}
 	.cascade_wrapper-title_card { }
 	.cascade_wrapper-text_card {
