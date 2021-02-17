@@ -15,6 +15,8 @@ primary_colour: peachpuff
 
 !footer
 !background lightcyan
+!border yellow
+!color purple
 
 !image
 !source ![look-02.png](/uploads/look-02.png)
