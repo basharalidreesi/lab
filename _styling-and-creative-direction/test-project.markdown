@@ -9,12 +9,13 @@ primary_colour: peachpuff
 
 !title This is a test project
 !title Made by [people who make test projects](http://google.com)
-!background azure
-!color blue
+!background black
+!color white
 
 !footer This is a footer
 !footer Brought to you by [people who make test projects](tesssst)
-!background azure
+!background black
+!color white
 
 !image
 !source ![look-02.png](/uploads/look-02.png)
