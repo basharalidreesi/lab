@@ -42,7 +42,6 @@ primary_colour: peachpuff
 !text This is some text
 !text This is another line
 !background aquamarine
-!color red
 
 !image
 !source ![look-02.png](/uploads/look-02.png)
