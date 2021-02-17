@@ -609,6 +609,7 @@ body {
 	}
 	.cascade_wrapper-embed_card {
 		position:relative;
+		flex: 1 0 auto;
 		padding-bottom:56.25%;
 		min-width:
 			calc(	100vh /* screen height */
@@ -629,6 +630,7 @@ body {
 	}
 	.cascade_wrapper-embed_card iframe {
 		position:absolute;
+		display: block
 		top: 0;
 		left: 0;
 		width:100%;
