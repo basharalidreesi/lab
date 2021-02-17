@@ -3,16 +3,23 @@ layout: default
 ---
 
 <div class="content_container-cascade_wrapper" id="cascade_wrapper">
-	<!-- <header class="cascade_wrapper-title_card">
-		<h1>{{ page.title }}</h1>
-		{% case declaration %}
-			{% when "!title" %}
-				{% for line in item %}
-					<h2>{{ line | remove_first: "!title" | remove: "<p>" | remove: "</p>" }}</h2>
-				{% endfor %}
-		{% endcase %}
-	</header> -->
 	{% assign page_content = page.content | newline_to_br | strip_newlines | split: "<br /><br />" %}
+	<header class="cascade_wrapper-title_card">
+		<h1 class="--title_card_text_styling">{{ page.title }}</h1>
+		{% for block in page_content %}
+			{% assign item = block | split: "<br />" %}
+			{% assign identifier = item[0] | split: " " %}
+			{% assign declaration = identifier[0] | remove: "<p>" | remove: "</p>" %}
+			{% case declaration %}
+				{% when "!title" %}
+				{% for line in item %}
+					{% if line contains "!title" %}
+						<h2 class="--title_card_text_styling">{{ line | remove_first: "!title" | remove: "<p>" | remove: "</p>" | strip }}</h2>
+					{% endif %}
+				{% endfor %}
+			{% endcase %}
+		{% endfor %}
+	</header>
 	{% for block in page_content %}
 		{% assign item = block | split: "<br />" %}
 		{% assign identifier = item[0] | split: " " %}
@@ -145,15 +152,22 @@ layout: default
 					"></div>
 		{% endcase %}
 	{% endfor %}
-	<!-- <footer class="cascade_wrapper-footer_card">
-		{% case declaration %}
-			{% when "!footer" %}
+	<footer class="cascade_wrapper-title_card">
+		{% for block in page_content %}
+			{% assign item = block | split: "<br />" %}
+			{% assign identifier = item[0] | split: " " %}
+			{% assign declaration = identifier[0] | remove: "<p>" | remove: "</p>" %}
+			{% case declaration %}
+				{% when "!footer" %}
 				{% for line in item %}
-					<p>{{ line | remove_first: "!title" | remove: "<p>" | remove: "</p>" }}</p>
+					{% if line contains "!footer" %}
+						<p class="--footer_card_text_styling">{{ line | remove_first: "!footer" | remove: "<p>" | remove: "</p>" | strip }}</p>
+					{% endif %}
 				{% endfor %}
-		{% endcase %}
+			{% endcase %}
+		{% endfor %}
 		{% include footer.html %}
-	</footer> -->
+	</footer>
 </div>
 <script>
 	// https://dev.to/samthor/divert-vertical-scroll-to-the-side-3id0
