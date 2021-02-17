@@ -610,23 +610,7 @@ body {
 	.cascade_wrapper-embed_card {
 		position:relative;
 		flex: 1 0 auto;
-		padding-bottom:56.25%;
-		min-width:
-			calc(	100vh /* screen height */
-				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
-				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
-				+ var(--navigation_text_font_size)) /* navigation text line height */
-				* 2) /* header height */
-				* 1.5625 /* aspect ratio */
-			);
-		min-width:
-			calc(	(var(--vh, 1vh) * 100) /* screen height */
-				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
-				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
-				+ var(--navigation_text_font_size)) /* navigation text line height */
-				* 2) /* header height */
-				* 1.5625 /* aspect ratio */
-			);
+		padding-bottom: 156.25%;
 	}
 	.cascade_wrapper-embed_card iframe {
 		position: absolute;
