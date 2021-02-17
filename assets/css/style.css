@@ -175,7 +175,7 @@ address {
 	}
 	.--text_card_text_styling a, .--footer_card_text_styling a, .--title_card_text_styling a {
 		display: inline;
-		border: 1px solid var(--border_colour);
+		border: 1px solid var(--text_colour);
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2 / 2);
 		padding-left: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
 		padding-right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
@@ -226,7 +226,7 @@ address {
 		display: inline;
 		font-family: inherit;
 		font-size: inherit;
-		border: 1px solid var(--border_colour);
+		border: 1px solid var(--text_colour);
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2 / 2);
 		padding-left: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
 		padding-right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
