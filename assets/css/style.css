@@ -119,14 +119,14 @@ address {
 	.--navigation_text_styling {
 		color: var(--text_colour);
 		font-family: var(--navigation_text_font);
-		font-weight: 200;
+		font-weight: normal;
 		text-align: center;
 		font-size: var(--navigation_text_font_size);
 	}
 	.--footer_text_styling {
 		color: var(--text_colour);
 		font-family: var(--footer_text_font);
-		font-weight: 200;
+		font-weight: normal;
 		text-align: center;
 		font-size: var(--footer_text_font_size);
 		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
@@ -135,7 +135,7 @@ address {
 	.--list_text_styling {
 		color: var(--text_colour);
 		font-family: var(--list_text_font);
-		font-weight: 200;
+		font-weight: normal;
 		text-align: center;
 		font-size: var(--list_text_font_size);
 	}
@@ -149,7 +149,7 @@ address {
 	.--title_card_text_styling {
 		color: var(--text_colour);
 		font-family: var(--title_card_text_font);
-		font-weight: 200;
+		font-weight: normal;
 		text-align: center;
 		font-size: var(--title_card_text_font_size);
 		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
@@ -158,7 +158,7 @@ address {
 	.--footer_card_text_styling {
 		color: var(--text_colour);
 		font-family: var(--footer_card_text_font);
-		font-weight: 200;
+		font-weight: normal;
 		text-align: center;
 		font-size: var(--footer_card_text_font_size);
 		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
@@ -167,7 +167,7 @@ address {
 	.--text_card_text_styling {
 		color: var(--text_colour);
 		font-family: var(--text_card_text_font);
-		font-weight: 200;
+		font-weight: normal;
 		text-align: center;
 		font-size: var(--text_card_text_font_size);
 		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
