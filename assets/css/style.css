@@ -629,8 +629,8 @@ body {
 			);
 	}
 	.cascade_wrapper-embed_card iframe {
-		position:absolute;
-		display: block
+		position: absolute;
+		display: block;
 		top: 0;
 		left: 0;
 		width:100%;
