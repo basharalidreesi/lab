@@ -23,13 +23,15 @@ layout: default
 					{% assign link = line | remove_first: "!linkto" | remove: "<p>" | remove: "</p>" | strip %}
 				{% endif %}
 			{% endfor %}
-		{% elsif block contains "!image" and block contains "!source" %}
+		{% endif %}
+		{% if block contains "!image" and block contains "!source" %}
 			{% for line in item %}
 				{% if line contains "!source" %}
 					{% assign source = line | remove_first: "!source" | remove: "<p>" | remove: "</p>" | remove: "<" | remove : ">" | remove: "img src=" | remove: '"' | split: " " %}
 				{% endif %}
 			{% endfor %}
-		{% elsif block contains "!source" and block contains "!embed" %}
+		{% endif %}
+		{% if block contains "!source" and block contains "!embed" %}
 			{% for line in item %}
 				{% if line contains "!source" %}
 					{% if line contains "youtube.com" %}
@@ -41,25 +43,29 @@ layout: default
 					{% endif %}
 				{% endif %}
 			{% endfor %}
-		{% elsif block contains "!background" %}
+		{% endif %}
+		{% if block contains "!background" %}
 			{% for line in item %}
 				{% if line contains "!background" %}
 					{% assign background = line | remove_first: "!background" | remove: "<p>" | remove: "</p>" | strip %}
 				{% endif %}
 			{% endfor %}
-		{% elsif block contains "!border" %}
+		{% endif %}
+		{% if block contains "!border" %}
 			{% for line in item %}
 				{% if line contains "!border" %}
 					{% assign border = line | remove_first: "!border" | remove: "<p>" | remove: "</p>" | strip %}
 				{% endif %}
 			{% endfor %}
-		{% elsif block contains "!glow" %}
+		{% endif %}
+		{% if block contains "!glow" %}
 			{% for line in item %}
 				{% if line contains "!glow" %}
 					{% assign glow = line | remove_first: "!glow" | remove: "<p>" | remove: "</p>" | strip %}
 				{% endif %}
 			{% endfor %}
-		{% elsif block contains "!color" or block contains "!colour" %}
+		{% endif %}
+		{% if block contains "!color" or block contains "!colour" %}
 			{% for line in item %}
 				{% if line contains "!color" or line contains "!colour" %}
 					{% assign colour = line | remove_first: "!color" | remove_first: "!colour" | remove: "<p>" | remove: "</p>" | strip %}
