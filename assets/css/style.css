@@ -34,13 +34,13 @@
 	/* --border_colour: #000; */ /* see ./_config.yml and ./_layouts/default.html */
 	/* --text_colour: #000; */ /* see ./_config.yml and ./_layouts/default.html */
 	--navigation_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-	--navigation_text_font_size: 1.25em;
+	--navigation_text_font_size: 1.25rem;
 	--footer_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-	--footer_text_font_size: 1em;
+	--footer_text_font_size: 1rem;
 	--list_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-	--list_text_font_size: 1.5em;
+	--list_text_font_size: 1.5rem;
 	--tag_text_font: "Code New Roman", monospace;
-	--tag_text_font_size: 1em;
+	--tag_text_font_size: 1rem;
 }
 
 /*
@@ -405,10 +405,11 @@ body {
 	.list_page_wrapper-list_page_item {
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 		border-bottom: 1px solid var(--border_colour);
-		display: flex;
-		flex-flow: column nowrap;
+		display: inline;
+		text-align: center;
+		/* flex-flow: column nowrap;
 		justify-content: center;
-		align-items: center;
+		align-items: center; */
 		background-color: transparent;
 		transition: background-color 0.25s;
 	}
