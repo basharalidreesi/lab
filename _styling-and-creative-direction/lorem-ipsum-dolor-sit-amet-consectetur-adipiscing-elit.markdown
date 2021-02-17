@@ -16,6 +16,18 @@ position: 0
 !source ![look-02.png](/uploads/look-02.png)
 !linkto test-project/nested-test-project.html
 
+!image
+!source ![look-02.png](/uploads/look-02.png)
+!linkto test-project/nested-test-project.html
+
+!image
+!source ![look-02.png](/uploads/look-02.png)
+!linkto test-project/nested-test-project.html
+
+!image
+!source ![look-02.png](/uploads/look-02.png)
+!linkto test-project/nested-test-project.html
+
 !empty
 
 !image
