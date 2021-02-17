@@ -609,7 +609,7 @@ body {
 	}
 	.cascade_wrapper-embed_card {
 		flex: 1 0 auto;
-		padding: 56.25% 0 0 0;
+		/* padding: 56.25% 0 0 0; */
 		position: relative;
 		min-width:
 			calc(	(100vh /* screen height */
@@ -617,7 +617,7 @@ body {
 				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
 				+ var(--navigation_text_font_size)) /* navigation text line height */
 				* 2)) /* header height */
-				* (9 / 16)
+				* 1.5625
 			);
 		min-width:
 			calc(	((var(--vh, 1vh) * 100) /* screen height */
@@ -625,7 +625,7 @@ body {
 				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
 				+ var(--navigation_text_font_size)) /* navigation text line height */
 				* 2)) /* header height */
-				* (9 / 16)
+				* 1.5625
 			);
 	}
 	.cascade_wrapper-embed_card iframe {
