@@ -545,6 +545,7 @@ body {
 				- 1px /* idk why but there's an extra pixel */
 			);
 		overflow-y: scroll;
+		margin-right: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 	}
 	.cascade_wrapper-title_card { }
 	.cascade_wrapper-text_card {
@@ -620,9 +621,6 @@ body {
 	}
 	.cascade_wrapper-anchored_graphic_card + .cascade_wrapper-anchored_graphic_card {
 		margin-left: 0;
-	}
-	.cascade_wrapper-anchored_graphic_card:last-child {
-		margin-right: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 	}
 
 /*
