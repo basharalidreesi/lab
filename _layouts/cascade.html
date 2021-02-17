@@ -173,7 +173,7 @@ layout: default
 				{% when "!footer" %}
 					{% for line in item %}
 						{% if line contains "!footer" %}
-							<p class="--footer_text_styling">{{ line | remove_first: "!footer" | remove: "<p>" | remove: "</p>" | strip }}</p>
+							<p class="--footer_card_text_styling">{{ line | remove_first: "!footer" | remove: "<p>" | remove: "</p>" | strip }}</p>
 						{% endif %}
 						{% if line contains "!background" %}
 							{% assign background = line | remove_first: "!background" | remove: "<p>" | remove: "</p>" | strip %}
