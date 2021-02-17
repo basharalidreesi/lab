@@ -200,6 +200,9 @@ body {
 }
 .mother_container-navigation_container_upper {
 	order: 1;
+}
+.mother_container-navigation_container_central {
+	order: 2;
 	margin-top:
 		calc(	50vh /* screen half height */
 			- ((var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to navigation height) */
@@ -214,9 +217,6 @@ body {
 			+ var(--navigation_text_font_size)) /* half of header height (identical to navigation height) */
 			/ 2 ) /* half of header height (identical to navigation height) */
 		);
-}
-.mother_container-navigation_container_central {
-	order: 2;
 }
 .mother_container-header_container_upper {
 	order: 2;
