@@ -609,19 +609,19 @@ body {
 	}
 	.cascade_wrapper-embed_card {
 		position: relative;
-		&:before {
-			display: block;
-			content: "";
-			width: 100%;
-			padding-top: (14 / 25) * 100%;
-		}
-		> iframe {
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-		}
+	}
+	.cascade_wrapper-embed_card::before {
+		display: block;
+		content: "";
+		width: 100%;
+		padding-top: (14 / 25) * 100%;
+	}
+	.cascade_wrapper-embed_card iframe {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
 	}
 	.cascade_wrapper-empty_card {
 		flex: 1 0 auto;
