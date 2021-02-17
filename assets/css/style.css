@@ -41,6 +41,8 @@
 	--list_text_font_size: 1.5rem;
 	--tag_text_font: "Code New Roman", monospace;
 	--tag_text_font_size: 1rem;
+	--text_card_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	--text_card_text_font_size: 1.5rem;
 }
 
 /*
@@ -142,10 +144,10 @@ address {
 	}
 	.--text_card_text_styling {
 		color: var(--text_colour);
-		font-family: var(--footer_text_font);
+		font-family: var(--text_card_text_font);
 		font-weight: 200;
 		text-align: center;
-		font-size: var(--footer_text_font_size);
+		font-size: var(--text_card_text_font_size);
 		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		line-height: 200%;
 	}
