@@ -556,8 +556,7 @@ body {
 			);
 		overflow-x: scroll;
 	}
-	.cascade_wrapper-title_card { }
-	.cascade_wrapper-text_card {
+	.cascade_wrapper-title_card, .cascade_wrapper-footer_card, .cascade_wrapper-text_card {
 		flex: 1 0 auto;
 		min-width:
 			calc(	100vh /* screen height */
