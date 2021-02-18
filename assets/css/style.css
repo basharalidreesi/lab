@@ -175,7 +175,7 @@ address {
 	.--tag_text_styling {
 		color: var(--text_colour);
 		font-family: var(--tag_text_font);
-		font-weight: bold;
+		font-weight: normal;
 		text-align: center;
 		font-size: var(--tag_text_font_size);
 	}
