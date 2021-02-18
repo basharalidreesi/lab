@@ -29,6 +29,7 @@ position: 0
 !linkto test-project/nested-test-project.html
 
 !empty
+!background whitesmoke
 
 !image
 !source ![IMG_1111.jpeg](/uploads/IMG_1111.jpeg)
