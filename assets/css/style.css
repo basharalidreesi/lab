@@ -17,17 +17,6 @@
     font-style: normal;
 }
 @font-face {
-    font-family: "Code New Roman";
-    src: url("/assets/fonts/code_new_roman/code_new_roman-bold.eot");
-    src: url("/assets/fonts/code_new_roman/code_new_roman-bold.eot?#iefix") format("embedded-opentype"),
-         url("/assets/fonts/code_new_roman/code_new_roman-bold.woff2") format("woff2"),
-         url("/assets/fonts/code_new_roman/code_new_roman-bold.woff") format("woff"),
-         url("/assets/fonts/code_new_roman/code_new_roman-bold.ttf") format("truetype"),
-         url("/assets/fonts/code_new_roman/code_new_roman-bold.svg#code_new_romanbold") format("svg");
-    font-weight: bold;
-    font-style: normal;
-}
-@font-face {
     font-family: "Karrik";
     src: url("/assets/fonts/karrik/karrik-regular.eot");
     src: url("/assets/fonts/karrik/karrik-regular.eot?#iefix") format("embedded-opentype"),
@@ -71,7 +60,7 @@
 	--footer_text_font: "Karrik", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--footer_text_font_size: 1rem;
 	--list_text_font: "Karrik", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-	--list_text_font_size: 1.5rem;
+	--list_text_font_size: 1.25rem;
 	--tag_text_font: "Code New Roman", monospace;
 	--tag_text_font_size: 1rem;
 	--title_card_text_font: "Karrik", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
