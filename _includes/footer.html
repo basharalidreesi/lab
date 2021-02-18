@@ -1,11 +1,13 @@
-<p class="--footer_text_styling">
-	{{ site.author }}
-</p>
-<address class="--footer_text_styling">
-	{{ site.instagram }}
-</address>
-<address class="--footer_text_styling">
-	{{ site.email }}
+<address>
+	<p class="--footer_text_styling">
+		{{ site.author }}
+	</p>
+	<p class="--footer_text_styling">
+		<a class="--anchor_styling --hyperlink_styling" href="https://www.instagram.com/{{ site.instagram | remove: "@" }}">{{ site.instagram }}</a>
+	</p>
+	<p class="--footer_text_styling">
+		<a class="--anchor_styling --hyperlink_styling" href="mailto:{{ site.email }}">{{ site.email }}</a>
+	</p>
 </address>
 <p class="--footer_text_styling --no_bottom_padding">
 	{% assign year = site.time | date: '%Y' %}

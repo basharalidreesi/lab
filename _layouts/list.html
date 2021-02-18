@@ -49,8 +49,8 @@ layout: default
 			{% for item in items %}
 				{% assign item_path = item.path | remove_first: "_" | split: "/" %}
 				{% unless item_path[2] %}
-					<li class="list_page_wrapper-list_page_item">
-						<a class="--anchor_styling --list_text_styling" href="{{ item.url }}">
+					<li class="list_page_wrapper-list_page_item --list_text_styling">
+						<a class="--anchor_styling" href="{{ item.url }}">
 							{{ item.title }}
 						</a>
 						{% if item.tags != empty %}		

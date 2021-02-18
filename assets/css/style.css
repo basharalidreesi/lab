@@ -25,7 +25,7 @@
 └─BEGIN─────────────────┘
 */
 :root {
-	--font_size: 1em;
+	--font_size: 15px;
 	--universal_answer: 1em;
 	--universal_answer_multiplier: 2;
 	/* --primary_colour: #91a3b0; */ /* see ./_config.yml and ./_layouts/default.html */
@@ -34,13 +34,19 @@
 	/* --border_colour: #000; */ /* see ./_config.yml and ./_layouts/default.html */
 	/* --text_colour: #000; */ /* see ./_config.yml and ./_layouts/default.html */
 	--navigation_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-	--navigation_text_font_size: 1.25em;
+	--navigation_text_font_size: 1.25rem;
 	--footer_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-	--footer_text_font_size: 1em;
+	--footer_text_font_size: 1rem;
 	--list_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-	--list_text_font_size: 1.5em;
+	--list_text_font_size: 1.5rem;
 	--tag_text_font: "Code New Roman", monospace;
-	--tag_text_font_size: 1em;
+	--tag_text_font_size: 1rem;
+	--title_card_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	--title_card_text_font_size: 1.5rem;
+	--footer_card_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	--footer_card_text_font_size: 1.5rem;
+	--text_card_text_font: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	--text_card_text_font_size: 1.25rem;
 }
 
 /*
@@ -55,15 +61,15 @@ html, body {
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 100%;
-	min-height: 100vh;
+	min-height: 100%;
+	/* min-height: 100vh;
 	min-height: calc(var(--vh, 1vh) * 100);
 	min-height: -webkit-fill-available;
 	height: -webkit-fill-available;
 	height: -moz-available;
 	height: -webkit-fill-available;
-	height: fill-available;
-	overscroll-behavior: none; /* for horizontal scrolling */
+	height: fill-available; */
+	/* overscroll-behavior: none; */ /* for horizontal scrolling */
 }
 * {
 	margin: 0;
@@ -71,7 +77,7 @@ html, body {
 	font-size: var(--font_size);
 	text-align: left;
 	line-height: 100%;
-	overscroll-behavior: none; /* for horizontal scrolling */
+	/* overscroll-behavior: none; */ /* for horizontal scrolling */
 }
 html {
 	box-sizing: border-box;
@@ -92,6 +98,9 @@ img:not(.header_anchor-header_graphic) {
 	pointer-events: none;
 	user-select: none;
 }
+address {
+	font-style: normal;
+}
 
 /*
 ┌─BEGIN─────────────────┐
@@ -110,31 +119,84 @@ img:not(.header_anchor-header_graphic) {
 	.--navigation_text_styling {
 		color: var(--text_colour);
 		font-family: var(--navigation_text_font);
-		font-weight: 200;
+		font-weight: normal;
 		text-align: center;
 		font-size: var(--navigation_text_font_size);
 	}
 	.--footer_text_styling {
 		color: var(--text_colour);
 		font-family: var(--footer_text_font);
-		font-weight: 200;
+		font-weight: normal;
 		text-align: center;
 		font-size: var(--footer_text_font_size);
 		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+		line-height: 200%;
 	}
 	.--list_text_styling {
 		color: var(--text_colour);
 		font-family: var(--list_text_font);
-		font-weight: 200;
+		font-weight: normal;
 		text-align: center;
 		font-size: var(--list_text_font_size);
 	}
 	.--tag_text_styling {
 		color: var(--text_colour);
 		font-family: var(--tag_text_font);
-		font-weight: normal;
+		font-weight: bold;
 		text-align: center;
 		font-size: var(--tag_text_font_size);
+	}
+	.--title_card_text_styling {
+		color: var(--text_colour);
+		font-family: var(--title_card_text_font);
+		font-weight: normal;
+		text-align: center;
+		font-size: var(--title_card_text_font_size);
+		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+		line-height: 200%;
+	}
+	.--footer_card_text_styling {
+		color: var(--text_colour);
+		font-family: var(--footer_card_text_font);
+		font-weight: normal;
+		text-align: center;
+		font-size: var(--footer_card_text_font_size);
+		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+		line-height: 200%;
+	}
+	.--text_card_text_styling {
+		color: var(--text_colour);
+		font-family: var(--text_card_text_font);
+		font-weight: normal;
+		text-align: center;
+		font-size: var(--text_card_text_font_size);
+		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+		line-height: 200%;
+	}
+	.--text_card_text_styling a, .--footer_card_text_styling a, .--title_card_text_styling a {
+		display: inline;
+		border: 1px solid var(--text_colour);
+		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2 / 2);
+		padding-left: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
+		padding-right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
+		border-radius: 5000px;
+		color: var(--text_colour);
+		font-family: inherit;
+		font-size: inherit;
+		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
+		text-decoration: none;
+		background-image: linear-gradient(currentColor, currentColor);
+		background-position: 0% 100%;
+		background-repeat: no-repeat;
+		background-size: 0% 2px;
+		transition: background-size 0.25s;
+	}
+	.--text_card_text_styling a:hover, .--footer_card_text_styling a:hover, .--title_card_text_styling a:hover  {
+		background-color: var(--secondary_colour);
+		color: var(--text_colour);
+		cursor: alias;
+		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
+		background-size: 100% 2px;
 	}
 	/*
 	┌─BEGIN─────────────────┐
@@ -145,7 +207,9 @@ img:not(.header_anchor-header_graphic) {
 	*/
 	.--anchor_styling {
 		color: var(--text_colour);
-		display: inline-block;
+		display: inline;
+		font-family: inherit;
+		font-size: inherit;
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 		text-decoration: none;
 		background-image: linear-gradient(currentColor, currentColor);
@@ -157,6 +221,20 @@ img:not(.header_anchor-header_graphic) {
 	.--anchor_styling:hover {
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 		background-size: 100% 2px;
+	}
+	.--hyperlink_styling {
+		display: inline;
+		font-family: inherit;
+		font-size: inherit;
+		border: 1px solid var(--text_colour);
+		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2 / 2);
+		padding-left: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
+		padding-right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
+		border-radius: 5000px;
+	}
+	.--hyperlink_styling:hover {
+		background-color: var(--secondary_colour);
+		cursor: alias;
 	}
 	/*
 	┌─BEGIN─────────────────┐
@@ -203,6 +281,20 @@ body {
 }
 .mother_container-navigation_container_central {
 	order: 2;
+	margin-top:
+		calc(	50vh /* screen half height */
+			- ((var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to navigation height) */
+			+ var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to navigation height) */
+			+ var(--navigation_text_font_size)) /* half of header height (identical to navigation height) */
+			/ 2 ) /* half of header height (identical to navigation height) */
+		);
+	margin-top:
+		calc(	(var(--vh, 1vh) * 50) /* screen half height */
+			- ((var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to navigation height) */
+			+ var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to navigation height) */
+			+ var(--navigation_text_font_size)) /* half of header height (identical to navigation height) */
+			/ 2 ) /* half of header height (identical to navigation height) */
+		);
 }
 .mother_container-header_container_upper {
 	order: 2;
@@ -228,20 +320,6 @@ body {
 			+ var(--navigation_text_font_size)) /* half of header height (identical to navigation height) */
 			/ 2 ) /* half of header height (identical to navigation height) */
 			+ 1px /* compensate for top: -1px */
-		);
-	margin-bottom:
-		calc(	50vh /* screen half height */
-			- ((var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to navigation height) */
-			+ var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to navigation height) */
-			+ var(--navigation_text_font_size)) /* half of header height (identical to navigation height) */
-			/ 2 ) /* half of header height (identical to navigation height) */
-		);
-	margin-bottom:
-		calc(	(var(--vh, 1vh) * 50) /* screen half height */
-			- ((var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to navigation height) */
-			+ var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to navigation height) */
-			+ var(--navigation_text_font_size)) /* half of header height (identical to navigation height) */
-			/ 2 ) /* half of header height (identical to navigation height) */
 		);
 }
 .mother_container-content_container {
@@ -280,6 +358,8 @@ body {
 .navigation_list_wrapper-navigation_list_item {
 	flex: 1; /* stress test this with a higher number of listed pages */
 	white-space: nowrap; /* debug */
+	overflow: hidden; /* debug */
+	text-overflow: ellipsis; /* debug */
 }
 .--active_navigation_text_styling a {
 	/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
@@ -305,7 +385,8 @@ body {
 	transition: padding 0.25s;
 }
 .header_container-header_wrapper_central_sticky {
-	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+	padding-top: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+	padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 }
 .header_container-header_wrapper_upper {
 	/* maybe make it so that .header_anchor-header_graphic's visibility is hidden and set the graphic as a CSS background-image? */
@@ -325,6 +406,9 @@ body {
 .header_anchor-header_graphic {
 	width: auto;
 	height: 100%;
+	max-width: calc(100vw - (var(--universal_answer) * var(--universal_answer_multiplier) / 2) - (var(--universal_answer) * var(--universal_answer_multiplier) / 2));
+	padding-left: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+	padding-right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 }
 
 /*
@@ -389,10 +473,11 @@ body {
 	.list_page_wrapper-list_page_item {
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 		border-bottom: 1px solid var(--border_colour);
-		display: flex;
-		flex-flow: column nowrap;
+		display: inline;
+		text-align: center;
+		/* flex-flow: column nowrap;
 		justify-content: center;
-		align-items: center;
+		align-items: center; */
 		background-color: transparent;
 		transition: background-color 0.25s;
 	}
@@ -410,7 +495,7 @@ body {
 	.list_page_item_tag_list-list_page_item_tag {
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		border: 1px solid var(--border_colour);
-		border-radius: 500px;
+		border-radius: 5000px;
 		margin-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		cursor: help;
 		background-color: transparent;
@@ -492,10 +577,9 @@ body {
 				* 2) /* header height */
 				- 1px /* idk why but there's an extra pixel */
 			);
-		overflow-y: scroll;
+		overflow-x: scroll;
 	}
-	.cascade_wrapper-title_card { }
-	.cascade_wrapper-text_card {
+	.cascade_wrapper-title_card, .cascade_wrapper-footer_card, .cascade_wrapper-text_card {
 		flex: 1 0 auto;
 		min-width:
 			calc(	100vh /* screen height */
@@ -513,45 +597,13 @@ body {
 				* 2) /* header height */
 				- 1px /* idk why but there's an extra pixel */
 			);
-		max-width: 50vw;
+		max-width: 75vw;
 		display: flex;
 		flex-flow: column wrap;
 		justify-content: center;
 		align-items: center;
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
-	}
-	.cascade_wrapper-anchored_text_card {
-		flex: 1 0 auto;
-		min-width:
-			calc(	100vh /* screen height */
-				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
-				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
-				+ var(--navigation_text_font_size)) /* navigation text line height */
-				* 2) /* header height */
-				- 1px /* idk why but there's an extra pixel */
-			);
-		min-width:
-			calc(	(var(--vh, 1vh) * 100) /* screen height */
-				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
-				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
-				+ var(--navigation_text_font_size)) /* navigation text line height */
-				* 2) /* header height */
-				- 1px /* idk why but there's an extra pixel */
-			);
-		max-width: 50vw;
-		display: flex;
-		flex-flow: column wrap;
-		justify-content: center;
-		align-items: center;
-		border: 1px solid var(--border_colour);
-		border-radius: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
-		margin: calc(var(--universal_answer) * var(--universal_answer_multiplier));
-		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
-		margin-top: 0;
-	}
-	.cascade_wrapper-anchored_text_card:hover {
-		background: linear-gradient(0deg, var(--primary_colour) 10%, rgba(255,255,255,0) 100%);
-		box-shadow: inset 0 0 calc(var(--universal_answer) * var(--universal_answer_multiplier)) calc(var(--universal_answer) * var(--universal_answer_multiplier)) var(--primary_colour);
+		overflow: hidden; /* debug */
 	}
 	.cascade_wrapper-graphic_card {
 		position: relative;
@@ -577,7 +629,35 @@ body {
 		display: block;
 		height: 100%;
 	}
-	.cascade_wrapper-embed_card { }
+	.cascade_wrapper-embed_card {
+		position: relative;
+		min-width:
+			calc(	(100vh /* screen height */
+				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
+				+ var(--navigation_text_font_size)) /* navigation text line height */
+				* 2)) /* header height */
+				* 1.78 /* aspect ratio */
+			);
+		min-width:
+			calc(	((var(--vh, 1vh) * 100) /* screen height */
+				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
+				+ var(--navigation_text_font_size)) /* navigation text line height */
+				* 2)) /* header height */
+				* 1.78 /* aspect ratio */
+			);
+		max-width: 100vw;
+		background-color: #000;
+	}
+	.cascade_wrapper-embed_card iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: calc(100% + 1px);
+		height: 100%;
+		display: block;
+	}
 	.cascade_wrapper-empty_card {
 		flex: 1 0 auto;
 		min-width:
@@ -596,18 +676,9 @@ body {
 				* 2) /* header height */
 				- 1px /* idk why but there's an extra pixel */
 			);
-		max-width: 50vw;
+		max-width: 75vw;
 	}
 	.cascade_wrapper-anchored_graphic_card + .cascade_wrapper-anchored_graphic_card {
-		margin-left: 0;
-	}
-	.cascade_wrapper-anchored_graphic_card + .cascade_wrapper-anchored_text_card {
-		margin-left: 0;
-	}
-	.cascade_wrapper-anchored_text_card + .cascade_wrapper-anchored_graphic_card {
-		margin-left: 0;
-	}
-	.cascade_wrapper-anchored_text_card + .cascade_wrapper-anchored_text_card {
 		margin-left: 0;
 	}
 
