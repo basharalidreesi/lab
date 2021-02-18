@@ -60,12 +60,15 @@ position: 0
 !color red
 
 !empty
+!background whitesmoke
 
 !image
 !source ![look-02.png](/uploads/look-02.png)
 !linkto here
+!background azure
 
 !empty
+!background whitesmoke
 
 !embed
 !source https://www.youtube.com/watch?v=817R3ApVFok
