@@ -379,9 +379,6 @@ body {
 }
 .navigation_list_wrapper-navigation_list_item {
 	flex: 1; /* stress test this with a higher number of listed pages */
-	white-space: nowrap; /* debug */
-	overflow: hidden; /* debug */
-	text-overflow: ellipsis; /* debug */
 }
 .--active_navigation_text_styling a {
 	/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
@@ -730,7 +727,14 @@ body {
 	│			│
 	└─BEGIN─────────────────┘
 	*/
-	.navigation_list_wrapper-navigation_list_item {
-		flex-basis: 100%;
+	.mother_container-navigation_container_central > .navigation_container-navigation_list_wrapper {
+		flex-flow: column nowrap;
+	}
+	.navigation_list_wrapper-navigation_list_item + .navigation_list_wrapper-navigation_list_item {
+		padding-top: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+		margin-top: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+		margin-left: calc(var(--universal_answer) * var(--universal_answer_multiplier) / -2);
+		width: calc(100% - (var(--universal_answer) * var(--universal_answer_multiplier) + var(--universal_answer) * var(--universal_answer_multiplier)));
+		border-top: 1px solid var(--border_colour);
 	}
 }
