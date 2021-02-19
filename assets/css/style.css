@@ -714,3 +714,23 @@ body {
 .footer_container-footer_wrapper {
 	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) * 2);
 }
+
+/*
+┌─BEGIN─────────┐
+│		│
+│ @MEDIA RULES	│
+│		│
+└─BEGIN─────────┘
+*/
+@media only screen and (max-width: 768px) {
+	/*
+	┌─BEGIN─────────────────┐
+	│			│
+	│ NAVIGATION STYLING	│
+	│			│
+	└─BEGIN─────────────────┘
+	*/
+	.navigation_list_wrapper-navigation_list_item {
+		flex-basis: 100%;
+	}
+}
