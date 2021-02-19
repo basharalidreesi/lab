@@ -839,4 +839,14 @@ body {
 	#navigation_checkbox:checked ~ .navigation_container-navigation_list_wrapper {
 		display: flex;
 	}
+	/*
+	┌─BEGIN─────────────────┐
+	│			│
+	│ HEADER STYLING	│
+	│			│
+	└─BEGIN─────────────────┘
+	*/
+	.header_container-header_wrapper_upper {
+		padding-left: 0;
+	}
 }
