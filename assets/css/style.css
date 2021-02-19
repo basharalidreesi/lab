@@ -389,13 +389,28 @@ body {
 }
 .navigation_container_upper-navigation_checkbox_toggle {
 	display: none;
+	height:
+		calc(	
+			var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
+			+ var(--navigation_text_font_size) /* navigation text line height */
+		);
+	width:
+		calc(	
+			var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
+			+ var(--navigation_text_font_size) /* navigation text line height */
+		);
+	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 }
 .navigation_checkbox_toggle-navigation_checkbox_icon_solid {
 	height:
 		calc(	
 			(var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
 			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
-			+ var(--navigation_text_font_size)) /* navigation text line height */
+			+ var(--navigation_text_font_size) /* navigation text line height */
+			- (var(--universal_answer) * var(--universal_answer_multiplier) / 2)
+			- (var(--universal_answer) * var(--universal_answer_multiplier) / 2))
 			/ 5
 		);
 	width:
@@ -412,7 +427,9 @@ body {
 		calc(	
 			(var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
 			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
-			+ var(--navigation_text_font_size)) /* navigation text line height */
+			+ var(--navigation_text_font_size) /* navigation text line height */
+			- (var(--universal_answer) * var(--universal_answer_multiplier) / 2)
+			- (var(--universal_answer) * var(--universal_answer_multiplier) / 2))
 			/ 5
 		);
 	width:
@@ -786,10 +803,10 @@ body {
 	.mother_container-navigation_container_central > .navigation_container-navigation_list_wrapper > .navigation_list_wrapper-navigation_list_item:last-child {
 		padding-bottom: 0;
 	}
-	.navigation_container_upper-navigation_checkbox_toggle {
+	.mother_container-navigation_container_upper > .navigation_container_upper-navigation_checkbox_toggle {
 		display: block;
 	}
-	.navigation_container-navigation_list_wrapper {
+	.mother_container-navigation_container_upper > .navigation_container-navigation_list_wrapper {
 		display: none;
 	}
 	#navigation_checkbox:checked ~ .navigation_container-navigation_list_wrapper {
