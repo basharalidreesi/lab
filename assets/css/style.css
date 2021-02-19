@@ -732,7 +732,7 @@ body {
 		padding-top: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	}
-	.mother_container-navigation_container_central .navigation_container-navigation_list_wrapper .navigation_list_wrapper-navigation_list_item + .mother_container-navigation_container_central .navigation_container-navigation_list_wrapper .navigation_list_wrapper-navigation_list_item {
+	.mother_container-navigation_container_central.navigation_container-navigation_list_wrapper.navigation_list_wrapper-navigation_list_item + .mother_container-navigation_container_central.navigation_container-navigation_list_wrapper.navigation_list_wrapper-navigation_list_item {
 		padding-top: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		margin-top: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		margin-left: calc(var(--universal_answer) * var(--universal_answer_multiplier) / -2);
