@@ -803,10 +803,10 @@ body {
 	.mother_container-navigation_container_central > .navigation_container-navigation_list_wrapper > .navigation_list_wrapper-navigation_list_item:last-child {
 		padding-bottom: 0;
 	}
-	.navigation_container_upper-navigation_checkbox_toggle {
+	.mother_container-navigation_container_upper > .navigation_container_upper-navigation_checkbox_toggle {
 		display: block;
 	}
-	.navigation_container-navigation_list_wrapper {
+	.mother_container-navigation_container_upper > .navigation_container-navigation_list_wrapper {
 		display: none;
 	}
 	#navigation_checkbox:checked ~ .navigation_container-navigation_list_wrapper {
