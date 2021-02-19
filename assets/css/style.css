@@ -384,6 +384,45 @@ body {
 	/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 	background-size: 100% 2px;
 }
+#navigation_checkbox {
+	display: none;
+}
+.navigation_container_upper-navigation_checkbox_toggle {
+	display: none;
+}
+.navigation_checkbox_toggle-navigation_checkbox_icon_solid {
+	height:
+		calc(	
+			(var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
+			+ var(--navigation_text_font_size)) /* navigation text line height */
+			/ 5
+		);
+	width:
+		calc(	
+			var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
+			+ var(--navigation_text_font_size) /* navigation text line height */
+		);
+	background-color: var(--text_colour);
+	border-radius: 5000px;
+}
+.navigation_checkbox_toggle-navigation_checkbox_icon_transparent {
+	height:
+		calc(	
+			(var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
+			+ var(--navigation_text_font_size)) /* navigation text line height */
+			/ 5
+		);
+	width:
+		calc(	
+			var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
+			+ var(--navigation_text_font_size) /* navigation text line height */
+		);
+	background-color: transparent;
+}
 
 /*
 ┌─BEGIN─────────────────┐
@@ -746,5 +785,14 @@ body {
 	}
 	.mother_container-navigation_container_central > .navigation_container-navigation_list_wrapper > .navigation_list_wrapper-navigation_list_item:last-child {
 		padding-bottom: 0;
+	}
+	.navigation_container_upper-navigation_checkbox_toggle {
+		display: block;
+	}
+	.navigation_container-navigation_list_wrapper {
+		display: none;
+	}
+	#navigation_checkbox:checked ~ .navigation_container-navigation_list_wrapper {
+		display: flex;
 	}
 }
