@@ -411,7 +411,7 @@ body {
 			+ var(--navigation_text_font_size) /* navigation text line height */
 			- (var(--universal_answer) * var(--universal_answer_multiplier) / 2)
 			- (var(--universal_answer) * var(--universal_answer_multiplier) / 2))
-			/ 5
+			/ 7
 		);
 	width:
 		calc(	
@@ -432,7 +432,7 @@ body {
 			+ var(--navigation_text_font_size) /* navigation text line height */
 			- (var(--universal_answer) * var(--universal_answer_multiplier) / 2)
 			- (var(--universal_answer) * var(--universal_answer_multiplier) / 2))
-			/ 5
+			/ 7
 		);
 	width:
 		calc(	
@@ -797,8 +797,22 @@ body {
 				- (var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
 				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
 				+ var(--navigation_text_font_size)) /* navigation text line height */
+				- (var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
+				+ var(--navigation_text_font_size)) /* navigation text line height */
 			);
-		align-self: flex-end;
+		margin-left:
+			calc(	100%
+				- (var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
+				+ var(--navigation_text_font_size)) /* navigation text line height */
+			);
+		margin-right:
+			calc(	100%
+				- (var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
+				+ var(--navigation_text_font_size)) /* navigation text line height */
+			);
 	}
 	/*
 	┌─BEGIN─────────────────┐
@@ -848,5 +862,19 @@ body {
 	*/
 	.header_container-header_wrapper_upper {
 		padding-left: 0;
+		padding-right: 0;
+	}
+	.header_anchor-header_graphic {
+		padding-left: 0;
+		padding-right: 0;
+		max-width:
+			calc(	100%
+				- (var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
+				+ var(--navigation_text_font_size)) /* navigation text line height */
+				- (var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
+				+ var(--navigation_text_font_size)) /* navigation text line height */
+			);
 	}
 }
