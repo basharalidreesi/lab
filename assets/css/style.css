@@ -389,13 +389,28 @@ body {
 }
 .navigation_container_upper-navigation_checkbox_toggle {
 	display: none;
+	height:
+		calc(	
+			var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
+			+ var(--navigation_text_font_size) /* navigation text line height */
+		);
+	width:
+		calc(	
+			var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
+			+ var(--navigation_text_font_size) /* navigation text line height */
+		);
+	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 }
 .navigation_checkbox_toggle-navigation_checkbox_icon_solid {
 	height:
 		calc(	
 			(var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
 			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
-			+ var(--navigation_text_font_size)) /* navigation text line height */
+			+ var(--navigation_text_font_size) /* navigation text line height */
+			- (var(--universal_answer) * var(--universal_answer_multiplier) / 2)
+			- (var(--universal_answer) * var(--universal_answer_multiplier) / 2))
 			/ 5
 		);
 	width:
@@ -412,7 +427,9 @@ body {
 		calc(	
 			(var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
 			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
-			+ var(--navigation_text_font_size)) /* navigation text line height */
+			+ var(--navigation_text_font_size) /* navigation text line height */
+			- (var(--universal_answer) * var(--universal_answer_multiplier) / 2)
+			- (var(--universal_answer) * var(--universal_answer_multiplier) / 2))
 			/ 5
 		);
 	width:
