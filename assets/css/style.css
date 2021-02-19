@@ -802,16 +802,16 @@ body {
 				+ var(--navigation_text_font_size)) /* navigation text line height */
 			);
 		margin-left:
-			calc(	100%
-				- (var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+			calc(	
+				var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
 				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
-				+ var(--navigation_text_font_size)) /* navigation text line height */
+				+ var(--navigation_text_font_size) /* navigation text line height */
 			);
 		margin-right:
-			calc(	100%
-				- (var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
+			calc(	
+				var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
 				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
-				+ var(--navigation_text_font_size)) /* navigation text line height */
+				+ var(--navigation_text_font_size) /* navigation text line height */
 			);
 	}
 	/*
