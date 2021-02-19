@@ -867,14 +867,6 @@ body {
 	.header_anchor-header_graphic {
 		padding-left: 0;
 		padding-right: 0;
-		max-width:
-			calc(	100%
-				- (var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
-				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
-				+ var(--navigation_text_font_size)) /* navigation text line height */
-				- (var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
-				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
-				+ var(--navigation_text_font_size)) /* navigation text line height */
-			);
+		max-width: 100%;
 	}
 }
