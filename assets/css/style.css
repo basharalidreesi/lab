@@ -358,6 +358,7 @@ body {
 	order: 2;
 	position: sticky;
 	top: 0;
+	z-index: 101;
 }
 .mother_container-header_container_central {
 	order: 1;
