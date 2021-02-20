@@ -921,4 +921,16 @@ body {
 	.mother_container-navigation_container_upper > .navigation_container-navigation_list_wrapper > .navigation_list_wrapper-navigation_list_item:last-child {
 		border-bottom: 1px solid var(--border_colour);
 	}
+
+        /*
+	┌─BEGIN─────────────────┐
+	│			│
+	│ LIST PAGE STYLING	│
+	│			│
+	└─BEGIN─────────────────┘
+	*/
+
+        .list_page_item-list_page_item_tag_list {
+                padding-top: calc(var(--universal_answer) * var(--universal_answer_multiplier));
+        }
 }
