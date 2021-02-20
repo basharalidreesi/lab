@@ -248,13 +248,7 @@ address {
 		background-repeat: no-repeat;
 		background-size: 0% 2px;
 		transition: background-size 0.25s;
-	}
-	.--text_card_text_styling a:hover, .--footer_card_text_styling a:hover, .--title_card_text_styling a:hover  {
-		background-color: var(--secondary_colour);
-		color: var(--text_colour);
 		cursor: alias;
-		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
-		background-size: 100% 2px;
 	}
 	/*
 	┌─BEGIN─────────────────┐
@@ -276,10 +270,6 @@ address {
 		background-size: 0% 2px;
 		transition: background-size 0.25s;
 	}
-	.--anchor_styling:hover {
-		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
-		background-size: 100% 2px;
-	}
 	.--hyperlink_styling {
 		display: inline;
 		font-family: inherit;
@@ -289,9 +279,6 @@ address {
 		padding-left: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
 		padding-right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
 		border-radius: 5000px;
-	}
-	.--hyperlink_styling:hover {
-		background-color: var(--secondary_colour);
 		cursor: alias;
 	}
 	/*
@@ -572,10 +559,6 @@ body {
 	.list_page_item_tag_list-list_page_item_tag:last-child {
 		margin-right: 0;
 	}
-	.list_page_item_tag_list-list_page_item_tag:hover {
-		background-color: var(--text_colour);
-		color: var(--secondary_colour);
-	}
 	.--active_list_page_item {
 		/* box-shadow: inset 0 0 calc(var(--universal_answer) * var(--universal_answer_multiplier)) calc(var(--universal_answer) * var(--universal_answer_multiplier)) var(--secondary_colour); */
 		background-color: var(--secondary_colour);
@@ -678,10 +661,6 @@ body {
 		margin-top: 0;
 		border-radius: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	}
-	.cascade_wrapper-anchored_graphic_card:hover {
-		background: linear-gradient(0deg, var(--primary_colour) 10%, rgba(255,255,255,0) 100%);
-		box-shadow: inset 0 0 calc(var(--universal_answer) * var(--universal_answer_multiplier)) calc(var(--universal_answer) * var(--universal_answer_multiplier)) var(--primary_colour);
-	}
 	.cascade_wrapper-anchored_graphic_card .graphic_card-graphic_card_image {
 		border: 1px solid var(--border_colour);
 		border-radius: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
@@ -762,7 +741,72 @@ body {
 │		│
 └─BEGIN─────────┘
 */
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-width: 1024px) {
+	/*
+	┌─BEGIN─────────────────┐
+	│			│
+	│ STYLING SNIPPETS	│
+	│			│
+	└─BEGIN─────────────────┘
+	*/
+		/*
+		┌─BEGIN─────────┐
+		│		│
+		│ TEXT STYLING	│
+		│		│
+		└─BEGIN─────────┘
+		*/
+		.--text_card_text_styling a:hover, .--footer_card_text_styling a:hover, .--title_card_text_styling a:hover  {
+			background-color: var(--secondary_colour);
+			color: var(--text_colour);
+			/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
+			background-size: 100% 2px;
+		}
+		/*
+		┌─BEGIN─────────────────┐
+		│			│
+		│ ANCHOR STYLING	│
+		│			│
+		└─BEGIN─────────────────┘
+		*/
+		.--anchor_styling:hover {
+			/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
+			background-size: 100% 2px;
+		}
+		.--hyperlink_styling:hover {
+			background-color: var(--secondary_colour);
+		}
+	/*
+	┌─BEGIN─────────────────┐
+	│			│
+	│ CONTENT STYLING	│
+	│			│
+	└─BEGIN─────────────────┘
+	*/
+		/*
+		┌─BEGIN─────────────────┐
+		│			│
+		│ LIST PAGE STYLING	│
+		│			│
+		└─BEGIN─────────────────┘
+		*/
+		.list_page_item_tag_list-list_page_item_tag:hover {
+			background-color: var(--text_colour);
+			color: var(--secondary_colour);
+		}
+		/*
+		┌─BEGIN─────────────────┐
+		│			│
+		│ CASCADE STYLING	│
+		│			│
+		└─BEGIN─────────────────┘
+		*/
+		.cascade_wrapper-anchored_graphic_card:hover {
+			background: linear-gradient(0deg, var(--primary_colour) 10%, rgba(255,255,255,0) 100%);
+			box-shadow: inset 0 0 calc(var(--universal_answer) * var(--universal_answer_multiplier)) calc(var(--universal_answer) * var(--universal_answer_multiplier)) var(--primary_colour);
+		}
+}
+@media only screen and (max-width: 1023px) {
 	/*
 	┌─BEGIN─────────────────┐
 	│			│
@@ -776,6 +820,7 @@ body {
 	.mother_container-header_container_upper {
 		order: 1;
 	}
+	
 	/*
 	┌─BEGIN─────────────────┐
 	│			│
@@ -876,12 +921,4 @@ body {
 	.mother_container-navigation_container_upper > .navigation_container-navigation_list_wrapper > .navigation_list_wrapper-navigation_list_item:last-child {
 		border-bottom: 1px solid var(--border_colour);
 	}
-	/*
-	┌─BEGIN─────────────────┐
-	│			│
-	│ LIST PAGE STYLING	│
-	│			│
-	└─BEGIN─────────────────┘
-	*/
-	.list_page_item_tag_list-list_page_item_tag:hover { }
 }
