@@ -17,7 +17,6 @@ layout: default
 		}
 		for (var j = 0, length = all_tags.length; j < length; j++) {
 			if (all_tags[j].textContent.indexOf(tag_content) != -1) {
-				tag.classList.add("--active_list_page_item_tag");
 				all_tags[j].classList.add("--active_list_page_item_tag");
 				all_tags[j].children[0].style.display = "block";
 				all_tags[j].children[0].style.opacity = "1";
@@ -34,7 +33,6 @@ layout: default
 			list_items[i].parentElement.classList.remove("--active_list_page_item");
 		}
 		for (var j = 0, length = all_tags.length; j < length; j++) {
-			tag.classList.remove("--active_list_page_item_tag");
 			all_tags[j].classList.remove("--active_list_page_item_tag");
 			all_tags[j].children[0].removeAttribute("style");
 		}
