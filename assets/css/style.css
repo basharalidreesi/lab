@@ -821,7 +821,7 @@ body {
 				+ var(--navigation_text_font_size) /* navigation text line height */
 			);
 		left: 0;
-		z-index: 99;
+		z-index: 100;
 	}
 	#navigation_checkbox:checked ~ .navigation_container-navigation_list_wrapper {
 		display: flex;
@@ -844,6 +844,7 @@ body {
 		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		background-color: var(--secondary_colour);
 		border-bottom: none;
+		z-index: 99;
 	}
 	.mother_container-navigation_container_upper > .navigation_container-navigation_list_wrapper > .navigation_list_wrapper-navigation_list_item {
 		flex: 0;
