@@ -809,6 +809,10 @@ body {
 		width: 100%;
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		border-top: 1px solid var(--border_colour);
+		cursor: pointer;
+	}
+	.navigation_container_upper-navigation_checkbox_toggle p::before {
+		content: "Open "
 	}
 	.mother_container-navigation_container_upper > .navigation_container-navigation_list_wrapper {
 		display: none;
@@ -823,6 +827,9 @@ body {
 			);
 		left: 0;
 		z-index: 100;
+	}
+	#navigation_checkbox:checked ~ .navigation_container_upper-navigation_checkbox_toggle p::before {
+		content: "Close "
 	}
 	#navigation_checkbox:checked ~ .navigation_container-navigation_list_wrapper {
 		display: flex;
