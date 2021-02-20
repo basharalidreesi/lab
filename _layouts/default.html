@@ -58,7 +58,7 @@
 			<nav class="mother_container-navigation_container{% if page.header_location == "central" %}_central{% endif %}{% if page.header_location == "upper" %}_upper{% endif %}" id="navigation_container">
 				<input type="checkbox" id="navigation_checkbox">
 				<label for="navigation_checkbox" class="navigation_container_upper-navigation_checkbox_toggle">
-					<p class="--navigation_text_styling">Menu ☟</p>
+					<p class="--navigation_text_styling">(...)</p>
 				</label>
 				<ul class="navigation_container-navigation_list_wrapper">
 					{% assign sorted = site.pages | sort: "position" %}
