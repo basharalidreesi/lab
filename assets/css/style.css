@@ -91,11 +91,6 @@
 	--font_size: 15px;
 	--universal_answer: 1rem;
 	--universal_answer_multiplier: 2;
-	/* --primary_colour: #91a3b0; */ /* see ./_config.yml and ./_layouts/default.html */
-	/* --secondary_colour: #fff; */ /* see ./_config.yml and ./_layouts/default.html */
-	/* --secondary_colour: #eceff1; */ /* old */
-	/* --border_colour: #000; */ /* see ./_config.yml and ./_layouts/default.html */
-	/* --text_colour: #000; */ /* see ./_config.yml and ./_layouts/default.html */
 	--navigation_text_font: "M+ 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--navigation_text_font_size: 1.25rem;
 	--footer_text_font: "M+ 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -182,14 +177,14 @@ address {
 	.--navigation_text_styling {
 		color: var(--text_colour);
 		font-family: var(--navigation_text_font);
-		font-weight: 400;
+		font-weight: 300;
 		text-align: center;
 		font-size: var(--navigation_text_font_size);
 	}
 	.--footer_text_styling {
 		color: var(--text_colour);
 		font-family: var(--footer_text_font);
-		font-weight: 400;
+		font-weight: 300;
 		text-align: center;
 		font-size: var(--footer_text_font_size);
 		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
@@ -212,7 +207,7 @@ address {
 	.--title_card_text_styling {
 		color: var(--text_colour);
 		font-family: var(--title_card_text_font);
-		font-weight: 400;
+		font-weight: 300;
 		text-align: center;
 		font-size: var(--title_card_text_font_size);
 		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
@@ -221,7 +216,7 @@ address {
 	.--footer_card_text_styling {
 		color: var(--text_colour);
 		font-family: var(--footer_card_text_font);
-		font-weight: 400;
+		font-weight: 300;
 		text-align: center;
 		font-size: var(--footer_card_text_font_size);
 		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
@@ -230,7 +225,7 @@ address {
 	.--text_card_text_styling {
 		color: var(--text_colour);
 		font-family: var(--text_card_text_font);
-		font-weight: 400;
+		font-weight: 300;
 		text-align: center;
 		font-size: var(--text_card_text_font_size);
 		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
