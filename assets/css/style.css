@@ -769,7 +769,7 @@ body {
 	.mother_container-navigation_container_upper > .navigation_container_upper-navigation_checkbox_toggle {
 		display: flex;
 		align-items: center;
-		justify-contents: center;
+		justify-content: center;
 		height:
 			calc(	
 				var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
