@@ -864,7 +864,7 @@ body {
 		padding-left: 0;
 		padding-right: 0;
 	}
-	.header_anchor-header_graphic {
+	.header_container-header_wrapper_upper > .header_anchor-header_graphic {
 		padding-left: 0;
 		padding-right: 0;
 		max-width: 100%;
