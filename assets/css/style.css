@@ -883,8 +883,5 @@ body {
 	│			│
 	└─BEGIN─────────────────┘
 	*/
-	.list_page_item_tag_list-list_page_item_tag:hover {
-		background-color: inherit;
-		color: inherit;
-	}
+	.list_page_item_tag_list-list_page_item_tag:hover { }
 }
