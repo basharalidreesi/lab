@@ -193,7 +193,7 @@ address {
 	.--list_text_styling {
 		color: var(--text_colour);
 		font-family: var(--list_text_font);
-		font-weight: 300;
+		font-weight: 400;
 		text-align: center;
 		font-size: var(--list_text_font_size);
 	}
