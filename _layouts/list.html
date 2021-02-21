@@ -60,7 +60,7 @@ layout: default
 								{% for tag in item.tags %}		
 									<li class="list_page_item_tag_list-list_page_item_tag --tag_text_styling" onClick="filter(event);">		
 										{{ tag }}
-										<div class="list_page_item_tag-tag_unfilter" onclick="unfilter(); event.stopPropagation();"></div>
+										<div class="list_page_item_tag-tag_unfilter" onclick="unfilter(event); event.stopPropagation();"></div>
 									</li>		
 								{% endfor %}		
 							</ul>
