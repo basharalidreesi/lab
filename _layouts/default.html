@@ -21,6 +21,9 @@
 			// https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
 			let vh = window.innerHeight * 0.01;
 			document.documentElement.style.setProperty('--vh', `${vh}px`);
+			// based on https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
+			let sh = screen.height * 0.01;
+			document.documentElement.style.setProperty('--sh', `${sh}px`);
 			// https://www.sitepoint.com/community/t/random-image-with-css/1785/9
 			// https://www.tutorialspoint.com/javascript/array_length.htm
 			if (document.getElementById) {
