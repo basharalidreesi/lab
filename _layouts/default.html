@@ -21,8 +21,7 @@
 			// https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
 			let vh = window.innerHeight * 0.01;
 			document.documentElement.style.setProperty('--vh', `${vh}px`);
-			// based on ibid
-			console.log("--vh has been set to " + `${vh}px`);
+			console.log("--vh has been set to " + `${vh}px` + ".");
 			// window.addEventListener("orientationchange", function(event) {
 			//	vh = window.innerWidth * 0.01;
 			//	document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -62,7 +61,7 @@
 			function lock_scroll() {
 				window.scrollTo(0, 0);
 				document.body.classList.toggle("--lock_scroll");
-				console.log("Temporarily locking scroll while menu is open.");
+				console.log("Body-scrolling temporarily locked while menu is open.");
 			}
 		</script>
 	</head>
