@@ -24,11 +24,9 @@ layout: default
 				all_tags[j].classList.remove("--active_list_page_item_tag");
 			}
 		}
-		console.log("Filtering " + tag_content.trim() + ".");
+		console.log("Filtered " + tag_content.trim() + ".");
 	}
 	function unfilter(event) {
-		var tag = event.target;
-		var tag_content = tag.textContent;
 		var list_items = document.getElementsByClassName("list_page_item-list_page_item_tag_list");
 		var all_tags = document.getElementsByClassName("list_page_item_tag_list-list_page_item_tag");
 		for (var i = 0, length = list_items.length; i < length; i++) {
@@ -38,7 +36,7 @@ layout: default
 			all_tags[j].classList.remove("--active_list_page_item_tag");
 			all_tags[j].children[0].removeAttribute("style");
 		}
-		console.log("Unfiltering " + tag_content.trim() + ".");
+		console.log("Unfiltered.");
 	}
 </script>
 <!-- partially from https://mmistakes.github.io/minimal-mistakes/docs/layouts/ -->
@@ -60,7 +58,7 @@ layout: default
 								{% for tag in item.tags %}		
 									<li class="list_page_item_tag_list-list_page_item_tag --tag_text_styling" onClick="filter(event);">		
 										{{ tag }}
-										<div class="list_page_item_tag-tag_unfilter" onclick="unfilter(event); event.stopPropagation();"></div>
+										<div class="list_page_item_tag-tag_unfilter" onclick="unfilter(); event.stopPropagation();"></div>
 									</li>		
 								{% endfor %}		
 							</ul>
