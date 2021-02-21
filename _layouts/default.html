@@ -25,12 +25,12 @@
 			console.log("--vh is equal to " + `${vh}px`);
 			window.addEventListener("orientationchange", function(event) {
 				if (screen.availWidth > screen.availHeight) {
-					let vh = window.innerWidth * 0.01;
+					let vh = window.innerHeight * 0.01;
 					document.documentElement.style.setProperty('--vh', `${vh}px`);
 					console.log("--vh is now equal to " + `${vh}px`);
 				}
 				if (screen.availHeight > screen.availWidth) {
-					let vh = window.innerHeight * 0.01;
+					let vh = window.innerWidth * 0.01;
 					document.documentElement.style.setProperty('--vh', `${vh}px`);
 					console.log("--vh is now equal to " + `${vh}px`);
 				}
