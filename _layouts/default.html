@@ -22,11 +22,11 @@
 			let vh = window.innerHeight * 0.01;
 			document.documentElement.style.setProperty('--vh', `${vh}px`);
 			// based on ibid
-			console.log("--vh is equal to " `${vh}px`);
+			console.log("--vh is equal to " + `${vh}px`);
 			window.addEventListener("orientationchange", function(event) {
 				let vh = window.innerHeight * 0.01;
 				document.documentElement.style.setProperty('--vh', `${vh}px`);
-				console.log("--vh is now equal to " `${vh}px`);
+				console.log("--vh is now equal to " + `${vh}px`);
 			});
 			// https://www.sitepoint.com/community/t/random-image-with-css/1785/9
 			// https://www.tutorialspoint.com/javascript/array_length.htm
