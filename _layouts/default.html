@@ -51,13 +51,16 @@
 				//	}
 				// {% endif %}
 			}
+			function lock_scroll() {
+				document.body.classList.toggle("--lock_scroll");
+			}
 		</script>
 	</head>
 	<body>
 		<div class="mother_container {% if page.is_fullscreen == true %}--mother_container_fullscreen{% endif %}">
 			<nav class="mother_container-navigation_container{% if page.header_location == "central" %}_central{% endif %}{% if page.header_location == "upper" %}_upper{% endif %}" id="navigation_container">
 				<input type="checkbox" id="navigation_checkbox">
-				<label for="navigation_checkbox" class="navigation_container_upper-navigation_checkbox_toggle">
+				<label for="navigation_checkbox" class="navigation_container_upper-navigation_checkbox_toggle" onClick="lock_scroll();>
 					<p class="--navigation_text_styling">Menu</p>
 				</label>
 				<ul class="navigation_container-navigation_list_wrapper">

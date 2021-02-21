@@ -94,7 +94,7 @@
 	--navigation_text_font: "M+ 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--navigation_text_font_size: 1.25rem;
 	--footer_text_font: "M+ 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-	--footer_text_font_size: 1rem;
+	--footer_text_font_size: 0.75rem;
 	--list_text_font: "M+ 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--list_text_font_size: 1.25rem;
 	--tag_text_font: "Code New Roman", monospace;
@@ -303,6 +303,9 @@ body {
 	background: linear-gradient(0deg, var(--primary_colour) 10%, var(--secondary_colour) 100%);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+}
+.--lock_scroll {
+	overflow: hidden;
 }
 
 /*
@@ -910,6 +913,7 @@ body {
 		background-color: var(--secondary_colour);
 		border-bottom: none;
 		z-index: 99;
+		overflow-y: scroll;
 	}
 	.mother_container-navigation_container_upper > .navigation_container-navigation_list_wrapper > .navigation_list_wrapper-navigation_list_item {
 		flex: 0;
