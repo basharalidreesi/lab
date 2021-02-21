@@ -27,12 +27,12 @@
 				if (screen.availWidth > screen.availHeight) {
 					let vh = window.innerHeight * 0.01;
 					document.documentElement.style.setProperty('--vh', `${vh}px`);
-					console.log("--vh is now equal to " + `${vh}px`);
+					console.log("--vh is now equal to " + `${vh}px` + " (portrait mode)");
 				}
 				if (screen.availHeight > screen.availWidth) {
 					let vh = window.innerWidth * 0.01;
 					document.documentElement.style.setProperty('--vh', `${vh}px`);
-					console.log("--vh is now equal to " + `${vh}px`);
+					console.log("--vh is now equal to " + `${vh}px` + " (landscape mode)");
 				}
 			});
 			// https://www.sitepoint.com/community/t/random-image-with-css/1785/9
