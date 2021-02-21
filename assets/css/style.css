@@ -821,7 +821,7 @@ body {
 	└─BEGIN─────────────────┘
 	*/
 	body {
-		background: transparent;
+		background: var(--primary_colour);
 	}
 	.--mobile_background {
 		display: block;
