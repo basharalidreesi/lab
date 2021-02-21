@@ -16,6 +16,7 @@
     font-weight: normal;
     font-style: normal;
 }
+/*
 @font-face {
 	font-family: "M+ 1p";
 	src: url("/assets/fonts/mplus_1p/mplus_1p-thin.eot");
@@ -25,6 +26,7 @@
 	font-weight: 200;
 	font-style: normal;
 }
+*/
 @font-face {
 	font-family: "M+ 1p";
 	src: url("/assets/fonts/mplus_1p/mplus_1p-light.eot");
@@ -43,6 +45,7 @@
 	font-weight: 400;
 	font-style: normal;
 }
+/*
 @font-face {
 	font-family: "M+ 1p";
 	src: url("/assets/fonts/mplus_1p/mplus_1p-medium.eot");
@@ -79,6 +82,7 @@
 	font-weight: 900;
 	font-style: normal;
 }
+*/
 
 /*
 ┌─BEGIN─────────────────┐
