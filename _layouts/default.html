@@ -21,8 +21,12 @@
 			// https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
 			let vh = window.innerHeight * 0.01;
 			document.documentElement.style.setProperty('--vh', `${vh}px`);
+			// based on ibid
+			console.log("--vh is equal to " `${vh}px`);
 			window.addEventListener("orientationchange", function(event) {
-				console.log("the orientation of the device is now " + event.target.screen.orientation.angle);
+				let vh = window.innerHeight * 0.01;
+				document.documentElement.style.setProperty('--vh', `${vh}px`);
+				console.log("--vh is now equal to " `${vh}px`);
 			});
 			// https://www.sitepoint.com/community/t/random-image-with-css/1785/9
 			// https://www.tutorialspoint.com/javascript/array_length.htm
@@ -57,7 +61,7 @@
 			function lock_scroll() {
 				window.scrollTo(0, 0);
 				document.body.classList.toggle("--lock_scroll");
-				console.log("Temporarily locking scroll.");
+				console.log("Temporarily locking scroll while menu is open.");
 			}
 		</script>
 	</head>
