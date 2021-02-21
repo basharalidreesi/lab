@@ -739,8 +739,8 @@ body {
 .footer_container-footer_wrapper {
 	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) * 2);
 }
-.footer_container-footer_wrapper p {
-	overflow-x: hidden;
+.footer_container-footer_wrapper > p {
+	overflow: hidden;
 }
 
 /*
