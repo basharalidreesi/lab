@@ -303,7 +303,7 @@ address {
 └─BEGIN─────────┘
 */
 body {
-	background: linear-gradient(0deg, var(--primary_colour) 10%, var(--secondary_colour) 100%); /* note that there is a seperate div with the same linear gradient background for use on a mobile device */
+	background: linear-gradient(0deg, var(--primary_colour) 10%, var(--secondary_colour) 100%); /* see div with class --mobile_background  */
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 }
