@@ -830,13 +830,14 @@ body {
 		left: 0;
 		width: 100vw;
 		height: 100vh;
-		height: calc(var(--sh, --vh, 1vh) * 100);
+		height: calc(var(--vh, 1vh) * 100);
 		pointer-events: none;
 		user-select: none;
 		background: linear-gradient(0deg, var(--primary_colour) 10%, var(--secondary_colour) 100%);
 		background-repeat: no-repeat;
 		background-attachment: initial;
-		background-size: 100vw calc(var(--sh, --vh, 1vh) * 100);
+		background-size: 100vw 100vh;
+		background-size: 100vw calc(var(--vh, 1vh) * 100);
 		overflow: hidden;
 		z-index: -1;
 	}
@@ -958,15 +959,14 @@ body {
 		border-bottom: 1px solid var(--border_colour);
 	}
 
-        /*
+	/*
 	┌─BEGIN─────────────────┐
 	│			│
 	│ LIST PAGE STYLING	│
 	│			│
 	└─BEGIN─────────────────┘
 	*/
-
-        .list_page_item-list_page_item_tag_list {
-                padding-top: calc(var(--universal_answer) * var(--universal_answer_multiplier));
-        }
+	.list_page_item-list_page_item_tag_list {
+		padding-top: calc(var(--universal_answer) * var(--universal_answer_multiplier));
+	}
 }
