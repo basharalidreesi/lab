@@ -159,6 +159,9 @@ img:not(.header_anchor-header_graphic) {
 address {
 	font-style: normal;
 }
+.--mobile_background {
+	display: none;
+}
 
 /*
 ┌─BEGIN─────────────────┐
@@ -300,7 +303,7 @@ address {
 └─BEGIN─────────┘
 */
 body {
-	background: linear-gradient(0deg, var(--primary_colour) 10%, var(--secondary_colour) 100%);
+	background: linear-gradient(0deg, var(--primary_colour) 10%, var(--secondary_colour) 100%); /* note that there is a seperate div with the same linear gradient background for use on a mobile device */
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 }
@@ -811,14 +814,29 @@ body {
 }
 @media (hover: none) {
 	/*
-	┌─BEGIN─────────┐
-	│		│
-	│ BODY STYLING	│
-	│		│
-	└─BEGIN─────────┘
+	┌─BEGIN─────────────────┐
+	│			│
+	│ BACKGROUND STYLING	│
+	│			│
+	└─BEGIN─────────────────┘
 	*/
 	body {
+		background: transparent;
+	}
+	.--mobile_background {
+		display: block;
+		position: fixed;
+		top: 0;
+		lef†: 0;
+		width: 100%;
+		height: calc((var(--vh, 1vh) * 100));
+		pointer-events: none;
+		user-select: none;
+		background: linear-gradient(0deg, var(--primary_colour) 10%, var(--secondary_colour) 100%);
+		background-repeat: no-repeat;
+		background-attachment: initial;
 		background-size: 100% calc((var(--vh, 1vh) * 100));
+		overflow: hidden;
 	}
 }
 @media only screen and (max-width: 1024px) {
