@@ -158,6 +158,8 @@ html {
 }
 img:not(.header_anchor-header_graphic) {
 	pointer-events: none;
+}
+img {
 	user-select: none;
 }
 address {
