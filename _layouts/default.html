@@ -96,7 +96,11 @@
 				}
 			 	function scroll_arrow_into_view(event) {
 					var scrolled_element = event.target;
-					scrolled_element.scrollIntoView();
+					scrolled_element.scrollIntoView({
+						behavior: 'smooth',
+						block: 'center',
+						inline: 'center'
+					});
 				}
 			{% endif %}
 		</script>
