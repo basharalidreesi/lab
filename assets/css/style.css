@@ -461,9 +461,9 @@ body {
 	text-align: center;
 }
 .header_wrapper-header_anchor {
-	width: auto;
-	height: 100%;
 	display: inline-block;
+    	height: 100%;
+   	width: auto;
 }
 .header_anchor-header_graphic {
 	width: auto;
@@ -475,6 +475,7 @@ body {
 .header_wrapper-header_anchor img {
 	display: block;
 	margin: auto;
+	object-fit: contain;
 }
 .header_wrapper-header_anchor svg {
 	display: block;
