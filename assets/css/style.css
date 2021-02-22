@@ -761,14 +761,14 @@ address p {
 	position: absolute;
 	bottom: 0;
 	left: 50%;
-	animation: arrow_appear 10.25s, arrow_bounce_vertical 2.5s infinite;
+	animation: arrow_appear 10s, arrow_bounce_vertical 2.5s infinite;
 	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 }
 .--indicator_arrow_wrapper_horizontal {
 	position: absolute;
 	top: 50%;
 	left: 100%;
-	animation: arrow_appear 10.25s, arrow_bounce_horizontal 2.5s infinite;
+	animation: arrow_appear 10s, arrow_bounce_horizontal 2.5s infinite;
 	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 }
 .--indicator_arrow_wrapper_vertical .--indicator_arrow_head {
@@ -789,10 +789,10 @@ address p {
 	0% {
 		opacity: 0;
 	}
-	90% {
+	80% {
 		opacity: 0;
 	}
-	95% {
+	90% {
 		opacity: 0.5;
 	}
 	100% {
