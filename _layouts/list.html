@@ -22,6 +22,7 @@ layout: default
 				all_tags[j].children[0].style.opacity = "1";
 			} else {
 				all_tags[j].classList.remove("--active_list_page_item_tag");
+                                all_tags[j].children[0].removeAttribute("style");
 			}
 		}
 		console.log("Filtered " + tag_content.trim() + ".");
