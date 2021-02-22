@@ -76,7 +76,7 @@
 					arrow_removed = true;
 				}
 			 	if (arrow_removed === false) {
-			 		document.body.onscroll = function() {remove_indicator_arrow()};
+					window.addEventListener("scroll", remove_indicator_arrow, {passive: true});
 				}
 			 {% endif %}
 		</script>
