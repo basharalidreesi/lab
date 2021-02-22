@@ -72,9 +72,11 @@
 				window.addEventListener("scroll", remove_indicator_arrow, {passive: true});
 				function remove_indicator_arrow() {
 					document.getElementById("indicator_arrow").style.opacity = "0";
-					console.log("Indicator arrow removed.");
+					console.log("Indicator arrow hidden.");
 					window.removeEventListener("scroll", remove_indicator_arrow, {passive: true});
 					console.log("Scroll listener removed.");
+					setTimeout(() => { document.getElementById("indicator_arrow").style.display = "none" }, 1250);
+					setTimeout(() => { console.log("Indicator arrow removed.") }, 1250);
 				}
 			 {% endif %}
 		</script>
