@@ -94,7 +94,11 @@
 					setTimeout(() => { document.getElementById("indicator_arrow").style.display = "none" }, 1250);
 					setTimeout(() => { console.log("Indicator arrow removed.") }, 1250);
 				}
-			 {% endif %}
+			 	function scroll_arrow_into_view(event) {
+					var scrolled_element = event.target;
+					scrolled_element.scrollIntoView();
+				}
+			{% endif %}
 		</script>
 	</head>
 	<body>
@@ -151,7 +155,7 @@
 			{% endif %}
 		</div>
 		{% if page.header_location == "central" %}
-			<div class="--indicator_arrow_wrapper_vertical" id="indicator_arrow">
+			<div class="--indicator_arrow_wrapper_vertical" id="indicator_arrow" onClick="scroll_arrow_into_view(event);">
 				<div class="--indicator_arrow_shaft"></div>
 				<div class="--indicator_arrow_head"></div>
 			</div>
