@@ -156,10 +156,10 @@ html {
 	-ms-text-size-adjust: none;
 	text-rendering: geometricPrecision;
 }
-img:not(.header_anchor-header_graphic) {
+img:not(.header_anchor-header_graphic), svg path {
 	pointer-events: none;
 }
-img, svg {
+img, svg, svg path {
 	user-select: none;
 }
 address {
@@ -474,10 +474,10 @@ body {
 .header_wrapper-header_anchor svg {
 	display: block;
 	margin: auto;
-	float: left;
-	position: relative;
-	left: 50%;
-	transform: translateX(-50%);
+	/* float: left; */
+	/* position: relative; */
+	/* left: 50%; */
+	/* transform: translateX(-50%); */
 	fill: var(--text_colour);
 }
 
