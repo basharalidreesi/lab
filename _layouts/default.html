@@ -41,9 +41,9 @@
 			};
 			function swap() {
 				random_header_graphic_array = new Array(
-					{% assign image_files = site.static_files | where: "header_graphic", true %}
-					{% for myimage in image_files %}
-						"{{ myimage.path }}"{% if forloop.last %}{% else %}, {% endif %}
+					{% assign header_graphics = site.static_files | where: "header_graphic", true %}
+					{% for header_graphic in header_graphics %}
+						"{{ header_graphic.path }}"{% if forloop.last %}{% else %}, {% endif %}
 					{% endfor %}
 				);
 				var header_graphic_number = random_header_graphic_array.length;
@@ -106,6 +106,9 @@
 				<div class="header_container-header_wrapper{% if page.header_location == "central" %}_central{% endif %}{% if page.header_location == "upper" %}_upper{% endif %}">
 					<a class="header_wrapper-header_anchor" href="{{ site.url }}">
 						<img class="header_anchor-header_graphic" id="header_graphic" alt="Header">
+						<noscript>
+							<img class="header_anchor-header_graphic" alt="Header" src="{{ header_graphics[0].path }}">
+						</noscript>
 					</a>
 				</div>
 				{% if page.header_location == "central" %}
