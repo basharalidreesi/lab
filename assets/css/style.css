@@ -777,6 +777,7 @@ address p {
 	border-right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2) solid transparent;
 	width: 0px;
 	height: 0px;
+	filter: drop-shadow(0px 0px calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2) var(--primary_colour));
 }
 .--indicator_arrow_wrapper_horizontal .--indicator_arrow_head {
 	border-left: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2) solid var(--text_colour);
