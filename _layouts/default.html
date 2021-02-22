@@ -68,9 +68,15 @@
 				document.body.classList.toggle("--lock_scroll");
 				console.log("Body scrolling temporarily locked.");
 			}
+			{% if page.header_location == "central" %}
+				function remove_indicator_arrow() {
+					document.getElementById("indicator_arrow").style.opacity = "0";
+					console.log("Indicator arrow removed.");
+				}
+			 {% endif %}
 		</script>
 	</head>
-	<body>
+	<body {% if page.header_location == "central" %} onscroll="remove_indicator_arrow()" {% endif %}>
 		<div class="--mobile_background"></div>
 		<div class="mother_container {% if page.is_fullscreen == true %}--mother_container_fullscreen{% endif %}">
 			<nav class="mother_container-navigation_container{% if page.header_location == "central" %}_central{% endif %}{% if page.header_location == "upper" %}_upper{% endif %}" id="navigation_container">
@@ -127,13 +133,4 @@
 			</div>
 		{% endif %}
 	</body>
-	{% if page.header_location == "central" %}
-		<script>
-			document.getElementsByTagName("body").addEventListener("scroll", remove_arrow);
-			function remove_arrow() {
-				document.getElementById("indicator_arrow").style.opacity = "0";
-				console.log("Indicator arrow removed.");
-			}
-		</script>
-	{% endif %}
 </html>
