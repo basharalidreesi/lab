@@ -519,6 +519,7 @@ body {
 		height: 33.33333333333333333333vw;
 		background-repeat: no-repeat;
 		background-size: cover;
+		user-select: none;
 	}
 	.showcase_wrapper-showcase_tile a {
 		display: block;
