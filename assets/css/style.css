@@ -159,7 +159,7 @@ html {
 img:not(.header_anchor-header_graphic) {
 	pointer-events: none;
 }
-img {
+img, svg {
 	user-select: none;
 }
 address {
@@ -470,6 +470,15 @@ body {
 	max-width: calc(100vw - (var(--universal_answer) * var(--universal_answer_multiplier) / 2) - (var(--universal_answer) * var(--universal_answer_multiplier) / 2));
 	padding-left: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	padding-right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+}
+.header_wrapper-header_anchor svg {
+	display: block;
+	position: relative;
+	margin: auto;
+	float: left;
+	left: 50%;
+	transform: translateX(-50%);
+	fill: var(--text_colour);
 }
 
 /*
