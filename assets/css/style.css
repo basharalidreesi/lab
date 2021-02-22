@@ -190,6 +190,11 @@ address {
 		text-align: center;
 		font-size: var(--navigation_text_font_size);
 	}
+	.--page_header_text_styling {
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
 	.--footer_text_styling {
 		color: var(--text_colour);
 		font-family: var(--footer_text_font);
