@@ -461,8 +461,9 @@ body {
 	text-align: center;
 }
 .header_wrapper-header_anchor {
-	/* width: auto; */
-	/* height: 100%; */
+	width: auto;
+	height: 100%;
+	display: inline-block;
 }
 .header_anchor-header_graphic {
 	width: auto;
@@ -474,10 +475,6 @@ body {
 .header_wrapper-header_anchor svg {
 	display: block;
 	margin: auto;
-	/* float: left; */
-	/* position: relative; */
-	/* left: 50%; */
-	/* transform: translateX(-50%); */
 	fill: var(--text_colour);
 }
 
