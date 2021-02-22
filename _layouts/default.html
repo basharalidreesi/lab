@@ -128,7 +128,8 @@
 			<script>
 				document.getElementsByTagName("body").addEventListener("scroll", remove_arrow);
 				function remove_arrow() {
-					document.getElementById("indicator_arrow").style.display = "none";
+					document.getElementById("indicator_arrow").style.opacity = "0";
+					console.log("Indicator arrow removed.");
 				}
 			</script>
 		{% endif %}

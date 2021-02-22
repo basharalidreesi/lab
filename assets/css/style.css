@@ -763,6 +763,7 @@ address p {
 	left: 50%;
 	animation: arrow_appear 10s, arrow_bounce_vertical 2.5s infinite;
 	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
+	transition: opacity 0.25s;
 }
 .--indicator_arrow_wrapper_horizontal {
 	position: absolute;
