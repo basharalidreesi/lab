@@ -197,7 +197,7 @@ address {
 		text-align: center;
 		font-size: var(--footer_text_font_size);
 		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
-		line-height: 200%;
+		line-height: 250%;
 	}
 	.--list_text_styling {
 		color: var(--text_colour);
