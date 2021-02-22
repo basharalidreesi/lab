@@ -69,14 +69,12 @@
 				console.log("Body scrolling temporarily locked.");
 			}
 			{% if page.header_location == "central" %}
-				var arrow_removed = false;
+				window.addEventListener("scroll", remove_indicator_arrow, {passive: true});
 				function remove_indicator_arrow() {
 					document.getElementById("indicator_arrow").style.opacity = "0";
 					console.log("Indicator arrow removed.");
-					arrow_removed = true;
-				}
-			 	if (arrow_removed === false) {
-					window.addEventListener("scroll", remove_indicator_arrow, {passive: true});
+					window.removeEventListener("scroll", remove_indicator_arrow, {passive: true});
+					console.log("Scroll listener removed.");
 				}
 			 {% endif %}
 		</script>
