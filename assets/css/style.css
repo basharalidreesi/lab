@@ -461,8 +461,8 @@ body {
 	text-align: center;
 }
 .header_wrapper-header_anchor {
-	width: auto;
-	height: 100%;
+	/* width: auto; */
+	/* height: 100%; */
 	/* display: inline-block; */
 }
 .header_anchor-header_graphic {
