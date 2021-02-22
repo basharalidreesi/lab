@@ -765,6 +765,7 @@ address p {
 	animation: arrow_appear 10s, arrow_bounce_vertical 2.5s infinite;
 	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 	transition: opacity 1.25s;
+	cursor: s-resize;
 }
 .--indicator_arrow_wrapper_horizontal {
 	position: absolute;
