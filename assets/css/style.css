@@ -461,9 +461,9 @@ body {
 	text-align: center;
 }
 .header_wrapper-header_anchor {
-	/* width: auto; */
-	/* height: 100%; */
-	/* display: inline-block; */
+	width: auto;
+	height: 100%;
+	display: inline-block;
 }
 .header_anchor-header_graphic {
 	width: auto;
@@ -471,6 +471,10 @@ body {
 	max-width: calc(100vw - (var(--universal_answer) * var(--universal_answer_multiplier) / 2) - (var(--universal_answer) * var(--universal_answer_multiplier) / 2));
 	padding-left: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	padding-right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+}
+.header_anchor-header_graphic img {
+	display: block;
+	margin: auto;
 }
 .header_wrapper-header_anchor svg {
 	display: block;
