@@ -9,12 +9,12 @@
 		<!-- <link rel="shortcut icon" type="image/jpg" href=""/> -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="/assets/css/style.css" media="screen"/>
-		{% assign page_text = page.text_colour | strip_newlines | strip %}
-		{% if page_text == "#000" or page_text == "#000000" or page_text == "black" %}
-			<!-- SVGInject script not included -->
-		{% else %}
+		{% assign page_text_colour = page.text_colour | strip_newlines | strip %}
+		{% unless page_text_colour == "#000" or page_text_colour == "#000000" or page_text_colour == "black" %}
 			<script src="/assets/js/svg-inject.min.js"></script>
-		{% endif %}
+		{% else %}
+			<!-- SVG injection unnecessary -->
+		{% endunless %}
 		<style>
 			:root {
 				--primary_colour: {{ page.primary_colour }};
@@ -51,9 +51,7 @@
 				random_header_graphic = (random_header_graphic_array[x]);
 				document.getElementById("header_graphic").src = random_header_graphic;
 				console.log("Loaded " + random_header_graphic + " from a total number of " + header_graphic_number + " header graphics.");
-				{% if page_text == "#000" or page_text == "#000000" or page_text == "black" %}
-					console.log("SVG header injection unnecessary.");
-				 {% else %}
+				{% unless page_text_colour == "#000" or page_text_colour == "#000000" or page_text_colour == "black" %}
 					var extension = random_header_graphic.split(".").pop();
 					if (extension == "svg") {
 						SVGInject(document.getElementById("header_graphic"));
@@ -61,7 +59,9 @@
 					} else {
 						console.log("No SVG header detected. Injection has not occured.");
 					}
-				 {% endif %}
+				 {% else %}
+					console.log("SVG header injection unnecessary.");
+				 {% endunless %}
 			}
 			function lock_scroll() {
 				window.scrollTo(0, 0);
