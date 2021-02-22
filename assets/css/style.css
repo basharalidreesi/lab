@@ -472,7 +472,7 @@ body {
 	padding-left: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	padding-right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 }
-.header_anchor-header_graphic img {
+.header_wrapper-header_anchor img {
 	display: block;
 	margin: auto;
 }
