@@ -40,18 +40,13 @@
 			</style>
 		</noscript>
 		<script>
+			console.log("Page url is {{ page.url }}");
+			console.log("Page path is {{ page.path }}");
+			console.log("Page title is {{ page.title }}");
 			// https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
 			let vh = window.innerHeight * 0.01;
 			document.documentElement.style.setProperty('--vh', `${vh}px`);
 			console.log("--vh has been set to " + `${vh}px` + ".");
-			// window.addEventListener("orientationchange", function(event) {
-			//	vh = window.innerWidth * 0.01;
-			//	document.documentElement.style.setProperty('--vh', `${vh}px`);
-			//	console.log("Detected change in orientation.");
-			//	console.log("--vh is now equal to " + `${vh}px`);
-			// });
-			// https://www.sitepoint.com/community/t/random-image-with-css/1785/9
-			// https://www.tutorialspoint.com/javascript/array_length.htm
 			if (document.getElementById) {
 				window.onload = swap;
 			};
