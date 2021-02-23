@@ -59,7 +59,7 @@
 				random_header_graphic_array = new Array(
 					{% assign header_graphics = site.static_files | where: "header_graphic", true %}
 					{% for header_graphic in header_graphics %}
-						"{{ header_graphic.path }}"{% if forloop.last %}{% else %}, {% endif %}
+						"{{ site.baseurl }}{{ header_graphic.path }}"{% if forloop.last %}{% else %}, {% endif %}
 					{% endfor %}
 				);
 				var header_graphic_number = random_header_graphic_array.length;
