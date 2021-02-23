@@ -161,6 +161,10 @@ img:not(.header_anchor-header_graphic), svg path {
 }
 img, svg, svg path {
 	user-select: none;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
 }
 address {
 	font-style: normal;
@@ -195,6 +199,10 @@ address {
 		white-space: nowrap;
 		text-overflow: ellipsis;
 		line-height: 250%;
+		user-select: none;
+		-ms-user-select: none;
+		-moz-user-select: none;
+		-webkit-user-select: none;
 	}
 	.--footer_text_styling {
 		color: var(--text_colour);
@@ -526,6 +534,9 @@ body {
 		background-repeat: no-repeat;
 		background-size: cover;
 		user-select: none;
+		-ms-user-select: none;
+		-moz-user-select: none;
+		-webkit-user-select: none;
 	}
 	.showcase_wrapper-showcase_tile a {
 		display: block;
@@ -926,6 +937,9 @@ address p {
 		height: calc(var(--vh, 1vh) * 100);
 		pointer-events: none;
 		user-select: none;
+		-ms-user-select: none;
+		-moz-user-select: none;
+		-webkit-user-select: none;
 		background: linear-gradient(0deg, var(--primary_colour) 10%, var(--secondary_colour) 100%);
 		background-repeat: no-repeat;
 		background-attachment: initial;
