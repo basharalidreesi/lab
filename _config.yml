@@ -2,6 +2,10 @@
 title: Jad Toghuj
 timezone: UTC
 collections:
+  pages:
+    title: Pages
+    output: true
+    permalink: "/:path"
   posts:
     title: Posts
     output: true
