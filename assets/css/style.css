@@ -194,6 +194,7 @@ address {
 		overflow: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;
+		line-height: 250%;
 	}
 	.--footer_text_styling {
 		color: var(--text_colour);
