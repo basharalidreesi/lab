@@ -6,7 +6,7 @@ layout: default
 	{% assign showcase_tiles = site.static_files | where: "showcase_tile", true %}
 	{% for tile in showcase_tiles %}
 		{% if tile.name contains "!linkto" %}
-			{% assign link = tile.basename | remove: site.url | remove: site.baseurl | split: "!linkto" %}
+			{% assign link = tile.basename | split: "!linkto" %}
 			<div class="showcase_wrapper-showcase_tile" style="background-image: url('{{ site.baseurl }}{{ tile.path }}')">
 				<a href="{{ site.baseurl }}{{ link[1] | replace: " ", "/" | append: ".html" }}"></a>
 			</div>
