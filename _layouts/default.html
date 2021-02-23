@@ -40,16 +40,19 @@
 			</style>
 		</noscript>
 		{% capture title %}
-			{{ site.title | strip_newlines | strip }}
+			"{{ site.title }}"
 		{% endcapture %}
 		{% capture collection %}
-			{{ page.collection | strip_newlines | strip }}
+			"{{ page.collection }}"
 		{% endcapture %}
 		{% capture page %}
-			{{ page.title | strip_newlines | strip }}
+			"{{ page.title }}"
 		{% endcapture %}
 		<script>
-			console.log("Nav string is {{ title }}, {{ collection }}, {{ page }}");
+			var title = {{ title }};
+			var collection = {{ collection }};
+			var page = {{ page }};
+			console.log("Nav string is " + title.trim() + ", " + collection.trim() + ", " + page.trim());
 			// https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
 			let vh = window.innerHeight * 0.01;
 			document.documentElement.style.setProperty('--vh', `${vh}px`);
