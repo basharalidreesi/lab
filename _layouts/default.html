@@ -12,8 +12,6 @@
 		{% assign page_text_colour = page.text_colour | strip_newlines | strip %}
 		{% unless page_text_colour == "#000" or page_text_colour == "#000000" or page_text_colour == "black" %}
 			<script src="{{ site.baseurl }}/assets/js/svg-inject.min.js"></script>
-		{% else %}
-			<!-- SVG injection unnecessary -->
 		{% endunless %}
 		<style>
 			:root {
@@ -39,20 +37,7 @@
 				}
 			</style>
 		</noscript>
-		{% capture title %}
-			"{{ site.title }}"
-		{% endcapture %}
-		{% capture collection %}
-			"{{ page.collection }}"
-		{% endcapture %}
-		{% capture page %}
-			"{{ page.title }}"
-		{% endcapture %}
 		<script>
-			var title = {{ title }};
-			var collection = {{ collection }};
-			var page = {{ page }};
-			console.log("Nav string is " + title.trim() + ", " + collection.trim() + ", " + page.trim());
 			// https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
 			let vh = window.innerHeight * 0.01;
 			document.documentElement.style.setProperty('--vh', `${vh}px`);
