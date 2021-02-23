@@ -122,8 +122,8 @@ layout: default
 								{% endfor %}
 							</figcaption> -->
 						{% endif %}
-						<a href="{{ link }}">
-							<img class="graphic_card-graphic_card_image" src="{{ source[0] }}" loading="lazy">
+						<a href="{{ site.baseurl }}{{ link }}">
+							<img class="graphic_card-graphic_card_image" src="{{ site.baseurl }}{{ source[0] }}" loading="lazy">
 						</a>
 					</figure>
 				{% else %}
@@ -141,7 +141,7 @@ layout: default
 								{% endfor %}
 							</figcaption> -->
 						{% endif %}		
-						<img class="graphic_card-graphic_card_image" src="{{ source[0] }}" loading="lazy">
+						<img class="graphic_card-graphic_card_image" src="{{ site.baseurl }}{{ source[0] }}" loading="lazy">
 					</figure>
 				{% endif %}
 			{% when "!embed" %}
