@@ -2,10 +2,6 @@
 title: Jad Toghuj
 timezone: UTC
 collections:
-  pages:
-    title: Pages
-    output: true
-    permalink: "/:path"
   posts:
     title: Posts
     output: true
@@ -35,6 +31,7 @@ defaults:
     path: ''
     type: pages
   values:
+    permalink: "/:path"
     layout: default
     is_listed: false
 - scope:
