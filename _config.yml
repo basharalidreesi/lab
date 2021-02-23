@@ -11,7 +11,7 @@ collections:
   styling-and-creative-direction:
     title: Styling & Creative Direction
     output: true
-    permalink: "/:collection/:path/:name"
+    permalink: "/:collection/:path/"
   uploads:
     title: Uploads
     output: true
