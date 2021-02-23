@@ -199,6 +199,10 @@ address {
 		white-space: nowrap;
 		text-overflow: ellipsis;
 		line-height: 250%;
+		user-select: none;
+		-ms-user-select: none;
+		-moz-user-select: none;
+		-webkit-user-select: none;
 	}
 	.--footer_text_styling {
 		color: var(--text_colour);
