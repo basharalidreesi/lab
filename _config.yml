@@ -8,6 +8,7 @@ collections:
   social-media-and-content-creation:
     title: Social Media & Content Creation
     output: true
+    permalink: "/:collection/:path"
   styling-and-creative-direction:
     title: Styling & Creative Direction
     output: true
