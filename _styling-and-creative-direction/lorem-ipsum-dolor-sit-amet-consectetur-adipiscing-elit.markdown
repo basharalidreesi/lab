@@ -1,7 +1,6 @@
 ---
 title: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 date: 2021-02-15 21:15:00 Z
-permalink: "/styling-and-creative-direction/lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit"
 tags:
 - "\U0001F34D pineapple"
 - "\U0001F350 pear"
