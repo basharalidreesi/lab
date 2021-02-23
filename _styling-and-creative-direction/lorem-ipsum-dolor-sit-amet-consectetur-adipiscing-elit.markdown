@@ -14,11 +14,11 @@ position: 0
 
 !image
 !source ![look-02.png](/uploads/look-02.png)
-!linkto test-project/nested-test-project.html
+!linkto /test-1
 
 !image
 !source ![look-02.png](/uploads/look-02.png)
-!linkto test-project/nested-test-project.html
+!linkto /test-2
 
 !image
 !source ![look-02.png](/uploads/look-02.png)
