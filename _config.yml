@@ -31,7 +31,7 @@ defaults:
     path: ''
     type: pages
   values:
-    permalink: "/:name"
+    permalink: "/:title"
     layout: default
     is_listed: false
 - scope:
