@@ -2,7 +2,7 @@
 	<script>console.log("Tree: {{ tree | join: ' ⟶ ' }}");</script>
 	{% assign last = tree | last %}
 	{% assign current = page.name %}
-	{% assign previous = tree | remove: last | remove: current %}
+	{% assign previous = tree | remove: last | remove: current | compact | join: "/" %}
 	{% for branch in tree %}
 		<script>console.log("Branch {{ forloop.index }}: {{ branch | prepend: previous }}");</script>
 	{% endfor %}
