@@ -4,6 +4,10 @@
 	<script>console.log("Tree size: {{ tree_size }}");</script>
 {% assign url = page.url %}
 	<script>console.log("URL: {{ url }}");</script>
+{% for branch in tree %}
+	<script>console.log("{{ forloop.index }}: {{ branch }}");</script>
+{% endfor %}
+
 {% if tree_size == 1 %}
 	<p>{{ page.title }}</p>
 {% elsif tree_size == 2 %}
