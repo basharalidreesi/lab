@@ -7,13 +7,15 @@
 	{% assign current = branch | prepend: segment[0] | append: ".markdown" %}
 	{% assign deepness = forloop.index %}
 	<script>console.log("Branch {{ forloop.index }} Path: {{ current }}");</script>
-	{% if deepness == 1 %}
+	{% if deepness == 1 and current != "404.markdown" %}
 		{% for node in site.pages %}
 			{% assign deepness_one_current = current | remove_first: "_" %}
 			{% if node.path == deepness_one_current %}
 				<p class="--navigation_text_styling --page_header_text_styling">{{ node.title }}</p>
 			{% endif %}
 		{% endfor %}
+	{% elsif deepness == 1 and current == "404.markdown" %}
+		<p class="--navigation_text_styling --page_header_text_styling">?</p>
 	{% else %}
 		{% for node in site.documents %}
 			{% if node.path == current %}
