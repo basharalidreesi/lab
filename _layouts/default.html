@@ -74,5 +74,8 @@
 		{% if page.header_location == "central" %}
 			{% include down.html %}
 		{% endif %}
+		{% if page.layout == "cascade" %}
+			{% include right.html %}
+		{% endif %}
 	</body>
 </html>
