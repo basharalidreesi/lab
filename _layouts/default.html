@@ -38,14 +38,19 @@
 		</noscript>
 		
 		<script>
-			{% assign root = site.title %}
-			{% assign tree = page.path | remove_first: "_" | remove: ".html" | remove: ".md" | remove: ".markdown" | split: "-" %}
-			{% assign branch = tree | join: " " | split: "/" %}
-			// console.log("{% for item in branch %}{{ item }}{% if forloop.last %}{% else %}, {% endif %}{% endfor %}");
-			console.log("URL: {{ page.url }}");
-			console.log("ID: {{ page.id }}");
-			console.log("DIR: {{ page.dir }}");
-			console.log("Path: {{ page.path }}");
+			{% assign tree = page.url | split: '/' %}
+			{% assign tree_size = tree | size %}
+			{% assign url = page.url %}
+			{% for node in site.pages %}
+				{% if node.url contains url %}
+					{% assign node_url_parts = node.url | split: '/' %}
+					{% assign node_url_parts_size = node_url_parts | size %}
+					{% assign filename = node_url_parts | last %}
+						{% if tree_size == node_url_parts_size and filename != 'index.html' %}
+							console.log("{{ node.title }}");
+						{% endif %}
+					{% endif %}
+			{% endfor %}
 			// https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
 			let vh = window.innerHeight * 0.01;
 			document.documentElement.style.setProperty('--vh', `${vh}px`);
