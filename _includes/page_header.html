@@ -1,7 +1,8 @@
 {% assign tree = page.path | split: "/" %}
 	<script>console.log("Tree: {{ tree | join: ' ⟶ ' }}");</script>
 	{% assign last = tree | last %}
-	{% assign previous = tree | remove: last %}
+	{% assign current = page.name %}
+	{% assign previous = tree | remove: last | remove: current %}
 	{% for branch in tree %}
 		<script>console.log("Branch {{ forloop.index }}: {{ branch | prepend: previous }}");</script>
 	{% endfor %}
