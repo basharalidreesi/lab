@@ -5,4 +5,4 @@ is_fullscreen: true
 is_listed: true
 ---
 
-{% include lorem_ipsum.html %}
+{% include lipsum.html %}
