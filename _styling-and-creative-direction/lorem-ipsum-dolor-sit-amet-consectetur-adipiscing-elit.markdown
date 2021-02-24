@@ -14,11 +14,11 @@ position: 0
 
 !image
 !source ![look-02.png](/uploads/look-02.png)
-!linkto /test-1
+!linkto /styling-and-creative-direction/lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit/test-1
 
 !image
 !source ![look-02.png](/uploads/look-02.png)
-!linkto /test-2
+!linkto /styling-and-creative-direction/lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit/test-2
 
 !image
 !source ![look-02.png](/uploads/look-02.png)
