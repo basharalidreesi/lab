@@ -1,22 +1,27 @@
 {% assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" %}
 	<script>console.log("Tree: {{ tree | join: ' ⟶ ' }}");</script>
-	{% for branch in tree %}
-		{% assign segment = page.path | split: branch %}
-		{% assign current = branch | prepend: segment[0] | append: ".markdown" %}
-		{% assign deepness = forloop.index %}
-		<script>console.log("Branch {{ forloop.index }} Path: {{ current }}");</script>
-		{% for node in site.documents %}
-			{% if deepness == 1 %}
-				<script>console.log("Deepness 1. Ignore for now.");</script>
-			{% else %}
-				{% if node.path == current %}
-					<script>console.log("Branch {{ deepness }} Title: {{ node.title }}");</script>
-				{% endif %}
-			{% endif %}
-		{% endfor %}
-	{% endfor %}
 {% assign tree_size = tree | size %}
 	<script>console.log("Tree size: {{ tree_size }}");</script>
+{% for branch in tree %}
+	{% assign segment = page.path | split: branch %}
+	{% assign current = branch | prepend: segment[0] | append: ".markdown" %}
+	{% assign deepness = forloop.index %}
+	<script>console.log("Branch {{ forloop.index }} Path: {{ current }}");</script>
+	{% if deepness == 1 %}
+		{% for node in site.pages %}
+			{% assign deepness_one_current = current | remove_first: "_" %}
+			{% if node.path == deepness_one_current %}
+				<script>console.log("Branch {{ deepness }} Title: {{ node.title }}");</script>
+			{% endif %}
+		{% endfor %}
+	{% else %}
+		{% for node in site.documents %}
+			{% if node.path == current %}
+				<script>console.log("Branch {{ deepness }} Title: {{ node.title }}");</script>
+			{% endif %}
+		{% endfor %}
+	{% endif %}
+{% endfor %}
 
 {% if tree_size == 1 %}
 	<p>{{ page.title }}</p>
