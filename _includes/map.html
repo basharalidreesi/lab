@@ -8,7 +8,7 @@
 		{% for node in site.pages %}
 			{% assign deepness_one_current = current | remove_first: "_" %}
 			{% if node.path == deepness_one_current %}
-				<p class="--navigation_text_styling --map_text_styling">{{ node.title }}{% if last %}{% else %} ⟶ {% endif %}</p>
+				<a class="--navigation_text_styling --map_text_styling" href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}{% if last %}{% else %} ⟶ {% endif %}</a>
 			{% endif %}
 		{% endfor %}
 	{% elsif deepness == 1 and current != "404.markdown" and tree.size >= 3 %}
@@ -19,7 +19,7 @@
 	{% else %}
 		{% for node in site.documents %}
 			{% if node.path == current %}
-				<p class="--navigation_text_styling --map_text_styling">{{ node.title }}{% if last %}{% else %} ⟶ {% endif %}</p>
+				<a class="--navigation_text_styling --map_text_styling" href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}{% if last %}{% else %} ⟶ {% endif %}</a>
 			{% endif %}
 		{% endfor %}
 	{% endif %}
