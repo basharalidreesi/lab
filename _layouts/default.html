@@ -39,17 +39,11 @@
 		
 		<script>
 			{% assign tree = page.url | split: '/' %}
+				console.log("Tree: {{ tree }}");
 			{% assign tree_size = tree | size %}
+				console.log("Tree size: {{ tree_size }}");
 			{% assign url = page.url %}
-			{% for node in site.pages %}
-				{% if node.url contains url %}
-					{% assign node_url_parts = node.url | split: '/' %}
-					{% assign node_url_parts_size = node_url_parts | size %}
-					{% if tree_size == node_url_parts_size %}
-						console.log("{{ node.title }}");
-					{% endif %}
-				{% endif %}
-			{% endfor %}
+				console.log("URL: {{ url }}");
 			// https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
 			let vh = window.innerHeight * 0.01;
 			document.documentElement.style.setProperty('--vh', `${vh}px`);
