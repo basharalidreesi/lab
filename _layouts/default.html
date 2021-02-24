@@ -8,13 +8,13 @@
 		<!-- <link rel="shortcut icon" type="image/jpg" href=""/> -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/style.css" media="screen"/>
-		{% assign page_text_colour = page.text_colour | strip_newlines | strip %}
-		{% unless page_text_colour == "#000" or page_text_colour == "#000000" or page_text_colour == "black" %}
-			<script src="{{ site.baseurl }}/assets/js/svg-inject.min.js"></script>
-		{% endunless %}
 		{% include colours.html %}
 		{% include script.html %}
 		{% include noscript.html %}
+		{% assign text_colour = page.text_colour | strip_newlines | strip %}
+		{% unless text_colour == "#000" or text_colour == "#000000" or text_colour == "black" %}
+			<script src="{{ site.baseurl }}/assets/js/svg-inject.min.js"></script>
+		{% endunless %}
 	</head>
 	<body>
 		<div class="--mobile_background"></div>
@@ -63,19 +63,16 @@
 			<main class="mother_container-content_container" id="content_container">
 				{{ content }}
 			</main>
-			{% if page.is_fullscreen == false %}
+			{% unless page.is_fullscreen %}
 				<footer class="mother_container-footer_container">
 					<div class="footer_container-footer_wrapper">
 						{% include footer.html %}
 					</div>
 				</footer>
-			{% endif %}
+			{% endunless %}
 		</div>
 		{% if page.header_location == "central" %}
-			<div class="--indicator_arrow_wrapper_vertical" id="indicator_arrow" onClick="scroll_arrow_into_view(event);">
-				<div class="--indicator_arrow_shaft"></div>
-				<div class="--indicator_arrow_head"></div>
-			</div>
+			{% include down.html %}
 		{% endif %}
 	</body>
 </html>
