@@ -3,10 +3,10 @@
 	{% for branch in tree %}
 		{% assign segment = page.path | split: branch %}
 		{% assign current = branch | prepend: segment[0] %}
-		<script>console.log("Branch {{ forloop.index }} #: {{ current }}");</script>
-		{% for node in site.pages %}
+		<script>console.log("Branch {{ forloop.index }}: {{ current }}");</script>
+		{% for node in site.documents %}
 			{% if node.path == current %}
-				<script>console.log("Branch {{ forloop.index }} title: {{ node.title }}");</script>
+				<script>console.log("Branch {{ forloop.index }}: {{ node.title }}");</script>
 			{% endif %}
 		{% endfor %}
 	{% endfor %}
