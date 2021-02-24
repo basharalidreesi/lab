@@ -1,5 +1,5 @@
 {% assign tree = page.path | split: "/" %}
-	<script>console.log("Tree: {{ tree }}");</script>
+	<script>console.log("Tree: {{ tree | join: ' ⟶ ' }}");</script>
 	{% for branch in tree %}
 		<script>console.log("Branch {{ forloop.index }}: {{ branch }}");</script>
 	{% endfor %}
