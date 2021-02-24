@@ -38,7 +38,7 @@
 		</noscript>
 		
 		<script>
-			{% assign tree = page.url | split: '/' %}
+			{% assign tree = page.path | remove_first: "_" | remove: ".md" | remove: ".markdown" | remove: ".html" | split: '/' %}
 				console.log("Tree: {{ tree }}");
 			{% assign tree_size = tree | size %}
 				console.log("Tree size: {{ tree_size }}");
