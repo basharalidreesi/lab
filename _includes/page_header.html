@@ -1,13 +1,8 @@
 {% assign tree = page.path | split: "/" %}
 	<script>console.log("Tree: {{ tree | join: ' ⟶ ' }}");</script>
-	{% assign last = tree | last %}
-		<script>console.log("Last: {{ last }}");</script>
-	{% assign current = page.name %}
-		<script>console.log("Current: {{ current }}");</script>
-	{% assign previous = tree | remove: last | remove: current | compact | join: "/" %}
-		<script>console.log('Previous: {{ previous }}');</script>
 	{% for branch in tree %}
-		<script>console.log("Branch {{ forloop.index }}: {{ branch }}");</script>
+		{% assign segment = page.path | split: branch %}
+		<script>console.log("Branch {{ forloop.index }}: {{ segment[0] }}{{ branch }}");</script>
 	{% endfor %}
 {% assign tree_size = tree | size %}
 	<script>console.log("Tree size: {{ tree_size }}");</script>
