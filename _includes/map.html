@@ -11,20 +11,14 @@
 		{% for node in site.pages %}
 			{% assign deepness_one_current = current | remove_first: "_" %}
 			{% if node.path == deepness_one_current %}
-				<script>console.log("Branch {{ deepness }} Title: {{ node.title }}");</script>
+				<p class="--navigation_text_styling --page_header_text_styling">{{ node.title }}</p>
 			{% endif %}
 		{% endfor %}
 	{% else %}
 		{% for node in site.documents %}
 			{% if node.path == current %}
-				<script>console.log("Branch {{ deepness }} Title: {{ node.title }}");</script>
+				<p class="--navigation_text_styling --page_header_text_styling">{{ node.title }}</p>
 			{% endif %}
 		{% endfor %}
 	{% endif %}
 {% endfor %}
-
-{% if tree_size == 1 %}
-	<p>{{ page.title }}</p>
-{% elsif tree_size == 2 %}
-	<p>{{ page.title }} but wait there's more </p>
-{% endif %}
