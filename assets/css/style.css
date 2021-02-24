@@ -1,9 +1,8 @@
 /*
-┌─BEGIN─────────────────┐
-│			│
-│ VARIABLE DECLARATIONS	│
-│			│
-└─BEGIN─────────────────┘
+┌───────┐
+│ begin └───┐
+│ variables │
+└───────────┘
 */
 :root {
 	--font_size: 15px;
@@ -26,11 +25,10 @@
 }
 
 /*
-┌─BEGIN─────────────────┐
-│			│
-│ UNIVERSAL RESETS	│
-│			│
-└─BEGIN─────────────────┘
+┌───────┐
+│ begin └────────┐
+│ initial resets │
+└────────────────┘
 */
 html, body {
 	margin: 0;
@@ -38,13 +36,6 @@ html, body {
 	left: 0;
 	width: 100%;
 	min-height: 100%;
-	/* min-height: 100vh;
-	min-height: calc(var(--vh, 1vh) * 100);
-	min-height: -webkit-fill-available;
-	height: -webkit-fill-available;
-	height: -moz-available;
-	height: -webkit-fill-available;
-	height: fill-available; */
 	/* overscroll-behavior: none; */ /* for horizontal scrolling */
 }
 * {
@@ -82,23 +73,18 @@ img, svg, svg path {
 address {
 	font-style: normal;
 }
-.--mobile_background {
-	display: none;
-}
 
 /*
-┌─BEGIN─────────────────┐
-│			│
-│ STYLING SNIPPETS	│
-│			│
-└─BEGIN─────────────────┘
+┌───────┐
+│ begin └──┐
+│ snippets │
+└──────────┘
 */
 	/*
-	┌─BEGIN─────────┐
-	│		│
-	│ TEXT STYLING	│
-	│		│
-	└─BEGIN─────────┘
+	┌───────┐
+	│ begin └───────────┐
+	│ typography styles │
+	└───────────────────┘
 	*/
 	.--navigation_text_styling {
 		color: var(--text_colour);
@@ -168,31 +154,14 @@ address {
 		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		line-height: 200%;
 	}
-	.--text_card_text_styling a, .--footer_card_text_styling a, .--title_card_text_styling a {
-		display: inline;
-		border: 1px solid var(--text_colour);
-		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2 / 2);
-		padding-left: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
-		padding-right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
-		border-radius: 5000px;
-		color: var(--text_colour);
-		font-family: inherit;
-		font-size: inherit;
-		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
-		text-decoration: none;
-		background-image: linear-gradient(currentColor, currentColor);
-		background-position: 0% 100%;
-		background-repeat: no-repeat;
-		background-size: 0% 2px;
-		transition: background-size 0.25s;
-		cursor: alias;
+	.--no_bottom_padding {
+		padding-bottom: 0;
 	}
 	/*
-	┌─BEGIN─────────────────┐
-	│			│
-	│ ANCHOR STYLING	│
-	│			│
-	└─BEGIN─────────────────┘
+	┌───────┐
+	│ begin └──────────┐
+	│ hyperlink styles │
+	└──────────────────┘
 	*/
 	.--anchor_styling {
 		color: var(--text_colour);
@@ -218,23 +187,31 @@ address {
 		border-radius: 5000px;
 		cursor: alias;
 	}
-	/*
-	┌─BEGIN─────────────────┐
-	│			│
-	│ MISCELLANEOUS STYLING	│
-	│			│
-	└─BEGIN─────────────────┘
-	*/
-	.--no_bottom_padding {
-		padding-bottom: 0;
+	.--text_card_text_styling a, .--footer_card_text_styling a, .--title_card_text_styling a {
+		display: inline;
+		border: 1px solid var(--text_colour);
+		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2 / 2);
+		padding-left: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
+		padding-right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
+		border-radius: 5000px;
+		color: var(--text_colour);
+		font-family: inherit;
+		font-size: inherit;
+		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
+		text-decoration: none;
+		background-image: linear-gradient(currentColor, currentColor);
+		background-position: 0% 100%;
+		background-repeat: no-repeat;
+		background-size: 0% 2px;
+		transition: background-size 0.25s;
+		cursor: alias;
 	}
 
 /*
-┌─BEGIN─────────┐
-│		│
-│ BODY STYLING	│
-│		│
-└─BEGIN─────────┘
+┌───────┐
+│ begin └─────┐
+│ body styles │
+└─────────────┘
 */
 body {
 	background: linear-gradient(0deg, var(--primary_colour) 10%, var(--secondary_colour) 100%); /* see div with class --mobile_background  */
@@ -244,13 +221,15 @@ body {
 .--lock_scroll {
 	overflow: hidden;
 }
+.--mobile_background {
+	display: none;
+}
 
 /*
-┌─BEGIN─────────────────┐
-│			│
-│ CONTAINER STYLING	│
-│			│
-└─BEGIN─────────────────┘
+┌───────┐
+│ begin └──────────┐
+│ container styles │
+└──────────────────┘
 */
 .mother_container {
 	display: flex;
@@ -319,11 +298,10 @@ body {
 }
 
 /*
-┌─BEGIN─────────────────┐
-│			│
-│ NAVIGATION STYLING	│
-│			│
-└─BEGIN─────────────────┘
+┌───────┐
+│ begin └────┐
+│ nav styles │
+└────────────┘
 */
 .navigation_container-navigation_list_wrapper {
 	display: flex;
@@ -356,11 +334,10 @@ body {
 }
 
 /*
-┌─BEGIN─────────────────┐
-│			│
-│ HEADER STYLING	│
-│			│
-└─BEGIN─────────────────┘
+┌───────┐
+│ begin └───────┐
+│ header styles │
+└───────────────┘
 */
 .header_container-header_wrapper_central {
 	height:
@@ -412,11 +389,10 @@ body {
 }
 
 /*
-┌─BEGIN─────────────────┐
-│			│
-│ CONTENT STYLING	│
-│			│
-└─BEGIN─────────────────┘
+┌───────┐
+│ begin └────────┐
+│ content styles │
+└────────────────┘
 */
 	/*
 	┌─BEGIN─────────────────┐
