@@ -1,0 +1,19 @@
+<div class="header_container-header_wrapper{% if page.header_location == "central" %}_central{% endif %}{% if page.header_location == "upper" %}_upper{% endif %}">
+	<a class="header_wrapper-header_anchor" href="{{ site.url }}{{ site.baseurl }}">
+		<img class="header_anchor-header_graphic" id="header_graphic" alt="Header">
+		<noscript>
+			<img class="header_anchor-header_graphic" alt="Header" src="{{ site.baseurl }}{{ header_graphics[0].path }}">
+		</noscript>
+	</a>
+</div>
+{% if page.header_location == "central" %}
+	<script>
+		// https://stackoverflow.com/questions/16302483/event-to-detect-when-positionsticky-is-triggered
+		const header = document.getElementById('header_container');
+		const observer = new IntersectionObserver( 
+			([e]) => e.target.children[0].classList.toggle('header_container-header_wrapper_central_sticky', e.intersectionRatio < 1),
+			{threshold: [1]}
+		);
+		observer.observe(header);
+	</script>
+{% endif %}
