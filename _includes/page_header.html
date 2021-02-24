@@ -5,10 +5,15 @@
 		{% assign current = branch | prepend: segment[0] | append: ".markdown" %}
 		<script>console.log("Branch {{ forloop.index }}: {{ current }}");</script>
 		{% for node in site.documents %}
-			{% if node.path == current %}
-				<script>console.log("Title: {{ node.title }}");</script>
+			{% if forloop.index == 1 %}
+				{% assign no_underscore_current = current | remove_first: "_" %}
+				{% if site.pages.path == no_underscore_current %}
+					<script>console.log("Title: {{ node.title }}");</script>
+				{% endif %}
 			{% else %}
-				<script>console.log("Not found.");</script>
+				{% if node.path == current %}
+					<script>console.log("Title: {{ node.title }}");</script>
+				{% endif %}
 			{% endif %}
 		{% endfor %}
 	{% endfor %}
