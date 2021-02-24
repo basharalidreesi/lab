@@ -1,12 +1,12 @@
 {% assign tree = page.path | split: "/" %}
 	<script>console.log("Tree: {{ tree | join: ' ⟶ ' }}");</script>
+	{% assign last = tree | last %}
+	{% assign previous = tree | remove: last %}
 	{% for branch in tree %}
-		<script>console.log("Branch {{ forloop.index }}: {{ branch }}");</script>
+		<script>console.log("Branch {{ forloop.index }}: {{ branch | prepend: previous }}");</script>
 	{% endfor %}
 {% assign tree_size = tree | size %}
 	<script>console.log("Tree size: {{ tree_size }}");</script>
-{% assign url = page.url %}
-	<script>console.log("URL: {{ url }}");</script>
 
 {% if tree_size == 1 %}
 	<p>{{ page.title }}</p>
