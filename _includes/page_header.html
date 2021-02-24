@@ -1,6 +1,11 @@
-{% assign tree = page.path | remove_first: "_" | remove: ".md" | remove: ".markdown" | remove: ".html" | split: '/' %}
+{% assign tree = page.path %}
 	<script>console.log("Tree: {{ tree }}");</script>
 {% assign tree_size = tree | size %}
 	<script>console.log("Tree size: {{ tree_size }}");</script>
 {% assign url = page.url %}
 	<script>console.log("URL: {{ url }}");</script>
+{% if tree_size == 1 %}
+	<p>{{ page.title }}</p>
+{% elsif tree_size == 2 %}
+	<p>{{ page.title }} but wait there's more </p>
+{% endif %}
