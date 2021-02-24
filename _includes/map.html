@@ -8,15 +8,18 @@
 	{% assign deepness = forloop.index %}
 	{% assign last = forloop.last %}
 	<script>console.log("Branch {{ forloop.index }} Path: {{ current }}");</script>
-	{% if deepness == 1 and current != "404.markdown" %}
+	{% if deepness == 1 and current != "404.markdown" and tree_size < 3 %}
 		{% for node in site.pages %}
 			{% assign deepness_one_current = current | remove_first: "_" %}
 			{% if node.path == deepness_one_current %}
 				<p class="--navigation_text_styling --page_header_text_styling">{{ node.title }}{% if last %}{% else %} ⟶ {% endif %}</p>
 			{% endif %}
 		{% endfor %}
+	{% if deepness == 1 and current != "404.markdown" and tree_size >= 3 %}
+		{% continue %}
 	{% elsif deepness == 1 and current == "404.markdown" %}
 		<p class="--navigation_text_styling --page_header_text_styling">?</p>
+		{% break %}
 	{% else %}
 		{% for node in site.documents %}
 			{% if node.path == current %}
