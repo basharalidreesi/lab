@@ -6,11 +6,7 @@
 		<script>console.log("Branch {{ forloop.index }}: {{ current }}");</script>
 		{% for node in site.documents %}
 			{% if forloop.index == 1 %}
-				{% assign no_underscore_current = current | remove_first: "_" %}
-				{% assign no_underscore_node = node | remove_first: "_" %}
-				{% if no_underscore_node.path == no_underscore_current %}
-					<script>console.log("Title: {{ no_underscore_node.title }}");</script>
-				{% endif %}
+				<script>console.log("Ignore for now");</script>
 			{% else %}
 				{% if node.path == current %}
 					<script>console.log("Title: {{ node.title }}");</script>
