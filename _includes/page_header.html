@@ -7,8 +7,9 @@
 		{% for node in site.documents %}
 			{% if forloop.index == 1 %}
 				{% assign no_underscore_current = current | remove_first: "_" %}
-				{% if site.pages.path == no_underscore_current %}
-					<script>console.log("Title: {{ node.title }}");</script>
+				{% assign no_underscore_node = node | remove_first: "_" %}
+				{% if no_underscore_node.path == no_underscore_current %}
+					<script>console.log("Title: {{ no_underscore_node.title }}");</script>
 				{% endif %}
 			{% else %}
 				{% if node.path == current %}
