@@ -39,7 +39,7 @@
 		
 		<script>
 			{% assign tree = page.path | remove_first: "_" | remove: ".html" | remove: ".md" | remove: ".markdown" | replace: "and", "&" | split: "/" %}
-			console.log("{% for item in tree %}{{ assign subitem = item | split: '-' }}{% for word in subitem %}{{ word | capitalize | join: ' ' }}{% endfor %}{% if forloop.last %}{% else %}, {% endif %}{% endfor %}");
+			console.log("{% for item in tree %}{{ item | replace: '-', ' ' }}{% if forloop.last %}{% else %}, {% endif %}{% endfor %}");
 			// https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
 			let vh = window.innerHeight * 0.01;
 			document.documentElement.style.setProperty('--vh', `${vh}px`);
