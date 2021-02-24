@@ -6,12 +6,13 @@
 	{% assign segment = page.path | split: branch %}
 	{% assign current = branch | prepend: segment[0] | append: ".markdown" %}
 	{% assign deepness = forloop.index %}
+	{% assign last = forloop.last %}
 	<script>console.log("Branch {{ forloop.index }} Path: {{ current }}");</script>
 	{% if deepness == 1 and current != "404.markdown" %}
 		{% for node in site.pages %}
 			{% assign deepness_one_current = current | remove_first: "_" %}
 			{% if node.path == deepness_one_current %}
-				<p class="--navigation_text_styling --page_header_text_styling">{{ node.title }}</p>
+				<p class="--navigation_text_styling --page_header_text_styling">{{ node.title }}{% if last %}{% else %} ⟶ {% endif %}</p>
 			{% endif %}
 		{% endfor %}
 	{% elsif deepness == 1 and current == "404.markdown" %}
@@ -19,7 +20,7 @@
 	{% else %}
 		{% for node in site.documents %}
 			{% if node.path == current %}
-				<p class="--navigation_text_styling --page_header_text_styling">{{ node.title }}</p>
+				<p class="--navigation_text_styling --page_header_text_styling">{{ node.title }}{% if last %}{% else %} ⟶ {% endif %}</p>
 			{% endif %}
 		{% endfor %}
 	{% endif %}
