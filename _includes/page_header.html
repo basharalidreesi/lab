@@ -2,7 +2,7 @@
 	<script>console.log("Tree: {{ tree | join: ' ⟶ ' }}");</script>
 	{% for branch in tree %}
 		{% assign segment = page.path | split: branch %}
-		{% assign current = branch | prepend: segment[0] %}
+		{% assign current = branch | prepend: segment[0] | append: ".markdown" %}
 		<script>console.log("Branch {{ forloop.index }}: {{ current }}");</script>
 		{% for node in site.documents %}
 			{% if node.path == current %}
