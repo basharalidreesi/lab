@@ -5,7 +5,8 @@
 {% assign url = page.url %}
 	<script>console.log("URL: {{ url }}");</script>
 {% for branch in tree %}
-	<script>console.log("{{ forloop.index }}: {{ branch }}");</script>
+	{% assign current = forloop.index %}
+	<script>console.log("{{ current }}: {{ branch }}");</script>
 {% endfor %}
 
 {% if tree_size == 1 %}
