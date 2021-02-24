@@ -4,13 +4,13 @@
 		{% assign segment = page.path | split: branch %}
 		{% assign current = branch | prepend: segment[0] | append: ".markdown" %}
 		{% assign deepness = forloop.index %}
-		<script>console.log("Branch {{ forloop.index }}: {{ current }}");</script>
+		<script>console.log("Branch {{ forloop.index }} Path: {{ current }}");</script>
 		{% for node in site.documents %}
 			{% if deepness == 1 %}
 				<script>console.log("Deepness 1. Ignore for now.");</script>
 			{% else %}
 				{% if node.path == current %}
-					<script>console.log("Title: {{ node.title }}");</script>
+					<script>console.log("Branch {{ deepness }} Title: {{ node.title }}");</script>
 				{% endif %}
 			{% endif %}
 		{% endfor %}
