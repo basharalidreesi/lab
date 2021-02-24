@@ -4,9 +4,10 @@
 	<script>console.log("Tree size: {{ tree_size }}");</script>
 {% assign url = page.url %}
 	<script>console.log("URL: {{ url }}");</script>
-{% for branch in tree %}
-	{% assign current = forloop.index %}
-	<script>console.log("{{ current }}: {{ branch }}");</script>
+{% assign current = 0 %}
+{% for branch in tree limit: current %}
+	<script>console.log("{{ foorloop.index }}: {{ branch }}");</script>
+	{% increment current %}
 {% endfor %}
 
 {% if tree_size == 1 %}
