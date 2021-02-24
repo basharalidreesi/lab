@@ -6,28 +6,28 @@
 */
 @font-face {
 	font-family: "Code New Roman";
-	src: url("/assets/fonts/code_new_roman/code_new_roman-regular.eot");
-	src: url("/assets/fonts/code_new_roman/code_new_roman-regular.eot?#iefix") format("embedded-opentype"),
-	url("/assets/fonts/code_new_roman/code_new_roman-regular.woff") format("woff"),
-	url("/assets/fonts/code_new_roman/code_new_roman-regular.ttf") format("truetype");
+	src: url("{{ site.baseurl }}/assets/fonts/code_new_roman/code_new_roman-regular.eot");
+	src: url("{{ site.baseurl }}/assets/fonts/code_new_roman/code_new_roman-regular.eot?#iefix") format("embedded-opentype"),
+	url("{{ site.baseurl }}/assets/fonts/code_new_roman/code_new_roman-regular.woff") format("woff"),
+	url("{{ site.baseurl }}/assets/fonts/code_new_roman/code_new_roman-regular.ttf") format("truetype");
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: "M+ 1p";
-	src: url("/assets/fonts/mplus_1p/mplus_1p-light.eot");
-	src: url("/assets/fonts/mplus_1p/mplus_1p-light.eot?#iefix") format("embedded-opentype"),
-	url("/assets/fonts/mplus_1p/mplus_1p-light.woff") format("woff"),
-	url("/assets/fonts/mplus_1p/mplus_1p-light.ttf") format("truetype");
+	src: url("{{ site.baseurl }}/assets/fonts/mplus_1p/mplus_1p-light.eot");
+	src: url("{{ site.baseurl }}/assets/fonts/mplus_1p/mplus_1p-light.eot?#iefix") format("embedded-opentype"),
+	url("{{ site.baseurl }}/assets/fonts/mplus_1p/mplus_1p-light.woff") format("woff"),
+	url("{{ site.baseurl }}/assets/fonts/mplus_1p/mplus_1p-light.ttf") format("truetype");
 	font-weight: 300;
 	font-style: normal;
 }
 @font-face {
 	font-family: "M+ 1p";
-	src: url("/assets/fonts/mplus_1p/mplus_1p-regular.eot");
-	src: url("/assets/fonts/mplus_1p/mplus_1p-regular.eot?#iefix") format("embedded-opentype"),
-	url("/assets/fonts/mplus_1p/mplus_1p-regular.woff") format("woff"),
-	url("/assets/fonts/mplus_1p/mplus_1p-regular.ttf") format("truetype");
+	src: url("{{ site.baseurl }}/assets/fonts/mplus_1p/mplus_1p-regular.eot");
+	src: url("{{ site.baseurl }}/assets/fonts/mplus_1p/mplus_1p-regular.eot?#iefix") format("embedded-opentype"),
+	url("{{ site.baseurl }}/assets/fonts/mplus_1p/mplus_1p-regular.woff") format("woff"),
+	url("{{ site.baseurl }}/assets/fonts/mplus_1p/mplus_1p-regular.ttf") format("truetype");
 	font-weight: 400;
 	font-style: normal;
 }
