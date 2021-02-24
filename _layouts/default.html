@@ -71,10 +71,9 @@
 				</footer>
 			{% endunless %}
 		</div>
-		{% if page.header_location == "central" %}
+		{% if page.header_location == "central" and page.layout == "default" %}
 			{% include down.html %}
-		{% endif %}
-		{% if page.layout == "cascade" %}
+		{% elsif page.layout == "cascade" %}
 			{% include right.html %}
 		{% endif %}
 	</body>
