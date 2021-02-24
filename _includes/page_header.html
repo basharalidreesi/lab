@@ -3,10 +3,11 @@
 	{% for branch in tree %}
 		{% assign segment = page.path | split: branch %}
 		{% assign current = branch | prepend: segment[0] | append: ".markdown" %}
+		{% assign deepness = forloop.index %}
 		<script>console.log("Branch {{ forloop.index }}: {{ current }}");</script>
 		{% for node in site.documents %}
-			{% if forloop.index == 1 %}
-				<script>console.log("Ignore for now");</script>
+			{% if deepness == 1 %}
+				<script>console.log("Deepness 1. Ignore for now.");</script>
 			{% else %}
 				{% if node.path == current %}
 					<script>console.log("Title: {{ node.title }}");</script>
