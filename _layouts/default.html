@@ -39,10 +39,7 @@
 		
 		<script>
 			{% assign tree = page.path | remove_first: "_" | remove: ".html" | remove: ".md" | remove: ".markdown" | split: "/" %}
-			{% for item in tree %}
-				{% assign nav = item | append: ", " %}
-			{% endfor %}
-			console.log("{{ nav }}");
+			console.log("{% for item in tree %} {{ item | append: ', ' }} {% endfor %}");
 			// https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
 			let vh = window.innerHeight * 0.01;
 			document.documentElement.style.setProperty('--vh', `${vh}px`);
