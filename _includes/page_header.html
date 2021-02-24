@@ -2,7 +2,13 @@
 	<script>console.log("Tree: {{ tree | join: ' ⟶ ' }}");</script>
 	{% for branch in tree %}
 		{% assign segment = page.path | split: branch %}
-		<script>console.log("Branch {{ forloop.index }}: {{ segment[0] }}{{ branch }}");</script>
+		{% assign current = branch | prepend: segment[0] %}
+		<script>console.log("Branch {{ forloop.index }} #: {{ current }}");</script>
+		{% for node in site.pages %}
+			{% if node.path == current %}
+				<script>console.log("Branch {{ forloop.index }} title: {{ node.title }}");</script>
+			{% endif %}
+		{% endfor %}
 	{% endfor %}
 {% assign tree_size = tree | size %}
 	<script>console.log("Tree size: {{ tree_size }}");</script>
