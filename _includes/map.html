@@ -1,13 +1,10 @@
 {% assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" %}
-	<script>console.log("Tree: {{ tree | join: ' ⟶ ' }}");</script>
 {% assign tree_size = tree | size %}
-	<script>console.log("Tree size: {{ tree_size }}");</script>
 {% for branch in tree %}
 	{% assign segment = page.path | split: branch %}
 	{% assign current = branch | prepend: segment[0] | append: ".markdown" %}
 	{% assign deepness = forloop.index %}
 	{% assign last = forloop.last %}
-	<script>console.log("Branch {{ forloop.index }} Path: {{ current }}");</script>
 	{% if deepness == 1 and current != "404.markdown" and tree_size < 3 %}
 		{% for node in site.pages %}
 			{% assign deepness_one_current = current | remove_first: "_" %}
@@ -16,10 +13,9 @@
 			{% endif %}
 		{% endfor %}
 	{% if deepness == 1 and current != "404.markdown" and tree_size >= 3 %}
-		{% continue %}
+		<p class="--navigation_text_styling --page_header_text_styling">Jad Toghuj ⟶ </p>
 	{% elsif deepness == 1 and current == "404.markdown" %}
 		<p class="--navigation_text_styling --page_header_text_styling">?</p>
-		{% break %}
 	{% else %}
 		{% for node in site.documents %}
 			{% if node.path == current %}
