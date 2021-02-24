@@ -1,4 +1,4 @@
-{% assign tree = page.path | split: "/" %}
+{% assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" %}
 	<script>console.log("Tree: {{ tree | join: ' ⟶ ' }}");</script>
 	{% for branch in tree %}
 		{% assign segment = page.path | split: branch %}
