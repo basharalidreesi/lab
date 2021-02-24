@@ -38,8 +38,8 @@
 		</noscript>
 		
 		<script>
-			{% assign tree = page.path | remove_first: "_" | remove: ".html" | remove: ".md" | remove: ".markdown" | split: "/" %}
-			console.log("{% for item in tree %} {{ item }}, {% endfor %}");
+			{% assign tree = page.path | remove_first: "_" | remove: ".html" | remove: ".md" | remove: ".markdown" | replace: "-", " " | split: "/" %}
+			console.log("{% for item in tree %} {{ item | split: " " | capitalize | join: " " }} — {% endfor %}");
 			// https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
 			let vh = window.innerHeight * 0.01;
 			document.documentElement.style.setProperty('--vh', `${vh}px`);
