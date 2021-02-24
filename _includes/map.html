@@ -12,9 +12,10 @@
 			{% endif %}
 		{% endfor %}
 	{% elsif deepness == 1 and current != "404.markdown" and tree.size >= 3 %}
-		<p class="--navigation_text_styling --page_header_text_styling">Jad Toghuj ⟶ </p>
+		{% continue %}
 	{% elsif deepness == 1 and current == "404.markdown" %}
 		<p class="--navigation_text_styling --page_header_text_styling">?</p>
+		{% break %}
 	{% else %}
 		{% for node in site.documents %}
 			{% if node.path == current %}
