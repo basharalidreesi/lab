@@ -38,7 +38,7 @@
 		</noscript>
 		
 		<script>
-			{% assign tree = page.path | remove_first: "_" | remove: ".html" | remove: ".md" | remove: ".markdown" | replace: "-", " " | split: "/" %}
+			{% assign tree = page.path | remove_first: "_" | remove: ".html" | remove: ".md" | remove: ".markdown" | split: "/" %}
 			{% for item in tree %}
 				{% assign nav = item | append: ", " %}
 			{% endfor %}
