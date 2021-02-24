@@ -12,89 +12,9 @@
 		{% unless page_text_colour == "#000" or page_text_colour == "#000000" or page_text_colour == "black" %}
 			<script src="{{ site.baseurl }}/assets/js/svg-inject.min.js"></script>
 		{% endunless %}
-		<style>
-			:root {
-				--primary_colour: {{ page.primary_colour }};
-				--secondary_colour: {{ page.secondary_colour }};
-				--border_colour: {{ page.border_colour }};
-				--text_colour: {{ page.text_colour }};
-			}
-		</style>
-		<noscript>
-			<style>
-				#header_graphic {
-					display: none;
-				}
-				.mother_container-header_container_central {
-					top: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 0.75);
-				}
-				.header_container-header_wrapper_central {
-					padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
-					position: absolute;
-					left: 50%;
-					transform: translateX(-50%);
-				}
-			</style>
-		</noscript>
-		
-		<script>
-			// https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
-			let vh = window.innerHeight * 0.01;
-			document.documentElement.style.setProperty('--vh', `${vh}px`);
-			console.log("--vh has been set to " + `${vh}px` + ".");
-			if (document.getElementById) {
-				window.onload = swap;
-			};
-			function swap() {
-				random_header_graphic_array = new Array(
-					{% assign header_graphics = site.static_files | where: "header_graphic", true %}
-					{% for header_graphic in header_graphics %}
-						"{{ site.baseurl }}{{ header_graphic.path }}"{% if forloop.last %}{% else %}, {% endif %}
-					{% endfor %}
-				);
-				var header_graphic_number = random_header_graphic_array.length;
-				x = (Math.floor(Math.random() * header_graphic_number));
-				random_header_graphic = (random_header_graphic_array[x]);
-				document.getElementById("header_graphic").src = random_header_graphic;
-				console.log("Loaded " + random_header_graphic + " from a total number of " + header_graphic_number + " header graphics.");
-				{% unless page_text_colour == "#000" or page_text_colour == "#000000" or page_text_colour == "black" %}
-					var extension = random_header_graphic.split(".").pop();
-					if (extension == "svg") {
-						SVGInject(document.getElementById("header_graphic"));
-						console.log("SVG header injected.");
-					} else {
-						console.log("No SVG header detected. Injection has not occured.");
-					}
-				 {% else %}
-					console.log("SVG header injection unnecessary.");
-				 {% endunless %}
-			}
-			function lock_scroll() {
-				window.scrollTo(0, 0);
-				document.body.classList.toggle("--lock_scroll");
-				console.log("Body scrolling temporarily locked.");
-			}
-			{% if page.header_location == "central" %}
-				window.addEventListener("scroll", remove_indicator_arrow, {passive: true});
-				function remove_indicator_arrow() {
-					document.getElementById("indicator_arrow").style.opacity = "0";
-					console.log("Indicator arrow hidden.");
-					window.removeEventListener("scroll", remove_indicator_arrow, {passive: true});
-					console.log("Scroll listener removed.");
-					setTimeout(() => { document.getElementById("indicator_arrow").style.display = "none" }, 1250);
-					setTimeout(() => { console.log("Indicator arrow removed.") }, 1250);
-				}
-			 	function scroll_arrow_into_view(event) {
-					var scrolled_element = event.target;
-					scrolled_element.scrollIntoView({
-						behavior: 'auto',
-						block: 'center',
-						inline: 'center'
-					});
-					console.log("Scrolled arrow into middle of viewport.");
-				}
-			{% endif %}
-		</script>
+		{% include colours.html %}
+		{% include noscript.html %}
+		{% include script.html %}
 	</head>
 	<body>
 		<div class="--mobile_background"></div>
