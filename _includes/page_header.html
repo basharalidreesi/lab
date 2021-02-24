@@ -1,3 +1,6 @@
-<header class="content_container-page_header">
-	<p class="--color_black --font_size_universal_answer_single --text_align_center">{{ site.title }} ⟶ {{ page.title }}</p>
-</header>
+{% assign tree = page.path | remove_first: "_" | remove: ".md" | remove: ".markdown" | remove: ".html" | split: '/' %}
+	<script>console.log("Tree: {{ tree }}");</script>
+{% assign tree_size = tree | size %}
+	<script>console.log("Tree size: {{ tree_size }}");</script>
+{% assign url = page.url %}
+	<script>console.log("URL: {{ url }}");</script>
