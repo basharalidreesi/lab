@@ -1,17 +1,17 @@
 <!-- begin nav.html -->
-<input type="checkbox" id="navigation_checkbox">
-<label for="navigation_checkbox" class="navigation_container_upper-navigation_checkbox_toggle" onClick="lock_scroll();">
-	<div class="--expand_navigation_arrow"></div>
+<input type="checkbox" id="nav_checkbox">
+<label for="nav_checkbox" class="nav_container_upper-nav_checkbox_toggle" onClick="lock_scroll();">
+	<div class="--nav_checkbox_arrow"></div>
 	{% include map.html %}
-	<div class="--expand_navigation_arrow"></div>
+	<div class="--nav_checkbox_arrow"></div>
 </label>
-<ul class="navigation_container-navigation_list_wrapper">
-	{% assign sorted = site.pages | sort: "position" %}
-	{% for item in sorted %}
-		{% if item.is_listed == true %}
-			<li class="navigation_list_wrapper-navigation_list_item --navigation_text_styling {% if item.url == page.url %}--active_navigation_text_styling{% endif %}">
-				<a class="--anchor_styling" href="{{ site.baseurl }}{{ item.url }}">
-					{{ item.title }}
+<ul class="nav_container-nav_list_wrapper">
+	{% assign pages = site.pages | sort: "position" %}
+	{% for node in pages %}
+		{% if node.is_listed %}
+			<li class="nav_list_wrapper-nav_list_item --nav_text_styling {% if node.url == page.url %} --current_nav_text_styling {% endif %}">
+				<a class="--anchor_styling" href="{{ site.baseurl }}{{ node.url }}">
+					{{ node.title }}
 				</a>
 			</li>
 		{% endif %}
