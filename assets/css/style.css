@@ -5,23 +5,78 @@
 └───────────┘
 */
 :root {
+	/*
+	┌───────┐
+	│ begin └───┐
+	│ universal │
+	└───────────┘
+	*/
 	--font_size: 15px;
 	--universal_answer: 1rem;
 	--universal_answer_multiplier: 2;
+	/*
+	┌───────┐
+	│ begin └──┐
+	│ nav text │
+	└──────────┘
+	*/
 	--navigation_text_font: "M+ 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--navigation_text_font_size: 1rem;
+	--navigation_text_font_weight: 300;
+	/*
+	┌───────┐
+	│ begin └─────┐
+	│ footer text │
+	└─────────────┘
+	*/
 	--footer_text_font: "M+ 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--footer_text_font_size: 0.75rem;
+	--footer_text_font_weight: 300;
+	/*
+	┌───────┐
+	│ begin └───┐
+	│ list text │
+	└───────────┘
+	*/
 	--list_text_font: "M+ 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--list_text_font_size: 1.25rem;
+	--list_text_font_weight: 400;
+	/*
+	┌───────┐
+	│ begin └──┐
+	│ tag text │
+	└──────────┘
+	*/
 	--tag_text_font: "Code New Roman", monospace;
 	--tag_text_font_size: 1rem;
+	--tag_text_font_weight: normal;
+	/*
+	┌───────┐
+	│ begin └─────────┐
+	│ title card text │
+	└─────────────────┘
+	*/
 	--title_card_text_font: "M+ 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--title_card_text_font_size: 1.5rem;
+	--list_text_font_weight: 400;
+	/*
+	┌───────┐
+	│ begin └──────────┐
+	│ footer card text │
+	└──────────────────┘
+	*/
 	--footer_card_text_font: "M+ 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--footer_card_text_font_size: 1.5rem;
+	--list_text_font_weight: 400;
+	/*
+	┌───────┐
+	│ begin └────────┐
+	│ text card text │
+	└────────────────┘
+	*/
 	--text_card_text_font: "M+ 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--text_card_text_font_size: 1.25rem;
+	--list_text_font_weight: 400;
 }
 
 /*
@@ -87,11 +142,11 @@ address {
 	└───────────────────┘
 	*/
 	.--nav_text_styling {
-		color: var(--text_colour);
 		font-family: var(--navigation_text_font);
-		font-weight: 300;
-		text-align: center;
 		font-size: var(--navigation_text_font_size);
+		font-weight: var(--navigation_text_font_weight);
+		color: var(--text_colour);
+		text-align: center;
 	}
 	.--map_text_styling {
 		overflow: hidden;
@@ -105,54 +160,55 @@ address {
 		min-width: 25%;
 	}
 	.--footer_text_styling {
-		color: var(--text_colour);
 		font-family: var(--footer_text_font);
-		font-weight: 300;
-		text-align: center;
 		font-size: var(--footer_text_font_size);
-		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+		font-weight: var(--footer_text_font_weight);
+		color: var(--text_colour);
+		text-align: center;
 		line-height: 250%;
+		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+		overflow: hidden;
 	}
 	.--list_text_styling {
-		color: var(--text_colour);
 		font-family: var(--list_text_font);
-		font-weight: 400;
-		text-align: center;
 		font-size: var(--list_text_font_size);
+		font-weight: var(--list_text_font_weight);
+		color: var(--text_colour);
+		text-align: center;
 	}
 	.--tag_text_styling {
-		color: var(--text_colour);
 		font-family: var(--tag_text_font);
-		font-weight: normal;
-		text-align: center;
 		font-size: var(--tag_text_font_size);
+		font-weight: var(--tag_text_font_weight);
+		color: var(--text_colour);
+		text-align: center;
 	}
 	.--title_card_text_styling {
-		color: var(--text_colour);
 		font-family: var(--title_card_text_font);
-		font-weight: 300;
-		text-align: center;
 		font-size: var(--title_card_text_font_size);
-		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+		font-weight: var(--title_card_text_font_weight);
+		color: var(--text_colour);
+		text-align: center;
 		line-height: 200%;
+		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	}
 	.--footer_card_text_styling {
-		color: var(--text_colour);
 		font-family: var(--footer_card_text_font);
-		font-weight: 300;
-		text-align: center;
 		font-size: var(--footer_card_text_font_size);
-		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+		font-weight: var(--footer_card_text_font_weight);
+		color: var(--text_colour);
+		text-align: center;
 		line-height: 200%;
+		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	}
 	.--text_card_text_styling {
-		color: var(--text_colour);
 		font-family: var(--text_card_text_font);
-		font-weight: 300;
-		text-align: center;
 		font-size: var(--text_card_text_font_size);
-		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+		font-weight: var(--text_card_text_font_size);
+		color: var(--text_colour);
+		text-align: center;
 		line-height: 200%;
+		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	}
 	.--no_bottom_padding {
 		padding-bottom: 0;
@@ -164,10 +220,11 @@ address {
 	└──────────────────┘
 	*/
 	.--anchor_styling {
-		color: var(--text_colour);
-		display: inline;
 		font-family: inherit;
 		font-size: inherit;
+		font-weight: inherit;
+		color: inherit;
+		display: inline;
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 		text-decoration: none;
 		background-image: linear-gradient(currentColor, currentColor);
@@ -177,14 +234,16 @@ address {
 		transition: background-size 0.25s;
 	}
 	.--hyperlink_styling {
-		display: inline;
 		font-family: inherit;
 		font-size: inherit;
+		font-weight: inherit;
+		color: inherit;
+		display: inline;
 		border: 1px solid var(--text_colour);
+		border-radius: 5000px;
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2 / 2);
 		padding-left: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
 		padding-right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
-		border-radius: 5000px;
 		cursor: alias;
 	}
 	.--current_nav_text_styling a {
@@ -192,15 +251,17 @@ address {
 		background-size: 100% 2px;
 	}
 	.--text_card_text_styling a, .--footer_card_text_styling a, .--title_card_text_styling a {
+		font-family: inherit;
+		font-size: inherit;
+		font-weight: inherit;
+		color: inherit;
 		display: inline;
 		border: 1px solid var(--text_colour);
+		border-radius: 5000px;
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2 / 2);
 		padding-left: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
 		padding-right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
-		border-radius: 5000px;
-		color: var(--text_colour);
-		font-family: inherit;
-		font-size: inherit;
+		cursor: alias;
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 		text-decoration: none;
 		background-image: linear-gradient(currentColor, currentColor);
@@ -208,7 +269,6 @@ address {
 		background-repeat: no-repeat;
 		background-size: 0% 2px;
 		transition: background-size 0.25s;
-		cursor: alias;
 	}
 
 /*
