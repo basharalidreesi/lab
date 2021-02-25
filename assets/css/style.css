@@ -15,7 +15,16 @@
 	--font_size: 15px;
 	--universal_answer: 1rem;
 	--universal_answer_multiplier: 2;
-	--single: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+	--single: var(--universal_answer) * var(--universal_answer_multiplier) / 2;
+	--double: var(--universal_answer) * var(--universal_answer_multiplier);
+	--quadruple: var(--universal_answer) * var(--universal_answer_multiplier) * 2;
+	--half: var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2;
+	--quarter: var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2 / 2;
+	--single_negative: var(--universal_answer) * var(--universal_answer_multiplier) / 2 * -1;
+	--double_negative: var(--universal_answer) * var(--universal_answer_multiplier) * -1;
+	--quadruple_negative: var(--universal_answer) * var(--universal_answer_multiplier) * 2 * -1;
+	--half_negative: var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2 * -1;
+	--quarter_negative: var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2 / 2 * -1;
 	/*
 	┌───────┐
 	│ begin └──┐
@@ -81,26 +90,11 @@
 	--text_card_text_font_weight: 400;
 	/*
 	┌───────┐
-	│ begin └─┐
-	│ presets │
-	└─────────┘
-	*/
-	--double: calc(var(--single) * 2);
-	--quadruple: calc(var(--single) * 4);
-	--half: calc(var(--single) / 2);
-	--quarter: calc(var(--single) / 4);
-	--single_negative: calc(var(--single) * -1);
-	--double_negative: calc(var(--single) * -2);
-	--quadruple_negative: calc(var(--single) * -4);
-	--half_negative: calc(var(--single) / -2);
-	--quarter_negative: calc(var(--single) / -4);
-	/*
-	┌───────┐
 	│ begin └──┐
 	│ elements │
 	└──────────┘
 	*/
-	--screen_height: calc(var(--vh) * 100);
+	--screen_height: calc(var(--vh, 1vh) * 100);
 	--screen_height_half: calc(var(--screen_height) / 2);
 	--nav_height: calc(var(--double) + var(--nav_text_font_size) + var(--double));
 	--header_height: var(--nav_height);
