@@ -1,6 +1,9 @@
 <!-- begin map.html -->
 {% assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" %}
-<script>console.log("map.html tree: {{ tree | join: ' ⟶ ' }}");</script>
+<script>
+	console.log("[map.html]: Tree: {{ tree | join: ' ⟶ ' }}");
+	console.log("[map.html]: Size: {{ tree | size }}");
+</script>
 {% for branch in tree %}
 	{% assign segment = page.path | split: branch %}
 	{% assign current = branch | prepend: segment[0] | append: ".markdown" %}
