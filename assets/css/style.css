@@ -5,30 +5,85 @@
 └───────────┘
 */
 :root {
+	/*
+	┌───────┐
+	│ begin └───┐
+	│ universal │
+	└───────────┘
+	*/
 	--font_size: 15px;
 	--universal_answer: 1rem;
 	--universal_answer_multiplier: 2;
-	--navigation_text_font: "M+ 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-	--navigation_text_font_size: 1rem;
+	/*
+	┌───────┐
+	│ begin └──┐
+	│ nav text │
+	└──────────┘
+	*/
+	--nav_text_font: "M+ 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	--nav_text_font_size: 1rem;
+	--nav_text_font_weight: 300;
+	/*
+	┌───────┐
+	│ begin └─────┐
+	│ footer text │
+	└─────────────┘
+	*/
 	--footer_text_font: "M+ 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--footer_text_font_size: 0.75rem;
+	--footer_text_font_weight: 300;
+	/*
+	┌───────┐
+	│ begin └───┐
+	│ list text │
+	└───────────┘
+	*/
 	--list_text_font: "M+ 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--list_text_font_size: 1.25rem;
+	--list_text_font_weight: 400;
+	/*
+	┌───────┐
+	│ begin └──┐
+	│ tag text │
+	└──────────┘
+	*/
 	--tag_text_font: "Code New Roman", monospace;
 	--tag_text_font_size: 1rem;
+	--tag_text_font_weight: normal;
+	/*
+	┌───────┐
+	│ begin └─────────┐
+	│ title card text │
+	└─────────────────┘
+	*/
 	--title_card_text_font: "M+ 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--title_card_text_font_size: 1.5rem;
+	--list_text_font_weight: 400;
+	/*
+	┌───────┐
+	│ begin └──────────┐
+	│ footer card text │
+	└──────────────────┘
+	*/
 	--footer_card_text_font: "M+ 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--footer_card_text_font_size: 1.5rem;
+	--list_text_font_weight: 400;
+	/*
+	┌───────┐
+	│ begin └────────┐
+	│ text card text │
+	└────────────────┘
+	*/
 	--text_card_text_font: "M+ 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--text_card_text_font_size: 1.25rem;
+	--list_text_font_weight: 400;
 }
 
 /*
 ┌───────┐
-│ begin └────────┐
-│ initial resets │
-└────────────────┘
+│ begin └┐
+│ resets │
+└────────┘
 */
 html, body {
 	margin: 0;
@@ -82,16 +137,16 @@ address {
 */
 	/*
 	┌───────┐
-	│ begin └───────────┐
-	│ typography styles │
-	└───────────────────┘
+	│ begin └─────┐
+	│ text styles │
+	└─────────────┘
 	*/
 	.--nav_text_styling {
+		font-family: var(--nav_text_font);
+		font-size: var(--nav_text_font_size);
+		font-weight: var(--nav_text_font_weight);
 		color: var(--text_colour);
-		font-family: var(--navigation_text_font);
-		font-weight: 300;
 		text-align: center;
-		font-size: var(--navigation_text_font_size);
 	}
 	.--map_text_styling {
 		overflow: hidden;
@@ -105,54 +160,55 @@ address {
 		min-width: 25%;
 	}
 	.--footer_text_styling {
-		color: var(--text_colour);
 		font-family: var(--footer_text_font);
-		font-weight: 300;
-		text-align: center;
 		font-size: var(--footer_text_font_size);
-		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+		font-weight: var(--footer_text_font_weight);
+		color: var(--text_colour);
+		text-align: center;
 		line-height: 250%;
+		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+		overflow: hidden;
 	}
 	.--list_text_styling {
-		color: var(--text_colour);
 		font-family: var(--list_text_font);
-		font-weight: 400;
-		text-align: center;
 		font-size: var(--list_text_font_size);
+		font-weight: var(--list_text_font_weight);
+		color: var(--text_colour);
+		text-align: center;
 	}
 	.--tag_text_styling {
-		color: var(--text_colour);
 		font-family: var(--tag_text_font);
-		font-weight: normal;
-		text-align: center;
 		font-size: var(--tag_text_font_size);
+		font-weight: var(--tag_text_font_weight);
+		color: var(--text_colour);
+		text-align: center;
 	}
 	.--title_card_text_styling {
-		color: var(--text_colour);
 		font-family: var(--title_card_text_font);
-		font-weight: 300;
-		text-align: center;
 		font-size: var(--title_card_text_font_size);
-		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+		font-weight: var(--title_card_text_font_weight);
+		color: var(--text_colour);
+		text-align: center;
 		line-height: 200%;
+		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	}
 	.--footer_card_text_styling {
-		color: var(--text_colour);
 		font-family: var(--footer_card_text_font);
-		font-weight: 300;
-		text-align: center;
 		font-size: var(--footer_card_text_font_size);
-		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+		font-weight: var(--footer_card_text_font_weight);
+		color: var(--text_colour);
+		text-align: center;
 		line-height: 200%;
+		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	}
 	.--text_card_text_styling {
-		color: var(--text_colour);
 		font-family: var(--text_card_text_font);
-		font-weight: 300;
-		text-align: center;
 		font-size: var(--text_card_text_font_size);
-		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+		font-weight: var(--text_card_text_font_size);
+		color: var(--text_colour);
+		text-align: center;
 		line-height: 200%;
+		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	}
 	.--no_bottom_padding {
 		padding-bottom: 0;
@@ -164,10 +220,11 @@ address {
 	└──────────────────┘
 	*/
 	.--anchor_styling {
-		color: var(--text_colour);
-		display: inline;
 		font-family: inherit;
 		font-size: inherit;
+		font-weight: inherit;
+		color: inherit;
+		display: inline;
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 		text-decoration: none;
 		background-image: linear-gradient(currentColor, currentColor);
@@ -177,14 +234,16 @@ address {
 		transition: background-size 0.25s;
 	}
 	.--hyperlink_styling {
-		display: inline;
 		font-family: inherit;
 		font-size: inherit;
+		font-weight: inherit;
+		color: inherit;
+		display: inline;
 		border: 1px solid var(--text_colour);
+		border-radius: 5000px;
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2 / 2);
 		padding-left: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
 		padding-right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
-		border-radius: 5000px;
 		cursor: alias;
 	}
 	.--current_nav_text_styling a {
@@ -192,15 +251,17 @@ address {
 		background-size: 100% 2px;
 	}
 	.--text_card_text_styling a, .--footer_card_text_styling a, .--title_card_text_styling a {
+		font-family: inherit;
+		font-size: inherit;
+		font-weight: inherit;
+		color: inherit;
 		display: inline;
 		border: 1px solid var(--text_colour);
+		border-radius: 5000px;
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2 / 2);
 		padding-left: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
 		padding-right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 / 2);
-		border-radius: 5000px;
-		color: var(--text_colour);
-		font-family: inherit;
-		font-size: inherit;
+		cursor: alias;
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 		text-decoration: none;
 		background-image: linear-gradient(currentColor, currentColor);
@@ -208,7 +269,6 @@ address {
 		background-repeat: no-repeat;
 		background-size: 0% 2px;
 		transition: background-size 0.25s;
-		cursor: alias;
 	}
 
 /*
@@ -262,33 +322,33 @@ body {
 	top: -1px;
 	margin-top:
 		calc(	50vh /* screen half height */
-			- ((var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to navigation height) */
-			+ var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to navigation height) */
-			+ var(--navigation_text_font_size)) /* half of header height (identical to navigation height) */
-			/ 2 ) /* half of header height (identical to navigation height) */
+			- ((var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to nav height) */
+			+ var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to nav height) */
+			+ var(--nav_text_font_size)) /* half of header height (identical to nav height) */
+			/ 2 ) /* half of header height (identical to nav height) */
 			+ 1px /* compensate for top: -1px */
 		);
 	margin-top:
 		calc(	(var(--vh, 1vh) * 50) /* screen half height */
-			- ((var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to navigation height) */
-			+ var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to navigation height) */
-			+ var(--navigation_text_font_size)) /* half of header height (identical to navigation height) */
-			/ 2 ) /* half of header height (identical to navigation height) */
+			- ((var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to nav height) */
+			+ var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to nav height) */
+			+ var(--nav_text_font_size)) /* half of header height (identical to nav height) */
+			/ 2 ) /* half of header height (identical to nav height) */
 			+ 1px /* compensate for top: -1px */
 		);
 	margin-bottom:
 		calc(	50vh /* screen half height */
-			- ((var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to navigation height) */
-			+ var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to navigation height) */
-			+ var(--navigation_text_font_size)) /* half of header height (identical to navigation height) */
-			/ 2 ) /* half of header height (identical to navigation height) */
+			- ((var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to nav height) */
+			+ var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to nav height) */
+			+ var(--nav_text_font_size)) /* half of header height (identical to nav height) */
+			/ 2 ) /* half of header height (identical to nav height) */
 		);
 	margin-bottom:
 		calc(	(var(--vh, 1vh) * 50) /* screen half height */
-			- ((var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to navigation height) */
-			+ var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to navigation height) */
-			+ var(--navigation_text_font_size)) /* half of header height (identical to navigation height) */
-			/ 2 ) /* half of header height (identical to navigation height) */
+			- ((var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to nav height) */
+			+ var(--universal_answer) * var(--universal_answer_multiplier) /* half of header height (identical to nav height) */
+			+ var(--nav_text_font_size)) /* half of header height (identical to nav height) */
+			/ 2 ) /* half of header height (identical to nav height) */
 		);
 }
 .mother_container-content_container {
@@ -342,9 +402,9 @@ body {
 .header_container-header_wrapper_central {
 	height:
 		calc(	0px /* initial value for debug */
-			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
-			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
-			+ var(--navigation_text_font_size) /* navigation text line height */
+			+ var(--universal_answer) * var(--universal_answer_multiplier) /* nav padding-top */
+			+ var(--universal_answer) * var(--universal_answer_multiplier) /* nav padding-bottom */
+			+ var(--nav_text_font_size) /* nav text line height */
 		);
 	padding: 0;
 	text-align: center;
@@ -358,9 +418,9 @@ body {
 	/* maybe make it so that .header_anchor-header_graphic's visibility is hidden and set the graphic as a CSS background-image? */
 	height:
 		calc(	0px /* initial value for debug */
-			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
-			+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
-			+ var(--navigation_text_font_size) /* navigation text line height */
+			+ var(--universal_answer) * var(--universal_answer_multiplier) /* nav padding-top */
+			+ var(--universal_answer) * var(--universal_answer_multiplier) /* nav padding-bottom */
+			+ var(--nav_text_font_size) /* nav text line height */
 		);
 	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	text-align: center;
@@ -529,17 +589,17 @@ body {
 		flex-flow: row nowrap;
 		height:
 			calc(	100vh /* screen height */
-				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
-				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
-				+ var(--navigation_text_font_size)) /* navigation text line height */
+				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* nav padding-top */
+				+ var(--universal_answer) * var(--universal_answer_multiplier) /* nav padding-bottom */
+				+ var(--nav_text_font_size)) /* nav text line height */
 				* 2) /* header height */
 				- 1px /* idk why but there's an extra pixel */
 			);
 		height:
 			calc(	(var(--vh, 1vh) * 100) /* screen height */
-				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
-				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
-				+ var(--navigation_text_font_size)) /* navigation text line height */
+				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* nav padding-top */
+				+ var(--universal_answer) * var(--universal_answer_multiplier) /* nav padding-bottom */
+				+ var(--nav_text_font_size)) /* nav text line height */
 				* 2) /* header height */
 				- 1px /* idk why but there's an extra pixel */
 			);
@@ -549,17 +609,17 @@ body {
 		flex: 1 0 auto;
 		min-width:
 			calc(	100vh /* screen height */
-				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
-				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
-				+ var(--navigation_text_font_size)) /* navigation text line height */
+				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* nav padding-top */
+				+ var(--universal_answer) * var(--universal_answer_multiplier) /* nav padding-bottom */
+				+ var(--nav_text_font_size)) /* nav text line height */
 				* 2) /* header height */
 				- 1px /* idk why but there's an extra pixel */
 			);
 		min-width:
 			calc(	(var(--vh, 1vh) * 100) /* screen height */
-				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
-				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
-				+ var(--navigation_text_font_size)) /* navigation text line height */
+				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* nav padding-top */
+				+ var(--universal_answer) * var(--universal_answer_multiplier) /* nav padding-bottom */
+				+ var(--nav_text_font_size)) /* nav text line height */
 				* 2) /* header height */
 				- 1px /* idk why but there's an extra pixel */
 			);
@@ -595,17 +655,17 @@ body {
 		position: relative;
 		min-width:
 			calc(	(100vh /* screen height */
-				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
-				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
-				+ var(--navigation_text_font_size)) /* navigation text line height */
+				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* nav padding-top */
+				+ var(--universal_answer) * var(--universal_answer_multiplier) /* nav padding-bottom */
+				+ var(--nav_text_font_size)) /* nav text line height */
 				* 2)) /* header height */
 				* 1.78 /* aspect ratio */
 			);
 		min-width:
 			calc(	((var(--vh, 1vh) * 100) /* screen height */
-				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
-				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
-				+ var(--navigation_text_font_size)) /* navigation text line height */
+				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* nav padding-top */
+				+ var(--universal_answer) * var(--universal_answer_multiplier) /* nav padding-bottom */
+				+ var(--nav_text_font_size)) /* nav text line height */
 				* 2)) /* header height */
 				* 1.78 /* aspect ratio */
 			);
@@ -624,17 +684,17 @@ body {
 		flex: 1 0 auto;
 		min-width:
 			calc(	100vh /* screen height */
-				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
-				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
-				+ var(--navigation_text_font_size)) /* navigation text line height */
+				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* nav padding-top */
+				+ var(--universal_answer) * var(--universal_answer_multiplier) /* nav padding-bottom */
+				+ var(--nav_text_font_size)) /* nav text line height */
 				* 2) /* header height */
 				- 1px /* idk why but there's an extra pixel */
 			);
 		min-width:
 			calc(	(var(--vh, 1vh) * 100) /* screen height */
-				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
-				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
-				+ var(--navigation_text_font_size)) /* navigation text line height */
+				- ((var(--universal_answer) * var(--universal_answer_multiplier) /* nav padding-top */
+				+ var(--universal_answer) * var(--universal_answer_multiplier) /* nav padding-bottom */
+				+ var(--nav_text_font_size)) /* nav text line height */
 				* 2) /* header height */
 				- 1px /* idk why but there's an extra pixel */
 			);
@@ -653,9 +713,6 @@ body {
 */
 .footer_container-footer_wrapper {
 	padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) * 2);
-}
-address p {
-	overflow: hidden;
 }
 
 /*
@@ -880,9 +937,9 @@ address p {
 		justify-content: center;
 		height:
 			calc(	
-				var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
-				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
-				+ var(--navigation_text_font_size) /* navigation text line height */
+				var(--universal_answer) * var(--universal_answer_multiplier) /* nav padding-top */
+				+ var(--universal_answer) * var(--universal_answer_multiplier) /* nav padding-bottom */
+				+ var(--nav_text_font_size) /* nav text line height */
 			);
 		width: 100%;
 		padding: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
@@ -908,9 +965,9 @@ address p {
 		position: fixed;
 		top:
 			calc(	
-				var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
-				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
-				+ var(--navigation_text_font_size) /* navigation text line height */
+				var(--universal_answer) * var(--universal_answer_multiplier) /* nav padding-top */
+				+ var(--universal_answer) * var(--universal_answer_multiplier) /* nav padding-bottom */
+				+ var(--nav_text_font_size) /* nav text line height */
 			);
 		left: 0;
 		z-index: 100;
@@ -933,9 +990,9 @@ address p {
 		padding-right: 0;
 		padding-top:
 			calc(	
-				(var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-top */
-				+ var(--universal_answer) * var(--universal_answer_multiplier) /* navigation padding-bottom */
-				+ var(--navigation_text_font_size)) /* navigation text line height */
+				(var(--universal_answer) * var(--universal_answer_multiplier) /* nav padding-top */
+				+ var(--universal_answer) * var(--universal_answer_multiplier) /* nav padding-bottom */
+				+ var(--nav_text_font_size)) /* nav text line height */
 				* 2 /* header height */
 			);
 		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
