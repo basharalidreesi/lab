@@ -170,7 +170,6 @@ address {
 		color: var(--text_colour);
 		text-align: center;
 		line-height: 250%;
-		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		overflow: hidden;
 	}
 	.--list_text_styling {
