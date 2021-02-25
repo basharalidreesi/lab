@@ -100,7 +100,7 @@
 	│ elements │
 	└──────────┘
 	*/
-	--screen_height: calc(var(--vh, 1vh) * 100);
+	--screen_height: calc(var(--vh) * 100);
 	--screen_height_half: calc(var(--screen_height) / 2);
 	--nav_height: calc(var(--double) + var(--nav_text_font_size) + var(--double));
 	--header_height: var(--nav_height);
