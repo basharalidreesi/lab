@@ -17,7 +17,8 @@
 		var header_graphic_number = random_header_graphic_array.length;
 		x = (Math.floor(Math.random() * header_graphic_number));
 		random_header_graphic = (random_header_graphic_array[x]);
-		document.getElementById("load_wrapper").style.display = "none";
+		document.getElementById("load_wrapper").remove();
+		console.log("Removed loader.");
 		document.getElementById("header_graphic").src = random_header_graphic;
 		console.log("Loaded " + random_header_graphic + " from a total number of " + header_graphic_number + " header graphics.");
 		{% assign text_colour = page.text_colour | strip_newlines | strip %}
@@ -45,7 +46,7 @@
 			console.log("Indicator arrow hidden.");
 			window.removeEventListener("scroll", remove_indicator_arrow, {passive: true});
 			console.log("Scroll listener removed.");
-			setTimeout(() => { document.getElementById("indicator_arrow").style.display = "none" }, 1250);
+			setTimeout(() => { document.getElementById("indicator_arrow").remove() }, 1250);
 			setTimeout(() => { console.log("Indicator arrow removed.") }, 1250);
 		}
 		function scroll_arrow_into_view(event) {
