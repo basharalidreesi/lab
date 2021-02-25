@@ -38,9 +38,9 @@
 			{% endunless %}
 		</div>
 		{% if page.header_location == "central" and page.layout != "cascade" %}
-			{% include down.html %}
-		{% elsif page.layout == "cascade" %}
-			{% include right.html %}
+			{% include downward.html %}
+		{% elsif page.is_fullscreen and page.layout == "cascade" %}
+			{% include rightward.html %}
 		{% endif %}
 	</body>
 </html>
