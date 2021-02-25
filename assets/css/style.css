@@ -58,7 +58,7 @@
 	*/
 	--title_card_text_font: "M+ 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--title_card_text_font_size: 1.5rem;
-	--list_text_font_weight: 400;
+	--title_text_font_weight: 400;
 	/*
 	┌───────┐
 	│ begin └──────────┐
@@ -67,7 +67,7 @@
 	*/
 	--footer_card_text_font: "M+ 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--footer_card_text_font_size: 1.5rem;
-	--list_text_font_weight: 400;
+	--footer_text_font_weight: 400;
 	/*
 	┌───────┐
 	│ begin └────────┐
@@ -76,7 +76,7 @@
 	*/
 	--text_card_text_font: "M+ 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--text_card_text_font_size: 1.25rem;
-	--list_text_font_weight: 400;
+	--text_text_font_weight: 400;
 }
 
 /*
