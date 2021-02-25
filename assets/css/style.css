@@ -652,6 +652,10 @@ body {
 		width: calc(var(--single) * 5);
 		height: calc(var(--half));
 		border: 1px solid var(--text_colour);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 	}
 	.--load {
 		width: 87.5%;
