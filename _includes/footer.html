@@ -9,14 +9,14 @@
 	<p class="--footer_text_styling">
 		<a class="--anchor_styling --hyperlink_styling" href="mailto:{{ site.email }}">{{ site.email }}</a>
 	</p>
-	<p class="--footer_text_styling --no_padding">
+	<p class="--footer_text_styling">
 		{% assign year = site.time | date: '%Y' %}
 		&copy; 2021 {% if year != "2021" %} – {{ year }} {% endif %} Jad Toghuj
 	</p>
-	<p class="--footer_text_styling">
+	<p class="--footer_text_styling --no_padding">
 		All rights reserved
 	</p>
-	<p class="--footer_text_styling --no_padding">
+	<p class="--footer_text_styling">
 		By <a class="--anchor_styling" href="http://www.basharalidreesi.com">Basabees</a> for <a class="--anchor_styling" href="/">Batabeet</a>
 	</p
 </address>
