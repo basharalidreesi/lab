@@ -13,7 +13,7 @@
 		{% for node in site.pages %}
 			{% assign deepness_one_current = current | remove_first: "_" %}
 			{% if node.path == deepness_one_current %}
-				<span class="--nav_text_styling --map_text_styling">{{ node.title }}<span>
+				<span class="--nav_text_styling --map_text_styling">{{ node.title }}</span>
 				{% if last %}{% else %}<span class="--nav_text_styling"> ⟶ </span>{% endif %}
 			{% endif %}
 		{% endfor %}
