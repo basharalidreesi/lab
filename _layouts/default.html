@@ -20,7 +20,7 @@
 	<body>
 		<div class="--mobile_background"></div>
 		<div class="mother_container {% if page.is_fullscreen %}--mother_container_fullscreen{% endif %}">
-			<nav class="mother_container-navigation_container{% if page.header_location == "central" %}_central{% elsif page.header_location == "upper" %}_upper{% endif %}" id="navigation_container">
+			<nav class="mother_container-nav_container{% if page.header_location == "central" %}_central{% elsif page.header_location == "upper" %}_upper{% endif %}" id="nav_container">
 				{% include nav.html %}
 			</nav>
 			<header class="mother_container-header_container{% if page.header_location == "central" %}_central{% elsif page.header_location == "upper" %}_upper{% endif %}" id="header_container">
