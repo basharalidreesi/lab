@@ -21,6 +21,8 @@
 		console.log("Removed loader.");
 		document.getElementById("header_graphic").src = random_header_graphic;
 		console.log("Loaded " + random_header_graphic + " from a total number of " + header_graphic_number + " header graphics.");
+		document.getElementById("load_wrapper_style").remove();
+		console.log("Removed loader style.");
 		{% assign text_colour = page.text_colour | strip_newlines | strip %}
 		{% unless text_colour == "#000" or text_colour == "#000000" or text_colour == "black" %}
 			var extension = random_header_graphic.split(".").pop();
