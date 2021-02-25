@@ -1,10 +1,12 @@
 <!-- begin nav.html -->
-<input type="checkbox" id="nav_checkbox">
-<label for="nav_checkbox" class="nav_container_upper-nav_checkbox_toggle" onClick="lock_scroll();">
-	<div class="--nav_checkbox_arrow"></div>
-	{% include map.html %}
-	<div class="--nav_checkbox_arrow"></div>
-</label>
+{% if page.header_location == "upper" %}
+	<input type="checkbox" id="nav_checkbox">
+	<label for="nav_checkbox" class="nav_container_upper-nav_checkbox_toggle" onClick="lock_scroll();">
+		<div class="--nav_checkbox_arrow"></div>
+		{% include map.html %}
+		<div class="--nav_checkbox_arrow"></div>
+	</label>
+{% endif %}
 <ul class="nav_container-nav_list_wrapper">
 	{% assign pages = site.pages | sort: "position" %}
 	{% for node in pages %}
