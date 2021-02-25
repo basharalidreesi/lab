@@ -271,7 +271,6 @@ address {
 		padding: calc(var(--quarter));
 		padding-left: calc(var(--half));
 		padding-right: calc(var(--half));
-		cursor: alias;
 	}
 	.--current_nav_text_styling a {
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
@@ -288,7 +287,6 @@ address {
 		padding: calc(var(--quarter));
 		padding-left: calc(var(--half));
 		padding-right: calc(var(--half));
-		cursor: alias;
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 		text-decoration: none;
 		background-image: linear-gradient(currentColor, currentColor);
