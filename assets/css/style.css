@@ -86,7 +86,7 @@ address {
 	│ typography styles │
 	└───────────────────┘
 	*/
-	.--navigation_text_styling {
+	.--nav_text_styling {
 		color: var(--text_colour);
 		font-family: var(--navigation_text_font);
 		font-weight: 300;
@@ -187,6 +187,10 @@ address {
 		border-radius: 5000px;
 		cursor: alias;
 	}
+	.--current_nav_text_styling a {
+		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
+		background-size: 100% 2px;
+	}
 	.--text_card_text_styling a, .--footer_card_text_styling a, .--title_card_text_styling a {
 		display: inline;
 		border: 1px solid var(--text_colour);
@@ -240,10 +244,10 @@ body {
 	height: 100vh;
 	height: calc(var(--vh, 1vh) * 100);
 }
-.mother_container-navigation_container_upper {
+.mother_container-nav_container_upper {
 	order: 1;
 }
-.mother_container-navigation_container_central {
+.mother_container-nav_container_central {
 	order: 2;
 }
 .mother_container-header_container_upper {
@@ -303,7 +307,7 @@ body {
 │ nav styles │
 └────────────┘
 */
-.navigation_container-navigation_list_wrapper {
+.nav_container-nav_list_wrapper {
 	display: flex;
 	flex-flow: row nowrap; /* nowrap for debug */
 	padding: 0;
@@ -314,22 +318,18 @@ body {
 	justify-content: space-evenly;
 	align-items: center;
 }
-.mother_container-navigation_container_central > .navigation_container-navigation_list_wrapper {
+.mother_container-nav_container_central > .nav_container-nav_list_wrapper {
 	border-top: 1px solid var(--border_colour);
 	box-shadow: 0 0 calc(var(--universal_answer) * var(--universal_answer_multiplier) * 2) calc(var(--universal_answer) * var(--universal_answer_multiplier)) var(--secondary_colour);
 	background-color: var(--secondary_colour);
 }
-.navigation_list_wrapper-navigation_list_item {
+.nav_list_wrapper-nav_list_item {
 	flex: 1; /* stress test this with a higher number of listed pages */
 }
-.--active_navigation_text_styling a {
-	/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
-	background-size: 100% 2px;
-}
-#navigation_checkbox {
+#nav_checkbox {
 	display: none;
 }
-.navigation_container_upper-navigation_checkbox_toggle {
+.nav_container_upper-nav_checkbox_toggle {
 	display: none;
 }
 
@@ -847,7 +847,7 @@ address p {
 	│			│
 	└─BEGIN─────────────────┘
 	*/
-	.mother_container-navigation_container_upper {
+	.mother_container-nav_container_upper {
 		order: 2;
 	}
 	.mother_container-header_container_upper {
@@ -861,20 +861,20 @@ address p {
 	│			│
 	└─BEGIN─────────────────┘
 	*/
-	.mother_container-navigation_container_central > .navigation_container-navigation_list_wrapper {
+	.mother_container-nav_container_central > .nav_container-nav_list_wrapper {
 		flex-flow: column nowrap;
 		padding: 0;
 	}
-	.mother_container-navigation_container_central > .navigation_container-navigation_list_wrapper > .navigation_list_wrapper-navigation_list_item {
+	.mother_container-nav_container_central > .nav_container-nav_list_wrapper > .nav_list_wrapper-nav_list_item {
 		padding-top: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 		width: 100%;
 		border-top: 1px solid var(--border_colour);
 	}
-	.mother_container-navigation_container_central > .navigation_container-navigation_list_wrapper > .navigation_list_wrapper-navigation_list_item:first-child {
+	.mother_container-nav_container_central > .nav_container-nav_list_wrapper > .nav_list_wrapper-nav_list_item:first-child {
 		border-top: none;
 	}
-	.mother_container-navigation_container_upper > .navigation_container_upper-navigation_checkbox_toggle {
+	.mother_container-nav_container_upper > .nav_container_upper-nav_checkbox_toggle {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -889,7 +889,7 @@ address p {
 		border-top: 1px solid var(--border_colour);
 		cursor: pointer;
 	}
-	.--expand_navigation_arrow {
+	.--nav_checkbox_arrow {
 		/* https://www.w3schools.com/howto/howto_css_arrows.asp */
 		border: 1px solid var(--text_colour);
 		border-width: 0 1px 1px 0;
@@ -901,10 +901,10 @@ address p {
 		margin-right: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 		margin-bottom: 4px;
 	}
-	.mother_container-navigation_container_upper > .navigation_container-navigation_list_wrapper {
+	.mother_container-nav_container_upper > .nav_container-nav_list_wrapper {
 		display: none;
 	}
-	#navigation_checkbox:checked ~ .navigation_container_upper-navigation_checkbox_toggle {
+	#nav_checkbox:checked ~ .nav_container_upper-nav_checkbox_toggle {
 		position: fixed;
 		top:
 			calc(	
@@ -915,12 +915,12 @@ address p {
 		left: 0;
 		z-index: 100;
 	}
-	#navigation_checkbox:checked ~ .--expand_navigation_arrow, #navigation_checkbox:checked ~ .--expand_navigation_arrow {
+	#nav_checkbox:checked ~ .--expand_nav_arrow, #nav_checkbox:checked ~ .--expand_nav_arrow {
 		/* https://www.w3schools.com/howto/howto_css_arrows.asp */
 		transform: rotate(-135deg);
 		-webkit-transform: rotate(-135deg);
 	}
-	#navigation_checkbox:checked ~ .navigation_container-navigation_list_wrapper {
+	#nav_checkbox:checked ~ .nav_container-nav_list_wrapper {
 		display: flex;
 		flex-flow: column nowrap;
 		justify-content: flex-start;
@@ -944,14 +944,14 @@ address p {
 		z-index: 99;
 		overflow-y: scroll;
 	}
-	.mother_container-navigation_container_upper > .navigation_container-navigation_list_wrapper > .navigation_list_wrapper-navigation_list_item {
+	.mother_container-nav_container_upper > .nav_container-nav_list_wrapper > .nav_list_wrapper-nav_list_item {
 		flex: 0;
 		padding-top: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier));
 		border-top: 1px solid var(--border_colour);
 		width: 100%;
 	}
-	.mother_container-navigation_container_upper > .navigation_container-navigation_list_wrapper > .navigation_list_wrapper-navigation_list_item:last-child {
+	.mother_container-nav_container_upper > .nav_container-nav_list_wrapper > .nav_list_wrapper-nav_list_item:last-child {
 		border-bottom: 1px solid var(--border_colour);
 	}
 
