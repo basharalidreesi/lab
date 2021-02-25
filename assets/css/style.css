@@ -237,8 +237,12 @@ address {
 	p + p {
 		padding-top: calc(var(--single));
 	}
+	p:last-of-type:not(:only-of-type) {
+		padding-bottom: calc(var(--single));
+	}
 	.--no_padding {
 		padding-top: 0;
+		padding-bottom: 0;
 	}
 	/*
 	┌───────┐
@@ -303,7 +307,7 @@ address {
 └─────────────┘
 */
 body {
-	background: linear-gradient(0deg, var(--primary_colour) 10%, var(--secondary_colour) 100%); /* see div with class --mobile_background  */
+	background: var(--background);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 }
@@ -800,7 +804,7 @@ body {
 		-ms-user-select: none;
 		-moz-user-select: none;
 		-webkit-user-select: none;
-		background: linear-gradient(0deg, var(--primary_colour) 10%, var(--secondary_colour) 100%);
+		background: var(--background);
 		background-repeat: no-repeat;
 		background-attachment: initial;
 		background-size: 100vw calc(var(--screen_height));
