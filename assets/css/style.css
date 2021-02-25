@@ -14,6 +14,10 @@
 	--font_size: 15px;
 	--universal_answer: 1rem;
 	--universal_answer_multiplier: 2;
+	--single: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
+	--double: calc(var(--universal_answer) * var(--universal_answer_multiplier));
+	--single_negative: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2 * -1);
+	--double_negative: calc(var(--universal_answer) * var(--universal_answer_multiplier) * -1);
 	/*
 	┌───────┐
 	│ begin └──┐
@@ -210,8 +214,11 @@ address {
 		line-height: 200%;
 		padding-bottom: calc(var(--universal_answer) * var(--universal_answer_multiplier) / 2);
 	}
-	.--no_bottom_padding {
-		padding-bottom: 0;
+	p + p {
+		padding-top: var(--single);
+	}
+	.--no_padding {
+		padding-top: 0;
 	}
 	/*
 	┌───────┐
