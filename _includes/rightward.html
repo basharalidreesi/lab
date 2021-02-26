@@ -9,10 +9,12 @@
 		left: 100%;
 		animation: arrow_appear 10s, rightward_arrow_bounce 2.5s infinite;
 		padding: calc(var(--double));
+		transition: opacity 1.25s;
+		cursor: e-resize;
 	}
 	.--rightward_arrow {
-		border-left: calc(var(--single)) solid var(--text_colour);
 		border-top: calc(var(--half)) solid transparent;
+		border-left: calc(var(--single)) solid var(--text_colour);
 		border-bottom: calc(var(--half)) solid transparent;
 		width: 0px;
 		height: 0px;
