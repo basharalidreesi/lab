@@ -1,6 +1,6 @@
 <!-- begin title.html -->
 <title>
-	{{ site.title }}
+	{{- site.title -}}
 	{%- assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" -%}
 	{%- for branch in tree -%}
 		{%- assign segment = page.path | split: branch -%}
