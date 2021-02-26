@@ -14,7 +14,19 @@
 	{% assign pages = site.pages | sort: "position" %}
 	{% for node in pages %}
 		{% if node.is_listed %}
-			<li class="nav_list_wrapper-nav_list_item --nav_text_styling {% if page.url contains node.url %} --current_nav_text_styling {% endif %}">
+			{% if page.header_location == "upper" %}
+				<li class="nav_list_wrapper-nav_list_item --nav_text_styling --extra_nav_text_styling {% if page.url contains node.url %} --current_nav_text_styling {% endif %}">
+					<a class="--anchor_styling" href="{{ site.url }}{{ site.baseurl }}">
+						Home
+					</a>
+				</li>
+				<li class="nav_list_wrapper-nav_list_item --nav_text_styling --extra_nav_text_styling {% if page.url contains node.url %} --current_nav_text_styling {% endif %}">
+					<a class="--anchor_styling" href="{{ site.baseurl }}/about">
+						About
+					</a>
+				</li>
+			{% endif %}
+			<li class="nav_list_wrapper-nav_list_item --nav_text_styling {% if node.path == "about.markdown" or node.path == "about.md" or node.path == "about.html" %} --non_extra_nav_text_styling {% endif %} {% if page.url contains node.url %} --current_nav_text_styling {% endif %}">
 				<a class="--anchor_styling" href="{{ site.baseurl }}{{ node.url }}">
 					{{ node.title }}
 				</a>
