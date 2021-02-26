@@ -15,7 +15,7 @@
 			{% if node.path == deepness_one_current %}
 				<span class="--nav_text_styling --map_text_styling">{{ node.title }}</span>
 				{% unless last %}
-					<span class="--map_separator"></span>
+					<span class="--map_text_separator"></span>
 				{% endunless %}
 			{% endif %}
 		{% endfor %}
@@ -27,7 +27,7 @@
 			{% if node.path == current %}
 				<span class="--nav_text_styling --map_text_styling">{{ node.title }}</span>
 				{% unless last %}
-					<span class="--map_separator"></span>
+					<span class="--map_text_separator"></span>
 				{% endunless %}
 			{% endif %}
 		{% endfor %}
