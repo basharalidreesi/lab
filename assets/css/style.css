@@ -181,7 +181,7 @@ address {
 		color: var(--text_colour);
 		text-align: center;
 	}
-	.--extra_nav_text_styling {
+	.--additional_nav_item {
 		display: none;
 	}
 	.--map_text_styling {
@@ -709,10 +709,10 @@ body {
 	.--current_nav_text_styling {
 		display: none;
 	}
-	.--extra_nav_text_styling {
+	.--additional_nav_item {
 		display: initial;
 	}
-	.--non_extra_nav_text_styling {
+	.--extra_nav_item {
 		display: none;
 	}
 	#nav_checkbox:checked ~ .nav_container_upper-nav_checkbox_toggle .--map_text_styling {
