@@ -698,6 +698,9 @@ body {
 └─────────────────────────────────────┘
 */
 @media only screen and (max-width: 1024px) {
+	.--current_map_text_styling {
+		background-size: 100% 2px;
+	}
 	.mother_container-nav_container_upper {
 		order: 2;
 		position: relative;
