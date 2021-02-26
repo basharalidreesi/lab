@@ -11,14 +11,14 @@
 	</script>
 {% endif %}
 <ul class="nav_container-nav_list_wrapper">
-	{% if page.path != "/" or page.path != "index.markdown" or page.path != "index.md" or page.path != "index.html" %}
+	{% if page.path != "/index.markdown" or page.path != "/index.md" or page.path != "/index.html" %}
 		<li class="nav_list_wrapper-nav_list_item --nav_text_styling --additional_nav_item">
 			<a class="--anchor_styling" href="{{ site.url }}{{ site.baseurl }}">
 				Home
 			</a>
 		</li>
 	{% endif %}
-	<li class="nav_list_wrapper-nav_list_item --nav_text_styling --additional_nav_item {% if page.path == "about.markdown" or page.path == "about.md" or page.path == "about.html" %} --current_nav_text_styling {% endif %}">
+	<li class="nav_list_wrapper-nav_list_item --nav_text_styling --additional_nav_item {% if page.path == "/about.markdown" or page.path == "/about.md" or page.path == "/about.html" %} --current_nav_text_styling {% endif %}">
 		<a class="--anchor_styling" href="{{ site.baseurl }}/about">
 			About
 		</a>
@@ -26,7 +26,7 @@
 	{% assign pages = site.pages | sort: "position" %}
 	{% for node in pages %}
 		{% if node.is_listed %}
-			<li class="nav_list_wrapper-nav_list_item --nav_text_styling {% if node.path == "about.markdown" or node.path == "about.md" or node.path == "about.html" %} --extra_nav_item {% endif %} {% if page.url contains node.url %} --current_nav_text_styling {% endif %}">
+			<li class="nav_list_wrapper-nav_list_item --nav_text_styling {% if node.path == "/about.markdown" or node.path == "/about.md" or node.path == "/about.html" %} --extra_nav_item {% endif %} {% if page.url contains node.url %} --current_nav_text_styling {% endif %}">
 				<a class="--anchor_styling" href="{{ site.baseurl }}{{ node.url }}">
 					{{ node.title }}
 				</a>
