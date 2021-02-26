@@ -12,22 +12,22 @@
 		x = (Math.floor(Math.random() * header_graphic_number));
 		random_header_graphic = (random_header_graphic_array[x]);
 		document.getElementById("header_graphic").src = random_header_graphic;
-			console.log("Loaded " + random_header_graphic + " from a total number of " + header_graphic_number + " header graphics.");
+			console.log("[load.html] Loaded " + random_header_graphic + " from a total number of " + header_graphic_number + " header graphics.");
 		document.getElementById("loader_wrapper").remove();
-			console.log("Loader removed.");
+			console.log("[load.html] Loader removed.");
 		document.getElementById("loader_wrapper_style").remove();
-			console.log("Loader style removed.");
+			console.log("[load.html] Loader style removed.");
 		{% assign text_colour = page.text_colour | strip_newlines | strip %}
 		{% unless text_colour == "#000" or text_colour == "#000000" or text_colour == "black" %}
 			var extension = random_header_graphic.split(".").pop();
 			if (extension == "svg") {
 				SVGInject(document.getElementById("header_graphic"));
-				console.log("SVG header injected.");
+				console.log("[load.html] SVG header injected.");
 			} else {
-				console.log("No SVG header detected. Injection has not occured.");
+				console.log("[load.html] No SVG header detected. Injection has not occured.");
 			}
 		 {% else %}
-			console.log("SVG header injection unnecessary.");
+			console.log("[load.html] SVG header injection unnecessary.");
 		 {% endunless %}
 	}
 	{% if page.header_location == "central" %}
