@@ -11,7 +11,7 @@
 			{%- for node in site.pages -%}
 				{%- assign deepness_one_current = current | remove_first: "_" -%}
 				{%- if node.path == deepness_one_current -%}
-					| {{- node.title -}}
+					| {{ node.title }}
 					{%- unless last -%} | {%- endunless -%}
 				{%- endif -%}
 			{%- endfor -%}
@@ -22,7 +22,7 @@
 		{%- else -%}
 			{%- for node in site.documents -%}
 				{%- if node.path == current -%}
-					{{- node.title -}}
+					{{ node.title }}
 					{%- unless last -%} | {%- endunless -%}
 				{%- endif -%}
 			{%- endfor -%}
