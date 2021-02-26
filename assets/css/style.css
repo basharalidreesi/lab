@@ -774,6 +774,8 @@ body {
 		padding: calc(var(--single));
 		border-top: 1px solid var(--border_colour);
 		cursor: s-resize;
+		box-shadow: 0;
+		transition: box-shadow 0.25s;
 	}
 	#nav_checkbox:checked ~ .nav_container_upper-nav_checkbox_toggle {
 		cursor: n-resize;
@@ -810,6 +812,7 @@ body {
 		justify-content: flex-start;
 		height: auto;
 		z-index: 100;
+		box-shadow: 0 calc(var(--quarter)) calc(var(--single)) calc(var(--quarter)) var(--primary_colour)
 	}
 	#nav_checkbox ~ .nav_container_upper-nav_checkbox_toggle .--anchor_styling {
 		pointer-events: none;
