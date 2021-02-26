@@ -11,16 +11,14 @@
 	</script>
 {% endif %}
 <ul class="nav_container-nav_list_wrapper">
-	{% assign home = site.url | append: site.baseurl %}
-	{% assign about = site.url | append: site.baseurl | append: "/about" %}
-	{% if page.url != home %}
+	{% if page.path != "index.markdown" or page.path != "index.md" or page.path != "index.html" %}
 		<li class="nav_list_wrapper-nav_list_item --nav_text_styling --additional_nav_item">
 			<a class="--anchor_styling" href="{{ site.url }}{{ site.baseurl }}">
 				Home
 			</a>
 		</li>
 	{% endif %}
-	<li class="nav_list_wrapper-nav_list_item --nav_text_styling --additional_nav_item {% if page.url == about %} --current_nav_text_styling {% endif %}">
+	<li class="nav_list_wrapper-nav_list_item --nav_text_styling --additional_nav_item {% if page.path == "about.markdown" or page.path == "about.md" or page.path == "about.html" %} --current_nav_text_styling {% endif %}">
 		<a class="--anchor_styling" href="{{ site.baseurl }}/about">
 			About
 		</a>
