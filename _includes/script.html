@@ -1,9 +1,5 @@
 <!-- begin script.html -->
 <script>
-	// https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
-	let vh = window.innerHeight * 0.01;
-	document.documentElement.style.setProperty('--vh', `${vh}px`);
-	console.log("--vh has been set to " + `${vh}px` + ".");
 	if (document.getElementById) {
 		window.onload = swap;
 	};
