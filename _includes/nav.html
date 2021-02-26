@@ -6,6 +6,10 @@
 		{% include map.html %}
 		<span class="--nav_checkbox_arrow"></span>
 	</label>
+{% else %}
+	<script>
+		console.log("[nav.html] map.html not included.");
+	</script>
 {% endif %}
 <ul class="nav_container-nav_list_wrapper">
 	{% assign pages = site.pages | sort: "position" %}
