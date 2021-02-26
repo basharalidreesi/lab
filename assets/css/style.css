@@ -523,6 +523,34 @@ body {
 		background-color: var(--text_colour);
 		color: var(--secondary_colour);
 	}
+	.list_page_item_tag-tag_unfilter {
+		display: none;
+		opacity: 0;
+		position: absolute;
+		top: calc(var(--half_negative));
+		right: calc(var(--single_negative));
+		height: calc(var(--single));
+		width: calc(var(--single));
+		background-color: var(--text_colour);
+		border-radius: 50%;
+		cursor: pointer;
+		transition: opacity 0.25s;
+	}
+	.list_page_item_tag-tag_unfilter::after, .list_page_item_tag-tag_unfilter::before {
+		content: "";
+		position: absolute;
+		height: 2px;
+		width: calc(100% - 4px);
+		background-color: var(--secondary_colour);
+		left: 2px;
+		top: calc(50% - 1px);
+	}
+	.list_page_item_tag-tag_unfilter::before {
+		transform: rotate(45deg);
+	}
+	.list_page_item_tag-tag_unfilter::after {
+		transform: rotate(-45deg);
+	}
 	/*
 	┌───────┐
 	│ begin └────────┐
