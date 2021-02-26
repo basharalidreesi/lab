@@ -185,11 +185,12 @@ address {
 		overflow: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;
-		line-height: 250%;
 		user-select: none;
 		-ms-user-select: none;
 		-moz-user-select: none;
 		-webkit-user-select: none;
+		padding-top: calc(var(--single));
+		padding-bottom: calc(var(--single));
 	}
 	.--footer_text_styling {
 		font-family: var(--footer_text_font);
