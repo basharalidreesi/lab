@@ -1,0 +1,20 @@
+<script>
+	window.addEventListener("scroll", remove_arrow, {passive: true});
+	function remove_arrow() {
+		document.getElementById("arrow_wrapper").style.opacity = "0";
+		console.log("Arrow hidden.");
+		window.removeEventListener("scroll", remove_arrow, {passive: true});
+		console.log("Scroll listener removed.");
+		setTimeout(() => { document.getElementById("arrow_wrapper").remove() }, 1250);
+		setTimeout(() => { console.log("Arrow removed.") }, 1250);
+	}
+	function scroll_to_arrow(event) {
+		var scroll_to = event.target;
+		scroll_to.scrollIntoView({
+			behavior: 'auto',
+			block: 'center',
+			inline: 'center'
+		});
+		console.log("Scrolled to arrow.");
+	}
+</script>
