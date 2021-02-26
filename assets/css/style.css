@@ -764,7 +764,14 @@ body {
 		align-items: center;
 		justify-content: flex-start;
 		height: auto;
+		background-color: var(--secondary_colour);
 		z-index: 100;
+	}
+	#nav_checkbox:checked ~ .nav_container_upper-nav_checkbox_toggle .--map_text_styling {
+		width: 100%;
+		overflow: initial;
+		white-space: initial;
+		text-overflow: initial;
 	}
 	.list_page_item-list_page_item_tag_list {
 		padding-top: calc(var(--double));
