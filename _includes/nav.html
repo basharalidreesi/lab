@@ -11,7 +11,7 @@
 	</script>
 {% endif %}
 <ul class="nav_container-nav_list_wrapper">
-	{% if page.path != "index.markdown" or page.path != "index.md" or page.path != "index.html" %}
+	{% if page.path != "/" or page.path != "index.markdown" or page.path != "index.md" or page.path != "index.html" %}
 		<li class="nav_list_wrapper-nav_list_item --nav_text_styling --additional_nav_item">
 			<a class="--anchor_styling" href="{{ site.url }}{{ site.baseurl }}">
 				Home
