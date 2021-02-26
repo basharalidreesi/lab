@@ -1,6 +1,6 @@
 <!-- begin title.html -->
 <title>
-	{{- site.title -}}
+	{{ site.title }}
 	{%- assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" -%}
 	{%- for branch in tree -%}
 		{%- assign segment = page.path | split: branch -%}
@@ -16,7 +16,7 @@
 				{%- endif -%}
 			{%- endfor -%}
 		{%- elsif deepness == 1 and current != "404.markdown" and current != "index.markdown" and tree.size >= 2 -%}
-			| {%- continue -%}
+			| {% continue %}
 		{%- elsif deepness == 1 and current == "404.markdown" -%}
 			| ?{%- break -%}
 		{%- else -%}
