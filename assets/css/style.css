@@ -288,6 +288,10 @@ address {
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 		background-size: 100% 2px;
 	}
+	.--current_map_text_styling a {
+		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
+		background-size: 100% 2px;
+	}
 	.--text_card_text_styling a, .--footer_card_text_styling a, .--title_card_text_styling a {
 		font-family: inherit;
 		font-size: inherit;
@@ -698,9 +702,6 @@ body {
 └─────────────────────────────────────┘
 */
 @media only screen and (max-width: 1024px) {
-	.--current_map_text_styling {
-		background-size: 100% 2px;
-	}
 	.mother_container-nav_container_upper {
 		order: 2;
 		position: relative;
