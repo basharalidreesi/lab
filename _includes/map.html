@@ -14,6 +14,9 @@
 			{% assign deepness_one_current = current | remove_first: "_" %}
 			{% if node.path == deepness_one_current %}
 				<span class="--nav_text_styling --map_text_styling">{{ node.title }}</span>
+				{% unless last %}
+					<span class="--map_separator"></span>
+				{% endunless %}
 			{% endif %}
 		{% endfor %}
 	{% elsif deepness == 1 and current == "404.markdown" %}
@@ -23,6 +26,9 @@
 		{% for node in site.documents %}
 			{% if node.path == current %}
 				<span class="--nav_text_styling --map_text_styling">{{ node.title }}</span>
+				{% unless last %}
+					<span class="--map_separator"></span>
+				{% endunless %}
 			{% endif %}
 		{% endfor %}
 	{% endif %}
