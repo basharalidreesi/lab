@@ -19,4 +19,11 @@
 		{% endif %}
 	{% endfor %}
 </ul>
+<script>
+	function lock_scroll() {
+		window.scrollTo(0, 0);
+		document.body.classList.toggle("--lock_scroll");
+		console.log("[nav.html] Body scrolling temporarily locked.");
+	}
+</script>
 <!-- end nav.html -->
