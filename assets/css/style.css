@@ -738,8 +738,9 @@ body {
 	.nav_container_upper-nav_checkbox_toggle {
 		display: flex;
 		flex-flow: row nowrap;
-		align-items: center;
+		align-items: flex-start;
 		justify-content: center;
+		height: calc(var(--nav_height));
 		width: 100%;
 		padding: calc(var(--single));
 		border-top: 1px solid var(--border_colour);
@@ -759,6 +760,8 @@ body {
 	}
 	#nav_checkbox:checked ~ .nav_container_upper-nav_checkbox_toggle {
 		flex-flow: column nowrap;
+		align-tems: center;
+		justify-content: flex-start;
 		z-index: 100;
 	}
 	.list_page_item-list_page_item_tag_list {
