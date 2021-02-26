@@ -11,34 +11,34 @@ layout: default
 		var all_tags = document.getElementsByClassName("list_page_item_tag_list-list_page_item_tag");
 		for (var i = 0, length = list_items.length; i < length; i++) {
 			if (list_items[i].textContent.indexOf(tag_content) != -1) {
-				list_items[i].parentElement.classList.add("--active_list_page_item");
+				list_items[i].parentElement.classList.add("--highlighted_list_item");
 			} else {
-				list_items[i].parentElement.classList.remove("--active_list_page_item");
+				list_items[i].parentElement.classList.remove("--highlighted_list_item");
 			}
 		}
 		for (var j = 0, length = all_tags.length; j < length; j++) {
 			if (all_tags[j].textContent.indexOf(tag_content) != -1) {
-				all_tags[j].classList.add("--active_list_page_item_tag");
+				all_tags[j].classList.add("--highlighted_tag");
 				all_tags[j].children[0].style.display = "block";
 				all_tags[j].children[0].style.opacity = "1";
 			} else {
-				all_tags[j].classList.remove("--active_list_page_item_tag");
+				all_tags[j].classList.remove("--highlighted_tag");
                                 all_tags[j].children[0].removeAttribute("style");
 			}
 		}
-		console.log("Filtered " + tag_content.trim() + ".");
+		console.log("[list.html] Filtered " + tag_content.trim() + ".");
 	}
 	function unfilter(event) {
 		var list_items = document.getElementsByClassName("list_page_item-list_page_item_tag_list");
 		var all_tags = document.getElementsByClassName("list_page_item_tag_list-list_page_item_tag");
 		for (var i = 0, length = list_items.length; i < length; i++) {
-			list_items[i].parentElement.classList.remove("--active_list_page_item");
+			list_items[i].parentElement.classList.remove("--highlighted_list_item");
 		}
 		for (var j = 0, length = all_tags.length; j < length; j++) {
-			all_tags[j].classList.remove("--active_list_page_item_tag");
+			all_tags[j].classList.remove("--highlighted_tag");
 			all_tags[j].children[0].removeAttribute("style");
 		}
-		console.log("Unfiltered.");
+		console.log("[list.html] Unfiltered.");
 	}
 </script>
 <!-- partially from https://mmistakes.github.io/minimal-mistakes/docs/layouts/ -->
@@ -60,7 +60,7 @@ layout: default
 								{% for tag in item.tags %}		
 									<li class="list_page_item_tag_list-list_page_item_tag --tag_text_styling" onClick="filter(event);">		
 										{{ tag }}
-										<div class="list_page_item_tag-tag_unfilter" onclick="unfilter(); event.stopPropagation();"></div>
+										{% include unfilter.html %}
 									</li>		
 								{% endfor %}		
 							</ul>
