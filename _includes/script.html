@@ -37,25 +37,5 @@
 		document.body.classList.toggle("--lock_scroll");
 		console.log("Body scrolling temporarily locked.");
 	}
-	{% if page.header_location == "central" %}
-		window.addEventListener("scroll", remove_indicator_arrow, {passive: true});
-		function remove_indicator_arrow() {
-			document.getElementById("indicator_arrow").style.opacity = "0";
-			console.log("Indicator arrow hidden.");
-			window.removeEventListener("scroll", remove_indicator_arrow, {passive: true});
-			console.log("Scroll listener removed.");
-			setTimeout(() => { document.getElementById("indicator_arrow").remove() }, 1250);
-			setTimeout(() => { console.log("Indicator arrow removed.") }, 1250);
-		}
-		function scroll_arrow_into_view(event) {
-			var scrolled_element = event.target;
-			scrolled_element.scrollIntoView({
-				behavior: 'auto',
-				block: 'center',
-				inline: 'center'
-			});
-			console.log("Scrolled arrow into middle of viewport.");
-		}
-	{% endif %}
 </script>
 <!-- end script.html -->
