@@ -729,7 +729,7 @@ body {
 		display: flex;
 		flex-flow: row nowrap;
 		align-items: center;
-		justify-content: flex-start;
+		justify-content: center;
 		width: 100%;
 		padding: calc(var(--single));
 		border-top: 1px solid var(--border_colour);
