@@ -2,6 +2,9 @@
 <script>
 	window.addEventListener("load", load);
 	function load() {
+		document.getElementById("loader").style.animation = "none";
+		document.getElementById("loader").style.width = "100%";
+			console.log("[load.html] Reticulated splines.");
 		random_header_graphic_array = new Array(
 			{% assign header_graphics = site.static_files | where: "header_graphic", true %}
 			{% for header_graphic in header_graphics %}
