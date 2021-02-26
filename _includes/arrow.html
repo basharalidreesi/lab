@@ -1,8 +1,13 @@
 <script>
+	window.addEventListener("load", display_arrow);
 	window.addEventListener("scroll", remove_arrow, {passive: true});
+	function display_arrow() {
+		document.getElementById("arrow_wrapper").style.display = "block";
+		console.log("[arrow.html] Arrow displayed.");
+	}
 	function remove_arrow() {
 		document.getElementById("arrow_wrapper").style.opacity = "0";
-		console.log("[arrow.html] Arrow hidden.");
+		console.log("[arrow.html] Arrow hid.");
 		window.removeEventListener("scroll", remove_arrow, {passive: true});
 		console.log("[arrow.html] Scroll listener removed.");
 		setTimeout(() => { document.getElementById("arrow_wrapper").remove() }, 1250);
