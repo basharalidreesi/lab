@@ -3,12 +3,6 @@
 	<div class="--load"></div>
 </div>
 <style id="load_wrapper_style">
-	/*
-	┌───────┐
-	│ begin └┐
-	│ --load │
-	└────────┘
-	*/
 	.--load_wrapper {
 		width: calc(var(--single) * 5);
 		height: calc(var(--half));
@@ -44,10 +38,12 @@
 			width: 87.5%;
 		}
 	}
-	<noscript>
+</style>
+<noscript>
+	<style>
 		.--load_wrapper {
 			display: none;
 		}
-	</noscript>
-</style>
+	</style>
+</noscript>
 <!-- end load.html -->
