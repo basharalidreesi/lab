@@ -9,15 +9,13 @@
 	{% assign current = branch | prepend: segment[0] | append: ".markdown" %}
 	{% assign deepness = forloop.index %}
 	{% assign last = forloop.last %}
-	{% if deepness == 1 and current != "404.markdown" and tree.size < 3 %}
+	{% if deepness == 1 and current != "404.markdown" %}
 		{% for node in site.pages %}
 			{% assign deepness_one_current = current | remove_first: "_" %}
 			{% if node.path == deepness_one_current %}
 				<span class="--nav_text_styling --map_text_styling">{{ node.title }}</span>
 			{% endif %}
 		{% endfor %}
-	{% elsif deepness == 1 and current != "404.markdown" and tree.size >= 3 %}
-		{% continue %}
 	{% elsif deepness == 1 and current == "404.markdown" %}
 		<span class="--nav_text_styling --map_text_styling">?</span>
 		{% break %}
