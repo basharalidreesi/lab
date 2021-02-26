@@ -814,6 +814,9 @@ body {
 	#nav_checkbox:checked ~ .nav_container_upper-nav_checkbox_toggle .--anchor_styling {
 		pointer-events: auto;
 	}
+	#nav_checkbox:checked ~ .nav_container_upper-nav_checkbox_toggle .--current_map_text_styling {
+		pointer-events: none;
+	}
 	.--map_text_separator {
 		height: 1rem; /* debug */
 		width: 1rem; /* debug */
