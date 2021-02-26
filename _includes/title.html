@@ -1,5 +1,5 @@
 <!-- begin title.html -->
-<title onload="log_title(event);">
+<title>
 	{{ site.title }}
 	{% assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" %}
 	{% for branch in tree %}
@@ -30,8 +30,6 @@
 	{% endfor %}
 </title>
 <script>
-	function log_title(event) {
-		console.log("[title.html] Title: " + event.target);
-	}
+	console.log("[title.html] Title: " + document.title);
 </script>
 <!-- end title.html -->
