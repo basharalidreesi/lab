@@ -2,9 +2,7 @@
 {% if page.header_location == "upper" %}
 	<input type="checkbox" id="nav_checkbox">
 	<label for="nav_checkbox" class="nav_container_upper-nav_checkbox_toggle" onClick="lock_scroll();">
-		<span class="--nav_checkbox_arrow"></span>
 		{% include map.html %}
-		<span class="--nav_checkbox_arrow"></span>
 	</label>
 {% else %}
 	<script>
