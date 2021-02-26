@@ -1,5 +1,57 @@
 <!-- begin downward.html -->
-<div class="--indicator_arrow_wrapper_vertical" id="indicator_arrow" onClick="scroll_arrow_into_view(event);">
-	<div class="--indicator_arrow_head"></div>
+<div class="--downward_arrow_wrapper" id="arrow_wrapper" onClick="scroll_to_arrow(event);">
+	<div class="--downward_arrow"></div>
 </div>
+<style>
+	.--downward_arrow_wrapper {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		animation: arrow_appear 10s, downward_arrow_bounce 2.5s infinite;
+		padding: calc(var(--double));
+		transition: opacity 1.25s;
+		cursor: s-resize;
+	}
+	.--downward_arrow {
+		border-top: calc(var(--single)) solid var(--text_colour);
+		border-left: calc(var(--half)) solid transparent;
+		border-right: calc(var(--half)) solid transparent;
+		width: 0px;
+		height: 0px;
+		filter: drop-shadow(0px 0px calc(var(--single)) var(--primary_colour));
+	}
+	@keyframes arrow_appear {
+		0% {
+			opacity: 0;
+		}
+		80% {
+			opacity: 0;
+		}
+		90% {
+			opacity: 0.5;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+	@keyframes downward_arrow_bounce {
+		0% {
+			transform: translate(-50%, 0);
+		}
+		50% {
+			transform: translate(-50%, calc(var(--single_negative)));
+		}
+		100% {
+			transform: translate(-50%, 0);
+		}
+	}
+</style>
+{% include arrow.html %}
+<noscript>
+	<style>
+		.--downward_arrow_wrapper {
+			display: none;
+		}
+	</style>
+</noscript>
 <!-- end downward.html -->
