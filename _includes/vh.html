@@ -4,6 +4,12 @@
 	let vh = window.innerHeight * 0.01;
 	document.documentElement.style.setProperty('--vh', `${vh}px`);
 	console.log("[vh.html] --vh set to " + `${vh}px` + ".");
+	window.addEventListener("resize", vh_update);
+	function vh_update() {
+		vh = window.innerHeight * 0.01;
+		document.documentElement.style.setProperty('--vh', `${vh}px`);
+		console.log("[vh.html] --vh updated to " + `${vh}px` + ".");
+	}
 </script>
 <noscript>
 	<style>
