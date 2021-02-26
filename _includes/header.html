@@ -24,10 +24,12 @@
 		#header_graphic {
 			display: none;
 		}
-		.header_anchor-header_graphic {
-			padding-top: calc(var(--single));
-			padding-bottom: calc(var(--single));
-		}
+		{% if page.header_location == "central" %}
+			.header_anchor-header_graphic {
+				padding-top: calc(var(--single));
+				padding-bottom: calc(var(--single));
+			}
+		{% endif %}
 	</style>
 </noscript>
 <!-- end header.html -->
