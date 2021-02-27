@@ -362,6 +362,7 @@ body {
 	order: 2;
 	position: sticky;
 	top: 0;
+	z-index: 100;
 }
 .mother_container-header_container_central {
 	order: 1;
@@ -695,7 +696,7 @@ body {
 		-moz-user-select: none;
 		-webkit-user-select: none;
 		overflow: hidden;
-		z-index: -100;
+		z-index: -101;
 	}
 }
 
