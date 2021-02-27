@@ -842,6 +842,12 @@ body {
 			padding-top: calc(var(--double));
 			padding-bottom: calc(var(--double));
 		}
+		.nav_map_wrapper-nav_map_item:first-child {
+			border-bottom: var(--border_colour);
+		}
+		.nav_map_wrapper-nav_map_item:last-child {
+			border-top: var(--border_colour);
+		}
 		.--current_nav_map_text_styling {
 			display: block;
 		}
