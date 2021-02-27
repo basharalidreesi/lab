@@ -800,6 +800,9 @@ body {
 			width: 100%;
 			border-bottom: 1px solid var(--border_colour);
 		}
+		.--current_nav_text_styling {
+			display: none;
+		}
 		/*
 		┌───────┐
 		│ begin └────────┐
