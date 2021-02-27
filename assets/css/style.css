@@ -787,6 +787,7 @@ body {
 		*/
 		.mother_container-nav_container_upper > .nav_container-nav_list_wrapper {
 			display: none;
+			border-bottom: none;
 		}
 		#nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper {
 			display: flex;
@@ -929,6 +930,9 @@ body {
 		transform: rotate(-135deg);
 		-webkit-transform: rotate(-135deg);
 	} */
+	.list_page_wrapper-list_page_item:first-child {
+		border-top: none;
+	}
 	.list_page_item-list_page_item_tag_list {
 		padding-top: calc(var(--double));
 	}
