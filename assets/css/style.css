@@ -327,7 +327,7 @@ body {
 	background-attachment: fixed;
 }
 .--lock_scroll {
-	overflow: hidden;
+	/* overflow: hidden; */ /* debug */
 }
 .--mobile_background {
 	display: none;
