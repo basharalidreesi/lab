@@ -3,6 +3,7 @@
 	<head>
 		{%- assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" -%}
 		{%- assign text_colour = page.text_colour | strip_newlines | strip -%}
+		{%- assign pages = site.pages | sort: "position" -%}
 		<meta charset="utf-8">
 		<title>
 			{{- site.title -}}
@@ -101,20 +102,19 @@
 							{%- endif -%}
 						{%- endfor %}
 					</label>
-				{%- else -%}
+				{%- else %}
 					<!-- nav_map_* not included -->
 				{%- endif %}
 				<ul class="nav_container-nav_list_wrapper">
-					{% assign pages = site.pages | sort: "position" %}
-					{% for node in pages %}
-						{% if node.is_listed %}
-							<li class="nav_list_wrapper-nav_list_item --nav_text_styling {% if page.url contains node.url %} --current_nav_text_styling {% endif %}">
-								<a class="--anchor_styling" href="{{ site.baseurl }}{{ node.url }}">
+					{%- for node in pages -%}
+						{%- if node.is_listed %}
+							<li class="nav_list_wrapper-nav_list_item --nav_text_styling {%- if page.url contains node.url -%} --current_nav_text_styling {%- endif -%}">
+								<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
 									{{ node.title }}
 								</a>
 							</li>
-						{% endif %}
-					{% endfor %}
+						{%- endif -%}
+					{%- endfor %}
 				</ul>
 			</nav>
 			<header class="mother_container-header_container{% if page.header_location == "central" %}_central{% elsif page.header_location == "upper" %}_upper{% endif %}" id="header_container">
