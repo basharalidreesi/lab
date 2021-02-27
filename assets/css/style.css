@@ -857,7 +857,10 @@ body {
 			padding: 0;
 			background-color: red;
 		}
-
+	
+	.list_page_wrapper-list_page_item:first-child {
+		border-top: none;
+	}
 	.list_page_item-list_page_item_tag_list {
 		padding-top: calc(var(--double));
 	}
