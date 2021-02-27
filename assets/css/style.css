@@ -816,8 +816,14 @@ body {
 		#nav_map_checkbox {
 			display: none;
 		}
-		.--nav_map_background {
+		#nav_map_checkbox:checked ~ .--nav_map_background {
 			display: block;
+			position: absolute;
+			top: calc(var(--header_height) * -1);
+			left: 0;
+			height: calc(100% + var(--header_height));
+			width: 100%;
+			z-index: -100;
 		}
 		.nav_container_upper-nav_map_wrapper {
 			display: flex;
