@@ -813,6 +813,7 @@ body {
 		-webkit-user-select: none;
 		overflow: hidden;
 		box-shadow: inset 0 0 calc(var(--half)) calc(var(--quarter)) var(--primary_colour);
+		z-index: 50;
 	}
 	#nav_checkbox:checked ~ .nav_container-nav_list_wrapper {
 		display: flex;
@@ -825,6 +826,7 @@ body {
 		max-height: calc(var(--screen_height_half) - var(--header_height_half));
 		overflow: scroll;
 		position: relative;
+		z-index: 100;
 	}
 	#nav_checkbox:checked ~ .nav_container_upper-nav_checkbox_toggle {
 		flex-flow: column-reverse nowrap;
@@ -835,6 +837,7 @@ body {
 		max-height: calc(var(--screen_height_half) - var(--header_height_half));
 		overflow: scroll;
 		position: relative;
+		z-index: 100;
 	}
 	.--map_text_separator {
 		height: 1rem; /* debug */
