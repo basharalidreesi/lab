@@ -717,6 +717,7 @@ body {
 	}
 	.--current_map_text_styling {
 		width: 100%;
+		display: block;
 	}
 	.--extra_nav_item {
 		display: none;
