@@ -821,15 +821,18 @@ body {
 		padding: 0;
 		border-bottom: none;
 		z-index: 99;
-		overflow-y: scroll;
+		max-height: calc(var(--screen_height_half) - var(--header_height_half));
+		overflow: scroll;
 	}
 	#nav_checkbox:checked ~ .nav_container_upper-nav_checkbox_toggle {
 		flex-flow: column-reverse nowrap;
 		align-items: center;
-		justify-content: flex-start;
+		justify-content: flex-end;
 		height: auto;
 		z-index: 100;
-		box-shadow: 0 calc(var(--quarter)) calc(var(--single)) calc(var(--quarter)) var(--primary_colour)
+		box-shadow: 0 calc(var(--quarter)) calc(var(--single)) calc(var(--quarter)) var(--primary_colour);
+		max-height: calc(var(--screen_height_half) - var(--header_height_half));
+		overflow: scroll;
 	}
 	.--map_text_separator {
 		height: 1rem; /* debug */
