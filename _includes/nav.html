@@ -1,10 +1,10 @@
 <!-- begin nav.html -->
 {% if page.header_location == "upper" %}
 	<input type="checkbox" id="nav_checkbox">
+	<div class="--nav_background"></div>
 	<label for="nav_checkbox" class="nav_container_upper-nav_checkbox_toggle" onClick="lock_scroll();">
 		{% include map.html %}
 	</label>
-	<div class="--nav_background"></div>
 {% else %}
 	<script>
 		console.log("[nav.html] map.html not included.");
