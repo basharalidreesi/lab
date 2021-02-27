@@ -821,6 +821,9 @@ body {
 			border-top: 1px solid var(--border_colour);
 			border-bottom: 1px solid var(--border_colour);
 		}
+		#nav_map_checkbox:checked ~ .nav_container_upper-nav_map_wrapper {
+			height: 100%;
+		}
 		.nav_map_wrapper-nav_map_item {
 			display: block;
 			width: 100%;
