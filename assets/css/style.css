@@ -26,6 +26,15 @@
 	--nav_text_font_weight: 300;
 	/*
 	┌───────┐
+	│ begin └──────┐
+	│ nav map text │
+	└──────────────┘
+	*/
+	--nav_map_text_font: var(--nav_text_font);
+	--nav_map_text_font_size: var(--nav_text_font_size);
+	--nav_map_text_font_weight: var(--nav_text_font_size);
+	/*
+	┌───────┐
 	│ begin └─────┐
 	│ footer text │
 	└─────────────┘
@@ -181,10 +190,15 @@ address {
 		color: var(--text_colour);
 		text-align: center;
 	}
-	.--additional_nav_item {
-		display: none;
+	.--nav_map_text_styling {
+		font-family: var(--nav_map_text_font);
+		font-size: var(--nav_map_text_font_size);
+		font-weight: var(--nav_map_text_font_weight);
+		color: var(--text_colour);
+		text-align: center;
+		overflow: hidden;
 	}
-	.--map_text_styling {
+	/* .--map_text_styling {
 		overflow: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;
@@ -194,7 +208,7 @@ address {
 		-webkit-user-select: none;
 		padding-top: calc(var(--double));
 		padding-bottom: calc(var(--double));
-	}
+	} */
 	.--footer_text_styling {
 		font-family: var(--footer_text_font);
 		font-size: var(--footer_text_font_size);
@@ -287,11 +301,7 @@ address {
 		padding-left: calc(var(--half));
 		padding-right: calc(var(--half));
 	}
-	.--current_nav_text_styling a {
-		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
-		background-size: 100% 2px;
-	}
-	.--current_map_text_styling a {
+	.--current_nav_text_styling a, .--current_nav_map_text_styling a {
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 		background-size: 100% 2px;
 	}
@@ -348,7 +358,7 @@ body {
 	overflow: hidden;
 	z-index: -100;
 }
-.--nav_background {
+/* .--nav_background {
 	position: absolute;
 	top: calc(var(--header_height) * -1);
 	left: 0;
@@ -362,7 +372,7 @@ body {
 	z-index: -100;
 	background-color: transparent;
 	box-shadow: 0;
-}
+} */
 
 /*
 ┌───────┐
@@ -428,12 +438,21 @@ body {
 .nav_list_wrapper-nav_list_item {
 	flex: 1; /* stress test this with a higher number of listed pages */
 }
-#nav_checkbox {
-	display: none;
-}
-.nav_container_upper-nav_checkbox_toggle {
-	display: none;
-}
+	/*
+	┌───────┐
+	│ begin └────────┐
+	│ nav map styles │
+	└────────────────┘
+	*/
+	#nav_map_checkbox {
+		display: none;
+	}
+	.--nav_map_background { }
+	.nav_container_upper-nav_map_wrapper {
+		display: none;
+	}
+	.nav_map_wrapper-nav_map_item { }
+	.--nav_map_text_separator { }
 
 /*
 ┌───────┐
@@ -716,12 +735,68 @@ body {
 └─────────────────────────────────────┘
 */
 @media only screen and (max-width: 1024px) {
-	
-	.--current_nav_text_styling {
+	/*
+	┌───────┐
+	│ begin └──────────┐
+	│ container styles │
+	└──────────────────┘
+	*/
+	.mother_container-nav_container_upper {
+		order: 2;
+		position: relative;
+	}
+	.mother_container-header_container_upper {
+		order: 1;
+	}
+	/*
+	┌───────┐
+	│ begin └────┐
+	│ nav styles │
+	└────────────┘
+	*/
+		/*
+		┌───────┐
+		│ begin └─────────────────────────┐
+		│ page.header_location == central │
+		└─────────────────────────────────┘
+		*/
+		.mother_container-nav_container_central > .nav_container-nav_list_wrapper {
+			flex-flow: column nowrap;
+			padding: 0;
+		}
+		.mother_container-nav_container_central > .nav_container-nav_list_wrapper > .nav_list_wrapper-nav_list_item {
+			padding-top: calc(var(--double));
+			padding-bottom: calc(var(--double));
+			width: 100%;
+			border-top: 1px solid var(--border_colour);
+		}
+		.mother_container-nav_container_central > .nav_container-nav_list_wrapper > .nav_list_wrapper-nav_list_item:first-child {
+			border-top: none;
+		}
+		/*
+		┌───────┐
+		│ begin └───────────────────────┐
+		│ page.header_location == upper │
+		└───────────────────────────────┘
+		*/
+	/*
+	┌───────┐
+	│ begin └────────┐
+	│ nav map styles │
+	└────────────────┘
+	*/
+	#nav_map_checkbox {
 		display: none;
 	}
-	.--additional_nav_item {
-		display: initial;
+	.--nav_map_background { }
+	.nav_container_upper-nav_map_wrapper {
+		display: none;
+	}
+	.nav_map_wrapper-nav_map_item { }
+	.--nav_map_text_separator { }
+	
+	/* .--current_nav_text_styling {
+		display: none;
 	}
 	.--map_text_styling {
 		display: none;
@@ -729,9 +804,6 @@ body {
 	.--current_map_text_styling {
 		width: 100%;
 		display: block;
-	}
-	.--extra_nav_item {
-		display: none;
 	}
 	#nav_checkbox:checked ~ .nav_container_upper-nav_checkbox_toggle .--map_text_styling {
 		width: 100%;
@@ -748,41 +820,15 @@ body {
 	}
 	#nav_checkbox:checked ~ .nav_container_upper-nav_checkbox_toggle .--current_map_text_styling a {
 		pointer-events: none;
-	}
-	
-	.mother_container-nav_container_upper {
-		order: 2;
-		position: relative;
-	}
-	.mother_container-header_container_upper {
-		order: 1;
-	}
-	/*
-	┌───────┐
-	│ begin └─────────────────────────┐
-	│ page.header_location == central │
-	└─────────────────────────────────┘
-	*/
-	.mother_container-nav_container_central > .nav_container-nav_list_wrapper {
-		flex-flow: column nowrap;
-		padding: 0;
-	}
-	.mother_container-nav_container_central > .nav_container-nav_list_wrapper > .nav_list_wrapper-nav_list_item {
-		padding-top: calc(var(--double));
-		padding-bottom: calc(var(--double));
-		width: 100%;
-		border-top: 1px solid var(--border_colour);
-	}
-	.mother_container-nav_container_central > .nav_container-nav_list_wrapper > .nav_list_wrapper-nav_list_item:first-child {
-		border-top: none;
-	}
+	} */
+
 	/*
 	┌───────┐
 	│ begin └───────────────────────┐
 	│ page.header_location == upper │
 	└───────────────────────────────┘
 	*/
-	.mother_container-nav_container_upper > .nav_container-nav_list_wrapper {
+	/* .mother_container-nav_container_upper > .nav_container-nav_list_wrapper {
 		display: none;
 	}
 	.mother_container-nav_container_upper > .nav_container-nav_list_wrapper > .nav_list_wrapper-nav_list_item {
@@ -832,14 +878,14 @@ body {
 		position: relative;
 	}
 	.--map_text_separator {
-		height: 1rem; /* debug */
-		width: 1rem; /* debug */
-		background-color: red; /* debug */
+		height: 1rem;
+		width: 1rem;
+		background-color: red;
 		display: none;
 	}
 	#nav_checkbox:checked ~ .nav_container_upper-nav_checkbox_toggle .--map_text_separator {
 		display: block;
-	}
+	} */
 	/* .--nav_checkbox_arrow {
 		border: 1px solid var(--text_colour);
 		border-width: 0 1px 1px 0;
