@@ -24,15 +24,15 @@
 	--nav_text_font: "M+ 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--nav_text_font_size: 1.125rem;
 	--nav_text_font_weight: 300;
-		/*
-		┌───────┐
-		│ begin └──────┐
-		│ nav map text │
-		└──────────────┘
-		*/
-		--nav_map_text_font: var(--nav_text_font);
-		--nav_map_text_font_size: var(--nav_text_font_size);
-		--nav_map_text_font_weight: var(--nav_text_font_weight);
+	/*
+	┌───────┐
+	│ begin └──────┐
+	│ nav map text │
+	└──────────────┘
+	*/
+	--nav_map_text_font: var(--nav_text_font);
+	--nav_map_text_font_size: var(--nav_text_font_size);
+	--nav_map_text_font_weight: var(--nav_text_font_weight);
 	/*
 	┌───────┐
 	│ begin └─────┐
