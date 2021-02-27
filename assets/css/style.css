@@ -802,7 +802,7 @@ body {
 		position: absolute;
 		top: calc(var(--header_height) * -1);
 		left: 0;
-		height: calc(100% + var(--header_height));
+		height: calc(var(--screen_height));
 		width: 100vw;
 		background-color: var(--secondary_colour);
 		user-select: none;
