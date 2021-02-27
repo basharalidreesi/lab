@@ -812,10 +812,12 @@ body {
 			display: block;
 		}
 		.nav_container_upper-nav_map_wrapper {
-			display: block;
+			display: flex;
+			flex-flow: column-reverse nowrap;
 		}
 		.nav_map_wrapper-nav_map_item {
 			display: block;
+			width: 100%;
 		}
 		.--nav_map_text_separator {
 			display: block;
