@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang="en">
 	<head>
+		{%- assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" -%}
+		{%- assign text_colour = page.text_colour | strip_newlines | strip -%}
 		<meta charset="utf-8">
 		<title>
 			{{- site.title -}}
-			{%- assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" -%}
 			{%- for branch in tree -%}
 				{%- assign segment = page.path | split: branch -%}
 				{%- assign current = branch | prepend: segment[0] | append: ".markdown" -%}
@@ -32,16 +33,15 @@
 				{%- endif -%}
 			{%- endfor -%}
 		</title>
-		<meta name="description" content="{{ site.description }}">
-		<meta name="author" content="{{ site.author }}">
+		<meta name="description" content="{{- site.description -}}">
+		<meta name="author" content="{{- site.author -}}">
 		<!-- <link rel="shortcut icon" type="image/jpg" href=""/> -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		{% include colours.html %}
 		{% include fonts.html %}
-		{% assign text_colour = page.text_colour | strip_newlines | strip %}
-		{% unless text_colour == "#000" or text_colour == "#000000" or text_colour == "black" %}
+		{%- unless text_colour == "#000" or text_colour == "#000000" or text_colour == "black" -%}
 			<script src="{{ site.baseurl }}/assets/js/svg-inject.min.js"></script>
-		{% endunless %}
+		{%- endunless -%}
 		<script src="{{ site.baseurl }}/assets/js/script.js"></script>
 		<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/style.css" media="screen"/>
 		<style>
@@ -59,22 +59,21 @@
 	</head>
 	<body>
 		<div class="--mobile_background"></div>
-		<div class="mother_container {% if page.is_fullscreen %}--mother_container_fullscreen{% endif %}">
-			<nav class="mother_container-nav_container{% if page.header_location == "central" %}_central{% elsif page.header_location == "upper" %}_upper{% endif %}" id="nav_container">
-				{% if page.header_location == "upper" %}
+		<div class="mother_container {%- if page.is_fullscreen -%}--mother_container_fullscreen{%- endif -%}">
+			<nav class="mother_container-nav_container{%- if page.header_location == 'central' -%}_central{%- elsif page.header_location == 'upper' -%}_upper{%- endif -%}" id="nav_container">
+				{%- if page.header_location == "upper" -%}
 					<input type="checkbox" id="nav_checkbox">
 					<div class="--nav_background"></div>
-					<label for="nav_checkbox" class="nav_container_upper-nav_map_wrapper" onClick="lock_scroll();">
-						{% assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" %}
-						{% for branch in tree %}
-							{% assign segment = page.path | split: branch %}
-							{% assign current = branch | prepend: segment[0] | append: ".markdown" %}
-							{% assign deepness = forloop.index %}
-							{% assign last = forloop.last %}
-							{% if deepness == 1 and current != "404.markdown" %}
-								{% for node in site.pages %}
-									{% assign deepness_one_current = current | remove_first: "_" %}
-									{% if node.path == deepness_one_current %}
+					<label for="nav_checkbox" class="nav_container_upper-nav_map_wrapper">
+						{%- for branch in tree -%}
+							{%- assign segment = page.path | split: branch -%}
+							{%- assign current = branch | prepend: segment[0] | append: ".markdown" -%}
+							{%- assign deepness = forloop.index -%}
+							{%- assign last = forloop.last -%}
+							{%- if deepness == 1 and current != "404.markdown" -%}
+								{%- for node in site.pages -%}
+									{%- assign deepness_one_current = current | remove_first: "_" -%}
+									{%- if node.path == deepness_one_current -%}
 										<span class="--nav_text_styling --map_text_styling {% if page.url == node.url %} --current_map_text_styling {% endif %}">
 											<a class="--anchor_styling" href="{{ site.baseurl}}{{ node.url }}">
 												{{ node.title }}
