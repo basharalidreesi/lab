@@ -712,6 +712,12 @@ body {
 	.--additional_nav_item {
 		display: initial;
 	}
+	.--map_text_styling {
+		display: none;
+	}
+	.--current_map_text_styling {
+		width: 100%;
+	}
 	.--extra_nav_item {
 		display: none;
 	}
@@ -720,6 +726,16 @@ body {
 		overflow: initial;
 		white-space: initial;
 		text-overflow: initial;
+		display: block;
+	}
+	#nav_checkbox ~ .nav_container_upper-nav_checkbox_toggle .--anchor_styling {
+		pointer-events: none;
+	}
+	#nav_checkbox:checked ~ .nav_container_upper-nav_checkbox_toggle .--anchor_styling {
+		pointer-events: auto;
+	}
+	#nav_checkbox:checked ~ .nav_container_upper-nav_checkbox_toggle .--current_map_text_styling a {
+		pointer-events: none;
 	}
 	
 	.mother_container-nav_container_upper {
@@ -807,21 +823,12 @@ body {
 		overflow-y: scroll;
 	}
 	#nav_checkbox:checked ~ .nav_container_upper-nav_checkbox_toggle {
-		flex-flow: column nowrap;
+		flex-flow: column-reverse nowrap;
 		align-items: center;
 		justify-content: flex-start;
 		height: auto;
 		z-index: 100;
 		box-shadow: 0 calc(var(--quarter)) calc(var(--single)) calc(var(--quarter)) var(--primary_colour)
-	}
-	#nav_checkbox ~ .nav_container_upper-nav_checkbox_toggle .--anchor_styling {
-		pointer-events: none;
-	}
-	#nav_checkbox:checked ~ .nav_container_upper-nav_checkbox_toggle .--anchor_styling {
-		pointer-events: auto;
-	}
-	#nav_checkbox:checked ~ .nav_container_upper-nav_checkbox_toggle .--current_map_text_styling a {
-		pointer-events: none;
 	}
 	.--map_text_separator {
 		height: 1rem; /* debug */
