@@ -825,13 +825,22 @@ body {
 			height: 100%;
 		}
 		.nav_map_wrapper-nav_map_item {
-			display: block;
+			display: none;
 			width: 100%;
 			padding-top: calc(var(--double));
 			padding-bottom: calc(var(--double));
 		}
-		.--nav_map_text_separator {
+		.current_nav_map_text_styling {
 			display: block;
+		}
+		#nav_map_checkbox:checked ~ .nav_container_upper-nav_map_wrapper .nav_map_wrapper-nav_map_item {
+			display: block;
+		}
+		.--nav_map_text_separator { /* debug */
+			height: 1rem;
+			width: 1rem;
+			padding: 0;
+			background-color: red;
 		}
 	
 	/* .--current_nav_text_styling {
