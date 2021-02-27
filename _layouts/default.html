@@ -73,7 +73,7 @@
 								{%- for node in site.pages -%}
 									{%- assign deepness_one_current = current | remove_first: "_" -%}
 									{%- if node.path == deepness_one_current %}
-										<span class="nav_map_wrapper-nav_map_item --nav_map_text_styling {%- if page.url == node.url -%} --current_nav_map_text_styling {%- endif -%}">
+										<span class="nav_map_wrapper-nav_map_item --nav_map_text_styling {%- if page.url == node.url %} --current_nav_map_text_styling {%- endif -%}">
 											<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
 												{{ node.title }}
 											</a>
@@ -89,7 +89,7 @@
 							{%- else -%}
 								{%- for node in site.documents -%}
 									{%- if node.path == current %}
-										<span class="nav_map_wrapper-nav_map_item --nav_map_text_styling {%- if page.url == node.url -%} --current_nav_map_text_styling {%- endif -%}">
+										<span class="nav_map_wrapper-nav_map_item --nav_map_text_styling {%- if page.url == node.url %} --current_nav_map_text_styling {%- endif -%}">
 											<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
 												{{ node.title }}
 											</a>
