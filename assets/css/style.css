@@ -819,7 +819,8 @@ body {
 		.--nav_map_background {
 			display: block;
 			background-color: transparent;
-			transition: background-color 0.25s;
+			box-shadow: none;
+			transition: all 0.25s;
 		}
 		#nav_map_checkbox:checked ~ .--nav_map_background {
 			position: absolute;
@@ -829,6 +830,7 @@ body {
 			width: 100%;
 			z-index: -100;
 			background-color: var(--secondary_colour);
+			box-shadow: inset 0 0 calc(var(--single)) calc(var(--quarter)) var(--primary_colour);
 		}
 		.nav_container_upper-nav_map_wrapper {
 			display: flex;
@@ -837,7 +839,7 @@ body {
 			justify-content: flex-end;
 			height: calc(var(--nav_height));
 			border-top: 1px solid var(--border_colour);
-			box-shadow: 0;
+			box-shadow: none;
 			transition: box-shadow 0.25s;
 		}
 		#nav_map_checkbox:checked ~ .nav_container_upper-nav_map_wrapper {
