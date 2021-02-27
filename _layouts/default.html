@@ -84,7 +84,9 @@
 									{%- endif -%}
 								{%- endfor -%}
 							{%- elsif deepness == 1 and current == "404.markdown" %}
-					<span class="nav_map_wrapper-nav_map_item --nav_map_text_styling">?</span>
+					<span class="nav_map_wrapper-nav_map_item --nav_map_text_styling {%- if page.url == node.url %} --current_nav_map_text_styling {%- endif -%}">
+						?
+					</span>
 								{%- break -%}
 							{%- else -%}
 								{%- for node in site.documents -%}
