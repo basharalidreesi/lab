@@ -15,13 +15,73 @@
 		{% unless text_colour == "#000" or text_colour == "#000000" or text_colour == "black" %}
 			<script src="{{ site.baseurl }}/assets/js/svg-inject.min.js"></script>
 		{% endunless %}
+		<script src="{{ site.baseurl }}/assets/js/script.js"></script>
 		<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/style.css" media="screen"/>
 	</head>
 	<body>
 		<div class="--mobile_background"></div>
 		<div class="mother_container {% if page.is_fullscreen %}--mother_container_fullscreen{% endif %}">
 			<nav class="mother_container-nav_container{% if page.header_location == "central" %}_central{% elsif page.header_location == "upper" %}_upper{% endif %}" id="nav_container">
-				{% include nav.html %}
+				{% if page.header_location == "upper" %}
+					<input type="checkbox" id="nav_checkbox">
+					<div class="--nav_background"></div>
+					<label for="nav_checkbox" class="nav_container_upper-nav_map_wrapper" onClick="lock_scroll();">
+						{% assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" %}
+						{% for branch in tree %}
+							{% assign segment = page.path | split: branch %}
+							{% assign current = branch | prepend: segment[0] | append: ".markdown" %}
+							{% assign deepness = forloop.index %}
+							{% assign last = forloop.last %}
+							{% if deepness == 1 and current != "404.markdown" %}
+								{% for node in site.pages %}
+									{% assign deepness_one_current = current | remove_first: "_" %}
+									{% if node.path == deepness_one_current %}
+										<span class="--nav_text_styling --map_text_styling {% if page.url == node.url %} --current_map_text_styling {% endif %}">
+											<a class="--anchor_styling" href="{{ site.baseurl}}{{ node.url }}">
+												{{ node.title }}
+											</a>
+										</span>
+										{% unless last %}
+											<span class="--map_text_separator"></span>
+										{% endunless %}
+									{% endif %}
+								{% endfor %}
+							{% elsif deepness == 1 and current == "404.markdown" %}
+								<span class="--nav_text_styling --map_text_styling">?</span>
+								{% break %}
+							{% else %}
+								{% for node in site.documents %}
+									{% if node.path == current %}
+										<span class="--nav_text_styling --map_text_styling {% if page.url == node.url %} --current_map_text_styling {% endif %}">
+											<a class="--anchor_styling" href="{{ site.baseurl}}{{ node.url }}">
+												{{ node.title }}
+											</a>
+										</span>
+										{% unless last %}
+											<span class="--map_text_separator"></span>
+										{% endunless %}
+									{% endif %}
+								{% endfor %}
+							{% endif %}
+						{% endfor %}
+					</label>
+				{% else %}
+					<script>
+						console.log("[nav.html] map.html not included.");
+					</script>
+				{% endif %}
+				<ul class="nav_container-nav_list_wrapper">
+					{% assign pages = site.pages | sort: "position" %}
+					{% for node in pages %}
+						{% if node.is_listed %}
+							<li class="nav_list_wrapper-nav_list_item --nav_text_styling {% if page.url contains node.url %} --current_nav_text_styling {% endif %}">
+								<a class="--anchor_styling" href="{{ site.baseurl }}{{ node.url }}">
+									{{ node.title }}
+								</a>
+							</li>
+						{% endif %}
+					{% endfor %}
+				</ul>
 			</nav>
 			<header class="mother_container-header_container{% if page.header_location == "central" %}_central{% elsif page.header_location == "upper" %}_upper{% endif %}" id="header_container">
 				{% include header.html %}
