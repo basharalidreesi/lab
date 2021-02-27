@@ -192,8 +192,8 @@ address {
 		-ms-user-select: none;
 		-moz-user-select: none;
 		-webkit-user-select: none;
-		padding-top: calc(var(--single));
-		padding-bottom: calc(var(--single));
+		padding-top: calc(var(--double));
+		padding-bottom: calc(var(--double));
 	}
 	.--footer_text_styling {
 		font-family: var(--footer_text_font);
@@ -799,7 +799,6 @@ body {
 		justify-content: center;
 		height: calc(var(--nav_height));
 		width: 100%;
-		padding: calc(var(--single));
 		border-top: 1px solid var(--border_colour);
 		cursor: s-resize;
 	}
@@ -808,7 +807,6 @@ body {
 	}
 	#nav_checkbox:checked ~ .--nav_background {
 		background-color: var(--secondary_colour);
-		box-shadow: inset 0 0 calc(var(--single)) calc(var(--quarter)) var(--primary_colour);
 		transition: all 0.25s;
 	}
 	#nav_checkbox:checked ~ .nav_container-nav_list_wrapper {
