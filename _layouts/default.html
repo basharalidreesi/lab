@@ -60,10 +60,10 @@
 		<div class="--mobile_background"></div>
 		<div class="mother_container {%- if page.is_fullscreen -%}--mother_container_fullscreen{%- endif -%}">
 			<nav class="mother_container-nav_container{%- if page.header_location == 'central' -%}_central{%- elsif page.header_location == 'upper' -%}_upper{%- endif -%}" id="nav_container">
-				{%- if page.header_location == "upper" -%}
-					<input type="checkbox" id="nav_map_checkbox">
-					<div class="--nav_map_background"></div>
-					<label for="nav_map_checkbox" class="nav_container_upper-nav_map_wrapper">
+				{%- if page.header_location == "upper" %}
+				<input type="checkbox" id="nav_map_checkbox">
+				<div class="--nav_map_background"></div>
+				<label for="nav_map_checkbox" class="nav_container_upper-nav_map_wrapper">
 						{%- for branch in tree -%}
 							{%- assign segment = page.path | split: branch -%}
 							{%- assign current = branch | prepend: segment[0] | append: ".markdown" -%}
@@ -101,7 +101,7 @@
 								{%- endfor -%}
 							{%- endif -%}
 						{%- endfor %}
-					</label>
+				</label>
 				{%- else %}
 					<!-- nav map not included -->
 				{%- endif %}
