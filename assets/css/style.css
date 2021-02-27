@@ -839,6 +839,9 @@ body {
 		.--current_nav_map_text_styling {
 			display: block;
 		}
+		.--current_nav_map_text_styling a {
+			pointer-events: none;
+		}
 		#nav_map_checkbox:checked ~ .nav_container_upper-nav_map_wrapper .nav_map_wrapper-nav_map_item {
 			display: block;
 		}
