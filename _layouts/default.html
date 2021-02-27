@@ -2,21 +2,60 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		{% include title.html %}
+		<title>
+			{{- site.title -}}
+			{%- assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" -%}
+			{%- for branch in tree -%}
+				{%- assign segment = page.path | split: branch -%}
+				{%- assign current = branch | prepend: segment[0] | append: ".markdown" -%}
+				{%- assign deepness = forloop.index -%}
+				{%- assign last = forloop.last -%}
+				{%- if deepness == 1 and current != "404.markdown" and current != "index.markdown" and tree.size < 2 -%}
+					{%- for node in site.pages -%}
+						{%- assign deepness_one_current = current | remove_first: "_" -%}
+						{%- if node.path == deepness_one_current -%}
+							&nbsp;|&nbsp;{{- node.title -}}
+							{%- unless last -%}&nbsp;|&nbsp;{%- endunless -%}
+						{%- endif -%}
+					{%- endfor -%}
+				{%- elsif deepness == 1 and current != "404.markdown" and current != "index.markdown" and tree.size >= 2 -%}
+					&nbsp;|&nbsp;{%- continue -%}
+				{%- elsif deepness == 1 and current == "404.markdown" -%}
+					&nbsp;|&nbsp;?&nbsp;{%- break -%}
+				{%- else -%}
+					{%- for node in site.documents -%}
+						{%- if node.path == current -%}
+							{{- node.title -}}
+							{%- unless last -%}&nbsp;|&nbsp;{%- endunless -%}
+						{%- endif -%}
+					{%- endfor -%}
+				{%- endif -%}
+			{%- endfor -%}
+		</title>
 		<meta name="description" content="{{ site.description }}">
 		<meta name="author" content="{{ site.author }}">
 		<!-- <link rel="shortcut icon" type="image/jpg" href=""/> -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		{% include colours.html %}
 		{% include fonts.html %}
-		{% include alias.html%}
-		{% include vh.html %}
 		{% assign text_colour = page.text_colour | strip_newlines | strip %}
 		{% unless text_colour == "#000" or text_colour == "#000000" or text_colour == "black" %}
 			<script src="{{ site.baseurl }}/assets/js/svg-inject.min.js"></script>
 		{% endunless %}
 		<script src="{{ site.baseurl }}/assets/js/script.js"></script>
 		<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/style.css" media="screen"/>
+		<style>
+			a[href*="//"]:not([href*="{{ site.url }}{{ site.baseurl }}"]), a[href*="mailto:"] {
+				cursor: alias;
+			}
+		</style>
+		<noscript>
+			<style>
+				:root {
+					--vh: 1vh;
+				}
+			</style>
+		</noscript>
 	</head>
 	<body>
 		<div class="--mobile_background"></div>
