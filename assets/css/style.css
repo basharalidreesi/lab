@@ -747,9 +747,6 @@ body {
 	.mother_container-header_container_upper {
 		order: 1;
 	}
-	.mother_container-main_container {
-		z-index: -99;
-	}
 	/*
 	┌───────┐
 	│ begin └─────────────────────────┐
