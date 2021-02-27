@@ -39,9 +39,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		{%- include colours.html -%}
 		{%- include fonts.html -%}
-		{% unless text_colour == "#000" or text_colour == "#000000" or text_colour == "black" -%}
+		{%- unless text_colour == "#000" or text_colour == "#000000" or text_colour == "black" -%}
 			<script src="{{- site.baseurl -}}/assets/js/svg-inject.min.js"></script>
-		{% endunless -%}
+		{%- endunless -%}
 		<script src="{{- site.baseurl -}}/assets/js/script.js"></script>
 		<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/style.css" media="screen"/>
 		<style>
