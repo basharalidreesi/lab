@@ -830,7 +830,7 @@ body {
 			padding-top: calc(var(--double));
 			padding-bottom: calc(var(--double));
 		}
-		.current_nav_map_text_styling {
+		.--current_nav_map_text_styling {
 			display: block;
 		}
 		#nav_map_checkbox:checked ~ .nav_container_upper-nav_map_wrapper .nav_map_wrapper-nav_map_item {
