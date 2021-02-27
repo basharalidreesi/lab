@@ -30,9 +30,9 @@
 	│ nav map text │
 	└──────────────┘
 	*/
-	--nav_map_text_font: "M+ 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-	--nav_map_text_font_size: 1.125rem;
-	--nav_map_text_font_weight: 300;
+	--nav_map_text_font: var(--nav_text_font);
+	--nav_map_text_font_size: var(--nav_text_font_size);
+	--nav_map_text_font_weight: var(--nav_text_font_weight);
 	/*
 	┌───────┐
 	│ begin └─────┐
@@ -198,17 +198,6 @@ address {
 		text-align: center;
 		overflow: hidden;
 	}
-	/* .--map_text_styling {
-		overflow: hidden;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-		user-select: none;
-		-ms-user-select: none;
-		-moz-user-select: none;
-		-webkit-user-select: none;
-		padding-top: calc(var(--double));
-		padding-bottom: calc(var(--double));
-	} */
 	.--footer_text_styling {
 		font-family: var(--footer_text_font);
 		font-size: var(--footer_text_font_size);
