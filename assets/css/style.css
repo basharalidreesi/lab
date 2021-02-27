@@ -800,10 +800,10 @@ body {
 	}
 	#nav_checkbox:checked ~ .--nav_background {
 		display: block;
-		position: fixed;
-		top: 0;
+		position: absolute;
+		top: calc(var(--header_height) * -1);
 		left: 0;
-		height: calc(var(--screen_height));
+		height: calc(100% + var(--header_height));
 		width: 100vw;
 		background-color: var(--secondary_colour);
 		user-select: none;
