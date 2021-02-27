@@ -388,7 +388,6 @@ body {
 	order: 2;
 	position: sticky;
 	top: 0;
-	z-index: 100;
 }
 .mother_container-header_container_central {
 	order: 1;
@@ -823,7 +822,6 @@ body {
 		max-height: calc(var(--screen_height_half) - var(--header_height_half));
 		overflow: scroll;
 		position: relative;
-		z-index: 100;
 	}
 	#nav_checkbox:checked ~ .nav_container_upper-nav_checkbox_toggle {
 		flex-flow: column-reverse nowrap;
@@ -834,7 +832,6 @@ body {
 		max-height: calc(var(--screen_height_half) - var(--header_height_half));
 		overflow: scroll;
 		position: relative;
-		z-index: 100;
 	}
 	.--map_text_separator {
 		height: 1rem; /* debug */
