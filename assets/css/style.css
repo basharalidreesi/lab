@@ -838,6 +838,9 @@ body {
 		#nav_map_checkbox:checked ~ .nav_container_upper-nav_map_wrapper .nav_map_wrapper-nav_map_item {
 			display: block;
 		}
+		.nav_map_wrapper-nav_map_item:first-child {
+			border-bottom: 1px solid var(--border_colour);
+		}
 		.--nav_map_text_separator { /* debug */
 			height: 1rem;
 			width: 1rem;
