@@ -61,9 +61,9 @@
 		<div class="mother_container {%- if page.is_fullscreen -%}--mother_container_fullscreen{%- endif -%}">
 			<nav class="mother_container-nav_container{%- if page.header_location == 'central' -%}_central{%- elsif page.header_location == 'upper' -%}_upper{%- endif -%}" id="nav_container">
 				{%- if page.header_location == "upper" -%}
-					<input type="checkbox" id="nav_checkbox">
-					<div class="--nav_background"></div>
-					<label for="nav_checkbox" class="nav_container_upper-nav_map_wrapper">
+					<input type="checkbox" id="nav_map_checkbox">
+					<div class="--nav_map_background"></div>
+					<label for="nav_map_checkbox" class="nav_container_upper-nav_map_wrapper">
 						{%- for branch in tree -%}
 							{%- assign segment = page.path | split: branch -%}
 							{%- assign current = branch | prepend: segment[0] | append: ".markdown" -%}
@@ -73,29 +73,29 @@
 								{%- for node in site.pages -%}
 									{%- assign deepness_one_current = current | remove_first: "_" -%}
 									{%- if node.path == deepness_one_current %}
-										<span class="--nav_map_text_styling {%- if page.url == node.url -%} --current_nav_map_text_styling {%- endif -%}">
+										<span class="nav_map_wrapper-nav_map_item --nav_map_text_styling {%- if page.url == node.url -%} --current_nav_map_text_styling {%- endif -%}">
 											<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
 												{{ node.title }}
 											</a>
 										</span>
 										{%- unless last %}
-											<span class="--nav_map_text_separator"></span>
+											<span class="nav_map_wrapper-nav_map_item --nav_map_text_separator"></span>
 										{%- endunless -%}
 									{%- endif -%}
 								{%- endfor -%}
 							{%- elsif deepness == 1 and current == "404.markdown" %}
-								<span class="--nav_map_text_styling">?</span>
+								<span class="nav_map_wrapper-nav_map_item --nav_map_text_styling">?</span>
 								{%- break -%}
 							{%- else -%}
 								{%- for node in site.documents -%}
 									{%- if node.path == current %}
-										<span class="--nav_map_text_styling {%- if page.url == node.url -%} --current_nav_map_text_styling {%- endif -%}">
+										<span class="nav_map_wrapper-nav_map_item --nav_map_text_styling {%- if page.url == node.url -%} --current_nav_map_text_styling {%- endif -%}">
 											<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
 												{{ node.title }}
 											</a>
 										</span>
 										{%- unless last %}
-											<span class="--nav_map_text_separator"></span>
+											<span class="nav_map_wrapper-nav_map_item --nav_map_text_separator"></span>
 										{%- endunless -%}
 									{%- endif -%}
 								{%- endfor -%}
@@ -103,7 +103,7 @@
 						{%- endfor %}
 					</label>
 				{%- else %}
-					<!-- nav_map_* not included -->
+					<!-- nav map not included -->
 				{%- endif %}
 				<ul class="nav_container-nav_list_wrapper">
 					{%- for node in pages -%}
