@@ -779,21 +779,30 @@ body {
 		│ page.header_location == upper │
 		└───────────────────────────────┘
 		*/
-	/*
-	┌───────┐
-	│ begin └────────┐
-	│ nav map styles │
-	└────────────────┘
-	*/
-	#nav_map_checkbox {
-		display: none;
-	}
-	.--nav_map_background { }
-	.nav_container_upper-nav_map_wrapper {
-		display: none;
-	}
-	.nav_map_wrapper-nav_map_item { }
-	.--nav_map_text_separator { }
+		.mother_container-nav_container_upper > .nav_container-nav_list_wrapper {
+			display: none;
+		}
+		#nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper {
+			display: flex;
+			flex-flow: column nowrap;
+		}
+		/*
+		┌───────┐
+		│ begin └────────┐
+		│ nav map styles │
+		└────────────────┘
+		*/
+		#nav_map_checkbox {
+			display: none;
+		}
+		.--nav_map_background {
+			display: block;
+		}
+		.nav_container_upper-nav_map_wrapper {
+			display: block;
+		}
+		.nav_map_wrapper-nav_map_item { }
+		.--nav_map_text_separator { }
 	
 	/* .--current_nav_text_styling {
 		display: none;
