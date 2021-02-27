@@ -156,7 +156,7 @@ html {
 img:not(.header_anchor-header_graphic), svg path {
 	pointer-events: none;
 }
-img, svg, svg path {
+img, svg, svg path, label {
 	user-select: none;
 	-ms-user-select: none;
 	-moz-user-select: none;
