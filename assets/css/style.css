@@ -835,6 +835,10 @@ body {
 		height: 1rem; /* debug */
 		width: 1rem; /* debug */
 		background-color: red; /* debug */
+		display: none;
+	}
+	#nav_checkbox:checked ~ .nav_container_upper-nav_checkbox_toggle .--map_text_separator {
+		display: block;
 	}
 	/* .--nav_checkbox_arrow {
 		border: 1px solid var(--text_colour);
