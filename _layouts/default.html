@@ -72,40 +72,38 @@
 								{%- for node in site.pages -%}
 									{%- assign deepness_one_current = current | remove_first: "_" -%}
 									{%- if node.path == deepness_one_current -%}
-										<span class="--nav_text_styling --map_text_styling {% if page.url == node.url %} --current_map_text_styling {% endif %}">
-											<a class="--anchor_styling" href="{{ site.baseurl}}{{ node.url }}">
+										<span class="--nav_map_text_styling {%- if page.url == node.url -%} --current_nav_map_text_styling {%- endif -%}">
+											<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
 												{{ node.title }}
 											</a>
 										</span>
-										{% unless last %}
-											<span class="--map_text_separator"></span>
-										{% endunless %}
-									{% endif %}
-								{% endfor %}
-							{% elsif deepness == 1 and current == "404.markdown" %}
-								<span class="--nav_text_styling --map_text_styling">?</span>
-								{% break %}
-							{% else %}
-								{% for node in site.documents %}
-									{% if node.path == current %}
-										<span class="--nav_text_styling --map_text_styling {% if page.url == node.url %} --current_map_text_styling {% endif %}">
-											<a class="--anchor_styling" href="{{ site.baseurl}}{{ node.url }}">
+										{%- unless last -%}
+											<span class="--nav_map_text_separator"></span>
+										{%- endunless -%}
+									{%- endif -%}
+								{%- endfor -%}
+							{%- elsif deepness == 1 and current == "404.markdown" -%}
+								<span class="--nav_map_text_styling">?</span>
+								{%- break -%}
+							{%- else -%}
+								{%- for node in site.documents -%}
+									{%- if node.path == current -%}
+										<span class="--nav_map_text_styling {%- if page.url == node.url -%} --current_nav_map_text_styling {%- endif -%}">
+											<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
 												{{ node.title }}
 											</a>
 										</span>
-										{% unless last %}
-											<span class="--map_text_separator"></span>
-										{% endunless %}
-									{% endif %}
-								{% endfor %}
-							{% endif %}
-						{% endfor %}
+										{%- unless last -%}
+											<span class="--nav_map_text_separator"></span>
+										{%- endunless -%}
+									{%- endif -%}
+								{%- endfor -%}
+							{%- endif -%}
+						{%- endfor -%}
 					</label>
-				{% else %}
-					<script>
-						console.log("[nav.html] map.html not included.");
-					</script>
-				{% endif %}
+				{%- else -%}
+					<!-- nav_map_* not included -->
+				{%- endif -%}
 				<ul class="nav_container-nav_list_wrapper">
 					{% assign pages = site.pages | sort: "position" %}
 					{% for node in pages %}
