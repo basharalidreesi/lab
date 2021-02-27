@@ -799,8 +799,8 @@ body {
 	}
 	#nav_checkbox:checked ~ .--nav_background {
 		display: block;
-		position: absolute;
-		top: calc(var(--header_height) * -1);
+		position: fixed;
+		top: 0;
 		left: 0;
 		height: calc(var(--screen_height));
 		width: 100vw;
