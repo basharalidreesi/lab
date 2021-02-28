@@ -816,6 +816,20 @@ body {
 			transition: box-shadow 0.25s;
 			cursor: s-resize;
 		}
+		.nav_container_upper-nav_map_wrapper::before, .nav_container_upper-nav_map_wrapper::after {
+			content: "";
+			position: absolute;
+			top: calc(var(--double));
+			height: calc(var(--single));
+			width: calc(var(--single));
+			background-color: blue; /* debug */
+		}
+		.nav_container_upper-nav_map_wrapper::before {
+			left: calc(var(--single));
+		}
+		.nav_container_upper-nav_map_wrapper::after {
+			right: calc(var(--single));
+		}
 		#nav_map_checkbox:checked ~ .nav_container_upper-nav_map_wrapper {
 			height: 100%;
 			box-shadow: 0 0 calc(var(--half)) 0 var(--primary_colour);
@@ -829,7 +843,7 @@ body {
 		}
 		.--current_nav_map_text_styling {
 			display: block;
-			width: calc(100% - var(--quadruple));
+			width: calc(100% - var(--quadruple) - var(--single));
 			white-space: nowrap;
 			text-overflow: ellipsis;
 			overflow: hidden;
@@ -839,19 +853,6 @@ body {
 			text-overflow: initial;
 			overflow: initial;
 		}
-		/* .--current_nav_map_text_styling::before, .--current_nav_map_text_styling::after {
-			content: "";
-			position: absolute;
-			height: calc(var(--single));
-			width: calc(var(--single));
-			background-color: blue;
-		}
-		.--current_nav_map_text_styling::before {
-			transform: translateX(calc(-100% - var(--single)));
-		}
-		.--current_nav_map_text_styling::after {
-			transform: translateX(calc(var(--single)));
-		} */
 		.--current_nav_map_text_styling a {
 			pointer-events: none;
 		}
