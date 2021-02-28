@@ -214,12 +214,6 @@ address {
 		color: var(--text_colour);
 		text-align: center;
 	}
-	.--list_text_styling {
-		line-height: 150%;
-	}
-	.--list_text_styling::first-line {
-		line-height: 100%;
-	}
 	.--tag_text_styling {
 		font-family: var(--tag_text_font);
 		font-size: var(--tag_text_font_size);
