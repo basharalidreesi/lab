@@ -829,10 +829,15 @@ body {
 		}
 		.--current_nav_map_text_styling {
 			display: block;
-			width: calc(100% - var(--double) - var(--single));
+			width: calc(100% - var(--quadruple));
 			white-space: nowrap;
 			text-overflow: ellipsis;
 			overflow: hidden;
+		}
+		#nav_map_checkbox:checked ~ .nav_container_upper-nav_map_wrapper .--current_nav_map_text_styling {
+			white-space: initial;
+			text-overflow: initial;
+			overflow: initial;
 		}
 		/* .--current_nav_map_text_styling::before, .--current_nav_map_text_styling::after {
 			content: "";
