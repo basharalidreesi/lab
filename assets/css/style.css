@@ -843,7 +843,7 @@ body {
 		}
 		.--current_nav_map_text_styling {
 			display: block;
-			width: calc(100% - var(--quadruple) - var(--single));
+			width: calc(100% - var(--quadruple) - var(--double));
 			white-space: nowrap;
 			text-overflow: ellipsis;
 			overflow: hidden;
