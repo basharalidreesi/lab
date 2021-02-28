@@ -216,7 +216,6 @@ address {
 	}
 	.--list_text_styling {
 		line-height: 150%;
-		overflow: hidden;
 	}
 	.--list_text_styling::first-line {
 		line-height: 100%;
