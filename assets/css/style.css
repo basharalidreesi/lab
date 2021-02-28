@@ -869,10 +869,13 @@ body {
 		#nav_map_checkbox:checked ~ .nav_container_upper-nav_map_wrapper .nav_map_wrapper-nav_map_item {
 			display: block;
 		}
-		#nav_map_checkbox:checked ~ .nav_container_upper-nav_map_wrapper .nav_map_wrapper-nav_map_item:first-child {
+		#nav_map_checkbox:checked ~ .nav_container_upper-nav_map_wrapper .nav_map_wrapper-nav_map_item:last-child {
 			padding-bottom: calc(var(--single));
 		}
-		#nav_map_checkbox:checked ~ .nav_container_upper-nav_map_wrapper .nav_map_wrapper-nav_map_item:not(:first-child) {
+		#nav_map_checkbox:checked ~ .nav_container_upper-nav_map_wrapper .nav_map_wrapper-nav_map_item:first-child {
+			padding-top: calc(var(--single));
+		}
+		#nav_map_checkbox:checked ~ .nav_container_upper-nav_map_wrapper .nav_map_wrapper-nav_map_item:not(:last-child), #nav_map_checkbox:checked ~ .nav_container_upper-nav_map_wrapper .nav_map_wrapper-nav_map_item:not(:first-child) {
 			padding-top: calc(var(--single));
 			padding-bottom: calc(var(--single));
 		}
