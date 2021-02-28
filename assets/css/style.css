@@ -874,10 +874,10 @@ body {
 			padding-bottom: calc(var(--single));
 		}
 		#nav_map_checkbox:checked ~ .nav_container_upper-nav_map_wrapper .nav_map_wrapper-nav_map_item:last-child {
-			padding-bottom: calc(var(--single));
+			padding-top: calc(var(--double));
 		}
 		#nav_map_checkbox:checked ~ .nav_container_upper-nav_map_wrapper .nav_map_wrapper-nav_map_item:first-child {
-			padding-top: calc(var(--single));
+			padding-bottom: calc(var(--double));
 		}
 		.--nav_map_text_separator {
 			height: 1rem;
