@@ -816,13 +816,20 @@ body {
 			transition: box-shadow 0.25s;
 			cursor: s-resize;
 		}
+		#nav_map_checkbox:checked ~ .nav_container_upper-nav_map_wrapper {
+			height: 100%;
+			box-shadow: 0 0 calc(var(--half)) 0 var(--primary_colour);
+			cursor: n-resize;
+		}
 		.nav_container_upper-nav_map_wrapper::before, .nav_container_upper-nav_map_wrapper::after {
-			content: "\2193";
+			content: "";
 			position: absolute;
-			top: calc(var(--double));
-			height: calc(var(--single));
-			width: calc(var(--single));
-			text-align: center;
+			top: calc(var(--double) + var(--quarter));
+			height: calc(var(--half));
+			width: calc(var(--half));
+			border-right: 1px solid var(--border_colour);
+			border-bottom: 1px solid var(--border_colour);
+			transform: rotate(45deg);
 		}
 		.nav_container_upper-nav_map_wrapper::before {
 			left: calc(var(--double));
@@ -830,13 +837,8 @@ body {
 		.nav_container_upper-nav_map_wrapper::after {
 			right: calc(var(--double));
 		}
-		#nav_map_checkbox:checked ~ .nav_container_upper-nav_map_wrapper {
-			height: 100%;
-			box-shadow: 0 0 calc(var(--half)) 0 var(--primary_colour);
-			cursor: n-resize;
-		}
 		#nav_map_checkbox:checked ~ .nav_container_upper-nav_map_wrapper::before, #nav_map_checkbox:checked ~ .nav_container_upper-nav_map_wrapper::after {
-			content: "\2191";
+			transform: rotate(-135deg);
 		}
 		.nav_map_wrapper-nav_map_item {
 			display: none;
