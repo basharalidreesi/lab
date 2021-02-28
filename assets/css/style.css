@@ -883,6 +883,7 @@ body {
 			height: 1rem;
 			width: 1rem;
 			padding: 0;
+			color: var(--border_colour);
 			text-align: center;
 		}
 		.--nav_map_text_separator::before {
