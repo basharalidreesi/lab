@@ -401,7 +401,8 @@ body {
 	flex-flow: row nowrap; /* nowrap for debug */
 	align-items: center;
 	justify-content: space-evenly;
-	padding: calc(var(--double));
+	padding-top: calc(var(--double));
+	padding-bottom: calc(var(--double));
 	border-bottom: 1px solid var(--border_colour);
 }
 .mother_container-nav_container_central > .nav_container-nav_list_wrapper {
