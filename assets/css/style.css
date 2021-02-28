@@ -852,7 +852,11 @@ body {
 			width: calc(100% - var(--quadruple) - var(--quadruple));
 			white-space: nowrap;
 			text-overflow: ellipsis;
+			line-height: 150%;
 			overflow: hidden;
+		}
+		.--current_nav_map_text_styling::first-line {
+			line-height: 100%;
 		}
 		#nav_map_checkbox:checked ~ .nav_container_upper-nav_map_wrapper .--current_nav_map_text_styling {
 			white-space: initial;
