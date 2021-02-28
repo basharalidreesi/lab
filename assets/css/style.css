@@ -838,6 +838,7 @@ body {
 			right: calc(var(--double));
 		}
 		#nav_map_checkbox:checked ~ .nav_container_upper-nav_map_wrapper::before, #nav_map_checkbox:checked ~ .nav_container_upper-nav_map_wrapper::after {
+			top: calc(var(--double) + var(--half));
 			transform: rotate(-135deg);
 		}
 		.nav_map_wrapper-nav_map_item {
