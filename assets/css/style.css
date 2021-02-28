@@ -875,10 +875,10 @@ body {
 			padding-top: calc(var(--single));
 			padding-bottom: calc(var(--single));
 		}
-		#nav_map_checkbox:checked ~ .nav_container_upper-nav_map_wrapper .nav_map_wrapper-nav_map_item:last-child {
+		#nav_map_checkbox:checked ~ .nav_container_upper-nav_map_wrapper .nav_map_wrapper-nav_map_item:last-of-type {
 			padding-top: calc(var(--double));
 		}
-		#nav_map_checkbox:checked ~ .nav_container_upper-nav_map_wrapper .nav_map_wrapper-nav_map_item:first-child {
+		#nav_map_checkbox:checked ~ .nav_container_upper-nav_map_wrapper .nav_map_wrapper-nav_map_item:first-of-type {
 			padding-bottom: calc(var(--double));
 		}
 		.--nav_map_text_separator {
