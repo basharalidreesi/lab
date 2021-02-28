@@ -828,10 +828,10 @@ body {
 			transition: background-color 0.25s;
 		}
 		.nav_container_upper-nav_map_wrapper::before {
-			left: calc(var(--single));
+			left: calc(var(--double));
 		}
 		.nav_container_upper-nav_map_wrapper::after {
-			right: calc(var(--single));
+			right: calc(var(--double));
 		}
 		#nav_map_checkbox:checked ~ .nav_container_upper-nav_map_wrapper {
 			height: 100%;
@@ -849,7 +849,7 @@ body {
 		}
 		.--current_nav_map_text_styling {
 			display: block;
-			width: calc(100% - var(--quadruple) - var(--double));
+			width: calc(100% - var(--quadruple) - var(--quadruple) - var(--double));
 			white-space: nowrap;
 			text-overflow: ellipsis;
 			overflow: hidden;
