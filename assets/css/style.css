@@ -793,6 +793,7 @@ body {
 		.--nav_map_background {
 			display: block;
 			background-color: transparent;
+			box-shadow: none;
 			transition: all 0.25s;
 		}
 		#nav_map_checkbox:checked ~ .--nav_map_background {
@@ -802,6 +803,7 @@ body {
 			height: calc(100% + var(--header_height));
 			width: 100%;
 			background-color: var(--secondary_colour);
+			box-shadow: 0 0 calc(var(--half)) 0 var(--primary_colour);
 		}
 		.nav_container_upper-nav_map_wrapper {
 			position: relative;
