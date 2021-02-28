@@ -838,9 +838,11 @@ body {
 			background-color: blue; /* debug */
 		}
 		.--current_nav_map_text_styling::before {
-			transform: translateX(-100%);
+			transform: translateX(calc(-100% - var(--single)));
 		}
-		.--current_nav_map_text_styling::after { }
+		.--current_nav_map_text_styling::after {
+			transform: translateX(calc(var(--single)));
+		}
 		.--current_nav_map_text_styling a {
 			pointer-events: none;
 		}
