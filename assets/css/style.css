@@ -830,6 +830,21 @@ body {
 		.--current_nav_map_text_styling {
 			display: block;
 		}
+		.--current_nav_map_text_styling::before, .--current_nav_map_text_styling::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			height: calc(var(--single));
+			width: calc(var(--single));
+			background-color: blue; /* debug */
+		}
+		.--current_nav_map_text_styling::before {
+			left: calc(var(--single));
+		}
+		.--current_nav_map_text_styling::after {
+			right: calc(var(--right));
+		}
 		.--current_nav_map_text_styling a {
 			pointer-events: none;
 		}
