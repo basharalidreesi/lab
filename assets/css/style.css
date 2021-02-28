@@ -849,7 +849,7 @@ body {
 		}
 		.--current_nav_map_text_styling {
 			display: block;
-			width: calc(100% - var(--quadruple) - var(--quadruple) - var(--double));
+			width: calc(100% - var(--quadruple) - var(--quadruple));
 			white-space: nowrap;
 			text-overflow: ellipsis;
 			overflow: hidden;
