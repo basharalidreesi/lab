@@ -829,20 +829,24 @@ body {
 		}
 		.--current_nav_map_text_styling {
 			display: block;
+			width: calc(100% - var(--double) - var(--single));
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
 		}
-		.--current_nav_map_text_styling::before, .--current_nav_map_text_styling::after {
+		/* .--current_nav_map_text_styling::before, .--current_nav_map_text_styling::after {
 			content: "";
 			position: absolute;
 			height: calc(var(--single));
 			width: calc(var(--single));
-			background-color: blue; /* debug */
+			background-color: blue;
 		}
 		.--current_nav_map_text_styling::before {
 			transform: translateX(calc(-100% - var(--single)));
 		}
 		.--current_nav_map_text_styling::after {
 			transform: translateX(calc(var(--single)));
-		}
+		} */
 		.--current_nav_map_text_styling a {
 			pointer-events: none;
 		}
