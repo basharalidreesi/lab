@@ -126,7 +126,7 @@
 								{%- else -%}
 									{%- for node2 in site.documents -%}
 										{%- if node2.path == current %}
-							<span class="nav_tree_wrapper-nav_tree_item --nav_tree_text_styling">
+							<span class="nav_tree_wrapper-nav_tree_item --nav_tree_text_styling {%- if page.url == node2.url %} --current_nav_tree_text_styling {%- endif -%}">
 								<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node2.url -}}">
 									{{ node2.title }}
 								</a>
