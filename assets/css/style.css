@@ -463,11 +463,11 @@ body {
 	.nav_list_wrapper-nav_tree_wrapper {
 		display: flex;
 		flex-flow: column nowrap;
+		padding-top: calc(var(--double));
+		padding-bottom: calc(var(--double));
 	}
 	.nav_tree_wrapper-nav_tree_item {
 		display: none;
-		padding-top: calc(var(--double));
-		padding-bottom: calc(var(--double));
 	}
 	.--current_nav_tree_text_styling {
 		display: block;
@@ -475,8 +475,14 @@ body {
 	.--nav_tree_text_separator {
 		display: none;
 	}
+	#nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper .nav_list_wrapper-nav_list_item .nav_list_wrapper-nav_tree_wrapper {
+		display: block;
+		padding: 0;
+	}
 	#nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper .nav_list_wrapper-nav_list_item .nav_list_wrapper-nav_tree_wrapper .nav_tree_wrapper-nav_tree_item {
 		display: block;
+		padding-top: calc(var(--double));
+		padding-bottom: calc(var(--double));
 	}
 
 /*
