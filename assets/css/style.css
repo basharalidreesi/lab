@@ -473,7 +473,10 @@ body {
 	.nav_tree_wrapper-nav_tree_item {
 		display: none;
 	}
-	.--current_nav_tree_text_styling {
+	.--current_nav_tree_text_styling:last-of-type {
+		display: none;
+	}
+	.--current_nav_tree_text_styling:first-of-type {
 		display: block;
 	}
 	.--nav_tree_text_separator {
@@ -494,6 +497,9 @@ body {
 		display: block;
 		padding-top: calc(var(--double));
 		padding-bottom: calc(var(--double));
+	}
+	#nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper .nav_list_wrapper-nav_list_item .nav_list_wrapper-nav_tree_wrapper .--current_nav_tree_text_styling {
+		display: block;
 	}
 	#nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper .nav_list_wrapper-nav_list_item .nav_list_wrapper-nav_tree_wrapper .--nav_tree_text_separator {
 		padding: 0;
