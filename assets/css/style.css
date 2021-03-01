@@ -460,6 +460,9 @@ body {
 	│ nav tree styles │
 	└─────────────────┘
 	*/
+	.--nav_tree_wrapper {
+		padding: 0;
+	}
 	.nav_list_wrapper-nav_tree_wrapper {
 		display: flex;
 		flex-flow: column nowrap;
@@ -483,6 +486,12 @@ body {
 		display: block;
 		padding-top: calc(var(--double));
 		padding-bottom: calc(var(--double));
+	}
+	#nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper .nav_list_wrapper-nav_list_item .nav_list_wrapper-nav_tree_wrapper .--nav_tree_text_separator {
+		padding: 0;
+		width: calc(var(--single));
+		height: calc(var(--single));
+		background-color: red; /* debug */
 	}
 
 /*
