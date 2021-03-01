@@ -479,6 +479,11 @@ body {
 	.--nav_tree_text_separator {
 		display: none;
 	}
+	#nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper .--nav_list_wrapper {
+		overflow: initial;
+		white-space: initial;
+		text-overflow: initial;
+	}
 	#nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper .nav_list_wrapper-nav_list_item .nav_list_wrapper-nav_tree_wrapper {
 		position: absolute;
 		height: calc(var(--screen_height));
@@ -924,9 +929,9 @@ body {
 			line-height: 100%;
 		}
 		#nav_map_checkbox:checked ~ .nav_container_upper-nav_map_wrapper .--current_nav_map_text_styling {
+			overflow: initial;
 			white-space: initial;
 			text-overflow: initial;
-			overflow: initial;
 		}
 		.--current_nav_map_text_styling a {
 			pointer-events: none;
