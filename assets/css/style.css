@@ -412,6 +412,9 @@ body {
 }
 .nav_list_wrapper-nav_list_item {
 	flex: 1; /* stress test this with a higher number of listed pages */
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 	/*
 	┌───────┐
