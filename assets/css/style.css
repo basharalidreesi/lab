@@ -467,6 +467,9 @@ body {
 	.nav_tree_wrapper-nav_tree_item {
 		display: none;
 	}
+	.--current_nav_tree_text_styling {
+		display: block;
+	}
 	.--nav_tree_text_separator {
 		display: none;
 	}
@@ -941,6 +944,9 @@ body {
 			display: none;
 		}
 		.nav_tree_wrapper-nav_tree_item {
+			display: none;
+		}
+		.--current_nav_tree_text_styling {
 			display: none;
 		}
 		.--nav_tree_text_separator {
