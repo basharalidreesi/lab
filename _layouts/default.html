@@ -38,8 +38,8 @@
 		<meta name="author" content="{{- site.author -}}">
 		<!-- <link rel="shortcut icon" type="image/jpg" href=""/> -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		{%- include colours.html -%}
-		{%- include fonts.html -%}
+		{%- include colours.css.html -%}
+		{%- include fonts.css.html -%}
 		{% unless text_colour == "#000" or text_colour == "#000000" or text_colour == "black" %}		<script src="{{- site.baseurl -}}/assets/js/svg-inject.min.js"></script>{%- else %}		<!-- svg-inject.min.js not included -->{%- endunless %}
 		<script src="{{- site.baseurl -}}/assets/js/script.js"></script>
 		<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/style.css" media="screen"/>
@@ -105,7 +105,7 @@
 						{%- endfor %}
 				</label>
 				{%- else %}
-					<!-- nav map not included -->
+				<!-- nav map not included -->
 				{%- endif %}
 				<ul class="nav_container-nav_list_wrapper">
 					{%- for node in pages -%}
