@@ -106,13 +106,14 @@
 						</a>
 					</li>
 							{%- else %}
-					<li class="nav_list_wrapper-nav_list_item --nav_text_styling --current_nav_text_styling" style="background-color: yellow;">
-						<label for="nav_map_checkbox">
-							<span>
-								<a href="{{- site.baseurl -}}{{- node.url -}}">
+					<li class="nav_list_wrapper-nav_list_item" style="background-color: yellow;">
+						<label class="nav_list_wrapper-nav_tree_wrapper" for="nav_map_checkbox">
+							<span class="nav_tree_wrapper-nav_tree_item --nav_tree_text_styling --current_nav_tree_text_styling">
+								<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
 									{{ node.title }}
 								</a>
 							</span>
+							<span class="nav_tree_wrapper-nav_tree_item --nav_tree_text_separator"></span>
 							{%- for branch in tree -%}
 								{%- assign segment = page.path | split: branch -%}
 								{%- assign current = branch | prepend: segment[0] | append: ".markdown" -%}
@@ -125,13 +126,13 @@
 								{%- else -%}
 									{%- for node2 in site.documents -%}
 										{%- if node2.path == current %}
-							<span>
-								<a href="{{- site.baseurl -}}{{- node2.url -}}">
+							<span class="nav_tree_wrapper-nav_tree_item --nav_tree_text_styling">
+								<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node2.url -}}">
 									{{ node2.title }}
 								</a>
 							</span>
 											{%- unless last %}
-							<span></span>
+							<span class="nav_tree_wrapper-nav_tree_item --nav_tree_text_separator"></span>
 											{%- endunless -%}
 										{%- endif -%}
 									{%- endfor -%}
