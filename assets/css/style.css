@@ -461,9 +461,6 @@ body {
 	.--nav_tree_wrapper {
 		padding: 0;
 		position: relative;
-		background-color: transparent;
-		box-shadow: none;
-		transition: all 0.25s;
 	}
 	.nav_list_wrapper-nav_tree_wrapper {
 		display: flex;
@@ -472,6 +469,9 @@ body {
 		justify-content: flex-start;
 		padding-top: calc(var(--double));
 		padding-bottom: calc(var(--double));
+		background-color: transparent;
+		box-shadow: none;
+		transition: all 0.25s;
 	}
 	.nav_tree_wrapper-nav_tree_item {
 		display: none;
@@ -489,14 +489,14 @@ body {
 		overflow: initial;
 		white-space: initial;
 		text-overflow: initial;
-		background-color: var(--secondary_colour);
-		box-shadow: 0 0 calc(var(--single)) 0 var(--primary_colour);
 	}
 	#nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper .nav_list_wrapper-nav_list_item .nav_list_wrapper-nav_tree_wrapper {
 		position: absolute;
 		height: calc(var(--screen_height));
 		width: 100%;
 		padding: 0;
+		background-color: var(--secondary_colour);
+		box-shadow: 0 0 calc(var(--single)) 0 var(--primary_colour);
 	}
 	#nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper .nav_list_wrapper-nav_list_item .nav_list_wrapper-nav_tree_wrapper .nav_tree_wrapper-nav_tree_item {
 		display: block;
