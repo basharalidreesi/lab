@@ -6,6 +6,7 @@ border_colour: blue
 text_colour: blue
 is_fullscreen: false
 is_listed: true
+layout: contact
 ---
 
 {% include lipsum.html %}
