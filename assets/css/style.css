@@ -466,6 +466,8 @@ body {
 	.nav_list_wrapper-nav_tree_wrapper {
 		display: flex;
 		flex-flow: column nowrap;
+		align-items: center;
+		justify-content: flex-start;
 		padding-top: calc(var(--double));
 		padding-bottom: calc(var(--double));
 	}
@@ -479,7 +481,6 @@ body {
 		display: none;
 	}
 	#nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper .nav_list_wrapper-nav_list_item .nav_list_wrapper-nav_tree_wrapper {
-		display: block;
 		padding: 0;
 	}
 	#nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper .nav_list_wrapper-nav_list_item .nav_list_wrapper-nav_tree_wrapper .nav_tree_wrapper-nav_tree_item {
