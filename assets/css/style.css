@@ -401,8 +401,6 @@ body {
 	flex-flow: row nowrap; /* nowrap for debug */
 	align-items: center;
 	justify-content: space-evenly;
-	padding-top: calc(var(--double));
-	padding-bottom: calc(var(--double));
 	border-bottom: 1px solid var(--border_colour);
 }
 .mother_container-nav_container_central > .nav_container-nav_list_wrapper {
@@ -412,6 +410,8 @@ body {
 }
 .nav_list_wrapper-nav_list_item {
 	flex: 1; /* stress test this with a higher number of listed pages */
+	padding-top: calc(var(--double));
+	padding-bottom: calc(var(--double));
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
