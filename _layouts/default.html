@@ -43,11 +43,7 @@
 		{% unless text_colour == "#000" or text_colour == "#000000" or text_colour == "black" %}		<script src="{{- site.baseurl -}}/assets/js/svg-inject.min.js"></script>{%- else %}		<!-- svg-inject.min.js not included -->{%- endunless %}
 		<script src="{{- site.baseurl -}}/assets/js/script.js"></script>
 		<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/style.css" media="screen"/>
-		<style>
-			a[href*="//"]:not([href*="{{- site.url -}}{{- site.baseurl -}}"]), a[href*="mailto:"] {
-				cursor: alias;
-			}
-		</style>
+		{%- include style.css.html -%}
 		{%- include noscript.css.html -%}
 	</head>
 	<body>
