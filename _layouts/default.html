@@ -103,7 +103,7 @@
 				{%- endif %}
 				<ul class="nav_container-nav_list_wrapper">
 					{%- for node in pages -%}
-						{%- if node.is_listed -%}
+						{%- if node.is_listed and tree.size >= 3 -%}
 							{%- unless page.url contains node.url %}
 					<li class="nav_list_wrapper-nav_list_item --nav_text_styling">
 						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
@@ -117,6 +117,12 @@
 						</a>
 					</li>
 							{%- endunless -%}
+						{%- elsif node.is_listed and tree.size < 3 %}
+					<li class="nav_list_wrapper-nav_list_item --nav_text_styling {%- if page.url contains node.url %} --current_nav_text_styling {%- endif -%}">
+						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
+							{{ node.title }}
+						</a>
+					</li>
 						{%- endif -%}
 					{%- endfor %}
 				</ul>
