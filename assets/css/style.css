@@ -412,6 +412,8 @@ body {
 	flex: 1; /* stress test this with a higher number of listed pages */
 	padding-top: calc(var(--double));
 	padding-bottom: calc(var(--double));
+	padding-left: calc(var(--single));
+	padding-right: calc(var(--single));
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
