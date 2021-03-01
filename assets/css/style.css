@@ -466,6 +466,8 @@ body {
 	}
 	.nav_tree_wrapper-nav_tree_item {
 		display: none;
+		padding-top: calc(var(--double));
+		padding-bottom: calc(var(--double));
 	}
 	.--current_nav_tree_text_styling {
 		display: block;
