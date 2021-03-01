@@ -7,7 +7,7 @@ console.log("--vh set to " + `${vh}px` + ".");
 let url = window.location.href;
 let trailing_slash = url.endsWith("/");
 if (window.location.pathname != "/" && trailing_slash == true) {
-	let new_url = window.location.href.slice(0, -1);
+	let new_url = url.slice(0, -1);
 	window.location.replace(new_url);
 }
 
