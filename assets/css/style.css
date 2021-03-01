@@ -479,7 +479,7 @@ body {
 	.--nav_tree_text_separator {
 		display: none;
 	}
-	#nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper .--nav_list_wrapper {
+	#nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper .--nav_tree_wrapper {
 		overflow: initial;
 		white-space: initial;
 		text-overflow: initial;
