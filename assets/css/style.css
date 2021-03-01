@@ -471,7 +471,7 @@ body {
 		padding-bottom: calc(var(--double));
 		background-color: transparent;
 		box-shadow: none;
-		transition: all 0.25s;
+		transition: background-color 0.25s, box-shadow 0.25s;
 	}
 	.nav_tree_wrapper-nav_tree_item {
 		display: none;
