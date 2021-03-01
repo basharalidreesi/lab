@@ -414,7 +414,7 @@ body {
 .nav_container-nav_list_wrapper {
 	display: flex;
 	flex-flow: row nowrap;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: space-evenly;
 	border-bottom: 1px solid var(--border_colour);
 }
@@ -460,6 +460,7 @@ body {
 	*/
 	.--nav_tree_wrapper {
 		padding: 0;
+		position: relative;
 	}
 	.nav_list_wrapper-nav_tree_wrapper {
 		display: flex;
@@ -479,6 +480,9 @@ body {
 		display: none;
 	}
 	#nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper .nav_list_wrapper-nav_list_item .nav_list_wrapper-nav_tree_wrapper {
+		position: absolute;
+		height: calc(var(--screen_height));
+		width: 100%;
 		padding: 0;
 	}
 	#nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper .nav_list_wrapper-nav_list_item .nav_list_wrapper-nav_tree_wrapper .nav_tree_wrapper-nav_tree_item {
