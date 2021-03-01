@@ -108,7 +108,35 @@
 							{%- else %}
 					<li class="nav_list_wrapper-nav_list_item --nav_text_styling --current_nav_text_styling" style="background-color: yellow;">
 						<label for="nav_map_checkbox">
-							{{ node.title }}
+							<span>
+								<a href="{{- site.baseurl -}}{{- node.url -}}">
+									{{ node.title }}
+								</a>
+							</span>
+							{%- for branch in tree -%}
+								{%- assign segment = page.path | split: branch -%}
+								{%- assign current = branch | prepend: segment[0] | append: ".markdown" -%}
+								{%- assign deepness = forloop.index -%}
+								{%- assign last = forloop.last -%}
+								{%- if deepness == 1 and current != "404.markdown" -%}
+									{%- continue -%}
+								{%- elsif deepness == 1 and current == "404.markdown" %}
+									{%- break -%}
+								{%- else -%}
+									{%- for node2 in site.documents -%}
+										{%- if node2.path == current %}
+							<span>
+								<a href="{{- site.baseurl -}}{{- node2.url -}}">
+									{{ node2.title }}
+								</a>
+							</span>
+											{%- unless last %}
+							<span></span>
+											{%- endunless -%}
+										{%- endif -%}
+									{%- endfor -%}
+								{%- endif -%}
+							{%- endfor %}	
 						</label>
 					</li>
 							{%- endunless -%}
