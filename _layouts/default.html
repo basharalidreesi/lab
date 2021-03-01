@@ -107,9 +107,9 @@
 					</li>
 							{%- else %}
 					<li class="nav_list_wrapper-nav_list_item --nav_text_styling --current_nav_text_styling" style="background-color: yellow;">
-						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
+						<label for="nav_map_checkbox">
 							{{ node.title }}
-						</a>
+						</label>
 					</li>
 							{%- endunless -%}
 						{%- elsif node.is_listed and tree.size < 3 %}
