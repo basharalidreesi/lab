@@ -205,7 +205,6 @@ address {
 		font-weight: var(--nav_map_text_font_weight);
 		color: var(--text_colour);
 		text-align: center;
-		overflow: hidden;
 	}
 	.--nav_tree_text_styling {
 		font-family: var(--nav_tree_text_font);
@@ -213,7 +212,6 @@ address {
 		font-weight: var(--nav_tree_text_font_weight);
 		color: var(--text_colour);
 		text-align: center;
-		overflow: hidden;
 	}
 	.--footer_text_styling {
 		font-family: var(--footer_text_font);
