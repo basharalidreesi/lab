@@ -26,6 +26,15 @@
 	--nav_text_font_weight: 300;
 	/*
 	┌───────┐
+	│ begin └─────┐
+	│ subnav text │
+	└─────────────┘
+	*/
+	--subnav_text_font: "M+ 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	--subnav_text_font_size: 0.75rem;
+	--subnav_text_font_weight: 300;
+	/*
+	┌───────┐
 	│ begin └──────┐
 	│ nav map text │
 	└──────────────┘
@@ -190,6 +199,13 @@ address {
 		color: var(--text_colour);
 		text-align: center;
 	}
+	.--subnav_text_styling {
+		font-family: var(--subnav_text_font);
+		font-size: var(--subnav_text_font_size);
+		font-weight: var(--subnav_text_font_weight);
+		color: var(--text_colour);
+		text-align: center;
+	}
 	.--nav_map_text_styling {
 		font-family: var(--nav_map_text_font);
 		font-size: var(--nav_map_text_font_size);
@@ -289,7 +305,7 @@ address {
 		padding-left: calc(var(--half));
 		padding-right: calc(var(--half));
 	}
-	.--current_nav_text_styling > a, .--current_nav_map_text_styling > a {
+	.--current_nav_text_styling > a, .--current_nav_map_text_styling > a, .--current_subnav_text_styling > a {
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 		background-size: 100% 2px;
 	}
@@ -418,6 +434,25 @@ body {
 #nav_map_checkbox {
 	display: none;
 }
+	/*
+	┌───────┐
+	│ begin └───────┐
+	│ subnav styles │
+	└───────────────┘
+	*/
+	.nav_list_wrapper-current_nav_list_item {
+		position: relative;
+		padding-top: calc(var(--single) + var(--half));
+		padding-bottom: calc(var(--double) + var(--half));
+		
+	}
+	.current_nav_list_item-subnav_list_wrapper {
+		position: absolute;
+		left: 50%;
+		bottom: calc(var(--single) - var(--quarter));
+		transform: translateX(-50%);
+	}
+	.subnav_list_wrapper-subnav_list_item { }
 	/*
 	┌───────┐
 	│ begin └────────┐
