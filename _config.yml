@@ -60,6 +60,8 @@ description: Jad Toghuj | Editorial Stylist | Creative Director | Amman, Jordan
 author: Jad Toghuj
 email: jadtoghuj@gmail.com
 instagram: "@jadtoghuj"
+basabees: http://www.basharalidreesi.com
+batabeet: "/"
 theme: 
 plugins:
 - jekyll-feed
