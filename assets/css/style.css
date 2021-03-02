@@ -826,7 +826,7 @@ body {
 			padding-bottom: calc(var(--double));
 			border-bottom: 1px solid var(--border_colour);
 		}
-		.--current_nav_text_styling {
+		.mother_container-nav_container_upper > .nav_container-nav_list_wrapper > .--current_nav_text_styling {
 			display: none;
 		}
 		#nav_map_checkbox {
