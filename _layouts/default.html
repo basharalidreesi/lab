@@ -103,7 +103,7 @@
 				<!-- nav map not included -->
 				{%- endif %}
 				<ul class="nav_container-nav_list_wrapper">
-					{%- for node in pages -%}
+					{% for node in pages -%}
 						{%- if node.is_listed and tree.size >= 2 -%}
 							{%- unless page.url contains node.url %}
 					<li class="nav_list_wrapper-nav_list_item --nav_text_styling">
