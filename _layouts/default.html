@@ -106,11 +106,11 @@
 						</a>
 					</li>
 							{%- else %}
-					<li class="nav_list_wrapper-nav_list_item --nav_text_styling --current_nav_text_styling">
+					<li class="nav_list_wrapper-nav_list_item nav_list_wrapper-current_nav_list_item --nav_text_styling --current_nav_text_styling">
 						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
 							{{ node.title }}
 						</a>
-						<ul> <!-- here -->
+						<ul class="current_nav_list_item-subnav_list_wrapper"> <!-- here -->
 							{%- for branch in tree -%}
 								{%- assign segment = page.path | split: branch -%}
 								{%- assign current = branch | prepend: segment[0] | append: ".markdown" -%}
@@ -121,7 +121,7 @@
 								{%- else -%}
 									{%- for node2 in site.documents -%}
 										{%- if node2.path == current %}
-							<li>
+							<li class="subnav_list_wrapper-subnav_list_item --subnav_text_styling {%- if path.url == node2.url %} --current_subnav_text_styling {%- endif -%}">
 								<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node2.url -}}">
 									{{ node2.title }}
 								</a>
