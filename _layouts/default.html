@@ -117,11 +117,11 @@
 								{%- assign deepness = forloop.index -%}
 								{%- assign last = forloop.last -%}
 								{%- if deepness == 1 and current != "404.markdown" %}
-							<!-- something -->
+							<!-- branch {{ deepness }}, do nothing -->
 								{%- elsif deepness == 1 and current == "404.markdown" %}
-							<!-- another thing -->
+							<!-- 404, break loop and display question mark -->
 								{%- else %}
-							<!-- something else -->
+							<!-- branch {{ deepness }}, display -->
 								{%- endif -%}
 							{%- endfor %}
 						</ul>
