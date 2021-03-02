@@ -455,7 +455,13 @@ body {
 		transform: translateX(-50%);
 	}
 	.subnav_list_wrapper-subnav_list_item { }
-	.--subnav_text_separator { }
+	.--subnav_text_separator {
+		padding-left: calc(var(--quarter));
+		padding-right: calc(var(--quarter));
+	}
+	.--subnav_text_separator::before {
+		content: "\2192";
+	}
 	/*
 	┌───────┐
 	│ begin └────────┐
