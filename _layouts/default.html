@@ -122,7 +122,9 @@
 									{%- for node2 in site.documents -%}
 										{%- if node2.path == current %}
 							<li>
-								<!-- branch {{ deepness }}, {{ node2.title }} -->
+								<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node2.url -}}">
+									{{ node2.title }}
+								</a>
 							</li>
 										{%- endif -%}
 									{%- endfor -%}
