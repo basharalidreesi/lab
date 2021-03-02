@@ -510,7 +510,8 @@ body {
 	}
 	#nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper .nav_list_wrapper-nav_list_item .nav_list_wrapper-nav_tree_wrapper .--nav_tree_background {
 		top: calc(var(--nav_height));
-		left: -2px;
+		left: 50%;
+		transform: translateX(-50%);
 		height: calc(100% - var(--nav_height));
 		width: calc(100% + 2px);
 		background-color: var(--secondary_colour);
