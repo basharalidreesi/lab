@@ -471,9 +471,8 @@ body {
 		padding-bottom: calc(var(--double));
 	}
 	.--nav_tree_background {
+		position: absolute;
 		display: block;
-		width: 100%;
-		height: 100%;
 		background-color: transparent;
 		box-shadow: none;
 		transition: background-color 0.25s, box-shadow 0.25s;
@@ -484,7 +483,7 @@ body {
 	.--current_nav_tree_text_styling:last-of-type {
 		display: none;
 	}
-	.--current_nav_tree_text_styling:first-of-type {
+	.--current_nav_tree_text_styling:nth-of-type(2) {
 		display: block;
 	}
 	.--nav_tree_text_separator {
@@ -502,15 +501,18 @@ body {
 		padding: 0;
 	}
 	#nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper .nav_list_wrapper-nav_list_item .nav_list_wrapper-nav_tree_wrapper .--nav_tree_background {
-		position: absolute;
 		top: calc(var(--nav_height));
 		left: 0;
-		height: 100%;
+		height: calc(100% - var(--nav_height));
+		width: 100%;
 		background-color: var(--secondary_colour);
 		box-shadow: 0 0 calc(var(--single)) 0 var(--primary_colour);
+		border-left: 1px solid var(--border_colour);
+		border-right: 1px solid var(--border_colour);
 	}
 	#nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper .nav_list_wrapper-nav_list_item .nav_list_wrapper-nav_tree_wrapper .nav_tree_wrapper-nav_tree_item {
 		display: block;
+		position: relative;
 		padding-top: calc(var(--double));
 		padding-bottom: calc(var(--double));
 	}
