@@ -106,7 +106,7 @@
 						</a>
 					</li>
 							{%- else %}
-					<li class="nav_list_wrapper-nav_list_item --nav_text_styling --current_nav_text_styling" style="background-color: yellow;">
+					<li class="nav_list_wrapper-nav_list_item --nav_text_styling --current_nav_text_styling">
 						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
 							{{ node.title }}
 						</a>
@@ -116,12 +116,12 @@
 								{%- assign current = branch | prepend: segment[0] | append: ".markdown" -%}
 								{%- assign deepness = forloop.index -%}
 								{%- assign last = forloop.last -%}
-								{%- if deepness == 1 and current != "404.markdown" %}
-							<!-- branch {{ deepness }}, do nothing -->
+								{%- if deepness == 1 and current != "404.markdown" -%}
+									{%- continue -%}
 								{%- elsif deepness == 1 and current == "404.markdown" %}
-							<!-- 404, break loop and display question mark -->
+									{%- break -%}
 								{%- else %}
-							<!-- branch {{ deepness }}, display -->
+							<!-- branch {{ deepness | minus: 1 }}, display -->
 								{%- endif -%}
 							{%- endfor %}
 						</ul>
