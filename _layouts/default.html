@@ -104,7 +104,7 @@
 				{%- endif %}
 				<ul class="nav_container-nav_list_wrapper">
 					{%- for node in pages -%}
-						{%- if node.is_listed and tree.size >= 3 -%}
+						{%- if node.is_listed and tree.size >= 2 -%}
 							{%- unless page.url contains node.url %}
 					<li class="nav_list_wrapper-nav_list_item --nav_text_styling">
 						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
@@ -127,7 +127,7 @@
 								{%- else -%}
 									{%- for node2 in site.documents -%}
 										{%- if node2.path == current %}
-							<li class="subnav_list_wrapper-subnav_list_item --subnav_text_styling {%- if page.url == node2.url %} --current_subnav_text_styling {%- endif -%}">
+							<li class="subnav_list_wrapper-subnav_list_item --subnav_text_styling {%- unless last -%} {%- if page.url == node2.url %} --current_subnav_text_styling {%- endif -%} {%- endunless -%}">
 								<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node2.url -}}">
 									{{ node2.title }}
 								</a>
@@ -142,7 +142,7 @@
 						</ul>
 					</li>
 							{%- endunless -%}
-						{%- elsif node.is_listed and tree.size < 3 %} {%- comment -%} > {%- endcomment -%}
+						{%- elsif node.is_listed and tree.size < 2 %} {%- comment -%} > {%- endcomment -%}
 					<li class="nav_list_wrapper-nav_list_item --nav_text_styling {%- if page.url contains node.url %} --current_nav_text_styling {%- endif -%}">
 						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
 							{{ node.title }}
