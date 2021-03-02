@@ -502,6 +502,9 @@ body {
 		padding: 0;
 	}
 	#nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper .nav_list_wrapper-nav_list_item .nav_list_wrapper-nav_tree_wrapper .--nav_tree_background {
+		position: absolute;
+		top: calc(var(--nav_height));
+		left: 0;
 		height: 100%;
 		background-color: var(--secondary_colour);
 		box-shadow: 0 0 calc(var(--single)) 0 var(--primary_colour);
@@ -985,6 +988,9 @@ body {
 		└─────────────────┘
 		*/
 		.nav_list_wrapper-nav_tree_wrapper {
+			display: none;
+		}
+		.--nav_tree_background {
 			display: none;
 		}
 		.nav_tree_wrapper-nav_tree_item {
