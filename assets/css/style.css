@@ -1011,6 +1011,10 @@ body {
 		.--nav_tree_text_separator {
 			display: none;
 		}
+		#nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper {
+			background-color: transparent;
+			box-shadow: none;
+		}
 	
 	.list_page_wrapper-list_page_item:first-child {
 		border-top: none;
