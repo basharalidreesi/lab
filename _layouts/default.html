@@ -119,7 +119,9 @@
 								{%- if deepness == 1 and current != "404.markdown" -%}
 									{%- continue -%}
 								{%- else %}
-							<!-- branch {{ deepness | minus: 1 }}, display -->
+							<li>
+								<!-- branch {{ deepness }}, display -->
+							</li>
 								{%- endif -%}
 							{%- endfor %}
 						</ul>
