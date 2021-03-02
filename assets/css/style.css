@@ -448,11 +448,14 @@ body {
 	}
 	.current_nav_list_item-subnav_list_wrapper {
 		display: flex;
+		align-items: center;
+		justify-content: center;
 		flex-flow: row nowrap; /* nowrap for debug */
 		position: absolute;
 		left: 50%;
 		bottom: calc(var(--single) - var(--quarter) + 1px /* idk why but it feels off-centre without the 1px */);
 		transform: translateX(-50%);
+		width: 100%;
 	}
 	.subnav_list_wrapper-subnav_list_item { }
 	.--subnav_text_separator {
