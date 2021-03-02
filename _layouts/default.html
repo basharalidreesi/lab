@@ -116,7 +116,7 @@
 						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
 							{{ node.title }}
 						</a>
-						<ul class="current_nav_list_item-subnav_list_wrapper"> <!-- here -->
+						<ul class="current_nav_list_item-subnav_list_wrapper">
 							{%- for branch in tree -%}
 								{%- assign segment = page.path | split: branch -%}
 								{%- assign current = branch | prepend: segment[0] | append: ".markdown" -%}
