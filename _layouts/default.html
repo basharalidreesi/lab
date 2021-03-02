@@ -103,7 +103,7 @@
 				<!-- nav map not included -->
 				{%- endif %}
 				<ul class="nav_container-nav_list_wrapper">
-					{% for node in pages -%}
+					{%- for node in pages -%}
 						{%- if node.is_listed and tree.size >= 2 -%}
 							{%- unless page.url contains node.url %}
 					<li class="nav_list_wrapper-nav_list_item --nav_text_styling">
@@ -142,7 +142,7 @@
 						</ul>
 					</li>
 							{%- endunless -%}
-						{%- elsif node.is_listed and tree.size < 2 %} {%- comment -%} > {%- endcomment -%}
+						{%- elsif node.is_listed and tree.size < 2 -%} {%- comment -%} > {%- endcomment %}
 					<li class="nav_list_wrapper-nav_list_item --nav_text_styling {%- if page.url contains node.url %} --current_nav_text_styling {%- endif -%}">
 						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
 							{{ node.title }}
