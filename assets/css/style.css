@@ -35,15 +35,6 @@
 	--nav_map_text_font_weight: var(--nav_text_font_weight);
 	/*
 	┌───────┐
-	│ begin └───────┐
-	│ nav tree text │
-	└───────────────┘
-	*/
-	--nav_tree_text_font: var(--nav_text_font);
-	--nav_tree_text_font_size: var(--nav_text_font_size);
-	--nav_tree_text_font_weight: var(--nav_text_font_weight);
-	/*
-	┌───────┐
 	│ begin └─────┐
 	│ footer text │
 	└─────────────┘
@@ -206,13 +197,6 @@ address {
 		color: var(--text_colour);
 		text-align: center;
 	}
-	.--nav_tree_text_styling {
-		font-family: var(--nav_tree_text_font);
-		font-size: var(--nav_tree_text_font_size);
-		font-weight: var(--nav_tree_text_font_weight);
-		color: var(--text_colour);
-		text-align: center;
-	}
 	.--footer_text_styling {
 		font-family: var(--footer_text_font);
 		font-size: var(--footer_text_font_size);
@@ -305,7 +289,7 @@ address {
 		padding-left: calc(var(--half));
 		padding-right: calc(var(--half));
 	}
-	.--current_nav_text_styling > a, .--current_nav_map_text_styling > a, .--current_nav_tree_text_styling > a {
+	.--current_nav_text_styling > a, .--current_nav_map_text_styling > a {
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 		background-size: 100% 2px;
 	}
@@ -417,8 +401,6 @@ body {
 	align-items: flex-start;
 	justify-content: space-evenly;
 	border-bottom: 1px solid var(--border_colour);
-	background-color: transparent;
-	box-shadow: none;
 }
 .mother_container-nav_container_central > .nav_container-nav_list_wrapper {
 	background-color: var(--secondary_colour);
@@ -453,86 +435,6 @@ body {
 	}
 	.--nav_map_text_separator {
 		display: none;
-	}
-	/*
-	┌───────┐
-	│ begin └─────────┐
-	│ nav tree styles │
-	└─────────────────┘
-	*/
-	.--nav_tree_wrapper {
-		padding: 0;
-		position: relative;
-	}
-	.nav_list_wrapper-nav_tree_wrapper {
-		display: flex;
-		flex-flow: column nowrap;
-		align-items: center;
-		justify-content: flex-start;
-		padding-top: calc(var(--double));
-		padding-bottom: calc(var(--double));
-	}
-	.--nav_tree_background {
-		position: absolute;
-		display: block;
-		background-color: transparent;
-		box-shadow: none;
-		transition: background-color 0.25s, box-shadow 0.25s;
-		z-index: -100;
-	}
-	.nav_tree_wrapper-nav_tree_item {
-		display: none;
-	}
-	.--current_nav_tree_text_styling:last-of-type {
-		display: none;
-	}
-	.--current_nav_tree_text_styling:nth-of-type(2) {
-		display: block;
-	}
-	.--nav_tree_text_separator {
-		display: none;
-	}
-	#nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper {
-		background-color: var(--secondary_colour);
-		box-shadow: 0 0 calc(var(--single)) 0 var(--primary_colour);
-		transition: background-color 0.25s, box-shadow 0.25s;
-	}
-	#nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper .--nav_tree_wrapper {
-		overflow: initial;
-		white-space: initial;
-		text-overflow: initial;
-	}
-	#nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper .nav_list_wrapper-nav_list_item .nav_list_wrapper-nav_tree_wrapper {
-		position: absolute;
-		height: calc(var(--screen_height));
-		width: 100%;
-		padding: 0;
-	}
-	#nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper .nav_list_wrapper-nav_list_item .nav_list_wrapper-nav_tree_wrapper .--nav_tree_background {
-		top: calc(var(--nav_height));
-		left: 50%;
-		transform: translateX(-50%);
-		height: calc(100% - var(--nav_height));
-		width: calc(100% + 2px);
-		background-color: var(--secondary_colour);
-		box-shadow: 0 0 calc(var(--single)) 0 var(--primary_colour);
-		border-left: 1px solid var(--border_colour);
-		border-right: 1px solid var(--border_colour);
-		overflow: hidden;
-	}
-	#nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper .nav_list_wrapper-nav_list_item .nav_list_wrapper-nav_tree_wrapper .nav_tree_wrapper-nav_tree_item {
-		display: block;
-		padding-top: calc(var(--double));
-		padding-bottom: calc(var(--double));
-	}
-	#nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper .nav_list_wrapper-nav_list_item .nav_list_wrapper-nav_tree_wrapper .--current_nav_tree_text_styling {
-		display: block;
-	}
-	#nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper .nav_list_wrapper-nav_list_item .nav_list_wrapper-nav_tree_wrapper .--nav_tree_text_separator {
-		padding: 0;
-		width: calc(var(--single));
-		height: calc(var(--single));
-		background-color: red; /* debug */
 	}
 
 /*
@@ -991,31 +893,6 @@ body {
 		}
 		.--nav_map_text_separator::before {
 			content: "\2191";
-		}
-		/*
-		┌───────┐
-		│ begin └─────────┐
-		│ nav tree styles │
-		└─────────────────┘
-		*/
-		.nav_list_wrapper-nav_tree_wrapper {
-			display: none;
-		}
-		.--nav_tree_background {
-			display: none;
-		}
-		.nav_tree_wrapper-nav_tree_item {
-			display: none;
-		}
-		.--current_nav_tree_text_styling {
-			display: none;
-		}
-		.--nav_tree_text_separator {
-			display: none;
-		}
-		#nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper {
-			background-color: transparent;
-			box-shadow: none;
 		}
 	
 	.list_page_wrapper-list_page_item:first-child {
