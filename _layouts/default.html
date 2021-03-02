@@ -118,14 +118,14 @@
 								{%- assign last = forloop.last -%}
 								{%- if deepness == 1 and current != "404.markdown" -%}
 									{%- continue -%}
-								{%- else -%}
-									{%- for node2 in site.documents -%}
-										{%- if node2.path == current %}
+								{%- else %}
 							<li>
+									{%- for node2 in site.documents -%}
+										{%- if node2.path == current -%}
 								<!-- branch {{ deepness }}, {{ node2.title }} -->
-										{%- endif %}
+										{%- endif -%}
+									{%- endfor %}
 							</li>
-									{%- endfor -%}
 								{%- endif -%}
 							{%- endfor %}
 						</ul>
