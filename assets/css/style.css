@@ -458,6 +458,7 @@ body {
 	.--subnav_text_separator {
 		padding-left: calc(var(--quarter));
 		padding-right: calc(var(--quarter));
+		color: var(--border_colour);
 	}
 	.--subnav_text_separator::before {
 		content: "\2192";
