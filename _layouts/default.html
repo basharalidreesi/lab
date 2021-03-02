@@ -116,12 +116,12 @@
 								{%- assign current = branch | prepend: segment[0] | append: ".markdown" -%}
 								{%- assign deepness = forloop.index -%}
 								{%- assign last = forloop.last -%}
-								{%- if deepness == 1 and current != "404.markdown" -%}
-									<!-- something -->
-								{%- elsif deepness == 1 and current == "404.markdown" -%}
-									<!-- another thing -->
-								{%- else -%}
-									<!-- something else -->
+								{%- if deepness == 1 and current != "404.markdown" %}
+							<!-- something -->
+								{%- elsif deepness == 1 and current == "404.markdown" %}
+							<!-- another thing -->
+								{%- else %}
+							<!-- something else -->
 								{%- endif -%}
 							{%- endfor %}
 						</ul>
