@@ -447,6 +447,8 @@ body {
 		
 	}
 	.current_nav_list_item-subnav_list_wrapper {
+		display: flex;
+		flex-flow: row nowrap; /* nowrap for debug */
 		position: absolute;
 		left: 50%;
 		bottom: calc(var(--single) - var(--quarter));
