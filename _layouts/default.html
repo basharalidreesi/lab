@@ -118,8 +118,6 @@
 								{%- assign last = forloop.last -%}
 								{%- if deepness == 1 and current != "404.markdown" -%}
 									{%- continue -%}
-								{%- elsif deepness == 1 and current == "404.markdown" %}
-									{%- break -%}
 								{%- else %}
 							<!-- branch {{ deepness | minus: 1 }}, display -->
 								{%- endif -%}
