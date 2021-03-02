@@ -110,6 +110,21 @@
 						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
 							{{ node.title }}
 						</a>
+						<ul> <!-- here -->
+							{%- for branch in tree -%}
+								{%- assign segment = page.path | split: branch -%}
+								{%- assign current = branch | prepend: segment[0] | append: ".markdown" -%}
+								{%- assign deepness = forloop.index -%}
+								{%- assign last = forloop.last -%}
+								{%- if deepness == 1 and current != "404.markdown" -%}
+									<!-- something -->
+								{%- elsif deepness == 1 and current == "404.markdown" -%}
+									<!-- another thing -->
+								{%- else -%}
+									<!-- something else -->
+								{%- endif -%}
+							{%- endfor %}
+						</ul>
 					</li>
 							{%- endunless -%}
 						{%- elsif node.is_listed and tree.size < 3 %}
