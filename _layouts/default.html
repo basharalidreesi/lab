@@ -142,7 +142,7 @@
 						</ul>
 					</li>
 							{%- endunless -%}
-						{%- elsif node.is_listed and tree.size < 3 %}
+						{%- elsif node.is_listed and tree.size < 3 %} {%- comment -%} > {%- endcomment -%}
 					<li class="nav_list_wrapper-nav_list_item --nav_text_styling {%- if page.url contains node.url %} --current_nav_text_styling {%- endif -%}">
 						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
 							{{ node.title }}
