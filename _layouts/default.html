@@ -49,8 +49,8 @@
 		<div class="--mobile_background"></div>
 		<div class="mother_container {%- if page.is_fullscreen %} --mother_container_fullscreen {%- endif -%}">
 			<nav class="mother_container-nav_container{%- if page.header_location == 'central' -%}_central{%- elsif page.header_location == 'upper' -%}_upper{%- endif -%}" id="nav_container">
-				<input type="checkbox" id="nav_map_checkbox">
 				{%- if page.header_location == "upper" %}
+				<input type="checkbox" id="nav_map_checkbox">
 				<div class="--nav_map_background"></div>
 				<label for="nav_map_checkbox" class="nav_container_upper-nav_map_wrapper">
 						{%- for branch in tree -%}
@@ -106,40 +106,10 @@
 						</a>
 					</li>
 							{%- else %}
-					<li class="nav_list_wrapper-nav_list_item --nav_tree_wrapper --current_nav_text_styling"> <!-- this one -->
-						<label class="nav_list_wrapper-nav_tree_wrapper" for="nav_map_checkbox">
-							<span class="--nav_tree_background"></span>
-							<span class="nav_tree_wrapper-nav_tree_item --nav_tree_text_styling --current_nav_tree_text_styling">
-								<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
-									{{ node.title }}
-								</a>
-							</span>
-							<span class="nav_tree_wrapper-nav_tree_item --nav_tree_text_separator"></span>
-							{%- for branch in tree -%}
-								{%- assign segment = page.path | split: branch -%}
-								{%- assign current = branch | prepend: segment[0] | append: ".markdown" -%}
-								{%- assign deepness = forloop.index -%}
-								{%- assign last = forloop.last -%}
-								{%- if deepness == 1 and current != "404.markdown" -%}
-									{%- continue -%}
-								{%- elsif deepness == 1 and current == "404.markdown" %}
-									{%- break -%}
-								{%- else -%}
-									{%- for node2 in site.documents -%}
-										{%- if node2.path == current %}
-							<span class="nav_tree_wrapper-nav_tree_item --nav_tree_text_styling {%- if page.url == node2.url %} --current_nav_tree_text_styling {%- endif -%}">
-								<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node2.url -}}">
-									{{ node2.title }}
-								</a>
-							</span>
-											{%- unless last %}
-							<span class="nav_tree_wrapper-nav_tree_item --nav_tree_text_separator"></span>
-											{%- endunless -%}
-										{%- endif -%}
-									{%- endfor -%}
-								{%- endif -%}
-							{%- endfor %}	
-						</label>
+					<li class="nav_list_wrapper-nav_list_item --nav_text_styling --current_nav_text_styling" style="background-color: yellow;">
+						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
+							{{ node.title }}
+						</a>
 					</li>
 							{%- endunless -%}
 						{%- elsif node.is_listed and tree.size < 3 %}
