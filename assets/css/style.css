@@ -305,7 +305,7 @@ address {
 		padding-left: calc(var(--half));
 		padding-right: calc(var(--half));
 	}
-	.--current_nav_text_styling > a, .--current_nav_map_text_styling > a, .--current_subnav_text_styling > a {
+	.--current_nav_text_styling > a, .--current_nav_map_text_styling > a, .--current_subnav_text_styling:not(:only-child) > a {
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 		background-size: 100% 2px;
 	}
