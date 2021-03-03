@@ -465,9 +465,6 @@ body {
 	.--subnav_text_separator::before {
 		content: "\2192";
 	}
-	.--current_subnav_text_styling > a {
-		pointer-events: none;
-	}
 	/*
 	┌───────┐
 	│ begin └────────┐
