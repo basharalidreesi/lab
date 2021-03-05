@@ -47,6 +47,10 @@ defaults:
     layout: cascade
     is_fullscreen: true
 - scope:
+    path: assets/fonts
+  values:
+    font: true
+- scope:
     path: assets/graphics/header_graphics
   values:
     header_graphic: true
