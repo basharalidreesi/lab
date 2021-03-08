@@ -6,10 +6,9 @@ layout: default
 				{%- assign showcase_tiles = site.static_files | where: "showcase_tile", true %}
 				<div class="main_container-showcase_wrapper">
 					{%- for tile in showcase_tiles -%}
-						{%- assign index = forloop.index -%}
+						{%- assign index = forloop.index | downcase -%}
 						{%- for datum in page.clickable_tiles -%}
-							{%- assign number = datum[0] | plus: 0 -%}
-							{%- if index == number %}
+							{%- if index == datum[0] %}
 					<a href="{{- datum[1] -}}">
 						<div class="showcase_wrapper-showcase_tile" style="background-image: url('{{- site.baseurl -}}{{- tile.path -}}')"></div>
 					</a>
