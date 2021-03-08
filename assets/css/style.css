@@ -725,7 +725,7 @@ body {
 		/* min-width: calc(var(--cascade_height)); */
 		/* max-width: 75vw; */
 		height: 100%;
-		width: 100vw;
+		width: 50vw;
 	}
 	.cascade_wrapper-anchored_graphic_card + .cascade_wrapper-anchored_graphic_card {
 		margin-left: 0;
