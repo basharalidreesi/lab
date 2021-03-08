@@ -3,8 +3,8 @@ layout: default
 ---
 
 <!-- begin showcase.html -->
+				{%- assign showcase_tiles = site.static_files | where: "showcase_tile", true %}
 				<div class="main_container-showcase_wrapper">
-					{%- assign showcase_tiles = site.static_files | where: "showcase_tile", true -%}
 					{%- for tile in showcase_tiles %}
 					<div class="showcase_wrapper-showcase_tile" style="background-image: url('{{- site.baseurl -}}{{- tile.path -}}')"></div>
 					{%- endfor %}
