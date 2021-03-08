@@ -49,8 +49,7 @@
 		{%- include fonts.css.html -%}
 		{% unless text_colour == "#000" or text_colour == "#000000" or text_colour == "black" %}		<script src="{{- site.baseurl -}}/assets/js/svg-inject.min.js"></script>{%- else %}		<!-- svg-inject.min.js not included -->{%- endunless %}
 		{%- include header.js.html %}		<script src="{{- site.baseurl -}}/assets/js/script.js"></script>
-		{%- include listen.js.html -%}
-		<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/style.css" media="screen"/>
+		{%- include listen.js.html %}		<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/style.css" media="screen"/>
 		{%- include style.css.html -%}
 		{%- include noscript.css.html %}	</head>
 	<body>
