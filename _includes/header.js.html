@@ -5,8 +5,8 @@
 		<script>
 			window.addEventListener("load", headered);
 			function headered() {
-				const header_graphic = document.getElementById("header_graphic");
-				const header_container = document.getElementById("header_container");
+				let header_graphic = document.getElementById("header_graphic");
+				let header_container = document.getElementById("header_container");
 				random_header_graphic_array = new Array(
 					{%- for header_graphic in header_graphics %}
 					"{{- site.baseurl -}}{{- header_graphic.path -}}"{%- unless forloop.last -%}, {%- endunless -%}
@@ -32,7 +32,7 @@
 			 }
 			 {%- if page.header_location == "central" %}
 			// https://stackoverflow.com/questions/16302483/event-to-detect-when-positionsticky-is-triggered
-			const header_graphic = document.getElementById("header_graphic");
+			let header_graphic = document.getElementById("header_graphic");
 			const observer = new IntersectionObserver(
 				([e]) => e.target.children[0].classList.toggle("--sticky_header", e.intersectionRatio < 1),
 				{threshold: [1]}
