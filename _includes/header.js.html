@@ -1,7 +1,7 @@
 
 		<!-- begin header.js.html -->
 		{%- assign header_graphics = site.static_files | where: "header_graphic", true -%}
-		{%- assign text_colour = page.text_colour | strip_newlines | strip -%}
+		{%- assign text_colour = page.text_colour | strip_newlines | strip %}
 		<script>
 			random_header_graphic_array = new Array(
 				{%- for header_graphic in header_graphics %}
