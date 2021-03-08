@@ -452,7 +452,7 @@ body {
 		flex-flow: row nowrap; /* nowrap for debug */
 		position: absolute;
 		left: 50%;
-		bottom: calc(var(--single) - (var(--quarter) / 2) + 1px /* idk why but it feels off-centre without the 1px */);
+		bottom: calc(var(--single) + (var(--quarter) / 2));
 		transform: translateX(-50%);
 		width: 100%;
 	}
@@ -941,7 +941,7 @@ body {
 		.--nav_map_text_separator::before {
 			content: "\2191";
 		}
-	
+
 	.list_page_wrapper-list_page_item:first-child {
 		border-top: none;
 	}
