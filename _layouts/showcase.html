@@ -10,8 +10,8 @@ layout: default
 					{%- endfor %}
 				</div>
 				<script>
-					{%- for node in page.clickable_tiles -%}
-						console.log("{{ node[0]}} : {{node[1]}}");
+					{%- for datum in page.clickable_tiles.data -%}
+						console.log("{{ datum[0]}} : {{datum[1]}}");
 					{%- endfor -%}
 				</script>
 				<!-- end showcase.html -->
