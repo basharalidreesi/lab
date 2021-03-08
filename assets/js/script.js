@@ -19,5 +19,5 @@ function lock_scroll() {
 
 window.addEventListener("load", loaded);
 function loaded() {
-	console.log("Reticulated splines");
+	console.log("Reticulated splines.");
 }
