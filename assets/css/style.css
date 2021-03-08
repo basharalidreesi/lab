@@ -684,11 +684,9 @@ body {
 		justify-content: center;
 		/* min-width: calc(var(--cascade_height)); */
 		/* max-width: 75vw; */
-		/* padding: calc(var(--double)); */
-		margin: calc(var(--double));
-		margin-top: 0;
+		padding: calc(var(--double));
 		height: auto;
-		width: calc(100vw - var(--quadruple));
+		width: 100vw;
 		overflow: hidden; /* debug */
 	}
 	.cascade_wrapper-graphic_card {
@@ -1055,9 +1053,6 @@ body {
 			│ cascade styles │
 			└────────────────┘
 			*/
-			.cascade_wrapper-title_card, .cascade_wrapper-footer_card, .cascade_wrapper-text_card {
-				margin-top: calc(var(--double));
-			}
 			.cascade_wrapper-anchored_graphic_card {
 				height: calc(100% - var(--quadruple));
 				margin: calc(var(--double));
