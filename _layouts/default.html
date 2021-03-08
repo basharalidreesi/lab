@@ -12,7 +12,7 @@
 				{%- assign current = branch | prepend: segment[0] | append: ".markdown" -%}
 				{%- assign deepness = forloop.index -%}
 				{%- assign last = forloop.last -%}
-				{%- if deepness == 1 and current != "404.markdown" and current != "index.markdown" and tree.size < 2 -%} {%- comment -%} > {%- endcomment -%}
+				{%- if deepness == 1 and current != "404.markdown" and current != "index.markdown" and tree.size < 2 -%}
 					{%- for node in site.pages -%}
 						{%- assign deepness_one_current = current | remove_first: "_" -%}
 						{%- if node.path == deepness_one_current -%}
@@ -142,7 +142,7 @@
 						</ul>
 					</li>
 							{%- endunless -%}
-						{%- elsif node.is_listed and tree.size < 2 -%} {%- comment -%} > {%- endcomment %}
+						{%- elsif node.is_listed and tree.size < 2 -%}
 					<li class="nav_list_wrapper-nav_list_item --nav_text_styling {%- if page.url contains node.url %} --current_nav_text_styling {%- endif -%}">
 						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
 							{{ node.title }}
