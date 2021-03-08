@@ -20,7 +20,7 @@ function loaded() {
 }
 
 function arrowed() {
-	if (typeof(document.getElementById("arrow_wrapper")) != "underfined" && document.getElementById("arrow_wrapper") != "null") {
+	if (typeof(document.getElementById("arrow_wrapper")) != "undefined" && document.getElementById("arrow_wrapper") != "null") {
 		document.getElementById("arrow_wrapper").style.display = "block";
 		console.log("Arrowed.");
 	} else {
@@ -30,7 +30,7 @@ function arrowed() {
 }
 
 function unarrowed() {
-	if (typeof(document.getElementById("arrow_wrapper")) != "underfined" && document.getElementById("arrow_wrapper") != "null") {
+	if (typeof(document.getElementById("arrow_wrapper")) != "undefined" && document.getElementById("arrow_wrapper") != "null") {
 		document.getElementById("arrow_wrapper").style.opacity = "0";
 		console.log("Arrow hid.");
 		window.removeEventListener("scroll", unarrowed, {passive: true});
