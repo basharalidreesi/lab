@@ -5,8 +5,10 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 console.log("--vh set to " + `${vh}px` + ".");
 
 window.addEventListener("load", loaded);
-window.addEventListener("load", arrowed);
-window.addEventListener("scroll", unarrowed, {passive: true});
+if (document.getElementById("arrow_wrapper") !== null) {
+	window.addEventListener("load", arrowed);
+	window.addEventListener("scroll", unarrowed, {passive: true});
+}
 
 // let url = window.location.href;
 // let trailing_slash = url.endsWith("/");
@@ -20,27 +22,17 @@ function loaded() {
 }
 
 function arrowed() {
-	if (typeof(document.getElementById("arrow_wrapper")) != "undefined" && document.getElementById("arrow_wrapper") != "null") {
-		document.getElementById("arrow_wrapper").style.display = "block";
-		console.log("Arrowed.");
-	} else {
-		window.removeEventListener("load", arrowed);
-		console.log("No arrows here. Scroll listener removed.");
-	}
+	document.getElementById("arrow_wrapper").style.display = "block";
+	console.log("Arrowed.");
 }
 
 function unarrowed() {
-	if (typeof(document.getElementById("arrow_wrapper")) != "undefined" && document.getElementById("arrow_wrapper") != "null") {
-		document.getElementById("arrow_wrapper").style.opacity = "0";
-		console.log("Arrow hid.");
-		window.removeEventListener("scroll", unarrowed, {passive: true});
-		console.log("Scroll listener removed.");
-		setTimeout(() => { document.getElementById("arrow_wrapper").remove() }, 1250);
-		setTimeout(() => { console.log("Unarrowed.") }, 1250);
-	} else {
-		window.removeEventListener("scroll", unarrowed, {passive: true});
-		console.log("No arrows here. Scroll listener removed.");
-	}
+	document.getElementById("arrow_wrapper").style.opacity = "0";
+	console.log("Arrow hid.");
+	window.removeEventListener("scroll", unarrowed, {passive: true});
+	console.log("Scroll listener removed.");
+	setTimeout(() => { document.getElementById("arrow_wrapper").remove() }, 1250);
+	setTimeout(() => { console.log("Unarrowed.") }, 1250);
 }
 
 function toArrow(event) {
