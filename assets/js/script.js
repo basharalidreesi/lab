@@ -5,7 +5,7 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 console.log("--vh set to " + `${vh}px` + ".");
 
 window.addEventListener("load", loaded);
-if (document.getElementById("arrow_wrapper") !== null) {
+if (document.getElementById("arrow_wrapper") != "null") {
 	window.addEventListener("load", arrowed);
 	window.addEventListener("scroll", unarrowed, {passive: true});
 }
