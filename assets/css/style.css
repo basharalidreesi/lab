@@ -395,6 +395,9 @@ body {
 	margin-top: calc(var(--screen_height_half) - var(--header_height_half) + 1px /* compensate for top: -1px */);
 	margin-bottom: calc(var(--screen_height_half) - var(--header_height_half));
 }
+#header_container {
+	transition: opacity 0.25s;
+}
 .mother_container-main_container {
 	order: 3;
 }
