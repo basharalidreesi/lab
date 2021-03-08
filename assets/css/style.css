@@ -242,6 +242,7 @@ address {
 		font-weight: var(--title_card_text_font_weight);
 		color: var(--text_colour);
 		border: 1px solid var(--border_colour);
+		border-radius: 100%;
 		text-align: center;
 		word-break: break-word;
 		hyphens: auto;
