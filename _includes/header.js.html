@@ -23,9 +23,9 @@
 				} else {
 					console.log("No SVG header detected. Injection has not occured.");
 				}
-				 {%- else %}
-				console.log("SVG header injection unnecessary.");
-				 {%- endunless %}
+				{%- else %}
+					console.log("SVG header injection unnecessary.");
+				{%- endunless %}
 			 }
 			 {%- if page.header_location == "central" %}
 			// https://stackoverflow.com/questions/16302483/event-to-detect-when-positionsticky-is-triggered
