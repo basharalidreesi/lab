@@ -9,4 +9,11 @@ layout: default
 					<div class="showcase_wrapper-showcase_tile" style="background-image: url('{{- site.baseurl -}}{{- tile.path -}}')"></div>
 					{%- endfor %}
 				</div>
+				{%- if page.clickable_tiles -%}
+					<script>
+						{%- for node in page.clickable_tiles -%}
+							console.log({{ node[0]}} + " : " + {{node[1]}});
+						{%- endfor -%}
+					</script>
+				{%- endif -%}
 				<!-- end showcase.html -->
