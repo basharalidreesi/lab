@@ -396,6 +396,7 @@ body {
 	margin-bottom: calc(var(--screen_height_half) - var(--header_height_half));
 }
 #header_container {
+	opacity: 0;
 	transition: opacity 0.25s;
 }
 .mother_container-main_container {

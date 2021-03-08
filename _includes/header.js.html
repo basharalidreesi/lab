@@ -7,7 +7,6 @@
 			function headered() {
 				const header_graphic = document.getElementById("header_graphic");
 				const header_container = document.getElementById("header_container");
-				header_container.style.opacity = "0";
 				random_header_graphic_array = new Array(
 					{%- for header_graphic in header_graphics %}
 					"{{- site.baseurl -}}{{- header_graphic.path -}}"{%- unless forloop.last -%}, {%- endunless -%}
@@ -23,7 +22,6 @@
 				if (extension == "svg") {
 					SVGInject(header_graphic);
 					console.log("SVG header injected.");
-					header_container.style.opacity = "1";
 				} else {
 					console.log("No SVG header detected. Injection has not occured.");
 				}
@@ -31,6 +29,7 @@
 					console.log("SVG header injection unnecessary.");
 					header_container.style.opacity = "1";
 				{%- endunless %}
+				header_container.style.opacity = "1";
 			 }
 			 {%- if page.header_location == "central" %}
 			// https://stackoverflow.com/questions/16302483/event-to-detect-when-positionsticky-is-triggered
