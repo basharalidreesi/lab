@@ -242,6 +242,7 @@ address {
 		font-weight: var(--title_card_text_font_weight);
 		color: var(--text_colour);
 		text-align: center;
+		line-height: 150%;
 		overflow: hidden;
 	}
 	.--footer_card_text_styling {
