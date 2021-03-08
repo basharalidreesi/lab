@@ -5,6 +5,9 @@
 		<script>
 			window.addEventListener("load", headered);
 			function headered() {
+				const header_graphic = document.getElementById("header_graphic");
+				header_graphic.style.opacity = "0";
+				header_graphic.style.transition = "opacity 0.25s";
 				random_header_graphic_array = new Array(
 					{%- for header_graphic in header_graphics %}
 					"{{- site.baseurl -}}{{- header_graphic.path -}}"{%- unless forloop.last -%}, {%- endunless -%}
@@ -13,28 +16,30 @@
 				var header_graphic_number = random_header_graphic_array.length;
 				x = (Math.floor(Math.random() * header_graphic_number));
 				random_header_graphic = (random_header_graphic_array[x]);
-				document.getElementById("header_graphic").src = random_header_graphic;
+				header_graphic.src = random_header_graphic;
 					console.log("Loaded " + random_header_graphic + " from a total number of " + header_graphic_number + " header graphics.");
 				{%- unless text_colour == "#000" or text_colour == "#000000" or text_colour == "black" %}
 				var extension = random_header_graphic.split(".").pop();
 				if (extension == "svg") {
-					SVGInject(document.getElementById("header_graphic"));
+					SVGInject(document.header_graphic);
 					console.log("SVG header injected.");
+					header_graphic.style.opacity = "1";
 				} else {
 					console.log("No SVG header detected. Injection has not occured.");
 				}
 				{%- else %}
 					console.log("SVG header injection unnecessary.");
+					header_graphic.style.opacity = "1";
 				{%- endunless %}
 			 }
 			 {%- if page.header_location == "central" %}
 			// https://stackoverflow.com/questions/16302483/event-to-detect-when-positionsticky-is-triggered
-			const header = document.getElementById("header_container");
+			const header_container = document.getElementById("header_container");
 			const observer = new IntersectionObserver(
 				([e]) => e.target.children[0].classList.toggle("--sticky_header", e.intersectionRatio < 1),
 				{threshold: [1]}
 			);
-			observer.observe(header);
+			observer.observe(header_container);
 			{%- endif %}
 		</script>
 		<!-- end header.js.html -->
