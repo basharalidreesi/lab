@@ -254,7 +254,7 @@ address {
 		padding-top: calc(2vh + 2vw + 2vmin);
 		padding-left: calc(3vh + 3vw + 3vmin);
 		padding-bottom: calc(2vh + 2vw + 2vmin);
-		padding-left: calc(3vh + 3vw + 3vmin);
+		padding-right: calc(3vh + 3vw + 3vmin);
 		overflow: hidden;
 	}
 	.--title_card_text_styling::before, .--title_card_text_styling::after {
