@@ -244,10 +244,10 @@ address {
 		border: 1px solid var(--border_colour);
 		border-radius: 100%;
 		text-align: center;
-		/* word-break: break-word; */
 		hyphens: auto;
 		-ms-hyphens: auto;
 		-webkit-hyphens: auto;
+		word-break: break-word;
 		/* line-height: 150%; */
 		padding: calc(var(--quadruple));
 		overflow: hidden;
