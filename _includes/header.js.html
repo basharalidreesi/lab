@@ -8,7 +8,6 @@
 				const header_graphic = document.getElementById("header_graphic");
 				const header_container = document.getElementById("header_container");
 				header_container.style.opacity = "0";
-				header_container.style.transition = "opacity 0.25s";
 				random_header_graphic_array = new Array(
 					{%- for header_graphic in header_graphics %}
 					"{{- site.baseurl -}}{{- header_graphic.path -}}"{%- unless forloop.last -%}, {%- endunless -%}
