@@ -4,6 +4,8 @@ let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 console.log("--vh set to " + `${vh}px` + ".");
 
+window.addEventListener("load", loaded);
+
 // let url = window.location.href;
 // let trailing_slash = url.endsWith("/");
 // if (window.location.pathname != "/" && trailing_slash == true) {
