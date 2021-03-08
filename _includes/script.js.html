@@ -1,9 +1,14 @@
 
-		<!-- begin header.js.html -->
-		{%- assign header_graphics = site.static_files | where: "header_graphic", true -%}
-		{%- assign text_colour = page.text_colour | strip_newlines | strip %}
+		<!-- begin script.js.html -->
 		<script>
+			{%- assign header_graphics = site.static_files | where: "header_graphic", true -%}
+			{%- assign text_colour = page.text_colour | strip_newlines | strip -%}
 			window.addEventListener("load", headered);
+			{%- if page.header_location == "central" %}
+			window.addEventListener("load", arrowed);
+			window.addEventListener("scroll", unarrowed, {passive: true});
+			{%- endif -%}
+
 			function headered() {
 				const header_container = document.getElementById("header_container");
 				const header_graphic = document.getElementById("header_graphic");
@@ -39,4 +44,4 @@
 	       			{%- endif %}
 			 }
 		</script>
-		<!-- end header.js.html -->
+		<!-- end script.js.html -->
