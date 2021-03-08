@@ -1008,4 +1008,8 @@ body {
 	.list_page_item-list_page_item_tag_list {
 		padding-top: calc(var(--double));
 	}
+	.cascade_wrapper-anchored_graphic_card {
+		height: calc(100% - var(--quadruple));
+		margin: calc(var(--double));
+	}
 }
