@@ -25,9 +25,7 @@ defaults:
     secondary_colour: "#fff"
     border_colour: "#000"
     text_colour: "#000"
-    header_location:
-    - upper
-    - central
+    header_location: upper
     is_fullscreen: false
 - scope:
     path: ''
