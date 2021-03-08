@@ -54,6 +54,11 @@
 		{%- include noscript.css.html %}	</head>
 	<body>
 		<div class="--mobile_background"></div>
+		{%- if page.header_location == "central" %}
+		<div class="--downward_arrow_wrapper" id="arrow_wrapper" onClick="toArrow(event);">
+			<div class="--downward_arrow"></div>
+		</div>
+		{%- endif %}
 		<div class="mother_container {%- if page.is_fullscreen %} --mother_container_fullscreen {%- endif -%}">
 			<nav class="mother_container-nav_container{%- if page.header_location == 'central' -%}_central{%- elsif page.header_location == 'upper' -%}_upper{%- endif -%}" id="nav_container">
 				{%- if page.header_location == "upper" %}
@@ -173,10 +178,5 @@
 			</footer>
 			{%- endunless %}
 		</div>
-		{% if page.header_location == "central" and page.layout != "cascade" %}
-			{% include downward.html %}
-		{% elsif page.is_fullscreen and page.layout == "cascade" %}
-			{% include rightward.html %}
-		{% endif %}
 	</body>
 </html>
