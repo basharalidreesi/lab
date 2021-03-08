@@ -16,7 +16,7 @@
 				x = (Math.floor(Math.random() * header_graphic_number));
 				random_header_graphic = (random_header_graphic_array[x]);
 				header_graphic.src = random_header_graphic;
-					console.log("Loaded " + random_header_graphic + " from a total number of " + header_graphic_number + " header graphics.");
+					console.log("Headered " + random_header_graphic + " from a total number of " + header_graphic_number + " header graphics.");
 				{%- unless text_colour == "#000" or text_colour == "#000000" or text_colour == "black" %}
 				var extension = random_header_graphic.split(".").pop();
 				if (extension == "svg") {
