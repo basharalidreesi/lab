@@ -16,3 +16,8 @@ function lock_scroll() {
 	document.body.classList.toggle("--lock_scroll");
 	console.log("Body scrolling temporarily locked.");
 }
+
+window.addEventListener("load", loaded);
+function loaded() {
+	console.log("Reticulated splines");
+}
