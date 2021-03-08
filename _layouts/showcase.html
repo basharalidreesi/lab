@@ -5,13 +5,16 @@ layout: default
 <!-- begin showcase.html -->
 				{%- assign showcase_tiles = site.static_files | where: "showcase_tile", true %}
 				<div class="main_container-showcase_wrapper">
-					{%- for tile in showcase_tiles %}
+					{%- for tile in showcase_tiles -%}
+						{%- assign index = forloop.index -%}
+						{%- for datum in page.clickable_tiles -%}
+							{%- if index == datum[0] %}
+					<a href="{{- datum[1] -}}">
+						<div class="showcase_wrapper-showcase_tile" style="background-image: url('{{- site.baseurl -}}{{- tile.path -}}')"></div>
+					</a>
+							{%- else %}
 					<div class="showcase_wrapper-showcase_tile" style="background-image: url('{{- site.baseurl -}}{{- tile.path -}}')"></div>
+						{%- endfor -%}
 					{%- endfor %}
 				</div>
-				<script>
-					{%- for datum in page.clickable_tiles %}
-					console.log("{{ datum[0]}} : {{datum[1]}}");
-					{%- endfor %}
-				</script>
 				<!-- end showcase.html -->
