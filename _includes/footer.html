@@ -1,23 +1,28 @@
-<!-- begin footer.html -->
-<address>
-	<p class="--footer_text_styling">
-		{{ site.author }}
-	</p>
-	<p class="--footer_text_styling">
-		<a class="--anchor_styling --hyperlink_styling" href="https://www.instagram.com/{{ site.instagram | remove: "@" }}">{{ site.instagram }}</a>
-	</p>
-	<p class="--footer_text_styling">
-		<a class="--anchor_styling --hyperlink_styling" href="mailto:{{ site.email }}">{{ site.email }}</a>
-	</p>
-	<p class="--footer_text_styling">
-		{% assign year = site.time | date: '%Y' %}
-		&copy; 2021 {% if year != "2021" %} – {{ year }} {% endif %} Jad Toghuj
-	</p>
-	<p class="--footer_text_styling --no_padding">
-		All rights reserved
-	</p>
-	<p class="--footer_text_styling">
-		By <a class="--anchor_styling" href="{{ site.basabees }}">Basabees</a> for <a class="--anchor_styling" href="{{ site.batabeet }}">Batabeet</a>
-	</p>
-</address>
-<!-- end footer.html -->
+
+					<!-- begin footer.html -->
+					{%- assign year = site.time | date: '%Y' %}
+					<address>
+						<p class="--footer_text_styling">
+							{{ site.author }}
+						</p>
+						<p class="--footer_text_styling">
+							<a class="--anchor_styling --hyperlink_styling" href="https://www.instagram.com/{{- site.instagram | remove: '@' -}}">
+								{{ site.instagram }}
+							</a>
+						</p>
+						<p class="--footer_text_styling">
+							<a class="--anchor_styling --hyperlink_styling" href="mailto:{{- site.email -}}">
+								{{ site.email }}
+							</a>
+						</p>
+						<p class="--footer_text_styling">
+							&copy; 2021 {% if year != "2021" %} – {{ year }} {% endif %} Jad Toghuj
+						</p>
+						<p class="--footer_text_styling --no_padding">
+							All rights reserved
+						</p>
+						<p class="--footer_text_styling">
+							By <a class="--anchor_styling" href="{{- site.basabees -}}">Basabees</a> for <a class="--anchor_styling" href="{{- site.batabeet -}}">Batabeet</a>
+						</p>
+					</address>
+					<!-- end footer.html -->
