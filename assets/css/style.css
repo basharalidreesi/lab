@@ -250,7 +250,7 @@ address {
 		padding: calc(var(--quadruple));
 		overflow: hidden;
 	}
-	.--title_card_text_styling::before .--title_card_text_styling::after {
+	.--title_card_text_styling::before, .--title_card_text_styling::after {
 		content: "";
 		display: block;
 		height: 0;
