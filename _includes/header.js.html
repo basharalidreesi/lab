@@ -32,6 +32,7 @@
 			 }
 			 {%- if page.header_location == "central" %}
 			// https://stackoverflow.com/questions/16302483/event-to-detect-when-positionsticky-is-triggered
+			const header_graphic = document.getElementById("header_graphic");
 			const observer = new IntersectionObserver(
 				([e]) => e.target.children[0].classList.toggle("--sticky_header", e.intersectionRatio < 1),
 				{threshold: [1]}
