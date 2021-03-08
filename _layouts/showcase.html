@@ -8,7 +8,8 @@ layout: default
 					{%- for tile in showcase_tiles -%}
 						{%- assign index = forloop.index -%}
 						{%- for datum in page.clickable_tiles -%}
-							{%- if index == datum[0] %}
+							{%- assign number = datum[0] | plus: 0 -%}
+							{%- if index == number %}
 					<a href="{{- datum[1] -}}">
 						<div class="showcase_wrapper-showcase_tile" style="background-image: url('{{- site.baseurl -}}{{- tile.path -}}')"></div>
 					</a>
