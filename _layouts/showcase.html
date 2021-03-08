@@ -6,7 +6,7 @@ layout: default
 				{%- assign showcase_tiles = site.static_files | where: "showcase_tile", true %}
 				<div class="main_container-showcase_wrapper">
 					{%- for tile in showcase_tiles -%}
-						{%- assign index = forloop.index | downcase -%}
+						{%- assign index = forloop.index -%}
 						{%- for datum in page.clickable_tiles -%}
 							{%- if index = datum[0] %}
 					<a href="{{- datum[1] -}}">
