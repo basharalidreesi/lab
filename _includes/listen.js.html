@@ -1,0 +1,9 @@
+                <!-- begin listen.js.html -->
+                <script>
+                        window.addEventListener("load", loaded);
+                        {%- if page.header_location == "central" %}
+                        window.addEventListener("load", arrowed);
+                        window.addEventListener("scroll", unarrowed, {passive: true});
+                        {%- endif %}
+                </script>
+                <!-- end listen.js.html -->
