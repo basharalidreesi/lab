@@ -76,8 +76,8 @@
 	└─────────────────┘
 	*/
 	--title_card_text_font: "Le Murmure", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-	/* --title_card_text_font_size: 4rem; */
-	--title_card_text_font_size: calc(2vh + 2vw + 2vmin);
+	--title_card_text_font_size: 4rem;
+	/* --title_card_text_font_size: calc(2vh + 2vw + 2vmin); */
 	--title_card_text_font_weight: 400;
 	/*
 	┌───────┐
@@ -242,8 +242,8 @@ address {
 		font-size: var(--title_card_text_font_size);
 		font-weight: var(--title_card_text_font_weight);
 		color: var(--text_colour);
-		border: 1px solid var(--border_colour);
-		border-radius: 100%;
+		/* border: 1px solid var(--border_colour); */
+		/* border-radius: 100%; */
 		text-align: center;
 		hyphens: auto;
 		-ms-hyphens: auto;
@@ -251,10 +251,6 @@ address {
 		word-break: break-word;
 		/* line-height: 150%; */
 		/* padding: calc(var(--quadruple)); */
-		padding-top: calc(2vh + 2vw + 2vmin);
-		padding-left: calc(3vh + 3vw + 3vmin);
-		padding-bottom: calc(2vh + 2vw + 2vmin);
-		padding-right: calc(3vh + 3vw + 3vmin);
 		overflow: hidden;
 	}
 	.--title_card_text_styling::before, .--title_card_text_styling::after {
