@@ -4,10 +4,11 @@
 		{%- assign text_colour = page.text_colour | strip_newlines | strip %}
 		<script>
 			window.addEventListener("load", headered);
+			const header_container = document.getElementById("header_container");
 			function headered() {
 				const header_graphic = document.getElementById("header_graphic");
-				header_graphic.style.opacity = "0";
-				header_graphic.style.transition = "opacity 0.25s";
+				header_container.style.opacity = "0";
+				header_container.style.transition = "opacity 1.25s";
 				random_header_graphic_array = new Array(
 					{%- for header_graphic in header_graphics %}
 					"{{- site.baseurl -}}{{- header_graphic.path -}}"{%- unless forloop.last -%}, {%- endunless -%}
@@ -23,18 +24,17 @@
 				if (extension == "svg") {
 					SVGInject(header_graphic);
 					console.log("SVG header injected.");
-					header_graphic.style.opacity = "1";
+					header_container.style.opacity = "1";
 				} else {
 					console.log("No SVG header detected. Injection has not occured.");
 				}
 				{%- else %}
 					console.log("SVG header injection unnecessary.");
-					header_graphic.style.opacity = "1";
+					header_container.style.opacity = "1";
 				{%- endunless %}
 			 }
 			 {%- if page.header_location == "central" %}
 			// https://stackoverflow.com/questions/16302483/event-to-detect-when-positionsticky-is-triggered
-			const header_container = document.getElementById("header_container");
 			const observer = new IntersectionObserver(
 				([e]) => e.target.children[0].classList.toggle("--sticky_header", e.intersectionRatio < 1),
 				{threshold: [1]}
