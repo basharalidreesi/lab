@@ -11,7 +11,7 @@ layout: default
 				</div>
 				<script>
 					{%- for node in page.clickable_tiles -%}
-						console.log({{ node[0]}} + " : " + {{node[1]}});
+						console.log("{{ node[0]}} : {{node[1]}}");
 					{%- endfor -%}
 				</script>
 				<!-- end showcase.html -->
