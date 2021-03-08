@@ -4,7 +4,8 @@ let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 console.log("--vh set to " + `${vh}px` + ".");
 
-window.addEventListener("load", loaded);
+window.addEventListener("DOMContentLoaded", reticulated);
+window.addEventListener("load", splined);
 
 // let url = window.location.href;
 // let trailing_slash = url.endsWith("/");
@@ -13,8 +14,12 @@ window.addEventListener("load", loaded);
 //	window.location.replace(new_url);
 // }
 
-function loaded() {
-	console.log("Reticulated splines.");
+function reticulated() {
+	console.log("Reticulated...");
+}
+
+function splined() {
+	console.log("...splines.");
 }
 
 function arrowed() {
