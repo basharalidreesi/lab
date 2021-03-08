@@ -75,8 +75,8 @@
 	│ title card text │
 	└─────────────────┘
 	*/
-	--title_card_text_font: "M+ 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-	--title_card_text_font_size: 1.5rem;
+	--title_card_text_font: "Le Murmure", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	--title_card_text_font_size: 4rem;
 	--title_card_text_font_weight: 400;
 	/*
 	┌───────┐
@@ -242,7 +242,7 @@ address {
 		font-weight: var(--title_card_text_font_weight);
 		color: var(--text_colour);
 		text-align: center;
-		line-height: 200%;
+		overflow: hidden;
 	}
 	.--footer_card_text_styling {
 		font-family: var(--footer_card_text_font);
