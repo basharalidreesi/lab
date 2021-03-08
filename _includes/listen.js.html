@@ -1,9 +1,19 @@
 
 		<!-- begin listen.js.html -->
 		<script>
+			{%- assign home = site.url | append: site.baseurl -%}
 			{%- if page.header_location == "central" %}
 			window.addEventListener("load", arrowed);
 			window.addEventListener("scroll", unarrowed, {passive: true});
+			{%- endif -%}
+			{%- if page.url == home %}
+			document.addEventListener("DOMContentLoaded", (event) => {
+				const header_anchor = document.getElementById("header_anchor");
+				header_anchor.addEventListener("click", function (ev) {
+					ev.preventDefault();
+					window.scrollTo(0, window.innerHeight / 2);
+				});
+			});
 			{%- endif %}
 		</script>
 		<!-- end listen.js.html -->
