@@ -4,9 +4,9 @@
 		{%- assign text_colour = page.text_colour | strip_newlines | strip %}
 		<script>
 			window.addEventListener("load", headered);
-			const header_container = document.getElementById("header_container");
 			function headered() {
 				const header_graphic = document.getElementById("header_graphic");
+				const header_container = document.getElementById("header_container");
 				header_container.style.opacity = "0";
 				header_container.style.transition = "opacity 0.25s";
 				random_header_graphic_array = new Array(
