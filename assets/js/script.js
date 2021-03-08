@@ -40,6 +40,44 @@ function toArrow(event) {
 	});
 }
 
+function filtered(event) {
+	var tag = event.target;
+	var tag_content = tag.textContent;
+	var list_items = document.getElementsByClassName("list_page_item-list_page_item_tag_list");
+	var all_tags = document.getElementsByClassName("list_page_item_tag_list-list_page_item_tag");
+	for (var i = 0, length = list_items.length; i < length; i++) {
+		if (list_items[i].textContent.indexOf(tag_content) != -1) {
+			list_items[i].parentElement.classList.add("--highlighted_list_item");
+		} else {
+			list_items[i].parentElement.classList.remove("--highlighted_list_item");
+		}
+	}
+	for (var j = 0, length = all_tags.length; j < length; j++) {
+		if (all_tags[j].textContent.indexOf(tag_content) != -1) {
+			all_tags[j].classList.add("--highlighted_tag");
+			all_tags[j].children[0].style.display = "block";
+			all_tags[j].children[0].style.opacity = "1";
+		} else {
+			all_tags[j].classList.remove("--highlighted_tag");
+			all_tags[j].children[0].removeAttribute("style");
+		}
+	}
+	console.log("Filtered " + tag_content.trim() + ".");
+}
+
+function unfiltered(event) {
+	var list_items = document.getElementsByClassName("list_page_item-list_page_item_tag_list");
+	var all_tags = document.getElementsByClassName("list_page_item_tag_list-list_page_item_tag");
+	for (var i = 0, length = list_items.length; i < length; i++) {
+		list_items[i].parentElement.classList.remove("--highlighted_list_item");
+	}
+	for (var j = 0, length = all_tags.length; j < length; j++) {
+		all_tags[j].classList.remove("--highlighted_tag");
+		all_tags[j].children[0].removeAttribute("style");
+	}
+	console.log("Unfiltered.");
+}
+
 function lock_scroll() {
 	// window.scrollTo(0, 0);
 	// document.body.classList.toggle("--lock_scroll");
