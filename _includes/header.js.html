@@ -21,7 +21,7 @@
 				{%- unless text_colour == "#000" or text_colour == "#000000" or text_colour == "black" %}
 				var extension = random_header_graphic.split(".").pop();
 				if (extension == "svg") {
-					SVGInject(document.header_graphic);
+					SVGInject(header_graphic);
 					console.log("SVG header injected.");
 					header_graphic.style.opacity = "1";
 				} else {
