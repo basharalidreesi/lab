@@ -461,8 +461,6 @@ body {
 .nav_container_central_home-nav_list_wrapper {
 	background-color: var(--secondary_colour);
 	box-shadow: 0 0 calc(var(--quadruple)) calc(var(--double)) var(--secondary_colour);
-}
-.nav_container_central_home-nav_list_wrapper {
 	border-top: 1px solid var(--border_colour);
 }
 .nav_list_wrapper-nav_list_item {
