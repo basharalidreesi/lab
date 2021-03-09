@@ -915,6 +915,9 @@ body {
 		.mother_container-nav_container_central > .nav_container-nav_list_wrapper > .nav_list_wrapper-nav_list_item:last-child {
 			border-bottom: none;
 		}
+		.mother_container-nav_container_upper > .nav_container-nav_list_wrapper > .--current_nav_text_styling {
+			display: none;
+		}
 		/*
 		┌───────┐
 		│ begin └───────────────────────┐
@@ -940,15 +943,15 @@ body {
 		.mother_container-nav_container_upper > .nav_container-nav_list_wrapper > .--current_nav_text_styling {
 			display: none;
 		}
-		#nav_map_checkbox {
-			display: none;
-		}
 		/*
 		┌───────┐
 		│ begin └────────┐
 		│ nav map styles │
 		└────────────────┘
 		*/
+		#nav_map_checkbox {
+			display: none;
+		}
 		.--nav_map_background_upper, .--nav_map_background_central {
 			display: block;
 			background-color: transparent;
