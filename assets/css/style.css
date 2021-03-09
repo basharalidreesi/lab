@@ -878,6 +878,7 @@ body {
 	}
 	.mother_container-header_container_upper {
 		order: 1;
+		position: relative;
 	}
 	/*
 	┌───────┐
