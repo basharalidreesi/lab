@@ -986,7 +986,7 @@ body {
 			top: calc(var(--header_height) * -1);
 			height: calc(100% + var(--header_height));
 		}
-		#nav_map_checkbox:checked ~ .--nav_map_background_central {
+		.--nav_map_background_central {
 			top: 0;
 			height: 100%;
 		}
