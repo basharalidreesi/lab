@@ -499,8 +499,11 @@ body {
 	│ nav map styles │
 	└────────────────┘
 	*/
-	.--nav_map_background_upper, .--nav_map_background_central {
+	.--nav_map_background_upper {
 		display: none;
+	}
+	.--nav_map_background_central {
+		display: block;
 	}
 	.nav_container_upper-nav_map_wrapper {
 		display: none;
