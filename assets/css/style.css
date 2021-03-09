@@ -921,11 +921,6 @@ body {
 			display: none;
 			border-bottom: none;
 		}
-		.mother_container-nav_container_central > .nav_container-nav_list_wrapper {
-			position: relative;
-			display: none;
-			border-bottom: none;
-		}
 		#nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper {
 			display: flex;
 			flex-flow: column nowrap;
@@ -957,12 +952,18 @@ body {
 		}
 		#nav_map_checkbox:checked ~ .--nav_map_background {
 			position: absolute;
-			top: calc(var(--header_height) * -1);
 			left: 0;
-			height: calc(100% + var(--header_height));
 			width: 100%;
 			background-color: var(--secondary_colour);
 			box-shadow: 0 0 calc(var(--single)) 0 var(--primary_colour);
+		}
+		#nav_map_checkbox:checked ~ .mother_container-nav_container_upper .--nav_map_background {
+			top: calc(var(--header_height) * -1);
+			height: calc(100% + var(--header_height));
+		}
+		#nav_map_checkbox:checked ~ .mother_container-nav_container_central .--nav_map_background {
+			top: 0;
+			height: 100%;
 		}
 		.nav_container_upper-nav_map_wrapper {
 			position: relative;
