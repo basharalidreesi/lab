@@ -894,9 +894,14 @@ body {
 		│ page.header_location == central │
 		└─────────────────────────────────┘
 		*/
-		.mother_container-nav_container_central > .nav_container-nav_list_wrapper {
+		/* .mother_container-nav_container_central > .nav_container-nav_list_wrapper {
 			flex-flow: column nowrap;
 			padding: 0;
+		} */
+		.mother_container-nav_container_central > .nav_container-nav_list_wrapper {
+			position: relative;
+			display: none;
+			border-bottom: none;
 		}
 		.mother_container-nav_container_central > .nav_container-nav_list_wrapper > .nav_list_wrapper-nav_list_item {
 			width: 100%;
