@@ -685,9 +685,14 @@ body {
 		/* min-width: calc(var(--cascade_height)); */
 		/* max-width: 75vw; */
 		padding: calc(var(--double));
-		height: auto;
 		width: 100vw;
 		overflow: hidden; /* debug */
+	}
+	.cascade_wrapper-title_card, .cascade_wrapper-footer_card {
+		height: auto;
+	}
+	.cascade_wrapper-text_card {
+		height: 100%;
 	}
 	.cascade_wrapper-graphic_card {
 		position: relative;
