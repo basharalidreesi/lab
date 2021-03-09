@@ -61,9 +61,9 @@
 		{%- endif %}
 		<div class="mother_container {%- if page.is_fullscreen %} --mother_container_fullscreen {%- endif -%}">
 			<nav class="mother_container-nav_container{%- if page.header_location == 'central' -%}_central{%- elsif page.header_location == 'upper' -%}_upper{%- endif -%}" id="nav_container">
-				{%- if page.url != site.url %}
+				{%- if page.url != "/" %}
 				<input type="checkbox" id="nav_map_checkbox">
-				<div class="--nav_map_background"></div>
+				<div class="--nav_map_background{%- if page.header_location == 'central' -%}_central{%- elsif page.header_location == 'upper' -%}_upper{%- endif -%}"></div>
 				<label for="nav_map_checkbox" class="nav_container_upper-nav_map_wrapper">
 						{%- for branch in tree -%}
 							{%- assign segment = page.path | split: branch -%}
