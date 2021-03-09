@@ -491,11 +491,18 @@ body {
 		flex-flow: row nowrap; /* nowrap for debug */
 		position: absolute;
 		left: 50%;
-		bottom: calc(var(--single) + (var(--quarter) / 2));
+		bottom: 0;
 		transform: translateX(-50%);
+		padding-left: calc(var(--single));
+		padding-right: calc(var(--single));
+		pading-bottom: calc(var(--single) + (var(--quarter) / 2));
 		width: 100%;
 	}
-	.subnav_list_wrapper-subnav_list_item { }
+	.subnav_list_wrapper-subnav_list_item:not(.--subnav_text_separator), .subnav_list_wrapper-subnav_list_item:not(.--current_subnav_text_styling) {
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
 	.--subnav_text_separator {
 		padding-left: calc(var(--quarter));
 		padding-right: calc(var(--quarter));
