@@ -64,7 +64,7 @@
 				{%- if page.url != "/" %}
 				<input type="checkbox" id="nav_map_checkbox">
 				<div class="--nav_map_background{%- if page.header_location == 'central' -%}_central{%- elsif page.header_location == 'upper' -%}_upper{%- endif -%}"></div>
-				<label for="nav_map_checkbox" class="nav_container_upper-nav_map_wrapper">
+				<label for="nav_map_checkbox" class="nav_container{%- if page.header_location == 'central' -%}_central{%- elsif page.header_location == 'upper' -%}_upper{%- endif -%}-nav_map_wrapper">
 						{%- for branch in tree -%}
 							{%- assign segment = page.path | split: branch -%}
 							{%- assign current = branch | prepend: segment[0] | append: ".markdown" -%}
@@ -108,7 +108,7 @@
 				{%- else %}
 				<!-- nav map not included -->
 				{%- endif %}
-				<ul class="nav_container-nav_list_wrapper{%- if page.url == '/' -%}_home{%- endif -%}">
+				<ul class="nav_container-nav_list_wrapper{%- if page.header_location == 'central' -%}_central{%- elsif page.header_location == 'upper' -%}_upper{%- elsif page.url == '/' -%}_home{%- endif -%}">
 					{%- for node in pages -%}
 						{%- if node.is_listed and tree.size >= 2 -%}
 							{%- unless page.url contains node.url %}
