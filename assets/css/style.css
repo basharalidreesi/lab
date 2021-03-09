@@ -753,6 +753,7 @@ body {
 	}
 	.cascade_wrapper-anchored_graphic_card_central {
 		height: calc(100% - var(--quadruple));
+		margin: calc(var(--double));
 	}
 	.cascade_wrapper-anchored_graphic_card_upper .graphic_card-graphic_card_image,
 	.cascade_wrapper-anchored_graphic_card_central .graphic_card-graphic_card_image {
