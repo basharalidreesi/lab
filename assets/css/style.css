@@ -510,7 +510,12 @@ body {
 		display: none;
 	}
 	.--nav_map_background_central {
+		position: absolute;
 		display: block;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
 		background-color: var(--secondary_colour);
 		box-shadow: 0 0 calc(var(--quadruple)) calc(var(--double)) var(--secondary_colour);
 	}
@@ -996,13 +1001,7 @@ body {
 			box-shadow: none;
 			transition: all 0.25s;
 		}
-		.--nav_map_background_central {
-			position: absolute;
-			top: 0;
-			left: 0;
-			height: 100%;
-			width: 100%;
-		}
+		.--nav_map_background_central {	}
 		#nav_map_checkbox:checked ~ .--nav_map_background_upper {
 			position: absolute;
 			top: calc(var(--header_height) * -1);
