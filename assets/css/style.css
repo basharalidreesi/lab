@@ -504,15 +504,11 @@ body {
 	│ nav map styles │
 	└────────────────┘
 	*/
-	.--nav_map_background_upper {
-		display: none;
-	}
+	.--nav_map_background_upper,
 	.--nav_map_background_central {
-		display: block;
-	}
-	.nav_container_upper-nav_map_wrapper {
 		display: none;
 	}
+	.nav_container_upper-nav_map_wrapper,
 	.nav_container_central-nav_map_wrapper {
 		display: none;
 	}
@@ -1010,7 +1006,7 @@ body {
 			box-shadow: 0 0 calc(var(--single)) 0 var(--primary_colour);
 		}
 		.nav_container_upper-nav_map_wrapper,
-		.nav_container_central-nav_list_wrapper {
+		.nav_container_central-nav_map_wrapper {
 			position: relative;
 			display: flex;
 			flex-flow: column-reverse nowrap;
