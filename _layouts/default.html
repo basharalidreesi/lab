@@ -108,7 +108,7 @@
 				{%- else %}
 				<!-- nav map not included -->
 				{%- endif %}
-				<ul class="nav_container-nav_list_wrapper{%- if page.header_location == 'central' -%}_central{%- elsif page.header_location == 'upper' -%}_upper{%- elsif page.url == '/' -%}_home{%- endif -%}">
+				<ul class="nav_container{%- if page.header_location == 'central' -%}_central{%- elsif page.header_location == 'upper' -%}_upper{%- elsif page.url == '/' -%}_home{%- endif -%}-nav_list_wrapper">
 					{%- for node in pages -%}
 						{%- if node.is_listed and tree.size >= 2 -%}
 							{%- unless page.url contains node.url %}
