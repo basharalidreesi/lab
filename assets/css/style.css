@@ -915,7 +915,7 @@ body {
 		.mother_container-nav_container_central > .nav_container-nav_list_wrapper > .nav_list_wrapper-nav_list_item:last-child {
 			border-bottom: none;
 		}
-		.mother_container-nav_container_upper > .nav_container-nav_list_wrapper > .--current_nav_text_styling {
+		.mother_container-nav_container_central > .nav_container-nav_list_wrapper > .--current_nav_text_styling {
 			display: none;
 		}
 		/*
