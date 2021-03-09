@@ -94,7 +94,7 @@ layout: default
 		{% endif %}
 		{% case declaration %}
 			{% when "!text" %}
-				<div class="cascade_wrapper-text_card" 
+				<div class="cascade_wrapper-text_card"
 					style="
 						{% if block contains "!background" %} background-color: {{ background }}; {% endif %}
 						{% if block contains "!border" %} border: 1px solid {{ border }}; {% endif %}
@@ -117,7 +117,7 @@ layout: default
 						{% if block contains "!caption" %}
 							<!-- <figcaption>
 								{% for line in item %}
-									{% if line contains "!caption" %}	
+									{% if line contains "!caption" %}
 										<p>{{ line | remove_first: "!caption" | remove: "<p>" | remove: "</p>" }}</p>
 									{% endif %}
 								{% endfor %}
@@ -136,12 +136,12 @@ layout: default
 						{% if block contains "!caption" %}
 							<!-- <figcaption>
 								{% for line in item %}
-									{% if line contains "!caption" %}	
+									{% if line contains "!caption" %}
 										<p>{{ line | remove_first: "!caption" | remove: "<p>" | remove: "</p>" }}</p>
 									{% endif %}
 								{% endfor %}
 							</figcaption> -->
-						{% endif %}		
+						{% endif %}
 						<img class="graphic_card-graphic_card_image" src="{{ site.baseurl }}{{ source[0] }}">
 					</figure>
 				{% endif %}
@@ -197,23 +197,23 @@ layout: default
 <script>
 	// https://dev.to/samthor/divert-vertical-scroll-to-the-side-3id0
 	// handle up/down scrollwheel on the scroller, as most folks don't have horizontal scroll
-	 cascade_wrapper.addEventListener('wheel', (ev) => {
-		if (!ev.ctrlKey) {
-			ev.preventDefault();  // stop scrolling in another direction
-			cascade_wrapper.scrollLeft += (ev.deltaY + ev.deltaX);
-		}
-	});
-	document.getElementById('nav_container').addEventListener('wheel', (ev) => {
-		if (!ev.ctrlKey) {
-			ev.preventDefault();
-			cascade_wrapper.scrollLeft += (ev.deltaY + ev.deltaX);
-		}
-	});
-	document.getElementById('header_container').addEventListener('wheel', (ev) => {
-		if (!ev.ctrlKey) {
-			ev.preventDefault();
-			cascade_wrapper.scrollLeft += (ev.deltaY + ev.deltaX);
-		}
-	});
+	// cascade_wrapper.addEventListener('wheel', (ev) => {
+	//	if (!ev.ctrlKey) {
+	//		ev.preventDefault();  // stop scrolling in another direction
+	//		cascade_wrapper.scrollLeft += (ev.deltaY + ev.deltaX);
+	//	}
+	// });
+	// document.getElementById('nav_container').addEventListener('wheel', (ev) => {
+	//	if (!ev.ctrlKey) {
+	//		ev.preventDefault();
+	//		cascade_wrapper.scrollLeft += (ev.deltaY + ev.deltaX);
+	//	}
+	// });
+	// document.getElementById('header_container').addEventListener('wheel', (ev) => {
+	//	if (!ev.ctrlKey) {
+	//		ev.preventDefault();
+	//		cascade_wrapper.scrollLeft += (ev.deltaY + ev.deltaX);
+	//	}
+	// });
 </script>
 <!-- end cascade.html -->
