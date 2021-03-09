@@ -918,6 +918,11 @@ body {
 			display: none;
 			border-bottom: none;
 		}
+		.mother_container-nav_container_central > .nav_container-nav_list_wrapper {
+			position: relative;
+			display: none;
+			border-bottom: none;
+		}
 		#nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper {
 			display: flex;
 			flex-flow: column nowrap;
