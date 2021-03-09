@@ -503,7 +503,7 @@ body {
 		text-overflow: ellipsis;
 	}
 	.subnav_list_wrapper-subnav_list_item {
-		padding-bottom: calc(var(--single) + (var(--quarter) / 2));	
+		padding-bottom: calc(var(--single) + (var(--quarter) / 2));
 	}
 	.--subnav_text_separator {
 		padding-left: calc(var(--quarter));
@@ -741,14 +741,21 @@ body {
 		display: block;
 		height: 100%;
 	}
-	.cascade_wrapper-anchored_graphic_card {
+	.cascade_wrapper-anchored_graphic_card_upper,
+	.cascade_wrapper-anchored_graphic_card_central {
 		position: relative;
-		height: calc(100% - var(--double));
 		margin: calc(var(--double));
 		margin-top: 0;
 		border-radius: calc(var(--single));
 	}
-	.cascade_wrapper-anchored_graphic_card .graphic_card-graphic_card_image {
+	.cascade_wrapper-anchored_graphic_card_upper {
+		height: calc(100% - var(--double));
+	}
+	.cascade_wrapper-anchored_graphic_card_central {
+		height: calc(100% - var(--quadruple));
+	}
+	.cascade_wrapper-anchored_graphic_card_upper .graphic_card-graphic_card_image,
+	.cascade_wrapper-anchored_graphic_card_central .graphic_card-graphic_card_image {
 		border: 1px solid var(--border_colour);
 		border-radius: calc(var(--single));
 		padding: calc(var(--double));
@@ -774,7 +781,8 @@ body {
 		height: 100%;
 		width: 50vw;
 	}
-	.cascade_wrapper-anchored_graphic_card + .cascade_wrapper-anchored_graphic_card {
+	.cascade_wrapper-anchored_graphic_card_upper + .cascade_wrapper-anchored_graphic_card_upper,
+	.cascade_wrapper-anchored_graphic_card_central + .cascade_wrapper-anchored_graphic_card_central {
 		margin-left: 0;
 	}
 
@@ -868,7 +876,8 @@ body {
 		background-color: var(--text_colour);
 		color: var(--secondary_colour);
 	}
-	.cascade_wrapper-anchored_graphic_card:hover {
+	.cascade_wrapper-anchored_graphic_card_upper:hover,
+	.cascade_wrapper-anchored_graphic_card_central:hover {
 		background: linear-gradient(0deg, var(--primary_colour) 10%, rgba(255,255,255,0) 100%);
 		box-shadow: inset 0 0 calc(var(--double)) calc(var(--double)) var(--primary_colour);
 	}
@@ -887,7 +896,8 @@ body {
 	.--mobile_background {
 		display: block;
 	}
-	.cascade_wrapper-anchored_graphic_card {
+	.cascade_wrapper-anchored_graphic_card_upper,
+	.cascade_wrapper-anchored_graphic_card_central {
 		background: linear-gradient(0deg, var(--primary_colour) 10%, rgba(255,255,255,0) 100%);
 		box-shadow: inset 0 0 calc(var(--double)) calc(var(--double)) var(--primary_colour);
 	}
@@ -1149,7 +1159,8 @@ body {
 			│ cascade styles │
 			└────────────────┘
 			*/
-			.cascade_wrapper-anchored_graphic_card {
+			.cascade_wrapper-anchored_graphic_card_upper,
+			.cascade_wrapper-anchored_graphic_card_central {
 				height: calc(100% - var(--quadruple));
 				margin: calc(var(--double));
 			}
