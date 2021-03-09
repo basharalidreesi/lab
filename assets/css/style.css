@@ -876,9 +876,11 @@ body {
 		order: 2;
 		position: relative;
 	}
+	.mother_container-nav_container_central {
+		position: relative;
+	}
 	.mother_container-header_container_upper {
 		order: 1;
-		position: relative;
 	}
 	/*
 	┌───────┐
