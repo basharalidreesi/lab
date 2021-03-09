@@ -3,7 +3,7 @@ layout: default
 ---
 
 <!-- begin cascade.html -->
-<div class="main_container-cascade_wrapper" id="cascade_wrapper">
+<div class="main_container{%- if page.header_location == 'central' -%}_central{%- elsif page.header_location == 'upper' -%}_upper{%- endif -%}-cascade_wrapper" id="cascade_wrapper">
 	{% assign page_content = page.content | newline_to_br | strip_newlines | split: "<br /><br />" %}
 	<header class="cascade_wrapper-title_card">
 		<h1 class="--title_card_text_styling">{{ page.title }}</h1>
