@@ -55,7 +55,7 @@ defaults:
   values:
     showcase_tile: true
 baseurl: 
-url: http://www.jadtoghuj.com
+url: https://www.jadtoghuj.com
 description: Jad Toghuj | Editorial Stylist | Creative Director | Amman, Jordan
 author: Jad Toghuj
 email: jadtoghuj@gmail.com
