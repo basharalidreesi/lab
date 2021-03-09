@@ -1159,7 +1159,8 @@ body {
 			│ cascade styles │
 			└────────────────┘
 			*/
-			.cascade_wrapper-anchored_graphic_card_upper {
+			.cascade_wrapper-anchored_graphic_card_upper,
+			.cascade_wrapper-anchored_graphic_card_central {
 				height: calc(100% - var(--quadruple));
 				margin: calc(var(--double));
 			}

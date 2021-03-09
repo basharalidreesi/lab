@@ -108,7 +108,7 @@ layout: default
 				</div>
 			{% when "!image" %}
 				{% if block contains "!linkto" %}
-					<figure class="cascade_wrapper-anchored_graphic_card"
+					<figure class="cascade_wrapper-anchored_graphic_card{%- if page.header_location == 'central' -%}_central{%- elsif page.header_location == 'upper' -%}_upper{%- endif -%}"
 						style="
 							{% if block contains "!background" %} background-color: {{ background }}; {% endif %}
 							{% if block contains "!border" %} border: 1px solid {{ border }}; {% endif %}
