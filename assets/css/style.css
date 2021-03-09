@@ -396,7 +396,7 @@ body {
 	height: 100%;
 }
 .--mother_container_fullscreen {
-	height: calc(var(--screen_height));
+	min-height: calc(var(--screen_height));
 }
 .mother_container-nav_container_upper {
 	order: 1;
