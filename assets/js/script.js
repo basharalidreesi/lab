@@ -98,21 +98,19 @@ function unfiltered(event) {
 }
 
 function redirected(event) {
-	if (window.innerWidth < document.getElementById("cascade_wrapper").scrollWidth) {
-		if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
-			if (event.deltaY > 0) { // going down
+	if (window.innerWidth < document.getElementById("cascade_wrapper").scrollWidth) { // if cascade is overflowing
+		if (window.innerHeight + window.scrollY >= document.body.scrollHeight) { // if bottom of page -- improve here
+			if (event.deltaY > 0) { // if going down
 				event.preventDefault();
-				document.body.classList.toggle("--lock_scroll");
+				document.body.classList.add("--lock_scroll");
 				document.getElementById("cascade_wrapper").scrollLeft += (event.deltaY + event.deltaX);
-			} else if (event.deltaY < 0) { // going up
+			} else if (event.deltaY < 0) { // if going up
 				if (document.getElementById("cascade_wrapper").scrollLeft == 0) {
-					// do nothing
+					document.body.classList.remove("--lock_scroll");
 				} else if (document.getElementById("cascade_wrapper").scrollLeft > 0) {
 					document.getElementById("cascade_wrapper").scrollLeft += (event.deltaY + event.deltaX);
 				}
 			}
-		} else {
-			// do nothing
 		}
 	} else {
 		window.removeEventListener("wheel", redirected);
