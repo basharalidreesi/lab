@@ -4,13 +4,13 @@ let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 console.log("--vh set to " + `${vh}px` + ".");
 
-window.addEventListener("resize", vhed);
+// window.addEventListener("resize", vhed);
 
-function vhed() {
-	vh = window.innerHeight * 0.01;
-	document.documentElement.style.setProperty('--vh', `${vh}px`);
-	console.log("--vh updated to " + `${vh}px` + ".");
-}
+// function vhed() {
+//	vh = window.innerHeight * 0.01;
+//	document.documentElement.style.setProperty('--vh', `${vh}px`);
+//	console.log("--vh updated to " + `${vh}px` + ".");
+// }
 
 window.addEventListener("DOMContentLoaded", reticulated);
 window.addEventListener("load", splined);
@@ -39,6 +39,7 @@ function unarrowed() {
 	document.getElementById("arrow_wrapper").style.opacity = "0";
 	console.log("Arrow hid.");
 	document.getElementById("bodyalt").removeEventListener("scroll", unarrowed, {passive: true});
+	window.removeEventListener("scroll", unarrowed, {passive: true});
 	console.log("Scroll listener removed.");
 	setTimeout(() => { document.getElementById("arrow_wrapper").remove() }, 1250);
 	setTimeout(() => { console.log("Unarrowed.") }, 1250);
