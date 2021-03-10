@@ -4,6 +4,14 @@ let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 console.log("--vh set to " + `${vh}px` + ".");
 
+window.addEventListener("resize", vhed);
+
+function vhed() {
+	vh = window.innerHeight * 0.01;
+	document.documentElement.style.setProperty('--vh', `${vh}px`);
+	console.log("--vh updated to " + `${vh}px` + ".");
+}
+
 window.addEventListener("DOMContentLoaded", reticulated);
 window.addEventListener("load", splined);
 
