@@ -81,7 +81,23 @@
 				var deltaY;
 				deltaX = event.changedTouches[0].clientX - clientX;
 				deltaY = event.changedTouches[0].clientY - clientY;
-				document.getElementById("cascade_wrapper").scrollLeft += (deltaY + deltaX);
+				if (window.innerWidth < document.getElementById("cascade_wrapper").scrollWidth) {
+					if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
+						if (document.getElementById("cascade_wrapper").scrollLeft == 0) {
+							window.scrollTo(0, document.body.scrollHeight);
+							document.getElementById("cascade_wrapper").scrollLeft += 1;
+						} else if (document.getElementById("cascade_wrapper").scrollLeft > 0) {
+							event.preventDefault();
+							document.getElementById("cascade_wrapper").scrollLeft += (deltaY + deltaX);
+							console.log("Redirect");
+						}
+					} else {
+						console.log("Don't redirect");
+					}
+				} else {
+					console.log ("No need for redirect");
+					window.removeEventListener("wheel", wheelredirected);
+				}
 			}
 		</script>
 		<!-- end script.js.html -->
