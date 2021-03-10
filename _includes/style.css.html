@@ -4,5 +4,14 @@
 			a[href*="//"]:not([href*="{{- site.url -}}{{- site.baseurl -}}"]), a[href*="mailto:"] {
 				cursor: alias;
 			}
+			{%- if page.layout == "cascade" and page.header_location == "central" %}
+			body {
+				overflow: hidden;
+			}
+			.bodyalt {
+				display: block;
+				overflow: auto;
+			}
+			{%- endif %}
 		</style>
 		<!-- end style.css.html -->
