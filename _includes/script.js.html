@@ -10,7 +10,7 @@
 			{%- endif -%}
 			{%- if page.layout == "cascade" %}
 			window.addEventListener("DOMContentLoaded", (event) => {
-				window.addEventListener("scroll", redirected);
+				window.addEventListener("wheel", redirected);
 			});
 			{%- endif %}
 			function headered() {
