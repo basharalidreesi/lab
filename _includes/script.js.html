@@ -10,7 +10,9 @@
 			{%- endif -%}
 			{%- if page.layout == "cascade" %}
 			window.addEventListener("DOMContentLoaded", (event) => {
-				window.addEventListener("wheel", redirected);
+				window.addEventListener("wheel", wheelredirected);
+				window.addEventListener("touchstart", touchstarted);
+				window.addEventListener("touchmove", touchredirected);
 			});
 			{%- endif %}
 			function headered() {
@@ -47,7 +49,7 @@
 				observer.observe(header_container);
 	       			{%- endif %}
 			}
-			function redirected(event) {
+			function wheelredirected(event) {
 				if (window.innerWidth < document.getElementById("cascade_wrapper").scrollWidth) {
 					if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
 						if (document.getElementById("cascade_wrapper").scrollLeft == 0) {
@@ -63,7 +65,14 @@
 					}
 				} else {
 					console.log ("No need for redirect");
+					window.removeEventListener("wheel", wheelredirected);
 				}
+			}
+			function touchstarted(event) {
+				console.log("Touch started");
+			}
+			function touchredirected(event) {
+				console.log("Touch moved");
 			}
 		</script>
 		<!-- end script.js.html -->
