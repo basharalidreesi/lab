@@ -13,6 +13,13 @@
 				height: calc(var(--screen_height));
 				overflow: auto;
 			}
+			{%- else %}
+			.mother_container {
+				height: 100%;
+			}
+			.--mother_container_fullscreen {
+				min-height: calc(var(--screen_height));
+			}
 			{%- endif %}
 		</style>
 		<!-- end style.css.html -->
