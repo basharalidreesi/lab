@@ -30,7 +30,7 @@ function arrowed() {
 function unarrowed() {
 	document.getElementById("arrow_wrapper").style.opacity = "0";
 	console.log("Arrow hid.");
-	window.removeEventListener("scroll", unarrowed, {passive: true});
+	document.getElementById("bodyalt").removeEventListener("scroll", unarrowed, {passive: true});
 	console.log("Scroll listener removed.");
 	setTimeout(() => { document.getElementById("arrow_wrapper").remove() }, 1250);
 	setTimeout(() => { console.log("Unarrowed.") }, 1250);
