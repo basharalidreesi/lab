@@ -54,7 +54,7 @@
 		{%- include noscript.css.html %}	</head>
 	<body>
 	{%- if page.layout == "cascade" and page.header_location == "central" %}
-	<div class="--bodyalt" id="bodyalt">
+	<!-- <div class="--bodyalt" id="bodyalt"> -->
 	{%- endif %}
 		<div class="--mobile_background"></div>
 		{%- if page.header_location == "central" %}
@@ -181,7 +181,7 @@
 			{%- endunless %}
 		</div>
 	{%- if page.layout == "cascade" and page.header_location == "central" %}
-	</div>
+	<!-- </div> -->
 	{%- endif %}
 	</body>
 </html>
