@@ -84,20 +84,14 @@
 				if (window.innerWidth < document.getElementById("cascade_wrapper").scrollWidth) {
 					if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
 						if (document.getElementById("cascade_wrapper").scrollLeft == 0) {
-							window.scrollTo(0, document.body.scrollHeight);
+							document.body.style.overflow = "hidden";
 							document.getElementById("cascade_wrapper").scrollLeft += 1;
 						} else if (document.getElementById("cascade_wrapper").scrollLeft > 0) {
-							window.addEventListener("scroll", (event) => {
-								event.preventDefault();
-							});
-							window.addEventListener("touchmove", (event) => {
-								event.preventDefault();
-							});
-							window.scrollTo(0, document.body.scrollHeight);
 							document.getElementById("cascade_wrapper").scrollLeft -= (deltaY + deltaX);
 							console.log("Redirect");
 						}
 					} else {
+						document.body.style.overflow = "auto";
 						console.log("Don't redirect");
 					}
 				} else {
