@@ -47,9 +47,11 @@
 				observer.observe(header_container);
 	       			{%- endif %}
 			}
-			function redirected() {
+			function redirected(event) {
 				if (window.innerHeight + window.scrollY >= document.body.scrollHeight && document.getElementById("cascade_wrapper").scrollLeft == 0) {
 					console.log("Redirect");
+					event.preventDefault();
+					document.getElementById("cascade_wrapper").scrollLeft += (ev.deltaY + ev.deltaX);
 				} else {
 					console.log("Don't redirect");
 				}
