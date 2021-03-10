@@ -87,7 +87,7 @@
 							document.getElementById("cascade_wrapper").scrollLeft += 1;
 						} else if (document.getElementById("cascade_wrapper").scrollLeft > 0) {
 							document.body.style.overflow = "hidden";
-							document.getElementById("cascade_wrapper").scrollLeft += (deltaY + deltaX);
+							document.getElementById("cascade_wrapper").scrollLeft -= (deltaY + deltaX);
 							console.log("Redirect");
 						}
 					} else {
