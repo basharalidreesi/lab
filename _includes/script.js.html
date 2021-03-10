@@ -87,7 +87,12 @@
 							window.scrollTo(0, document.body.scrollHeight);
 							document.getElementById("cascade_wrapper").scrollLeft += 1;
 						} else if (document.getElementById("cascade_wrapper").scrollLeft > 0) {
-							// event.preventDefault();
+							window.addEventListener("scroll", (event) => {
+								event.preventDefault();
+							});
+							window.addEventListener("touchmove", (event) => {
+								event.preventDefault();
+							});
 							document.getElementById("cascade_wrapper").scrollLeft -= (deltaY + deltaX);
 							console.log("Redirect");
 						}
