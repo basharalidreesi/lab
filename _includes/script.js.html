@@ -6,12 +6,13 @@
 			window.addEventListener("load", headered);
 			{%- if page.header_location == "central" %}
 			window.addEventListener("load", arrowed);
-			{%- if page.layout == "cascade" %}
+				{%- if page.layout == "cascade" %}
 			window.addEventListener("DOMContentLoaded", (event) => {
 				document.getElementById("bodyalt").addEventListener("scroll", unarrowed, {passive: true});
 			});
-			{%- else %}
+				{%- else %}
 			window.addEventListener("scroll", unarrowed, {passive:true});
+				{%- endif -%}
 			{%- endif -%}
 
 			function headered() {
