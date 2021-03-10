@@ -13,6 +13,9 @@
 				window.addEventListener("wheel", wheelredirected);
 				window.addEventListener("touchstart", touchstarted);
 				window.addEventListener("touchmove", touchredirected);
+				window.addEventListener("touchend", (ev) => {
+					event.preventDefault();
+				}
 			});
 			{%- endif %}
 			function headered() {
@@ -88,7 +91,7 @@
 						} else if (document.getElementById("cascade_wrapper").scrollLeft > 0) {
 							event.preventDefault();
 							document.body.style.overflow = "hidden";
-							document.getElementById("cascade_wrapper").scrollLeft -= (deltaY);
+							document.getElementById("cascade_wrapper").scrollLeft -= (deltaY + deltaX);
 							console.log("Redirect");
 						}
 					} else {
