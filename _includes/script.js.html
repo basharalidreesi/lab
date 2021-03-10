@@ -9,12 +9,8 @@
 			window.addEventListener("scroll", unarrowed, {passive:true});
 			{%- endif -%}
 			{%- if page.layout == "cascade" %}
-			window.addEventListener('DOMContentLoaded', (event) => {
-				if (window.innerHeight + window.scrollY >= document.body.scrollHeight && document.getElementById("cascade_wrapper").scrollLeft == 0) {
-					window.addEventListener("wheel", redirected);
-				} else {
-					window.removeEventListener("wheel", redirected);
-				}
+			window.addEventListener("DOMContentLoaded", (event) => {
+				window.addEventListener("wheel", redirected);
 			});
 			{%- endif %}
 			function headered() {
@@ -52,7 +48,11 @@
 	       			{%- endif %}
 			}
 			function redirected() {
-				 console.log("Scroll");
+				if (window.innerHeight + window.scrollY >= document.body.scrollHeight && document.getElementById("cascade_wrapper").scrollLeft == 0) {
+					console.log("Redirect");
+				} else {
+					console.log("Don't redirect");
+				}
 			}
 		</script>
 		<!-- end script.js.html -->
