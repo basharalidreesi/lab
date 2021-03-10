@@ -6,24 +6,15 @@ console.log("--vh set to " + `${vh}px` + ".");
 
 window.addEventListener("resize", vhed);
 
-var oldwidth = window.innerWidth;
 var oldheight = window.outerHeight;
 
 function vhed() {
-	var newwidth = window.innerWidth;
 	var newheight = window.outerHeight;
-	if (newwidth !== oldwidth) {
-		oldwidth = newwidth;
+	if (newheight !== oldheight) {
+		oldheight = newheight;
 		vh = window.innerHeight * 0.01;
 		document.documentElement.style.setProperty('--vh', `${vh}px`);
 		console.log("--vh updated to " + `${vh}px` + ".");
-	} else if (newwidth === oldwidth) {
-		if (newheight !== oldheight) {
-			oldheight = newheight;
-			vh = window.innerHeight * 0.01;
-			document.documentElement.style.setProperty('--vh', `${vh}px`);
-			console.log("--vh updated to " + `${vh}px` + ".");
-		}
 	}
 }
 
