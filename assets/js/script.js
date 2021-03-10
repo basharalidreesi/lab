@@ -101,7 +101,8 @@ function redirected(event) {
 	if (window.innerWidth < document.getElementById("cascade_wrapper").scrollWidth) {
 		if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
 			if (document.getElementById("cascade_wrapper").scrollLeft == 0) {
-				window.scrollTo(0, document.body.scrollHeight);
+				// window.scrollTo(0, document.body.scrollHeight);
+				document.body.style.overflow = "hidden";
 				document.getElementById("cascade_wrapper").scrollLeft += 1;
 			} else if (document.getElementById("cascade_wrapper").scrollLeft > 0) {
 				event.preventDefault();
