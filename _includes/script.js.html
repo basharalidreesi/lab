@@ -6,7 +6,7 @@
 			window.addEventListener("load", headered);
 			{%- if page.header_location == "central" %}
 			window.addEventListener("load", arrowed);
-			window.addEventListener("scroll", unarrowed, {passive: true});
+			document.getElementById("bodyalt").addEventListener("scroll", unarrowed, {passive: true});
 			{%- endif -%}
 
 			function headered() {
