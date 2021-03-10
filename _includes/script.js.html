@@ -48,17 +48,17 @@
 	       			{%- endif %}
 			}
 			function redirected(event) {
-				if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
+				if (window.innerHeight + window.scrollY >= document.body.scrollHeight && document.getElementById("cascade_wrapper").scrollWidth > window.innerWidth) {
 					if (document.getElementById("cascade_wrapper").scrollLeft == 0) {
 						window.scrollTo(0, document.body.scrollHeight);
 						document.getElementById("cascade_wrapper").scrollLeft += 1;
 					} else if (document.getElementById("cascade_wrapper").scrollLeft > 0) {
 						event.preventDefault();
-						console.log("Redirect");
 						document.getElementById("cascade_wrapper").scrollLeft += (event.deltaY + event.deltaX);
+						// console.log("Redirect");
 					}
 				} else {
-					console.log("Don't redirect");
+					// console.log("Don't redirect");
 				}
 			}
 		</script>
