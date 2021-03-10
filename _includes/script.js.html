@@ -14,7 +14,7 @@
 				window.addEventListener("touchstart", touchstarted);
 				window.addEventListener("touchmove", touchredirected);
 				window.addEventListener("touchend", (ev) => {
-					event.preventDefault();
+					ev.preventDefault();
 				}
 			});
 			{%- endif %}
