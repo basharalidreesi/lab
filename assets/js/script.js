@@ -100,20 +100,21 @@ function unfiltered(event) {
 function redirected(event) {
 	if (window.innerWidth < document.getElementById("cascade_wrapper").scrollWidth) {
 		if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
-			if (document.getElementById("cascade_wrapper").scrollLeft == 0) {
-				// window.scrollTo(0, document.body.scrollHeight);
-				document.body.style.overflow = "hidden";
-				document.getElementById("cascade_wrapper").scrollLeft += 1;
-			} else if (document.getElementById("cascade_wrapper").scrollLeft > 0) {
+			if (event.deltaY > 0) { // going down
 				event.preventDefault();
+				document.body.classList.toggle("--lock_scroll");
 				document.getElementById("cascade_wrapper").scrollLeft += (event.deltaY + event.deltaX);
-				console.log("Redirect");
+			} else if (event.deltaY < 0) { // going up
+				if (document.getElementById("cascade_wrapper").scrollLeft == 0) {
+					// do nothing
+				} else if (document.getElementById("cascade_wrapper").scrollLeft > 0) {
+					document.getElementById("cascade_wrapper").scrollLeft += (event.deltaY + event.deltaX);
+				}
 			}
 		} else {
-			console.log("Don't redirect");
+			// do nothing
 		}
 	} else {
-		console.log ("No need for redirect");
 		window.removeEventListener("wheel", redirected);
 	}
 }
