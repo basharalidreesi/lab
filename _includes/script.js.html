@@ -68,11 +68,20 @@
 					window.removeEventListener("wheel", wheelredirected);
 				}
 			}
+			var clientX;
+			var clientY;
 			function touchstarted(event) {
 				console.log("Touch started");
+				clientX = event.touches[0].clientX;
+				clientY = event.touches[0].clientY;
 			}
 			function touchredirected(event) {
 				console.log("Touch moved");
+				var deltaX;
+				var deltaY;
+				deltaX = event.changedTouches[0].clientX - clientX;
+				deltaY = event.changedTouches[0].clientY - clientY;
+				document.getElementById("cascade_wrapper").scrollLeft += (deltaY + deltaX);
 			}
 		</script>
 		<!-- end script.js.html -->
