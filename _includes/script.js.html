@@ -50,7 +50,6 @@
 			function redirected(event) {
 				if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
 					if (document.getElementById("cascade_wrapper").scrollLeft == 0) {
-						event.preventDefault();
 						window.scrollTo(0, document.body.scrollHeight);
 						document.getElementById("cascade_wrapper").scrollLeft += 1;
 					} else if (document.getElementById("cascade_wrapper").scrollLeft > 0) {
