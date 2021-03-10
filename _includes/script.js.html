@@ -93,6 +93,7 @@
 							window.addEventListener("touchmove", (event) => {
 								event.preventDefault();
 							});
+							window.scrollTo(0, document.body.scrollHeight);
 							document.getElementById("cascade_wrapper").scrollLeft -= (deltaY + deltaX);
 							console.log("Redirect");
 						}
