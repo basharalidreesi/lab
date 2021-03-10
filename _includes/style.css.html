@@ -4,22 +4,5 @@
 			a[href*="//"]:not([href*="{{- site.url -}}{{- site.baseurl -}}"]), a[href*="mailto:"] {
 				cursor: alias;
 			}
-			{%- if page.layout == "cascade" and page.header_location == "central" %}
-			body {
-				overflow: hidden;
-			}
-			.--bodyalt {
-				display: block;
-				height: calc(var(--screen_height));
-				overflow: auto;
-			}
-			{%- else %}
-			.mother_container {
-				height: 100%;
-			}
-			.--mother_container_fullscreen {
-				min-height: calc(var(--screen_height));
-			}
-			{%- endif %}
 		</style>
 		<!-- end style.css.html -->

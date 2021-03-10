@@ -53,9 +53,7 @@
 		{%- include style.css.html -%}
 		{%- include noscript.css.html %}	</head>
 	<body>
-	{%- if page.layout == "cascade" and page.header_location == "central" %}
 	<div class="--bodyalt">
-	{%- endif %}
 		<div class="--mobile_background"></div>
 		{%- if page.header_location == "central" %}
 		<div class="--downward_arrow_wrapper" id="arrow_wrapper" onClick="toArrow(event);">
@@ -180,8 +178,6 @@
 			</footer>
 			{%- endunless %}
 		</div>
-	{%- if page.layout == "cascade" and page.header_location == "central" %}
 	</div>
-	{%- endif %}
 	</body>
 </html>
