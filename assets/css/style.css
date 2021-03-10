@@ -254,7 +254,8 @@ address {
 		/* padding: calc(var(--quadruple)); */
 		overflow: hidden;
 	}
-	.--title_card_text_styling::before, .--title_card_text_styling::after {
+	.--title_card_text_styling::before,
+	.--title_card_text_styling::after {
 		content: "";
 		display: block;
 		height: 0;
@@ -327,11 +328,15 @@ address {
 		padding-left: calc(var(--half));
 		padding-right: calc(var(--half));
 	}
-	.--current_nav_text_styling > a, .--current_nav_map_text_styling > a, .--current_subnav_text_styling > a {
+	.--current_nav_text_styling > a,
+	.--current_nav_map_text_styling > a,
+	.--current_subnav_text_styling > a {
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 		background-size: 100% 2px;
 	}
-	.--text_card_text_styling a, .--footer_card_text_styling a, .--title_card_text_styling a {
+	.--text_card_text_styling a,
+	.--footer_card_text_styling a,
+	.--title_card_text_styling a {
 		font-family: inherit;
 		font-size: inherit;
 		font-weight: inherit;
@@ -366,6 +371,7 @@ body {
 	overflow: hidden;
 }
 .--bodyalt {
+	position: relative;
 	display: block;
 	height: calc(var(--screen_height));
 	overflow: auto;
