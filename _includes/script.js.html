@@ -48,10 +48,12 @@
 	       			{%- endif %}
 			}
 			function redirected(event) {
-				if (window.innerHeight + window.scrollY >= document.body.scrollHeight && document.getElementById("cascade_wrapper").scrollLeft == 0) {
-					console.log("Redirect");
+				if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
 					event.preventDefault();
-					document.getElementById("cascade_wrapper").scrollLeft += (event.deltaY + event.deltaX);
+					if(document.getElementById("cascade_wrapper").scrollLeft == 0) {
+						console.log("Redirect");
+						document.getElementById("cascade_wrapper").scrollLeft += (event.deltaY + event.deltaX);
+					}
 				} else {
 					console.log("Don't redirect");
 				}
