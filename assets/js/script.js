@@ -97,6 +97,26 @@ function unfiltered(event) {
 	console.log("Unfiltered.");
 }
 
+function redirected(event) {
+	if (window.innerWidth < document.getElementById("cascade_wrapper").scrollWidth) {
+		if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
+			if (document.getElementById("cascade_wrapper").scrollLeft == 0) {
+				window.scrollTo(0, document.body.scrollHeight);
+				document.getElementById("cascade_wrapper").scrollLeft += 1;
+			} else if (document.getElementById("cascade_wrapper").scrollLeft > 0) {
+				event.preventDefault();
+				document.getElementById("cascade_wrapper").scrollLeft += (event.deltaY + event.deltaX);
+				console.log("Redirect");
+			}
+		} else {
+			console.log("Don't redirect");
+		}
+	} else {
+		console.log ("No need for redirect");
+		window.removeEventListener("wheel", redirected);
+	}
+}
+
 function lock_scroll() {
 	// window.scrollTo(0, 0);
 	// document.body.classList.toggle("--lock_scroll");
