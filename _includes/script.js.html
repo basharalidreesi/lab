@@ -15,14 +15,14 @@
 			var moveY;
 			window.addEventListener("DOMContentLoaded", (event) => {
 				window.addEventListener("touchstart", (event2) => {
-					touchX = event2.touches[0].clientX;
-					touchY = event2.touches[0].clientY;
+					touchX = event2.touches[0].screenX;
+					touchY = event2.touches[0].screenY;
 				}, {passive: false});
 				window.addEventListener("touchmove", (event3) => {
 					event3.preventDefault();
 					let wheel = new Event("wheel");
-					moveX = event3.changedTouches[0].clientX - touchX;
-					moveY = event3.changedTouches[0].clientY - touchY;
+					moveX = event3.changedTouches[0].screenX - touchX;
+					moveY = event3.changedTouches[0].screenY - touchY;
 					window.dispatchEvent(wheel);
 				}, {passive: false});
 				window.addEventListener("wheel", redirected, {passive:false});
