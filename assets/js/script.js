@@ -124,7 +124,7 @@ function redirected(event) {
 				}
 			}
 		}
-		document.querySelectorAll("iframe").classList.toggle("--dont_interfere");
+		document.getElementsByClassName("cascade_wrapper-embed_card").classList.toggle("--dont_interfere");
 	} else {
 		window.removeEventListener("wheel", redirected, {passive:false});
 	}
