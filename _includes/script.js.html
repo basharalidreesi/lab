@@ -28,12 +28,6 @@
 						window.dispatchEvent(wheel);
 					}
 				}, {passive: false});
-				window.addEventListener("touchend", (event4) => {
-					touchX = 0;
-					touchY = 0;
-					redirectX = 0;
-					redirectY = 0;
-				}, {passive: true});
 				window.addEventListener("wheel", redirected, {passive:false});
 			});
 			{%- endif %}
