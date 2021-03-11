@@ -26,16 +26,16 @@
 					moveX = event3.changedTouches[0].screenX - touchX;
 					moveY = event3.changedTouches[0].screenY - touchY;
 					if (moveX > 0) {
-						redirectX += 1;
+						redirectX += moveX;
 					} else if (moveX < 0) {
-						redirectX -= 1;
+						redirectX -= moveX;
 					} else {
 						redirectX += 0;
 					}
 					if (moveY > 0) {
-						redirectY -= 1;
+						redirectY -= moveY;
 					} else if (moveY < -1) {
-						redirectY += 1;
+						redirectY += moveY;
 					} else {
 						redirectY += 0;
 					}
