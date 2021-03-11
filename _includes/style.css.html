@@ -4,15 +4,14 @@
 			a[href*="//"]:not([href*="{{- site.url -}}{{- site.baseurl -}}"]), a[href*="mailto:"] {
 				cursor: alias;
 			}
-			{%- if page.layout == "cascade" and page.header_location == "central" %}
+			{%- if page.layout == "cascade" %}
 			body {
-				/* overflow: hidden; */
+				overflow: hidden;
 			}
-			.--bodyalt {
-				/* position: relative; */
-				/* display: block; */
-				/* height: calc(var(--screen_height)); */
-				/* overflow: auto; */
+			.mother_container {
+				position: relative;
+				height: calc(var(--screen_height));
+				overflow: auto;
 			}
 			{%- endif %}
 		</style>
