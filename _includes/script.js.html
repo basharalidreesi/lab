@@ -25,6 +25,7 @@
 						if (Math.abs(redirectY) > Math.abs(redirectX)) { // if up or down
 							if (document.getElementById("cascade_wrapper").scrollLeft <= 0 && redirectY > 0) {
 								console.log("Here");
+								document.body.classList.remove("--lock_scroll");
 							} else {
 								event3.preventDefault();
 								let wheel = new Event("wheel");
