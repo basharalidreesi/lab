@@ -11,6 +11,7 @@
 			{%- if page.layout == "cascade" %}
 			window.addEventListener("DOMContentLoaded", (event) => {
 				window.addEventListener("touchmove", (event2) => {
+					event2.preventDefault();
 					let wheel = new Event("wheel");
 					window.dispatchEvent(wheel);
 				});
