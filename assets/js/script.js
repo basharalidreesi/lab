@@ -21,6 +21,21 @@ console.log("--vh set to " + `${vh}px` + ".");
 window.addEventListener("DOMContentLoaded", reticulated);
 window.addEventListener("load", splined);
 
+window.addEventListener("DOMContentLoaded", (event) => {
+	window.addEventListener("click", (event2) => {
+		var body = document.body;
+		var html = document.documentElement;
+		console.log("body.scrollHeight: " + body.scrollHeight);
+		console.log("body.offsetHeight: " + body.offsetHeight);
+		console.log("html.scrollHeight: " + html.scrollHeight);
+		console.log("html.offsetHeight: " + html.offsetHeight);
+		console.log("html.clientHeight: " + html.clientHeight);
+		console.log("window.innerHeight: " + window.innerHeight);
+		console.log("window.scrollY: " + window.scrollY);
+		console.log("* * *");
+	});
+});
+
 // let url = window.location.href;
 // let trailing_slash = url.endsWith("/");
 // if (window.location.pathname != "/" && trailing_slash == true) {
@@ -110,9 +125,6 @@ function redirected(event) {
 		customDeltaY = redirectY / -5;
 	}
 	if (window.innerWidth < document.getElementById("cascade_wrapper").scrollWidth) { // if cascade is overflowing
-		console.log("window.innerHeight: " + window.innerHeight);
-		console.log("window.scrollY: " + window.scrollY);
-		console.log("document.body.scrollHeight: " + document.body.scrollHeight);
 		if (window.innerHeight + window.scrollY >= document.body.scrollHeight) { // if bottom of page -- improve here
 			if (customDeltaY > 0 || customDeltaX > 0) { // if going down or right
 				event.preventDefault();
