@@ -13,8 +13,8 @@
 			var touchY;
 			var moveX;
 			var moveY;
-			var scrollX;
-			var scrollY;
+			var redirectX;
+			var redirectY;
 			window.addEventListener("DOMContentLoaded", (event) => {
 				window.addEventListener("touchstart", (event2) => {
 					touchX = event2.touches[0].screenX;
@@ -26,18 +26,18 @@
 					moveX = event3.changedTouches[0].screenX - touchX;
 					moveY = event3.changedTouches[0].screenY - touchY;
 					if (moveX > 0) {
-						scrollX = 1;
+						redirectX = 1;
 					} else if (moveX < 0) {
-						scrollX = -1;
+						redirectX = -1;
 					} else {
-						scrollX = 0;
+						redirectX = 0;
 					}
 					if (moveY > 0) {
-						scrollY = -1;
+						redirectY = -1;
 					} else if (moveY < -1) {
-						scrollY = 1;
+						redirectY = 1;
 					} else {
-						scrollY = 0;
+						redirectY = 0;
 					}
 					window.dispatchEvent(wheel);
 				}, {passive: false});
@@ -46,8 +46,8 @@
 					touchY = 0;
 					moveX = 0;
 					moveY = 0;
-					scrollX = 0;
-					scrollY = 0;
+					redirectX = 0;
+					redirectY = 0;
 				}, {passive: true});
 				window.addEventListener("wheel", redirected, {passive:false});
 			});
