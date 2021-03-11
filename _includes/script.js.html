@@ -11,6 +11,12 @@
 			{%- if page.layout == "cascade" %}
 			window.addEventListener("DOMContentLoaded", (event) => {
 				window.addEventListener("wheel", redirected, {passive:false});
+				var overlays = document.getElementsByClassName("--overlay");
+				for (var i = 0; i < overlays.length; i++) {
+					overlays[i].addEventListener("click", (event2) => {
+						event2.target.parentElement.children[0].click();
+					});
+				}
 			});
 			{%- endif %}
 			function headered() {
