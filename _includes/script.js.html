@@ -19,7 +19,7 @@
 				window.addEventListener("touchstart", (event2) => {
 					touchX = event2.touches[0].screenX;
 					touchY = event2.touches[0].screenY;
-				}, {passive: false});
+				}, {passive: true});
 				window.addEventListener("touchmove", (event3) => {
 					//event3.preventDefault();
 					let wheel = new Event("wheel");
@@ -48,7 +48,7 @@
 					moveY = 0;
 					scrollX = 0;
 					scrollY = 0;
-				}, {passive: false});
+				}, {passive: true});
 				window.addEventListener("wheel", redirected, {passive:false});
 			});
 			{%- endif %}
