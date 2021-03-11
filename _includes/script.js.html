@@ -11,8 +11,6 @@
 			{%- if page.layout == "cascade" %}
 			touchX = 0;
 			touchY = 0;
-			moveX = 0;
-			moveY = 0;
 			redirectX = 0;
 			redirectY = 0;
 			window.addEventListener("DOMContentLoaded", (event) => {
@@ -20,32 +18,15 @@
 					touchX = event2.touches[0].clientX;
 					touchY = event2.touches[0].clientY;
 				}, {passive: true});
-				window.addEventListener("touchend", (event3) => {
-					//event3.preventDefault();
+				window.addEventListener("touchmove", (event3) => {
 					let wheel = new Event("wheel");
-					moveX = event3.changedTouches[0].clientX - touchX;
-					moveY = event3.changedTouches[0].clientY - touchY;
-					if (moveX < 0) {
-						redirectX = moveX;
-					} else if (moveX > 0) {
-						redirectX = -moveX;
-					} else {
-						redirectX = moveX;
-					}
-					if (moveY < 0) {
-						redirectY = moveY;
-					} else if (moveY > 0) {
-						redirectY = -moveY;
-					} else {
-						redirectY = moveY;
-					}
+					redirectX = event3.changedTouches[0].clientX - touchX;
+					redirectY = event3.changedTouches[0].clientY - touchY;
 					window.dispatchEvent(wheel);
 				}, {passive: true});
 				window.addEventListener("touchend", (event4) => {
 					touchX = 0;
 					touchY = 0;
-					moveX = 0;
-					moveY = 0;
 					redirectX = 0;
 					redirectY = 0;
 				}, {passive: true});
