@@ -21,7 +21,7 @@
 					touchY = event2.touches[0].screenY;
 				}, {passive: true});
 				window.addEventListener("touchmove", (event3) => {
-					//event3.preventDefault();
+					event3.preventDefault();
 					let wheel = new Event("wheel");
 					moveX = event3.changedTouches[0].screenX - touchX;
 					moveY = event3.changedTouches[0].screenY - touchY;
