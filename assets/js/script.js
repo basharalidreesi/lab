@@ -114,11 +114,13 @@ function redirected(event) {
 				event.preventDefault();
 				document.body.classList.add("--lock_scroll");
 				document.getElementById("cascade_wrapper").scrollLeft += (customDeltaY + customDeltaX);
+				direction = 1;
 			} else if (customDeltaY < 0 || customDeltaX < 0) { // if going up or left
 				if (document.getElementById("cascade_wrapper").scrollLeft <= 0) {
 					document.body.classList.remove("--lock_scroll");
 				} else if (document.getElementById("cascade_wrapper").scrollLeft > 0) {
 					document.getElementById("cascade_wrapper").scrollLeft += (customDeltaY + customDeltaX);
+					direction = -1;
 				}
 			}
 		}
