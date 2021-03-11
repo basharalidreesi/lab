@@ -105,7 +105,7 @@ function redirected(event) {
 		customDeltaY = event.deltaY;
 	} else {
 		customDeltaX = 0;
-		customDeltaY = redirectY;
+		customDeltaY = redirectY / -5;
 	}
 	console.log("Result: " + customDeltaX + ", " + customDeltaY);
 	if (window.innerWidth < document.getElementById("cascade_wrapper").scrollWidth) { // if cascade is overflowing
