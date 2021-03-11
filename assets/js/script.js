@@ -98,27 +98,27 @@ function unfiltered(event) {
 }
 
 function redirected(event) {
-	var deltaX;
-	var deltaY;
+	var customDeltaX;
+	var customDeltaY;
 	if (event.deltaX != null || event.deltaY != null) {
-		deltaX = event.deltaX;
-		deltaY = event.deltaY;
+		customDeltaX = event.deltaX;
+		customDeltaY = event.deltaY;
 	} else {
-		deltaX = redirectX;
-		deltaY = redirectY;
+		customDeltaX = redirectX;
+		customDeltaY = redirectY;
 	}
-	console.log("Result: " + deltaX + ", " + deltaY);
+	console.log("Result: " + customDeltaX + ", " + customDeltaY);
 	if (window.innerWidth < document.getElementById("cascade_wrapper").scrollWidth) { // if cascade is overflowing
 		if (window.innerHeight + window.scrollY >= document.body.scrollHeight) { // if bottom of page -- improve here
-			if (event.deltaY > 0 || event.deltaX > 0) { // if going down or right
+			if (customDeltaY > 0 || customDeltaX > 0) { // if going down or right
 				event.preventDefault();
 				document.body.classList.add("--lock_scroll");
-				document.getElementById("cascade_wrapper").scrollLeft += (event.deltaY + event.deltaX);
-			} else if (event.deltaY < 0 || event.deltaX < 0) { // if going up or left
+				document.getElementById("cascade_wrapper").scrollLeft += (customDeltaY + customDeltaX);
+			} else if (customDeltaY < 0 || customDeltaX < 0) { // if going up or left
 				if (document.getElementById("cascade_wrapper").scrollLeft <= 0) {
 					document.body.classList.remove("--lock_scroll");
 				} else if (document.getElementById("cascade_wrapper").scrollLeft > 0) {
-					document.getElementById("cascade_wrapper").scrollLeft += (event.deltaY + event.deltaX);
+					document.getElementById("cascade_wrapper").scrollLeft += (customDeltaY + customDeltaX);
 				}
 			}
 		}
