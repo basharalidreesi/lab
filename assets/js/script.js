@@ -125,7 +125,7 @@ function redirected(event) {
 			}
 		}
 	} else {
-		window.removeEventListener("wheel", redirected);
+		window.removeEventListener("wheel", redirected, {passive:false});
 	}
 }
 
