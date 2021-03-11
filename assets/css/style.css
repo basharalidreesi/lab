@@ -802,6 +802,12 @@ body {
 		width: calc(100% + 1px);
 		display: block;
 	}
+	.--overlay {
+		position: absolute;
+		display: block;
+		height: 100%;
+		width: 100%;
+	}
 	.cascade_wrapper-empty_card {
 		/* flex: 1 0 auto; */
 		/* min-width: calc(var(--cascade_height_upper)); */
