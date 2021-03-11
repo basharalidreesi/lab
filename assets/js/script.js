@@ -103,15 +103,15 @@ function redirected(event) {
 	console.log(deltaX + ", " + deltaY);
 	if (window.innerWidth < document.getElementById("cascade_wrapper").scrollWidth) { // if cascade is overflowing
 		if (window.innerHeight + window.scrollY >= document.body.scrollHeight) { // if bottom of page -- improve here
-			if (deltaY > 0 || deltaX > 0) { // if going down or right
+			if (event.deltaY > 0 || event.deltaX > 0) { // if going down or right
 				event.preventDefault();
 				document.body.classList.add("--lock_scroll");
-				document.getElementById("cascade_wrapper").scrollLeft += (deltaY + deltaX);
-			} else if (deltaY < 0 || deltaX < 0) { // if going up or left
+				document.getElementById("cascade_wrapper").scrollLeft += (event.deltaY + event.deltaX);
+			} else if (event.deltaY < 0 || event.deltaX < 0) { // if going up or left
 				if (document.getElementById("cascade_wrapper").scrollLeft <= 0) {
 					document.body.classList.remove("--lock_scroll");
 				} else if (document.getElementById("cascade_wrapper").scrollLeft > 0) {
-					document.getElementById("cascade_wrapper").scrollLeft += (deltaY + deltaX);
+					document.getElementById("cascade_wrapper").scrollLeft += (event.deltaY + event.deltaX);
 				}
 			}
 		}
