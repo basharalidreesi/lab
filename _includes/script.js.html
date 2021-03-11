@@ -29,9 +29,9 @@
 						moveX = 0;
 					}
 					if (event3.changedTouches[0].screenY > 0) {
-						moveX = event3.changedTouches[0].screenY / touchY;
-					} else if (event3.changedTouches[0].screenY < 0) {
-						moveX = Math.abs(event3.changedTouches[0].screenY / touchY) * -1;
+						moveY = event3.changedTouches[0].screenY / touchY;
+					} else if (event3.changedTouches[0].screenY < -1) {
+						moveY = Math.abs(event3.changedTouches[0].screenY / touchY) * -1;
 					} else {
 						moveY = 0;
 					}
