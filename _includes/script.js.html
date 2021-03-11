@@ -14,7 +14,7 @@
 					event2.preventDefault();
 					let wheel = new Event("wheel");
 					window.dispatchEvent(wheel);
-				});
+				}, {passive: false});
 				window.addEventListener("wheel", redirected, {passive:false});
 			});
 			{%- endif %}
