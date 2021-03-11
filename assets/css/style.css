@@ -778,7 +778,7 @@ body {
 	.cascade_wrapper-embed_card {
 		position: relative;
 		height: 100%;
-		width: calc(var(--cascade_height_upper) * 1.78 /* 16:9 aspect ratio */);
+		width: calc(var(--cascade_height_upper) * 1.95);
 		/* min-width: calc(var(--cascade_height_upper) * 1.78 /* 16:9 aspect ratio */); */
 		/* max-width: 100vw; */
 		background-color: #000;
