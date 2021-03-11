@@ -129,7 +129,7 @@ function redirected(event) {
 	}
 }
 
-var hammertime = new Hammer(myElement, myOptions);
+var hammertime = new Hammer(document.body);
 hammertime.on('pan', function(ev) {
 	console.log(ev);
 });
