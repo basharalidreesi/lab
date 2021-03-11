@@ -744,7 +744,8 @@ body {
 	}
 	.cascade_wrapper-text_card {
 		height: 100%;
-		width: auto;
+		/* width: auto; */
+		width: 100vw;
 	}
 	.cascade_wrapper-text_card p {
 		min-width: 50vw;
