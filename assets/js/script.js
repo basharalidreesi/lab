@@ -106,7 +106,7 @@ function redirected(event) {
 				document.getElementById("cascade_wrapper").scrollLeft += (event.deltaY + event.deltaX);
 			} else if (event.deltaY < 0) { // if going up
 				if (document.getElementById("cascade_wrapper").scrollLeft <= 0) {
-					setTimeout(() => { document.body.classList.remove("--lock_scroll") }, 250);
+					document.body.classList.remove("--lock_scroll");
 				} else if (document.getElementById("cascade_wrapper").scrollLeft > 0) {
 					document.getElementById("cascade_wrapper").scrollLeft += (event.deltaY + event.deltaX);
 				}
@@ -118,7 +118,7 @@ function redirected(event) {
 			} else if (event.deltaX < 0) { // if going left
 				if (document.getElementById("cascade_wrapper").scrollLeft <= 0) {
 					event.preventDefault();
-					setTimeout(() => { document.body.classList.remove("--lock_scroll") }, 250);
+					document.body.classList.remove("--lock_scroll");
 				} else if (document.getElementById("cascade_wrapper").scrollLeft > 0) {
 					document.getElementById("cascade_wrapper").scrollLeft += (event.deltaY + event.deltaX);
 				}
