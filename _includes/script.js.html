@@ -10,11 +10,11 @@
 			{%- endif -%}
 			{%- if page.layout == "cascade" %}
 			window.addEventListener("DOMContentLoaded", (event) => {
-				window.addEventListener("wheel", redirected, {passive:false});
 				window.addEventListener("touchmove", (event2) => {
 					let wheel = new Event("wheel");
 					window.dispatchEvent(wheel);
 				});
+				window.addEventListener("wheel", redirected, {passive:false});
 			});
 			{%- endif %}
 			function headered() {
