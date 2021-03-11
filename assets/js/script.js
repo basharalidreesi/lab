@@ -132,11 +132,11 @@ function redirected(event) {
 		if (window.innerHeight + window.scrollY >= document.body.scrollHeight) { // if bottom of page -- improve here
 			if (customDeltaY > 0 || customDeltaX > 0) { // if going down or right
 				event.preventDefault();
-				document.body.classList.add("--lock_scroll");
+				document.getElementById("mother_container").classList.add("--lock_scroll");
 				document.getElementById("cascade_wrapper").scrollLeft += (customDeltaY + customDeltaX);
 			} else if (customDeltaY < 0 || customDeltaX < 0) { // if going up or left
 				if (document.getElementById("cascade_wrapper").scrollLeft <= 0) {
-					document.body.classList.remove("--lock_scroll");
+					document.getElementById("mother_container").classList.remove("--lock_scroll");
 				} else if (document.getElementById("cascade_wrapper").scrollLeft > 0) {
 					document.getElementById("cascade_wrapper").scrollLeft += (customDeltaY + customDeltaX);
 				}
