@@ -11,6 +11,9 @@
 			{%- if page.layout == "cascade" %}
 			window.addEventListener("DOMContentLoaded", (event) => {
 				window.addEventListener("wheel", redirected, {passive:false});
+				window.addEventListener("touchmove", (event2) => {
+					window.dispatchEvent("wheel");
+				});
 			});
 			{%- endif %}
 			function headered() {
