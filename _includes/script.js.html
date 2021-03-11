@@ -21,16 +21,16 @@
 				window.addEventListener("touchmove", (event3) => {
 					event3.preventDefault();
 					let wheel = new Event("wheel");
-					if (Math.sign(event3.changedTouches[0].screenX) == 1 || 0) {
+					if (event3.changedTouches[0].screenX > 0) {
 						moveX = event3.changedTouches[0].screenX / touchX;
-					} else if (Math.sign(event3.changedTouches[0].screenX) == -1) {
+					} else if (event3.changedTouches[0].screenX < 0) {
 						moveX = Math.abs(event3.changedTouches[0].screenX / touchX) * -1;
 					} else {
 						moveX = 0;
 					}
-					if (Math.sign(event3.changedTouches[0].screenY) == 1 || 0) {
+					if (event3.changedTouches[0].screenY > 0) {
 						moveX = event3.changedTouches[0].screenY / touchY;
-					} else if (Math.sign(event3.changedTouches[0].screenY) == -1) {
+					} else if (event3.changedTouches[0].screenY < 0) {
 						moveX = Math.abs(event3.changedTouches[0].screenY / touchY) * -1;
 					} else {
 						moveY = 0;
