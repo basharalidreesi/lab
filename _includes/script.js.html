@@ -9,26 +9,26 @@
 			window.addEventListener("scroll", unarrowed, {passive:true});
 			{%- endif -%}
 			{%- if page.layout == "cascade" %}
-			touchX = 0;
+			//touchX = 0;
 			touchY = 0;
-			redirectX = 0;
+			//redirectX = 0;
 			redirectY = 0;
 			window.addEventListener("DOMContentLoaded", (event) => {
 				window.addEventListener("touchstart", (event2) => {
-					touchX = event2.touches[0].clientX;
+					//touchX = event2.touches[0].clientX;
 					touchY = event2.touches[0].clientY;
 				}, {passive: true});
 				window.addEventListener("touchmove", (event3) => {
 					let wheel = new Event("wheel");
-					redirectX = event3.changedTouches[0].clientX - touchX;
+					//redirectX = event3.changedTouches[0].clientX - touchX;
 					redirectY = (event3.changedTouches[0].clientY - touchY) * -1;
 					window.dispatchEvent(wheel);
 					event3.preventDefault();
 				}, {passive: false});
 				window.addEventListener("touchend", (event4) => {
-					touchX = 0;
+					//touchX = 0;
 					touchY = 0;
-					redirectX = 0;
+					//redirectX = 0;
 					redirectY = 0;
 				}, {passive: true});
 				window.addEventListener("wheel", redirected, {passive:false});
