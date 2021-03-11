@@ -29,6 +29,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
 function debug() {
 	var body = document.body;
+	var bodyalt = document.getElementById("bodyalt");;
 	var html = document.documentElement;
 	console.log("body.scrollHeight: " + body.scrollHeight);
 	console.log("body.offsetHeight: " + body.offsetHeight);
@@ -36,7 +37,10 @@ function debug() {
 	console.log("html.offsetHeight: " + html.offsetHeight);
 	console.log("html.clientHeight: " + html.clientHeight);
 	console.log("window.innerHeight: " + window.innerHeight);
-	console.log("window.scrollY: " + window.scrollY);
+	console.log("body.scrollY: " + body.scrollY);
+	console.log("body.scrollTop: " + body.scrollTop);
+	console.log("bodyalt.scrollY: " + bodyalt.scrollY);
+	console.log("bodyalt.scrollTop: " + bodyalt.scrollTop);
 	console.log("* * *");
 }
 
