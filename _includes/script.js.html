@@ -14,6 +14,7 @@
 				var overlays = document.getElementsByClassName("--overlay");
 				for (var i = 0; i < overlays.length; i++) {
 					overlays[i].addEventListener("click", (event2) => {
+						console.log("Click");
 						event2.target.parentElement.children[0].click();
 					});
 				}
