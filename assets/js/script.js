@@ -104,7 +104,7 @@ function redirected(event) {
 		customDeltaX = event.deltaX;
 		customDeltaY = event.deltaY;
 	} else {
-		customDeltaX = 0;
+		customDeltaX = event.deltaX;
 		customDeltaY = redirectY;
 	}
 	console.log("Result: " + customDeltaX + ", " + customDeltaY);
