@@ -122,9 +122,9 @@ function redirected(event) {
 				} else if (document.getElementById("cascade_wrapper").scrollLeft > 0) {
 					document.getElementById("cascade_wrapper").scrollLeft += (customDeltaY + customDeltaX);
 				}
+			} else {
+				go = false;
 			}
-		} else {
-			go = false;
 		}
 	} else {
 		window.removeEventListener("wheel", redirected, {passive:false});
