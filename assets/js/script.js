@@ -109,7 +109,8 @@ function redirected(event) {
 		customDeltaX = 0;
 		customDeltaY = redirectY / -5;
 	}
-	console.log(customDeltaX + ", " + customDeltaY);
+	console.log("Custom: " + customDeltaX + ", " + customDeltaY);
+	console.log("Redirect: " + redirectX + ", " + redirectY);
 	if (window.innerWidth < document.getElementById("cascade_wrapper").scrollWidth) { // if cascade is overflowing
 		if (window.innerHeight + window.scrollY >= document.body.scrollHeight) { // if bottom of page -- improve here
 			if (customDeltaY > 0 || customDeltaX > 0) { // if going down or right
