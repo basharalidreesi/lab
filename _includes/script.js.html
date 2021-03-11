@@ -23,10 +23,10 @@
 					redirectX = event3.changedTouches[0].clientX - touchX;
 					redirectY = event3.changedTouches[0].clientY - touchY;
 					if(Math.abs(redirectY) > Math.abs(redirectX)) {
+						touchX = 0;
 						redirectX = 0;
 						window.dispatchEvent(wheel);
 					}
-					//event3.preventDefault();
 				}, {passive: true});
 				window.addEventListener("touchend", (event4) => {
 					touchX = 0;
