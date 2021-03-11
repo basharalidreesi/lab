@@ -150,10 +150,12 @@ layout: default
 					{% if block contains "youtube.com" or block contains "youtu.be" %}
 						<div class="cascade_wrapper-embed_card">
 							<iframe frameborder="0" src="https://www.youtube.com/embed/{{ source[1] | slice: 0, 11 }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							<div class="--overlay"></div>
 						</div>
 					{% elsif block contains "vimeo.com" %}
 						<div class="cascade_wrapper-embed_card">
 							<iframe src="https://player.vimeo.com/video/{{ source[1] }}?title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+							<div class="--overlay"></div>
 						</div>
 					{% endif %}
 				{% endif %}
