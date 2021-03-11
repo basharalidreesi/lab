@@ -11,7 +11,7 @@
 			{%- if page.layout == "cascade" %}
 			var touchX = 0;
 			var touchY = 0;
-			var redirectX;
+			var redirectX = 0;
 			var redirectY = 0;
 			window.addEventListener("DOMContentLoaded", (event) => {
 				window.addEventListener("touchstart", (event2) => {
@@ -20,7 +20,7 @@
 				}, {passive: true});
 				window.addEventListener("touchmove", (event3) => {
 					let wheel = new Event("wheel");
-					//redirectX = event3.changedTouches[0].clientX - touchX;
+					redirectX = event3.changedTouches[0].clientX - touchX;
 					redirectY = (event3.changedTouches[0].clientY - touchY) / -3;
 					window.dispatchEvent(wheel);
 					//event3.preventDefault();
