@@ -25,16 +25,16 @@
 					let wheel = new Event("wheel");
 					moveX = event3.changedTouches[0].screenX - touchX;
 					moveY = event3.changedTouches[0].screenY - touchY;
-					if (moveX > 0) {
+					if (moveX < 0) {
 						redirectX = moveX;
-					} else if (moveX < 0) {
+					} else if (moveX > 0) {
 						redirectX = -moveX;
 					} else {
 						redirectX = moveX;
 					}
-					if (moveY > 0) {
+					if (moveY < 0) {
 						redirectY = moveY;
-					} else if (moveY < 0) {
+					} else if (moveY > 0) {
 						redirectY = -moveY;
 					} else {
 						redirectY = moveY;
