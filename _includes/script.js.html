@@ -30,6 +30,8 @@
 						redirectX = 0;
 						event3.preventDefault();
 						window.dispatchEvent(wheel);
+					} else {
+						return true;
 					}
 				}, {passive: false});
 				window.addEventListener("touchend", (event4) => {
