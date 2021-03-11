@@ -367,6 +367,13 @@ body {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 }
+.bodyalt {
+	display: block;
+	position: relative;
+	height: calc(var(--screen_height));
+	width: 100vw;
+	overflow: auto;
+}
 .--lock_scroll {
 	overflow: hidden;
 }
