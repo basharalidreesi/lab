@@ -105,7 +105,7 @@ function redirected(event) {
 		customDeltaY = event.deltaY;
 	} else {
 		customDeltaX = 0;
-		customDeltaY = redirectY / -4;
+		customDeltaY = redirectY / -5;
 	}
 	if (window.innerWidth < document.getElementById("cascade_wrapper").scrollWidth) { // if cascade is overflowing
 		if (window.innerHeight + window.scrollY >= document.body.scrollHeight) { // if bottom of page -- improve here
