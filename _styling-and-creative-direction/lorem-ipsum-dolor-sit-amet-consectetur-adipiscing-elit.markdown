@@ -8,7 +8,6 @@ tags:
 - "\U0001F353 strawberry"
 - "\U0001F351 peach"
 position: 0
-header_location: central
 ---
 
 !empty
