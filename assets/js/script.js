@@ -105,22 +105,19 @@ function redirected(event) {
 		customDeltaY = event.deltaY;
 	} else {
 		customDeltaX = 0;
-		customDeltaY = redirectY / -5;
+		customDeltaY = redirectY / -4;
 	}
-	console.log("Result: " + customDeltaX + ", " + customDeltaY);
 	if (window.innerWidth < document.getElementById("cascade_wrapper").scrollWidth) { // if cascade is overflowing
 		if (window.innerHeight + window.scrollY >= document.body.scrollHeight) { // if bottom of page -- improve here
 			if (customDeltaY > 0 || customDeltaX > 0) { // if going down or right
 				event.preventDefault();
 				document.body.classList.add("--lock_scroll");
 				document.getElementById("cascade_wrapper").scrollLeft += (customDeltaY + customDeltaX);
-				direction = 1;
 			} else if (customDeltaY < 0 || customDeltaX < 0) { // if going up or left
 				if (document.getElementById("cascade_wrapper").scrollLeft <= 0) {
 					document.body.classList.remove("--lock_scroll");
 				} else if (document.getElementById("cascade_wrapper").scrollLeft > 0) {
 					document.getElementById("cascade_wrapper").scrollLeft += (customDeltaY + customDeltaX);
-					direction = -1;
 				}
 			}
 		}

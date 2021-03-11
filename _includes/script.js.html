@@ -13,13 +13,10 @@
 			var touchY = 0;
 			var redirectX = 0;
 			var redirectY = 0;
-			var occured = false;
-			var direction = 0;
 			window.addEventListener("DOMContentLoaded", (event) => {
 				window.addEventListener("touchstart", (event2) => {
 					touchX = event2.touches[0].clientX;
 					touchY = event2.touches[0].clientY;
-					direction = 0;
 				}, {passive: true});
 				window.addEventListener("touchmove", (event3) => {
 					let wheel = new Event("wheel");
@@ -29,18 +26,10 @@
 						redirectX = 0;
 						event3.preventDefault();
 						window.dispatchEvent(wheel);
-						occured = true;
 					}
 				}, {passive: false});
 				window.addEventListener("touchend", (event4) => {
-					if (occured === true) {
-						if (direction === 1) { // if going right
-							document.getElementById("cascade_wrapper").style.background = "royalblue";
-						} else if (direction === -1) { // if going left
-							document.getElementById("cascade_wrapper").style.background = "lavender";
-						}
-						occured = false;
-					}
+					// todo
 				}, {passive: true});
 				window.addEventListener("wheel", redirected, {passive:false});
 			});
