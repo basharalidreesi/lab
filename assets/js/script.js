@@ -103,12 +103,12 @@ function redirected(event) {
 			if (event.deltaY > 0) { // if going down
 				event.preventDefault();
 				document.body.classList.add("--lock_scroll");
-				document.querySelectorAll("iframe").classList.add("--dont_interfere");
+				document.querySelectorAll("iframe").style.pointerEvents = "none";
 				document.getElementById("cascade_wrapper").scrollLeft += (event.deltaY + event.deltaX);
 			} else if (event.deltaY < 0) { // if going up
 				if (document.getElementById("cascade_wrapper").scrollLeft <= 0) {
 					document.body.classList.remove("--lock_scroll");
-					document.querySelectorAll("iframe").classList.remove("--dont_interfere");
+					document.querySelectorAll("iframe").style.pointerEvents = "auto";
 				} else if (document.getElementById("cascade_wrapper").scrollLeft > 0) {
 					document.getElementById("cascade_wrapper").scrollLeft += (event.deltaY + event.deltaX);
 				}
@@ -116,13 +116,13 @@ function redirected(event) {
 			if (event.deltaX > 0) { // if going right
 				event.preventDefault();
 				document.body.classList.add("--lock_scroll");
-				document.querySelectorAll("iframe").classList.add("--dont_interfere");
+				document.querySelectorAll("iframe").style.pointerEvents = "none";
 				document.getElementById("cascade_wrapper").scrollLeft += (event.deltaY + event.deltaX);
 			} else if (event.deltaX < 0) { // if going left
 				if (document.getElementById("cascade_wrapper").scrollLeft <= 0) {
 					event.preventDefault();
 					document.body.classList.remove("--lock_scroll");
-					document.querySelectorAll("iframe").classList.remove("--dont_interfere");
+					document.querySelectorAll("iframe").style.pointerEvents = "auto";
 				} else if (document.getElementById("cascade_wrapper").scrollLeft > 0) {
 					document.getElementById("cascade_wrapper").scrollLeft += (event.deltaY + event.deltaX);
 				}
