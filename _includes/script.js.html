@@ -21,8 +21,15 @@
 				window.addEventListener("touchmove", (event3) => {
 					event3.preventDefault();
 					let wheel = new Event("wheel");
-					moveX = event3.changedTouches[0].screenX / touchX;
-					moveY = event3.changedTouches[0].screenY / touchY;
+					if (Math.sign(event3.changedTouches[0].screenX) == 1 || 0) {
+						moveX = event3.changedTouches[0].screenX / touchX;
+					} else if (Math.sign(event3.changedTouches[0].screenX) == -1) {
+						moveX = event3.changedTouches[0].screenX / touchX * -1;
+					} if (Math.sign(event3.changedTouches[0].screenY) == 1 || 0) {
+						moveX = event3.changedTouches[0].screenY / touchY;
+					} else if (Math.sign(event3.changedTouches[0].screenY) == -1) {
+						moveX = event3.changedTouches[0].screenY / touchY * -1;
+					}
 					window.dispatchEvent(wheel);
 				}, {passive: false});
 				window.addEventListener("wheel", redirected, {passive:false});
