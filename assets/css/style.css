@@ -364,9 +364,6 @@ address {
 	.--lock_scroll {
 		overflow: hidden;
 	}
-	.--dont_interfere {
-		pointer-events: none;
-	}
 
 /*
 ┌───────┐
