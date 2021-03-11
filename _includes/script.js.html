@@ -33,8 +33,7 @@
 					touchY = 0;
 					redirectX = 0;
 					redirectY = 0;
-					//event4.preventDefault();
-				}, {passive: false});
+				}, {passive: true});
 				window.addEventListener("wheel", redirected, {passive:false});
 			});
 			{%- endif %}
