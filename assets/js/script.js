@@ -98,8 +98,8 @@ function unfiltered(event) {
 }
 
 function redirected(event) {
-	var deltaX = event.deltaX || moveX;
-	var deltaY = event.detlaY || moveY;
+	var deltaX = event.deltaX || scrollX;
+	var deltaY = event.detlaY || scrollY;
 	console.log(deltaX + ", " + deltaY);
 	if (window.innerWidth < document.getElementById("cascade_wrapper").scrollWidth) { // if cascade is overflowing
 		if (window.innerHeight + window.scrollY >= document.body.scrollHeight) { // if bottom of page -- improve here
