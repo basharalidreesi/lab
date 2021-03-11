@@ -21,8 +21,8 @@
 				window.addEventListener("touchmove", (event3) => {
 					event3.preventDefault();
 					let wheel = new Event("wheel");
-					moveX = event3.changedTouches[0].screenX - touchX;
-					moveY = event3.changedTouches[0].screenY - touchY;
+					moveX = event3.changedTouches[0].screenX / touchX;
+					moveY = event3.changedTouches[0].screenY / touchY;
 					window.dispatchEvent(wheel);
 				}, {passive: false});
 				window.addEventListener("wheel", redirected, {passive:false});
