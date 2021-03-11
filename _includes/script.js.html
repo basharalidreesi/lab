@@ -10,15 +10,19 @@
 			{%- endif -%}
 			{%- if page.layout == "cascade" %}
 			window.addEventListener("DOMContentLoaded", (event) => {
+				var touchX;
+				var touchY;
+				var moveX;
+				var moveY;
 				window.addEventListener("touchstart", (event2) => {
-					var touchX = event2.touches[0].clientX;
-					var touchY = event2.touches[0].clientY;
+					touchX = event2.touches[0].clientX;
+					touchY = event2.touches[0].clientY;
 				}, {passive: false});
 				window.addEventListener("touchmove", (event3) => {
 					event3.preventDefault();
 					let wheel = new Event("wheel");
-					var moveX = event3.changedTouches[0].clientX - touchX;
-					var moveY = event3.changedTouches[0].clientY - touchY;
+					moveX = event3.changedTouches[0].clientX - touchX;
+					moveY = event3.changedTouches[0].clientY - touchY;
 					window.dispatchEvent(wheel);
 				}, {passive: false});
 				window.addEventListener("wheel", redirected, {passive:false});
