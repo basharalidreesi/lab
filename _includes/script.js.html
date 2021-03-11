@@ -9,12 +9,12 @@
 			window.addEventListener("scroll", unarrowed, {passive:true});
 			{%- endif -%}
 			{%- if page.layout == "cascade" %}
-			var touchX;
-			var touchY;
-			var moveX;
-			var moveY;
-			var redirectX;
-			var redirectY;
+			touchX = 0;
+			touchY = 0;
+			moveX = 0;
+			moveY = 0;
+			redirectX = 0;
+			redirectY = 0;
 			window.addEventListener("DOMContentLoaded", (event) => {
 				window.addEventListener("touchstart", (event2) => {
 					touchX = event2.touches[0].screenX;
