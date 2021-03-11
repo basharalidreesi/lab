@@ -22,9 +22,8 @@
 					if (window.innerHeight + window.scrollY >= document.body.scrollHeight) { // if bottom of page -- improve here
 						redirectX = event3.changedTouches[0].clientX - touchX;
 						redirectY = event3.changedTouches[0].clientY - touchY;
-						if (Math.abs(redirectY) > Math.abs(redirectX)) { // if up or down
-							if (document.getElementById("cascade_wrapper").scrollLeft <= 0 && redirectY > 0) {
-								console.log("Here");
+						if (Math.abs(redirectY) > Math.abs(redirectX)) { // if going up or down
+							if (document.getElementById("cascade_wrapper").scrollLeft <= 0 && redirectY > 0) { // if going up and cascade is at its beginning
 								document.body.classList.remove("--lock_scroll");
 							} else {
 								event3.preventDefault();
