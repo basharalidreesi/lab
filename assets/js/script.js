@@ -124,6 +124,7 @@ function redirected(event) {
 				}
 			}
 		}
+		document.querySelectorAll("iframe").classList.toggle("--dont_interfere");
 	} else {
 		window.removeEventListener("wheel", redirected, {passive:false});
 	}
