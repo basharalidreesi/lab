@@ -19,19 +19,16 @@
 					touchY = event2.touches[0].clientY;
 				}, {passive: true});
 				window.addEventListener("touchmove", (event3) => {
-					let wheel = new Event("wheel");
-					redirectX = event3.changedTouches[0].clientX - touchX;
-					redirectY = event3.changedTouches[0].clientY - touchY;
 					if(
 						Math.abs(redirectY) > Math.abs(redirectX)
 						&& window.innerWidth < document.getElementById("cascade_wrapper").scrollWidth
 						&& window.innerHeight + window.scrollY >= document.body.scrollHeight
 					) {
-						redirectX = 0;
+						let wheel = new Event("wheel");
+						redirectX = event3.changedTouches[0].clientX - touchX;
+						redirectY = event3.changedTouches[0].clientY - touchY;
 						event3.preventDefault();
 						window.dispatchEvent(wheel);
-					} else {
-						event3.returnValue = true;
 					}
 				}, {passive: false});
 				window.addEventListener("touchend", (event4) => {
