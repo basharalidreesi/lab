@@ -9,10 +9,10 @@
 			window.addEventListener("scroll", unarrowed, {passive:true});
 			{%- endif -%}
 			{%- if page.layout == "cascade" %}
-			touchX = 0;
-			touchY = 0;
-			redirectX = 0;
-			redirectY = 0;
+			var touchX = 0;
+			var touchY = 0;
+			var redirectX;
+			var redirectY = 0;
 			window.addEventListener("DOMContentLoaded", (event) => {
 				window.addEventListener("touchstart", (event2) => {
 					touchX = event2.touches[0].clientX;
@@ -28,7 +28,7 @@
 				window.addEventListener("touchend", (event4) => {
 					touchX = 0;
 					touchY = 0;
-					redirectX = 0;
+					//redirectX = 0;
 					redirectY = 0;
 				}, {passive: true});
 				window.addEventListener("wheel", redirected, {passive:false});
