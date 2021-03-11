@@ -26,18 +26,18 @@
 					moveX = event3.changedTouches[0].screenX - touchX;
 					moveY = event3.changedTouches[0].screenY - touchY;
 					if (moveX > 0) {
-						redirectX += event3.changedTouches[0].screenX / touchX;
+						redirectX += moveX;
 					} else if (moveX < 0) {
-						redirectX -= event3.changedTouches[0].screenX / touchX;
+						redirectX -= moveX;
 					} else {
-						redirectX += event3.changedTouches[0].screenX / touchX;
+						redirectX += moveX;
 					}
 					if (moveY < 0) {
-						redirectY += event3.changedTouches[0].screenY / touchY;
+						redirectY += moveY;
 					} else if (moveY > 0) {
-						redirectY -= event3.changedTouches[0].screenY / touchY;
+						redirectY -= moveY;
 					} else {
-						redirectY += event3.changedTouches[0].screenY / touchY;
+						redirectY += moveY;
 					}
 					window.dispatchEvent(wheel);
 				}, {passive: false});
