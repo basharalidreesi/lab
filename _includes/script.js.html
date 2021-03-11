@@ -21,7 +21,7 @@
 				window.addEventListener("touchmove", (event3) => {
 					let wheel = new Event("wheel");
 					//redirectX = event3.changedTouches[0].clientX - touchX;
-					//redirectY = (event3.changedTouches[0].clientY - touchY) * -1;
+					redirectY = (event3.changedTouches[0].clientY - touchY) * -1;
 					window.dispatchEvent(wheel);
 					//event3.preventDefault();
 				}, {passive: true});
