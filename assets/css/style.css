@@ -414,14 +414,17 @@ body {
 .mother_container-nav_container_home {
 	order: 2;
 }
+.mother_container-header_container_upper,
+.mother_container-header_container_central {
+	position: sticky;
+	z-index: 100;
+}
 .mother_container-header_container_upper {
 	order: 2;
-	position: sticky;
 	top: 0;
 }
 .mother_container-header_container_central {
 	order: 1;
-	position: sticky;
 	top: -1px;
 	margin-top: calc(var(--screen_height_half) - var(--header_height_half) + 1px /* compensate for top: -1px */);
 	margin-bottom: calc(var(--screen_height_half) - var(--header_height_half));
@@ -570,7 +573,7 @@ body {
 	display: inline-block;
 	height: 100%;
 	/* width: auto; */
-	width: 100%; /* debug */
+	width: 100%; /* debug, temporary */
 }
 .header_anchor-header_graphic {
 	height: 100%;
