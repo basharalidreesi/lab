@@ -139,7 +139,7 @@ html, body {
 	left: 0;
 	width: 100%;
 	min-height: 100%;
-	overscroll-behavior: none;
+	/* overscroll-behavior: none; */
 }
 * {
 	margin: 0;
@@ -825,12 +825,6 @@ body {
 │ miscellaneous element styles │
 └──────────────────────────────┘
 */
-	.--overlay {
-		position: absolute;
-		height: 100%;
-		width: 100%;
-		background-color: transparent;
-	}
 	/*
 	┌───────┐
 	│ begin └┐
