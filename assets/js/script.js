@@ -109,9 +109,10 @@ function redirected(event) {
 		customDeltaX = 0;
 		customDeltaY = redirectY / -5;
 	}
-	console.log("Custom: " + customDeltaX + ", " + customDeltaY);
-	console.log("Redirect: " + redirectX + ", " + redirectY);
 	if (window.innerWidth < document.getElementById("cascade_wrapper").scrollWidth) { // if cascade is overflowing
+		console.log("window.innerHeight: " + window.innerHeight);
+		console.log("window.scrollY: " + window.scrollY);
+		console.log("document.body.scrollHeight: " + document.body.scrollHeight);
 		if (window.innerHeight + window.scrollY >= document.body.scrollHeight) { // if bottom of page -- improve here
 			if (customDeltaY > 0 || customDeltaX > 0) { // if going down or right
 				event.preventDefault();
