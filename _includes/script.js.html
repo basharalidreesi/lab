@@ -26,18 +26,18 @@
 					moveX = event3.changedTouches[0].screenX - touchX;
 					moveY = event3.changedTouches[0].screenY - touchY;
 					if (moveX > 0) {
-						redirectX += moveX;
+						redirectX = moveX;
 					} else if (moveX < 0) {
-						redirectX -= moveX;
+						redirectX = -moveX;
 					} else {
-						redirectX += moveX;
+						redirectX = moveX;
 					}
 					if (moveY < 0) {
-						redirectY += moveY;
+						redirectY = moveY;
 					} else if (moveY > 0) {
-						redirectY -= moveY;
+						redirectY = -moveY;
 					} else {
-						redirectY += moveY;
+						redirectY = moveY;
 					}
 					window.dispatchEvent(wheel);
 				}, {passive: false});
