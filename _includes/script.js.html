@@ -41,6 +41,14 @@
 					}
 					window.dispatchEvent(wheel);
 				}, {passive: false});
+				window.addEventListener("touchend", (event4) => {
+					touchX = 0;
+					touchY = 0;
+					moveX = 0;
+					moveY = 0;
+					scrollX = 0;
+					scrollY = 0;
+				}, {passive: false});
 				window.addEventListener("wheel", redirected, {passive:false});
 			});
 			{%- endif %}
