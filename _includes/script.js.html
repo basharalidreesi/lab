@@ -13,6 +13,7 @@
 			var touchY = 0;
 			var redirectX = 0;
 			var redirectY = 0;
+			var occured = false;
 			window.addEventListener("DOMContentLoaded", (event) => {
 				window.addEventListener("touchstart", (event2) => {
 					touchX = event2.touches[0].clientX;
@@ -26,6 +27,12 @@
 						redirectX = 0;
 						event3.preventDefault();
 						window.dispatchEvent(wheel);
+						occured = true;
+					}
+				}, {passive: false});
+				window.addEventListener("touchend", (event4) => {
+					if (occured === true) {
+						event4.preventDefault();
 					}
 				}, {passive: false});
 				window.addEventListener("wheel", redirected, {passive:false});
