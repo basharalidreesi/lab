@@ -48,14 +48,12 @@
 		{%- include colours.css.html -%}
 		{%- include fonts.css.html -%}
 		{% unless text_colour == "#000" or text_colour == "#000000" or text_colour == "black" %}		<script src="{{- site.baseurl -}}/assets/js/svg-inject.min.js"></script>{%- else %}		<!-- svg-inject.min.js not included -->{%- endunless %}
+		<script src="{{- site.baseurl -}}/assets/js/hammer.min.js"></script>
 		<script src="{{- site.baseurl -}}/assets/js/script.js"></script>
 		{%- include script.js.html %}		<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/style.css" media="screen"/>
 		{%- include style.css.html -%}
 		{%- include noscript.css.html %}	</head>
 	<body>
-	{%- if page.layout == "cascade" and page.header_location == "central" %}
-	<!-- <div class="--bodyalt" id="bodyalt"> -->
-	{%- endif %}
 		<div class="--mobile_background"></div>
 		{%- if page.header_location == "central" %}
 		<div class="--downward_arrow_wrapper" id="arrow_wrapper" onClick="toArrow(event);">
@@ -180,8 +178,5 @@
 			</footer>
 			{%- endunless %}
 		</div>
-	{%- if page.layout == "cascade" and page.header_location == "central" %}
-	<!-- </div> -->
-	{%- endif %}
 	</body>
 </html>
