@@ -25,16 +25,16 @@
 					let wheel = new Event("wheel");
 					moveX = event3.changedTouches[0].screenX - touchX;
 					moveY = event3.changedTouches[0].screenY - touchY;
-					if (moveX > 0) {
+					if (event3.changedTouches[0].screenX > event3.changedTouches[1].screenX) {
 						redirectX += event3.changedTouches[0].screenX / touchX;
-					} else if (moveX < 0) {
+					} else if (event3.changedTouches[0].screenX < event3.changedTouches[1].screenX) {
 						redirectX -= event3.changedTouches[0].screenX / touchX;
 					} else {
 						redirectX += event3.changedTouches[0].screenX / touchX;
 					}
-					if (moveY < 0) {
+					if (event3.changedTouches[0].screenY < event3.changedTouches[1].screenY) {
 						redirectY += event3.changedTouches[0].screenY / touchY;
-					} else if (moveY > 0) {
+					} else if (event3.changedTouches[0].screenY > event3.changedTouches[1].screenY) {
 						redirectY -= event3.changedTouches[0].screenY / touchY;
 					} else {
 						redirectY += event3.changedTouches[0].screenY / touchY;
