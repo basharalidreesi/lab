@@ -98,7 +98,9 @@ function unfiltered(event) {
 }
 
 function redirected(event) {
-	console.log(event.deltaX + ", " + event.deltaY);
+	var deltaX = event.deltaX || "X";
+	var deltaY = event.detlaY || "Y";
+	console.log(deltaX + ", " + deltaY);
 	if (window.innerWidth < document.getElementById("cascade_wrapper").scrollWidth) { // if cascade is overflowing
 		if (window.innerHeight + window.scrollY >= document.body.scrollHeight) { // if bottom of page -- improve here
 			if (event.deltaY > 0 || event.deltaX > 0) { // if going down or right
