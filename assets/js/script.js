@@ -101,24 +101,12 @@ function redirected(event) {
 	console.log("Wheeled");
 	if (window.innerWidth < document.getElementById("cascade_wrapper").scrollWidth) { // if cascade is overflowing
 		if (window.innerHeight + window.scrollY >= document.body.scrollHeight) { // if bottom of page -- improve here
-			if (event.deltaY > 0) { // if going down
+			if (event.deltaY > 0 || event.deltaX > 0) { // if going down or right
 				event.preventDefault();
 				document.body.classList.add("--lock_scroll");
 				document.getElementById("cascade_wrapper").scrollLeft += (event.deltaY + event.deltaX);
-			} else if (event.deltaY < 0) { // if going up
+			} else if (event.deltaY < 0 || event.deltaX < 0) { // if going up or left
 				if (document.getElementById("cascade_wrapper").scrollLeft <= 0) {
-					document.body.classList.remove("--lock_scroll");
-				} else if (document.getElementById("cascade_wrapper").scrollLeft > 0) {
-					document.getElementById("cascade_wrapper").scrollLeft += (event.deltaY + event.deltaX);
-				}
-			}
-			if (event.deltaX > 0) { // if going right
-				event.preventDefault();
-				document.body.classList.add("--lock_scroll");
-				document.getElementById("cascade_wrapper").scrollLeft += (event.deltaY + event.deltaX);
-			} else if (event.deltaX < 0) { // if going left
-				if (document.getElementById("cascade_wrapper").scrollLeft <= 0) {
-					//event.preventDefault();
 					document.body.classList.remove("--lock_scroll");
 				} else if (document.getElementById("cascade_wrapper").scrollLeft > 0) {
 					document.getElementById("cascade_wrapper").scrollLeft += (event.deltaY + event.deltaX);
