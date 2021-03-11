@@ -129,11 +129,6 @@ function redirected(event) {
 	}
 }
 
-var hammertime = new Hammer(document.body);
-hammertime.on('pan', function(ev) {
-	console.log(ev);
-});
-
 function lock_scroll() {
 	// window.scrollTo(0, 0);
 	// document.body.classList.toggle("--lock_scroll");
