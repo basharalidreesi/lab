@@ -97,6 +97,8 @@ function unfiltered(event) {
 	console.log("Unfiltered.");
 }
 
+var go;
+
 function redirected(event) {
 	var customDeltaX;
 	var customDeltaY;
@@ -107,6 +109,7 @@ function redirected(event) {
 		customDeltaX = 0;
 		customDeltaY = redirectY / -5;
 	}
+	go = false;
 	console.log(customDeltaX + ", " + customDeltaY);
 	if (window.innerWidth < document.getElementById("cascade_wrapper").scrollWidth) { // if cascade is overflowing
 		if (window.innerHeight + window.scrollY >= document.body.scrollHeight) { // if bottom of page -- improve here
