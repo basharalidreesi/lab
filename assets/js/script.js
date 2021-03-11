@@ -98,14 +98,16 @@ function unfiltered(event) {
 }
 
 function redirected(event) {
-	var deltaX = event.deltaX || redirectX;
-	var deltaY = event.detlaY || redirectY;
+	var deltaX; = event.deltaX || redirectX;
+	var deltaY; = event.detlaY || redirectY;
 	if (event.deltaX != null || event.deltaY != null) {
-		console.log("Real: " + event.deltaX + ", " + event.deltaY);
+		deltaX = event.deltaX;
+		deltaY = event.deltaY;
 	} else {
-		console.log("Simulated: " + redirectX + ", " + redirectY);
+		deltaX = redirectX;
+		deltaY = redirectY;
 	}
-	//console.log("Combined: " + deltaX + ", " + deltaY);
+	console.log("Result: " deltaX + ", " + deltaY);
 	if (window.innerWidth < document.getElementById("cascade_wrapper").scrollWidth) { // if cascade is overflowing
 		if (window.innerHeight + window.scrollY >= document.body.scrollHeight) { // if bottom of page -- improve here
 			if (event.deltaY > 0 || event.deltaX > 0) { // if going down or right
