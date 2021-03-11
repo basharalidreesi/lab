@@ -100,7 +100,7 @@ function unfiltered(event) {
 function redirected(event) {
 	var deltaX = event.deltaX || redirectX;
 	var deltaY = event.detlaY || redirectY;
-	console.log("Simulated: " + deltaX + ", " + deltaY);
+	console.log("Simulated: " + redirectX + ", " + redirectY);
 	console.log("Real: " + event.deltaX + ", " + event.deltaY);
 	if (window.innerWidth < document.getElementById("cascade_wrapper").scrollWidth) { // if cascade is overflowing
 		if (window.innerHeight + window.scrollY >= document.body.scrollHeight) { // if bottom of page -- improve here
