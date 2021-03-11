@@ -102,6 +102,7 @@ function redirected(event) {
 	var deltaY = event.detlaY || redirectY;
 	console.log("Simulated: " + redirectX + ", " + redirectY);
 	console.log("Real: " + event.deltaX + ", " + event.deltaY);
+	console.log("Combined: " + deltaX + ", " + deltaY);
 	if (window.innerWidth < document.getElementById("cascade_wrapper").scrollWidth) { // if cascade is overflowing
 		if (window.innerHeight + window.scrollY >= document.body.scrollHeight) { // if bottom of page -- improve here
 			if (event.deltaY > 0 || event.deltaX > 0) { // if going down or right
