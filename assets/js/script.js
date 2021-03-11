@@ -129,8 +129,11 @@ function redirected(event) {
 	}
 }
 
+var iframes = document.getElementsByTagName("iframe");
 function donted() {
-	document.querySelectorAll("iframe").classList.toggle("--dont_interfere");
+	for(var i = 0; i < iframes.length; i++) {
+		iframes[i].classList.toggle("--dont_interfere");
+	}
 }
 
 function lock_scroll() {
