@@ -33,6 +33,7 @@
 				window.addEventListener("touchend", (event4) => {
 					if (occured === true) {
 						event4.preventDefault();
+						occured = false;
 					}
 				}, {passive: false});
 				window.addEventListener("wheel", redirected, {passive:false});
