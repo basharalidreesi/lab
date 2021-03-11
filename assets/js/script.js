@@ -98,8 +98,8 @@ function unfiltered(event) {
 }
 
 function redirected(event) {
-	var deltaX; = event.deltaX || redirectX;
-	var deltaY; = event.detlaY || redirectY;
+	var deltaX;
+	var deltaY;
 	if (event.deltaX != null || event.deltaY != null) {
 		deltaX = event.deltaX;
 		deltaY = event.deltaY;
