@@ -355,6 +355,18 @@ address {
 		background-size: 0% 2px;
 		transition: background-size 0.25s;
 	}
+	/*
+	┌───────┐
+	│ begin └──────────┐
+	│ temporary states │
+	└──────────────────┘
+	*/
+	.--lock_scroll {
+		overflow: hidden;
+	}
+	.--dont_interfere {
+		pointer-events: none;
+	}
 
 /*
 ┌───────┐
@@ -366,9 +378,6 @@ body {
 	background: var(--background);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-}
-.--lock_scroll {
-	overflow: hidden;
 }
 .--mobile_background {
 	display: none;
