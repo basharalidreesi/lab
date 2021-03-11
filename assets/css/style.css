@@ -569,7 +569,8 @@ body {
 .header_wrapper-header_anchor {
 	display: inline-block;
 	height: 100%;
-	width: auto;
+	/* width: auto; */
+	width: 100%; /* debug */
 }
 .header_anchor-header_graphic {
 	height: 100%;
