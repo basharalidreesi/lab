@@ -109,7 +109,6 @@ function redirected(event) {
 		customDeltaX = 0;
 		customDeltaY = redirectY / -5;
 	}
-	go = false;
 	console.log(customDeltaX + ", " + customDeltaY);
 	if (window.innerWidth < document.getElementById("cascade_wrapper").scrollWidth) { // if cascade is overflowing
 		if (window.innerHeight + window.scrollY >= document.body.scrollHeight) { // if bottom of page -- improve here
@@ -124,6 +123,8 @@ function redirected(event) {
 					document.getElementById("cascade_wrapper").scrollLeft += (customDeltaY + customDeltaX);
 				}
 			}
+		} else {
+			go = false;
 		}
 	} else {
 		window.removeEventListener("wheel", redirected, {passive:false});
