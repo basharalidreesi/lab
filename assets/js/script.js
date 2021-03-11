@@ -37,10 +37,9 @@ function debug() {
 	console.log("html.offsetHeight: " + html.offsetHeight);
 	console.log("html.clientHeight: " + html.clientHeight);
 	console.log("window.innerHeight: " + window.innerHeight);
-	console.log("body.scrollY: " + body.scrollY);
 	console.log("body.scrollTop: " + body.scrollTop);
-	console.log("bodyalt.scrollY: " + bodyalt.scrollY);
 	console.log("bodyalt.scrollTop: " + bodyalt.scrollTop);
+	console.log("bodyalt.scrollHeight: " + bodyalt.scrollHeight);
 	console.log("* * *");
 }
 
