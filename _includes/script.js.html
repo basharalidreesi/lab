@@ -22,14 +22,13 @@
 					if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
 						redirectX = event3.changedTouches[0].clientX - touchX;
 						redirectY = event3.changedTouches[0].clientY - touchY;
-						if(Math.abs(redirectY) > Math.abs(redirectX)) {
-							event3.preventDefault();
-							let wheel = new Event("wheel");
-							window.dispatchEvent(wheel);
+						if (document.getElementById("cascade_wrapper").scrollLeft > 0) {
+							if(Math.abs(redirectY) > Math.abs(redirectX)) {
+								event3.preventDefault();
+								let wheel = new Event("wheel");
+								window.dispatchEvent(wheel);
+							}
 						}
-					} else {
-						redirectX = 0;
-						redirectY = 0;
 					}
 				}, {passive: false});
 				window.addEventListener("touchend", (event4) => {
