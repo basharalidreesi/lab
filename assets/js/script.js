@@ -5,7 +5,7 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 console.log("--vh set to " + `${vh}px` + ".");
 
 window.addEventListener("error", (event) => {
-	console.log(event.error);	
+	console.log(event.error);
 });
 
 var debounce;
@@ -130,8 +130,6 @@ function redirected(event) {
 				}
 			}
 		}
-	} else {
-		window.removeEventListener("wheel", redirected, {passive:false});
 	}
 }
 
