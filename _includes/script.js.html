@@ -8,12 +8,13 @@
 			window.addEventListener("load", (event) => {
 				if (hasScrolled === false) {
 					arrowed();
+					window.addEventListener("wheel", unarrowed, {passive:true});
+					window.addEventListener("touchmove", unarrowed, {passive:true});
+				} else {
+					document.getElementById("arrow_wrapper").remove();
+					console.log("Dearrowed.");
 				}
 			});
-			if (hasArrowed === true) {
-				window.addEventListener("wheel", unarrowed, {passive:true});
-				window.addEventListener("touchmove", unarrowed, {passive:true});
-			}
 			window.addEventListener("DOMContentLoaded", (event) => {
 				document.getElementById("arrow_wrapper").addEventListener("click", (event2) => {
 					toArrow(event2);
