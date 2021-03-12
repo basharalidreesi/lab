@@ -52,9 +52,9 @@ function unarrowed() {
 		console.log("Arrow hid.");
 		setTimeout(() => { document.getElementById("arrow_wrapper").remove() }, 1250);
 		setTimeout(() => { console.log("Unarrowed.") }, 1250);
+		window.removeEventListener("wheel", unarrowed, {passive: true});
+		window.removeEventListener("touchmove", unarrowed, {passive:true});
 	}
-	window.removeEventListener("wheel", unarrowed, {passive: true});
-	window.removeEventListener("touchmove", unarrowed, {passive:true});
 }
 
 function toArrow(event) {
