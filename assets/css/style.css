@@ -139,7 +139,7 @@ html, body {
 	left: 0;
 	width: 100%;
 	min-height: 100%;
-	overscroll-behavior: none;
+	overscroll-behavior-y: none;
 }
 * {
 	margin: 0;
@@ -411,9 +411,6 @@ body {
 	flex-flow: column nowrap;
 	/* height: 100%; */
 }
-.--mother_container_fullscreen {
-	/* min-height: calc(var(--screen_height)); */
-}
 .mother_container-nav_container_upper {
 	order: 1;
 }
@@ -445,9 +442,6 @@ body {
 }
 .mother_container-main_container {
 	order: 3;
-}
-.--mother_container_fullscreen > .mother_container-main_container {
-	flex: 1;
 }
 .mother_container-footer_container {
 	order: 4;
