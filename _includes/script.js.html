@@ -11,6 +11,10 @@
 				window.addEventListener("resize", (event2) => {
 					// todo: update --vh
 				});
+				document.getElementById("arrow_wrapper").addEventListener("click", (event3) => {
+					toArrow(event3);
+					unarrowed();
+				});
 			});
 			{%- endif -%}
 			{%- if page.layout == "cascade" %}
