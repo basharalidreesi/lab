@@ -15,13 +15,6 @@
 				});
 			});
 			{%- endif -%}
-			{%- if page.header_location == "central" or page.layout == "cascade" %}
-			window.addEventListener("DOMContentLoaded", (event) => {
-				window.addEventListener("resize", (event2) => {
-					// todo: update --vh
-				});
-			});
-			{%- endif -%}
 			{%- if page.layout == "cascade" %}
 			var touchX = 0;
 			var touchY = 0;
