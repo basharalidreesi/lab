@@ -39,9 +39,11 @@ function splined() {
 	console.log("...splines.");
 }
 
+var hasArrowed = false;
 function arrowed() {
 	document.getElementById("arrow_wrapper").style.display = "block";
 	console.log("Arrowed.");
+	hasArrowed = true;
 }
 
 function unarrowed() {
