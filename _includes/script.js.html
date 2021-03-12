@@ -46,7 +46,7 @@
 				}, {passive: true});
 				window.addEventListener("orientationchange", (event5) => {
 					debounced(() => { document.body.classList.add("--allow_scroll") }, 175);
-					debounced(() => { document.body.scrollTo(0, 0) }, 200);
+					debounced(() => { document.body.scrollTo(0, document.getElementById("bodyalt".scrollTop)) }, 200);
 					debounced(() => { document.body.classList.remove("--allow_scroll") }, 225);
 				});
 				window.addEventListener("wheel", redirected, {passive:false});
