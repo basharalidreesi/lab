@@ -38,6 +38,11 @@
 					// todo
 					debug();
 				}, {passive: true});
+				window.addEventListener("orientationchange", (event5) => {
+					document.body.classList.add("--allow_scroll");
+					document.body.scrollTop -= 1;
+					document.body.classList.remove("--allow_scroll");
+				});
 				window.addEventListener("wheel", redirected, {passive:false});
 				document.getElementById("nav_map_wrapper").addEventListener("click", (event5) => {
 					document.getElementById("bodyalt").classList.remove("--lock_scroll");
