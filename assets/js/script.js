@@ -4,17 +4,25 @@ let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 console.log("--vh set to " + `${vh}px` + ".");
 
-window.addEventListener("resize", vhed);
-//var oldheight = window.outerHeight;
+var debounce;
+function debounced(func, delay) {
+	clearTimeout(debounce);
+	debounce = setTimeout(func, delay);
+}
+
+var oldheight = window.outerHeight;
+window.addEventListener("resize", (event) => {
+	debounced(vhed, 250);
+});
 
 function vhed() { // todo: throttle
-//	var newheight = window.outerHeight;
-//	if (newheight !== oldheight) {
-//		oldheight = newheight;
-//		vh = window.innerHeight * 0.01;
-//		document.documentElement.style.setProperty('--vh', `${vh}px`);
-//		console.log("--vh updated to " + `${vh}px` + ".");
-//	}
+	var newheight = window.outerHeight;
+	if (newheight !== oldheight) {
+		oldheight = newheight;
+		vh = window.innerHeight * 0.01;
+		document.documentElement.style.setProperty('--vh', `${vh}px`);
+		console.log("--vh updated to " + `${vh}px` + ".");
+	}
 }
 
 window.addEventListener("DOMContentLoaded", reticulated);
