@@ -61,9 +61,6 @@
 					document.getElementById("bodyalt").classList.remove("--lock_scroll");
 				});
 			});
-			window.addEventListener("load", (event) => { // is this necessary?
-				document.getElementById("bodyalt").classList.remove("--lock_scroll");
-			});
 			{%- else %}
 			window.addEventListener("resize", (event) => {
 				debounced(vhed, 250);
