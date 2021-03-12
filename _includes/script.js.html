@@ -45,9 +45,9 @@
 					debug();
 				}, {passive: true});
 				window.addEventListener("orientationchange", (event5) => {
-					document.body.classList.add("--allow_scroll");
+					debounced(() => { document.body.classList.add("--allow_scroll") }, 300); // occur after resize
 					window.scrollTo(0, 0);
-					debounced(() => { document.body.classList.remove("--allow_scroll") }, 260); // occur after resize
+					debounced(() => { document.body.classList.remove("--allow_scroll") }, 350); // occur after resize
 				});
 				window.addEventListener("wheel", redirected, {passive:false});
 				document.getElementById("nav_map_wrapper").addEventListener("click", (event5) => {
