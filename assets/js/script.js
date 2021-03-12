@@ -39,15 +39,15 @@ function splined() {
 	console.log("...splines.");
 }
 
-var arrowed = false;
+var hasArrowed = false;
 function arrowed() {
 	document.getElementById("arrow_wrapper").style.display = "block";
 	console.log("Arrowed.");
-	arrowed = true;
+	hasArrowed = true;
 }
 
 function unarrowed() {
-	if (arrowed === true) {
+	if (hasArrowed === true) {
 		document.getElementById("arrow_wrapper").style.opacity = "0";
 		console.log("Arrow hid.");
 		window.removeEventListener("wheel", unarrowed, {passive: true});
