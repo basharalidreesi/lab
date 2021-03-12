@@ -5,9 +5,11 @@
 			{%- assign text_colour = page.text_colour | strip_newlines | strip %}
 			window.addEventListener("load", headered);
 			{%- if page.header_location == "central" %}
-			window.addEventListener("load", arrowed);
-			window.addEventListener("wheel", unarrowed, {passive:true});
-			window.addEventListener("touchmove", unarrowed, {passive:true});
+			if (hasScrolled === false) {
+				window.addEventListener("load", arrowed);
+				window.addEventListener("wheel", unarrowed, {passive:true});
+				window.addEventListener("touchmove", unarrowed, {passive:true});
+			}
 			window.addEventListener("DOMContentLoaded", (event) => {
 				document.getElementById("arrow_wrapper").addEventListener("click", (event2) => {
 					toArrow(event2);
@@ -60,9 +62,6 @@
 				document.getElementById("nav_map_wrapper").addEventListener("click", (event5) => {
 					document.getElementById("bodyalt").classList.remove("--lock_scroll");
 				});
-			});
-			window.addEventListener("load", (event) => { // is this necessary?
-				document.getElementById("bodyalt").classList.remove("--lock_scroll");
 			});
 			{%- else %}
 			window.addEventListener("resize", (event) => {

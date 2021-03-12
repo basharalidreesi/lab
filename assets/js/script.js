@@ -39,22 +39,18 @@ function splined() {
 	console.log("...splines.");
 }
 
-var hasArrowed = false;
 function arrowed() {
 	document.getElementById("arrow_wrapper").style.display = "block";
 	console.log("Arrowed.");
-	hasArrowed = true;
 }
 
 function unarrowed() {
-	if (hasArrowed === true) {
-		document.getElementById("arrow_wrapper").style.opacity = "0";
-		console.log("Arrow hid.");
-		setTimeout(() => { document.getElementById("arrow_wrapper").remove() }, 1250);
-		setTimeout(() => { console.log("Unarrowed.") }, 1250);
-		window.removeEventListener("wheel", unarrowed, {passive: true});
-		window.removeEventListener("touchmove", unarrowed, {passive:true});
-	}
+	document.getElementById("arrow_wrapper").style.opacity = "0";
+	console.log("Arrow hid.");
+	setTimeout(() => { document.getElementById("arrow_wrapper").remove() }, 1250);
+	setTimeout(() => { console.log("Unarrowed.") }, 1250);
+	window.removeEventListener("wheel", unarrowed, {passive: true});
+	window.removeEventListener("touchmove", unarrowed, {passive:true});
 }
 
 function toArrow(event) {
@@ -104,11 +100,11 @@ function unfiltered(event) {
 	console.log("Unfiltered.");
 }
 
-var go;
-
+var hasScrolled = false;
 function redirected(event) {
 	var customDeltaX;
 	var customDeltaY;
+	hasScrolled = true;
 	if (event.deltaX != null || event.deltaY != null) {
 		customDeltaX = event.deltaX;
 		customDeltaY = event.deltaY;
