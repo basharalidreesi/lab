@@ -11,7 +11,9 @@ function debounced(func, delay) {
 }
 
 window.addEventListener("resize", (event) => {
+	debounced(() => { document.getElementById("bodyalt").classList.add("--allow_scroll") }), 225);
 	debounced(vhed, 250);
+	debounced(() => { document.getElementById("bodyalt").classList.remove("--allow_scroll") }), 275);
 });
 
 var oldheight = window.outerHeight;
