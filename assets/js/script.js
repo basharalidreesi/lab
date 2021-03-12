@@ -39,18 +39,22 @@ function splined() {
 	console.log("...splines.");
 }
 
+var arrowed = false;
 function arrowed() {
 	document.getElementById("arrow_wrapper").style.display = "block";
 	console.log("Arrowed.");
+	arrowed = true;
 }
 
 function unarrowed() {
-	document.getElementById("arrow_wrapper").style.opacity = "0";
-	console.log("Arrow hid.");
-	window.removeEventListener("wheel", unarrowed, {passive: true});
-	window.removeEventListener("touchmove", unarrowed, {passive:true});
-	setTimeout(() => { document.getElementById("arrow_wrapper").remove() }, 1250);
-	setTimeout(() => { console.log("Unarrowed.") }, 1250);
+	if (arrowed === true) {
+		document.getElementById("arrow_wrapper").style.opacity = "0";
+		console.log("Arrow hid.");
+		window.removeEventListener("wheel", unarrowed, {passive: true});
+		window.removeEventListener("touchmove", unarrowed, {passive:true});
+		setTimeout(() => { document.getElementById("arrow_wrapper").remove() }, 1250);
+		setTimeout(() => { console.log("Unarrowed.") }, 1250);
+	}
 }
 
 function toArrow(event) {
