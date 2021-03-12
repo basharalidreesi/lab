@@ -48,7 +48,7 @@
 					debounced(() => { document.body.scrollTo(0, document.getElementById("bodyalt".scrollTop)) }, 200);
 					debounced(() => { document.body.classList.remove("--allow_scroll") }, 225);
 				});
-				window.addEventListener("resize", (event2) => {
+				window.addEventListener("resize", (event6) => {
 					debounced(() => { document.getElementById("bodyalt").classList.add("--allow_scroll") }, 250);
 					debounced(vhed, 275);
 					debounced(() => { document.getElementById("bodyalt").classList.remove("--allow_scroll") }, 300);
