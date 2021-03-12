@@ -45,6 +45,7 @@
 				}, {passive: true});
 				window.addEventListener("orientationchange", (event5) => {
 					document.getElementById("cascade_wrapper").scrollIntoView(true);
+					document.getElementById("bodyalt").classList.remove("--lock_scroll");
 				});
 				window.addEventListener("resize", (event6) => {
 					debounced(() => {
@@ -59,6 +60,9 @@
 				document.getElementById("nav_map_wrapper").addEventListener("click", (event5) => {
 					document.getElementById("bodyalt").classList.remove("--lock_scroll");
 				});
+			});
+			window.addEventListener("load", (event) => {
+				document.getElementById("bodyalt").classList.remove("--lock_scroll");
 			});
 			{%- else %}
 			window.addEventListener("resize", (event) => {
