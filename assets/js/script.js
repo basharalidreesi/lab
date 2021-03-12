@@ -10,10 +10,6 @@ function debounced(func, delay) {
 	debounce = setTimeout(func, delay);
 }
 
-window.addEventListener("resize", (event) => {
-	debounced(vhed, 250);
-});
-
 var oldheight = window.outerHeight;
 function vhed() { // todo: increment vh
 	var newheight = window.outerHeight;
