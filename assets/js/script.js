@@ -50,11 +50,11 @@ function unarrowed() {
 	if (hasArrowed === true) {
 		document.getElementById("arrow_wrapper").style.opacity = "0";
 		console.log("Arrow hid.");
-		window.removeEventListener("wheel", unarrowed, {passive: true});
-		window.removeEventListener("touchmove", unarrowed, {passive:true});
 		setTimeout(() => { document.getElementById("arrow_wrapper").remove() }, 1250);
 		setTimeout(() => { console.log("Unarrowed.") }, 1250);
 	}
+	window.removeEventListener("wheel", unarrowed, {passive: true});
+	window.removeEventListener("touchmove", unarrowed, {passive:true});
 }
 
 function toArrow(event) {
