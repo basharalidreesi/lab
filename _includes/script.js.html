@@ -7,6 +7,7 @@
 			{%- if page.header_location == "central" %}
 			window.addEventListener("load", arrowed);
 			window.addEventListener("wheel", unarrowed, {passive:true});
+			window.addEventListener("touchmove", unarrowed, {passive:true});
 			window.addEventListener("DOMContentLoaded", (event) => {
 				window.addEventListener("resize", (event2) => {
 					// todo: update --vh
