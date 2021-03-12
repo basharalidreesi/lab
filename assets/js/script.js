@@ -10,15 +10,15 @@ function debounced(func, delay) {
 	debounce = setTimeout(func, delay);
 }
 
-var oldheight = window.outerHeight;
 window.addEventListener("resize", (event) => {
 	debounced(vhed, 250);
 });
 
-function vhed() { // todo: throttle
+var oldheight = window.outerHeight;
+function vhed() {
 	var newheight = window.outerHeight;
 	if (newheight !== oldheight) {
-		oldheight = newheight;
+		oldheight++;
 		vh = window.innerHeight * 0.01;
 		document.documentElement.style.setProperty('--vh', `${vh}px`);
 		console.log("--vh updated to " + `${vh}px` + ".");
@@ -27,28 +27,6 @@ function vhed() { // todo: throttle
 
 window.addEventListener("DOMContentLoaded", reticulated);
 window.addEventListener("load", splined);
-
-window.addEventListener("DOMContentLoaded", (event) => {
-	window.addEventListener("click", (event2) => {
-		debug();
-	});
-});
-
-function debug() {
-	var body = document.body;
-	var bodyalt = document.getElementById("bodyalt");;
-	var html = document.documentElement;
-	console.log("body.scrollHeight: " + body.scrollHeight);
-	console.log("body.offsetHeight: " + body.offsetHeight);
-	console.log("html.scrollHeight: " + html.scrollHeight);
-	console.log("html.offsetHeight: " + html.offsetHeight);
-	console.log("html.clientHeight: " + html.clientHeight);
-	console.log("window.innerHeight: " + window.innerHeight);
-	console.log("body.scrollTop: " + body.scrollTop);
-	console.log("bodyalt.scrollTop: " + bodyalt.scrollTop);
-	console.log("bodyalt.scrollHeight: " + bodyalt.scrollHeight);
-	console.log("* * *");
-}
 
 // let url = window.location.href;
 // let trailing_slash = url.endsWith("/");
