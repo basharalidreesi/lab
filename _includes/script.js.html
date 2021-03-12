@@ -6,7 +6,12 @@
 			window.addEventListener("load", headered);
 			{%- if page.header_location == "central" %}
 			window.addEventListener("load", arrowed);
-			window.addEventListener("scroll", unarrowed, {passive:true});
+			window.addEventListener("wheel", unarrowed, {passive:true});
+			window.addEventListener("DOMContentLoaded", (event) => {
+				window.addEventListener("resize", (event2) => {
+					// todo: update --vh
+				});
+			});
 			{%- endif -%}
 			{%- if page.layout == "cascade" %}
 			var touchX = 0;
@@ -35,13 +40,11 @@
 					}
 				}, {passive: false});
 				window.addEventListener("touchend", (event4) => {
-					// todo
+					// todo: interia scrolling
 					debug();
 				}, {passive: true});
 				window.addEventListener("orientationchange", (event5) => {
-					document.body.classList.add("--allow_scroll");
-					document.body.scrollTop -= 1;
-					document.body.classList.remove("--allow_scroll");
+					// todo: fix mobile browser ui
 				});
 				window.addEventListener("wheel", redirected, {passive:false});
 				document.getElementById("nav_map_wrapper").addEventListener("click", (event5) => {
