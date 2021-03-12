@@ -15,10 +15,10 @@ window.addEventListener("resize", (event) => {
 });
 
 var oldheight = window.outerHeight;
-function vhed() {
+function vhed() { // todo: increment vh
 	var newheight = window.outerHeight;
 	if (newheight !== oldheight) {
-		oldheight++;
+		oldheight = newheight;
 		vh = window.innerHeight * 0.01;
 		document.documentElement.style.setProperty('--vh', `${vh}px`);
 		console.log("--vh updated to " + `${vh}px` + ".");
