@@ -7,8 +7,10 @@
 			{%- if page.header_location == "central" %}
 			if (hasScrolled === false) {
 				window.addEventListener("load", arrowed);
-				window.addEventListener("wheel", unarrowed, {passive:true});
-				window.addEventListener("touchmove", unarrowed, {passive:true});
+				if (hasArrowed === true) {
+					window.addEventListener("wheel", unarrowed, {passive:true});
+					window.addEventListener("touchmove", unarrowed, {passive:true});	
+				}
 			}
 			window.addEventListener("DOMContentLoaded", (event) => {
 				document.getElementById("arrow_wrapper").addEventListener("click", (event2) => {
