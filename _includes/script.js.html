@@ -59,6 +59,11 @@
 						if (window.innerHeight + document.getElementById("bodyalt").scrollTop > document.getElementById("bodyalt").scrollHeight) {
 							document.getElementById("cascade_wrapper").scrollIntoView(true);
 							document.getElementById("bodyalt").classList.remove("--lock_scroll");
+							console.log("Yes");
+						} else if (window.innerHeight + document.getElementById("bodyalt").scrollTop == document.getElementById("bodyalt").scrollHeight) {
+							console.log("Equals!");
+						} else {
+							console.log("No");
 						}
 						vhed();
 					}, 250);
