@@ -10,12 +10,6 @@ function debounced(func, delay) {
 	debounce = setTimeout(func, delay);
 }
 
-window.addEventListener("resize", (event) => {
-	debounced(() => { document.getElementById("bodyalt").classList.add("--allow_scroll") }), 225);
-	debounced(vhed, 250);
-	debounced(() => { document.getElementById("bodyalt").classList.remove("--allow_scroll") }), 275);
-});
-
 var oldheight = window.outerHeight;
 function vhed() { // todo: increment vh
 	var newheight = window.outerHeight;
