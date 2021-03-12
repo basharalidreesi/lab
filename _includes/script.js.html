@@ -5,12 +5,14 @@
 			{%- assign text_colour = page.text_colour | strip_newlines | strip %}
 			window.addEventListener("load", headered);
 			{%- if page.header_location == "central" %}
-			if (hasScrolled === false) {
-				window.addEventListener("load", arrowed);
-				if (hasArrowed === true) {
-					window.addEventListener("wheel", unarrowed, {passive:true});
-					window.addEventListener("touchmove", unarrowed, {passive:true});
+			window.addEventListener("load", (event) => {
+				if (hasScrolled === false) {
+					arrowed();
 				}
+			});
+			if (hasArrowed === true) {
+				window.addEventListener("wheel", unarrowed, {passive:true});
+				window.addEventListener("touchmove", unarrowed, {passive:true});
 			}
 			window.addEventListener("DOMContentLoaded", (event) => {
 				document.getElementById("arrow_wrapper").addEventListener("click", (event2) => {
