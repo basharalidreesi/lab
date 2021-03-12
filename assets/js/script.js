@@ -4,8 +4,8 @@ let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 console.log("--vh set to " + `${vh}px` + ".");
 
-window.addEventListener("error" (event) => {
-	console.log(event.error)
+window.addEventListener("error", (event) => {
+	console.log(event.error);	
 });
 
 var debounce;
