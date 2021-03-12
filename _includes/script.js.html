@@ -39,6 +39,9 @@
 					debug();
 				}, {passive: true});
 				window.addEventListener("wheel", redirected, {passive:false});
+				document.getElementById("nav_map_wrapper").addEventListener("click", (event5) => {
+					document.getElementById("bodyalt").classList.remove("--lock_scroll");
+				});
 			});
 			{%- endif %}
 			function headered() {
