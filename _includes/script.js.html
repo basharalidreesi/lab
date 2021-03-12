@@ -9,12 +9,16 @@
 			window.addEventListener("wheel", unarrowed, {passive:true});
 			window.addEventListener("touchmove", unarrowed, {passive:true});
 			window.addEventListener("DOMContentLoaded", (event) => {
+				document.getElementById("arrow_wrapper").addEventListener("click", (event2) => {
+					toArrow(event2);
+					unarrowed();
+				});
+			});
+			{%- endif -%}
+			{%- if page.header_location == "central" or page.layout == "cascade" %}
+			window.addEventListener("DOMContentLoaded", (event) => {
 				window.addEventListener("resize", (event2) => {
 					// todo: update --vh
-				});
-				document.getElementById("arrow_wrapper").addEventListener("click", (event3) => {
-					toArrow(event3);
-					unarrowed();
 				});
 			});
 			{%- endif -%}
@@ -49,7 +53,7 @@
 					debug();
 				}, {passive: true});
 				window.addEventListener("orientationchange", (event5) => {
-					// todo: fix mobile browser ui
+					// todo: refresh ui
 				});
 				window.addEventListener("wheel", redirected, {passive:false});
 				document.getElementById("nav_map_wrapper").addEventListener("click", (event5) => {
