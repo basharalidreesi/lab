@@ -377,6 +377,9 @@ body {
 .--lock_scroll {
 	overflow: hidden;
 }
+.--allow_scroll {
+	overflow: auto;
+}
 .--mobile_background {
 	display: none;
 	position: fixed;
