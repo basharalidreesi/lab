@@ -45,7 +45,8 @@
 					debug();
 				}, {passive: true});
 				window.addEventListener("orientationchange", (event5) => {
-					// todo: refresh ui
+					document.body.classList.add("--allow_scroll");
+					debounced(() => { document.body.classList.remove("--allow_scroll") }, 250);
 				});
 				window.addEventListener("wheel", redirected, {passive:false});
 				document.getElementById("nav_map_wrapper").addEventListener("click", (event5) => {
