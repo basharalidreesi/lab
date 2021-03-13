@@ -32,7 +32,7 @@
 					touchY = event2.touches[0].clientY;
 				}, {passive: true});
 				window.addEventListener("touchmove", (event3) => {
-					if (window.innerHeight + document.getElementById("bodyalt").scrollTop == document.getElementById("bodyalt").scrollHeight) { // if at bottom of bodyalt
+					if (window.innerHeight + document.getElementById("bodyalt").scrollTop >= document.getElementById("bodyalt").scrollHeight) { // if at bottom of bodyalt
 						redirectX = event3.changedTouches[0].clientX - touchX;
 						redirectY = event3.changedTouches[0].clientY - touchY;
 						if (Math.abs(redirectY) > Math.abs(redirectX)) { // if going up or down
@@ -44,8 +44,6 @@
 								window.dispatchEvent(wheel);
 							}
 						}
-					} else if (window.innerHeight + document.getElementById("bodyalt").scrollTop > document.getElementById("bodyalt").scrollHeight) { // if below bottom of bodyalt
-						// todo?
 					}
 				}, {passive: false});
 				window.addEventListener("touchend", (event4) => {
