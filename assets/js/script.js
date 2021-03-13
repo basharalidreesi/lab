@@ -126,11 +126,17 @@ function redirected(event) {
 					document.getElementById("bodyalt").classList.remove("--lock_scroll");
 				} else if (document.getElementById("cascade_wrapper").scrollLeft > 0) {
 					document.getElementById("cascade_wrapper").scrollLeft += (customDeltaY + customDeltaX);
+				}  else {
+					document.getElementById("bodyalt").classList.remove("--lock_scroll");
 				}
+			} else {
+				document.getElementById("bodyalt").classList.remove("--lock_scroll");
 			}
 		} else {
 			document.getElementById("bodyalt").classList.remove("--lock_scroll");
 		}
+	} else {
+		document.getElementById("bodyalt").classList.remove("--lock_scroll");
 	}
 }
 
