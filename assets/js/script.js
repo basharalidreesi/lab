@@ -1,26 +1,16 @@
-// begin
-// variables
-const jad = {
-	body: document.body,
-	bodyalt: document.getElementById("bodyalt"),
-	cascade: document.getElementById("cascade_wrapper")
-}
-
 console.log("Title: " + document.title);
 
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 console.log("--vh set to " + `${vh}px` + ".");
 
-window.addEventListener("error", (event) => {
-	console.log(event.error);
-});
-
-var debounce;
-function debounced(func, delay) {
-	clearTimeout(debounce);
-	debounce = setTimeout(func, delay);
+function debounce(fn, delay) {
+	let t;
+	clearTimeout(t);
+	t = setTimeout(fn, delay);
 }
+
+debounce(() => { console.log("Fn"); }, 1000);
 
 var oldheight = window.outerHeight;
 function vhed() { // todo: increment vh

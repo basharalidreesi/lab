@@ -54,7 +54,7 @@
 					//document.getElementById("bodyalt").classList.remove("--lock_scroll");
 				});
 				window.addEventListener("resize", (event6) => {
-					debounced(() => {
+					debounce(() => {
 						if (window.innerHeight + document.getElementById("bodyalt").scrollTop > document.getElementById("bodyalt").scrollHeight) {
 							//document.getElementById("cascade_wrapper").scrollIntoView(true);
 							//document.getElementById("bodyalt").classList.remove("--lock_scroll");
@@ -69,7 +69,7 @@
 			});
 			{%- else %}
 			window.addEventListener("resize", (event) => {
-				debounced(vhed, 250);
+				debounce(vhed, 250);
 			});
 			{%- endif %}
 			function headered() {
