@@ -9,8 +9,13 @@ function debounce(fn, delay) {
 	clearTimeout(t);
 	t = setTimeout(fn, delay);
 }
+window.addEventListener("click", function() {
+	debounce(() => { console.log("Debounce"); }, 1000);
+});
+window.addEventListener("click", function() {
+	setTimeout(() => { console.log("Timeout"); }, 1000);
+});
 
-debounce(() => { console.log("Fn"); }, 1000);
 
 var oldheight = window.outerHeight;
 function vhed() { // todo: increment vh
