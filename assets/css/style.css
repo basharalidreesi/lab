@@ -480,7 +480,6 @@ body {
 }
 .nav_list_wrapper-nav_list_item {
 	flex: 1; /* todo: stress test this with a higher number of listed pages */
-	position: relative; /* debug */
 	padding-top: calc(var(--double));
 	padding-bottom: calc(var(--double));
 	overflow: hidden;
@@ -577,11 +576,10 @@ body {
 .header_wrapper-header_anchor {
 	display: inline-block;
 	height: 100%;
-	width: auto;
-	/* width: 100%; */ /* debug, temporary */
+	/* width: auto; */
+	width: 100%; /* debug, temporary */
 }
 .header_anchor-header_graphic {
-	position: relative; /* debug */
 	height: 100%;
 	width: auto;
 	max-width: calc(100vw - var(--single) - var(--single));
@@ -1064,14 +1062,12 @@ body {
 			box-shadow: none;
 			transition: all 0.25s;
 		}
-		.--nav_map_background_central { /* none yet! */	}
+		.--nav_map_background_central {	}
 		#nav_map_checkbox:checked ~ .--nav_map_background_upper {
 			position: absolute;
-			/* top: calc(var(--header_height) * -1); */
-			top: 0;
+			top: calc(var(--header_height) * -1);
 			left: 0;
-			/* height: calc(100% + var(--header_height)); */
-			height: 100%;
+			height: calc(100% + var(--header_height));
 			width: 100%;
 			background-color: var(--secondary_colour);
 			box-shadow: 0 0 calc(var(--single)) 0 var(--primary_colour);
