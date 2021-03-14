@@ -1,8 +1,8 @@
 // begin
 // variables
 const jad = {
-	body: document.body;
-	bodyalt: document.getElementById("bodyalt");
+	body: document.body,
+	bodyalt: document.getElementById("bodyalt")
 }
 
 console.log("Title: " + document.title);
