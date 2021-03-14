@@ -120,6 +120,8 @@ function redirected(event) {
 			if (customDeltaY > 0 || customDeltaX > 0) { // if going down or right
 				event.preventDefault();
 				document.getElementById("bodyalt").classList.add("--lock_scroll");
+				document.getElementById("cascade_wrapper").classList.add("--lock_scroll");
+				setTimeout(() => { document.getElementById("cascade_wrapper").classList.remove("--lock_scroll"); }, 10); //debug
 				document.getElementById("cascade_wrapper").scrollLeft += (customDeltaY + customDeltaX);
 			} else if (customDeltaY < 0 || customDeltaX < 0) { // if going up or left
 				if (document.getElementById("cascade_wrapper").scrollLeft <= 0) {
