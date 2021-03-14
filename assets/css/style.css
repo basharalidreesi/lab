@@ -1062,12 +1062,14 @@ body {
 			box-shadow: none;
 			transition: all 0.25s;
 		}
-		.--nav_map_background_central {	}
+		.--nav_map_background_central { /* none yet! */	}
 		#nav_map_checkbox:checked ~ .--nav_map_background_upper {
 			position: absolute;
-			top: calc(var(--header_height) * -1);
+			/* top: calc(var(--header_height) * -1); */
+			top: 0;
 			left: 0;
-			height: calc(100% + var(--header_height));
+			/* height: calc(100% + var(--header_height)); */
+			height: 100%;
 			width: 100%;
 			background-color: var(--secondary_colour);
 			box-shadow: 0 0 calc(var(--single)) 0 var(--primary_colour);
