@@ -119,23 +119,24 @@ function redirected(event) {
 		if (window.innerHeight + document.getElementById("bodyalt").scrollTop >= document.getElementById("bodyalt").scrollHeight) { // if at bottom of bodyalt
 			if (customDeltaY > 0 || customDeltaX > 0) { // if going down or right
 				event.preventDefault();
-				document.getElementById("bodyalt").classList.add("--lock_scroll");
+				//document.getElementById("bodyalt").classList.add("--lock_scroll");
+				document.getElementById("cascade_wrapper").scrollIntoView(false);
 				document.getElementById("cascade_wrapper").scrollLeft += (customDeltaY + customDeltaX);
 			} else if (customDeltaY < 0 || customDeltaX < 0) { // if going up or left
 				if (document.getElementById("cascade_wrapper").scrollLeft <= 0) {
-					document.getElementById("bodyalt").classList.remove("--lock_scroll");
+					//document.getElementById("bodyalt").classList.remove("--lock_scroll");
 				} else if (document.getElementById("cascade_wrapper").scrollLeft > 0) {
 					document.getElementById("cascade_wrapper").scrollLeft += (customDeltaY + customDeltaX);
 				}  else {
-					document.getElementById("bodyalt").classList.remove("--lock_scroll");
+					//document.getElementById("bodyalt").classList.remove("--lock_scroll");
 				}
 			} else {
-				document.getElementById("bodyalt").classList.remove("--lock_scroll");
+				//document.getElementById("bodyalt").classList.remove("--lock_scroll");
 			}
 		} else {
-			document.getElementById("bodyalt").classList.remove("--lock_scroll");
+			//document.getElementById("bodyalt").classList.remove("--lock_scroll");
 		}
 	} else {
-		document.getElementById("bodyalt").classList.remove("--lock_scroll");
+		//document.getElementById("bodyalt").classList.remove("--lock_scroll");
 	}
 }
