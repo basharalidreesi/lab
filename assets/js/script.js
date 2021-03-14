@@ -1,3 +1,10 @@
+// begin
+// variables
+const jad = {
+	body: document.body;
+	bodyalt: document.getElementById("bodyalt");
+}
+
 console.log("Title: " + document.title);
 
 let vh = window.innerHeight * 0.01;
@@ -117,7 +124,7 @@ function redirected(event) {
 	}
 	if (window.innerWidth < document.getElementById("cascade_wrapper").scrollWidth) { // if cascade is overflowing
 		if (window.innerHeight + document.getElementById("bodyalt").scrollTop >= document.getElementById("bodyalt").scrollHeight) { // if at bottom of bodyalt
-			if(document.getElementById("cascade_wrapper").scrollLeft > 0 {
+			if(document.getElementById("cascade_wrapper").scrollLeft > 0) {
 				document.getElementById("cascade_wrapper").scrollIntoView(false);
 			}
 			if (customDeltaY > 0 || customDeltaX > 0) { // if going down or right
