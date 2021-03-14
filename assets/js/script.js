@@ -2,7 +2,8 @@
 // variables
 const jad = {
 	body: document.body,
-	bodyalt: document.getElementById("bodyalt")
+	bodyalt: document.getElementById("bodyalt"),
+	cascade: document.getElementById("cascade_wrapper")
 }
 
 console.log("Title: " + document.title);
@@ -124,9 +125,6 @@ function redirected(event) {
 	}
 	if (window.innerWidth < document.getElementById("cascade_wrapper").scrollWidth) { // if cascade is overflowing
 		if (window.innerHeight + document.getElementById("bodyalt").scrollTop >= document.getElementById("bodyalt").scrollHeight) { // if at bottom of bodyalt
-			if(document.getElementById("cascade_wrapper").scrollLeft > 0) {
-				document.getElementById("cascade_wrapper").scrollIntoView(false);
-			}
 			if (customDeltaY > 0 || customDeltaX > 0) { // if going down or right
 				event.preventDefault();
 				//document.getElementById("bodyalt").classList.add("--lock_scroll");
@@ -135,6 +133,7 @@ function redirected(event) {
 				if (document.getElementById("cascade_wrapper").scrollLeft <= 0) {
 					//document.getElementById("bodyalt").classList.remove("--lock_scroll");
 				} else if (document.getElementById("cascade_wrapper").scrollLeft > 0) {
+					event.preventDefault();
 					document.getElementById("cascade_wrapper").scrollLeft += (customDeltaY + customDeltaX);
 				}  else {
 					//document.getElementById("bodyalt").classList.remove("--lock_scroll");
