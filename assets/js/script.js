@@ -56,7 +56,7 @@
 			window.addEventListener("DOMContentLoaded", (event) => {
 				redirectWheel();
 				redirectTouch();
-			}
+			});
 		}
 		if (list) {
 			document.getElementById("tag").addEventListener("click", filter);
