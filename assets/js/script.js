@@ -59,13 +59,21 @@
 			});
 		}
 		if (list) {
-			document.getElementById("tag").addEventListener("click", filter);
-			document.getElementById("tag_close").addEventListener("click", (event) => {
-				event.stopPropagation();
-				unfilter();
+			window.addEventListener("DOMContentLoaded", () => {
+				document.getElementById("tag").addEventListener("click", filter);
+				document.getElementById("tag_close").addEventListener("click", (event) => {
+					event.stopPropagation();
+					unfilter();
+				});
 			});
 		}
 		if (central) {
+			window.addEventListener("DOMContentLoaded", (event) => {
+				document.getElementById("arrow_wrapper").addEventListener("click", (event) => {
+					toArrow(event);
+					unarrow();
+				});
+			});
 			window.addEventListener("load", () => {
 				if (!hasScrolled) {
 					arrow();
@@ -79,14 +87,11 @@
 					console.log("Dearrowed.");
 				}
 			});
-			window.addEventListener("DOMContentLoaded", (event) => {
-				document.getElementById("arrow_wrapper").addEventListener("click", (event) => {
-					toArrow(event);
-					unarrow();
-				});
-			});
 		}
 	}
+
+// begin
+// init
 
 	function initialise() {
 		checkUrl();
@@ -94,10 +99,7 @@
 		reticulateSplines();
 		initialListen();
 	}
-
-// begin
-// init
-
+	
 	initialise();
 
 // begin
