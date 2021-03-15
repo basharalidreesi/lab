@@ -50,7 +50,7 @@
 	function initialListen() {
 		window.addEventListener("load", header);
 		window.addEventListener("resize", () => {
-			debounce(updateVh, 500);
+			debounce(updateVh, 350);
 		});
 		if (cascade) {
 			window.addEventListener("DOMContentLoaded", (event) => {
