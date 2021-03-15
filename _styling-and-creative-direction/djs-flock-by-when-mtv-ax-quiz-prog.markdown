@@ -5,5 +5,6 @@ tags:
 - "\U0001F9C4 garlic"
 - "\U0001F951 avocado"
 position: 2
+layout: showcase
 ---
 

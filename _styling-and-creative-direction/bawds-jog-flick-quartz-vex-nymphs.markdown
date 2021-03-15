@@ -8,5 +8,6 @@ tags:
 - "\U0001F349 watermelon"
 - "\U0001F965 coconut"
 position: 4
+layout: contact
 ---
 
