@@ -21,19 +21,20 @@
 	//	}
 	}
 
-	let vh_pre = window.outerHeight;
-	function setVh(resize) {
+	function setVh() {
 		let vh = window.innerHeight * 0.01;
-		if (resize) {
-			let vh_post = window.outerHeight;
-			if (vh_post != vh_pre) {
-				vh_pre = vh_post;
-				document.documentElement.style.setProperty('--vh', `${vh}px`);
-				console.log("--vh set to " + `${vh}px` + ".");
-			}
-		} else {
+		document.documentElement.style.setProperty('--vh', `${vh}px`);
+		console.log("--vh set to " + `${vh}px` + ".");
+	}
+
+	let vh_pre = window.outerHeight;
+	function updateVh() {
+		let vh = window.innerHeight * 0.01;
+		let vh_post = window.outerHeight;
+		if (vh_post != vh_pre) {
+			vh_pre = vh_post;
 			document.documentElement.style.setProperty('--vh', `${vh}px`);
-			console.log("--vh set to " + `${vh}px` + ".");
+			console.log("--vh updated to " + `${vh}px` + ".");
 		}
 	}
 
@@ -49,7 +50,7 @@
 	function initialListen() {
 		window.addEventListener("load", header);
 		window.addEventListener("resize", () => {
-			debounce(setVh(true), 500);
+			debounce(updateVh, 500);
 		});
 		if (cascade) {
 			window.addEventListener("DOMContentLoaded", (event) => {
