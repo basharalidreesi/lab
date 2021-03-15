@@ -1255,4 +1255,20 @@ body {
 				height: calc(100% - var(--quadruple));
 				margin: calc(var(--double));
 			}
+
+		/*
+		┌───────┐
+		│ begin └──────────────────────┐
+		│ miscellaneous element styles │
+		└──────────────────────────────┘
+		*/
+			/*
+			┌───────┐
+			│ begin └┐
+			│ loader │
+			└────────┘
+			*/
+			.--loader_wrapper_upper {
+				top: calc(var(--header_height_half));
+			}
 }
