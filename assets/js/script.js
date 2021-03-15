@@ -102,6 +102,12 @@
 		setVh();
 		reticulateSplines();
 		initialListen();
+		console.log(
+			"Central: " + central + "\n" +
+			"Cascade: " + cascade + "\n" +
+			"List: " + list + "\n" +
+			"Black: " + black
+		);
 	}
 
 	initialise();
