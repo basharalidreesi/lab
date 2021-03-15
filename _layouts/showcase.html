@@ -11,14 +11,9 @@ layout: default
 					{%- assign tile_path = tile.path | remove: "assets/graphics/showcase_tiles/" | remove_first: "/" | remove: tile_name -%}
 					{%- if tile_path == page_path %}
 					<picture class="showcase_wrapper-showcase_tile">
-						<img src="{{- site.baseurl -}}{{- tile.path -}}">
+						<img class="--showcase_tile_graphic" src="{{- site.baseurl -}}{{- tile.path -}}" width="33%">
 					</picture>
 					{%- endif -%}
 				{%- endfor %}
 				</div>
-				<!--<div class="main_container-showcase_wrapper">
-					{%- for tile in showcase_tiles %}
-					<div class="showcase_wrapper-showcase_tile" style="background-image: url('{{- site.baseurl -}}{{- tile.path -}}')"></div>
-					{%- endfor %}
-				</div> -->
 				<!-- end showcase.html -->
