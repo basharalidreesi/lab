@@ -3,15 +3,19 @@ layout: default
 ---
 
 <!-- begin showcase.html -->
-				{%- assign showcase_tiles = site.static_files | where: "showcase_tile", true %}
+				{%- assign showcase_tiles = site.static_files | where: "showcase_tile", true -%}
+				{%- assign page = page.path | remove_first: "_" | remove: ".md" | remove: ".markdown" | remove: ".html" -%}
+				{%- for tile in showcase_tiles -%}
+					{%- assign tile_name = tile.name | prepend: "/" -%}
+					{%- assign tile_path = tile.path | remove: "assets/graphics/showcase_tiles/" | remove: tile_name -%}
+					{%- if tile_path == page %}
+				<script>
+					console.log("{{ tile.path }}");
+				</script>
+					{%- endif -%}
+				{%- endfor %}
 				<div class="main_container-showcase_wrapper">
-					<script>
-						console.log("{{ page.path }}");
-					</script>
 					{%- for tile in showcase_tiles %}
-					<script>
-						console.log("{{ tile.path }}");
-					</script>
 					<div class="showcase_wrapper-showcase_tile" style="background-image: url('{{- site.baseurl -}}{{- tile.path -}}')"></div>
 					{%- endfor %}
 				</div>
