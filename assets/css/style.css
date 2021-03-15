@@ -896,15 +896,21 @@ body {
 	│ loader │
 	└────────┘
 	*/
-	.--loader_wrapper {
+	.--loader_wrapper_central,
+	.--loader_wrapper_upper {
 		width: calc(var(--single) * 5);
 		height: calc(var(--half));
 		border: 1px solid var(--text_colour);
 		background-color: var(--secondary_colour);
 		position: absolute;
-		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+	}
+	.--loader_wrapper_central {
+		top: 50%;
+	}
+	.--loader_wrapper_upper {
+		top: calc(var(--header_height_half));
 	}
 	.--loader {
 		width: 87.5%;
