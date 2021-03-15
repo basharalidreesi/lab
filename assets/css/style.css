@@ -589,7 +589,7 @@ body {
 .header_wrapper-header_anchor img {
 	display: block;
 	margin: auto;
-	object-fit: cover;
+	object-fit: contain;
 }
 .header_wrapper-header_anchor svg {
 	display: block;
@@ -630,7 +630,7 @@ body {
 	.--showcase_tile_graphic {
 		height: 100%;
 		width: 100%;
-		object-fit: contain;
+		object-fit: cover;
 	}
 	/* .showcase_wrapper-showcase_tile a {
 		display: block;
