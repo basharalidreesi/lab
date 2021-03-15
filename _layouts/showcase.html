@@ -5,15 +5,14 @@ layout: default
 <!-- begin showcase.html -->
 				{%- assign showcase_tiles = site.static_files | where: "showcase_tile", true -%}
 				{%- assign page_path = page.path | remove_first: "_" | remove: ".md" | remove: ".markdown" | remove: ".html" -%}
-				<script>
-					console.log("{{ page_path }}");
-				</script>
 				{%- for tile in showcase_tiles -%}
 					{%- assign tile_name = tile.name | prepend: "/" -%}
-					{%- assign tile_path = tile.path | remove: "assets/graphics/showcase_tiles/" | remove: tile_name %}
+					{%- assign tile_path = tile.path | remove: "assets/graphics/showcase_tiles/" | remove: tile_name | prepend: "/" -%}
+					{%- if page_path == tile_path %}
 				<script>
 					console.log("{{ tile_path }}");
 				</script>
+					{%- endif -%}
 				{%- endfor %}
 				<div class="main_container-showcase_wrapper">
 					{%- for tile in showcase_tiles %}
