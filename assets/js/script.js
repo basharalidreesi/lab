@@ -220,7 +220,7 @@
 					}
 				}
 			}
-		}), {passive:false});
+		}, {passive:false});
 	}
 
 	function redirectTouch(event) {
