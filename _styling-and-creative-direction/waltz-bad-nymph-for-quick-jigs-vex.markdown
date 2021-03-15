@@ -6,5 +6,6 @@ tags:
 - "\U0001F34F green apple"
 - "\U0001F349 watermelon"
 position: 5
+layout: default
 ---
 
