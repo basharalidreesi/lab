@@ -24,21 +24,20 @@
 	let vh_pre = window.outerHeight;
 	function setVh(resize) {
 		let vh = window.innerHeight * 0.01;
-		if (!resize) {
-			document.documentElement.style.setProperty('--vh', `${vh}px`);
-			console.log("--vh set to " + `${vh}px` + ".");
-		} else {
+		if (resize) {
 			let vh_post = window.outerHeight;
 			if (vh_post != vh_pre) {
 				vh_pre = vh_post;
 				document.documentElement.style.setProperty('--vh', `${vh}px`);
 				console.log("--vh set to " + `${vh}px` + ".");
 			}
+		} else {
+			document.documentElement.style.setProperty('--vh', `${vh}px`);
+			console.log("--vh set to " + `${vh}px` + ".");
 		}
 	}
 
 	function reticulateSplines() {
-		console.log("For: " + document.title);
 		window.addEventListener("DOMContentLoaded", () => {
 			console.log("Reticulated...");
 		});
@@ -102,6 +101,7 @@
 		setVh();
 		reticulateSplines();
 		initialListen();
+		console.log(document.title);
 		console.log(
 			"Central: " + central + "\n" +
 			"Cascade: " + cascade + "\n" +
