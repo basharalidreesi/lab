@@ -3,6 +3,19 @@ layout: default
 ---
 
 <!-- begin list.html -->
+				{%- assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" -%}
+				{%- for branch in tree -%}
+					{%- assign segment = page.path | split: branch -%}
+					{%- assign current = branch | prepend: segment[0] | append: ".markdown" -%}
+					{%- assign deepness = forloop.index -%}
+					{%- assign last = forloop.last -%}
+					console.log(
+						{{ deepness }} + ": " + {{ branch }} + "\n" +
+						{{ deepness }} + ": " + {{ segment }} + "\n" +
+						{{ deepness }} + ": " + {{ current }} + "\n" +
+						{{ deepness }} + ": " + {{ last }} + "\n" +
+					);
+				{%- endfor -%}
 				{%- comment -%}
 					partially from https://mmistakes.github.io/minimal-mistakes/docs/layouts/
 					and https://github.com/mmistakes/minimal-mistakes/blob/master/docs/_pages/collection-archive.html
