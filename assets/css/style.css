@@ -910,7 +910,7 @@ body {
 		top: 50%;
 	}
 	.--loader_wrapper_upper {
-		top: calc(var(--header_height));
+		top: calc(var(--nav_height) + var(--header_height_half));
 	}
 	.--loader {
 		width: 87.5%;
