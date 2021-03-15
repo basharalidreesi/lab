@@ -60,11 +60,15 @@
 		}
 		if (list) {
 			window.addEventListener("DOMContentLoaded", () => {
-				document.getElementById("tag").addEventListener("click", filter);
-				document.getElementById("tag_close").addEventListener("click", (event) => {
-					event.stopPropagation();
-					unfilter();
-				});
+				const tags = document.getElementsByClassName("list_page_item_tag_list-list_page_item_tag");
+				const untags = document.getElementsByClassName("list_page_item_tag-tag_unfilter");
+				for (let i = 0; i < tags.length; i++) {
+					tags[i].addEventListener("click", filter);
+					untags[i].addEventListener("click", (event) => {
+						event.stopPropagation();
+						unfilter();
+					});
+				}
 			});
 		}
 		if (central) {
@@ -99,7 +103,7 @@
 		reticulateSplines();
 		initialListen();
 	}
-	
+
 	initialise();
 
 // begin
