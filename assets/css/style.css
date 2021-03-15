@@ -589,7 +589,7 @@ body {
 .header_wrapper-header_anchor img {
 	display: block;
 	margin: auto;
-	object-fit: contain;
+	object-fit: cover;
 }
 .header_wrapper-header_anchor svg {
 	display: block;
