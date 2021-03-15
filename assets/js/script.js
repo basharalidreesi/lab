@@ -136,9 +136,11 @@
 		}
 		document.getElementById("loader").style.animation = "none";
 		document.getElementById("loader").style.width = "100%";
-		setTimeout(() => { document.getElementById("loader_wrapper").style.display = "none"; });
-		setTimeout(() => { document.getElementById("loader_wrapper").remove(); });
-		setTimeout(() => { header_container.style.opacity = "1"; }, 250);
+		setTimeout(() => {
+			document.getElementById("loader_wrapper").style.display = "none";
+			document.getElementById("loader_wrapper").remove();
+			header_container.style.opacity = "1";
+		}, 250);
 		if (central) {
 			// https://stackoverflow.com/questions/16302483/event-to-detect-when-positionsticky-is-triggered
 			const observer = new IntersectionObserver(
