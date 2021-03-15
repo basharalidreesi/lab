@@ -1,21 +1,29 @@
-console.log("Title: " + document.title);
+// begin
+// general purpose functions
 
-let vh = window.innerHeight * 0.01;
-document.documentElement.style.setProperty('--vh', `${vh}px`);
-console.log("--vh set to " + `${vh}px` + ".");
-
+let t;
 function debounce(fn, delay) {
-	let t;
 	clearTimeout(t);
 	t = setTimeout(fn, delay);
 }
-window.addEventListener("click", function() {
-	debounce(() => { console.log("Debounce"); }, 1000);
-});
-window.addEventListener("click", function() {
-	setTimeout(() => { console.log("Timeout"); }, 1000);
-});
 
+function listen(event, fn, object) {
+	if (object === undefined) {
+		object = window;
+	}
+	object.addEventListener(event, fn);
+}
+
+//
+function setVh() {
+	let vh = window.innerHeight * 0.01;
+	document.documentElement.style.setProperty('--vh', `${vh}px`);
+	console.log("--vh set to " + `${vh}px` + ".");
+}
+
+//first things first
+setVh();
+console.log("Title: " + document.title);
 
 var oldheight = window.outerHeight;
 function vhed() { // todo: increment vh
