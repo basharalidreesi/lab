@@ -235,11 +235,11 @@
 		}, {passive:false});
 	}
 
+	let redirectTouchX;
+	let redirectTouchY;
 	function redirectTouch(event) {
 		let touchX;
 		let touchY;
-		let redirectTouchX;
-		let redirectTouchY;
 		window.addEventListener("touchstart", (event) => {
 			touchX = event.touches[0].clientX;
 			touchY = event.touches[0].clientY;
