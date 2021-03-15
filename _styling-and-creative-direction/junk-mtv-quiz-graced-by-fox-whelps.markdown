@@ -5,5 +5,6 @@ tags:
 - "\U0001FAD2 olive"
 - "\U0001F351 peach"
 position: 3
+layout: list
 ---
 
