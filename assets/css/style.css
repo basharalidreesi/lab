@@ -622,18 +622,21 @@ body {
 	.showcase_wrapper-showcase_tile {
 		flex: 0 0 33.33333333333333333333vw;
 		height: 33.33333333333333333333vw;
-		background-repeat: no-repeat;
-		background-size: cover;
 		user-select: none;
 		-ms-user-select: none;
 		-moz-user-select: none;
 		-webkit-user-select: none;
 	}
-	.showcase_wrapper-showcase_tile a {
+	.--showcase_tile_graphic {
+		height: 100%;
+		width: 100%;
+		object-fit: contain;
+	}
+	/* .showcase_wrapper-showcase_tile a {
 		display: block;
 		height: 100%;
 		width: 100%;
-	}
+	} */
 	/*
 	┌───────┐
 	│ begin └─────┐
