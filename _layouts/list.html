@@ -11,10 +11,10 @@ layout: default
 					{%- assign deepness = forloop.index -%}
 					{%- assign last = forloop.last %}
 					console.log(
-						{{ deepness }} + ": " + {{ branch }} + "\n" +
-						{{ deepness }} + ": " + {{ segment }} + "\n" +
-						{{ deepness }} + ": " + {{ current }} + "\n" +
-						{{ deepness }} + ": " + {{ last }} + "\n" +
+						"{{ deepness }}" + ": " + "{{ branch }}" + "\n" +
+						"{{ deepness }}" + ": " + "{{ segment }}" + "\n" +
+						"{{ deepness }}" + ": " + "{{ current }}" + "\n" +
+						"{{ deepness }}" + ": " + "{{ last }}" + "\n"
 					);
 				{%- endfor %}
 				</script>
