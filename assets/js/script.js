@@ -13,12 +13,11 @@
 // general purpose functions
 
 	function checkUrl(redirect) {
-	//	let url = window.location.href;
-	//	let trailing_slash = url.endsWith("/");
-	//	if (window.location.pathname != "/" && trailing_slash == true) {
-	//		let new_url = url.slice(0, -1);
-	//		window.location.replace(new_url);
-	//	}
+		let unchecked_url = window.location.href;
+		let checked_url = unchecked_url.replace(/^(.+?)\/*?$/, "$1");
+		if (checked_url !== unchecked_url && !home) {
+			window.location.replace(checked_url);
+		}
 	}
 
 	function setVh() {
