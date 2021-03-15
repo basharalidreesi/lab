@@ -1,5 +1,4 @@
-//
-//
+"use strict";
 
 // begin
 // global purpose functions
