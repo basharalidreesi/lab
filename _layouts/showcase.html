@@ -4,19 +4,21 @@ layout: default
 
 <!-- begin showcase.html -->
 				{%- assign showcase_tiles = site.static_files | where: "showcase_tile", true -%}
-				{%- assign page_path = page.path | replace: "index.md", "home" | replace: "index.markdown", "home" | replace: "index.html", "home" | remove_first: "_" | remove: ".md" | remove: ".markdown" | remove: ".html" -%}
+				{%- assign page_path = page.path | replace: "index.md", "home" | replace: "index.markdown", "home" | replace: "index.html", "home" | remove_first: "_" | remove: ".md" | remove: ".markdown" | remove: ".html" %}
+				<div class="main_container-showcase_wrapper">
 				{%- for tile in showcase_tiles -%}
 					{%- assign tile_name = tile.name | prepend: "/" -%}
 					{%- assign tile_path = tile.path | remove: "assets/graphics/showcase_tiles/" | remove_first: "/" | remove: tile_name -%}
 					{%- if tile_path == page_path %}
-				<script>
-					console.log("{{ tile.path }}");
-				</script>
+					<picture class="showcase_wrapper-showcase_tile">
+						<img src="{{- site.baseurl -}}{{- tile.path -}}">
+					</picture>
 					{%- endif -%}
 				{%- endfor %}
-				<div class="main_container-showcase_wrapper">
+				</div>
+				<!--<div class="main_container-showcase_wrapper">
 					{%- for tile in showcase_tiles %}
 					<div class="showcase_wrapper-showcase_tile" style="background-image: url('{{- site.baseurl -}}{{- tile.path -}}')"></div>
 					{%- endfor %}
-				</div>
+				</div> -->
 				<!-- end showcase.html -->
