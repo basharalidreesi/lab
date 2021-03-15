@@ -134,8 +134,8 @@
 		} else {
 			console.log("SVG header injection unnecessary.");
 		}
-		document.getElementById("loader_wrapper").style.display = "none";
-		document.getElementById("loader_wrapper").remove();
+		//document.getElementById("loader_wrapper").style.display = "none";
+		//document.getElementById("loader_wrapper").remove()
 		setTimeout(() => { header_container.style.opacity = "1"; }, 250);
 		if (central) {
 			// https://stackoverflow.com/questions/16302483/event-to-detect-when-positionsticky-is-triggered
