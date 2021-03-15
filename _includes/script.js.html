@@ -3,108 +3,30 @@
 		<script>
 			{%- assign header_graphics = site.static_files | where: "header_graphic", true -%}
 			{%- assign text_colour = page.text_colour | strip_newlines | strip %}
-			window.addEventListener("load", headered);
 			{%- if page.header_location == "central" %}
-			window.addEventListener("load", (event) => {
-				if (hasScrolled === false) {
-					arrowed();
-					document.getElementById("bodyalt").addEventListener("scroll", unarrowed, {passive:true});
-				} else {
-					document.getElementById("arrow_wrapper").remove();
-					console.log("Dearrowed.");
-				}
-			});
-			window.addEventListener("DOMContentLoaded", (event) => {
-				document.getElementById("arrow_wrapper").addEventListener("click", (event2) => {
-					toArrow(event2);
-					unarrowed();
-				});
-			});
+			let central = true;
+			{%- else %}
+			let central = false;
 			{%- endif -%}
 			{%- if page.layout == "cascade" %}
-			var touchX = 0;
-			var touchY = 0;
-			var redirectX = 0;
-			var redirectY = 0;
-			window.addEventListener("DOMContentLoaded", (event) => {
-				window.addEventListener("touchstart", (event2) => {
-					touchX = event2.touches[0].clientX;
-					touchY = event2.touches[0].clientY;
-				}, {passive: true});
-				window.addEventListener("touchmove", (event3) => {
-					if (window.innerHeight + document.getElementById("bodyalt").scrollTop >= document.getElementById("bodyalt").scrollHeight) { // if bottom of bodyalt
-						redirectX = event3.changedTouches[0].clientX - touchX;
-						redirectY = event3.changedTouches[0].clientY - touchY;
-						if (Math.abs(redirectY) > Math.abs(redirectX)) { // if going up or down
-							if (document.getElementById("cascade_wrapper").scrollLeft <= 0 && redirectY > 0) { // if going up and cascade is at its beginning
-								//document.getElementById("bodyalt").classList.remove("--lock_scroll");
-							} else {
-								event3.preventDefault();
-								let wheel = new Event("wheel");
-								window.dispatchEvent(wheel);
-							}
-						}
-					}
-				}, {passive: false});
-				window.addEventListener("touchend", (event4) => {
-					console.log(redirectX + ", " + redirectY);
-				}, {passive: true});
-				window.addEventListener("orientationchange", (event5) => { // a bit buggy
-					//document.getElementById("cascade_wrapper").scrollIntoView(true);
-					//document.getElementById("bodyalt").classList.remove("--lock_scroll");
-				});
-				window.addEventListener("resize", (event6) => {
-					debounce(() => {
-						if (window.innerHeight + document.getElementById("bodyalt").scrollTop > document.getElementById("bodyalt").scrollHeight) {
-							//document.getElementById("cascade_wrapper").scrollIntoView(true);
-							//document.getElementById("bodyalt").classList.remove("--lock_scroll");
-						}
-						vhed();
-					}, 250);
-				});
-				window.addEventListener("wheel", redirected, {passive:false});
-				document.getElementById("nav_map_wrapper").addEventListener("click", (event5) => {
-					//document.getElementById("bodyalt").classList.remove("--lock_scroll");
-				});
-			});
+			let cascade = true;
 			{%- else %}
-			window.addEventListener("resize", (event) => {
-				debounce(vhed, 250);
-			});
+			let cascade = false;
 			{%- endif %}
-			function headered() {
-				const header_container = document.getElementById("header_container");
-				const header_graphic = document.getElementById("header_graphic");
-				random_header_graphic_array = new Array(
-					{%- for header_graphic in header_graphics %}
-					"{{- site.baseurl -}}{{- header_graphic.path -}}"{%- unless forloop.last -%}, {%- endunless -%}
-					{%- endfor %}
-				);
-				var header_graphic_number = random_header_graphic_array.length;
-				x = (Math.floor(Math.random() * header_graphic_number));
-				random_header_graphic = (random_header_graphic_array[x]);
-				header_graphic.src = random_header_graphic;
-					console.log("Headered " + random_header_graphic + " from a total number of " + header_graphic_number + " header graphics.");
-				{%- unless text_colour == "#000" or text_colour == "#000000" or text_colour == "black" %}
-				var extension = random_header_graphic.split(".").pop();
-				if (extension == "svg") {
-					SVGInject(header_graphic);
-					console.log("SVG header injected.");
-				} else {
-					console.log("No SVG header detected. Injection has not occured.");
-				}
-				{%- else %}
-					console.log("SVG header injection unnecessary.");
-				{%- endunless %}
-				setTimeout(() => { header_container.style.opacity = "1"; }, 250);
-				{%- if page.header_location == "central" %}
-				// https://stackoverflow.com/questions/16302483/event-to-detect-when-positionsticky-is-triggered
-				const observer = new IntersectionObserver(
-				([e]) => e.target.children[0].classList.toggle("--sticky_header", e.intersectionRatio < 1),
-					{threshold: [1]}
-				);
-				observer.observe(header_container);
-	       			{%- endif %}
-			}
+			{%- if page.layout == "list" %}
+			let list = true;
+			{%- else %}
+			let list = false;
+			{%- endif %}
+			{%- if text_colour == "#000" or text_colour == "#000000" or text_colour == "black" %}
+			let black = true;
+			{%- else %}
+			let black = false;
+			{%- endif %}
+			let headers = new Array(
+				{%- for header_graphic in header_graphics %}
+				"{{- site.baseurl -}}{{- header_graphic.path -}}"{%- unless forloop.last -%}, {%- endunless -%}
+				{%- endfor %}
+			);
 		</script>
 		<!-- end script.js.html -->
