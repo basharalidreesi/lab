@@ -134,6 +134,8 @@
 		} else {
 			console.log("SVG header injection unnecessary.");
 		}
+		document.getElementById("loader_wrapper").style.display = "none";
+		document.getElementById("loader_wrapper").remove();
 		setTimeout(() => { header_container.style.opacity = "1"; }, 250);
 		if (central) {
 			// https://stackoverflow.com/questions/16302483/event-to-detect-when-positionsticky-is-triggered
@@ -152,8 +154,8 @@
 	function unarrow() {
 		document.getElementById("arrow_wrapper").style.opacity = "0";
 		console.log("Arrow hid.");
-		setTimeout(() => { document.getElementById("arrow_wrapper").remove() }, 1250);
-		setTimeout(() => { console.log("Unarrowed.") }, 1250);
+		setTimeout(() => { document.getElementById("arrow_wrapper").remove(); }, 1250);
+		setTimeout(() => { console.log("Unarrowed."); }, 1250);
 		if (cascade) {
 			document.getElementById("bodyalt").removeEventListener("scroll", unarrow, {passive: true});
 		} else {
