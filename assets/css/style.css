@@ -624,6 +624,10 @@ body {
 		height: 100%;
 		font-size: 0;
 	}
+	.showcase_wrapper-showcase_title {
+		width: 100%;
+		padding: calc(var(--single));
+	}
 	.showcase_wrapper-showcase_tile {
 		flex: 0 0 33.33333333333333333333vw;
 		height: 33.33333333333333333333vw;
