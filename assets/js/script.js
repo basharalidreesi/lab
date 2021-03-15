@@ -61,8 +61,8 @@
 		}
 		if (list) {
 			window.addEventListener("DOMContentLoaded", () => {
-				const tags = document.getElementsByClassName("list_page_item_tag_list-list_page_item_tag");
-				const untags = document.getElementsByClassName("list_page_item_tag-tag_unfilter");
+				const tags = document.getElementsByClassName("tag_list_wrapper-tag_list_item");
+				const untags = document.getElementsByClassName("--tag_unfilter");
 				for (let i = 0; i < tags.length; i++) {
 					tags[i].addEventListener("click", filter);
 					untags[i].addEventListener("click", (event) => {
@@ -175,8 +175,8 @@
 	function filter(event) {
 		var tag = event.target;
 		var tag_content = tag.textContent;
-		var list_items = document.getElementsByClassName("list_page_item-list_page_item_tag_list");
-		var all_tags = document.getElementsByClassName("list_page_item_tag_list-list_page_item_tag");
+		var list_items = document.getElementsByClassName("list_item-tag_list_wrapper");
+		var all_tags = document.getElementsByClassName("tag_list_wrapper-tag_list_item");
 		for (var i = 0, length = list_items.length; i < length; i++) {
 			if (list_items[i].textContent.indexOf(tag_content) != -1) {
 				list_items[i].parentElement.classList.add("--highlighted_list_item");
@@ -197,8 +197,8 @@
 		console.log("Filtered " + tag_content.trim() + ".");
 	}
 	function unfilter() {
-		var list_items = document.getElementsByClassName("list_page_item-list_page_item_tag_list");
-		var all_tags = document.getElementsByClassName("list_page_item_tag_list-list_page_item_tag");
+		var list_items = document.getElementsByClassName("list_item-tag_list_wrapper");
+		var all_tags = document.getElementsByClassName("tag_list_wrapper-tag_list_item");
 		for (var i = 0, length = list_items.length; i < length; i++) {
 			list_items[i].parentElement.classList.remove("--highlighted_list_item");
 		}
