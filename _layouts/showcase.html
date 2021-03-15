@@ -10,7 +10,7 @@ layout: default
 				</script>
 				{%- for tile in showcase_tiles -%}
 					{%- assign tile_name = tile.name | prepend: "/" -%}
-					{%- assign tile_path = tile.path | remove: "assets/graphics/showcase_tiles/" | remove: tile_name | prepend: "/" %}
+					{%- assign tile_path = tile.path | remove: "assets/graphics/showcase_tiles/" | remove_first: "/" | remove: tile_name %}
 				<script>
 					console.log("{{ tile_path }}");
 				</script>
