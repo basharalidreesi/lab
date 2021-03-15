@@ -238,7 +238,8 @@ address {
 		color: var(--text_colour);
 		text-align: center;
 	}
-	.--title_card_text_styling {
+	.--title_card_text_styling,
+	.--showcase_title_styling {
 		font-family: var(--title_card_text_font);
 		font-size: var(--title_card_text_font_size);
 		font-weight: var(--title_card_text_font_weight);
@@ -255,16 +256,20 @@ address {
 		overflow: hidden;
 	}
 	.--title_card_text_styling::before,
-	.--title_card_text_styling::after {
+	.--title_card_text_styling::after,
+	.--showcase_title_styling::before,
+	.--showcase_title_styling::after {
 		content: "";
 		display: block;
 		height: 0;
 		width: 0;
 	}
-	.--title_card_text_styling::before {
+	.--title_card_text_styling::before,
+	.--showcase_title_styling::before {
 		margin-top: 5px;
 	}
-	.--title_card_text_styling::after {
+	.--title_card_text_styling::after,
+	.--showcase_title_styling::after {
 		margin-bottom: -5px;
 	}
 	.--footer_card_text_styling {
