@@ -679,7 +679,7 @@ body {
 	.showcase_wrapper-showcase_header {
 		width: 100%;
 		padding: calc(var(--double));
-		padding-top: calc(var(--single));
+		border-top: 1px solid var(--border_colour);
 	}
 	.showcase_wrapper-article_wrapper {
 		display: flex;
@@ -1319,7 +1319,7 @@ body {
 		└─────────────────┘
 		*/
 		.showcase_wrapper-showcase_header {
-			padding-top: calc(var(--double));
+			border-top: none;
 		}
 		/*
 		┌───────┐
