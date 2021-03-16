@@ -14,3 +14,29 @@ layout: showcase
 {% include lipsum.html %}
 
 [The big brown fox jumps over the lazy dog](http://google.com)
+
+* One
+* Two
+* Three
+* Four
+
+1. One
+2. Two
+3. Three
+4. Four
+
+**{% include lipsum.html %}**
+
+# {% include lipsum.html %}
+
+## {% include lipsum.html %}
+
+### {% include lipsum.html %}
+
+`{% include lipsum.html %}`
+
+*{% include lipsum.html %}*
+
+> {% include lipsum.html %}
+
+![Screen Shot 2021-03-16 at 20.55.05.png](/uploads/Screen%20Shot%202021-03-16%20at%2020.55.05.png)
