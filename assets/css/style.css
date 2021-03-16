@@ -654,9 +654,7 @@ body {
 	.showcase_wrapper-showcase_title {
 		width: 100%;
 		padding-top: calc(var(--quadruple));
-		padding-left: calc(var(--double));
 		padding-bottom: calc(var(--quadruple));
-		padding-right: calc(var(--double));
 	}
 	.showcase_wrapper-showcase_tile {
 		flex: 0 0 33.33333333333333333333vw;
@@ -672,8 +670,7 @@ body {
 		align-items: center;
 		justify-content: center;
 		width: 100%;
-		padding: calc(var(--quadruple));
-		padding-top: 0;
+		padding-bottom: calc(var(--quadruple));
 	}
 	.--showcase_tile_graphic {
 		height: 100%;
