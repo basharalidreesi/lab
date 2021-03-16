@@ -673,7 +673,7 @@ body {
 		align-items: center;
 		justify-content: center;
 		width: 100%;
-		padding: calc(var(--double));
+		padding: calc(var(--quadruple));
 		padding-top: 0;
 	}
 	.--showcase_tile_graphic {
