@@ -7,8 +7,8 @@ layout: default
 				{%- assign page_path = page.path | replace: "index.md", "home" | replace: "index.markdown", "home" | replace: "index.html", "home" | remove_first: "_" | remove: ".md" | remove: ".markdown" | remove: ".html" %}
 				<div class="main_container-showcase_wrapper">
 					{%- unless page.url == "/" %}
-					<header class="showcase_wrapper-showcase_title">
-						<h1 class="--showcase_title_styling">
+					<header class="showcase_wrapper-showcase_header">
+						<h1 class="--header_text_styling">
 							{{ page.title }}
 						</h1>
 					</header>
@@ -19,15 +19,17 @@ layout: default
 					</article>
 					{%- endif %}
 					<div class="showcase_wrapper-tile_wrapper">
+					{%- if showcase_tiles %}
 				{%- for tile in showcase_tiles -%}
 					{%- assign tile_name = tile.name | prepend: "/" -%}
 					{%- assign tile_path = tile.path | remove: "assets/graphics/showcase_tiles/" | remove_first: "/" | remove: tile_name -%}
 					{%- if tile_path == page_path %}
-					<picture class="showcase_wrapper-showcase_tile">
-						<img class="--showcase_tile_graphic" src="{{- site.baseurl -}}{{- tile.path -}}" alt="{{ tile.basename }}" width="33%">
-					</picture>
+						<picture class="showcase_wrapper-showcase_tile">
+							<img class="--showcase_tile" src="{{- site.baseurl -}}{{- tile.path -}}" alt="{{ tile.basename }}" width="33%">
+						</picture>
 					{%- endif -%}
 				{%- endfor %}
 					</div>
+					{%- endif -%}
 				</div>
 				<!-- end showcase.html -->
