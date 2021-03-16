@@ -7,7 +7,7 @@ layout: default
 				{%- assign page_path = page.path | replace: "index.md", "home" | replace: "index.markdown", "home" | replace: "index.html", "home" | remove_first: "_" | remove: ".md" | remove: ".markdown" | remove: ".html" %}
 				<div class="main_container-showcase_wrapper">
 					{%- unless page.url == "/" %}
-					<header class="showcase_wrapper-showcase_title">
+					<header class="showcase_wrapper-showcase_title {% if content -%} --with_content {%- endif -%}">
 						<h1 class="--showcase_title_styling">
 							{{ page.title }}
 						</h1>
