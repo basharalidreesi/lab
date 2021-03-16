@@ -657,7 +657,7 @@ body {
 		padding-bottom: calc(var(--quadruple));
 	}
 	.showcase_wrapper-showcase_title.--with_content {
-		padding-bottom: calc(var(--double));
+		/* padding-bottom: calc(var(--double)); */
 	}
 	.showcase_wrapper-showcase_tile {
 		flex: 0 0 33.33333333333333333333vw;
