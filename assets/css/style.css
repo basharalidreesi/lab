@@ -629,6 +629,9 @@ body {
 		padding-top: calc(var(--screen_height_half) - var(--nav_height) - var(--header_height) - 2rem); /* temp */
 		padding-bottom: calc(var(--screen_height_half) - 2rem); /* temp */
 	}
+	.showcase_wrapper-showcase_title.--with_content {
+		padding-bottom: calc(var(--double));
+	}
 	.showcase_wrapper-showcase_tile {
 		flex: 0 0 33.33333333333333333333vw;
 		height: 33.33333333333333333333vw;
