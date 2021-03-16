@@ -113,7 +113,7 @@
 	└──────────────┘
 	*/
 	--article_text_font: "M+ 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-	--article_text_font_size: 1.25rem;
+	--article_text_font_size: 1rem;
 	--article_text_font_weight: 400;
 	/*
 	┌───────┐
@@ -337,7 +337,7 @@ address {
 		-ms-hyphens: auto;
 		-webkit-hyphens: auto;
 		word-break: break-word;
-		line-height: 200%;
+		line-height: 210%;
 		overflow: hidden;
 	}
 	p + p {
