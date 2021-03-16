@@ -305,14 +305,18 @@ address {
 		text-align: justify;
 		text-justify: inter-word;
 		text-indent: calc(var(--quadruple));
+		hyphens: auto;
+		-ms-hyphens: auto;
+		-webkit-hyphens: auto;
+		word-break: break-word;
 		line-height: 200%;
 		overflow: hidden;
 	}
-	.--article_text_styling p + .--article_text_styling p {
-		padding-top: calc(var(--double));
-	}
 	p + p {
 		padding-top: calc(var(--single));
+	}
+	.--article_text_styling p + .--article_text_styling p {
+		padding-top: calc(var(--double));
 	}
 	p:first-of-type:not(:only-of-type) {
 		/* padding-top: calc(var(--single)); */
