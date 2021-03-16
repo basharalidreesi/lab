@@ -1290,8 +1290,8 @@ body {
 			*/
 			.showcase_wrapper-showcase_title,
 			.showcase_wrapper-article_wrapper {
-				padding-left: calc(var(--single));
-				padding-right: calc(var(--single));
+				padding-left: calc(var(--double));
+				padding-right: calc(var(--double));
 			}
 			/*
 			┌───────┐
