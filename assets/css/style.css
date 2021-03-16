@@ -289,8 +289,7 @@ address {
 		text-align: center;
 		line-height: 200%;
 	}
-	.--text_card_text_styling,
-	.showcase_wrapper-article_wrapper p {
+	.--text_card_text_styling {
 		font-family: var(--text_card_text_font);
 		font-size: var(--text_card_text_font_size);
 		font-weight: var(--text_card_text_font_size);
@@ -298,7 +297,7 @@ address {
 		text-align: center;
 		line-height: 200%;
 	}
-	.--article_text_styling {
+	.--article_text_styling p {
 		font-family: var(--article_text_font);
 		font-size: var(--article_text_font_size);
 		font-weight: var(--article_text_font_weight);
@@ -366,7 +365,7 @@ address {
 	.--text_card_text_styling a,
 	.--footer_card_text_styling a,
 	.--title_card_text_styling a,
-	.showcase_wrapper-article_wrapper a {
+	.--article_text_styling a {
 		font-family: inherit;
 		font-size: inherit;
 		font-weight: inherit;
@@ -994,7 +993,7 @@ body {
 	.--text_card_text_styling a:hover,
 	.--footer_card_text_styling a:hover,
 	.--title_card_text_styling a:hover,
-	.showcase_wrapper-article_wrapper a:hover  {
+	.--article_text_styling a:hover  {
 		background-color: var(--secondary_colour);
 		color: var(--text_colour);
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
