@@ -5,7 +5,12 @@ tags:
 - "\U0001F9C4 garlic"
 - "\U0001F951 avocado"
 position: 2
+clickable_tiles:
+  '1': http://google.com
+  '2': http://google.com
 layout: showcase
 ---
 
 {% include lipsum.html %}
+
+[The big brown fox jumps over the lazy dog](http://google.com)
