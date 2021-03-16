@@ -679,6 +679,7 @@ body {
 	.showcase_wrapper-showcase_header {
 		width: 100%;
 		padding: calc(var(--double));
+		padding-top: calc(var(--single));
 	}
 	.showcase_wrapper-article_wrapper {
 		display: flex;
