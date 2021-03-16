@@ -1306,53 +1306,62 @@ body {
 			content: "\2191";
 		}
 
+	/*
+	┌───────┐
+	│ begin └─────────────────┐
+	│ layout (content) styles │
+	└─────────────────────────┘
+	*/
 		/*
 		┌───────┐
-		│ begin └─────────────────┐
-		│ layout (content) styles │
-		└─────────────────────────┘
+		│ begin └─────────┐
+		│ showcase styles │
+		└─────────────────┘
 		*/
-			/*
-			┌───────┐
-			│ begin └─────┐
-			│ list styles │
-			└─────────────┘
-			*/
-			.list_wrapper-list_item:first-child {
-				border-top: none;
-			}
-			.list_item-tag_list_wrapper {
-				padding-top: calc(var(--double));
-			}
-			/*
-			┌───────┐
-			│ begin └────────┐
-			│ cascade styles │
-			└────────────────┘
-			*/
-			.cascade_wrapper-anchored_graphic_card_central {
-				height: calc(100% - var(--double));
-				margin: calc(var(--double));
-				margin-top: 0;
-			}
-			.cascade_wrapper-anchored_graphic_card_upper {
-				height: calc(100% - var(--quadruple));
-				margin: calc(var(--double));
-			}
+		.showcase_wrapper-showcase_header {
+			padding-top: calc(var(--double));
+		}
+		/*
+		┌───────┐
+		│ begin └─────┐
+		│ list styles │
+		└─────────────┘
+		*/
+		.list_wrapper-list_item:first-child {
+			border-top: none;
+		}
+		.list_item-tag_list_wrapper {
+			padding-top: calc(var(--double));
+		}
+		/*
+		┌───────┐
+		│ begin └────────┐
+		│ cascade styles │
+		└────────────────┘
+		*/
+		.cascade_wrapper-anchored_graphic_card_central {
+			height: calc(100% - var(--double));
+			margin: calc(var(--double));
+			margin-top: 0;
+		}
+		.cascade_wrapper-anchored_graphic_card_upper {
+			height: calc(100% - var(--quadruple));
+			margin: calc(var(--double));
+		}
 
+	/*
+	┌───────┐
+	│ begin └──────────────────────┐
+	│ miscellaneous element styles │
+	└──────────────────────────────┘
+	*/
 		/*
 		┌───────┐
-		│ begin └──────────────────────┐
-		│ miscellaneous element styles │
-		└──────────────────────────────┘
+		│ begin └┐
+		│ loader │
+		└────────┘
 		*/
-			/*
-			┌───────┐
-			│ begin └┐
-			│ loader │
-			└────────┘
-			*/
-			.--loader_wrapper_upper {
-				top: calc(var(--header_height_half));
-			}
+		.--loader_wrapper_upper {
+			top: calc(var(--header_height_half));
+		}
 }
