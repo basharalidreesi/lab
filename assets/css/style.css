@@ -99,6 +99,15 @@
 	--text_card_text_font_weight: 400;
 	/*
 	┌───────┐
+	│ begin └──────┐
+	│ article text │
+	└──────────────┘
+	*/
+	--article_text_font: "M+ 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	--article_text_font_size: 1.25rem;
+	--article_text_font_weight: 400;
+	/*
+	┌───────┐
 	│ begin └─┐
 	│ presets │
 	└─────────┘
@@ -289,14 +298,28 @@ address {
 		text-align: center;
 		line-height: 200%;
 	}
+	.--article_text_styling {
+		font-family: var(--article_text_font);
+		font-size: var(--article_text_font_size);
+		font-weight: var(--article_text_font_weight);
+		color: var(--text_colour);
+		text-align: justify;
+		text-justify: inter-word;
+		text-indent: calc(var(--quadruple));
+		line-height: 200%;
+		overflow: hidden;
+	}
+	.--article_text_styling p + .--article_text_styling p {
+		padding-top: calc(var(--double));
+	}
 	p + p {
 		padding-top: calc(var(--single));
 	}
 	p:first-of-type:not(:only-of-type) {
-		padding-top: calc(var(--single));
+		/* padding-top: calc(var(--single)); */
 	}
 	p:last-of-type:not(:only-of-type) {
-		padding-bottom: calc(var(--single));
+		/* padding-bottom: calc(var(--single)); */
 	}
 	.--no_padding {
 		padding-top: 0;
@@ -641,6 +664,10 @@ body {
 		-ms-user-select: none;
 		-moz-user-select: none;
 		-webkit-user-select: none;
+	}
+	.showcase_wrapper-article_wrapper {
+		padding-left: calc(var(--double));
+		padding-right: calc(var(--double));
 	}
 	.--showcase_tile_graphic {
 		height: 100%;
