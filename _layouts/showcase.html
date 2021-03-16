@@ -17,7 +17,8 @@ layout: default
 					<article class="showcase_wrapper-article_wrapper --article_text_styling">
 						{{ content }}
 					</article>
-					{%- endif -%}
+					{%- endif %}
+					<div class="showcase_wrapper-tile_wrapper">
 				{%- for tile in showcase_tiles -%}
 					{%- assign tile_name = tile.name | prepend: "/" -%}
 					{%- assign tile_path = tile.path | remove: "assets/graphics/showcase_tiles/" | remove_first: "/" | remove: tile_name -%}
@@ -27,5 +28,6 @@ layout: default
 					</picture>
 					{%- endif -%}
 				{%- endfor %}
+					</div>
 				</div>
 				<!-- end showcase.html -->

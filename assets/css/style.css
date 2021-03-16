@@ -647,9 +647,10 @@ body {
 	*/
 	.main_container-showcase_wrapper {
 		display: flex;
-		flex-flow: row wrap;
-		height: 100%;
-		font-size: 0;
+		flex-flow: column nowrap;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
 	}
 	.showcase_wrapper-showcase_title {
 		width: 100%;
@@ -671,6 +672,12 @@ body {
 		justify-content: center;
 		width: 100%;
 		padding-bottom: calc(var(--quadruple));
+	}
+	.showcase_wrapper-tile_wrapper {
+		display: flex;
+		flex-flow: row wrap;
+		height: 100%;
+		font-size: 0;
 	}
 	.--showcase_tile_graphic {
 		height: 100%;
