@@ -280,7 +280,8 @@ address {
 		text-align: center;
 		line-height: 200%;
 	}
-	.--text_card_text_styling {
+	.--text_card_text_styling,
+	.showcase_wrapper-article_wrapper p {
 		font-family: var(--text_card_text_font);
 		font-size: var(--text_card_text_font_size);
 		font-weight: var(--text_card_text_font_size);
@@ -341,7 +342,8 @@ address {
 	}
 	.--text_card_text_styling a,
 	.--footer_card_text_styling a,
-	.--title_card_text_styling a {
+	.--title_card_text_styling a,
+	.showcase_wrapper-article_wrapper a {
 		font-family: inherit;
 		font-size: inherit;
 		font-weight: inherit;
@@ -626,8 +628,8 @@ body {
 	}
 	.showcase_wrapper-showcase_title {
 		width: 100%;
-		padding-top: calc(var(--screen_height_half) - var(--nav_height) - var(--header_height) - 2rem); /* temp */
-		padding-bottom: calc(var(--screen_height_half) - 2rem); /* temp */
+		padding-top: calc(var(--quadruple));
+		padding-bottom: calc(var(--quadruple));
 	}
 	.showcase_wrapper-showcase_title.--with_content {
 		padding-bottom: calc(var(--double));
@@ -962,7 +964,10 @@ body {
 └────────────────────┘
 */
 @media (hover: hover) {
-	.--text_card_text_styling a:hover, .--footer_card_text_styling a:hover, .--title_card_text_styling a:hover  {
+	.--text_card_text_styling a:hover,
+	.--footer_card_text_styling a:hover,
+	.--title_card_text_styling a:hover,
+	.showcase_wrapper-article_wrapper a:hover  {
 		background-color: var(--secondary_colour);
 		color: var(--text_colour);
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
