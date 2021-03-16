@@ -304,7 +304,6 @@ address {
 		color: var(--text_colour);
 		text-align: justify;
 		text-justify: inter-word;
-		text-indent: calc(var(--quadruple));
 		hyphens: auto;
 		-ms-hyphens: auto;
 		-webkit-hyphens: auto;
@@ -669,8 +668,13 @@ body {
 		-webkit-user-select: none;
 	}
 	.showcase_wrapper-article_wrapper {
-		padding-left: calc(var(--double));
-		padding-right: calc(var(--double));
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		padding: calc(var(--double));
+		padding-top: 0;
 	}
 	.--showcase_tile_graphic {
 		height: 100%;
