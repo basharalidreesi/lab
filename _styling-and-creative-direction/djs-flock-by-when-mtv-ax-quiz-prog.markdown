@@ -8,3 +8,4 @@ position: 2
 layout: showcase
 ---
 
+{% include lipsum.html %}
