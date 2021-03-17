@@ -719,6 +719,7 @@ body {
 }
 .header_wrapper-header_anchor svg {
 	display: block;
+	width: auto; /* debug */
 	margin: auto;
 	fill: var(--text_colour);
 }
