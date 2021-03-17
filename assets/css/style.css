@@ -749,7 +749,7 @@ body {
 	padding: calc(var(--single));
 }
 .header_wrapper-header_anchor {
-	display: inline-block;
+	/* display: inline-block; */
 	height: 100%;
 	width: auto; /* debug */
 }

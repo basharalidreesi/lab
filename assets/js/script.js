@@ -136,19 +136,21 @@
 		}
 		document.getElementById("loader").style.animation = "none";
 		document.getElementById("loader").style.width = "100%";
-		document.getElementsByClassName("header_wrapper-header_anchor")[0].style.width = "100%";
 		setTimeout(() => {
 			document.getElementById("loader_wrapper").style.display = "none";
 			document.getElementById("loader_wrapper").remove();
-			document.getElementsByClassName("header_wrapper-header_anchor")[0].style.width = "auto";
 			header_container.style.opacity = "1";
 		}, 250);
 		if (central) {
-			// https://stackoverflow.com/questions/16302483/event-to-detect-when-positionsticky-is-triggered
-			const observer = new IntersectionObserver(
-			([e]) => e.target.children[0].classList.toggle("--sticky_header", e.intersectionRatio < 1),
-				{threshold: [1]}
-			);
+			const observer = new IntersectionObserver(([entry]) => {
+				if (entry.intersectionRatio < 1) {
+					entry.target.children[0].classList.add("--sticky_header");
+					entry.target.children[0].children[0].removeAttribute("style");
+				} else {
+					entry.target.children[0].classList.remove("--sticky_header");
+					entry.target.children[0].children[0].style.width = "100%";
+				}
+			}, { threshold: [1] });
 			observer.observe(header_container);
 		}
 	}
