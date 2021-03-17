@@ -26,10 +26,10 @@ defaults:
     border_colour: "#000"
     text_colour: "#000"
     colours:
-    - primary: test
-    - secondary: test
-    - border: test
-    - text: test
+      'primary': test
+      'secondary': test
+      'border': test
+      'text': test
     fonts: test
     header_location: upper
 - scope:
