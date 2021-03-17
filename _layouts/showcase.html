@@ -19,11 +19,11 @@ layout: default
 					{%- endunless %}
 					{%- if content %}
 					<article class="showcase_wrapper-article_wrapper --article_text_styling">
-						{%- if after == false %}
-						{{ page_content[0] }}
-						{%- elsif after == true %}
-							{% assign size = page_content[0] | size | minus: 3 %}
+						{%- if after %}
+							{%- assign size = page_content[0] | size | minus: 3 -%}
 						{{ page_content[0] | slice: 0, size }}
+						{%- else %}
+						{{ page_content[0] }}
 						{%- endif %}
 					</article>
 					{%- endif %}
@@ -40,9 +40,9 @@ layout: default
 				{%- endfor %}
 					</article>
 					{%- endif -%}
-					{%- if page_content[1] %}
+					{%- if after %}
 					<article class="showcase_wrapper-article_wrapper --article_wrapper_after --article_text_styling">
-						{{ page_content[1] }}
+						{{ page_content[1] | slice: 3, page_content[1].size }}
 					</article>
 					{%- endif %}
 				</div>
