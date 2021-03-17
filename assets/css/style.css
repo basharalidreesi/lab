@@ -336,7 +336,7 @@ p + p {
 		.--article_text_styling h3,
 		.--article_text_styling h4,
 		.--article_text_styling h5,
-		.--article_text_styling h6, {
+		.--article_text_styling h6 {
 			font-family: var(--article_text_font);
 			font-size: var(--article_text_font_size);
 			font-weight: var(--article_text_font_weight);
@@ -356,7 +356,7 @@ p + p {
 		.--article_text_styling h3,
 		.--article_text_styling h4,
 		.--article_text_styling h5,
-		.--article_text_styling h6, {
+		.--article_text_styling h6 {
 			font-family: var(--header_text_font);
 			font-weight: var(--header_text_font_weight);
 		}
@@ -369,7 +369,7 @@ p + p {
 		.--article_text_styling h3,
 		.--article_text_styling h4,
 		.--article_text_styling h5,
-		.--article_text_styling h6, {
+		.--article_text_styling h6 {
 			font-size: calc(var(--header_text_font_size) / 2);
 		}
 		.--article_text_styling ul,
