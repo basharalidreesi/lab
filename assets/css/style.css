@@ -351,7 +351,8 @@ p:empty {
 			font-size: var(--article_text_font_size);
 			font-weight: var(--article_text_font_weight);
 			color: var(--text_colour);
-			text-align: center;
+			text-align: justify;
+			text-justify: inter-word;
 			hyphens: auto;
 			-ms-hyphens: auto;
 			-webkit-hyphens: auto;
