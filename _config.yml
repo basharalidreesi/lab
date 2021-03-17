@@ -26,10 +26,10 @@ defaults:
     border_colour: "#000"
     text_colour: "#000"
     colours:
-      'primary': '#91a3b0'
-      'secondary': '#fff'
-      'border': '#000'
-      'text': '#000'
+      'primary colour': '#91a3b0'
+      'secondary colour': '#fff'
+      'border colour': '#000'
+      'text colour': '#000'
     nav_font: test
     footer_font: test
     list_font: test
