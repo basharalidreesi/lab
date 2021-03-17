@@ -9,9 +9,10 @@ tags:
 - "\U0001F351 peach"
 position: 0
 colours:
-  primary colour: peachpuff
-  border colour: blue
-  text colour: blue
+  primary colour: black
+  secondary colour: black
+  border colour: "#39ff14"
+  text colour: "#39ff14"
 header_location: central
 ---
 
