@@ -688,7 +688,7 @@ body {
 		align-items: center;
 		justify-content: center;
 		width: 100%;
-		padding: calc(var(--screen_width_third) / 2);
+		padding: calc(var(--screen_width_third));
 		padding-top: 0;
 		padding-bottom: 0;
 	}
@@ -1324,6 +1324,10 @@ body {
 		*/
 		.showcase_wrapper-showcase_header {
 			border-top: none;
+		}
+		.showcase_wrapper-article_wrapper {
+			padding-left: calc(var(--double));
+			padding-right: calc(var(--double));
 		}
 		/*
 		┌───────┐
