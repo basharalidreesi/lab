@@ -381,6 +381,9 @@ p + p {
 		.--article_text_styling strong {
 			font-weight: var(--article_text_font_weight);
 		}
+		.--article_text_styling em {
+			font-style: normal;
+		}
 		.--article_text_styling blockquote {
 			padding: calc(var(--single));
 			margin-bottom: calc(var(--double));
@@ -398,6 +401,10 @@ p + p {
 			border: 1px solid var(--border_colour);
 			border-radius: calc(var(--single));
 			background-color: var(--secondary_colour);
+		}
+		.--article_text_styling img {
+			display: block;
+			width: 100%;
 		}
 		.--no_padding {
 			padding-top: 0;
