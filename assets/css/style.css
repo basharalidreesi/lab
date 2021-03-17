@@ -200,6 +200,9 @@ ol, ul {
 address {
 	font-style: normal;
 }
+p + p {
+	padding-top: calc(var(--single));
+}
 
 /*
 ┌───────┐
@@ -327,7 +330,13 @@ address {
 		└──────────────┘
 		*/
 		.--article_text_styling,
-		.--article_text_styling p {
+		.--article_text_styling p,
+		.--article_text_styling h1,
+		.--article_text_styling h2,
+		.--article_text_styling h3,
+		.--article_text_styling h4,
+		.--article_text_styling h5,
+		.--article_text_styling h6, {
 			font-family: var(--article_text_font);
 			font-size: var(--article_text_font_size);
 			font-weight: var(--article_text_font_weight);
@@ -339,13 +348,29 @@ address {
 			word-break: break-word;
 			line-height: 210%;
 			overflow: hidden;
-		}
-		p + p {
-			padding-top: calc(var(--single));
-		}
-		.--article_text_styling p {
 			padding-top: 0;
 			padding-bottom: calc(var(--double));
+		}
+		.--article_text_styling h1,
+		.--article_text_styling h2,
+		.--article_text_styling h3,
+		.--article_text_styling h4,
+		.--article_text_styling h5,
+		.--article_text_styling h6, {
+			font-family: var(--header_text_font);
+			font-weight: var(--header_text_font_weight);
+		}
+		.--article_text_styling h1 {
+			font-size: calc(var(--header_text_font_size) / 2);
+		}
+		.--article_text_styling h2 {
+			font-size: calc(var(--header_text_font_size) / 2.5);
+		}
+		.--article_text_styling h3,
+		.--article_text_styling h4,
+		.--article_text_styling h5,
+		.--article_text_styling h6, {
+			font-size: calc(var(--header_text_font_size) / 2);
 		}
 		.--article_text_styling ul,
 		.--article_text_styling ol {
@@ -355,6 +380,11 @@ address {
 		}
 		.--article_text_styling strong {
 			font-weight: var(--article_text_font_weight);
+		}
+		.--article_text_styling blockquote {
+			padding: calc(var(--single));
+			margin-bottom: calc(var(--double));
+			background-color: var(--secondary_colour);
 		}
 		.--no_padding {
 			padding-top: 0;
