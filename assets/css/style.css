@@ -336,7 +336,8 @@ p + p {
 		.--article_text_styling h3,
 		.--article_text_styling h4,
 		.--article_text_styling h5,
-		.--article_text_styling h6 {
+		.--article_text_styling h6,
+		.--article_text_styling code {
 			font-family: var(--article_text_font);
 			font-size: var(--article_text_font_size);
 			font-weight: var(--article_text_font_weight);
@@ -346,7 +347,7 @@ p + p {
 			-ms-hyphens: auto;
 			-webkit-hyphens: auto;
 			word-break: break-word;
-			line-height: 210%;
+			line-height: 225%;
 			overflow: hidden;
 			padding-top: 0;
 			padding-bottom: calc(var(--double));
