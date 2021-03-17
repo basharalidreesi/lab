@@ -386,6 +386,12 @@ p + p {
 			margin-bottom: calc(var(--double));
 			background-color: var(--secondary_colour);
 		}
+		.--article_text_styling code {
+			font-family: var(--tag_text_font);
+			padding: calc(var(--single));
+			margin-bottom: calc(var(--double));
+			background-color: var(--secondary_colour);
+		}
 		.--no_padding {
 			padding-top: 0;
 			padding-bottom: 0;
