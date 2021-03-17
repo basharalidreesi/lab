@@ -816,9 +816,6 @@ body {
 	.--article_wrapper_after {
 		padding-top: calc(var(--double));
 	}
-	.showcase_wrapper-article_wrapper p {
-		width: 100%;
-	}
 	.showcase_wrapper-tile_wrapper {
 		display: flex;
 		flex-flow: row wrap;
