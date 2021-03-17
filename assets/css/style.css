@@ -388,7 +388,7 @@ p + p {
 			padding: calc(var(--single));
 			margin-bottom: calc(var(--double));
 			border: 1px solid var(--border_colour);
-			border-radius: calc(var(--single));
+			border-radius: calc(var(--double));
 			background-color: var(--secondary_colour);
 		}
 		.--article_text_styling blockquote p {
@@ -397,7 +397,7 @@ p + p {
 		.--article_text_styling code {
 			display: block;
 			font-family: var(--tag_text_font);
-			padding: calc(var(--single));
+			padding: calc(var(--double));
 			border: 1px solid var(--border_colour);
 			border-radius: calc(var(--single));
 			background-color: var(--secondary_colour);
@@ -757,7 +757,8 @@ body {
 		align-items: center;
 		justify-content: center;
 		width: 100%;
-		padding: calc(var(--screen_width_third) - var(--screen_width_third) / 4);
+		/* padding: calc(var(--screen_width_third) - var(--screen_width_third) / 4); */
+		padding: calc(var(--screen_width_third));
 		padding-top: 0;
 		padding-bottom: 0;
 	}
