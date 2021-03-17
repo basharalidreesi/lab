@@ -380,7 +380,7 @@ p:empty {
 		.--article_text_styling ol {
 			list-style: revert;
 			list-style-position: inside;
-			/* width: 100%; */
+			width: 100%;
 			margin-bottom: calc(var(--double));
 			border: 1px solid var(--border_colour);
 			border-radius: calc(var(--single));
@@ -1416,10 +1416,6 @@ body {
 		.showcase_wrapper-article_wrapper {
 			padding-left: calc(var(--double));
 			padding-right: calc(var(--double));
-		}
-		.--article_text_styling ul,
-		.--article_text_styling ol {
-			/* width: 100%; */
 		}
 		/*
 		┌───────┐
