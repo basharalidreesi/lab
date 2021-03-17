@@ -426,6 +426,7 @@ p:empty {
 		}
 		.--article_text_styling table {
 			width: 100%;
+			margin-bottom: calc(var(--double));
 			background-color: var(--secondary_colour);
 			border: 1px solid var(--border_colour);
 			border-radius: calc(var(--single));
@@ -444,6 +445,9 @@ p:empty {
 		}
 		.--article_text_styling td {
 			padding: calc(var(--single));
+		}
+		.--article_text_styling tr:not(:last-child) td {
+			border-bottom: 1px solid var(--border_colour);
 		}
 		.--no_padding {
 			padding-top: 0;
