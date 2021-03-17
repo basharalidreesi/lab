@@ -346,7 +346,7 @@ p + p {
 			-ms-hyphens: auto;
 			-webkit-hyphens: auto;
 			word-break: break-word;
-			line-height: 210%;
+			line-height: 225%;
 			overflow: hidden;
 			padding-top: 0;
 			padding-bottom: calc(var(--double));
@@ -393,6 +393,9 @@ p + p {
 		.--article_text_styling code {
 			display: block;
 			font-family: var(--tag_text_font);
+			font-size: inherit;
+			font-weight: inherit;
+			line-height: inherit;
 			padding: calc(var(--single));
 			border: 1px solid var(--border_colour);
 			border-radius: calc(var(--single));
