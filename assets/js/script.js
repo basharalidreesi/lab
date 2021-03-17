@@ -136,9 +136,11 @@
 		}
 		document.getElementById("loader").style.animation = "none";
 		document.getElementById("loader").style.width = "100%";
+		document.getElementsByClassName("header_wrapper-header_anchor")[0].style.width = "100%";
 		setTimeout(() => {
 			document.getElementById("loader_wrapper").style.display = "none";
 			document.getElementById("loader_wrapper").remove();
+			document.getElementsByClassName("header_wrapper-header_anchor")[0].style.width = "auto";
 			header_container.style.opacity = "1";
 		}, 250);
 		if (central) {
