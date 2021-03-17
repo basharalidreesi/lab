@@ -28,26 +28,26 @@ defaults:
       text colour: "#000"
     fonts:
       families:
-        navigation font: test
-        footer font: test
-        list font: test
-        tag font: test
-        header font: test
-        article font: test
+        navigation font: M+ 1p
+        footer font: M+ 1p
+        list font: M+ 1p
+        tag font: Code New Roman
+        header font: Margo
+        article font: M+ 1p
       sizes:
-        navigation font: test
-        footer font: test
-        list font: test
-        tag font: test
-        header font: test
-        article font: test
+        navigation font: temp
+        footer font: temp
+        list font: temp
+        tag font: temp
+        header font: temp
+        article font: temp
       weights:
-        navigation font: test
-        footer font: test
-        list font: test
-        tag font: test
-        header font: test
-        article font: test
+        navigation font: 300
+        footer font: 300
+        list font: 400
+        tag font: 400
+        header font: 400
+        article font: 400
     header_location: upper
 - scope:
     path: ''
