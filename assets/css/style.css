@@ -387,8 +387,11 @@ p:empty {
 			background-color: var(--secondary_colour);
 		}
 		.--article_text_styling li {
-			padding: calc(var(--double));
+			padding: calc(var(--single));
 			border-bottom: 1px solid var(--border_colour);
+		}
+		.--article_text_styling li:last-child {
+			border-bottom: none;
 		}
 		.--article_text_styling strong {
 			font-weight: var(--article_text_font_weight);
@@ -409,7 +412,7 @@ p:empty {
 		.--article_text_styling code {
 			display: block;
 			font-family: var(--tag_text_font);
-			padding: calc(var(--double));
+			padding: calc(var(--single));
 			border: 1px solid var(--border_colour);
 			border-radius: calc(var(--single));
 			background-color: var(--secondary_colour);
