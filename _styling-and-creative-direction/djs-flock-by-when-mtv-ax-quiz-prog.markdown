@@ -5,10 +5,15 @@ tags:
 - "\U0001F9C4 garlic"
 - "\U0001F951 avocado"
 position: 2
+colours:
+  primary colour: black
+  secondary colour: black
+  border colour: "#39ff14"
+  text colour: "#39ff14"
+header_location: central
 primary_colour: peachpuff
 border_colour: blue
 text_colour: blue
-header_location: central
 clickable_tiles:
   '1': http://google.com
   '2': http://google.com
