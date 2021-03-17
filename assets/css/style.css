@@ -588,34 +588,18 @@ body {
 }
 .mother_container-nav_container_upper {
 	order: 1;
-	user-select: none;
-	-ms-user-select: none;
-	-moz-user-select: none;
-	-webkit-user-select: none;
 }
 .mother_container-nav_container_central {
 	order: 2;
 	position: relative;
-	user-select: none;
-	-ms-user-select: none;
-	-moz-user-select: none;
-	-webkit-user-select: none;
 }
 .mother_container-nav_container_home {
 	order: 2;
-	user-select: none;
-	-ms-user-select: none;
-	-moz-user-select: none;
-	-webkit-user-select: none;
 }
 .mother_container-header_container_upper,
 .mother_container-header_container_central {
 	position: sticky;
 	z-index: 100;
-	user-select: none;
-	-ms-user-select: none;
-	-moz-user-select: none;
-	-webkit-user-select: none;
 }
 .mother_container-header_container_upper {
 	order: 2;
@@ -636,10 +620,6 @@ body {
 }
 .mother_container-footer_container {
 	order: 4;
-	user-select: none;
-	-ms-user-select: none;
-	-moz-user-select: none;
-	-webkit-user-select: none;
 }
 
 /*
