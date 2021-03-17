@@ -203,6 +203,9 @@ address {
 p + p {
 	padding-top: calc(var(--single));
 }
+p:empty {
+	padding: 0 !important;
+}
 
 /*
 ┌───────┐
@@ -701,7 +704,7 @@ body {
 	display: inline-block;
 	height: 100%;
 	width: auto;
-	/* width: 100%; */ /* debug, temporary */
+	margin: auto;
 }
 .header_anchor-header_graphic {
 	height: 100%;
@@ -761,6 +764,9 @@ body {
 		padding: calc(var(--screen_width_third));
 		padding-top: 0;
 		padding-bottom: 0;
+	}
+	.--article_wrapper_after {
+		padding-top: calc(var(--double));
 	}
 	.showcase_wrapper-tile_wrapper {
 		display: flex;
