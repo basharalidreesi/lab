@@ -2,7 +2,6 @@
 <html lang="en-US">
 	<head>
 		{%- assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" -%}
-		{%- assign text_colour = page.text_colour | strip_newlines | strip -%}
 		{%- assign pages = site.pages | sort: "position" -%}
 		{%- assign header_graphics = site.static_files | where: "header_graphic", true %}
 		<meta charset="utf-8">
