@@ -8,6 +8,10 @@ tags:
 - "\U0001F353 strawberry"
 - "\U0001F351 peach"
 position: 0
+colours:
+  primary colour: peachpuff
+  border colour: blue
+  text colour: blue
 header_location: central
 ---
 
