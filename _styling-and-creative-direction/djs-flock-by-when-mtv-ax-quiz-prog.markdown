@@ -38,7 +38,7 @@ layout: showcase
 |      | hello |  hey | howdy | heya |
 |:----:|:-----:|:----:|:-----:|:----:|
 |  me  |   <3  |  <3  |   <3  |  <3  |
-|  you |  hehe | haha |  hoho | hihi |
+|  you |  hehe | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna. |  hoho | hihi |
 | them |  wtf  |  wtf |  wtf  |  wtf |
 
 !after
