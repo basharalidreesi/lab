@@ -10,7 +10,7 @@ colours:
   secondary_colour: black
   border_colour: "#39ff14"
   text_colour: "#39ff14"
-header_location: central
+header_location: upper
 layout: showcase
 ---
 
