@@ -2,10 +2,10 @@
 		<!-- begin colours.css.html -->
 		<style>
 			:root {
-				--primary_colour: {{ page.primary_colour }};
-				--secondary_colour: {{ page.secondary_colour }};
-				--border_colour: {{ page.border_colour }};
-				--text_colour: {{ page.text_colour }};
+				--primary_colour: {{ page.colours[primary_colour] }};
+				--secondary_colour: {{ page.colours[secondary_colour] }};
+				--border_colour: {{ page.colours[border_colour] }};
+				--text_colour: {{ page.colours[text_colour] }};
 				--background: linear-gradient(0deg, var(--primary_colour) 10%, var(--secondary_colour) 100%);
 			}
 		</style>
