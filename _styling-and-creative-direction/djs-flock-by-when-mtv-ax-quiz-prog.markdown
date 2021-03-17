@@ -17,7 +17,7 @@ layout: showcase
 
 {% include lipsum.html %}
 
-[The big brown fox jumps over the lazy dog](http://google.com)
+<span style="text-align: center;">[The big brown fox jumps over the lazy dog](http://google.com)</span>
 
 * One
 * Two
