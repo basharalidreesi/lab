@@ -22,32 +22,32 @@ defaults:
   values:
     layout: default
     colours:
-      primary colour: "#91a3b0"
-      secondary colour: "#fff"
-      border colour: "#000"
-      text colour: "#000"
+      primary_colour: "#91a3b0"
+      secondary_colour: "#fff"
+      border_colour: "#000"
+      text_colour: "#000"
     fonts:
       families:
-        navigation font: M+ 1p
-        footer font: M+ 1p
-        list font: M+ 1p
-        tag font: Code New Roman
-        header font: Margo
-        article font: M+ 1p
+        navigation_font: M+ 1p
+        footer_font: M+ 1p
+        list_font: M+ 1p
+        tag_font: Code New Roman
+        header_font: Margo
+        article_font: M+ 1p
       sizes:
-        navigation font: temp
-        footer font: temp
-        list font: temp
-        tag font: temp
-        header font: temp
-        article font: temp
+        navigation_font: temp
+        footer_font: temp
+        list_font: temp
+        tag_font: temp
+        header_font: temp
+        article_font: temp
       weights:
-        navigation font: 300
-        footer font: 300
-        list font: 400
-        tag font: 400
-        header font: 400
-        article font: 400
+        navigation_font: 300
+        footer_font: 300
+        list_font: 400
+        tag_font: 400
+        header_font: 400
+        article_font: 400
     header_location: upper
 - scope:
     path: ''
