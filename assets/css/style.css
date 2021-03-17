@@ -203,6 +203,9 @@ address {
 p + p {
 	padding-top: calc(var(--single));
 }
+p:empty {
+	padding: 0 !important;
+}
 
 /*
 ┌───────┐
