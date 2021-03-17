@@ -103,7 +103,7 @@
 	│ header text │
 	└─────────────┘
 	*/
-	--header_text_font: "Le Murmure", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	--header_text_font: "Margo", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--header_text_font_size: 4rem;
 	--header_text_font_weight: 400;
 	/*
@@ -302,6 +302,12 @@ address {
 			text-align: center;
 			line-height: 200%;
 		}
+		/*
+		┌───────┐
+		│ begin └─────┐
+		│ header text │
+		└─────────────┘
+		*/
 		.--header_text_styling {
 			font-family: var(--header_text_font);
 			font-size: var(--header_text_font_size);
@@ -313,19 +319,6 @@ address {
 			-webkit-hyphens: auto;
 			word-break: break-word;
 			overflow: hidden;
-		}
-		.--header_text_styling::before,
-		.--header_text_styling::after {
-			content: "";
-			display: block;
-			height: 0;
-			width: 0;
-		}
-		.--header_text_styling::before {
-			margin-top: 5px;
-		}
-		.--header_text_styling::after {
-			margin-bottom: -5px;
 		}
 		/*
 		┌───────┐
@@ -357,6 +350,7 @@ address {
 		.--article_text_styling ul,
 		.--article_text_styling ol {
 			list-style: revert;
+			list-style-position: inside;
 			padding-bottom: calc(var(--double));
 		}
 		.--article_text_styling strong {
@@ -693,8 +687,10 @@ body {
 	}
 	.showcase_wrapper-showcase_header {
 		width: 100%;
-		padding: calc(var(--double));
 		border-top: 1px solid var(--border_colour);
+	}
+	.showcase_wrapper-showcase_header h1 {
+		padding: calc(var(--double));
 	}
 	.showcase_wrapper-article_wrapper {
 		display: flex;
