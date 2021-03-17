@@ -4,7 +4,8 @@ layout: default
 
 <!-- begin showcase.html -->
 				{%- assign showcase_tiles = site.static_files | where: "showcase_tile", true -%}
-				{%- assign page_path = page.path | replace: "index.md", "home" | replace: "index.markdown", "home" | replace: "index.html", "home" | remove_first: "_" | remove: ".md" | remove: ".markdown" | remove: ".html" %}
+				{%- assign page_path = page.path | replace: "index.md", "home" | replace: "index.markdown", "home" | replace: "index.html", "home" | remove_first: "_" | remove: ".md" | remove: ".markdown" | remove: ".html" -%}
+				{%- assign page_content = page.content | split: "!after" %}
 				<div class="main_container-showcase_wrapper">
 					{%- unless page.url == "/" %}
 					<header class="showcase_wrapper-showcase_header">
@@ -15,10 +16,10 @@ layout: default
 					{%- endunless %}
 					{%- if content %}
 					<article class="showcase_wrapper-article_wrapper --article_text_styling">
-						{{ content }}
+						{{ page_content[0] }}
 					</article>
 					{%- endif %}
-					<div class="showcase_wrapper-tile_wrapper">
+					<article class="showcase_wrapper-tile_wrapper">
 					{%- if showcase_tiles %}
 				{%- for tile in showcase_tiles -%}
 					{%- assign tile_name = tile.name | prepend: "/" -%}
@@ -29,7 +30,12 @@ layout: default
 						</picture>
 					{%- endif -%}
 				{%- endfor %}
-					</div>
+					</article>
 					{%- endif -%}
+					{%- if page_content[1] %}
+					<article class="showcase_wrapper-article_wrapper --article_text_styling">
+						{{ page_content[0] }}
+					</article>
+					{%- endif %}
 				</div>
 				<!-- end showcase.html -->
