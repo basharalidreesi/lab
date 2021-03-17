@@ -2,7 +2,7 @@
 		<!-- begin script.js.html -->
 		<script>
 			{%- assign header_graphics = site.static_files | where: "header_graphic", true -%}
-			{%- assign text_colour = page.colours[text_colour] | strip_newlines | strip %}
+			{%- assign text_colour = page.colours[text colour] | strip_newlines | strip %}
 			"use strict";
 			{%- if page.url == "/" %}
 			let home = true;
