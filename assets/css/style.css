@@ -822,6 +822,7 @@ body {
 	}
 	.--article_wrapper_after {
 		padding-top: calc(var(--double));
+		margin-bottom: calc(var(--double_negative));
 	}
 	.showcase_wrapper-tile_wrapper {
 		display: flex;
