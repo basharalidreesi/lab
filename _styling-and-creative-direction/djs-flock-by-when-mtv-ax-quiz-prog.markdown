@@ -11,12 +11,6 @@ colours:
   border_colour: "#39ff14"
   text_colour: "#39ff14"
 header_location: central
-primary_colour: peachpuff
-border_colour: blue
-text_colour: blue
-clickable_tiles:
-  '1': http://google.com
-  '2': http://google.com
 layout: showcase
 ---
 
