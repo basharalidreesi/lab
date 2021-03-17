@@ -1043,7 +1043,7 @@ body {
 	.--hyperlink_styling:hover {
 		background-color: var(--secondary_colour);
 	}
-	.list_wrapper-list_item {
+	.list_wrapper-list_item:hover {
 		background-color: var(--secondary_colour);
 	}
 	.tag_list_wrapper-tag_list_item:hover {
