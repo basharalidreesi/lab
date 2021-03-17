@@ -454,8 +454,8 @@ p:empty {
 		.--article_text_styling tr td:not(:first-child):not(:nth-child(2)) {
 			border-left: 1px dotted var(--border_colour);
 		}
-		.--article_text_styling tr th:nth-child(2),
-		.--article_text_styling tr td:nth-child(2) {
+		.--article_text_styling tr th:first-child,
+		.--article_text_styling tr td:first-child {
 			border-right: 1px solid var(--border_colour);
 		}
 		.--no_padding {
