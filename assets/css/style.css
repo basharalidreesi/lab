@@ -200,6 +200,9 @@ ol, ul {
 address {
 	font-style: normal;
 }
+table {
+	border-spacing: 0;
+}
 p + p {
 	padding-top: calc(var(--single));
 }
@@ -420,6 +423,27 @@ p:empty {
 		.--article_text_styling img {
 			display: block;
 			width: 100%;
+		}
+		.--article_text_styling table {
+			width: 100%;
+			background-color: var(--secondary_colour);
+			border: 1px solid var(--border_colour);
+			border-radius: calc(var(--single));
+		}
+		.--article_text_styling thead {
+
+		}
+		.--article_text_styling tbody {
+
+		}
+		.--article_text_styling tr {
+
+		}
+		.--article_text_styling th {
+			padding: calc(var(--single));
+		}
+		.--article_text_styling td {
+			padding: calc(var(--single));
 		}
 		.--no_padding {
 			padding-top: 0;
