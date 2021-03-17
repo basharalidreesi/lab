@@ -138,6 +138,7 @@
 	*/
 	--screen_height: (var(--vh) * 100);
 	--screen_height_half: (var(--screen_height) / 2);
+	--screen_width_third: 33.33333333333333333333vw;
 	--nav_height: (var(--double) + var(--nav_text_font_size) + var(--double));
 	--header_height: (var(--nav_height));
 	--header_height_half: (var(--nav_height) / 2);
@@ -687,7 +688,7 @@ body {
 		align-items: center;
 		justify-content: center;
 		width: 100%;
-		padding: calc(var(--double));
+		padding: calc(var(--screen_width_third) / 2);
 		padding-top: 0;
 		padding-bottom: 0;
 	}
@@ -698,8 +699,8 @@ body {
 		font-size: 0;
 	}
 	.showcase_wrapper-showcase_tile {
-		flex: 0 0 33.33333333333333333333vw;
-		height: 33.33333333333333333333vw;
+		flex: 0 0 calc(var(--screen_width_third));
+		height: calc(var(--screen_width_third));
 		user-select: none;
 		-ms-user-select: none;
 		-moz-user-select: none;
