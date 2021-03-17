@@ -753,6 +753,9 @@ body {
 	height: 100%;
 	width: auto; /* debug */
 }
+.header_container-header_wrapper_upper .header_wrapper-header_anchor {
+	display: inline-block;
+}
 .header_anchor-header_graphic {
 	height: 100%;
 	width: auto;
