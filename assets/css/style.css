@@ -701,7 +701,7 @@ body {
 	display: inline-block;
 	height: 100%;
 	width: auto;
-	/* width: 100%; */ /* debug, temporary */
+	margin: auto;
 }
 .header_anchor-header_graphic {
 	height: 100%;
