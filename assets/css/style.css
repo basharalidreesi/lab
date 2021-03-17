@@ -802,6 +802,10 @@ body {
 	.showcase_wrapper-showcase_header h1 {
 		padding: calc(var(--double));
 	}
+	.showcase_wrapper-showcase_header.--central_header h1 {
+		padding-top: calc(var(--quadruple));
+		padding-bottom: calc(var(--quadruple));
+	}
 	.showcase_wrapper-article_wrapper {
 		display: flex;
 		flex-flow: column nowrap;

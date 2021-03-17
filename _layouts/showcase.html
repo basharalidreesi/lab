@@ -11,7 +11,7 @@ layout: default
 				{%- endif %}
 				<div class="main_container-showcase_wrapper">
 					{%- unless page.url == "/" %}
-					<header class="showcase_wrapper-showcase_header">
+					<header class="showcase_wrapper-showcase_header {%- if page.header_location == 'central' -%}--central_header{%- endif -%}">
 						<h1 class="--header_text_styling">
 							{{ page.title }}
 						</h1>
