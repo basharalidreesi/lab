@@ -389,7 +389,7 @@ p:empty {
 			margin-bottom: calc(var(--double));
 			border: 1px solid var(--border_colour);
 			border-radius: calc(var(--single));
-			background-color: var(--primary_colour);
+			/* background-color: var(--primary_colour); */
 		}
 		.--article_text_styling li {
 			padding: calc(var(--single));
