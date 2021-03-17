@@ -703,8 +703,7 @@ body {
 .header_wrapper-header_anchor {
 	display: inline-block;
 	height: 100%;
-	width: auto;
-	margin: auto;
+	width: fit-content; /* debug */
 }
 .header_anchor-header_graphic {
 	height: 100%;

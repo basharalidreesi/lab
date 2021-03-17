@@ -5,7 +5,10 @@ layout: default
 <!-- begin showcase.html -->
 				{%- assign showcase_tiles = site.static_files | where: "showcase_tile", true -%}
 				{%- assign page_path = page.path | replace: "index.md", "home" | replace: "index.markdown", "home" | replace: "index.html", "home" | remove_first: "_" | remove: ".md" | remove: ".markdown" | remove: ".html" -%}
-				{%- assign page_content = page.content | split: "!after" %}
+				{%- assign page_content = page.content | split: "!after" -%}
+				{%- if page_content[1] -%}
+					{%- assign after = true -%}
+				{%- endif %}
 				<div class="main_container-showcase_wrapper">
 					{%- unless page.url == "/" %}
 					<header class="showcase_wrapper-showcase_header">
@@ -16,7 +19,12 @@ layout: default
 					{%- endunless %}
 					{%- if content %}
 					<article class="showcase_wrapper-article_wrapper --article_text_styling">
+						{%- if after == false %}
 						{{ page_content[0] }}
+						{%- elsif after == true %}
+							{% assign size = page_content[0] | size | minus: 3 %}
+						{{ page_content[0] | slice: 0, size }}
+						{%- endif %}
 					</article>
 					{%- endif %}
 					<article class="showcase_wrapper-tile_wrapper">
