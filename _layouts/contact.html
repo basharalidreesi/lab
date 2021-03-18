@@ -8,6 +8,8 @@ layout: default
 				{%- endcomment -%}
 				{%- if page['has page title'] -%}
 					{%- assign titled = true -%}
+				{%- else -%}
+					{%- assign titled = false -%}
 				{%- endif %}
 				{%- capture page_content -%}
 					{{ content }}
@@ -20,7 +22,11 @@ layout: default
 					{%- assign page_content_after = separated_page_content[1] -%}
 					{%- if separated_page_content[2] -%}
 						{%- assign extended = true -%}
+					{%- else -%}
+						{%- assign extended = false -%}
 					{%- endif -%}
+				{%- else -%}
+					{%- assign separated = false -%}
 				{%- endif -%}
 				{%- comment -%}
 					<!-- end setup -->
