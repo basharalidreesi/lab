@@ -18,6 +18,6 @@ Cras pede. Nullam id velit sit amet turpis tincidunt sagittis. Nunc malesuada. N
 
 {% include lipsum.html %}
 
-<!--break-⟶
+<!--break-->
 
 {% include lipsum.html %}
