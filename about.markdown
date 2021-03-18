@@ -18,7 +18,7 @@ Cras pede. Nullam id velit sit amet turpis tincidunt sagittis. Nunc malesuada. N
 
 <!--break-->
 
-<!--style: block -->
+<!--style: background-color: pink; -->
 <!--style: block-->
 
 {% include lipsum.html %}
