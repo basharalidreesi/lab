@@ -3,7 +3,7 @@ layout: default
 ---
 
 <!-- begin cascade.html -->
-<div class="main_container{%- if page.header_location == 'central' -%}_central{%- elsif page.header_location == 'upper' -%}_upper{%- endif -%}-cascade_wrapper" id="cascade_wrapper">
+<div class="main_container{%- if page['has central header'] -%}_central{%- else -%}_upper{%- endif -%}-cascade_wrapper" id="cascade_wrapper">
 	{% assign page_content = page.content | newline_to_br | strip_newlines | split: "<br /><br />" %}
 	<header class="cascade_wrapper-title_card">
 		<h1 class="--title_card_text_styling">{{ page.title }}</h1>
@@ -108,7 +108,7 @@ layout: default
 				</div>
 			{% when "!image" %}
 				{% if block contains "!linkto" %}
-					<figure class="cascade_wrapper-anchored_graphic_card{%- if page.header_location == 'central' -%}_central{%- elsif page.header_location == 'upper' -%}_upper{%- endif -%}"
+					<figure class="cascade_wrapper-anchored_graphic_card{%- if page['has central header'] -%}_central{%- else -%}_upper{%- endif -%}"
 						style="
 							{% if block contains "!background" %} background-color: {{ background }}; {% endif %}
 							{% if block contains "!border" %} border: 1px solid {{ border }}; {% endif %}
@@ -148,12 +148,12 @@ layout: default
 			{% when "!embed" %}
 				{% if block contains "!source" %}
 					{% if block contains "youtube.com" or block contains "youtu.be" %}
-						<div class="cascade_wrapper-embed_card{%- if page.header_location == 'central' -%}_central{%- elsif page.header_location == 'upper' -%}_upper{%- endif -%}">
+						<div class="cascade_wrapper-embed_card{%- if page['has central header'] -%}_central{%- else -%}_upper{%- endif -%}">
 							<iframe frameborder="0" src="https://www.youtube.com/embed/{{ source[1] | slice: 0, 11 }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 							<div class="--overlay"></div>
 						</div>
 					{% elsif block contains "vimeo.com" %}
-						<div class="cascade_wrapper-embed_card{%- if page.header_location == 'central' -%}_central{%- elsif page.header_location == 'upper' -%}_upper{%- endif -%}">
+						<div class="cascade_wrapper-embed_card{%- if page['has central header'] -%}_central{%- else -%}_upper{%- endif -%}">
 							<iframe src="https://player.vimeo.com/video/{{ source[1] }}?title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 							<div class="--overlay"></div>
 						</div>

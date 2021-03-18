@@ -57,17 +57,17 @@
 	<div class="bodyalt" id="bodyalt">
 	{%- endif %}
 		<div class="--mobile_background"></div>
-		{%- if page.header_location == "central" %}
+		{%- if page['has central header'] %}
 		<div class="--downward_arrow_wrapper" id="arrow_wrapper">
 			<div class="--downward_arrow"></div>
 		</div>
 		{%- endif %}
 		<div class="mother_container" id="mother_container">
-			<nav class="mother_container-nav_container{%- if page.header_location == 'central' -%}_central{%- elsif page.header_location == 'upper' -%}_upper{%- elsif page.url == '/' -%}_home{%- endif -%}" id="nav_container">
+			<nav class="mother_container-nav_container{%- if page['has central header'] -%}_central{%- else -%}_upper{%- endif -%}{%- if page.url == '/' -%}_home{%- endif -%}" id="nav_container">
 				{%- if page.url != "/" %}
 				<input type="checkbox" id="nav_map_checkbox">
-				<div class="--nav_map_background{%- if page.header_location == 'central' -%}_central{%- elsif page.header_location == 'upper' -%}_upper{%- endif -%}"></div>
-				<label for="nav_map_checkbox" class="nav_container{%- if page.header_location == 'central' -%}_central{%- elsif page.header_location == 'upper' -%}_upper{%- endif -%}-nav_map_wrapper" id="nav_map_wrapper">
+				<div class="--nav_map_background{%- if page['has central header'] -%}_central{%- else -%}_upper{%- endif -%}"></div>
+				<label for="nav_map_checkbox" class="nav_container{%- if page['has central header'] -%}_central{%- else -%}_upper{%- endif -%}-nav_map_wrapper" id="nav_map_wrapper">
 						{%- for branch in tree -%}
 							{%- assign segment = page.path | split: branch -%}
 							{%- assign current = branch | prepend: segment[0] | append: ".markdown" -%}
@@ -111,7 +111,7 @@
 				{%- else %}
 				<!-- nav map not included -->
 				{%- endif %}
-				<ul class="nav_container{%- if page.header_location == 'central' -%}_central{%- elsif page.header_location == 'upper' -%}_upper{%- endif -%}{%- if page.url == '/' -%}_home{%- endif -%}-nav_list_wrapper">
+				<ul class="nav_container{%- if page['has central header'] -%}_central{%- else -%}_upper{%- endif -%}{%- if page.url == '/' -%}_home{%- endif -%}-nav_list_wrapper">
 					{%- for node in pages -%}
 						{%- if node.is_listed and tree.size >= 2 -%}
 							{%- unless page.url contains node.url %}
@@ -161,11 +161,11 @@
 					{%- endfor %}
 				</ul>
 			</nav>
-			<div class="--loader_wrapper{%- if page.header_location == 'central' -%}_central{%- elsif page.header_location == 'upper' -%}_upper{%- endif -%}" id="loader_wrapper">
+			<div class="--loader_wrapper{%- if page['has central header'] -%}_central{%- else -%}_upper{%- endif -%}" id="loader_wrapper">
 				<div class="--loader" id="loader"></div>
 			</div>
-			<header class="mother_container-header_container{%- if page.header_location == 'central' -%}_central{%- elsif page.header_location == 'upper' -%}_upper{%- endif -%}" id="header_container">
-				<div class="header_container-header_wrapper{%- if page.header_location == 'central' -%}_central{%- elsif page.header_location == 'upper' -%}_upper{%- endif -%}">
+			<header class="mother_container-header_container{%- if page['has central header'] -%}_central{%- else -%}_upper{%- endif -%}" id="header_container">
+				<div class="header_container-header_wrapper{%- if page['has central header'] -%}_central{%- else -%}_upper{%- endif -%}">
 					<a class="header_wrapper-header_anchor" href="{{- site.url -}}{{- site.baseurl -}}">
 						<img class="header_anchor-header_graphic" id="header_graphic" alt="Header" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" />
 						<noscript>
