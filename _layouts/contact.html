@@ -33,8 +33,9 @@ layout: default
 							{%- assign separated_article_content = article | replace: "<!--", "<!-- STYLE BREAK PASS -->" | replace: "-->", "<!-- STYLE BREAK PASS -->" | split: "<!-- STYLE BREAK PASS -->" -%}
 							{%- for item in separated_article_content -%}
 								{%- if item contains "style:" -%}
+									{%- assign style[article_index] = item | remove: "style:" | strip -%}
 									<p>
-										{{ article_index }}: {{ item }}
+										{{ article_index }}: {{ style[article_index] }}
 									</p>
 								{%- endif -%}
 							{%- endfor -%}
