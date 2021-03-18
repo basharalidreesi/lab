@@ -34,7 +34,7 @@ layout: default
 					</header>
 					{%- endif %}
 					{%- if content %}
-					<article class="main_wrapper-main_article --article_text_styling {%- if separated %} --article_before {%- endif -%}">
+					<article class="main_wrapper-main_article --article_text_styling {%- if separated %} --article_before {%- endif -%} {%- if titled == false %} --article_no_title {%- endif -%}">
 						{%- if separated %}
 						{{ page_content_before }}
 						{%- else %}

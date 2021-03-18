@@ -816,9 +816,25 @@ body {
 		padding-top: 0;
 		padding-bottom: 0;
 	}
-	.--article_after {
+	.main_wrapper-main_article.--article_after {
+		padding-top: calc(var(--double));
+	}
+	.--central_header .main_wrapper-main_article.--article_after {
+		padding-top: calc(var(--quadruple));
+	}
+	.main_wrapper-main_article.--article_after {
 		padding-top: calc(var(--double));
 		margin-bottom: calc(var(--double_negative));
+	}
+	.main_wrapper-main_article.--article_extended {
+		padding-top: calc(var(--double));
+		border-top: 1px solid var(--border_colour);
+	}
+	.main_wrapper-main_article.--article_extended:first-of-type {
+		margin-top: calc(var(--double));
+	}
+	.main_wrapper-main_article.--article_extended:last-of-type {
+		border-bottom: 1px solid var(--border_colour);
 	}
 	.main_wrapper-showcase_wrapper {
 		display: flex;
