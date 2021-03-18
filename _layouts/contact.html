@@ -18,6 +18,9 @@ layout: default
 					{%- assign separated_page_content = page_content | split: separator -%}
 					{%- assign page_content_before = separated_page_content[0] -%}
 					{%- assign page_content_after = separated_page_content[1] -%}
+					{%- if separated_page_content[2] -%}
+						{%- assign extended = true -%}
+					{%- endif -%}
 				{%- endif -%}
 				{%- comment -%}
 					<!-- end setup -->
@@ -48,9 +51,19 @@ layout: default
 						</fieldset>
 					</form>
 					{%- if separated %}
-					<article class="main_wrapper-main_article --article_after --article_text_styling">
+					<article class="main_wrapper-main_article --article_text_styling --article_after">
 						{{ page_content_after }}
 					</article>
+					{%- endif -%}
+					{%- if extended -%}
+						{%- for article in separated_page_content -%}
+							{%- if forloop.index == 1 or forloop.index == 2 -%}
+								{%- continue -%}
+							{%- else %}
+					<article class="main_wrapper-main_article --article_text_styling --article_extended">
+						{{ page_content_after[forloop.index] }}
+					</article>
+						{%- endfor -%}
 					{%- endif %}
 				</div>
 				<!-- end contact.html -->
