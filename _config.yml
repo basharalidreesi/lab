@@ -22,40 +22,42 @@ defaults:
   values:
     layout: default
     colours:
-      primary_colour: "#91a3b0"
-      secondary_colour: "#fff"
-      border_colour: "#000"
-      text_colour: "#000"
+      primary colour: "#91a3b0"
+      secondary colour: "#fff"
+      border colour: "#000"
+      text colour: "#000"
     fonts:
       families:
-        navigation_font: M+ 1p
-        footer_font: M+ 1p
-        list_font: M+ 1p
-        tag_font: Code New Roman
-        header_font: Margo
-        article_font: M+ 1p
+        navigation: M+ 1p
+        footer: M+ 1p
+        lists: M+ 1p
+        tags: MD IO
+        titles: Margo
+        articles: M+ 1p
       sizes:
-        navigation_font: temp
-        footer_font: temp
-        list_font: temp
-        tag_font: temp
-        header_font: temp
-        article_font: temp
+        navigation: temp
+        footer: temp
+        lists: temp
+        tags: temp
+        titles: temp
+        articles: temp
       weights:
-        navigation_font: 300
-        footer_font: 300
-        list_font: 400
-        tag_font: 400
-        header_font: 400
-        article_font: 400
+        navigation: 300
+        footer: 300
+        lists: 400
+        tags: 400
+        titles: 400
+        articles: 400
     header_location: upper
+    has central header: false
+    has page title: true
 - scope:
     path: ''
     type: pages
   values:
     permalink: "/:basename"
     layout: default
-    is_listed: false
+    is navigable: false
 - scope:
     path: ''
     type: styling-and-creative-direction
