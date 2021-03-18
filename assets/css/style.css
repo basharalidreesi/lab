@@ -447,6 +447,7 @@ p:empty {
 		.--article_text_styling th {
 			padding: calc(var(--single));
 			border-bottom: 1px solid var(--border_colour);
+			font-weight: 700;
 		}
 		.--article_text_styling td {
 			padding: calc(var(--single));
