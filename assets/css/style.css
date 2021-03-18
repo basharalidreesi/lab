@@ -818,9 +818,11 @@ body {
 	}
 	.main_wrapper-main_article.--article_no_title {
 		padding-top: calc(var(--double));
+		border-top: 1px solid var(--border_colour);
 	}
 	.--central_header .main_wrapper-main_article.--article_no_title {
 		padding-top: calc(var(--quadruple));
+		border-top: none;
 	}
 	.main_wrapper-main_article.--article_after {
 		padding-top: calc(var(--double));
@@ -1472,6 +1474,9 @@ body {
 		.main_wrapper-main_article {
 			padding-left: calc(var(--double));
 			padding-right: calc(var(--double));
+		}
+		.main_wrapper-main_article.--article_no_title {
+			border-top: none;
 		}
 		/*
 		┌───────┐
