@@ -32,7 +32,7 @@ layout: default
 						{%- if article contains "<!--style-->" -%}
 							{%- assign separated_article_content = article_content | split: "<!--style-->" -%}
 							<p>
-								{{ article_index }}: {{ separated_article_content }}
+								{{ article_index }}: {{ separated_article_content | inspect }}
 							</p>
 						{%- endif -%}
 					{%- endfor -%}
