@@ -10,8 +10,8 @@ layout: default
 					{%- assign after = true -%}
 				{%- endif %}
 				<div class="main_container-showcase_wrapper">
-					{%- if page['page title'] %}
-					<header class="showcase_wrapper-showcase_header {%- if page['central header'] %} --central_header{%- endif -%}">
+					{%- if page['has page title'] %}
+					<header class="showcase_wrapper-showcase_header {%- if page['has central header'] %} --central_header{%- endif -%}">
 						<h1 class="--header_text_styling">
 							{{ page.title }}
 						</h1>
