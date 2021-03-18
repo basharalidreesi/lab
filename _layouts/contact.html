@@ -30,7 +30,7 @@ layout: default
 							{{ forloop.index0 }}
 						{%- endcapture -%}
 						{%- if article contains "<!--style-->" -%}
-							{%- assign separated_article_content = article_content | split: "<!--style-->" -%}
+							{%- assign separated_article_content = article | split: "<!--style-->" -%}
 							<p>
 								{{ article_index }}: {{ separated_article_content | inspect }}
 							</p>
