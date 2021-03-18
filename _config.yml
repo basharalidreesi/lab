@@ -22,10 +22,10 @@ defaults:
   values:
     layout: default
     colours:
-      primary: "#91a3b0"
-      secondary: "#fff"
-      border: "#000"
-      text: "#000"
+      primary colour: "#91a3b0"
+      secondary colour: "#fff"
+      border colour: "#000"
+      text colour: "#000"
     fonts:
       families:
         navigation: M+ 1p
@@ -49,8 +49,8 @@ defaults:
         titles: 400
         articles: 400
     header_location: upper
-    central header: false
-    page title: true
+    has central header: false
+    has page title: true
 - scope:
     path: ''
     type: pages
