@@ -2,8 +2,8 @@
 title: Home
 permalink: "/"
 position: 0
-header_location: central
-is_listed: false
+has central header: true
+has page title: false
 layout: showcase
 ---
 
