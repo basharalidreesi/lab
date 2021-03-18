@@ -34,7 +34,7 @@ layout: default
 						{%- endif -%}
 						{%- assign article_style[article_index] = style -%}
 						<script>
-							console.log("{{ article_index}}: {{ article_style[article_index] }}");
+							console.log("{{ article_index }}: {{ article_style[article_index] | array_to_sentence_string }}");
 						</script>
 					{%- endfor -%}
 				{%- else -%}
