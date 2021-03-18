@@ -72,6 +72,7 @@
 			});
 		}
 		if (central) {
+			window.addEventListener("scroll", hasScrolled, {passive: false});
 			window.addEventListener("DOMContentLoaded", (event) => {
 				document.getElementById("arrow_wrapper").addEventListener("click", (event) => {
 					toArrow(event);
@@ -79,7 +80,7 @@
 				});
 			});
 			window.addEventListener("load", () => {
-				if (!hasScrolled) {
+				if (!has_scrolled) {
 					arrow();
 					if(cascade) {
 						document.getElementById("bodyalt").addEventListener("scroll", unarrow, {passive:true});
@@ -155,6 +156,12 @@
 		}
 	}
 
+	var has_scrolled = false;
+	function hasScrolled() {
+		has_scrolled = true;
+		window.removeEventListener("scroll", hasScrolled, {passive: true});
+	}
+
 	function arrow() {
 		document.getElementById("arrow_wrapper").style.display = "block";
 		console.log("Arrowed.");
@@ -216,12 +223,10 @@
 		console.log("Unfiltered.");
 	}
 
-	let hasScrolled = false;
 	function redirectWheel() {
 		let customDeltaX;
 		let customDeltaY;
 		window.addEventListener("wheel", () => {
-			hasScrolled = true;
 			if (event.deltaX != null || event.deltaY != null) {
 				customDeltaX = event.deltaX;
 				customDeltaY = event.deltaY;
