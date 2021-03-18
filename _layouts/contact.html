@@ -2,16 +2,41 @@
 layout: default
 ---
 
-<div class="main_container-contact_wrapper">
-	<div class="contact_wrapper-content_wrapper">
-		{{ content }}
-	</div>
-	<form class="contact_wrapper-form_wrapper" action="https://formspree.io/f/mvovjwlo" method="post">
-		<fieldset>
-			<input placeholder="Name" type="text" required>
-			<input name="Email address" placeholder="E-mail address" type="email" required>
-			<textarea name="Message" required></textarea>
-			<button name="Send" type="submit" data-submit="Sending...">Send message</button>
-		</fieldset>
-	</form>
-</div>
+<!-- begin contact.html -->
+				{%- assign page_content = page.content | split: "!after" -%}
+				{%- if page_content[1] -%}
+					{%- assign after = true -%}
+				{%- endif %}
+				<div class="main_container-main_wrapper">
+					{%- if page['has page title'] %}
+					<header class="main_wrapper-main_title">
+						<h1 class="--title_text_styling">
+							{{ page.title }}
+						</h1>
+					</header>
+					{%- endif %}
+					{%- if content %}
+					<article class="main_wrapper-main_article --article_text_styling">
+						{%- if after %}
+							{%- assign size = page_content[0] | size | minus: 3 -%}
+						{{ page_content[0] | slice: 0, size -}}
+						{%- else %}
+						{{ page_content[0] -}}
+						{%- endif %}
+					</article>
+					{%- endif %}
+					<form class="main_wrapper-contact_wrapper" action="https://formspree.io/f/mvovjwlo" method="post">
+						<fieldset>
+							<input placeholder="Name" type="text" required>
+							<input name="Email address" placeholder="E-mail address" type="email" required>
+							<textarea name="Message" required></textarea>
+							<button name="Send" type="submit" data-submit="Sending...">Send message</button>
+						</fieldset>
+					</form>
+					{%- if after %}
+					<article class="main_wrapper-main_article --article_after --article_text_styling">
+						{{ page_content[1] | slice: 4, page_content[1].size -}}
+					</article>
+					{%- endif %}
+				</div>
+				<!-- end contact.html -->
