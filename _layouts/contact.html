@@ -32,9 +32,9 @@ layout: default
 						{%- if article contains "<!--style:" -%} {%- comment -%} --> {%- endcomment -%}
 							{%- assign style = article | split: "<!--style:" | split: "-->" -%}
 						{%- endif -%}
-						{%- assign article_style[article_index] = style -%}
+						{%- assign article_style[article_index] = style | array_to_sentence_string -%}
 						<script>
-							console.log("{{ article_index }}: {{ article_style[article_index] | array_to_sentence_string }}");
+							console.log("{{ article_index }}: {{ article_style[article_index] }}");
 						</script>
 					{%- endfor -%}
 				{%- else -%}
