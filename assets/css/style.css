@@ -66,7 +66,7 @@
 	│ tag text │
 	└──────────┘
 	*/
-	--tag_text_font: "Code New Roman", monospace;
+	--tag_text_font: "MD IO", "Code New Roman", monospace;
 	--tag_text_font_size: 1rem;
 	--tag_text_font_weight: 400;
 	/*
@@ -400,7 +400,7 @@ p:empty {
 			border-bottom: none;
 		}
 		.--article_text_styling strong {
-			font-weight: var(--article_text_font_weight);
+			font-weight: 700;
 		}
 		.--article_text_styling em {
 			font-style: normal;
