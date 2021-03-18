@@ -30,7 +30,7 @@ layout: default
 							{{ forloop.index0 }}
 						{%- endcapture -%}
 						{%- if article contains "<!--" -%} {%- comment -%} --> {%- endcomment -%}
-							{%- assign separated_article_content = article | split: "<!--" | split: "-->" -%}
+							{%- assign separated_article_content = article | replace: "<!--", "<!-- STYLE BREAK PASS -->" | replace: "-->", "<!-- STYLE BREAK PASS -->" | split: "<!-- STYLE BREAK PASS -->" -%}
 							{%- for item in separated_article_content -%}
 								{%- if item contains "style:" -%}
 									<p>
