@@ -31,8 +31,11 @@ layout: default
 						{%- endcapture -%}
 						{%- if article contains "<!--" -%} {%- comment -%} --> {%- endcomment -%}
 							{%- assign separated_article_content = article | replace: "<!--", "<!-- STYLE BREAK PASS -->" | replace: "-->", "<!-- STYLE BREAK PASS -->" | split: "<!-- STYLE BREAK PASS -->" -%}
+							{%- assign style_index = "" -%}
 							{%- for item in separated_article_content -%}
 								{%- if item contains "style:" -%}
+									{%- assign article_style_index = item | remove: "style:" | strip | prepend: article_index | prepend: "<!-- STYLE INDEX PASS -->"-%}
+									{%- assign style_index = style_index | append: article_style_index -%}
 									<p>
 										{{ article_index }}: {{ item | remove: "style:" | strip }}
 									</p>
@@ -46,6 +49,9 @@ layout: default
 				{%- comment -%}
 					<!-- end setup -->
 				{%- endcomment %}
+				<h1>
+					{{ style_index }}
+				</h1>
 				<div class="main_container-main_wrapper">
 					{%- if titled %}
 					<header class="main_wrapper-main_title">
