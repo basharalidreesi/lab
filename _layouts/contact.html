@@ -29,8 +29,8 @@ layout: default
 						{%- capture article_index -%}
 							{{ forloop.index0 }}
 						{%- endcapture -%}
-						{%- if article contains "<!--style-->" -%}
-							{%- assign separated_article_content = article | split: "<!--style-->" -%}
+						{%- if article contains "<!--style:" -%} {%- comment -%} --> {%- endcomment -%}
+							{%- assign separated_article_content = article | split: "<!--style:" -%} {%- comment -%} --> {%- endcomment -%}
 							<p>
 								{{ article_index }}: {{ separated_article_content | inspect }}
 							</p>
