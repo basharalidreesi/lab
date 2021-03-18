@@ -113,7 +113,7 @@
 				{%- endif %}
 				<ul class="nav_container{%- if page['has central header'] -%}_central{%- else -%}_upper{%- endif -%}{%- if page.url == '/' -%}_home{%- endif -%}-nav_list_wrapper">
 					{%- for node in pages -%}
-						{%- if node.is_listed and tree.size >= 2 -%}
+						{%- if node['is navigable'] and tree.size >= 2 -%}
 							{%- unless page.url contains node.url %}
 					<li class="nav_list_wrapper-nav_list_item --nav_text_styling">
 						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
@@ -151,7 +151,7 @@
 						</ul>
 					</li>
 							{%- endunless -%}
-						{%- elsif node.is_listed and tree.size < 2 -%}
+						{%- elsif node['is navigable'] and tree.size < 2 -%}
 					<li class="nav_list_wrapper-nav_list_item --nav_text_styling {%- if page.url contains node.url %} --current_nav_text_styling {%- endif -%}">
 						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
 							{{ node.title }}
