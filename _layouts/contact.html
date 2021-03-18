@@ -19,9 +19,9 @@ layout: default
 					<article class="main_wrapper-main_article --article_text_styling">
 						{%- if after %}
 							{%- assign size = page_content[0] | size | minus: 3 -%}
-						{{ page_content[0] | slice: 0, size }}
+						{{ page_content[0] | markdownify | slice: 0, size }}
 						{%- else %}
-						{{ page_content[0] }}
+						{{ page_content[0] | markdownify }}
 						{%- endif %}
 					</article>
 					{%- endif %}
@@ -35,7 +35,7 @@ layout: default
 					</form>
 					{%- if after %}
 					<article class="main_wrapper-main_article --article_after --article_text_styling">
-						{{ page_content[1] | slice: 4, page_content[1].size }}
+						{{ page_content[1] | markdownify | slice: 4, page_content[1].size }}
 					</article>
 					{%- endif %}
 				</div>
