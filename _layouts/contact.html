@@ -61,8 +61,9 @@ layout: default
 								{%- continue -%}
 							{%- else %}
 					<article class="main_wrapper-main_article --article_text_styling --article_extended">
-						{{ page_content_after[forloop.index] }}
+						{{ article }}
 					</article>
+							{%- endif -%}
 						{%- endfor -%}
 					{%- endif %}
 				</div>
