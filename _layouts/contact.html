@@ -32,7 +32,7 @@ layout: default
 								{%- assign separated_article_content = article | replace: "<!--", "<!-- STYLE BREAK PASS -->" | replace: "-->", "<!-- STYLE BREAK PASS -->" | split: "<!-- STYLE BREAK PASS -->" -%}
 								{%- for item in separated_article_content -%}
 									{%- if item contains "style:" -%}
-										<!-- STYLE INDEX PASS --> <!-- STYLE INDEX {{ article_index }} --> {{ item | remove: "style:" | strip }}
+										<!-- STYLE INDEX PASS --> <!-- STYLE INDEX {{ article_index }} --> {{- item | remove: "style:" | strip -}}
 									{%- endif -%}
 								{%- endfor -%}
 							{%- endif -%}
@@ -77,8 +77,8 @@ layout: default
 					{%- endif -%}
 					{%- if extended -%}
 						{%- for article in separated_page_content offset: 2 -%}
-							{%- assign article_index = forloop.index0 | downcase | prepend: "<!-- STYLE INDEX " | append: " -->" %}
-					<article class="main_wrapper-main_article --article_text_styling --article_extended {%- if forloop.first %} --article_extended_first {%- endif -%}" style="{%- for item in style_index -%} {%- if item contains article_index -%} {{ item | remove: article_index }} {%- endif -%} {%- endfor -%}">
+							{%- assign article_index = forloop.index0 | minus: 2 | downcase | prepend: "<!-- STYLE INDEX " | append: " -->" %}
+					<article class="main_wrapper-main_article --article_text_styling --article_extended {%- if forloop.first %} --article_extended_first {%- endif -%}" style="{%- for item in style_index -%} {%- if item contains article_index -%} {{ item | remove: article_index | strip }} {%- endif -%} {%- endfor -%}">
 						{{ article }}
 					</article>
 						{%- endfor -%}
