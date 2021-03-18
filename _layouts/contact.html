@@ -51,7 +51,7 @@ layout: default
 					{%- endcomment %}
 					{%- capture article_style_index -%}
 						{%- if page_content contains "<!--" -%} {%- comment -%} --> {%- endcomment -%}
-							{%- assign separated_article_content = article | replace: "<!--", "<!-- STYLE BREAK PASS -->" | replace: "-->", "<!-- STYLE BREAK PASS -->" | split: "<!-- STYLE BREAK PASS -->" -%}
+							{%- assign separated_article_content = page_content | replace: "<!--", "<!-- STYLE BREAK PASS -->" | replace: "-->", "<!-- STYLE BREAK PASS -->" | split: "<!-- STYLE BREAK PASS -->" -%}
 							{%- for item in separated_article_content -%}
 								{%- if item contains "style:" -%}
 									<!-- STYLE INDEX PASS --> <!-- STYLE INDEX 0 --> {{- item | remove: "style:" | strip -}}
