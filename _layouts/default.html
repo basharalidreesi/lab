@@ -63,7 +63,7 @@
 		</div>
 		{%- endif %}
 		<div class="mother_container" id="mother_container">
-			<nav class="mother_container-nav_container{%- if page['has central header'] -%}_central{%- else -%}_upper{%- endif -%}{%- if page.url == '/' -%}_home{%- endif -%}" id="nav_container">
+			<nav class="mother_container-nav_container{%- if page['has central header'] -%}_central{%- else -%}_upper{%- elsif page.url == '/' -%}_home{%- endif -%}" id="nav_container">
 				{%- if page.url != "/" %}
 				<input type="checkbox" id="nav_map_checkbox">
 				<div class="--nav_map_background{%- if page['has central header'] -%}_central{%- else -%}_upper{%- endif -%}"></div>
