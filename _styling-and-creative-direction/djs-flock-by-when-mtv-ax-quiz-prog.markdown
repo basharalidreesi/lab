@@ -6,8 +6,8 @@ tags:
 - "\U0001F951 avocado"
 position: 2
 colours:
-  primary_colour: black
-  secondary_colour: black
+  primary_colour: grey
+  secondary_colour: grey
   border_colour: "#39ff14"
   text_colour: "#39ff14"
 header_location: upper
