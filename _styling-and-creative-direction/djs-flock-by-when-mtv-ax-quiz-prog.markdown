@@ -6,10 +6,10 @@ tags:
 - "\U0001F951 avocado"
 position: 2
 colours:
-  primary_colour: rgb(25,25,25)
-  secondary_colour: grey
-  border_colour: "#39ff14"
-  text_colour: "#39ff14"
+  primary colour: rgb(25,25,25)
+  secondary colour: grey
+  border colour: "#39ff14"
+  text colour: "#39ff14"
 header_location: central
 layout: showcase
 ---
