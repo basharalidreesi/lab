@@ -52,7 +52,7 @@
 		<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/style.css" media="screen"/>
 		{%- include style.css.html -%}
 		{%- include noscript.css.html %}	</head>
-	<body>
+	<body class="{%- if page['has central header'] -%} --central_header {%- else -%} --upper_header {%- endif -%} {%- if page.url == '/' %} --homepage {%- endif -%}">
 	{%- if page.layout == "cascade" %}
 	<div class="bodyalt" id="bodyalt">
 	{%- endif %}
