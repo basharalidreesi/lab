@@ -3,40 +3,53 @@ layout: default
 ---
 
 <!-- begin contact.html -->
-				{%- assign page_content = page.content | split: "!after" -%}
-				{%- if page_content[1] -%}
-					{%- assign after = true -%}
+				{%- comment -%}
+					<!-- begin setup -->
+				{%- endcomment -%}
+				{%- if page['has page title'] -%}
+					{%- assign titled = true -%}
 				{%- endif %}
-				{{ content | split: "!after" }}
+				{%- capture page_content -%}
+					{{ content }}
+				{%- endcapture -%}
+				{%- assign separator = "<!--break-->" -%}
+				{%- if page_content contains separator -%}
+					{%- assign separated = true -%}
+					{%- assign separated_page_content = page_content | split: separator -%}
+					{%- assign page_content_before = separated_page_content[0] -%}
+					{%- assign page_content_after = separated_page_content[1] -%}
+				{%- endif -%}
+				{%- comment -%}
+					<!-- end setup -->
+				{%- endcomment %}
 				<div class="main_container-main_wrapper">
-					{%- if page['has page title'] %}
+					{%- if titled %}
 					<header class="main_wrapper-main_title">
 						<h1 class="--title_text_styling">
 							{{ page.title }}
 						</h1>
 					</header>
 					{%- endif %}
-					{%- if page.content %}
-					<article class="main_wrapper-main_article --article_text_styling">
-						{%- if after %}
-							{%- assign size = page_content[0] | size | minus: 3 -%}
-						{{ page_content[0] | markdownify | slice: 0, size }}
+					{%- if content %}
+					<article class="main_wrapper-main_article --article_text_styling {%- if separated %} --article_before {%- endif -%}">
+						{%- if separated %}
+						{{ page_content_before }}
 						{%- else %}
-						{{ page_content[0] | markdownify }}
+						{{ content }}
 						{%- endif %}
 					</article>
 					{%- endif %}
 					<form class="main_wrapper-contact_wrapper" action="https://formspree.io/f/mvovjwlo" method="post">
 						<fieldset>
-							<input placeholder="Name" type="text" required>
-							<input name="Email address" placeholder="E-mail address" type="email" required>
-							<textarea name="Message" required></textarea>
-							<button name="Send" type="submit" data-submit="Sending...">Send message</button>
+							<input name="Name" placeholder="Name" type="text" required>
+							<input name="E-mail" placeholder="E-mail" type="email" required>
+							<textarea name="Message" placeholder="Message" required></textarea>
+							<button name="Send" type="submit" data-submit="Sending...">Send</button>
 						</fieldset>
 					</form>
-					{%- if after %}
+					{%- if separated %}
 					<article class="main_wrapper-main_article --article_after --article_text_styling">
-						{{ page_content[1] | markdownify | slice: 4, page_content[1].size }}
+						{{ page_content_after }}
 					</article>
 					{%- endif %}
 				</div>
