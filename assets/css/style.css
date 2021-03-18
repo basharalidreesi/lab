@@ -816,10 +816,10 @@ body {
 		padding-top: 0;
 		padding-bottom: 0;
 	}
-	.main_wrapper-main_article.--article_after {
+	.main_wrapper-main_article.--article_no_title {
 		padding-top: calc(var(--double));
 	}
-	.--central_header .main_wrapper-main_article.--article_after {
+	.--central_header .main_wrapper-main_article.--article_no_title {
 		padding-top: calc(var(--quadruple));
 	}
 	.main_wrapper-main_article.--article_after {
