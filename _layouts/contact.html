@@ -31,9 +31,13 @@ layout: default
 						{%- endcapture -%}
 						{%- if article contains "<!--" -%} {%- comment -%} --> {%- endcomment -%}
 							{%- assign separated_article_content = article | split: "<!--" | split: "-->" -%}
-							<p>
-								{{ article_index }}: {{ separated_article_content | inspect }}
-							</p>
+							{%- for item in separated_article_content -%}
+								{%- if item contains "style:" -%}
+									<p>
+										{{ article_index }}: {{ item }}
+									</p>
+								{%- endif -%}
+							{%- endfor -%}
 						{%- endif -%}
 					{%- endfor -%}
 				{%- else -%}
