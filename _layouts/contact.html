@@ -25,6 +25,18 @@ layout: default
 					{%- else -%}
 						{%- assign extended = false -%}
 					{%- endif -%}
+					{%- for article in separated_page_content -%}
+						{%- capture article_index -%}
+							{{ forloop.index0 }}
+						{%- endcapture -%}
+						{%- if article contains "<!--style:" -%} {%- comment -%} --> {%- endcomment -%}
+							{%- assign style = article | split: "<!--style:" | split: "-->" -%}
+						{%- endif -%}
+						{%- assign article_style[article_index] = style -%}
+						<script>
+							console.log("{{ article_index}}: {{ article_style[article_index] }}");
+						</script>
+					{%- endfor -%}
 				{%- else -%}
 					{%- assign separated = false -%}
 				{%- endif -%}
@@ -62,10 +74,7 @@ layout: default
 					</article>
 					{%- endif -%}
 					{%- if extended -%}
-						{%- for article in separated_page_content -%}
-							{%- if forloop.index0 == 0 or forloop.index0 == 1 -%}
-								{%- continue -%}
-							{%- else %}
+						{%- for article in separated_page_content offset: 2 %}
 					<article class="main_wrapper-main_article --article_text_styling --article_extended {%- if forloop.index0 == 2 %} --article_extended_first {%- endif -%}">
 						{{ article }}
 					</article>
