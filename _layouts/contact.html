@@ -29,8 +29,8 @@ layout: default
 						{%- capture article_index -%}
 							{{ forloop.index0 }}
 						{%- endcapture -%}
-						{%- if article contains "<!--style:" -%} {%- comment -%} --> {%- endcomment -%}
-							{%- assign separated_article_content = article | split: "<!--style:" -%} {%- comment -%} --> {%- endcomment -%}
+						{%- if article contains "<!--" -%} {%- comment -%} --> {%- endcomment -%}
+							{%- assign separated_article_content = article | split: "<!--" | split: "-->" -%}
 							<p>
 								{{ article_index }}: {{ separated_article_content | inspect }}
 							</p>
@@ -74,7 +74,7 @@ layout: default
 					{%- endif -%}
 					{%- if extended -%}
 						{%- for article in separated_page_content offset: 2 %}
-					<article class="main_wrapper-main_article --article_text_styling --article_extended {%- if forloop.index0 == 2 %} --article_extended_first {%- endif -%}">
+					<article class="main_wrapper-main_article --article_text_styling --article_extended {%- if forloop.first %} --article_extended_first {%- endif -%}">
 						{{ article }}
 					</article>
 						{%- endfor -%}
