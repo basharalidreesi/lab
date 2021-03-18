@@ -65,6 +65,10 @@ layout: default
 						{%- for article in separated_page_content -%}
 							{%- if forloop.index0 == 0 or forloop.index0 == 1 -%}
 								{%- continue -%}
+							{%- elsif forloop.index0 == 2 %}
+					<article class="main_wrapper-main_article --article_text_styling --article_extended --article_extended_first">
+						{{ article }}
+					</article>
 							{%- else %}
 					<article class="main_wrapper-main_article --article_text_styling --article_extended">
 						{{ article }}

@@ -832,7 +832,7 @@ body {
 		padding-top: calc(var(--double));
 		border-top: 1px solid var(--border_colour);
 	}
-	.main_wrapper-main_article.--article_extended:first-of-type {
+	.main_wrapper-main_article.--article_extended_first {
 		margin-top: calc(var(--double));
 	}
 	.main_wrapper-main_article.--article_extended:last-of-type {
