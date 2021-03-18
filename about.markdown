@@ -33,5 +33,5 @@ Cras pede. Nullam id velit sit amet turpis tincidunt sagittis. Nunc malesuada. N
 {% include lipsum.html %}
 <!--style: block -->
 <!--break-->
-<!--style: hi   -->
+<!--style: background-color: yellow;   -->
 {% include lipsum.html %}
