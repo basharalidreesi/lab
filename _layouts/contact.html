@@ -77,7 +77,7 @@ layout: default
 					{%- endif %}
 					{%- if content %}
 						{%- assign article_index = "<!-- STYLE INDEX 0 -->" %}
-					<article class="main_wrapper-main_article --article_text_styling {%- if separated %} --article_before {%- endif -%} {%- if titled == false %} --article_no_title {%- endif -%}" style="{%- for item in style_index -%} {%- if item contains article_index -%} {{ item | remove: article_index | strip }} {%- endif -%} {%- endfor -%}">
+					<article class="main_wrapper-main_article --article_text_styling {%- if separated %} --article_before {%- endif -%} {%- if titled == false %} --article_no_title {%- endif -%}" style="{%- for item in style_index -%} {{ item | remove: article_index | strip }} {%- endfor -%}">
 						{%- if separated %}
 						{{ page_content_before }}
 						{%- else %}
