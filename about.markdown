@@ -10,6 +10,8 @@ layout: contact
 
 {% include lipsum.html %}
 
+Space
+
 !after
 
 {% include lipsum.html %}
