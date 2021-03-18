@@ -7,4 +7,4 @@ has page title: false
 layout: showcase
 ---
 
-{% include lipsum %}
+{% include lipsum.html %}
