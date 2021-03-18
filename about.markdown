@@ -14,19 +14,36 @@ Cras volutpat, lacus quis semper pharetra, nisi enim dignissim est, et sollicitu
 Praesent interdum mollis neque. In egestas nulla eget pede. Integer eu purus sed diam dictum scelerisque. Morbi cursus velit et felis. Maecenas faucibus aliquet erat. In aliquet rhoncus tellus. Integer auctor nibh a nunc fringilla tempus. Cras turpis urna, dignissim vel, suscipit pulvinar, rutrum quis, sem. Ut lobortis convallis dui. Sed nonummy orci a justo. Morbi nec diam eget eros eleifend tincidunt.
 Curabitur non elit. Pellentesque iaculis, nisl non aliquet adipiscing, purus urna aliquet orci, sed sodales pede neque at massa. Pellentesque laoreet, enim eget varius mollis, sapien erat suscipit metus, sit amet iaculis nulla sapien id felis. Aliquam erat volutpat. Nam congue nulla a ligula. Morbi tempor hendrerit erat. Curabitur augue. Vestibulum nulla est, commodo et, fringilla quis, bibendum eget, ipsum. Suspendisse pulvinar iaculis ante. Mauris dignissim ante quis nisi. Aliquam ante mi, aliquam et, pellentesque ac, dapibus et, enim. In vulputate justo vel magna. Phasellus imperdiet justo. Proin odio orci, dapibus id, porta a, pellentesque id, erat. Aliquam erat volutpat. Mauris nonummy varius libero. Sed dolor ipsum, tempor non, aliquet et, pulvinar quis, dui. Pellentesque mauris diam, lobortis id, varius varius, facilisis at, nulla.
 Cras pede. Nullam id velit sit amet turpis tincidunt sagittis. Nunc malesuada. Nunc consequat scelerisque odio. Donec eu leo. Nunc pellentesque felis sed odio. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus lobortis metus in lectus. Cras mollis quam eget sapien. Pellentesque non lorem sit amet sem lacinia euismod.
-<!-- style: block 1 -->
+<!--style-->
+block
+<!--style-->
 <!--break-->
-<!-- style: block 2 -->
+
+<!--style-->
+block
+<!--style-->
+<!--style-->
+block
+<!--style-->
+
 {% include lipsum.html %}
 
 <!--break-->
 
 {% include lipsum.html %}
-<!-- style: block 3 -->
+<!--style-->
+block
+<!--style-->
+
 <!--break-->
 
 {% include lipsum.html %}
-<!-- style: block 4 -->
+<!--style-->
+block
+<!--style-->
+
 <!--break-->
-<!-- style: block 5 -->
+<!--style-->
+block
+<!--style-->
 {% include lipsum.html %}
