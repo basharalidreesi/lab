@@ -29,12 +29,14 @@ layout: default
 						{%- capture article_index -%}
 							{{ forloop.index0 }}
 						{%- endcapture -%}
-						{%- if article contains "<!--style:" -%} {%- comment -%} --> {%- endcomment -%}
-							{%- assign style = article | split: "<!--style:" | split: "-->" -%}
+						{%- capture article_content -%}
+							{{ article }}
+						{%- endcapture -%}
+						{%- if article_content contains "<!--style:" -%} {%- comment -%} --> {%- endcomment -%}
+							{%- assign separated_article_content = article_content | split: "<!--" -%} {%- comment -%} --> {%- endcomment -%}
 						{%- endif -%}
-						{%- assign article_style[article_index] = style -%}
 						<p>
-							{{ article_index }}: {{ article_style[article_index] }}
+							{{ article_index }}: {{ separated_article_content }}
 						</p>
 					{%- endfor -%}
 				{%- else -%}
