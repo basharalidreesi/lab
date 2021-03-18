@@ -10,7 +10,7 @@ colours:
   secondary colour: grey
   border colour: "#39ff14"
   text colour: "#39ff14"
-header_location: central
+has central header: true
 layout: showcase
 ---
 
