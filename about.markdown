@@ -1,7 +1,8 @@
 ---
 title: About
 position: 2
-is_listed: true
+has page title: false
+is navigable: true
 layout: contact
 ---
 
