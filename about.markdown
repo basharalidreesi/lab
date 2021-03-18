@@ -16,8 +16,8 @@ Cras pede. Nullam id velit sit amet turpis tincidunt sagittis. Nunc malesuada. N
 
 <!--break-->
 
-Space
-
 {% include lipsum.html %}
 
-Space
+<!--break-⟶
+
+{% include lipsum.html %}
