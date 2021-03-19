@@ -115,12 +115,6 @@
 		reticulateSplines();
 		initialListen();
 		console.log(document.title);
-		console.log(
-			"Central: " + central + "\n" +
-			"Cascade: " + cascade + "\n" +
-			"List: " + list + "\n" +
-			"Black: " + black
-		);
 	}
 
 	initialise();
