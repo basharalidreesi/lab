@@ -601,24 +601,19 @@ body {
 .--homepage .mother_container-nav_container {
 	order: 2;
 }
-.mother_container-header_container_upper,
-.mother_container-header_container_central {
-	position: sticky;
-	z-index: 100;
-}
-.mother_container-header_container_upper {
+.mother_container-header_container {
 	order: 2;
+	position: sticky;
 	top: 0;
+	z-index: 100;
+	opacity: 0;
+	transition: opacity 0.25s;
 }
-.mother_container-header_container_central {
+.--central_header .mother_container-header_container {
 	order: 1;
 	top: -1px;
 	margin-top: calc(var(--screen_height_half) - var(--header_height_half) + 1px /* compensate for top: -1px */);
 	margin-bottom: calc(var(--screen_height_half) - var(--header_height_half));
-}
-#header_container {
-	opacity: 0;
-	transition: opacity 0.25s;
 }
 .mother_container-main_container {
 	order: 3;
@@ -626,7 +621,7 @@ body {
 .mother_container-footer_container {
 	order: 4;
 }
-#header_container,
+.mother_container-header_container,
 .mother_container-nav_container,
 .mother_container-footer_container {
 	user-select: none;
@@ -742,24 +737,22 @@ body {
 │ header styles │
 └───────────────┘
 */
-.header_container-header_wrapper_central {
-	height: calc(var(--header_height));
-	text-align: center;
-	padding: 0;
-	transition: padding 0.25s;
-}
-.header_container-header_wrapper_upper {
+.header_container-header_wrapper {
 	height: calc(var(--header_height));
 	text-align: center;
 	padding: calc(var(--single));
 }
-.header_wrapper-header_anchor {
-	/* display: inline-block; */
-	height: 100%;
-	width: auto; /* debug */
+.--central_header .header_container-header_wrapper {
+	padding: 0;
+	transition: padding 0.25s;
 }
-.header_container-header_wrapper_upper .header_wrapper-header_anchor {
+.header_wrapper-header_anchor {
 	display: inline-block;
+	height: 100%;
+	width: auto;
+}
+.--central_header .header_wrapper-header_anchor {
+	display: block;
 }
 .header_anchor-header_graphic {
 	height: 100%;
@@ -1326,7 +1319,7 @@ body {
 		order: 2;
 		position: relative;
 	}
-	.mother_container-header_container_upper {
+	.mother_container-header_container {
 		order: 1;
 	}
 	/*
