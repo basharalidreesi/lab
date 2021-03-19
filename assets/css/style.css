@@ -203,6 +203,13 @@ address {
 table {
 	border-spacing: 0;
 }
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder,
+:-moz-placeholder {
+	text-align: center;
+	color: grey;
+}
 p + p {
 	padding-top: calc(var(--single));
 }
@@ -905,6 +912,7 @@ body {
 		border: 1px solid var(--border_colour);
 		border-radius: calc(var(--single));
 		resize: none;
+		text-align: left;
 	}
 	.main_wrapper-contact_wrapper button { }
 	/*
