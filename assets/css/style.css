@@ -871,6 +871,10 @@ body {
 		padding-top: calc(var(--quadruple));
 		border-top: none;
 	}
+	.--central_header .main_wrapper-contact_wrapper:first-child {
+		padding-top: calc(var(--double) + var(--single) + var(--half));
+		border-top: 1px solid var(--border_colour);
+	}
 	.main_wrapper-contact_wrapper:last-child {
 		border-bottom: 1px solid var(--border_colour);
 	}
@@ -1545,6 +1549,9 @@ body {
 			padding-right: calc(var(--double));
 		}
 		.--no_title.--no_content .main_wrapper-contact_wrapper {
+			border-top: none;
+		}
+		.main_wrapper-contact_wrapper:first-child {
 			border-top: none;
 		}
 		.main_wrapper-contact_wrapper input {
