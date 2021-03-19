@@ -8,9 +8,7 @@ colours:
   border colour: yellow
   text colour: yellow
 page:
-  is navigable: false
   has central header: true
-  has title: false
 layout: showcase
 ---
 
