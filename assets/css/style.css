@@ -916,7 +916,7 @@ body {
 	.main_wrapper-contact_wrapper input::placeholder,
 	.main_wrapper-contact_wrapper textarea::placeholder {
 		text-align: center;
-		color: grey;
+		color: var(--placeholder_colour);
 	}
 	.main_wrapper-contact_wrapper input:focus,
 	.main_wrapper-contact_wrapper textarea:focus {
