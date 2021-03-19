@@ -6,6 +6,7 @@ colours:
   secondary colour: grey
   border colour: orange
   text colour: orange
+  placeholder colour: orange
 page:
   is navigable: true
   has title: false
