@@ -1576,6 +1576,9 @@ body {
 			padding-left: calc(var(--double));
 			padding-right: calc(var(--double));
 		}
+		.main_wrapper-contact_wrapper.--article_no_title {
+			border-top: none;
+		}
 		.main_wrapper-contact_wrapper input {
 			width: calc(50% - var(--half));
 		}
