@@ -30,7 +30,7 @@ defaults:
     page:
       is navigable: false
       has central header: false
-      has title: true
+      has title: false
 - scope:
     path: ''
     type: pages

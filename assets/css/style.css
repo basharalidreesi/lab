@@ -1507,9 +1507,6 @@ body {
 		.main_wrapper-main_title {
 			border-top: none;
 		}
-		.--upper_header .main_wrapper-main_title {
-			border-top: none;
-		}
 		.main_wrapper-main_article {
 			padding-left: calc(var(--double));
 			padding-right: calc(var(--double));
