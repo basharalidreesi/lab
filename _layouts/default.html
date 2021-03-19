@@ -1,6 +1,9 @@
 <!DOCTYPE HTML>
 <html lang="en-US">
 	<head>
+		{%- comment -%}
+			<!-- begin setup -->
+		{%- endcomment -%}
 		{%- if page.url == "/" -%}
 			{%- assign home = true -%}
 		{%- else -%}
@@ -19,6 +22,9 @@
 		{%- assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" -%}
 		{%- assign pages = site.pages | sort: "position" -%}
 		{%- assign header_graphics = site.static_files | where: "header_graphic", true %}
+		{%- comment -%}
+			<!-- end setup -->
+		{%- endcomment -%}
 		<meta charset="utf-8">
 		<title>
 			{{- site.title -}}
@@ -125,7 +131,7 @@
 				{%- endunless %}
 				<ul class="nav_container-nav_list_wrapper">
 					{%- for node in pages -%}
-						{%- if node['is navigable'] and tree.size >= 2 -%}
+						{%- if node.page['is navigable'] and tree.size >= 2 -%}
 							{%- unless page.url contains node.url %}
 					<li class="nav_list_wrapper-nav_list_item --nav_text_styling">
 						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
@@ -163,7 +169,7 @@
 						</ul>
 					</li>
 							{%- endunless -%}
-						{%- elsif node['is navigable'] and tree.size < 2 -%}
+						{%- elsif node.page['is navigable'] and tree.size < 2 -%}
 					<li class="nav_list_wrapper-nav_list_item --nav_text_styling {%- if page.url contains node.url %} --current_nav_text_styling {%- endif -%}">
 						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
 							{{ node.title }}
