@@ -1,6 +1,21 @@
 <!DOCTYPE HTML>
 <html lang="en-US">
 	<head>
+		{%- if page.url == "/" -%}
+			{%- assign home = true -%}
+		{%- else -%}
+			{%- assign home = false -%}
+		{%- endif -%}
+		{%- if page.page['has central_header'] -%}
+			{%- assign central = true -%}
+		{%- else -%}
+			{%- assign central = false -%}
+		{%- endif -%}
+		{%- if page.layout == "cascade" %}
+			{%- assign cascade = true -%}
+		{%- else -%}
+			{%- assign cascade = false -%}
+		{%- endif -%}
 		{%- assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" -%}
 		{%- assign pages = site.pages | sort: "position" -%}
 		{%- assign header_graphics = site.static_files | where: "header_graphic", true %}
@@ -51,22 +66,22 @@
 		<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/style.css" media="screen"/>
 		{%- include style.css.html -%}
 		{%- include noscript.css.html %}	</head>
-	<body class="{%- if page['has central header'] -%} --central_header {%- else -%} --upper_header {%- endif -%} {%- if page.url == '/' %} --homepage {%- endif %} --{{- page.layout -}}_layout">
-	{%- if page.layout == "cascade" %}
+	<body class="{%- if home -%} --homepage {% endif -%} {%- if central -%} --central_header {%- else -%} --upper_header {%- endif %} --{{- page.layout -}}_layout">
+	{%- if cascade %}
 	<div class="bodyalt" id="bodyalt">
 	{%- endif %}
 		<div class="--mobile_background"></div>
-		{%- if page['has central header'] %}
+		{%- if central %}
 		<div class="--downward_arrow_wrapper" id="arrow_wrapper">
 			<div class="--downward_arrow"></div>
 		</div>
 		{%- endif %}
 		<div class="mother_container" id="mother_container">
-			<nav class="mother_container-nav_container{%- if page['has central header'] -%}_central{%- else -%}_upper{%- elsif page.url == '/' -%}_home{%- endif -%}" id="nav_container">
-				{%- if page.url != "/" %}
+			<nav class="mother_container-nav_container{%- if central -%}_central{%- else -%}_upper{%- elsif home -%}_home{%- endif -%}" id="nav_container">
+				{%- unless home %}
 				<input type="checkbox" id="nav_map_checkbox">
-				<div class="--nav_map_background{%- if page['has central header'] -%}_central{%- else -%}_upper{%- endif -%}"></div>
-				<label for="nav_map_checkbox" class="nav_container{%- if page['has central header'] -%}_central{%- else -%}_upper{%- endif -%}-nav_map_wrapper" id="nav_map_wrapper">
+				<div class="--nav_map_background{%- if central -%}_central{%- else -%}_upper{%- endif -%}"></div>
+				<label for="nav_map_checkbox" class="nav_container{%- if central -%}_central{%- else -%}_upper{%- endif -%}-nav_map_wrapper" id="nav_map_wrapper">
 						{%- for branch in tree -%}
 							{%- assign segment = page.path | split: branch -%}
 							{%- assign current = branch | prepend: segment[0] | append: ".markdown" -%}
@@ -109,8 +124,8 @@
 				</label>
 				{%- else %}
 				<!-- nav map not included -->
-				{%- endif %}
-				<ul class="nav_container{%- if page['has central header'] -%}_central{%- else -%}_upper{%- endif -%}{%- if page.url == '/' -%}_home{%- endif -%}-nav_list_wrapper">
+				{%- endunless %}
+				<ul class="nav_container{%- if central -%}_central{%- else -%}_upper{%- endif -%}{%- if home -%}_home{%- endif -%}-nav_list_wrapper">
 					{%- for node in pages -%}
 						{%- if node['is navigable'] and tree.size >= 2 -%}
 							{%- unless page.url contains node.url %}
@@ -160,11 +175,11 @@
 					{%- endfor %}
 				</ul>
 			</nav>
-			<div class="--loader_wrapper{%- if page['has central header'] -%}_central{%- else -%}_upper{%- endif -%}" id="loader_wrapper">
+			<div class="--loader_wrapper{%- if central -%}_central{%- else -%}_upper{%- endif -%}" id="loader_wrapper">
 				<div class="--loader" id="loader"></div>
 			</div>
-			<header class="mother_container-header_container{%- if page['has central header'] -%}_central{%- else -%}_upper{%- endif -%}" id="header_container">
-				<div class="header_container-header_wrapper{%- if page['has central header'] -%}_central{%- else -%}_upper{%- endif -%}">
+			<header class="mother_container-header_container{%- if central -%}_central{%- else -%}_upper{%- endif -%}" id="header_container">
+				<div class="header_container-header_wrapper{%- if central -%}_central{%- else -%}_upper{%- endif -%}">
 					<a class="header_wrapper-header_anchor" href="{{- site.url -}}{{- site.baseurl -}}">
 						<img class="header_anchor-header_graphic" id="header_graphic" alt="Header" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" />
 						<noscript>
@@ -175,14 +190,14 @@
 			</header>
 			<main class="mother_container-main_container" id="main_container">
 				{{ content }}			</main>
-			{%- unless page.layout == "cascade" %}
+			{%- unless cascade %}
 			<footer class="mother_container-footer_container">
 				<div class="footer_container-footer_wrapper">
 					{%- include footer.html %}				</div>
 			</footer>
 			{%- endunless %}
 		</div>
-	{%- if page.layout == "cascade" %}
+	{%- if cascade %}
 	</div>
 	{%- endif %}
 	</body>
