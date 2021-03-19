@@ -1599,5 +1599,7 @@ body {
 		*/
 		.main_wrapper-contact_wrapper input {
 			width: 100%;
+			margin-left: 0;
+			margin-right: 0;
 		}
 }
