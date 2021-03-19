@@ -13,11 +13,9 @@ layout: showcase
 ---
 
 {% for doc in site.documents %}
-{{ doc.path }}
-{% endfor %}
-
-<!-- break -->
-
-{% for pg in pages %}
-{{ pg.path }}
+* {{ doc.title }}
+* {{ doc.path }}
+{% if doc.page['is navigable'] %}
+* Navigable!
+{% endif %}
 {% endfor %}
