@@ -3,8 +3,9 @@ title: Home
 permalink: "/"
 position: 0
 page:
+  is navigable: true
   has central header: true
-  has title: true
+  has title: false
 layout: showcase
 ---
 
