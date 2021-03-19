@@ -2,7 +2,10 @@
 title: About
 position: 2
 colours:
-  primary colour: aquamarine
+  primary colour: black
+  secondary colour: grey
+  border colour: orange
+  text colour: orange
 page:
   is navigable: true
   has title: false
