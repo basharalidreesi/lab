@@ -77,7 +77,7 @@ defaults:
     path: assets/graphics/showcase_tiles
   values:
     showcase_tile: true
-baseurl:
+baseurl: 
 url: https://jadtoghuj.com
 description: Jad Toghuj | Editorial Stylist | Creative Director | Amman, Jordan
 author: Jad Toghuj
@@ -85,7 +85,7 @@ email: jadtoghuj@gmail.com
 instagram: "@jad.toghuj"
 basabees: http://www.basharalidreesi.com
 batabeet: "/"
-theme:
+theme: 
 plugins:
 - jekyll-feed
 - jekyll-sitemap
