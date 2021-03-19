@@ -371,17 +371,18 @@ p:empty {
 		.--article_text_styling h6 {
 			font-family: var(--header_text_font);
 			font-weight: var(--header_text_font_weight);
+			text-align: center;
 			line-height: 150%;
 		}
 		.--article_text_styling h1 {
-			font-size: calc(var(--header_text_font_size) / 2);
+			font-size: 3rem; /* temp */
 		}
 		.--article_text_styling h2,
 		.--article_text_styling h3,
 		.--article_text_styling h4,
 		.--article_text_styling h5,
 		.--article_text_styling h6 {
-			font-size: calc(var(--header_text_font_size) / 2.5);
+			font-size: 2rem; /* temp */
 		}
 		.--article_text_styling ul,
 		.--article_text_styling ol {
@@ -439,9 +440,10 @@ p:empty {
 		.--article_text_styling tbody { /* none yet! */ }
 		.--article_text_styling tr { /* none yet! */ }
 		.--article_text_styling th {
+			text-align: center;
+			font-weight: 700;
 			padding: calc(var(--single));
 			border-bottom: 1px solid var(--border_colour);
-			font-weight: 700;
 		}
 		.--article_text_styling td {
 			padding: calc(var(--single));
