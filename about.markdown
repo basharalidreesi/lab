@@ -3,9 +3,9 @@ title: About
 position: 2
 colours:
   primary colour: aquamarine
-is navigable: true
-has central header: false
-has page title: true
+page:
+  is navigable: true
+  has title: false
 layout: contact
 ---
 
