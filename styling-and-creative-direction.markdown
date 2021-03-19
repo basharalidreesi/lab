@@ -2,8 +2,9 @@
 title: Styling & Creative Direction
 date: 2021-02-03 23:35:00 Z
 position: 1
-has page title: false
-is navigable: true
+page:
+  is navigable: true
+  has title: false
 layout: list
 ---
 
