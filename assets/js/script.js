@@ -93,6 +93,17 @@
 				}
 			});
 		}
+		if (contact) {
+			window.addEventListener("DOMContentLoaded", () => {
+				const textareas = document.querySelectorAll("textarea");
+				textareas.forEach((textarea) => {
+					textarea.addEventListener("input", () => {
+						textarea.style.height = "calc(var(--quadruple) * 2)";
+						textarea.style.height = textarea.scrollHeight + "px";
+					});
+				});
+			});
+		}
 	}
 
 // begin

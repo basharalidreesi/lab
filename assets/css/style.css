@@ -897,6 +897,7 @@ body {
 		background-color: var(--secondary_colour);
 		border: 1px solid var(--border_colour);
 		border-radius: 5000px;
+		text-align: center;
 	}
 	.main_wrapper-contact_wrapper textarea {
 		min-height: calc(var(--quadruple) * 2);

@@ -18,12 +18,17 @@
 			let cascade = true;
 			{%- else %}
 			let cascade = false;
-			{%- endif %}
+			{%- endif -%}
 			{%- if page.layout == "list" %}
 			let list = true;
 			{%- else %}
 			let list = false;
-			{%- endif %}
+			{%- endif -%}
+			{%- if page.layout == "contact" %}
+			let contact = true;
+			{%- else %}
+			let contact = false;
+			{%- endif -% }
 			{%- if text_colour == "#000" or text_colour == "#000000" or text_colour == "black" %}
 			let black = true;
 			{%- else %}
