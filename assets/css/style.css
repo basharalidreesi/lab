@@ -839,13 +839,10 @@ body {
 		padding-top: calc(var(--double));
 		border-bottom: 1px dashed var(--border_colour);
 	}
-	.--article_empty {
-		padding: 0;
-		border: none;
-	}
+	.--article_empty,
 	.--article_before.--article_empty {
 		padding: 0;
-		border-top: 1px solid var(--border_colour);
+		border: none;
 	}
 	.--central_header .--article_before.--article_empty {
 		padding: 0;
