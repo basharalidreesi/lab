@@ -12,3 +12,8 @@ page:
 layout: showcase
 ---
 
+{{ site.documents }}
+
+<!-- break -⟶
+
+{{ site.pages }}
