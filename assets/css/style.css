@@ -1376,6 +1376,7 @@ body {
 			flex-flow: column nowrap;
 			padding: 0;
 			border-top: 1px solid var(--border_colour);
+			border-bottom: 1px solid var(--border_colour);
 		}
 		.--homepage .nav_list_wrapper-nav_list_item {
 			width: 100%;
