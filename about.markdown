@@ -4,7 +4,7 @@ position: 2
 colours:
   primary colour: aquamarine
 display title: false
-has central header: false
+has central header: true
 has page title: false
 is navigable: true
 layout: contact
