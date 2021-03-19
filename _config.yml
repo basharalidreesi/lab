@@ -28,7 +28,6 @@ defaults:
       text colour: "#000"
       placeholder colour: grey
     page:
-      is navigable: false
       has central header: false
       has title: false
 - scope:
@@ -36,6 +35,8 @@ defaults:
     type: pages
   values:
     permalink: "/:basename"
+    page:
+      is navigable: false
 - scope:
     path: assets/graphics/header_graphics
   values:
