@@ -20,34 +20,13 @@ defaults:
 - scope:
     path: ''
   values:
-    layout: default
+    layout: article
     colours:
       primary colour: "#91a3b0"
       secondary colour: "#fff"
       border colour: "#000"
       text colour: "#000"
-    fonts:
-      families:
-        navigation: M+ 1p
-        footer: M+ 1p
-        lists: M+ 1p
-        tags: MD IO
-        titles: Margo
-        articles: M+ 1p
-      sizes:
-        navigation: temp
-        footer: temp
-        lists: temp
-        tags: temp
-        titles: temp
-        articles: temp
-      weights:
-        navigation: 300
-        footer: 300
-        lists: 400
-        tags: 400
-        titles: 400
-        articles: 400
+    is navigable: false
     has central header: false
     has page title: true
 - scope:
@@ -55,18 +34,6 @@ defaults:
     type: pages
   values:
     permalink: "/:basename"
-    layout: default
-    is navigable: false
-- scope:
-    path: ''
-    type: styling-and-creative-direction
-  values:
-    layout: cascade
-- scope:
-    path: ''
-    type: social-media-and-content-creation
-  values:
-    layout: cascade
 - scope:
     path: assets/graphics/header_graphics
   values:
