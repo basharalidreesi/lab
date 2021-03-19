@@ -1337,62 +1337,56 @@ body {
 	│ nav styles │
 	└────────────┘
 	*/
-		.--homepage .nav_container-nav_list_wrapper {
-			border-top: 1px solid var(--border_colour);
-		}
-		.--homepage.--central_header .nav_container-nav_list_wrapper {
-			flex-flow: column nowrap;
-			padding: 0;
-		}
-		.--homepage .nav_container-nav_list_wrapper > .nav_list_wrapper-nav_list_item {
-			width: 100%;
-			padding-top: calc(var(--double));
-			padding-bottom: calc(var(--double));
-			border-bottom: 1px solid var(--border_colour);
-		}
-		.--homepage .nav_container-nav_list_wrapper > .nav_list_wrapper-nav_list_item:first-child {
-			border-top: none;
-		}
-		.--homepage .nav_container-nav_list_wrapper > .nav_list_wrapper-nav_list_item:last-child {
-			border-bottom: none;
-		}
-		.--central_header .nav_container-nav_list_wrapper {
-			display: none;
-			border-bottom: none;
-		}
-		.--central_header #nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper {
-			display: flex;
-			flex-flow: column nowrap;
-			padding: 0;
-			border-top: none;
-		}
-		.--central_header .nav_container-nav_list_wrapper > .nav_list_wrapper-nav_list_item {
-			width: 100%;
-			padding-top: calc(var(--double));
-			padding-bottom: calc(var(--double));
-			border-bottom: 1px solid var(--border_colour);
-		}
-		.--central_header .nav_container-nav_list_wrapper > .--current_nav_text_styling {
-			display: none;
-		}
-		:not(.--central_header) .nav_container-nav_list_wrapper {
+		.nav_container-nav_list_wrapper {
 			position: relative;
 			display: none;
 			border-bottom: none;
 		}
-		:not(.--central_header) #nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper {
+		#nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper {
 			display: flex;
 			flex-flow: column nowrap;
 			padding: 0;
 		}
-		:not(.--central_header) .nav_container-nav_list_wrapper > .nav_list_wrapper-nav_list_item {
+		.nav_list_wrapper-nav_list_item {
 			width: 100%;
 			padding-top: calc(var(--double));
 			padding-bottom: calc(var(--double));
 			border-bottom: 1px solid var(--border_colour);
 		}
-		:not(.--central_header) .nav_container-nav_list_wrapper > .--current_nav_text_styling {
+		.--current_nav_text_styling {
 			display: none;
+		}
+		/*
+		┌───────┐
+		│ begin └────────┐
+		│ central header │
+		└────────────────┘
+		*/
+		.--central_header #nav_map_checkbox:checked ~ .nav_container-nav_list_wrapper {
+			border-top: none;
+		}
+		/*
+		┌───────┐
+		│ begin └──┐
+		│ homepage │
+		└──────────┘
+		*/
+		.--homepage .nav_container-nav_list_wrapper {
+			flex-flow: column nowrap;
+			padding: 0;
+			border-top: 1px solid var(--border_colour);
+		}
+		.--homepage .nav_list_wrapper-nav_list_item {
+			width: 100%;
+			padding-top: calc(var(--double));
+			padding-bottom: calc(var(--double));
+			border-bottom: 1px solid var(--border_colour);
+		}
+		.--homepage .nav_list_wrapper-nav_list_item:first-child {
+			border-top: none;
+		}
+		.--homepage .nav_list_wrapper-nav_list_item:last-child {
+			border-bottom: none;
 		}
 		/*
 		┌───────┐
