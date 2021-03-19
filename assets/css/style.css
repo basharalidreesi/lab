@@ -203,14 +203,6 @@ address {
 table {
 	border-spacing: 0;
 }
-::placeholder,
-::-webkit-input-placeholder,
-::-moz-placeholder,
-:-ms-input-placeholder,
-:-moz-placeholder {
-	text-align: center;
-	color: grey;
-}
 p + p {
 	padding-top: calc(var(--single));
 }
@@ -904,6 +896,7 @@ body {
 		border: 1px solid var(--border_colour);
 		border-radius: 5000px;
 		text-align: center;
+		color: var(--text_colour);
 	}
 	.main_wrapper-contact_wrapper textarea {
 		width: 100%;
@@ -914,6 +907,11 @@ body {
 		border-radius: calc(var(--single));
 		resize: none;
 		text-align: left;
+		color: var(--text_colour);
+	}
+	.main_wrapper-contact_wrapper textarea::placeholder {
+		text-align: center;
+		color: grey;
 	}
 	.main_wrapper-contact_wrapper button { }
 	/*
