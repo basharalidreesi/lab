@@ -3,47 +3,31 @@ layout: default
 ---
 
 <!-- begin showcase.html -->
-				{%- assign showcase_tiles = site.static_files | where: "showcase_tile", true -%}
-				{%- assign page_path = page.path | replace: "index.md", "home" | replace: "index.markdown", "home" | replace: "index.html", "home" | remove_first: "_" | remove: ".md" | remove: ".markdown" | remove: ".html" -%}
-				{%- assign page_content = page.content | split: "!after" -%}
-				{%- if page_content[1] -%}
-					{%- assign after = true -%}
-				{%- endif %}
-				<div class="main_container-main_wrapper">
-					{%- if page['has page title'] %}
-					<header class="main_wrapper-main_title">
-						<h1 class="--title_text_styling">
-							{{ page.title }}
-						</h1>
-					</header>
-					{%- endif %}
-					{%- if content %}
-					<article class="main_wrapper-main_article --article_text_styling">
-						{%- if after %}
-							{%- assign size = page_content[0] | size | minus: 3 -%}
-						{{ page_content[0] | slice: 0, size }}
-						{%- else %}
-						{{ page_content[0] }}
-						{%- endif %}
-					</article>
-					{%- endif %}
-					<article class="main_wrapper-showcase_wrapper">
+				{%- comment -%}
+					<!-- begin setup -->
+				{%- endcomment -%}
+					{%- capture content_html -%}
+						{%- include content.html -%}
+					{%- endcapture -%}
+					{%- assign content_index = content_html | split: "<!-- CONTENT BREAK -->" -%}
+					{%- assign showcase_tiles = site.static_files | where: "showcase_tile", true -%}
+					{%- assign page_path = page.path | replace: "index.md", "home" | replace: "index.markdown", "home" | replace: "index.html", "home" | remove_first: "_" | remove: ".md" | remove: ".markdown" | remove: ".html" -%}
+				{%- comment -%}
+					<!-- end setup -->
+				{%- endcomment -%}
+					{{- content_index[0] }}
 					{%- if showcase_tiles %}
-				{%- for tile in showcase_tiles -%}
-					{%- assign tile_name = tile.name | prepend: "/" -%}
-					{%- assign tile_path = tile.path | remove: "assets/graphics/showcase_tiles/" | remove_first: "/" | remove: tile_name -%}
-					{%- if tile_path == page_path %}
+					<article class="main_wrapper-showcase_wrapper">
+						{%- for tile in showcase_tiles -%}
+							{%- assign tile_name = tile.name | prepend: "/" -%}
+							{%- assign tile_path = tile.path | remove: "assets/graphics/showcase_tiles/" | remove_first: "/" | remove: tile_name -%}
+								{%- if tile_path == page_path %}
 						<picture class="showcase_wrapper-showcase_tile">
 							<img class="--showcase_tile" src="{{- site.baseurl -}}{{- tile.path -}}" alt="{{ tile.basename }}" width="33%">
 						</picture>
-					{%- endif -%}
-				{%- endfor %}
+								{%- endif -%}
+						{%- endfor %}
 					</article>
 					{%- endif -%}
-					{%- if after %}
-					<article class="main_wrapper-main_article --article_after --article_text_styling">
-						{{ page_content[1] | slice: 4, page_content[1].size }}
-					</article>
-					{%- endif %}
-				</div>
+					{{- content_index[1] }}
 				<!-- end showcase.html -->
