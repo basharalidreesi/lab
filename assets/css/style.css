@@ -842,6 +842,9 @@ body {
 		padding-top: calc(var(--quadruple));
 		border-top: none;
 	}
+	.--article_layout .main_wrapper-main_article.--article_before {
+		border-bottom: 1px solid var(--border_colour);
+	}
 	.main_wrapper-main_article.--article_after {
 		padding-top: calc(var(--double));
 		border-bottom: 1px solid var(--border_colour);
