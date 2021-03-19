@@ -720,11 +720,11 @@ body {
 		display: none;
 		height: 100%;
 		width: 100%;
-		background-color: var(--secondary_colour);
-		box-shadow: 0 0 calc(var(--quadruple)) calc(var(--double)) var(--secondary_colour);
 	}
 	.--central_header .--nav_map_background {
 		display: block;
+		background-color: var(--secondary_colour);
+		box-shadow: 0 0 calc(var(--quadruple)) calc(var(--single)) var(--secondary_colour);
 	}
 	.nav_container-nav_map_wrapper {
 		display: none;
@@ -1399,8 +1399,6 @@ body {
 		}
 		.--nav_map_background {
 			display: block;
-			background-color: transparent;
-			box-shadow: none;
 			transition: all 0.25s;
 		}
 		#nav_map_checkbox:checked ~ .--nav_map_background {
