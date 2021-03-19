@@ -839,7 +839,7 @@ body {
 		padding-top: calc(var(--double));
 		border-bottom: 1px dashed var(--border_colour);
 	}
-	.main_wrapper-main_article.--article_extended:last-child {
+	article:last-child {
 		border-bottom: 1px solid var(--border_colour);
 	}
 	/*
@@ -859,6 +859,9 @@ body {
 	.--central_header .--no_title.--no_content .main_wrapper-contact_wrapper {
 		padding-top: calc(var(--quadruple));
 		border-top: none;
+	}
+	.main_wrapper-contact_wrapper:last-child {
+		border-bottom: 1px solid var(border_colour);
 	}
 	.main_wrapper-contact_wrapper fieldset {
 		display: flex;
