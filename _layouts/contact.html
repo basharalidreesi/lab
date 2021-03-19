@@ -14,11 +14,11 @@ layout: default
 					{%- capture page_content -%}
 						{{ content }}
 					{%- endcapture -%}
-					{%- assign processed_page_content = page_content | strip | newline_to_br | strip_newlines | replace: " ", "" | replace: "<br />", "" -%}
-					{%- assign separator = "<!--break-->" -%}
+					{%- assign processed_page_content = page_content | replace: "  ", " " -%}
+					{%- assign separator = "<!-- break -->" -%}
 					{%- if processed_page_content contains separator -%}
 						{%- assign separated = true -%}
-						{%- assign separated_page_content = page_content | split: separator -%}
+						{%- assign separated_page_content = processed_page_content contains separator | split: separator -%}
 						{%- assign page_content_before = separated_page_content[0] -%}
 						{%- assign page_content_after = separated_page_content[1] -%}
 						{%- if separated_page_content[2] -%}
