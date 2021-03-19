@@ -186,7 +186,7 @@ html {
 img:not(.header_anchor-header_graphic), svg path {
 	pointer-events: none;
 }
-img, svg, svg path, label {
+img, svg, svg path, label, button {
 	user-select: none;
 	-ms-user-select: none;
 	-moz-user-select: none;
@@ -625,6 +625,14 @@ body {
 }
 .mother_container-footer_container {
 	order: 4;
+}
+#header_container,
+#nav_container,
+.mother_container-footer_container {
+	user-select: none;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
 }
 
 /*
