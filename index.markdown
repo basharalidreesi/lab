@@ -2,15 +2,15 @@
 title: Home
 permalink: "/"
 position: 0
+colours:
+  primary colour: black
+  secondary colour: grey
+  border colour: yellow
+  text colour: yellow
 page:
-  is navigable: true
+  is navigable: false
   has central header: true
   has title: false
 layout: showcase
 ---
 
-{% include lipsum.html %}
-
-<!-- break -->
-
-{% include lipsum.html %}
