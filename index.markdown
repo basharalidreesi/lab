@@ -12,10 +12,7 @@ page:
 layout: showcase
 ---
 
-{% for doc in site.documents %}
-* {{ doc.title }}
-* {{ doc.path }}
-{% if doc.page['is navigable'] %}
-* Navigable!
-{% endif %}
-{% endfor %}
+{% assign docs = site.documents %}
+{% assign pages = site.pages %}
+{% assign docs = docs | push: pages %}
+{{ docs | inspect }}
