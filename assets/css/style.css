@@ -203,6 +203,7 @@ address {
 table {
 	border-spacing: 0;
 }
+::placeholder,
 ::-webkit-input-placeholder,
 ::-moz-placeholder,
 :-ms-input-placeholder,
