@@ -16,7 +16,7 @@ layout: showcase
 {{ doc.path }}
 {% endfor %}
 
-<!-- break -⟶
+<!-- break -->
 
 {% for pg in pages %}
 {{ pg.path }}
