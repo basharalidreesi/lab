@@ -8,8 +8,8 @@ colours:
   text colour: orange
   placeholder colour: orange
 page:
-  has central header: false
-  has title: false
+  has central header: true
+  has title: true
   is navigable: true
 layout: contact
 ---
