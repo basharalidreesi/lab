@@ -839,7 +839,8 @@ body {
 		padding-top: calc(var(--double));
 		border-bottom: 1px dashed var(--border_colour);
 	}
-	.--article_empty {
+	.--article_empty,
+	.--no_title .--article_empty {
 		padding: 0;
 		border: none;
 	}
