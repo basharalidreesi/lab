@@ -77,11 +77,11 @@
 		</div>
 		{%- endif %}
 		<div class="mother_container" id="mother_container">
-			<nav class="mother_container-nav_container{%- if central -%}_central{%- else -%}_upper{%- elsif home -%}_home{%- endif -%}" id="nav_container">
+			<nav class="mother_container-nav_container" id="nav_container">
 				{%- unless home %}
 				<input type="checkbox" id="nav_map_checkbox">
-				<div class="--nav_map_background{%- if central -%}_central{%- else -%}_upper{%- endif -%}"></div>
-				<label for="nav_map_checkbox" class="nav_container{%- if central -%}_central{%- else -%}_upper{%- endif -%}-nav_map_wrapper" id="nav_map_wrapper">
+				<div class="--nav_map_background"></div>
+				<label for="nav_map_checkbox" class="nav_container-nav_map_wrapper" id="nav_map_wrapper">
 						{%- for branch in tree -%}
 							{%- assign segment = page.path | split: branch -%}
 							{%- assign current = branch | prepend: segment[0] | append: ".markdown" -%}
@@ -122,10 +122,8 @@
 							{%- endif -%}
 						{%- endfor %}
 				</label>
-				{%- else %}
-				<!-- nav map not included -->
 				{%- endunless %}
-				<ul class="nav_container{%- if central -%}_central{%- else -%}_upper{%- endif -%}{%- if home -%}_home{%- endif -%}-nav_list_wrapper">
+				<ul class="nav_container-nav_list_wrapper">
 					{%- for node in pages -%}
 						{%- if node['is navigable'] and tree.size >= 2 -%}
 							{%- unless page.url contains node.url %}
@@ -175,7 +173,7 @@
 					{%- endfor %}
 				</ul>
 			</nav>
-			<div class="--loader_wrapper{%- if central -%}_central{%- else -%}_upper{%- endif -%}" id="loader_wrapper">
+			<div class="--loader_wrapper" id="loader_wrapper">
 				<div class="--loader" id="loader"></div>
 			</div>
 			<header class="mother_container-header_container{%- if central -%}_central{%- else -%}_upper{%- endif -%}" id="header_container">
