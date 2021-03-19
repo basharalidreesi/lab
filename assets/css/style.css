@@ -358,7 +358,7 @@ p:empty {
 			-ms-hyphens: auto;
 			-webkit-hyphens: auto;
 			word-break: break-word;
-			line-height: 200%;
+			line-height: 150%;
 			overflow: hidden;
 			padding-top: 0;
 			padding-bottom: calc(var(--double));
@@ -372,7 +372,7 @@ p:empty {
 			font-family: var(--header_text_font);
 			font-weight: var(--header_text_font_weight);
 			text-align: center;
-			line-height: 150%;
+			line-height: 100%;
 		}
 		.--article_text_styling h1 {
 			font-size: 3rem; /* temp */
@@ -511,7 +511,7 @@ p:empty {
 		display: inline;
 		border: 1px solid var(--text_colour);
 		border-radius: 5000px;
-		padding: calc(var(--quarter) / 4);
+		padding: 0;
 		padding-left: calc(var(--half));
 		padding-right: calc(var(--half));
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
