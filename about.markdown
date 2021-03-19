@@ -16,6 +16,7 @@ Curabitur non elit. Pellentesque iaculis, nisl non aliquet adipiscing, purus urn
 Cras pede. Nullam id velit sit amet turpis tincidunt sagittis. Nunc malesuada. Nunc consequat scelerisque odio. Donec eu leo. Nunc pellentesque felis sed odio. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus lobortis metus in lectus. Cras mollis quam eget sapien. Pellentesque non lorem sit amet sem lacinia euismod.
 <!--style: block-->
 <!--style: background-color: grey;; color: yellow; padding-top: calc(var(--double)); -->
+
 <!-- break -->
 
 <!--style: background-color: pink; -->
@@ -23,7 +24,7 @@ Cras pede. Nullam id velit sit amet turpis tincidunt sagittis. Nunc malesuada. N
 
 {% include lipsum.html %}
 
-<!--    break     -->
+<!-- break -->
 
 {% include lipsum.html %}
 <!--style: blockkk-->
@@ -32,6 +33,8 @@ Cras pede. Nullam id velit sit amet turpis tincidunt sagittis. Nunc malesuada. N
 
 {% include lipsum.html %}
 <!--style: block -->
+
 <!-- break -->
+
 <!-- style: background-color: yellow;   -->
 {% include lipsum.html %}
