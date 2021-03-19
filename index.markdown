@@ -12,16 +12,3 @@ page:
 layout: showcase
 ---
 
-{% assign docs = site.documents %}
-{% assign pgs = site.pages %}
-{% assign docs = docs | push: pages %}
-
-{% for item in pgs %}
-{% assign new = docs | push: item %}
-{% endfor %}
-
-{% for item in new %}
-{{ item.path }}
-{% endfor %}
-
-Hello
