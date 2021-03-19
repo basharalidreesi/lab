@@ -1578,3 +1578,26 @@ body {
 			top: calc(var(--header_height_half));
 		}
 }
+/*
+┌───────┐
+│ begin └────────────────────────────┐
+│ media query: screen width <= 512px │
+└────────────────────────────────────┘
+*/
+@media only screen and (max-width: 512px) {
+	/*
+	┌───────┐
+	│ begin └────────┐
+	│ content styles │
+	└────────────────┘
+	*/
+		/*
+		┌───────┐
+		│ begin └────────┐
+		│ contact styles │
+		└────────────────┘
+		*/
+		.main_wrapper-contact_wrapper input {
+			width: 100%;
+		}
+}
