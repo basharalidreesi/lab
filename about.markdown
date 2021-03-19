@@ -9,7 +9,7 @@ colours:
   placeholder colour: orange
 page:
   is navigable: true
-  has title: true
+  has title: false
 layout: contact
 ---
 
