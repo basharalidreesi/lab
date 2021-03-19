@@ -12,9 +12,3 @@ page:
 layout: showcase
 ---
 
-{% assign docs = site.documents %}
-{% assign pages = site.pages %}
-{% assign docs = docs | push: pages %}
-{{ docs | inspect }}
-
-Hello
