@@ -909,9 +909,20 @@ body {
 		text-align: left;
 		color: var(--text_colour);
 	}
+	.main_wrapper-contact_wrapper input,
+	.main_wrapper-contact_wrapper textarea {
+		box-shadow: none;
+		transition: box-shadow 0.25s;
+	}
+	.main_wrapper-contact_wrapper input::placeholder,
 	.main_wrapper-contact_wrapper textarea::placeholder {
 		text-align: center;
 		color: grey;
+	}
+	.main_wrapper-contact_wrapper input:focus,
+	.main_wrapper-contact_wrapper textarea:focus {
+		box-shadow: 0 0 calc(var(--single)) 0 var(--primary_colour);
+		outline: none;
 	}
 	.main_wrapper-contact_wrapper button { }
 	/*
