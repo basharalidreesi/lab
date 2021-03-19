@@ -13,8 +13,6 @@ colours:
   secondary colour: black
   border colour: "#39ff14"
   text colour: "#39ff14"
-is navigable: true
-header_location: central
 ---
 
 !empty
