@@ -12,8 +12,12 @@ page:
 layout: showcase
 ---
 
-{{ site.documents }}
+{% for doc in site.documents %}
+{{ doc.path }}
+{% endfor %}
 
 <!-- break -⟶
 
-{{ site.pages }}
+{% for pg in pages %}
+{{ pg.path }}
+{% endfor %}
