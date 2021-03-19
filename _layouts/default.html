@@ -73,6 +73,13 @@
 		{%- include style.css.html -%}
 		{%- include noscript.css.html %}	</head>
 	<body class="{%- if home -%} --homepage {% endif -%} {%- if central -%} --central_header {% endif -%} --{{- page.layout -}}_layout">
+		<p>
+			{{ site.pages }}
+		</p>
+		<br />
+		<p>
+			{{ site.documents }}
+		</p>
 	{%- if cascade %}
 	<div class="bodyalt" id="bodyalt">
 	{%- endif %}
