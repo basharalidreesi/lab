@@ -14,21 +14,21 @@
 			{%- else %}
 			let central = false;
 			{%- endif -%}
-			{%- if page.layout == "cascade" %}
-			let cascade = true;
+			{%- if page.layout == "contact" %}
+			let contact = true;
 			{%- else %}
-			let cascade = false;
+			let contact = false;
 			{%- endif -%}
 			{%- if page.layout == "list" %}
 			let list = true;
 			{%- else %}
 			let list = false;
 			{%- endif -%}
-			{%- if page.layout == "contact" %}
-			let contact = true;
+			{%- if page.layout == "cascade" %}
+			let cascade = true;
 			{%- else %}
-			let contact = false;
-			{%- endif -% }
+			let cascade = false;
+			{%- endif -%}
 			{%- if text_colour == "#000" or text_colour == "#000000" or text_colour == "black" %}
 			let black = true;
 			{%- else %}
