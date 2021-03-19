@@ -1,8 +1,19 @@
 ---
-layout: article
+layout: default
 ---
 
 <!-- begin contact.html -->
+					{%- comment -%}
+						<!-- begin setup -->
+					{%- endcomment -%}
+						{%- capture content_html -%}
+							{%- include content.html -%}
+						{%- endcapture -%}
+						{%- assign content_index = content_html | split: "<!-- CONTENT BREAK -->" -%}
+					{%- comment -%}
+						<!-- end setup -->
+					{%- endcomment -%}
+					{%- content_index[0] %}
 					<form class="main_wrapper-contact_wrapper --article_text_styling" action="https://formspree.io/f/mvovjwlo" method="post">
 						<fieldset>
 							<input name="Name" placeholder="Name" type="text" required>
@@ -11,4 +22,5 @@ layout: article
 							<button name="Send" type="submit" data-submit="Sending...">Send</button>
 						</fieldset>
 					</form>
+					{%- content_index[1] %}
 				<!-- end contact.html -->
