@@ -48,6 +48,8 @@ defaults:
         tags: 400
         titles: 400
         articles: 400
+    central header: false
+    display title: true
     has central header: false
     has page title: true
 - scope:
