@@ -1525,6 +1525,15 @@ body {
 			padding-left: calc(var(--double));
 			padding-right: calc(var(--double));
 		}
+		.main_wrapper-contact_wrapper input {
+			width: calc(50% - var(--half));
+		}
+		.main_wrapper-contact_wrapper input:first-of-type {
+			margin-right: calc(var(--half));
+		}
+		.main_wrapper-contact_wrapper input:last-of-type {
+			margin-left: calc(var(--half));
+		}
 		/*
 		┌───────┐
 		│ begin └─────┐
