@@ -773,8 +773,8 @@ body {
 	fill: var(--text_colour);
 }
 .--sticky_header {
-	padding-top: calc(var(--single));
-	padding-bottom: calc(var(--single));
+	padding-top: calc(var(--single)) !important;
+	padding-bottom: calc(var(--single)) !important;
 }
 
 /*
