@@ -10,8 +10,8 @@ colours:
   secondary colour: grey
   border colour: "#39ff14"
   text colour: "#39ff14"
-is navigable: true
-has central header: true
+page:
+  has central header: true
 layout: showcase
 ---
 
