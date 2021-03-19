@@ -894,6 +894,9 @@ body {
 		border-top: 1px solid var(--border_colour);
 		border-bottom: 1px solid var(--border_colour);
 	}
+	.--central_header .main_wrapper-contact_wrapper {
+		border-top: none;
+	}
 	.main_wrapper-contact_wrapper fieldset {
 		display: flex;
 		flex-flow: row wrap;
@@ -1576,7 +1579,7 @@ body {
 			padding-left: calc(var(--double));
 			padding-right: calc(var(--double));
 		}
-		.main_wrapper-contact_wrapper.--article_no_title {
+		.--no_title.--no_content .main_wrapper-contact_wrapper {
 			border-top: none;
 		}
 		.main_wrapper-contact_wrapper input {
