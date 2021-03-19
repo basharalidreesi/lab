@@ -16,3 +16,5 @@ layout: showcase
 {% assign pages = site.pages %}
 {% assign docs = docs | push: pages %}
 {{ docs | inspect }}
+
+Hello
