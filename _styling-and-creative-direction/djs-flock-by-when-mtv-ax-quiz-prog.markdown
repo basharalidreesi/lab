@@ -11,7 +11,7 @@ colours:
   border colour: "#39ff14"
   text colour: "#39ff14"
 has central header: true
-layout: article
+layout: showcase
 ---
 
 {% include lipsum.html %}
