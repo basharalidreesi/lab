@@ -897,7 +897,15 @@ body {
 		border-radius: 5000px;
 		text-align: center;
 	}
-	.main_wrapper-contact_wrapper textarea { }
+	.main_wrapper-contact_wrapper textarea {
+		width: 100%;
+		padding: calc(var(--single) - var(--quarter));
+		margin-bottom: calc(var(--single));
+		background-color: var(--secondary_colour);
+		border: 1px solid var(--border_colour);
+		border-radius: calc(var(--single));
+		resize: none;
+	}
 	.main_wrapper-contact_wrapper button { }
 	/*
 	┌───────┐
@@ -1599,7 +1607,7 @@ body {
 		*/
 		.main_wrapper-contact_wrapper input {
 			width: 100%;
-			margin-left: 0;
-			margin-right: 0;
+			margin-left: 0 !important;
+			margin-right: 0 !important;
 		}
 }
