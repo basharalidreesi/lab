@@ -6,7 +6,7 @@
 				--secondary_colour: {{ page.colours['secondary colour'] }};
 				--border_colour: {{ page.colours['border colour'] }};
 				--text_colour: {{ page.colours['text colour'] }};
-				{%- if page.colours['primary_colour'] == page.colours['secondary_colour'] %}
+				{%- if page.colours['primary colour'] == page.colours['secondary colour'] %}
 				--glow_colour: var(--text_colour);
 				{%- else %}
 				--glow_colour: var(--primary_colour);
