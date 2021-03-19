@@ -348,7 +348,8 @@ p:empty {
 		.--article_text_styling th,
 		.--article_text_styling td,
 		.--article_text_styling input,
-		.--article_text_styling textarea {
+		.--article_text_styling textarea,
+		.--article_text_styling button {
 			font-family: var(--article_text_font);
 			font-size: var(--article_text_font_size);
 			font-weight: var(--article_text_font_weight);
@@ -433,6 +434,7 @@ p:empty {
 			width: 100%;
 		}
 		.--article_text_styling table {
+			table-layout: fixed;
 			width: 100%;
 			margin-bottom: calc(var(--double));
 			border: 1px solid var(--border_colour);
@@ -925,7 +927,18 @@ body {
 		box-shadow: 0 0 calc(var(--single)) 0 var(--primary_colour);
 		outline: none;
 	}
-	.main_wrapper-contact_wrapper button { }
+	.main_wrapper-contact_wrapper button {
+		margin: auto;
+		text-align: center;
+		padding: calc(var(--single) - var(--quarter));
+		padding-left: calc(var(--single) + var(--half));
+		padding-right: calc(var(--single) + var(--half));
+		background-color: var(--secondary_colour);
+		border: 1px solid var(--border_colour);
+		border-radius: 5000px;
+		transition: all 0.25s;
+		cursor: pointer;
+	}
 	/*
 	┌───────┐
 	│ begin └─────┐
@@ -1253,6 +1266,10 @@ body {
 	}
 	.--hyperlink_styling:hover {
 		background-color: var(--secondary_colour);
+	}
+	.main_wrapper-contact_wrapper button:hover {
+		background-color: var(--text_colour);
+		color: var(--secondary_colour);
 	}
 	.list_wrapper-list_item:hover {
 		background-color: var(--secondary_colour);
