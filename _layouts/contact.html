@@ -14,8 +14,9 @@ layout: default
 					{%- capture page_content -%}
 						{{ content }}
 					{%- endcapture -%}
+					{%- assign processed_page_content = page_content | strip | newline_to_br | strip_newlines | replace: " ", "" | replace: "<br />", "" -%}
 					{%- assign separator = "<!--break-->" -%}
-					{%- if page_content contains separator -%}
+					{%- if processed_page_content contains separator -%}
 						{%- assign separated = true -%}
 						{%- assign separated_page_content = page_content | split: separator -%}
 						{%- assign page_content_before = separated_page_content[0] -%}
