@@ -872,6 +872,10 @@ body {
 		border-top: none;
 	}
 	.--article_empty + .main_wrapper-contact_wrapper,
+	.main_wrapper-contact_wrapper:first-child {
+		border-top: 1px solid var(--border_colour);
+	}
+	.--central_header .--article_empty + .main_wrapper-contact_wrapper,
 	.--central_header .main_wrapper-contact_wrapper:first-child {
 		padding-top: calc(var(--double) + var(--single) + var(--half));
 		border-top: none;
