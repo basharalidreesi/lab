@@ -847,6 +847,9 @@ body {
 		padding: 0;
 		border-top: 1px solid var(--border_colour);
 	}
+	.--central_header .--article_before.--article_empty {
+		padding: 0;
+	}
 	.main_wrapper-main_article:last-child {
 		border-bottom: 1px solid var(--border_colour);
 	}
