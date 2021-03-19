@@ -440,7 +440,6 @@ p:empty {
 		.--article_text_styling tbody { /* none yet! */ }
 		.--article_text_styling tr { /* none yet! */ }
 		.--article_text_styling th {
-			text-align: center;
 			font-weight: 700;
 			padding: calc(var(--single));
 			border-bottom: 1px solid var(--border_colour);
@@ -454,6 +453,10 @@ p:empty {
 		.--article_text_styling tr th:not(:first-child),
 		.--article_text_styling tr td:not(:first-child) {
 			border-left: 1px solid var(--border_colour);
+		}
+		.--article_text_styling th,
+		.--article_text_styling td {
+			text-align: center;
 		}
 		.--no_padding {
 			padding-top: 0;
