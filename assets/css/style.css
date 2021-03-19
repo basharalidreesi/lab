@@ -1551,6 +1551,9 @@ body {
 		.--no_title.--no_content .main_wrapper-contact_wrapper {
 			border-top: none;
 		}
+		.--central_header .--article_empty + .main_wrapper-contact_wrapper {
+			padding-top: calc(var(--double) + var(--single) + var(--half));
+		}
 		.main_wrapper-contact_wrapper:first-child {
 			border-top: none;
 		}
