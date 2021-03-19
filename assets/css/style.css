@@ -657,7 +657,7 @@ body {
 	}
 	.--homepage .nav_container-nav_list_wrapper {
 		background-color: var(--secondary_colour);
-		box-shadow: 0 0 calc(var(--quadruple)) calc(var(--double)) var(--glow_colour);
+		box-shadow: 0 0 calc(var(--quadruple)) calc(var(--double)) var(--secondary_colour);
 	}
 	.nav_list_wrapper-nav_list_item {
 		flex: 1; /* todo: stress test this with a higher number of listed pages */
@@ -1589,8 +1589,11 @@ body {
 		│ loader │
 		└────────┘
 		*/
-		:not(.--central_header) .--loader_wrapper {
+		.--loader_wrapper {
 			top: calc(var(--header_height_half));
+		}
+		.--central_header .--loader_wrapper {
+			top: 50%;
 		}
 }
 /*
