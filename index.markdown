@@ -21,7 +21,7 @@ layout: showcase
 {% endfor %}
 
 {% for item in new %}
-{{ item }}
+{{ item.path }}
 {% endfor %}
 
 Hello
