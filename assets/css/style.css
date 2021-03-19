@@ -934,6 +934,10 @@ body {
 		transition: all 0.25s;
 		cursor: pointer;
 	}
+	.main_wrapper-contact_wrapper button:active {
+		background-color: var(--text_colour);
+		color: var(--secondary_colour);
+	}
 	/*
 	┌───────┐
 	│ begin └─────┐
