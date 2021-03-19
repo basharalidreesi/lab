@@ -3,7 +3,7 @@ title: Home
 permalink: "/"
 position: 0
 page:
-  is navigable: false
+  is navigable: true
   has central header: true
   has title: false
 layout: showcase
