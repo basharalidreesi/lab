@@ -79,11 +79,10 @@
 						</h1>
 					</header>
 					{%- endif %}
-					{%- assign processed_article_content = content | newline_to_br | strip_newlines | remove: "<br />" | strip | remove: " " %}
-					{%- unless processed_article_content == empty %}
-						{%- assign article_index = "<!-- STYLE INDEX 0 -->" -%}
-						{%- assign processed_article_content = page_content_before | newline_to_br | strip_newlines | remove: "<br />" | strip | remove: " " %}
-					<article class="main_wrapper-main_article --article_text_styling {%- if separated %} --article_before {%- endif -%} {%- if processed_article_content == empty %} --article_empty {%- endif -%}" style="{%- for item in style_index -%} {%- if item contains article_index -%} {{ item | remove: article_index | strip | append: ';' | replace: ';;', ';' | append: ' ' }} {%- endif -%} {%- endfor -%}">
+					{%- assign processed_article_content = content | newline_to_br | strip_newlines | remove: "<br />" | strip | remove: " " -%}
+					{%- unless processed_article_content == empty -%}
+						{%- assign article_index = "<!-- STYLE INDEX 0 -->" %}
+					<article class="main_wrapper-main_article --article_text_styling {%- if separated %} --article_before {%- endif -%}" style="{%- capture style -%} {%- for item in style_index -%} {%- if item contains article_index -%} {{ item | remove: article_index | strip | append: ';' | replace: ';;', ';' | append: ' ' }} {%- endif -%} {%- endfor -%} {%- endcapture -%} {{- style | strip -}}">
 						{%- if separated %}
 						{{ page_content_before }}
 						{%- else %}
@@ -94,18 +93,22 @@
 				<!-- CONTENT BREAK -->
 					{%- if separated -%}
 						{%- assign article_index = "<!-- STYLE INDEX 1 -->" -%}
-						{%- assign processed_article_content = page_content_after | newline_to_br | strip_newlines | remove: "<br />" | strip | remove: " " %}
-					<article class="main_wrapper-main_article --article_text_styling --article_after {%- if processed_article_content == empty %} --article_empty {%- endif -%}" style="{%- for item in style_index -%} {%- if item contains article_index -%} {{ item | remove: article_index | strip | append: ';' | replace: ';;', ';' | append: ' ' }} {%- endif -%} {%- endfor -%}">
+						{%- assign processed_article_content = page_content_after | newline_to_br | strip_newlines | remove: "<br />" | strip | remove: " " -%}
+						{%- unless processed_article_content == empty %}
+					<article class="main_wrapper-main_article --article_text_styling --article_after" style="{%- capture style -%} {%- for item in style_index -%} {%- if item contains article_index -%} {{ item | remove: article_index | strip | append: ';' | replace: ';;', ';' | append: ' ' }} {%- endif -%} {%- endfor -%} {%- endcapture -%} {{- style | strip -}}">
 						{{ page_content_after }}
 					</article>
+						{%- endunless -%}
 					{%- endif -%}
 					{%- if extended -%}
 						{%- for article in separated_page_content offset: 2 -%}
-							{%- assign article_index = forloop.index0 | plus: 2 | downcase | prepend: "<!-- STYLE INDEX " | append: " -->" %}
-							{%- assign processed_article_content = article | newline_to_br | strip_newlines | remove: "<br />" | strip | remove: " " %}
-					<article class="main_wrapper-main_article --article_text_styling --article_extended {%- if processed_article_content == empty %} --article_empty {%- endif -%}" style="{%- for item in style_index -%} {%- if item contains article_index -%} {{ item | remove: article_index | strip | append: ';' | replace: ';;', '; ' | append: ' ' }} {%- endif -%} {%- endfor -%}">
+							{%- assign article_index = forloop.index0 | plus: 2 | downcase | prepend: "<!-- STYLE INDEX " | append: " -->" -%}
+							{%- assign processed_article_content = article | newline_to_br | strip_newlines | remove: "<br />" | strip | remove: " " -%}
+							{%- unless processed_article_content == empty %}
+					<article class="main_wrapper-main_article --article_text_styling --article_extended" style="{%- capture style -%} {%- for item in style_index -%} {%- if item contains article_index -%} {{ item | remove: article_index | strip | append: ';' | replace: ';;', '; ' | append: ' ' }} {%- endif -%} {%- endfor -%} {%- endcapture -%} {{- style | strip -}}">
 						{{ article }}
 					</article>
+							{%- endunless -%}
 						{%- endfor -%}
 					{%- endif %}
 				</div>
