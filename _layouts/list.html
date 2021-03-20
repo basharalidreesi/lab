@@ -36,7 +36,7 @@ layout: default
 							{%- assign items = collection.docs | sort: "position" -%}
 							{%- for item in items -%}
 								<script>
-									console.log("BITEM: {{ item }} \n");
+									console.log("BITEM: {{ item.path }} \n");
 								</script>
 								{%- assign item_path = item.path | remove_first: "_" | split: "/" -%}
 								{%- unless item_path[2] %}
