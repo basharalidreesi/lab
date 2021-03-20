@@ -26,7 +26,7 @@ layout: default
 						{%- if level == 1 -%}
 							{%- assign root = tree[0] -%}
 						{%- else -%}
-							{%- assign root = page.collection -%}
+							{%- assign root = tree[0] | remove_first: "_" -%}
 						{%- endif -%}
 
 
