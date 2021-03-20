@@ -6,7 +6,7 @@ tags:
 - "\U0001F951 avocado"
 position: 2
 colours:
-  primary colour: rgb(25,25,25)
+  primary colour: black
   secondary colour: black
   border colour: "#39ff14"
   text colour: "#39ff14"
