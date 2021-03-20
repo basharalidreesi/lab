@@ -115,6 +115,9 @@
 		reticulateSplines();
 		initialListen();
 		console.log(document.title);
+		window.addEventListener("beforeunload", () => {
+			window.scrollTo(0, 0);
+		});
 	}
 
 	initialise();
