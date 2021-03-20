@@ -22,6 +22,7 @@ layout: default
 								- https://github.com/mmistakes/minimal-mistakes/blob/master/docs/_pages/collection-archive.html
 						{%- endcomment -%}
 						{%- assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" -%}
+						{%- assign map = tree | join: "/" -%}
 						{%- assign level = tree.size -%}
 						{%- if level == 1 -%}
 							{%- assign root = tree[0] -%}
@@ -34,10 +35,18 @@ layout: default
 							{%- if collection.label == root -%}
 								{%- assign docs = collection.docs | sort: position -%}
 								{%- for doc in docs -%}
-									{%- assign filter = doc.path | split: "/" | size | minus: 1 -%}
-									{%- if filter == level -%}
-										<pre>FILTER: {{ filter }}</pre>
-										<pre>PATH: {{- doc.path -}}</pre>
+									{%- if level == 1 -%}
+										{%- assign filter = doc.path | split: "/" | size | minus: 1 -%}
+										{%- if filter == level -%}
+											<pre>FILTER: {{ filter }}</pre>
+											<pre>PATH: {{- doc.path -}}</pre>
+										{%- endif -%}
+									{%- else -%}
+										{%- assign filter = doc.path | split: "/" | reverse | join: "/" | remove_first: doc.name | split: "/" | reverse | join: "/" -%}
+										{%- if filter == map -%}
+											<pre>FILTER: {{ filter }}</pre>
+											<pre>PATH: {{- doc.path -}}</pre>
+										{%- endif -%}
 									{%- endif -%}
 								{%- endfor -%}
 							{%- endif -%}
