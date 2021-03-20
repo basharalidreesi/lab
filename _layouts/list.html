@@ -32,25 +32,20 @@ layout: default
 
 						{%- for collection in site.collections -%}
 							{%- if collection.label == root -%}
-								{%- if level == 1 -%}
-									{%- assign subpages = collection.docs | sort: "position" -%}
-								{%- else -%}
-									{%- assign docs = collection.docs | sort: "position" -%}
-									{%- capture pages -%}
-										{%- for doc in docs -%}
-											{%- assign name = doc.name | prepend: "/" -%}
-											{%- assign map = doc.path | remove: name -%}
-											{%- assign tree = tree | join: "/" -%}
-											{%- if map == tree -%}
-												<!-- LIST BREAK PASS --> {{- doc -}}
-											{%- endif -%}
-										{%- endfor -%}
-									{%- endcapture -%}
-									{%- assign subpages = pages | split: "<!-- LIST BREAK PASS -->" -%}
-								{%- endif -%}
+								{%- assign docs = collection.docs | sort: position -%}
+								{%- capture pages -%}
+									{%- for doc in docs -%}
+										{%- assign filter = doc.path | split: "/" | size | minus: 1 -%}
+										{%- if filter == level -%}
+											{{- doc -}}
+										{%- endif -%}
+									{%- endfor -%}
+								{%- endcapture -%}
 							{%- endif -%}
 						{%- endfor -%}
-						<pre>{{ subpages | inspect }}</pre>
+						<pre>{{ pages | inspect }}</pre>
+
+
 
 
 
