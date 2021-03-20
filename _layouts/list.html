@@ -3,62 +3,73 @@ layout: default
 ---
 
 <!-- begin list.html -->
-				{%- comment -%}
-					<!-- begin article setup -->
-				{%- endcomment -%}
-					{%- capture content_html -%}
-						{%- include content.html -%}
-					{%- endcapture -%}
-					{%- assign content_index = content_html | split: "<!-- CONTENT BREAK -->" -%}
-				{%- comment -%}
-					<!-- end article setup -->
-				{%- endcomment -%}
-				{%- comment -%}
-					<!-- begin showcase setup -->
-				{%- endcomment -%}
 					{%- comment -%}
-						partially from:
-							- https://mmistakes.github.io/minimal-mistakes/docs/layouts/
-							- https://github.com/mmistakes/minimal-mistakes/blob/master/docs/_pages/collection-archive.html
+						<!-- begin article setup -->
 					{%- endcomment -%}
-					{%- assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" -%}
-					{%- assign page_path = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" -%}
-				{%- comment -%}
-					<!-- end showcase setup -->
-				{%- endcomment -%}
-				{{- content_index[0] }}
-				<ul class="main_wrapper-list_wrapper">
-					{%- for collection in site.collections -%}
-						<script>
-							console.log("BCOLL: {{ collection }}");
-						</script>
-						{%- if collection.label == page_path -%}
-							{%- assign items = collection.docs | sort: "position" -%}
-							{%- for item in items -%}
-								<script>
-									console.log("BITEM: {{ item.path }} \n");
-								</script>
-								{%- assign item_path = item.path | remove_first: "_" | split: "/" -%}
-								{%- unless item_path[2] %}
-					<li class="list_wrapper-list_item --list_text_styling">
-						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- item.url -}}">
-							{{ item.title }}
-						</a>
-										{%- if item.tags != empty %}
-						<ul class="list_item-tag_list_wrapper">
-												{%- for tag in item.tags %}
-							<li class="tag_list_wrapper-tag_list_item --tag_text_styling">
-								{{ tag }}
-								<div class="--tag_unfilter"></div>
-							</li>
-												{%- endfor %}
-						</ul>
-										{%- endif %}
-					</li>
-								{%- endunless -%}
-							{%- endfor -%}
-						{%- endif -%}
-					{%- endfor %}
-				</ul>
-				{{- content_index[1] }}
-				<!-- end list.html -->
+						{%- capture content_html -%}
+							{%- include content.html -%}
+						{%- endcapture -%}
+						{%- assign content_index = content_html | split: "<!-- CONTENT BREAK -->" -%}
+					{%- comment -%}
+						<!-- end article setup -->
+					{%- endcomment -%}
+					{%- comment -%}
+						<!-- begin list setup -->
+					{%- endcomment -%}
+						{%- comment -%}
+							partially from:
+								- https://mmistakes.github.io/minimal-mistakes/docs/layouts/
+								- https://github.com/mmistakes/minimal-mistakes/blob/master/docs/_pages/collection-archive.html
+						{%- endcomment -%}
+						{%- assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" -%}
+						TREE: {{ tree | inspect }}
+						{%- for branch in tree -%}
+							BRANCH {{ forloop.index0 }}: {{ branch }}
+						{%- endfor -%}
+
+
+
+						{%- assign page_path = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" -%}
+					{%- comment -%}
+						<!-- end list setup -->
+					{%- endcomment -%}
+					{{- content_index[0] }}
+					<ul class="main_wrapper-list_wrapper">
+					</ul>
+					{{- content_index[1] }}
+					<!-- end list.html -->
+
+
+
+
+
+
+					<ul class="main_wrapper-list_wrapper">
+						{%- for collection in site.collections -%}
+							{%- if collection.label == page_path -%}
+								{%- assign items = collection.docs | sort: "position" -%}
+								{%- for item in items -%}
+									{%- assign item_path = item.path | remove_first: "_" | split: "/" -%}
+									{%- unless item_path[2] %}
+						<li class="list_wrapper-list_item --list_text_styling">
+							<a class="--anchor_styling" href="{{- site.baseurl -}}{{- item.url -}}">
+								{{ item.title }}
+							</a>
+											{%- if item.tags != empty %}
+							<ul class="list_item-tag_list_wrapper">
+													{%- for tag in item.tags %}
+								<li class="tag_list_wrapper-tag_list_item --tag_text_styling">
+									{{ tag }}
+									<div class="--tag_unfilter"></div>
+								</li>
+													{%- endfor %}
+							</ul>
+											{%- endif %}
+						</li>
+									{%- endunless -%}
+								{%- endfor -%}
+							{%- endif -%}
+						{%- endfor %}
+					</ul>
+					{{- content_index[1] }}
+					<!-- end list.html -->
