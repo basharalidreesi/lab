@@ -363,7 +363,7 @@ p:empty {
 			word-break: break-word;
 			line-height: 150%;
 			overflow: hidden;
-			padding-top: 0;
+			padding-top: 1px;
 			padding-bottom: calc(var(--double));
 		}
 		.--article_text_styling h1,
