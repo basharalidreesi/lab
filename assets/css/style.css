@@ -652,7 +652,9 @@ body {
 	}
 	.--homepage .nav_container-nav_list_wrapper {
 		background-color: var(--secondary_colour);
-		box-shadow: 0 0 calc(var(--quadruple)) calc(var(--double)) var(--secondary_colour);
+		box-shadow:
+			0 0 calc(var(--quadruple)) calc(var(--double)) var(--secondary_colour),
+			0 0 0 0 var(--glow_colour);
 	}
 	.nav_list_wrapper-nav_list_item {
 		flex: 1; /* todo: stress test this with a higher number of listed pages */
@@ -719,7 +721,9 @@ body {
 	.--central_header .--nav_map_background {
 		display: block;
 		background-color: var(--secondary_colour);
-		box-shadow: 0 0 calc(var(--quadruple)) calc(var(--single)) var(--secondary_colour);
+		box-shadow:
+			0 0 calc(var(--quadruple)) calc(var(--single)) var(--secondary_colour),
+			0 0 0 0 var(--glow_colour);
 	}
 	.nav_container-nav_map_wrapper {
 		display: none;
@@ -888,7 +892,7 @@ body {
 	}
 	.main_wrapper-contact_wrapper input:focus,
 	.main_wrapper-contact_wrapper textarea:focus {
-		box-shadow: 0 0 calc(var(--single)) 0 var(--primary_colour);
+		box-shadow: 0 0 calc(var(--single)) 0 var(--glow_colour);
 		outline: none;
 	}
 	.main_wrapper-contact_wrapper button {
@@ -1276,7 +1280,7 @@ body {
 	.cascade_wrapper-anchored_graphic_card_upper:hover,
 	.cascade_wrapper-anchored_graphic_card_central:hover {
 		/* background: linear-gradient(0deg, var(--primary_colour) 10%, rgba(255,255,255,0) 100%); */
-		box-shadow: inset 0 0 calc(var(--double)) calc(var(--double)) var(--primary_colour);
+		box-shadow: inset 0 0 calc(var(--double)) calc(var(--double)) var(--glow_colour);
 	}
 }
 
@@ -1296,7 +1300,7 @@ body {
 	.cascade_wrapper-anchored_graphic_card_upper,
 	.cascade_wrapper-anchored_graphic_card_central {
 		/* background: linear-gradient(0deg, var(--primary_colour) 10%, rgba(255,255,255,0) 100%); */
-		box-shadow: inset 0 0 calc(var(--double)) calc(var(--double)) var(--primary_colour);
+		box-shadow: inset 0 0 calc(var(--double)) calc(var(--double)) var(--glow_colour);
 	}
 }
 
@@ -1394,13 +1398,13 @@ body {
 		}
 		#nav_map_checkbox:checked ~ .--nav_map_background {
 			background-color: var(--secondary_colour);
-			box-shadow: 0 0 calc(var(--half)) 0 var(--primary_colour);
+			box-shadow: 0 0 calc(var(--single)) 0 var(--glow_colour);
 		}
 		.--central_header #nav_map_checkbox:checked ~ .--nav_map_background {
 			background-color: var(--secondary_colour);
 			box-shadow:
 				0 0 calc(var(--quadruple)) calc(var(--double)) var(--secondary_colour),
-				0 0 calc(var(--half)) 0 var(--primary_colour);
+				0 0 calc(var(--single)) 0 var(--glow_colour);
 		}
 		.nav_container-nav_map_wrapper {
 			position: relative;
@@ -1417,7 +1421,7 @@ body {
 		}
 		#nav_map_checkbox:checked ~ .nav_container-nav_map_wrapper {
 			height: 100%;
-			box-shadow: 0 0 calc(var(--single)) 0 var(--primary_colour);
+			box-shadow: 0 0 calc(var(--single)) 0 var(--glow_colour);
 			cursor: n-resize;
 		}
 		.nav_container-nav_map_wrapper::before,
