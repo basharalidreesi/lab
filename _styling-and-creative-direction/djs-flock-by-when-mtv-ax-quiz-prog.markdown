@@ -23,7 +23,7 @@ One morning, when Gregor Samsa woke from troubled dreams, he found himself *tran
 
 ## The bedding was hardly able to cover it.
 
-It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer a solid fur muff into which her entire forearm disappeared..
+It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer a solid fur muff into which her entire forearm disappeared.
 
 <!-- break -->
 
@@ -31,8 +31,8 @@ It showed a lady fitted out with a fur hat and fur boa who sat upright, raising 
 
 - He always slept on his right side.
 - He has to get up early (to start another dreadful day).
-- He has a drawer and a alarm clock next to his bed.
-- His mother calls him when he gets up to late.
+- He has a drawer and an alarm clock next to his bed.
+- His mother calls him when he gets up too late.
 
 <!-- break -->
 
