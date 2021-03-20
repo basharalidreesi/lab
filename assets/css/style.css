@@ -1393,13 +1393,14 @@ body {
 			transition: all 0.25s;
 		}
 		#nav_map_checkbox:checked ~ .--nav_map_background {
-			top: calc(var(--header_height) * -1);
-			height: calc(100% + var(--header_height));
 			background-color: var(--secondary_colour);
+			box-shadow: 0 0 calc(var(--half)) 0 var(--primary_colour);
 		}
 		.--central_header #nav_map_checkbox:checked ~ .--nav_map_background {
-			top: 0;
-			height: 100%;
+			background-color: var(--secondary_colour);
+			box-shadow:
+				0 0 calc(var(--quadruple)) calc(var(--double)) var(--secondary_colour),
+				0 0 calc(var(--half)) 0 var(--primary_colour);
 		}
 		.nav_container-nav_map_wrapper {
 			position: relative;
