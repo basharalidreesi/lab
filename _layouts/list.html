@@ -23,10 +23,12 @@ layout: default
 						{%- endcomment -%}
 						{%- assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" -%}
 						<pre style="text-align: center; width: 100vw;">TREE: {{ tree | inspect }}</pre>
+						<hr>
 						{%- for branch in tree -%}
 							{%- assign segment = page.path | split: branch -%}
-							<pre style="text-align: center; width: 100vw;">BRANCH {{ forloop.index0 }}: {{ branch }}</pre>
-							<pre style="text-align: center; width: 100vw;">SEGMENT {{ forloop.index0 }}: {{ segment[forloop.index0] }}</pre>
+							{%- assign current = branch | prepend: segment[0] -%}
+							<pre style="text-align: center; width: 100vw;">BRANCH {{ forloop.index0 }}: {{ current }}</pre>
+							<hr>
 						{%- endfor -%}
 
 
