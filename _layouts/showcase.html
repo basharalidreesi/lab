@@ -4,16 +4,22 @@ layout: default
 
 <!-- begin showcase.html -->
 				{%- comment -%}
-					<!-- begin setup -->
+					<!-- begin article setup -->
 				{%- endcomment -%}
 					{%- capture content_html -%}
 						{%- include content.html -%}
 					{%- endcapture -%}
 					{%- assign content_index = content_html | split: "<!-- CONTENT BREAK -->" -%}
+				{%- comment -%}
+					<!-- end article setup -->
+				{%- endcomment -%}
+				{%- comment -%}
+					<!-- begin showcase setup -->
+				{%- endcomment -%}
 					{%- assign showcase_tiles = site.static_files | where: "showcase_tile", true -%}
 					{%- assign page_path = page.path | replace: "index.md", "home" | replace: "index.markdown", "home" | replace: "index.html", "home" | remove_first: "_" | remove: ".md" | remove: ".markdown" | remove: ".html" -%}
 				{%- comment -%}
-					<!-- end setup -->
+					<!-- end showcase setup -->
 				{%- endcomment -%}
 					{{- content_index[0] }}
 					{%- if showcase_tiles %}

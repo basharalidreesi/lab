@@ -2,7 +2,7 @@
 <html lang="en-US">
 	<head>
 		{%- comment -%}
-			<!-- begin setup -->
+			<!-- begin default setup -->
 		{%- endcomment -%}
 		{%- if page.url == "/" -%}
 			{%- assign home = true -%}
@@ -23,7 +23,7 @@
 		{%- assign pages = site.pages | sort: "position" -%}
 		{%- assign header_graphics = site.static_files | where: "header_graphic", true %}
 		{%- comment -%}
-			<!-- end setup -->
+			<!-- end default setup -->
 		{%- endcomment -%}
 		<meta charset="utf-8">
 		<title>
