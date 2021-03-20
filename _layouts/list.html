@@ -33,17 +33,15 @@ layout: default
 						{%- for collection in site.collections -%}
 							{%- if collection.label == root -%}
 								{%- assign docs = collection.docs | sort: position -%}
-								{%- capture pages -%}
-									{%- for doc in docs -%}
-										{%- assign filter = doc.path | split: "/" | size | minus: 1 -%}
-										{%- if filter == level -%}
-											{{- doc -}}
-										{%- endif -%}
-									{%- endfor -%}
-								{%- endcapture -%}
+								{%- for doc in docs -%}
+									{%- assign filter = doc.path | split: "/" | size | minus: 1 -%}
+									{%- if filter == level -%}
+										<pre>FILTER: {{ filter }}</pre>
+										<pre>PATH: {{- doc.path -}}</pre>
+									{%- endif -%}
+								{%- endfor -%}
 							{%- endif -%}
 						{%- endfor -%}
-						<pre>{{ pages | inspect }}</pre>
 
 
 
