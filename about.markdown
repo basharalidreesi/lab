@@ -34,7 +34,7 @@ It showed a lady fitted out with a fur hat and fur boa who sat upright, raising 
 | F. Scott Fitzgerald |   American  |       Literature & Fiction, Short Stories       |  The Great Gatsby |
 |      H.G. Wells     |   British   |                 Science Fiction                 | War of the Worlds |
 
-<!-- style: overflow: auto; align-items: flex-start; background-color: white; -->
+<!-- style: overflow: auto; align-items: flex-start; background-color: var(--primary_colour); -->
 
 <!-- break -->
 
