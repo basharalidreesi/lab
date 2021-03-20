@@ -5,7 +5,6 @@ page:
   has central header: true
   has title: true
   is navigable: true
-layout: contact
 ---
 
 # One morning, when Gregor Samsa woke from troubled dreams.
