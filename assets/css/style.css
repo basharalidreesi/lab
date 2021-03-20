@@ -829,6 +829,9 @@ body {
 	.--article_after {
 		border-top: 1px dashed var(--border_colour);
 	}
+	.--article_before + .--article_after {
+		border-top: none;
+	}
 	.main_wrapper-main_article:last-child {
 		border-bottom: 1px solid var(--border_colour);
 	}

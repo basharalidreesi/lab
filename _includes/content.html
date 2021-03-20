@@ -84,9 +84,9 @@
 						{%- assign article_index = "<!-- STYLE INDEX 0 -->" %}
 					<article class="main_wrapper-main_article --article_text_styling --article_before" style="{%- capture style -%} {%- for item in style_index -%} {%- if item contains article_index -%} {{ item | remove: article_index | strip | append: ';' | replace: ';;', ';' | append: ' ' }} {%- endif -%} {%- endfor -%} {%- endcapture -%} {{- style | strip -}}">
 						{%- if separated %}
-						{{ page_content_before }}
+						{{ page_content_before | strip }}
 						{%- else %}
-						{{ content }}
+						{{ content | strip }}
 						{%- endif %}
 					</article>
 					{%- endunless %}
@@ -96,7 +96,7 @@
 						{%- assign processed_article_content = page_content_after | newline_to_br | strip_newlines | remove: "<br />" | strip | remove: " " -%}
 						{%- unless processed_article_content == empty %}
 					<article class="main_wrapper-main_article --article_text_styling --article_after" style="{%- capture style -%} {%- for item in style_index -%} {%- if item contains article_index -%} {{ item | remove: article_index | strip | append: ';' | replace: ';;', ';' | append: ' ' }} {%- endif -%} {%- endfor -%} {%- endcapture -%} {{- style | strip -}}">
-						{{ page_content_after }}
+						{{ page_content_after | strip }}
 					</article>
 						{%- endunless -%}
 					{%- endif -%}
@@ -106,7 +106,7 @@
 							{%- assign processed_article_content = article | newline_to_br | strip_newlines | remove: "<br />" | strip | remove: " " -%}
 							{%- unless processed_article_content == empty %}
 					<article class="main_wrapper-main_article --article_text_styling --article_extended" style="{%- capture style -%} {%- for item in style_index -%} {%- if item contains article_index -%} {{ item | remove: article_index | strip | append: ';' | replace: ';;', '; ' | append: ' ' }} {%- endif -%} {%- endfor -%} {%- endcapture -%} {{- style | strip -}}">
-						{{ article }}
+						{{ article | strip }}
 					</article>
 							{%- endunless -%}
 						{%- endfor -%}
