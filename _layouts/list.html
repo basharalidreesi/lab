@@ -3,33 +3,41 @@ layout: default
 ---
 
 <!-- begin list.html -->
-				{%- assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" %}
-				<script>
-					console.log("Tree: {{ tree | inspect }}");
-					console.log("Tree size: {{ tree | size }}");
-				{%- for branch in tree -%}
-					{%- assign segment = page.path | split: branch -%}
-					{%- assign current = branch | prepend: segment[0] | append: ".markdown" -%}
-					{%- assign deepness = forloop.index -%}
-					{%- assign last = forloop.last %}
-					console.log(
-						"Branch {{ deepness }}: {{ branch }}" + "\n" +
-						"Branch {{ deepness }}: {{ segment }}" + "\n" +
-						"Branch {{ deepness }}: {{ current }}" + "\n" +
-						"Branch {{ deepness }}: {{ last }}" + "\n"
-					);
-				{%- endfor %}
-				</script>
 				{%- comment -%}
-					partially from https://mmistakes.github.io/minimal-mistakes/docs/layouts/
-					and https://github.com/mmistakes/minimal-mistakes/blob/master/docs/_pages/collection-archive.html
+					<!-- begin article setup -->
 				{%- endcomment -%}
-				{%- assign page_path = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" %}
-				<ul class="main_container-list_wrapper">
+					{%- capture content_html -%}
+						{%- include content.html -%}
+					{%- endcapture -%}
+					{%- assign content_index = content_html | split: "<!-- CONTENT BREAK -->" -%}
+				{%- comment -%}
+					<!-- end article setup -->
+				{%- endcomment -%}
+				{%- comment -%}
+					<!-- begin showcase setup -->
+				{%- endcomment -%}
+					{%- comment -%}
+						partially from:
+							- https://mmistakes.github.io/minimal-mistakes/docs/layouts/
+							- https://github.com/mmistakes/minimal-mistakes/blob/master/docs/_pages/collection-archive.html
+					{%- endcomment -%}
+					{%- assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" -%}
+					{%- assign page_path = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" -%}
+				{%- comment -%}
+					<!-- end showcase setup -->
+				{%- endcomment -%}
+				{{- content_index[0] }}
+				<ul class="main-wrapper_list-wrapper">
 					{%- for collection in site.collections -%}
+						<script>
+							console.log("{{ collection }}");
+						</script>
 						{%- if collection.label == page_path -%}
 							{%- assign items = collection.docs | sort: "position" -%}
 							{%- for item in items -%}
+								<script>
+									console.log("{{ item }}");
+								</script>
 								{%- assign item_path = item.path | remove_first: "_" | split: "/" -%}
 								{%- unless item_path[2] %}
 					<li class="list_wrapper-list_item --list_text_styling">
@@ -52,4 +60,5 @@ layout: default
 						{%- endif -%}
 					{%- endfor %}
 				</ul>
+				{{- content_index[1] }}
 				<!-- end list.html -->

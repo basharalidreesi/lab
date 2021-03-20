@@ -4,14 +4,14 @@ layout: default
 
 <!-- begin contact.html -->
 					{%- comment -%}
-						<!-- begin setup -->
+						<!-- begin article setup -->
 					{%- endcomment -%}
 						{%- capture content_html -%}
 							{%- include content.html -%}
 						{%- endcapture -%}
 						{%- assign content_index = content_html | split: "<!-- CONTENT BREAK -->" -%}
 					{%- comment -%}
-						<!-- end setup -->
+						<!-- end article setup -->
 					{%- endcomment -%}
 					{{- content_index[0] }}
 					<form class="main_wrapper-contact_wrapper --article_text_styling" action="https://formspree.io/f/mvovjwlo" method="post">
