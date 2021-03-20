@@ -33,7 +33,7 @@ layout: default
 
 						{%- for collection in site.collections -%}
 							{%- if collection.label == root -%}
-								{%- assign docs = collection.docs | sort: position -%}
+								{%- assign docs = collection.docs | sort: "position" -%}
 								{%- for doc in docs -%}
 									{%- if level == 1 -%}
 										{%- assign filter = doc.path | split: "/" | size | minus: 1 -%}
