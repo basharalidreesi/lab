@@ -1422,8 +1422,7 @@ body {
 		}
 		#nav_map_checkbox:checked ~ .nav_container-nav_map_wrapper {
 			height: 100%;
-			box-shadow: 0 calc(var(--quarter) / 2) calc(var(--half)) 0 var(--glow_colour);
-			cursor: n-resize;
+			box-shadow: 0 calc(var(--quarter) / 2) calc(var(--single) - var(--quarter)) 0 var(--glow_colour);
 		}
 		.nav_container-nav_map_wrapper::before,
 		.nav_container-nav_map_wrapper::after {
