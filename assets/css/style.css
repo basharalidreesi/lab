@@ -434,7 +434,7 @@ p:empty {
 			width: 100%;
 		}
 		.--article_text_styling table {
-			table-layout: fixed;
+			/* table-layout: fixed; */
 			width: 100%;
 			margin-bottom: calc(var(--double));
 			border: 1px solid var(--border_colour);
@@ -461,6 +461,7 @@ p:empty {
 		.--article_text_styling th,
 		.--article_text_styling td {
 			text-align: center;
+			min-width: calc((100vw - var(--screen_width_third)) / 4);
 		}
 		.--no_padding {
 			padding-top: 0;
@@ -1516,6 +1517,10 @@ body {
 		}
 		.--article_before:first-child {
 			border-top: none;
+		}
+		.--article_text_styling th,
+		.--article_text_styling td {
+			min-width: calc((100vw - var(--double) - var(--double)) / 2);
 		}
 		/*
 		┌───────┐
