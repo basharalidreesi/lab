@@ -6,6 +6,7 @@ layout: default
 				{%- assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" %}
 				<script>
 					console.log("Tree: {{ tree | inspect }}");
+					console.log("Tree size: {{ tree | size }}");
 				{%- for branch in tree -%}
 					{%- assign segment = page.path | split: branch -%}
 					{%- assign current = branch | prepend: segment[0] | append: ".markdown" -%}
