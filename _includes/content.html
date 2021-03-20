@@ -79,7 +79,8 @@
 						</h1>
 					</header>
 					{%- endif %}
-					{%- if content %}
+					{%- assign processed_article_content = content | newline_to_br | strip_newlines | remove: "<br />" | strip | strip_html | remove: " " %}
+					{%- unless processed_article_content == empty %}
 						{%- assign article_index = "<!-- STYLE INDEX 0 -->" -%}
 						{%- assign processed_article_content = page_content_before | newline_to_br | strip_newlines | remove: "<br />" | strip | strip_html | remove: " " %}
 					<article class="main_wrapper-main_article --article_text_styling {%- if separated %} --article_before {%- endif -%} {%- if processed_article_content == empty %} --article_empty {%- endif -%}" style="{%- for item in style_index -%} {%- if item contains article_index -%} {{ item | remove: article_index | strip | append: ';' | replace: ';;', ';' | append: ' ' }} {%- endif -%} {%- endfor -%}">
@@ -89,8 +90,8 @@
 						{{ content }}
 						{%- endif %}
 					</article>
-					{%- endif %}
-                                        <!-- CONTENT BREAK -->
+					{%- endunless %}
+                                <!-- CONTENT BREAK -->
 					{%- if separated -%}
 						{%- assign article_index = "<!-- STYLE INDEX 1 -->" -%}
 						{%- assign processed_article_content = page_content_after | newline_to_br | strip_newlines | remove: "<br />" | strip | strip_html | remove: " " %}
