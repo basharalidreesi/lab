@@ -22,15 +22,21 @@ layout: default
 								- https://github.com/mmistakes/minimal-mistakes/blob/master/docs/_pages/collection-archive.html
 						{%- endcomment -%}
 						{%- assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" -%}
+						{%- assign root_collection = tree[0] -%}
+						{%- assign current_page = page.path -%}
+						{%- if tree.size == 1 -%}
+							{%- assign root_page = true -%}
+						{%- else -%}
+							{%- assign root_page = false -%}
+						{%- endif -%}
 						<pre style="text-align: center; width: 100vw;">TREE: {{ tree | inspect }}</pre>
 						<hr>
-						{%- for branch in tree -%}
-							{%- assign segment = page.path | split: branch -%}
-							{%- assign current = branch | prepend: segment[0] -%}
-							<pre style="text-align: center; width: 100vw;">BRANCH {{ forloop.index0 }}: {{ current }}</pre>
-							<hr>
-						{%- endfor -%}
-
+						<pre style="text-align: center; width: 100vw;">ROOT COLLECTION: {{ root_collection }}</pre>
+						<hr>
+						<pre style="text-align: center; width: 100vw;">CURRENT PAGE: {{ current_page }}</pre>
+						<hr>
+						<pre style="text-align: center; width: 100vw;">ROOT PAGE? {{ root_page }}</pre>
+						<hr>
 
 
 						{%- assign page_path = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" -%}
