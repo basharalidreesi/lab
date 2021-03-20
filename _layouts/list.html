@@ -30,7 +30,7 @@ layout: default
 				<ul class="main_wrapper-list_wrapper">
 					{%- for collection in site.collections -%}
 						<script>
-							console.log("BCOLL: {{ collection }} \n");
+							console.log("BCOLL: {{ collection }}");
 						</script>
 						{%- if collection.label == page_path -%}
 							{%- assign items = collection.docs | sort: "position" -%}
