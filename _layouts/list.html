@@ -42,11 +42,13 @@ layout: default
 											<pre>PATH: {{- doc.path -}}</pre>
 										{%- endif -%}
 									{%- else -%}
-										{%- assign filter = doc.path | split: "/" | reverse | join: "/" | remove_first: doc.name | split: "/" | reverse | join: "/" -%}
-											<pre>NAME: {{- doc.name -}}</pre>
+										{%- assign current = doc.path | split: "/" | reverse -%}
+										{%- assign name = current[0] | prepend: "/" -%}
+										{%- assign filter = doc.path | remove: name -%}
+											<pre>NAME: {{ name }}</pre>
 											<pre>FILTER: {{ filter }}</pre>
 											<pre>MAP: {{ map }}</pre>
-											<pre>PATH: {{- doc.path -}}</pre>
+											<pre>PATH: {{ doc.path }}</pre>
 											<hr>
 									{%- endif -%}
 								{%- endfor -%}
