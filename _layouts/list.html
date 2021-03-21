@@ -51,16 +51,16 @@ layout: default
 								{%- endcapture -%}
 							{%- endif -%}
 						{%- endfor -%}
-						{%- assign page_index = collection_index | split: "<!-- PAGE INDEX PASS -->" -%}
+						{%- assign subpage_index = collection_index | split: "<!-- PAGE INDEX PASS -->" -%}
 					{%- comment -%}
 						<!-- end list setup -->
 					{%- endcomment -%}
 					{{- content_index[0] }}
 					{{ page_index | inspect }}
 					<ul class="main_wrapper-list_wrapper">
-						{%- for node in site.documents -%}
-							{%- for page in page_index -%}
-								{%- if node.path == page_index %}
+						{%- for node in site[root] -%}
+							{%- for subpage in subpage_index -%}
+								{%- if node.path == subpage %}
 								<li>
 									<a href="{{- site.baseurl -}}{{- node.url -}}">
 										{{ node.title }}
