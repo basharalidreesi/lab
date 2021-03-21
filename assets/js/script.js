@@ -52,25 +52,6 @@
 		window.addEventListener("resize", () => {
 			debounce(updateVh, 350);
 		});
-		if (cascade) {
-			window.addEventListener("DOMContentLoaded", (event) => {
-				redirectWheel();
-				redirectTouch();
-			});
-		}
-		if (list) {
-			window.addEventListener("DOMContentLoaded", () => {
-				const tags = document.getElementsByClassName("list_item-item_tag");
-				const untags = document.getElementsByClassName("--unfilter");
-				for (let i = 0; i < tags.length; i++) {
-					tags[i].addEventListener("click", filter);
-					untags[i].addEventListener("click", (event) => {
-						event.stopPropagation();
-						unfilter();
-					});
-				}
-			});
-		}
 		if (central) {
 			window.addEventListener("scroll", hasScrolled, {passive: false});
 			window.addEventListener("DOMContentLoaded", (event) => {
@@ -102,6 +83,24 @@
 						textarea.style.height = textarea.scrollHeight + "px";
 					});
 				});
+			});
+		}
+		if (list) {
+			window.addEventListener("DOMContentLoaded", () => {
+				const tags = document.querySelectorAll(".list_item-item_tag");
+				const untags = document.querySelectorAll(".--untag");
+				tags.forEach((tag) => {
+					tag.addEventListener("click", filter);
+				});
+				untags.forEach((untag) => {
+					untag.addEventListener("click", unfilter);
+				});
+			});
+		}
+		if (cascade) {
+			window.addEventListener("DOMContentLoaded", (event) => {
+				redirectWheel();
+				redirectTouch();
 			});
 		}
 	}

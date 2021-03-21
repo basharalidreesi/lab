@@ -67,8 +67,8 @@ layout: default
 										{%- assign tags = node.tags | sort_natural -%}
 										{%- for tag in tags %}
 							<dd class="list_item-item_tag --list_tag_styling">
-								{{ tag | strip }}
 								<div class="--untag"></div>
+								{{ tag | strip }}
 							</dd>
 										{%- endfor -%}
 									{%- else -%}
