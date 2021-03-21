@@ -32,40 +32,42 @@ layout: default
 						{%- for collection in site.collections -%}
 							{%- if collection.label == root -%}
 								{%- assign docs = collection.docs | sort: "position" -%}
-								{%- capture page_index -%}
+								{%- capture collection_index -%}
 									{%- for doc in docs -%}
 										{%- if level == 1 -%}
 											{%- assign filter = doc.path | split: "/" | size | minus: 1 -%}
 											{%- if filter == level -%}
-												<!-- PAGE INDEX PASS --> {{- doc.content -}}
+												<!-- PAGE INDEX PASS --> {{- doc.path -}}
 											{%- endif -%}
 										{%- else -%}
 											{%- assign current = doc.path | split: "/" | reverse -%}
 											{%- assign name = current[0] | prepend: "/" -%}
 											{%- assign filter = doc.path | remove: name -%}
 											{%- if filter == map -%}
-												<!-- PAGE INDEX PASS --> {{- doc.content -}}
+												<!-- PAGE INDEX PASS --> {{- doc.path -}}
 											{%- endif -%}
 										{%- endif -%}
 									{%- endfor -%}
 								{%- endcapture -%}
 							{%- endif -%}
 						{%- endfor -%}
-						{%- assign subpages = page_index | split: "<!-- PAGE INDEX PASS -->" -%}
-						<pre>{{ subpages | inspect }}</pre>
-						<hr>
-						{%- for subpage in subpages -%}
-							<pre>{{ subpage.title }}<pre>
-							<pre>{{ subpage.path }}<pre>
-							<pre>{{ subpage.url }}<pre>
-							<hr>
-						{%- endfor -%}
+						{%- assign page_index = collection_index | split: "<!-- PAGE INDEX PASS -->" -%}
 					{%- comment -%}
 						<!-- end list setup -->
 					{%- endcomment -%}
 					{{- content_index[0] }}
 					<ul class="main_wrapper-list_wrapper">
-
+						{%- for node in site.documents -%}
+							{%- for page in page_index -%}
+								{%- if node.path == page_index %}
+								<li>
+									<a href="{{- site.baseurl -}}{{- node.url -}}">
+										{{ node.title }}
+									</a>
+								</li>
+								{%- endif -%}
+							{%- endfor -%}
+						{%- endfor %}
 					</ul>
 					{{- content_index[1] }}
 					<!-- end list.html -->
