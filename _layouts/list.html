@@ -29,37 +29,30 @@ layout: default
 						{%- else -%}
 							{%- assign root = tree[0] | remove_first: "_" -%}
 						{%- endif -%}
-
-
 						{%- for collection in site.collections -%}
 							{%- if collection.label == root -%}
 								{%- assign docs = collection.docs | sort: "position" -%}
-								{%- for doc in docs -%}
-									{%- if level == 1 -%}
-										{%- assign filter = doc.path | split: "/" | size | minus: 1 -%}
-										{%- if filter == level -%}
-											<hr>
-											<pre>{{- doc.path -}}</pre>
+								{%- capture page_index -%}
+									{%- for doc in docs -%}
+										{%- if level == 1 -%}
+											{%- assign filter = doc.path | split: "/" | size | minus: 1 -%}
+											{%- if filter == level -%}
+												<!-- PAGE INDEX PASS --> {{- doc -}}
+											{%- endif -%}
+										{%- else -%}
+											{%- assign current = doc.path | split: "/" | reverse -%}
+											{%- assign name = current[0] | prepend: "/" -%}
+											{%- assign filter = doc.path | remove: name -%}
+											{%- if filter == map -%}
+												<!-- PAGE INDEX PASS --> {{- doc -}}
+											{%- endif -%}
 										{%- endif -%}
-									{%- else -%}
-										{%- assign current = doc.path | split: "/" | reverse -%}
-										{%- assign name = current[0] | prepend: "/" -%}
-										{%- assign filter = doc.path | remove: name -%}
-										{%- if filter == map -%}
-											<hr>
-											<pre>{{- doc.path -}}</pre>
-										{%- endif -%}
-									{%- endif -%}
-								{%- endfor -%}
+									{%- endfor -%}
+								{%- endcapture -%}
 							{%- endif -%}
 						{%- endfor -%}
-
-
-
-
-
-
-
+						{%- assign subpages = page_index | split: "<!-- PAGE INDEX PASS --> " -%}
+						<pre>{{ subpages | inspect }}</pre>
 					{%- comment -%}
 						<!-- end list setup -->
 					{%- endcomment -%}
