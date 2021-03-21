@@ -52,21 +52,23 @@ layout: default
 						<!-- end list setup -->
 					{%- endcomment -%}
 					{{- content_index[0] }}
-					<dl class="main_wrapper-list_wrapper">
+					<dl class="main_wrapper-list_wrapper2">
 						{%- for node in search_scope -%}
 							{%- for subpage in search_index -%}
 								{%- if node.path == subpage %}
-						<dt>
-							<a href="{{- site.baseurl -}}{{- node.url -}}">
-								{{ node.title }}
-							</a>
-						</dt>
+						<div class="list_wrapper-list_item2">
+							<dt class="list_item-item_term">
+								<a href="{{- site.baseurl -}}{{- node.url -}}">
+									{{ node.title }}
+								</a>
+							</dt>
 									{%- unless node.tags == empty -%}
 										{%- assign tags = node.tags | sort_natural -%}
 										{%- for tag in tags %}
-						<dd>
-							{{ tag | strip }}
-						</dd>
+							<dd class="list_item-item_tag">
+								{{ tag | strip }}
+							</dd>
+						</div>
 										{%- endfor -%}
 									{%- endunless -%}
 								{%- endif -%}
