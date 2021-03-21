@@ -52,28 +52,26 @@ layout: default
 						<!-- end list setup -->
 					{%- endcomment -%}
 					{{- content_index[0] }}
-					<article class="main_wrapper-list_wrapper">
-						<nav>
-							{%- for node in search_scope -%}
-								{%- for subpage in search_index -%}
-									{%- if node.path == subpage %}
-							<dt>
-								<a href="{{- site.baseurl -}}{{- node.url -}}">
-									{{ node.title }}
-								</a>
-							</dt>
-										{%- unless node.tags == empty -%}
-											{%- for tag in node.tags %}
-							<dd>
-								{{ tag | strip }}
-							</dd>
-											{%- endfor -%}
-										{%- endunless -%}
-									{%- endif -%}
-								{%- endfor -%}
-							{%- endfor %}
-						</nav>
-					</article>
+					<dl class="main_wrapper-list_wrapper">
+						{%- for node in search_scope -%}
+							{%- for subpage in search_index -%}
+								{%- if node.path == subpage %}
+						<dt>
+							<a href="{{- site.baseurl -}}{{- node.url -}}">
+								{{ node.title }}
+							</a>
+						</dt>
+									{%- unless node.tags == empty -%}
+										{%- for tag in node.tags %}
+						<dd>
+							{{ tag | strip }}
+						</dd>
+										{%- endfor -%}
+									{%- endunless -%}
+								{%- endif -%}
+							{%- endfor -%}
+						{%- endfor %}
+					</dl>
 					{{- content_index[1] }}
 					<!-- end list.html -->
 
