@@ -306,14 +306,14 @@ p:empty {
 			font-weight: var(--list_title_font_size);
 			color: var(--text_colour);
 			text-align: center;
+		}
+		.--list_title_styling {
+			line-height: 150%;
 			hyphens: auto;
 			-ms-hyphens: auto;
 			-webkit-hyphens: auto;
 			word-break: break-word;
 			overflow: hidden;
-		}
-		.--list_title_styling {
-			line-height: 150%;
 			padding-top: 1px;
 		}
 		.--list_tag_styling {
@@ -1001,7 +1001,6 @@ body {
 	}
 	.--untag {
 		display: none;
-		opacity: 0;
 		position: absolute;
 		top: calc(var(--half_negative));
 		right: calc(var(--single_negative));

@@ -201,7 +201,7 @@
 			if (tag.textContent.indexOf(filter_content) != -1) {
 				tag.classList.add("--highlighted_tag");
 				tag.children[0].style.display = "block";
-				tag.children[0].style.opacity = "1";
+				tag.parentElement.classList.add("--highlighted_list_item");
 			}
 		});
 
