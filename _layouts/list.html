@@ -20,7 +20,8 @@ layout: default
 							{%- assign search_scope = site.collections -%}
 							{%- capture page_index -%}
 								{%- for collection in site.collections -%}
-									{%- for doc in site.collections.[collection.label].docs -%}
+									{%- assign label = collection.label -%}
+									{%- for doc in site.collections[label].docs -%}
 										<!-- SEARCH INDEX PASS --> {{- doc.path -}}
 									{%- endfor -%}
 								{%- endfor -%}
