@@ -16,14 +16,14 @@ layout: default
 					{%- comment -%}
 						<!-- begin list setup -->
 					{%- endcomment -%}
-						{%- comment -%}
-							partially from:
-								- https://mmistakes.github.io/minimal-mistakes/docs/layouts/
-								- https://github.com/mmistakes/minimal-mistakes/blob/master/docs/_pages/collection-archive.html
-						{%- endcomment -%}
 						{%- if page.url == "/" -%}
-							{%- assign collection_index = site.collections | sort: "title" -%}
-							{%- assign subpage_index = site.docs.path -%}
+							{%- assign search_scope = site.collections | sort: "title" -%}
+							{%- capture search_index -%}
+								{%- for doc in site.collection -%}
+									<!-- SEARCH INDEX PASS --> {{- doc.path -}}
+								{%- endfor -%}
+							{%- endcapture -%}
+							{%- assign search_index = search_index | split: "<!-- SEARCH INDEX PASS -->" -%}
 						{%- else -%}
 							{%- assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" -%}
 							{%- assign map = tree | join: "/" -%}
@@ -41,30 +41,30 @@ layout: default
 											{%- if level == 1 -%}
 												{%- assign filter = doc.path | split: "/" | size | minus: 1 -%}
 												{%- if filter == level -%}
-													<!-- PAGE INDEX PASS --> {{- doc.path -}}
+													<!-- SEARCH INDEX PASS --> {{- doc.path -}}
 												{%- endif -%}
 											{%- else -%}
 												{%- assign current = doc.path | split: "/" | reverse -%}
 												{%- assign name = current[0] | prepend: "/" -%}
 												{%- assign filter = doc.path | remove: name -%}
 												{%- if filter == map -%}
-													<!-- PAGE INDEX PASS --> {{- doc.path -}}
+													<!-- SEARCH INDEX PASS --> {{- doc.path -}}
 												{%- endif -%}
 											{%- endif -%}
 										{%- endfor -%}
 									{%- endcapture -%}
 								{%- endif -%}
 							{%- endfor -%}
-							{%- assign collection_index = site[root] | sort: "position" -%}
-							{%- assign subpage_index = page_index | split: "<!-- PAGE INDEX PASS -->" -%}
+							{%- assign search_scope = site[root] | sort: "position" -%}
+							{%- assign search_index = page_index | split: "<!-- SEARCH INDEX PASS -->" -%}
 						{%- endif -%}
 					{%- comment -%}
 						<!-- end list setup -->
 					{%- endcomment -%}
 					{{- content_index[0] }}
 					<ul class="main_wrapper-list_wrapper">
-						{%- for node in collection_index -%}
-							{%- for subpage in subpage_index -%}
+						{%- for node in search_scope -%}
+							{%- for subpage in search_index -%}
 								{%- if node.path == subpage %}
 						<li>
 							<span>
