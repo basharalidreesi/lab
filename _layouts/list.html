@@ -37,14 +37,14 @@ layout: default
 										{%- if level == 1 -%}
 											{%- assign filter = doc.path | split: "/" | size | minus: 1 -%}
 											{%- if filter == level -%}
-												<!-- PAGE INDEX PASS --> {{- doc -}}
+												<!-- PAGE INDEX PASS --> {{- doc.excerpt -}}
 											{%- endif -%}
 										{%- else -%}
 											{%- assign current = doc.path | split: "/" | reverse -%}
 											{%- assign name = current[0] | prepend: "/" -%}
 											{%- assign filter = doc.path | remove: name -%}
 											{%- if filter == map -%}
-												<!-- PAGE INDEX PASS --> {{- doc -}}
+												<!-- PAGE INDEX PASS --> {{- doc.excerpt -}}
 											{%- endif -%}
 										{%- endif -%}
 									{%- endfor -%}
