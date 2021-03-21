@@ -64,11 +64,11 @@ layout: default
 								{%- for subpage in search_index -%}
 									{%- if node.path == subpage %}
 							<li>
-								<span>
+								<h2>
 									<a href="{{- site.baseurl -}}{{- node.url -}}">
 										{{ node.title }}
 									</a>
-								</span>
+								</h2>
 							</li>
 									{%- endif -%}
 								{%- endfor -%}
