@@ -939,6 +939,9 @@ body {
 		border-bottom: 1px dashed var(--border_colour);
 		transition: background-color 0.25s;
 	}
+	.list_wrapper-list_item:last-child {
+		border-bottom: none;
+	}
 	.list_item-item_title {
 		width: 100%;
 		padding-bottom: calc(var(--single));
@@ -1000,7 +1003,9 @@ body {
 	.--untag::after {
 		transform: rotate(-45deg);
 	}
-	.--no_tag { }
+	.--no_tag {
+		display: none;
+	}
 	/*
 	┌───────┐
 	│ begin └─────────┐

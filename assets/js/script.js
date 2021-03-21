@@ -93,7 +93,7 @@
 					tag.addEventListener("click", filter);
 				});
 				untags.forEach((untag) => {
-					untag.addEventListener("click", unfilter);
+					untag.addEventListener("click", filter);
 				});
 			});
 		}
@@ -193,66 +193,47 @@
 		});
 	}
 
-	let filter_index = new Array();
+	let filter_index = [];
 	function filter(event) {
-		let target = event.target;
-		filter_index.push(target.textContent.trim());
+		let target;
+		if (event.target.classList.contains("--untag")) {
+			target = event.target.parentElement;
+			const unfilter_index = filter_index.indexOf(target.textContent.trim());
+			if (unfilter_index != -1) {
+				filter_index.splice(unfilter_index, 1);
+				console.log("Unfiltered " + target.textContent.trim() + ".");
+			}
+		} else {
+			target = event.target;
+			filter_index.push(target.textContent.trim());
+			console.log("Filtered " + target.textContent.trim() + ".");
+		}
 		const items = document.querySelectorAll(".list_wrapper-list_item");
 		items.forEach((item) => {
-			let tag_index = new Array();
-			const children = item.children;
-			for (let i = 0; i < children.length; i++) {
-				if (children[i].classList.contains("list_item-item_tag")) {
-					tag_index.push(children[i].textContent.trim());
-				}
-				if (filter_index.every(tag => tag_index.includes(tag))) {
-					item.classList.add("--highlighted_list_item");
-				} else {
-					item.classList.remove("--highlighted_list_item");
-				}
+			let tag_index = [];
+			let tags = item.querySelectorAll(":scope > .list_item-item_tag");
+			tags.forEach((tag) => {
+				tag_index.push(tag.textContent.trim());
+			});
+			if (filter_index.length > 0 && filter_index.every(key => tag_index.includes(key))) {
+				item.classList.add("--highlighted_list_item");
+				tags.forEach((tag) => {
+					if (filter_index.includes(tag.textContent.trim())) {
+						tag.classList.add("--highlighted_tag");
+						tag.children[0].style.display = "block";
+					} else {
+						tag.classList.remove("--highlighted_tag");
+						tag.children[0].removeAttribute("style");
+					}
+				});
+			} else {
+				item.classList.remove("--highlighted_list_item");
+				tags.forEach((tag) => {
+					tag.classList.remove("--highlighted_tag");
+					tag.children[0].removeAttribute("style");
+				});
 			}
 		});
-
-		//tags.forEach((tag) => {
-		//	if (tag.textContent.indexOf(target_index) != -1) {
-		//		tag.classList.add("--highlighted_tag");
-		//		tag.children[0].style.display = "block";
-		//	}
-		//});
-
-
-//		let list_items = document.getElementsByClassName("list_wrapper-list_item");
-//		let all_tags = document.getElementsByClassName("list_item-item_tag");
-//		for (let i = 0; i < list_items.length; i++) {
-//			if (list_items[i].textContent.indexOf(tag_content) != -1) {
-//				list_items[i].classList.add("--highlighted_list_item");
-//			} else {
-//				list_items[i].classList.remove("--highlighted_list_item");
-//			}
-//		}
-//		for (let i = 0; i < all_tags.length; i++) {
-//			if (all_tags[i].textContent.indexOf(tag_content) != -1) {
-//				all_tags[i].classList.add("--highlighted_tag");
-//				all_tags[i].children[0].style.display = "block";
-//				all_tags[i].children[0].style.opacity = "1";
-//			} else {
-//				all_tags[i].classList.remove("--highlighted_tag");
-//				all_tags[i].children[0].removeAttribute("style");
-//			}
-//		}
-		console.log("Filtered " + filter_index + ".");
-	}
-	function unfilter() {
-//		var list_items = document.getElementsByClassName("list_item-tag_list_wrapper");
-//		var all_tags = document.getElementsByClassName("tag_list_wrapper-tag_list_item");
-//		for (var i = 0, length = list_items.length; i < length; i++) {
-//			list_items[i].parentElement.classList.remove("--highlighted_list_item");
-//		}
-//		for (var j = 0, length = all_tags.length; j < length; j++) {
-//			all_tags[j].classList.remove("--highlighted_tag");
-//			all_tags[j].children[0].removeAttribute("style");
-//		}
-		console.log("Unfiltered.");
 	}
 
 	function redirectWheel() {
