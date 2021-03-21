@@ -194,16 +194,17 @@
 	}
 
 	function filter(event) {
-		let filter_target = event.target;
-		let filter_content = filter_target.textContent;
-		const tags = document.querySelectorAll(".list_item-item_tag");
-		tags.forEach((tag) => {
-			if (tag.textContent.indexOf(filter_content) != -1) {
-				tag.classList.add("--highlighted_tag");
-				tag.children[0].style.display = "block";
-				tag.parentElement.classList.add("--highlighted_list_item");
-			}
-		});
+		let target = event.target;
+		let filter_index = new Array();
+		filter_index.push(target.textContent);
+//		const tags = document.querySelectorAll(".list_item-item_tag");
+//		tags.forEach((tag) => {
+//			if (tag.textContent.indexOf(filter_content) != -1) {
+//				tag.classList.add("--highlighted_tag");
+//				tag.children[0].style.display = "block";
+//				tag.parentElement.classList.add("--highlighted_list_item");
+//			}
+//		});
 
 //		let list_items = document.getElementsByClassName("list_wrapper-list_item");
 //		let all_tags = document.getElementsByClassName("list_item-item_tag");
@@ -224,7 +225,7 @@
 //				all_tags[i].children[0].removeAttribute("style");
 //			}
 //		}
-		console.log("Filtered " + filter_content.trim() + ".");
+		console.log("Filtered " + filter_index + ".");
 	}
 	function unfilter() {
 //		var list_items = document.getElementsByClassName("list_item-tag_list_wrapper");

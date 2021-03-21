@@ -961,6 +961,9 @@ body {
 	.list_item-item_tag:last-of-type {
 		margin-bottom: calc(var(--single));
 	}
+	.list_item-item_tag:only-of-type {
+		margin-top: 0;
+	}
 	.--highlighted_list_item {
 		background-color: var(--secondary_colour);
 	}
