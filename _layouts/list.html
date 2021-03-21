@@ -58,25 +58,23 @@ layout: default
 						<!-- end list setup -->
 					{%- endcomment -%}
 					{{- content_index[0] }}
-					<ul class="main_wrapper-list_wrapper">
-						{%- for node in search_scope -%}
-							{%- for subpage in search_index -%}
-								{%- if node.path == subpage %}
-						<li>
-							<span>
-								<a href="{{- site.baseurl -}}{{- node.url -}}">
-									{{ node.title }}
-								</a>
-							</span>
-							<ul>
-								<li>
-								</li>
-							</ul>
-						</li>
-								{%- endif -%}
-							{%- endfor -%}
-						{%- endfor %}
-					</ul>
+					<article class="main_wrapper-list_wrapper">
+						<ol>
+							{%- for node in search_scope -%}
+								{%- for subpage in search_index -%}
+									{%- if node.path == subpage %}
+							<li>
+								<span>
+									<a href="{{- site.baseurl -}}{{- node.url -}}">
+										{{ node.title }}
+									</a>
+								</span>
+							</li>
+									{%- endif -%}
+								{%- endfor -%}
+							{%- endfor %}
+						</ol>
+					</article>
 					{{- content_index[1] }}
 					<!-- end list.html -->
 
