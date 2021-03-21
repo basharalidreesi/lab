@@ -310,7 +310,9 @@ p:empty {
 			-ms-hyphens: auto;
 			-webkit-hyphens: auto;
 			word-break: break-word;
+			line-height: 150%;
 			overflow: hidden;
+			padding-top: 1px;
 		}
 		.--list_tag_styling {
 			font-family: var(--list_tag_font);
