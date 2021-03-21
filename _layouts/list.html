@@ -19,8 +19,10 @@ layout: default
 						{%- if page.url == "/" -%}
 							{%- assign search_scope = site.collections -%}
 							{%- capture page_index -%}
-								{%- for doc in site.documents -%}
-									<!-- SEARCH INDEX PASS --> {{- doc.path -}}
+								{%- for collection in site.collections -%}
+									{%- for doc in site.collections.[collection.label].docs -%}
+										<!-- SEARCH INDEX PASS --> {{- doc.path -}}
+									{%- endfor -%}
 								{%- endfor -%}
 							{%- endcapture -%}
 							{%- assign search_index = page_index | split: "<!-- SEARCH INDEX PASS -->" -%}
