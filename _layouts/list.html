@@ -31,8 +31,8 @@ layout: default
 						{%- endif -%}
 						{%- for collection in site.collections -%}
 							{%- if collection.label == root -%}
-								{%- assign docs = collection.docs | sort: "position" -%}
-								{%- capture collection_index -%}
+								{%- assign docs = collection.docs -%}
+								{%- capture page_index -%}
 									{%- for doc in docs -%}
 										{%- if level == 1 -%}
 											{%- assign filter = doc.path | split: "/" | size | minus: 1 -%}
@@ -51,20 +51,21 @@ layout: default
 								{%- endcapture -%}
 							{%- endif -%}
 						{%- endfor -%}
-						{%- assign subpage_index = collection_index | split: "<!-- PAGE INDEX PASS -->" -%}
+						{%- assign collection_index = site[root] | sort: "position" -%}
+						{%- assign subpage_index = page_index | split: "<!-- PAGE INDEX PASS -->" -%}
 					{%- comment -%}
 						<!-- end list setup -->
 					{%- endcomment -%}
 					{{- content_index[0] }}
 					<ul class="main_wrapper-list_wrapper">
-						{%- for node in site[root] -%}
+						{%- for node in collection_index -%}
 							{%- for subpage in subpage_index -%}
 								{%- if node.path == subpage %}
-								<li>
-									<a href="{{- site.baseurl -}}{{- node.url -}}">
-										{{ node.title }}
-									</a>
-								</li>
+						<li>
+							<a href="{{- site.baseurl -}}{{- node.url -}}">
+								{{ node.title }}
+							</a>
+						</li>
 								{%- endif -%}
 							{%- endfor -%}
 						{%- endfor %}
