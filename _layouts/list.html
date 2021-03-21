@@ -18,12 +18,12 @@ layout: default
 					{%- endcomment -%}
 						{%- if page.url == "/" -%}
 							{%- assign search_scope = site.collections | sort: "title" -%}
-							{%- capture search_index -%}
+							{%- capture page_index -%}
 								{%- for doc in site.collection -%}
 									<!-- SEARCH INDEX PASS --> {{- doc.path -}}
 								{%- endfor -%}
 							{%- endcapture -%}
-							{%- assign search_index = search_index | split: "<!-- SEARCH INDEX PASS -->" -%}
+							{%- assign search_index = page_index | split: "<!-- SEARCH INDEX PASS -->" -%}
 						{%- else -%}
 							{%- assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" -%}
 							{%- assign map = tree | join: "/" -%}
