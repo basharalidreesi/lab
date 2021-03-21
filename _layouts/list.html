@@ -17,16 +17,9 @@ layout: default
 						<!-- begin list setup -->
 					{%- endcomment -%}
 						{%- if page.url == "/" -%}
-							{%- assign search_scope = site.collections -%}
-							{%- capture page_index -%}
-								{%- for collection in site.collections -%}
-									{%- assign label = collection.label -%}
-									{%- for doc in site.collections[label].docs -%}
-										<!-- SEARCH INDEX PASS --> {{- doc.path -}}
-									{%- endfor -%}
-								{%- endfor -%}
-							{%- endcapture -%}
-							{%- assign search_index = page_index | split: "<!-- SEARCH INDEX PASS -->" -%}
+							{%- comment -%}
+								<!-- probably unnecessary -->
+							{%- endcomment -%}
 						{%- else -%}
 							{%- assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" -%}
 							{%- assign map = tree | join: "/" -%}
