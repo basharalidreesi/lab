@@ -62,7 +62,8 @@ layout: default
 							</a>
 						</dt>
 									{%- unless node.tags == empty -%}
-										{%- for tag in node.tags %}
+										{%- assign tags = node.tags | sort_natural -%}
+										{%- for tag in tags %}
 						<dd>
 							{{ tag | strip }}
 						</dd>
