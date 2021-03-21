@@ -53,7 +53,7 @@ layout: default
 					{%- endcomment -%}
 					{{- content_index[0] }}
 					<article class="main_wrapper-list_wrapper">
-						<dl>
+						<nav>
 							{%- for node in search_scope -%}
 								{%- for subpage in search_index -%}
 									{%- if node.path == subpage %}
@@ -65,14 +65,14 @@ layout: default
 										{%- unless node.tags == empty -%}
 											{%- for tag in node.tags %}
 							<dd>
-								{{ tag }}
+								{{ tag | strip }}
 							</dd>
 											{%- endfor -%}
 										{%- endunless -%}
 									{%- endif -%}
 								{%- endfor -%}
 							{%- endfor %}
-						</dl>
+						</nav>
 					</article>
 					{{- content_index[1] }}
 					<!-- end list.html -->
