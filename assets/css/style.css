@@ -971,7 +971,7 @@ body {
 		transition: all 0.25s;
 		cursor: pointer;
 	}
-	.list_item-item_tag:first-child {
+	.list_item-item_tag:first-of-type {
 		margin-top: calc(var(--double));
 	}
 	.--unfilter { }
