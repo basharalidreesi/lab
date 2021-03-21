@@ -961,14 +961,14 @@ body {
 		width: 100%;
 		padding: calc(var(--screen_width_third));
 		padding-top: calc(var(--double));
-		padding-bottom: calc(var(--double));
+		padding-bottom: 0;
 		border-bottom: 1px solid var(--border_colour);
 	}
 	.list_item-item_title {
 		width: 100%;
+		padding-bottom: calc(var(--double));
 	}
 	.list_item-item_tag {
-		margin-top: calc(var(--single));
 		margin-left: calc(var(--half));
 		margin-right: calc(var(--half));
 		padding: calc(var(--single));
