@@ -17,7 +17,7 @@ layout: default
 						<!-- begin list setup -->
 					{%- endcomment -%}
 						{%- if page.url == "/" -%}
-							{%- assign search_scope = site.docs | sort: "title" -%}
+							{%- assign search_scope = site.documents | sort: "title" -%}
 							{%- capture page_index -%}
 								{%- for doc in site.collection -%}
 									<!-- SEARCH INDEX PASS --> {{- doc.path -}}
