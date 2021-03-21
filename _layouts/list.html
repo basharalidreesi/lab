@@ -58,7 +58,7 @@ layout: default
 							{%- for subpage in search_index -%}
 								{%- if node.path == subpage %}
 						<div class="list_wrapper-list_item2">
-							<dt class="list_item-item_title">
+							<dt class="list_item-item_title --list_title_styling">
 								<a href="{{- site.baseurl -}}{{- node.url -}}">
 									{{ node.title }}
 								</a>
@@ -66,7 +66,7 @@ layout: default
 									{%- unless node.tags == empty -%}
 										{%- assign tags = node.tags | sort_natural -%}
 										{%- for tag in tags %}
-							<dd class="list_item-item_tag">
+							<dd class="list_item-item_tag --list_tag_styling">
 								{{ tag | strip }}
 								<div class="--unfilter"></div>
 							</dd>
