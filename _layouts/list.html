@@ -51,8 +51,15 @@ layout: default
 								{%- endcapture -%}
 							{%- endif -%}
 						{%- endfor -%}
-						{%- assign subpages = page_index | split: "<!-- PAGE INDEX PASS --> " -%}
+						{%- assign subpages = page_index | split: "<!-- PAGE INDEX PASS -->" -%}
 						<pre>{{ subpages | inspect }}</pre>
+						<hr>
+						{%- for subpage in subpages -%}
+							<pre>{{ subpage.title }}<pre>
+							<pre>{{ subpage.path }}<pre>
+							<pre>{{ subpage.url }}<pre>
+							<hr>
+						{%- endfor -%}
 					{%- comment -%}
 						<!-- end list setup -->
 					{%- endcomment -%}
