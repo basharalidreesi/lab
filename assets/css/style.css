@@ -961,7 +961,16 @@ body {
 	.list_item-item_title {
 		width: 100%;
 	}
-	.list_item-item_tag { }
+	.list_item-item_tag {
+		margin-top: calc(var(--single));
+		padding: calc(var(--half));
+		padding-left: calc(var(--single));
+		padding-right: calc(var(--single));
+		border: 1px solid var(--border_colour);
+		border-radius: 5000px;
+		transition: all 0.25s;
+		cursor: pointer;
+	}
 	.--unfilter { }
 	.--no_tag { }
 
