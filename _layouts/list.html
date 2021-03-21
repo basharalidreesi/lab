@@ -51,7 +51,7 @@ layout: default
 					{%- comment -%}
 						<!-- end list setup -->
 					{%- endcomment -%}
-					{{- content_index[0] -}}
+					{{- content_index[0] }}
 					{%- unless search_index == empty %}
 					<dl class="main_wrapper-list_wrapper2">
 						{%- for node in search_scope -%}
@@ -79,7 +79,7 @@ layout: default
 					</dl>
 					{%- endunless -%}
 					{{- content_index[1] }}
-					<!-- end list.html -->
+				<!-- end list.html -->
 
 
 
