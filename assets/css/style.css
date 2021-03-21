@@ -963,6 +963,8 @@ body {
 	}
 	.list_item-item_tag {
 		margin-top: calc(var(--single));
+		margin-left: calc(var(--half));
+		margin-right: calc(var(--half));
 		padding: calc(var(--half));
 		padding-left: calc(var(--single));
 		padding-right: calc(var(--single));
