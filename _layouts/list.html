@@ -21,38 +21,43 @@ layout: default
 								- https://mmistakes.github.io/minimal-mistakes/docs/layouts/
 								- https://github.com/mmistakes/minimal-mistakes/blob/master/docs/_pages/collection-archive.html
 						{%- endcomment -%}
-						{%- assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" -%}
-						{%- assign map = tree | join: "/" -%}
-						{%- assign level = tree.size -%}
-						{%- if level == 1 -%}
-							{%- assign root = tree[0] -%}
+						{%- if page.url == "/" -%}
+							{%- assign collection_index = site.collections | sort: "title" -%}
+							{%- assign subpage_index = site.docs.path -%}
 						{%- else -%}
-							{%- assign root = tree[0] | remove_first: "_" -%}
-						{%- endif -%}
-						{%- for collection in site.collections -%}
-							{%- if collection.label == root -%}
-								{%- assign docs = collection.docs -%}
-								{%- capture page_index -%}
-									{%- for doc in docs -%}
-										{%- if level == 1 -%}
-											{%- assign filter = doc.path | split: "/" | size | minus: 1 -%}
-											{%- if filter == level -%}
-												<!-- PAGE INDEX PASS --> {{- doc.path -}}
-											{%- endif -%}
-										{%- else -%}
-											{%- assign current = doc.path | split: "/" | reverse -%}
-											{%- assign name = current[0] | prepend: "/" -%}
-											{%- assign filter = doc.path | remove: name -%}
-											{%- if filter == map -%}
-												<!-- PAGE INDEX PASS --> {{- doc.path -}}
-											{%- endif -%}
-										{%- endif -%}
-									{%- endfor -%}
-								{%- endcapture -%}
+							{%- assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" -%}
+							{%- assign map = tree | join: "/" -%}
+							{%- assign level = tree.size -%}
+							{%- if level == 1 -%}
+								{%- assign root = tree[0] -%}
+							{%- else -%}
+								{%- assign root = tree[0] | remove_first: "_" -%}
 							{%- endif -%}
-						{%- endfor -%}
-						{%- assign collection_index = site[root] | sort: "position" -%}
-						{%- assign subpage_index = page_index | split: "<!-- PAGE INDEX PASS -->" -%}
+							{%- for collection in site.collections -%}
+								{%- if collection.label == root -%}
+									{%- assign docs = collection.docs -%}
+									{%- capture page_index -%}
+										{%- for doc in docs -%}
+											{%- if level == 1 -%}
+												{%- assign filter = doc.path | split: "/" | size | minus: 1 -%}
+												{%- if filter == level -%}
+													<!-- PAGE INDEX PASS --> {{- doc.path -}}
+												{%- endif -%}
+											{%- else -%}
+												{%- assign current = doc.path | split: "/" | reverse -%}
+												{%- assign name = current[0] | prepend: "/" -%}
+												{%- assign filter = doc.path | remove: name -%}
+												{%- if filter == map -%}
+													<!-- PAGE INDEX PASS --> {{- doc.path -}}
+												{%- endif -%}
+											{%- endif -%}
+										{%- endfor -%}
+									{%- endcapture -%}
+								{%- endif -%}
+							{%- endfor -%}
+							{%- assign collection_index = site[root] | sort: "position" -%}
+							{%- assign subpage_index = page_index | split: "<!-- PAGE INDEX PASS -->" -%}
+						{%- endif -%}
 					{%- comment -%}
 						<!-- end list setup -->
 					{%- endcomment -%}
@@ -62,9 +67,15 @@ layout: default
 							{%- for subpage in subpage_index -%}
 								{%- if node.path == subpage %}
 						<li>
-							<a href="{{- site.baseurl -}}{{- node.url -}}">
-								{{ node.title }}
-							</a>
+							<span>
+								<a href="{{- site.baseurl -}}{{- node.url -}}">
+									{{ node.title }}
+								</a>
+							</span>
+							<ul>
+								<li>
+								</li>
+							</ul>
 						</li>
 								{%- endif -%}
 							{%- endfor -%}

@@ -4,6 +4,6 @@ permalink: "/"
 position: 0
 page:
   has central header: true
-layout: showcase
+layout: list
 ---
 
