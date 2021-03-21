@@ -16,64 +16,63 @@ layout: default
 					{%- comment -%}
 						<!-- begin list setup -->
 					{%- endcomment -%}
-						{%- if page.url == "/" -%}
-							{%- comment -%}
-								<!-- probably unnecessary -->
-							{%- endcomment -%}
+						{%- assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" -%}
+						{%- assign map = tree | join: "/" -%}
+						{%- assign level = tree.size -%}
+						{%- if level == 1 -%}
+							{%- assign root = tree[0] -%}
 						{%- else -%}
-							{%- assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" -%}
-							{%- assign map = tree | join: "/" -%}
-							{%- assign level = tree.size -%}
-							{%- if level == 1 -%}
-								{%- assign root = tree[0] -%}
-							{%- else -%}
-								{%- assign root = tree[0] | remove_first: "_" -%}
-							{%- endif -%}
-							{%- for collection in site.collections -%}
-								{%- if collection.label == root -%}
-									{%- assign docs = collection.docs -%}
-									{%- capture page_index -%}
-										{%- for doc in docs -%}
-											{%- if level == 1 -%}
-												{%- assign filter = doc.path | split: "/" | size | minus: 1 -%}
-												{%- if filter == level -%}
-													<!-- SEARCH INDEX PASS --> {{- doc.path -}}
-												{%- endif -%}
-											{%- else -%}
-												{%- assign current = doc.path | split: "/" | reverse -%}
-												{%- assign name = current[0] | prepend: "/" -%}
-												{%- assign filter = doc.path | remove: name -%}
-												{%- if filter == map -%}
-													<!-- SEARCH INDEX PASS --> {{- doc.path -}}
-												{%- endif -%}
-											{%- endif -%}
-										{%- endfor -%}
-									{%- endcapture -%}
-								{%- endif -%}
-							{%- endfor -%}
-							{%- assign search_scope = site[root] | sort: "position" -%}
-							{%- assign search_index = page_index | split: "<!-- SEARCH INDEX PASS -->" -%}
+							{%- assign root = tree[0] | remove_first: "_" -%}
 						{%- endif -%}
+						{%- for collection in site.collections -%}
+							{%- if collection.label == root -%}
+								{%- assign docs = collection.docs -%}
+								{%- capture page_index -%}
+									{%- for doc in docs -%}
+										{%- if level == 1 -%}
+											{%- assign filter = doc.path | split: "/" | size | minus: 1 -%}
+											{%- if filter == level -%}
+												<!-- SEARCH INDEX PASS --> {{- doc.path -}}
+											{%- endif -%}
+										{%- else -%}
+											{%- assign current = doc.path | split: "/" | reverse -%}
+											{%- assign name = current[0] | prepend: "/" -%}
+											{%- assign filter = doc.path | remove: name -%}
+											{%- if filter == map -%}
+												<!-- SEARCH INDEX PASS --> {{- doc.path -}}
+											{%- endif -%}
+										{%- endif -%}
+									{%- endfor -%}
+								{%- endcapture -%}
+							{%- endif -%}
+						{%- endfor -%}
+						{%- assign search_scope = site[root] | sort: "position" -%}
+						{%- assign search_index = page_index | split: "<!-- SEARCH INDEX PASS -->" -%}
 					{%- comment -%}
 						<!-- end list setup -->
 					{%- endcomment -%}
 					{{- content_index[0] }}
 					<article class="main_wrapper-list_wrapper">
-						<ol>
+						<dl>
 							{%- for node in search_scope -%}
 								{%- for subpage in search_index -%}
 									{%- if node.path == subpage %}
-							<li>
-								<h2>
-									<a href="{{- site.baseurl -}}{{- node.url -}}">
-										{{ node.title }}
-									</a>
-								</h2>
-							</li>
+							<dt>
+								<a href="{{- site.baseurl -}}{{- node.url -}}">
+									{{ node.title }}
+								</a>
+							</dt>
+										{%- unless node.tags == empty -%}
+											{%- for tag in node.tags %}
+							<dd>
+								{{ tag }}
+							</dd>
+											{%- endfor -%}
+										{%- endunless -%}
 									{%- endif -%}
 								{%- endfor -%}
 							{%- endfor %}
-						</ol>
+						</dl>
 					</article>
 					{{- content_index[1] }}
 					<!-- end list.html -->
