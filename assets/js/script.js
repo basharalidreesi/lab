@@ -197,6 +197,7 @@
 	function filter(event) {
 		let target;
 		if (event.target.classList.contains("--untag")) {
+			event.stopPropagation();
 			target = event.target.parentElement;
 			const unfilter_index = filter_index.indexOf(target.textContent.trim());
 			if (unfilter_index != -1) {
@@ -205,20 +206,27 @@
 			}
 		} else {
 			target = event.target;
-			filter_index.push(target.textContent.trim());
-			console.log("Filtered " + target.textContent.trim() + ".");
+			if (!filter_index.includes(target.textContent.trim())) {
+				filter_index.push(target.textContent.trim());
+				console.log("Filtered " + target.textContent.trim() + ".");
+			} else {
+				return;
+			}
 		}
+		var failures = 0;
 		const items = document.querySelectorAll(".list_wrapper-list_item");
 		items.forEach((item) => {
 			let tag_index = [];
 			let tags = item.querySelectorAll(":scope > .list_item-item_tag");
 			tags.forEach((tag) => {
 				tag_index.push(tag.textContent.trim());
+				tag.style.cursor = "cell";
 			});
 			if (filter_index.length > 0 && filter_index.every(key => tag_index.includes(key))) {
 				item.classList.add("--highlighted_list_item");
 				tags.forEach((tag) => {
 					if (filter_index.includes(tag.textContent.trim())) {
+						tag.style.cursor = "default";
 						tag.classList.add("--highlighted_tag");
 						tag.children[0].style.display = "block";
 					} else {
@@ -227,6 +235,7 @@
 					}
 				});
 			} else {
+				failures++;
 				item.classList.remove("--highlighted_list_item");
 				tags.forEach((tag) => {
 					tag.classList.remove("--highlighted_tag");
@@ -234,6 +243,14 @@
 				});
 			}
 		});
+		if (failures === items.length) {
+			filter_index = [];
+			console.log("Unfiltered all.");
+			const tags = document.querySelectorAll(".list_item-item_tag");
+			tags.forEach((tag) => {
+				tag.removeAttribute("style");
+			});
+		}
 	}
 
 	function redirectWheel() {

@@ -20,6 +20,7 @@ layout: default
 							<input name="E-mail" placeholder="E-mail" type="email" required>
 							<textarea name="Message" placeholder="Message" required></textarea>
 							<button type="submit" data-submit="Sending...">Send</button>
+							<input type="hidden" name="_next" value="{{- site.baseurl -}}{{- page.url -}}" />
 						</fieldset>
 					</form>
 					{{- content_index[1] }}
