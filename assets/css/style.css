@@ -936,7 +936,7 @@ body {
 		padding: calc(var(--screen_width_third));
 		padding-top: calc(var(--double));
 		padding-bottom: calc(var(--single));
-		border-bottom: 1px solid var(--border_colour);
+		border-bottom: 1px dashed var(--border_colour);
 		transition: background-color 0.25s;
 	}
 	.list_item-item_title {
