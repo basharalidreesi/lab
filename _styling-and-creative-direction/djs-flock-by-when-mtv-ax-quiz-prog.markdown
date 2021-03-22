@@ -10,8 +10,6 @@ colours:
   secondary colour: black
   border colour: "#39ff14"
   text colour: "#39ff14"
-page:
-  has title: false
 layout: showcase
 ---
 
