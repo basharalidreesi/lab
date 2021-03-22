@@ -808,7 +808,7 @@
 		background-color: var(--secondary_colour);
 		border: 1px solid var(--border_colour);
 		border-radius: 5000px;
-		transition: background-color 0.25s, color 0.25s;;
+		transition: background-color 0.25s, color 0.25s;
 		cursor: pointer;
 	}
 	.main_wrapper-contact_wrapper button:active {
@@ -1322,7 +1322,7 @@
 		}
 		.--nav_background {
 			display: block;
-			transition: all 0.25s;
+			transition: background-color 0.25s, box-shadow 0.25s;
 		}
 		#supernav_checkbox:checked ~ .--nav_background {
 			background-color: var(--secondary_colour);
