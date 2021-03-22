@@ -540,12 +540,6 @@
 		width: 100vw;
 		overflow: auto;
 	}
-	.--lock_scroll {
-		overflow: hidden;
-	}
-	.--allow_scroll {
-		overflow: auto;
-	}
 	.--mobile_background {
 		display: none;
 		position: fixed;
@@ -647,12 +641,6 @@
 		white-space: nowrap;
 		text-overflow: ellipsis;
 	}
-	/*
-	┌───────┐
-	│ begin └───────┐
-	│ subnav styles │
-	└───────────────┘
-	*/
 	.--current_nav_item {
 		position: relative;
 		padding-top: calc(var(--single) + var(--quarter));
@@ -687,12 +675,6 @@
 	.--subnav_separator::before {
 		content: "\2192";
 	}
-	/*
-	┌───────┐
-	│ begin └─────────┐
-	│ supernav styles │
-	└─────────────────┘
-	*/
 	.--nav_background {
 		position: absolute;
 		top: 0;
@@ -1251,9 +1233,6 @@
 └────────────────────┘
 */
 @media (hover: hover) {
-	.--text_card_text_styling a:hover,
-	.--footer_card_text_styling a:hover,
-	.--title_card_text_styling a:hover,
 	.--article_text_styling a:hover  {
 		background-color: var(--secondary_colour);
 		color: var(--text_colour);
@@ -1264,11 +1243,6 @@
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 		background-size: 100% 2px;
 	}
-	.--hyperlink_styling:hover {
-		background-color: var(--secondary_colour);
-	}
-
-
 	.main_wrapper-contact_wrapper button:hover {
 		background-color: var(--text_colour);
 		color: var(--secondary_colour);
@@ -1280,6 +1254,14 @@
 		background-color: var(--text_colour);
 		color: var(--secondary_colour);
 	}
+
+
+	.--hyperlink_styling:hover {
+		background-color: var(--secondary_colour);
+	}
+
+
+
 
 
 	.cascade_wrapper-anchored_graphic_card_upper:hover,
@@ -1302,6 +1284,13 @@
 	.--mobile_background {
 		display: block;
 	}
+
+
+
+
+
+
+
 	.cascade_wrapper-anchored_graphic_card_upper,
 	.cascade_wrapper-anchored_graphic_card_central {
 		/* background: linear-gradient(0deg, var(--primary_colour) 10%, rgba(255,255,255,0) 100%); */
@@ -1322,13 +1311,13 @@
 	│ container styles │
 	└──────────────────┘
 	*/
-	.mother_container-nav_container {
-		order: 2;
-		position: relative;
-	}
-	.mother_container-header_container {
-		order: 1;
-	}
+		.mother_container-nav_container {
+			order: 2;
+			position: relative;
+		}
+		.mother_container-header_container {
+			order: 1;
+		}
 	/*
 	┌───────┐
 	│ begin └────┐
@@ -1354,24 +1343,9 @@
 		.--current_nav_item {
 			display: none;
 		}
-		.--homepage .--current_nav_item {
-			display: block;
-		}
-		/*
-		┌───────┐
-		│ begin └────────┐
-		│ central header │
-		└────────────────┘
-		*/
 		.--central_header #supernav_checkbox:checked ~ .nav_container-nav_wrapper {
 			border-top: none;
 		}
-		/*
-		┌───────┐
-		│ begin └──┐
-		│ homepage │
-		└──────────┘
-		*/
 		.--homepage .nav_container-nav_wrapper {
 			display: flex;
 			flex-flow: column nowrap;
@@ -1391,12 +1365,6 @@
 		.--homepage .nav_wrapper-nav_item:last-child {
 			border-bottom: none;
 		}
-		/*
-		┌───────┐
-		│ begin └─┐
-		│ nav map │
-		└─────────┘
-		*/
 		#supernav_checkbox {
 			display: none;
 		}
@@ -1563,6 +1531,13 @@
 			padding-left: calc(var(--double));
 			padding-right: calc(var(--double));
 		}
+
+
+
+
+
+
+
 		/*
 		┌───────┐
 		│ begin └────────┐
@@ -1578,7 +1553,6 @@
 			height: calc(100% - var(--quadruple));
 			margin: calc(var(--double));
 		}
-
 	/*
 	┌───────┐
 	│ begin └──────────────────────┐
