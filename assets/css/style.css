@@ -1248,7 +1248,7 @@
 		color: var(--secondary_colour);
 	}
 	.list_wrapper-list_item:hover {
-		background-color: var(--secondary_colour);
+		/* background-color: var(--secondary_colour); */
 	}
 	.list_item-item_tag:hover {
 		background-color: var(--text_colour);
