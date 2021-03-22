@@ -670,6 +670,7 @@
 		width: 100%;
 		font-family: "M+ 1p";
 		font-weight: 300;
+		color: var(--text_colour);
 		text-transform: uppercase;
 		font-size: 35px;
 		pointer-events: none;
