@@ -669,7 +669,7 @@
 		transform: translateY(-50%);
 		width: 100%;
 		font-family: "M+ 1p";
-		font-weight: bold;
+		font-weight: 300;
 		text-transform: uppercase;
 		font-size: 35px;
 		pointer-events: none;
