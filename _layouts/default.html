@@ -170,7 +170,7 @@
 					</li>
 							{%- endunless -%}
 						{%- elsif node.page['is navigable'] and tree.size < 2 -%}
-					<li class="nav_wrapper-nav_item --nav_text_styling {%- if page.url contains node.url %} --current_nav_item {%- endif -%}">
+					<li class="nav_wrapper-nav_item --nav_text_styling {%- if page.url contains node.url %} --current_nav_item-x {%- endif -%}">
 						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
 							{{ node.title }}
 						</a>
