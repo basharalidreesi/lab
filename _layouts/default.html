@@ -31,22 +31,22 @@
 			{%- for branch in tree -%}
 				{%- assign segment = page.path | split: branch -%}
 				{%- assign current = branch | prepend: segment[0] | append: ".markdown" -%}
-				{%- assign deepness = forloop.index -%}
+				{%- assign level = forloop.index -%}
 				{%- assign last = forloop.last -%}
-				{%- if deepness == 1 and current != "404.markdown" and current != "index.markdown" and tree.size < 2 -%}
+				{%- if level == 1 and current != "404.markdown" and current != "index.markdown" and tree.size < 2 -%}
 					{%- for node in site.pages -%}
-						{%- assign deepness_one_current = current | remove_first: "_" -%}
-						{%- if node.path == deepness_one_current -%}
+						{%- assign level_one_current = current | remove_first: "_" -%}
+						{%- if node.path == level_one_current -%}
 							&nbsp;|&nbsp;{{- node.title -}}
 							{%- unless last -%}
 								&nbsp;|&nbsp;
 							{%- endunless -%}
 						{%- endif -%}
 					{%- endfor -%}
-				{%- elsif deepness == 1 and current != "404.markdown" and current != "index.markdown" and tree.size >= 2 -%}
+				{%- elsif level == 1 and current != "404.markdown" and current != "index.markdown" and tree.size >= 2 -%}
 					&nbsp;|&nbsp;
 					{%- continue -%}
-				{%- elsif deepness == 1 and current == "404.markdown" -%}
+				{%- elsif level == 1 and current == "404.markdown" -%}
 					&nbsp;|&nbsp;?&nbsp;
 					{%- break -%}
 				{%- else -%}
@@ -85,43 +85,43 @@
 		<div class="mother_container" id="mother_container">
 			<nav class="mother_container-nav_container" id="nav_container">
 				{%- unless home %}
-				<input type="checkbox" id="nav_map_checkbox">
-				<div class="--nav_map_background"></div>
-				<label for="nav_map_checkbox" class="nav_container-nav_map_wrapper" id="nav_map_wrapper">
+				<input type="checkbox" id="supernav_checkbox">
+				<div class="--nav_background"></div>
+				<label for="supernav_checkbox" class="nav_container-supernav_wrapper">
 						{%- for branch in tree -%}
 							{%- assign segment = page.path | split: branch -%}
 							{%- assign current = branch | prepend: segment[0] | append: ".markdown" -%}
-							{%- assign deepness = forloop.index -%}
+							{%- assign level = forloop.index -%}
 							{%- assign last = forloop.last -%}
-							{%- if deepness == 1 and current != "404.markdown" -%}
+							{%- if level == 1 and current != "404.markdown" -%}
 								{%- for node in site.pages -%}
-									{%- assign deepness_one_current = current | remove_first: "_" -%}
-									{%- if node.path == deepness_one_current %}
-					<span class="nav_map_wrapper-nav_map_item --nav_map_text_styling {%- if page.url == node.url %} --current_nav_map_text_styling {%- endif -%}">
+									{%- assign level_one_current = current | remove_first: "_" -%}
+									{%- if node.path == level_one_current %}
+					<span class="supernav_wrapper-supernav_item --supernav_text_styling {%- if page.url == node.url %} --current_supernav_item {%- endif -%}">
 						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
 							{{ node.title }}
 						</a>
 					</span>
 										{%- unless last %}
-					<span class="nav_map_wrapper-nav_map_item --nav_map_text_separator"></span>
+					<span class="supernav_wrapper-supernav_item --supernav_separator"></span>
 										{%- endunless -%}
 									{%- endif -%}
 								{%- endfor -%}
-							{%- elsif deepness == 1 and current == "404.markdown" %}
-					<span class="nav_map_wrapper-nav_map_item --nav_map_text_styling --current_nav_map_text_styling">
+							{%- elsif level == 1 and current == "404.markdown" %}
+					<span class="supernav_wrapper-supernav_item --supernav_text_styling --current_supernav_item">
 						?
 					</span>
 								{%- break -%}
 							{%- else -%}
 								{%- for node in site.documents -%}
 									{%- if node.path == current %}
-					<span class="nav_map_wrapper-nav_map_item --nav_map_text_styling {%- if page.url == node.url %} --current_nav_map_text_styling {%- endif -%}">
+					<span class="supernav_wrapper-supernav_item --supernav_text_styling {%- if page.url == node.url %} --current_supernav_item {%- endif -%}">
 						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
 							{{ node.title }}
 						</a>
 					</span>
 										{%- unless last %}
-					<span class="nav_map_wrapper-nav_map_item --nav_map_text_separator"></span>
+					<span class="supernav_wrapper-supernav_item --supernav_separator"></span>
 										{%- endunless -%}
 									{%- endif -%}
 								{%- endfor -%}
@@ -129,38 +129,38 @@
 						{%- endfor %}
 				</label>
 				{%- endunless %}
-				<ul class="nav_container-nav_list_wrapper">
+				<ul class="nav_container-nav_wrapper">
 					{%- for node in pages -%}
 						{%- if node.page['is navigable'] and tree.size >= 2 -%}
 							{%- unless page.url contains node.url %}
-					<li class="nav_list_wrapper-nav_list_item --nav_text_styling">
+					<li class="nav_wrapper-nav_item --nav_text_styling">
 						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
 							{{ node.title }}
 						</a>
 					</li>
 							{%- else %}
-					<li class="nav_list_wrapper-nav_list_item nav_list_wrapper-current_nav_list_item --nav_text_styling --current_nav_text_styling">
+					<li class="nav_wrapper-nav_item --nav_text_styling --current_nav_item">
 						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
 							{{ node.title }}
 						</a>
-						<ul class="current_nav_list_item-subnav_list_wrapper">
+						<ul class="nav_item-subnav_wrapper">
 							{%- for branch in tree -%}
 								{%- assign segment = page.path | split: branch -%}
 								{%- assign current = branch | prepend: segment[0] | append: ".markdown" -%}
-								{%- assign deepness = forloop.index -%}
+								{%- assign level = forloop.index -%}
 								{%- assign last = forloop.last -%}
-								{%- if deepness == 1 and current != "404.markdown" -%}
+								{%- if level == 1 and current != "404.markdown" -%}
 									{%- continue -%}
 								{%- else -%}
 									{%- for node2 in site.documents -%}
 										{%- if node2.path == current %}
-							<li class="subnav_list_wrapper-subnav_list_item --subnav_text_styling {%- if page.url == node2.url %} --current_subnav_text_styling {%- endif -%}">
+							<li class="subnav_wrapper-subnav_item --subnav_text_styling {%- if page.url == node2.url %} --current_subnav_item {%- endif -%}">
 								<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node2.url -}}">
 									{{ node2.title }}
 								</a>
 							</li>
 											{%- unless last %}
-							<span class="subnav_list_wrapper-subnav_list_item --subnav_text_styling --subnav_text_separator"></span>
+							<span class="subnav_wrapper-subnav_item --subnav_text_styling --subnav_separator"></span>
 											{%- endunless -%}
 										{%- endif -%}
 									{%- endfor -%}
@@ -170,7 +170,7 @@
 					</li>
 							{%- endunless -%}
 						{%- elsif node.page['is navigable'] and tree.size < 2 -%}
-					<li class="nav_list_wrapper-nav_list_item --nav_text_styling {%- if page.url contains node.url %} --current_nav_text_styling {%- endif -%}">
+					<li class="nav_wrapper-nav_item --nav_text_styling {%- if page.url contains node.url %} --current_nav_item {%- endif -%}">
 						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
 							{{ node.title }}
 						</a>
