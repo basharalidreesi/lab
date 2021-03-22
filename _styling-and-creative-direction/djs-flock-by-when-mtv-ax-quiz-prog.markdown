@@ -24,7 +24,7 @@ One morning, when Gregor Samsa woke from troubled dreams, he found himself *tran
 It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer a solid fur muff into which her entire forearm disappeared.
 
 <!-- break -->
-
+s
 <!-- style: width: 50vw; height: 50vw; border-radius: 100%; background-color: #39ff14; border: none; -->
 
 <!-- break -->
