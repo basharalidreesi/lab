@@ -1160,7 +1160,7 @@
 	.--loader {
 		width: 87.5%;
 		height: 100%;
-		background-color: var(--primary_colour);
+		background-color: var(--glow_colour);
 		animation: load 10s ease-in-out;
 	}
 	@keyframes load {
