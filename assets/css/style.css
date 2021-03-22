@@ -646,6 +646,7 @@
 		max-width: calc(100vw - var(--single) - var(--single));
 		padding-left: calc(var(--single));
 		padding-right: calc(var(--single));
+		filter: drop-shadow(0 0 calc(var(--half)) var(--primary_colour));
 	}
 	.header_wrapper-header_anchor img {
 		display: block;
