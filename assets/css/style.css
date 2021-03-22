@@ -668,9 +668,10 @@
 		left: 0;
 		transform: translateY(-50%);
 		width: 100%;
-		font-family: "Code New Roman";
+		font-family: "M+ 1p";
+		font-weight: bold;
 		text-transform: uppercase;
-		font-size: 77px;
+		font-size: 35px;
 	}
 /*
 ┌───────┐
