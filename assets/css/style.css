@@ -662,6 +662,16 @@
 		padding-top: calc(var(--single)) !important;
 		padding-bottom: calc(var(--single)) !important;
 	}
+	.--global_message {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+		width: 100%;
+		font-family: "Code New Roman";
+		text-transform: uppercase;
+		font-size: 77px;
+	}
 /*
 ┌───────┐
 │ begin └────────┐
