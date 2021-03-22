@@ -353,6 +353,21 @@
 		text-align: center;
 		/* min-width: calc((100vw - var(--screen_width_third)) / 4); */ /* debug */
 	}
+	/*
+	┌───────┐
+	│ begin └─────┐
+	│ footer text │
+	└─────────────┘
+	*/
+	.--footer_text_styling {
+		font-family: var(--footer_text_font);
+		font-size: var(--footer_text_font_size);
+		font-weight: var(--footer_text_font_weight);
+		color: var(--text_colour);
+		text-align: center;
+		line-height: 250%;
+		overflow: hidden;
+	}
 	.--no_padding {
 		padding-top: 0;
 		padding-bottom: 0;
