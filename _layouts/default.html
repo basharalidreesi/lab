@@ -71,7 +71,15 @@
 		{%- include script.js.html %}		<script src="{{- site.baseurl -}}/assets/js/script.js"></script>
 		<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/style.css" media="screen"/>
 		{%- include style.css.html -%}
-		{%- include noscript.css.html %}	</head>
+		{%- include noscript.css.html %}		<!-- Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-LZCE8Q1HGN"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-LZCE8Q1HGN');
+		</script>
+	</head>
 	<body class="{%- if home -%} --homepage {% endif -%} {%- if central -%} --central_header {% endif -%} --{{- page.layout -}}_layout">
 	{%- if cascade %}
 	<div class="bodyalt" id="bodyalt">
