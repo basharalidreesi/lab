@@ -808,7 +808,7 @@
 		background-color: var(--secondary_colour);
 		border: 1px solid var(--border_colour);
 		border-radius: 5000px;
-		transition: all 0.25s;
+		transition: background-color 0.25s, color 0.25s;;
 		cursor: pointer;
 	}
 	.main_wrapper-contact_wrapper button:active {
@@ -864,13 +864,12 @@
 		padding: calc(var(--single));
 		border: 1px solid var(--border_colour);
 		border-radius: 5000px;
-		transition: all 0.25s;
 		cursor: help;
 		user-select: none;
 		-ms-user-select: none;
 		-moz-user-select: none;
 		-webkit-user-select: none;
-		transition: all 0.25s;
+		transition: background-color 0.25s, color 0.25s;
 	}
 	.list_item-item_tag:last-of-type {
 		/* margin-bottom: calc(var(--single)); */
@@ -1203,9 +1202,6 @@
 	.main_wrapper-contact_wrapper button:hover {
 		background-color: var(--text_colour);
 		color: var(--secondary_colour);
-	}
-	.list_wrapper-list_item:hover {
-		/* background-color: var(--secondary_colour); */
 	}
 	.list_item-item_tag:hover {
 		background-color: var(--text_colour);
