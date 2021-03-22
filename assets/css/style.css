@@ -15,40 +15,6 @@
 	--universal_answer: 1rem;
 	--universal_answer_multiplier: 2;
 	--single: (var(--universal_answer) * var(--universal_answer_multiplier) / 2);
-
-
-
-	/*
-	┌───────┐
-	│ begin └─────────┐
-	│ title card text │
-	└─────────────────┘
-	*/
-	--title_card_text_font: "Le Murmure", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-	--title_card_text_font_size: 4rem;
-	/* --title_card_text_font_size: calc(2vh + 2vw + 2vmin); */
-	--title_card_text_font_weight: 400;
-	/*
-	┌───────┐
-	│ begin └──────────┐
-	│ footer card text │
-	└──────────────────┘
-	*/
-	--footer_card_text_font: "M+ 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-	--footer_card_text_font_size: 1.5rem;
-	--footer_card_text_font_weight: 400;
-	/*
-	┌───────┐
-	│ begin └────────┐
-	│ text card text │
-	└────────────────┘
-	*/
-	--text_card_text_font: "M+ 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-	--text_card_text_font_size: 1.25rem;
-	--text_card_text_font_weight: 400;
-
-
-
 	/*
 	┌───────┐
 	│ begin └──┐
@@ -187,70 +153,10 @@
 	}
 /*
 ┌───────┐
-│ begin └──┐
-│ snippets │
-└──────────┘
+│ begin └────┐
+│ typography │
+└────────────┘
 */
-	/*
-	┌───────┐
-	│ begin └─────┐
-	│ text styles │
-	└─────────────┘
-	*/
-		.--footer_text_styling {
-			font-family: var(--footer_text_font);
-			font-size: var(--footer_text_font_size);
-			font-weight: var(--footer_text_font_weight);
-			color: var(--text_colour);
-			text-align: center;
-			line-height: 250%;
-			overflow: hidden;
-		}
-		.--title_card_text_styling {
-			font-family: var(--title_card_text_font);
-			font-size: var(--title_card_text_font_size);
-			font-weight: var(--title_card_text_font_weight);
-			color: var(--text_colour);
-			/* border: 1px solid var(--border_colour); */
-			/* border-radius: 100%; */
-			text-align: center;
-			hyphens: auto;
-			-ms-hyphens: auto;
-			-webkit-hyphens: auto;
-			word-break: break-word;
-			/* line-height: 150%; */
-			/* padding: calc(var(--quadruple)); */
-			overflow: hidden;
-		}
-		.--title_card_text_styling::before,
-		.--title_card_text_styling::after {
-			content: "";
-			display: block;
-			height: 0;
-			width: 0;
-		}
-		.--title_card_text_styling::before {
-			margin-top: 5px;
-		}
-		.--title_card_text_styling::after {
-			margin-bottom: -5px;
-		}
-		.--footer_card_text_styling {
-			font-family: var(--footer_card_text_font);
-			font-size: var(--footer_card_text_font_size);
-			font-weight: var(--footer_card_text_font_weight);
-			color: var(--text_colour);
-			text-align: center;
-			line-height: 200%;
-		}
-		.--text_card_text_styling {
-			font-family: var(--text_card_text_font);
-			font-size: var(--text_card_text_font_size);
-			font-weight: var(--text_card_text_font_size);
-			color: var(--text_colour);
-			text-align: center;
-			line-height: 200%;
-		}
 	/*
 	┌───────┐
 	│ begin └──┐
@@ -281,7 +187,7 @@
 	.--list_title_styling {
 		font-family: var(--list_title_font);
 		font-size: var(--list_title_font_size);
-		font-weight: var(--list_title_font_size);
+		font-weight: var(--list_title_font_weight);
 		color: var(--text_colour);
 		text-align: center;
 	}
@@ -453,27 +359,10 @@
 	}
 	/*
 	┌───────┐
-	│ begin └──────────┐
-	│ hyperlink styles │
-	└──────────────────┘
+	│ begin └─────┐
+	│ anchor text │
+	└─────────────┘
 	*/
-
-	.--hyperlink_styling {
-		font-family: inherit;
-		font-size: inherit;
-		font-weight: inherit;
-		color: inherit;
-		display: inline;
-		border: 1px solid var(--text_colour);
-		border-radius: 5000px;
-		padding: calc(var(--quarter));
-		padding-left: calc(var(--half));
-		padding-right: calc(var(--half));
-	}
-
-
-
-
 	.--anchor_styling {
 		font-family: inherit;
 		font-size: inherit;
@@ -489,6 +378,7 @@
 		transition: background-size 0.25s;
 	}
 	.--current_nav_item > a,
+	.--current_nav_item-x > a,
 	.--current_subnav_item > a,
 	.--current_supernav_item > a {
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
@@ -521,6 +411,19 @@
 	.--article_text_styling h6 a {
 		padding-top: calc(var(--quarter) / 2);
 		padding-bottom: calc(var(--quarter) / 2);
+	}
+
+	.--hyperlink_styling {
+		font-family: inherit;
+		font-size: inherit;
+		font-weight: inherit;
+		color: inherit;
+		display: inline;
+		border: 1px solid var(--text_colour);
+		border-radius: 5000px;
+		padding: calc(var(--quarter));
+		padding-left: calc(var(--half));
+		padding-right: calc(var(--half));
 	}
 /*
 ┌───────┐
