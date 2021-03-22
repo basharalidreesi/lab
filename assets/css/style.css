@@ -1290,7 +1290,8 @@
 			padding-bottom: calc(var(--double));
 			border-bottom: 1px solid var(--border_colour);
 		}
-		.--current_nav_item {
+		.--current_nav_item,
+		.--current_nav_item-x {
 			display: none;
 		}
 		.--central_header #supernav_checkbox:checked ~ .nav_container-nav_wrapper {
