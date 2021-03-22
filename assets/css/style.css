@@ -1160,7 +1160,7 @@
 	.--loader {
 		width: 87.5%;
 		height: 100%;
-		background-color: var(--primary_colour);
+		background-color: var(--glow_colour);
 		animation: load 10s ease-in-out;
 	}
 	@keyframes load {
@@ -1223,7 +1223,6 @@
 
 	.cascade_wrapper-anchored_graphic_card_upper:hover,
 	.cascade_wrapper-anchored_graphic_card_central:hover {
-		/* background: linear-gradient(0deg, var(--primary_colour) 10%, rgba(255,255,255,0) 100%); */
 		box-shadow: inset 0 0 calc(var(--double)) calc(var(--double)) var(--glow_colour);
 	}
 }
@@ -1250,7 +1249,6 @@
 
 	.cascade_wrapper-anchored_graphic_card_upper,
 	.cascade_wrapper-anchored_graphic_card_central {
-		/* background: linear-gradient(0deg, var(--primary_colour) 10%, rgba(255,255,255,0) 100%); */
 		box-shadow: inset 0 0 calc(var(--double)) calc(var(--double)) var(--glow_colour);
 	}
 }
