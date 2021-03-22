@@ -664,16 +664,24 @@
 	}
 	.--global_message {
 		position: absolute;
-		top: 50%;
 		left: 0;
-		transform: translateY(-50%);
 		width: 100%;
 		font-family: "M+ 1p";
 		font-weight: 300;
 		color: var(--text_colour);
 		text-transform: uppercase;
-		font-size: 35px;
+		font-size: 1rem;
 		pointer-events: none;
+	}
+	.--global_message:first-of-type {
+		top: 0;
+	}
+	.--global_message:last-of-type {
+		bottom: 0;
+	}
+	.--global_message::before,
+	.--global_message::after {
+		content: var(--global_message);
 	}
 /*
 ┌───────┐
