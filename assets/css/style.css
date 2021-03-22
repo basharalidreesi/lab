@@ -672,6 +672,7 @@
 		font-weight: bold;
 		text-transform: uppercase;
 		font-size: 35px;
+		pointer-events: none;
 	}
 /*
 ┌───────┐
