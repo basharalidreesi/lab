@@ -941,7 +941,7 @@
 		margin-top: calc(var(--double_negative) + var(--single_negative));
 	}
 	.--active_match {
-		opacity: 1;
+		opacity: 0.5;
 		box-shadow: 0 0 calc(var(--single)) 0 var(--glow_colour);
 	}
 	/*
