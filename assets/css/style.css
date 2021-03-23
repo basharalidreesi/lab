@@ -918,21 +918,28 @@
 	}
 	.--match_above,
 	.--match_below {
-		display: none;
-		height: 0;
-		background: white;
 		position: sticky;
+		display: none;
+		height: calc(var(--double));
+		width: 100%;
+		padding: calc(var(--screen_width_third));
+		padding-top: 0;
+		padding-bottom: 0;
+		background: aquamarine;
+		border: 1px solid var(--border_colour);
 		z-index: 50;
 	}
 	.--match_above {
-		top: 0;
-		margin-bottom: calc((var(--header_height) + calc(var(--quadruple))) * -1);
-		border-bottom: 1px solid var(--border_colour);
+		top: calc(var(--header_height));
+		margin-bottom: calc(var(--double_negative));
 	}
 	.--match_below {
-		bottom: 0;
+		bottom: calc(var(--header_height_half));
 		margin-top: calc(var(--quadruple_negative));
-		border-top: 1px solid var(--border_colour);
+	}
+	.--active_match_above,
+	.--active_match_below {
+		display: block;
 	}
 	/*
 	┌───────┐
