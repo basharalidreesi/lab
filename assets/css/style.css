@@ -916,13 +916,20 @@
 	.--no_tag {
 		display: none;
 	}
-	.--match_indicator {
+	.--match_above,
+	.--match_below {
 		display: none;
 		height: 0;
 		background: yellow;
 		position: sticky;
-		top: 0;
+	}
+	.--match_above {
+		top: calc(var(--header_height));
 		margin-bottom: -2rem;
+	}
+	.--match_below {
+		bottom: 0;
+		margin-top: -2rem;
 	}
 	/*
 	┌───────┐
