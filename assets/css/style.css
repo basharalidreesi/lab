@@ -920,7 +920,7 @@
 	.--match_below {
 		display: none;
 		height: 0;
-		background: yellow;
+		background: var(--glow_colour);
 		position: sticky;
 		z-index: 50;
 	}
@@ -932,7 +932,7 @@
 	.--match_below {
 		bottom: 0;
 		margin-top: -2rem;
-		box-shadow: 0 0 calc(var(--quadruple)) calc(var(--quadruple)) var(--glow_colour);
+		box-shadow: 0 0 calc(var(--double)) calc(var(--double)) var(--glow_colour);
 	}
 	/*
 	┌───────┐
