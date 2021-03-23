@@ -943,10 +943,29 @@
 	.--match_above {
 		top: calc(var(--header_height));
 		margin-bottom: calc(var(--double_negative) + var(--single_negative));
+		cursor: n-resize;
 	}
 	.--match_below {
 		bottom: calc(var(--double));
 		margin-top: calc(var(--double_negative) + var(--single_negative));
+		cursor: s-resize;
+	}
+	.--match_above::before,
+	.--match_below::before {
+		font-family: inherit;
+		font-size: inherit;
+		font-weight: inherit;
+		color: var(--secondary_colour);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	.--match_above::before {
+		content: "More matches above";
+	}
+	.--match_below::before {
+		content: "More matches below";
 	}
 	.--active_match {
 		opacity: 1;
