@@ -937,7 +937,7 @@
 		margin-bottom: calc(var(--double_negative) + var(--single_negative));
 	}
 	.--match_below {
-		bottom: calc(var(--header_height_half));
+		bottom: calc(var(--single));
 		margin-top: calc(var(--double_negative) + var(--single_negative));
 	}
 	.--active_match {
