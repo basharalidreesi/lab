@@ -233,7 +233,7 @@
 	function filter(event) {
 		let target;
 		var origin;
-		if (event.target.classList.contains("--untag")) {
+		if (event.target.classList.contains("--untag") || event.target.classList.contains("--untag_click")) {
 			origin = 1;
 			event.stopPropagation();
 			target = event.target.parentElement;
