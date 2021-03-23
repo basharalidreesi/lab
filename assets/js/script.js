@@ -231,12 +231,16 @@
 
 	let filter_index = [];
 	function filter(event) {
-		let target;
+		var target;
 		var origin;
 		if (event.target.classList.contains("--untag") || event.target.classList.contains("--untag_click")) {
 			origin = 1;
 			event.stopPropagation();
-			target = event.target.parentElement;
+			if (event.target.classList.contains("--untag") {
+				target = event.target.parentElement;
+			} else if (event.target.classList.contains("--untag_click") {
+				target = event.target.parentElement.parentElement;
+			}
 			const unfilter_index = filter_index.indexOf(target.textContent.trim());
 			if (unfilter_index != -1) {
 				filter_index.splice(unfilter_index, 1);
