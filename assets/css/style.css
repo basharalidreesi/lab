@@ -924,7 +924,7 @@
 		width: calc(100% - var(--screen_width_third) * 2);
 		margin-left: auto;
 		margin-right: auto;
-		background: var(--glow_colour);
+		background: var(--primary_colour);
 		border: 1px solid var(--border_colour);
 		border-radius: 5000px;
 		z-index: 50;
@@ -942,7 +942,7 @@
 	}
 	.--active_match {
 		opacity: 1;
-		box-shadow: 0 0 calc(var(--double)) calc(var(--half)) var(--glow_colour);
+		box-shadow: 0 0 calc(var(--single)) calc(var(--half)) var(--glow_colour);
 	}
 	/*
 	┌───────┐
