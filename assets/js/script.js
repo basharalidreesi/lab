@@ -236,9 +236,9 @@
 		if (event.target.classList.contains("--untag") || event.target.classList.contains("--untag_click")) {
 			origin = 1;
 			event.stopPropagation();
-			if (event.target.classList.contains("--untag") {
+			if (event.target.classList.contains("--untag")) {
 				target = event.target.parentElement;
-			} else if (event.target.classList.contains("--untag_click") {
+			} else if (event.target.classList.contains("--untag_click")) {
 				target = event.target.parentElement.parentElement;
 			}
 			const unfilter_index = filter_index.indexOf(target.textContent.trim());
