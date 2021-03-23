@@ -922,14 +922,17 @@
 		height: 0;
 		background: yellow;
 		position: sticky;
+		z-index: 50;
 	}
 	.--match_above {
 		top: calc(var(--header_height));
 		margin-bottom: -2rem;
+		box-shadow: 0 calc(var(--header_height) * -1) calc(var(--quadruple)) calc(var(--header_height) + var(--double)) var(--glow_colour);;
 	}
 	.--match_below {
 		bottom: 0;
 		margin-top: -2rem;
+		box-shadow: 0 0 calc(var(--quadruple)) calc(var(--quadruple)) var(--glow_colour);
 	}
 	/*
 	┌───────┐
