@@ -13,32 +13,14 @@
 			suffix = "s";
 		}
 		if (number === 1) {
-			return singular;
+			return number + " " + singular;
 		} else {
-			return singular + suffix;
+			return number + " " + singular + suffix;
 		}
 	}
 
 	function returnOrder(element) {
 		return Array.from(element.parentNode.children).indexOf(element) + 1;
-	}
-
-	function addBefore(newNode, currentNode) {
-		currentNode.parentNode.insertBefore(newNode, currentNode);
-	}
-
-	function addAfter(newNode, currentNode) {
-		currentNode.parentNode.insertBefore(newNode, currentNode.nextSibling);
-	}
-
-	function removeBefore(currentNode) {
-		let previous = currentNode.previousSibling;
-		currentNode.parentNode.removeChild(previous);
-	}
-
-	function removeAfter(currentNode) {
-		let next = currentNode.nextSibling;
-		currentNode.parentNode.removeChild(next);
 	}
 
 // begin
@@ -305,7 +287,7 @@
 			});
 		} else {
 			let successes = document.querySelectorAll(".--highlighted_list_item").length;
-			console.log(successes + pluralise(" match", successes, "es") + " found.");
+			console.log(pluralise("match", successes, "es") + " found.");
 		}
 	}
 
