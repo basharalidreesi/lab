@@ -921,10 +921,10 @@
 		position: sticky;
 		display: none;
 		height: calc(var(--double) + var(--single));
-		width: calc(100% - var(--screen_width_third * 2));
+		width: calc(100% - var(--screen_width_third) * 2);
 		margin-left: auto;
 		margin-right: auto;
-		background: var(--secondary_colour);
+		background: var(--glow_colour);
 		border: 1px solid var(--border_colour);
 		border-radius: 5000px;
 		z-index: 50;
