@@ -57,8 +57,7 @@ layout: default
 						{%- for node in search_scope -%}
 							{%- for subpage in search_index -%}
 								{%- if node.path == subpage -%}
-								{%- assign order = order | plus: 1 %}
-						<span class="--match_indicator"></span>
+						<span class="--match_above"></span>
 						<div class="list_wrapper-list_item">
 							<dt class="list_item-item_title --list_title_styling">
 								<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
@@ -77,7 +76,7 @@ layout: default
 							<dd class="--no_tag"></dd>
 									{%- endunless %}
 						</div>
-						<span class="--match_indicator_{{- order -}}"></span>
+						<span class="--match_below"></span>
 								{%- endif -%}
 							{%- endfor -%}
 						{%- endfor %}
