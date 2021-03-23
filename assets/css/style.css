@@ -924,8 +924,9 @@
 		width: calc(var(--quadruple) * 4);
 		margin-left: auto;
 		margin-right: auto;
-		background: var(--primary_colour);
+		background: var(--secondary_colour);
 		border: 1px solid var(--border_colour);
+		border-radius: 5000px;
 		z-index: 50;
 		opacity: 0;
 		box-shadow: none;
