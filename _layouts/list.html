@@ -54,7 +54,7 @@ layout: default
 					{{- content_index[0] }}
 					{%- unless search_index == empty %}
 					<dl class="main_wrapper-list_wrapper">
-						<span class="--match_above"></span>
+						<span class="--match_above" id="match_above"></span>
 						{%- for node in search_scope -%}
 							{%- for subpage in search_index -%}
 								{%- if node.path == subpage -%}
@@ -79,7 +79,7 @@ layout: default
 								{%- endif -%}
 							{%- endfor -%}
 						{%- endfor %}
-						<span class="--match_below"></span>
+						<span class="--match_below" id="match_below"></span>
 					</dl>
 					{%- endunless -%}
 					{{- content_index[1] }}
