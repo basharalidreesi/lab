@@ -920,26 +920,28 @@
 	.--match_below {
 		position: sticky;
 		display: none;
-		height: calc(var(--double));
-		width: 100%;
-		padding: calc(var(--screen_width_third));
-		padding-top: 0;
-		padding-bottom: 0;
-		background: aquamarine;
+		height: calc(var(--quadruple));
+		width: calc(var(--quadruple) * 4);
+		margin-left: auto;
+		margin-right: auto;
+		background: var(--primary_colour);
 		border: 1px solid var(--border_colour);
 		z-index: 50;
+		opacity: 0;
+		box-shadow: none;
+		transition: opacity 0.25s, box-shadow 0.25s;
 	}
 	.--match_above {
 		top: calc(var(--header_height));
-		margin-bottom: calc(var(--double_negative));
+		margin-bottom: calc(var(--quadruple_negative));
 	}
 	.--match_below {
 		bottom: calc(var(--header_height_half));
 		margin-top: calc(var(--quadruple_negative));
 	}
-	.--active_match_above,
-	.--active_match_below {
-		display: block;
+	.--active_match {
+		opacity: 1;
+		box-shadow: 0 0 calc(var(--single)) 0 var(--glow_colour);
 	}
 	/*
 	┌───────┐
