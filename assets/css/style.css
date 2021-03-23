@@ -921,7 +921,7 @@
 		position: sticky;
 		display: none;
 		height: calc(var(--quadruple));
-		width: calc(var(--quadruple) * 4);
+		width: calc(100% - var(--quadruple));
 		margin-left: auto;
 		margin-right: auto;
 		background: var(--secondary_colour);
@@ -942,7 +942,7 @@
 	}
 	.--active_match {
 		opacity: 1;
-		box-shadow: 0 0 calc(var(--single)) 0 var(--glow_colour);
+		box-shadow: 0 0 calc(var(--double)) calc(var(--half)) var(--glow_colour);
 	}
 	/*
 	┌───────┐
