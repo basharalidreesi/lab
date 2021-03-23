@@ -8,6 +8,39 @@
 		return t = setTimeout(fn, delay);
 	}
 
+	function pluralise(singular, number, suffix) {
+		if (!suffix) {
+			suffix = "s";
+		}
+		if (number === 1) {
+			return singular;
+		} else {
+			return singular + suffix;
+		}
+	}
+
+	function returnOrder(element) {
+		return Array.from(element.parentNode.children).indexOf(element) + 1;
+	}
+
+	function addBefore(newNode, currentNode) {
+		currentNode.parentNode.insertBefore(newNode, currentNode);
+	}
+
+	function addAfter(newNode, currentNode) {
+		currentNode.parentNode.insertBefore(newNode, currentNode.nextSibling);
+	}
+
+	function removeBefore(currentNode) {
+		let previous = currentNode.previousSibling;
+		currentNode.parentNode.removeChild(previous);
+	}
+
+	function removeAfter(currentNode) {
+		let next = currentNode.nextSibling;
+		currentNode.parentNode.removeChild(next);
+	}
+
 // begin
 // general purpose functions
 
@@ -158,7 +191,10 @@
 					entry.target.children[0].classList.remove("--sticky_header");
 					entry.target.children[0].children[0].style.width = "100%";
 				}
-			}, { threshold: [1] });
+			}, {
+				rootMargin: "0px 100px 0px 100px",
+				threshold: 1
+			});
 			observer.observe(header_container);
 		}
 	}
@@ -196,7 +232,9 @@
 	let filter_index = [];
 	function filter(event) {
 		let target;
+		var origin;
 		if (event.target.classList.contains("--untag")) {
+			origin = 1;
 			event.stopPropagation();
 			target = event.target.parentElement;
 			const unfilter_index = filter_index.indexOf(target.textContent.trim());
@@ -205,6 +243,7 @@
 				console.log("Unfiltered " + target.textContent.trim() + ".");
 			}
 		} else {
+			origin = 2;
 			target = event.target;
 			if (!filter_index.includes(target.textContent.trim())) {
 				filter_index.push(target.textContent.trim());
@@ -223,6 +262,7 @@
 				tag.style.cursor = "cell";
 			});
 			if (filter_index.length > 0 && filter_index.every(key => tag_index.includes(key))) {
+				seeker.observe(item);
 				item.classList.add("--highlighted_list_item");
 				tags.forEach((tag) => {
 					if (filter_index.includes(tag.textContent.trim())) {
@@ -236,7 +276,12 @@
 				});
 			} else {
 				failures++;
+				seeker.unobserve(item);
 				item.classList.remove("--highlighted_list_item");
+				item.previousElementSibling.classList.remove("--active_match");
+				item.nextElementSibling.classList.remove("--active_match");
+				setTimeout(() => { item.previousElementSibling.removeAttribute("style"); }, 100);
+				setTimeout(() => { item.nextElementSibling.removeAttribute("style"); }, 100);
 				tags.forEach((tag) => {
 					tag.classList.remove("--highlighted_tag");
 					tag.children[0].removeAttribute("style");
@@ -244,14 +289,49 @@
 			}
 		});
 		if (failures === items.length) {
+			if (origin === 2) {
+				console.log("No matches found.");
+			}
 			filter_index = [];
+			seeker.disconnect();
 			console.log("Unfiltered all.");
 			const tags = document.querySelectorAll(".list_item-item_tag");
 			tags.forEach((tag) => {
 				tag.removeAttribute("style");
 			});
+		} else {
+			let successes = document.querySelectorAll(".--highlighted_list_item").length;
+			console.log(successes + pluralise(" match", successes, "es") + " found.");
 		}
 	}
+
+	const seeker = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			let end = window.innerHeight;
+			let top = entry.boundingClientRect.top;
+			let bottom = entry.boundingClientRect.bottom;
+			if (entry.intersectionRatio >= 0.5) {
+				entry.target.previousElementSibling.classList.remove("--active_match");
+				entry.target.nextElementSibling.classList.remove("--active_match");
+				setTimeout(() => { entry.target.previousElementSibling.removeAttribute("style"); }, 100);
+				setTimeout(() => { entry.target.nextElementSibling.removeAttribute("style"); }, 100);
+			}
+			if (entry.intersectionRatio < 0.5) {
+				if (top < 0) {
+					entry.target.previousElementSibling.style.display = "block";
+					setTimeout(() => { entry.target.previousElementSibling.classList.add("--active_match"); }, 100);
+				}
+				if (bottom > end) {
+					entry.target.nextElementSibling.style.display = "block";
+					setTimeout(() => { entry.target.nextElementSibling.classList.add("--active_match"); }, 100);
+				}
+			}
+		});
+	}, {
+		root: null,
+		rootMargin: "0px 100px 0px 100px",
+		threshold: 0.5
+	});
 
 	function redirectWheel() {
 		let customDeltaX;

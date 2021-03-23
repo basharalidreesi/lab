@@ -57,7 +57,7 @@ layout: default
 						{%- for node in search_scope -%}
 							{%- for subpage in search_index -%}
 								{%- if node.path == subpage %}
-						<span class="--match_above" id="match_above"></span>
+						<span class="--match_above"></span>
 						<div class="list_wrapper-list_item">
 							<dt class="list_item-item_title --list_title_styling">
 								<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
@@ -76,7 +76,7 @@ layout: default
 							<dd class="--no_tag"></dd>
 									{%- endunless %}
 						</div>
-						<span class="--match_below" id="match_below"></span>
+						<span class="--match_below"></span>
 								{%- endif -%}
 							{%- endfor -%}
 						{%- endfor %}
