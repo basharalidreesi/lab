@@ -920,8 +920,8 @@
 	.--match_below {
 		position: sticky;
 		display: none;
-		height: calc(var(--quadruple));
-		width: calc(100% - var(--quadruple));
+		height: calc(var(--double) + var(--single));
+		width: calc(100% - var(--screen_width_third * 2));
 		margin-left: auto;
 		margin-right: auto;
 		background: var(--secondary_colour);
@@ -934,11 +934,11 @@
 	}
 	.--match_above {
 		top: calc(var(--header_height));
-		margin-bottom: calc(var(--quadruple_negative));
+		margin-bottom: calc(var(--double_negative) + var(--single_negative));
 	}
 	.--match_below {
 		bottom: calc(var(--header_height_half));
-		margin-top: calc(var(--quadruple_negative));
+		margin-top: calc(var(--double_negative) + var(--single_negative));
 	}
 	.--active_match {
 		opacity: 1;
@@ -1510,6 +1510,10 @@
 		.list_wrapper-list_item {
 			padding-left: calc(var(--double));
 			padding-right: calc(var(--double));
+		}
+		.--match_above,
+		.--match_below {
+			width: calc(100% - var(--quadruple));
 		}
 		/*
 		┌───────┐
