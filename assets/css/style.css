@@ -913,6 +913,14 @@
 	.--untag::after {
 		transform: rotate(-45deg);
 	}
+	.--untag_click {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		height: 175%;
+		width: 175%;
+	}
 	.--no_tag {
 		display: none;
 	}
