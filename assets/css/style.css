@@ -942,7 +942,7 @@
 	}
 	.--active_match {
 		opacity: 1;
-		box-shadow: 0 0 calc(var(--single)) calc(var(--half)) var(--glow_colour);
+		box-shadow: 0 0 calc(var(--single)) 0 var(--glow_colour);
 	}
 	/*
 	┌───────┐
