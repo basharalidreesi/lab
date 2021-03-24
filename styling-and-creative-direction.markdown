@@ -21,7 +21,7 @@ It showed a lady fitted out with a fur hat and fur boa who sat upright, raising 
 
 <!-- break -->
 
-<!-- style: width: 50vw; height: 50vw; border-radius: 100%; background-color: #39ff14; border: none; padding: 0; -->
+<!-- style: width: 50vw; height: 50vw; border-radius: 100%; background-color: var(--text_colour); border: none; padding: 0; -->
 
 <!-- break -->
 
