@@ -8,7 +8,9 @@ colours:
   border colour: "#39ff14"
   text colour: "#39ff14"
 page:
-  has central header: true
+  header:
+    is central: true
+    styles: 'mix-blend-mode: difference;'
   is navigable: true
 layout: list
 ---
