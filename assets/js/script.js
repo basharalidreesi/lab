@@ -104,11 +104,19 @@
 			window.addEventListener("DOMContentLoaded", () => {
 				const tags = document.querySelectorAll(".list_item-item_tag");
 				const untags = document.querySelectorAll(".--untag");
+				const matches_above = document.querySelectorAll(".--match_above");
+				const matches_below = document.querySelectorAll(".--match_below");
 				tags.forEach((tag) => {
 					tag.addEventListener("click", filter);
 				});
 				untags.forEach((untag) => {
 					untag.addEventListener("click", filter);
+				});
+				matches_above.forEach((match) => {
+					match.addEventListener("click", seek);
+				});
+				matches_below.forEach((match) => {
+					match.addEventListener("click", seek);
 				});
 			});
 		}
@@ -205,9 +213,9 @@
 	function toArrow(event) {
 		var scroll_to = event.target;
 		scroll_to.scrollIntoView({
-			behavior: 'auto',
-			block: 'center',
-			inline: 'center'
+			behavior: "auto",
+			block: "center",
+			inline: "center"
 		});
 	}
 
@@ -318,6 +326,23 @@
 		rootMargin: "0px 100px 0px 100px",
 		threshold: 0.5
 	});
+
+	function seek(event) {
+		if (event.target.classList.contains("--match_above")) {
+			event.target.nextElementSibling.scrollIntoView({
+				behavior: "auto",
+				block: "center",
+				inline: "center"
+			});
+		} else if (event.target.classList.contains("--match_below")) {
+			const belows = document.querySelectorAll(".--match_below.--active_match");
+			belows[0].previousElementSibling.scrollIntoView({
+				behavior: "auto",
+				block: "center",
+				inline: "center"
+			});
+		}
+	}
 
 	function redirectWheel() {
 		let customDeltaX;
