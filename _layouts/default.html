@@ -9,7 +9,7 @@
 		{%- else -%}
 			{%- assign home = false -%}
 		{%- endif -%}
-		{%- if page.page['has central header'] -%}
+		{%- if page.page.header['is central'] -%}
 			{%- assign central = true -%}
 		{%- else -%}
 			{%- assign central = false -%}
@@ -190,7 +190,7 @@
 			<div class="--loader_wrapper" id="loader_wrapper">
 				<div class="--loader" id="loader"></div>
 			</div>
-			<header class="mother_container-header_container" id="header_container">
+			<header class="mother_container-header_container" id="header_container" {%- if page.page.header.styles -%} style="{{- page.page.header.styles | strip -}}" {%- endif -%}>
 				<div class="header_container-header_wrapper">
 					{%- if site['global message'] %}
 					<marquee class="--global_message">

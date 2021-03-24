@@ -9,7 +9,7 @@
 			{%- else %}
 			let home = false;
 			{%- endif -%}
-			{%- if page.page['has central header'] %}
+			{%- if page.page.header['is central'] %}
 			let central = true;
 			{%- else %}
 			let central = false;

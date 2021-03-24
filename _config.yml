@@ -28,8 +28,12 @@ defaults:
       text colour: "#000"
       placeholder colour: grey
     page:
-      has central header: false
-      has title: false
+      header:
+        is central: false
+        styles: 
+      title:
+        is displayed: false
+        styles: 
 - scope:
     path: ''
     type: pages
