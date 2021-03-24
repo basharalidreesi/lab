@@ -19,10 +19,6 @@
 		}
 	}
 
-	function returnOrder(element) {
-		return Array.from(element.parentNode.children).indexOf(element) + 1;
-	}
-
 // begin
 // general purpose functions
 
