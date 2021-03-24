@@ -958,8 +958,8 @@
 		color: var(--secondary_colour);
 		position: absolute;
 		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
+		transform: translateY(-50%);
+		width: 100%;
 	}
 	.--match_above::before {
 		content: "More matches above";
@@ -1405,6 +1405,7 @@
 		#supernav_checkbox:checked ~ .nav_container-supernav_wrapper {
 			height: 100%;
 			box-shadow: 0 calc(var(--quarter) / 2) calc(var(--single) - var(--quarter)) 0 var(--glow_colour);
+			cursor: n-resize;
 		}
 		.nav_container-supernav_wrapper::before,
 		.nav_container-supernav_wrapper::after {
