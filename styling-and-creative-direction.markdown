@@ -2,7 +2,14 @@
 title: Styling & Creative Direction
 date: 2021-02-03 23:35:00 Z
 position: 1
-page:
+page colours:
+  primary colour: black
+  secondary colour: black
+  border colour: "#39ff14"
+  text colour: "#39ff14"
+page header:
+  is central: true
+page navigation:
   is navigable: true
 layout: list
 ---
