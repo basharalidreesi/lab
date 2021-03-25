@@ -1,7 +1,7 @@
 ---
 title: About
 position: 2
-page:
+page navigation:
   is navigable: true
 layout: contact
 ---

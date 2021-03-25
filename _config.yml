@@ -21,25 +21,29 @@ defaults:
     path: ''
   values:
     layout: article
-    colours:
+    page colours:
       primary colour: "#91a3b0"
       secondary colour: "#fff"
       border colour: "#000"
       text colour: "#000"
       placeholder colour: grey
-    page:
-      header:
-        is central: false
-        styles: 
-      title:
-        is displayed: false
-        styles: 
+    page header:
+      is central: false
+      override: 
+      styles: 
+    page navigation:
+      styles: 
+    page title:
+      is displayed: false
+      styles: 
+    page special content:
+      styles: 
 - scope:
     path: ''
     type: pages
   values:
     permalink: "/:basename"
-    page:
+    page navigation:
       is navigable: false
 - scope:
     path: assets/graphics/header_graphics
@@ -57,7 +61,6 @@ email: jadtoghuj@gmail.com
 instagram: "@jad.toghuj"
 basabees: http://www.basharalidreesi.com
 batabeet: "/"
-global message: 
 theme: 
 plugins:
 - jekyll-feed
