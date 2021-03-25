@@ -9,6 +9,7 @@ page colours:
   text colour: "#39ff14"
 page header:
   is central: true
+  styles: 'mix-blend-mode: difference;'
 page navigation:
   is navigable: true
 layout: list
