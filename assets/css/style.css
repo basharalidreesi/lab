@@ -869,13 +869,7 @@
 		-ms-user-select: none;
 		-moz-user-select: none;
 		-webkit-user-select: none;
-		transition: background-color 0.25s, color 0.25s;
-	}
-	.list_item-item_tag:last-of-type {
-		/* margin-bottom: calc(var(--single)); */
-	}
-	.list_item-item_tag:only-of-type {
-		/* margin-top: 0; */
+		transition: background-color 0.25s, color 0.25s, box-shadow 0.25s;
 	}
 	.--highlighted_list_item {
 		background-color: var(--secondary_colour);
@@ -884,6 +878,7 @@
 		position: relative;
 		background-color: var(--text_colour);
 		color: var(--secondary_colour);
+		box-shadow: 0 0 calc(var(--single)) 0 var(--primary_glow_colour);
 	}
 	.--untag {
 		display: none;
