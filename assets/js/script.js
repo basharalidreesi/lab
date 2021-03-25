@@ -219,6 +219,7 @@
 	function filter(event) {
 		var target;
 		var origin;
+		var matches = 0;
 		if (event.target.classList.contains("--untag") || event.target.classList.contains("--untag_click")) {
 			origin = 1;
 			event.stopPropagation();
