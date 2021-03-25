@@ -539,7 +539,7 @@
 		display: flex;
 		flex-flow: row nowrap;
 		align-items: flex-start;
-		justify-content: space-evenly;
+		justify-content: space-between;
 		border-bottom: 1px solid var(--border_colour);
 	}
 	.--central_header .nav_container-nav_wrapper {
@@ -552,7 +552,6 @@
 			0 0 0 0 var(--glow_colour);
 	}
 	.nav_wrapper-nav_item {
-		flex: 1; /* todo: stress test this with a higher number of listed pages */
 		padding-top: calc(var(--double));
 		padding-bottom: calc(var(--double));
 		overflow: hidden;
@@ -838,7 +837,7 @@
 		border-bottom: 1px dashed var(--border_colour);
 		transition: background-color 0.25s;
 	}
-	.list_wrapper-list_item:last-child {
+	.list_wrapper-list_item:last-of-type {
 		border-bottom: none;
 	}
 	.list_item-item_title {
