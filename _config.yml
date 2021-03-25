@@ -36,6 +36,8 @@ defaults:
     page title:
       is displayed: false
       styles: 
+    page content:
+      styles: 
     page special content:
       title: 
       subtext: 
