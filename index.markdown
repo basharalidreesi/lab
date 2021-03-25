@@ -3,7 +3,8 @@ title: Home
 permalink: "/"
 position: 0
 page:
-  has central header: true
+  header:
+    is central: true
 layout: showcase
 ---
 

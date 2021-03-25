@@ -2,13 +2,7 @@
 title: Styling & Creative Direction
 date: 2021-02-03 23:35:00 Z
 position: 1
-colours:
-  primary colour: black
-  secondary colour: black
-  border colour: "#39ff14"
-  text colour: "#39ff14"
 page:
-  has central header: true
   is navigable: true
 layout: list
 ---
@@ -27,7 +21,7 @@ It showed a lady fitted out with a fur hat and fur boa who sat upright, raising 
 
 <!-- break -->
 
-<!-- style: width: 50vw; height: 50vw; border-radius: 100%; background-color: #39ff14; border: none; padding: 0; -->
+<!-- style: width: 50vw; height: 50vw; border-radius: 100%; background-color: var(--text_colour); border: none; padding: 0; -->
 
 <!-- break -->
 
