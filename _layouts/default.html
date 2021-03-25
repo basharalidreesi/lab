@@ -91,7 +91,7 @@
 		</div>
 		{%- endif %}
 		<div class="mother_container" id="mother_container">
-			<nav class="mother_container-nav_container" id="nav_container">
+			<nav class="mother_container-nav_container" id="nav_container" {%- if page.['page navigation'].styles %} style="{{- page.['page navigation'].styles | strip -}}" {%- endif -%}>
 				{%- unless home %}
 				<input type="checkbox" id="supernav_checkbox">
 				<div class="--nav_background"></div>
@@ -190,7 +190,7 @@
 			<div class="--loader_wrapper" id="loader_wrapper">
 				<div class="--loader" id="loader"></div>
 			</div>
-			<header class="mother_container-header_container" id="header_container" {%- if page.['page header'].styles -%} style="{{- page.['page header'].styles | strip -}}" {%- endif -%}>
+			<header class="mother_container-header_container" id="header_container" {%- if page.['page header'].styles %} style="{{- page.['page header'].styles | strip -}}" {%- endif -%}>
 				<div class="header_container-header_wrapper">
 					<a class="header_wrapper-header_anchor" href="{{- site.url -}}{{- site.baseurl -}}">
 						<img class="header_anchor-header_graphic" id="header_graphic" alt="Header" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" />
@@ -204,7 +204,7 @@
 				{{ content }}
 			</main>
 			{%- unless cascade %}
-			<footer class="mother_container-footer_container">
+			<footer class="mother_container-footer_container" {%- if page.['page footer'].styles %} style="{{- page.['page footer'].styles | strip -}}" {%- endif -%}>
 				<div class="footer_container-footer_wrapper">
 					{%- include footer.html %}				</div>
 			</footer>

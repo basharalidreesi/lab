@@ -493,6 +493,7 @@
 	.--central_header .mother_container-nav_container {
 		order: 2;
 		position: relative;
+		margin-bottom: calc(var(--double));
 	}
 	.--homepage .mother_container-nav_container {
 		order: 2;

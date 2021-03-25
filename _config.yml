@@ -38,6 +38,8 @@ defaults:
       styles: 
     page special content:
       styles: 
+    page footer:
+      styles: 
 - scope:
     path: ''
     type: pages
