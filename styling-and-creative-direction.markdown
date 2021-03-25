@@ -5,8 +5,8 @@ position: 1
 page colours:
   primary colour: black
   secondary colour: grey
-  border colour: "#39ff14"
-  text colour: "#39ff14"
+  border colour: orange
+  text colour: yellow
 page header:
   is central: true
 page navigation:
