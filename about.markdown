@@ -6,7 +6,7 @@ page colours:
   secondary colour: peachpuff
   border colour: blue
   text colour: blue
-  placeholder colour: aquamarine
+  placeholder colour: blue
 page header:
   is central: true
   styles: 'mix-blend-mode: difference;'

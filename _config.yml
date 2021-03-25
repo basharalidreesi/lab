@@ -37,8 +37,12 @@ defaults:
       is displayed: false
       styles: 
     page special content:
+      title: 
+      subtext: 
       styles: 
     page footer:
+      title: 
+      subtext: 
       styles: 
 - scope:
     path: ''
