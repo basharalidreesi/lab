@@ -2,16 +2,18 @@
 		<!-- begin colours.css.html -->
 		<style>
 			:root {
-				--primary_colour: {{ page.colours['primary colour'] }};
-				--secondary_colour: {{ page.colours['secondary colour'] }};
-				--border_colour: {{ page.colours['border colour'] }};
-				--text_colour: {{ page.colours['text colour'] }};
-				{%- if page.colours['primary colour'] == page.colours['secondary colour'] %}
+				--primary_colour: {{ page.['page colours'].['primary colour'] }};
+				--secondary_colour: {{ page.['page colours'].['secondary colour'] }};
+				--border_colour: {{ page.['page colours'].['border colour'] }};
+				--text_colour: {{ page.['page colours'].['text colour'] }};
+				{%- assign primary_colour = page.['page colours'].['primary colour'] | color_to_rgb -%}
+				{%- assign secondary_colour = page.['page colours'].['secondary colour'] | color_to_rgb -%}
+				{%- if primary_colour == secondary_colour %}
 				--glow_colour: var(--text_colour);
 				{%- else %}
 				--glow_colour: var(--primary_colour);
 				{%- endif %}
-				--placeholder_colour: {{ page.colours['placeholder colour'] }};
+				--placeholder_colour: {{ page.['page colours'].['placeholder colour'] }};
 				--background: linear-gradient(0deg, var(--primary_colour) 10%, var(--secondary_colour) 100%);
 			}
 		</style>

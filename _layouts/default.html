@@ -9,7 +9,7 @@
 		{%- else -%}
 			{%- assign home = false -%}
 		{%- endif -%}
-		{%- if page.page.header['is central'] -%}
+		{%- if page.['page header'].['is central'] -%}
 			{%- assign central = true -%}
 		{%- else -%}
 			{%- assign central = false -%}
@@ -139,7 +139,7 @@
 				{%- endunless %}
 				<ul class="nav_container-nav_wrapper">
 					{%- for node in pages -%}
-						{%- if node.page['is navigable'] and tree.size >= 2 -%}
+						{%- if node.['page navigation'].['is navigable'] and tree.size >= 2 -%}
 							{%- unless page.url contains node.url %}
 					<li class="nav_wrapper-nav_item --nav_text_styling">
 						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
@@ -177,7 +177,7 @@
 						</ul>
 					</li>
 							{%- endunless -%}
-						{%- elsif node.page['is navigable'] and tree.size < 2 -%}
+						{%- elsif node.['page navigation'].['is navigable'] and tree.size < 2 -%}
 					<li class="nav_wrapper-nav_item --nav_text_styling {%- if page.url contains node.url %} --current_nav_item-x {%- endif -%}">
 						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
 							{{ node.title }}
@@ -190,24 +190,14 @@
 			<div class="--loader_wrapper" id="loader_wrapper">
 				<div class="--loader" id="loader"></div>
 			</div>
-			<header class="mother_container-header_container" id="header_container" {%- if page.page.header.styles -%} style="{{- page.page.header.styles | strip -}}" {%- endif -%}>
+			<header class="mother_container-header_container" id="header_container" {%- if page.['page header'].styles -%} style="{{- page.['page header'].styles | strip -}}" {%- endif -%}>
 				<div class="header_container-header_wrapper">
-					{%- if site['global message'] %}
-					<marquee class="--global_message">
-						{{ site['global message'] | strip }}
-					</marquee>
-					{%- endif %}
 					<a class="header_wrapper-header_anchor" href="{{- site.url -}}{{- site.baseurl -}}">
 						<img class="header_anchor-header_graphic" id="header_graphic" alt="Header" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" />
 						<noscript>
 							<img class="header_anchor-header_graphic" alt="Header" src="{{- site.baseurl -}}{{- header_graphics[0].path -}}" />
 						</noscript>
 					</a>
-					{%- if site['global message'] %}
-					<marquee class="--global_message">
-						{{ site['global message'] | strip }}
-					</marquee>
-					{%- endif %}
 				</div>
 			</header>
 			<main class="mother_container-main_container" id="main_container">
