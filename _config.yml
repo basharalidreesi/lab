@@ -44,7 +44,7 @@ defaults:
   values:
     permalink: "/:basename"
     page navigation:
-      is navigable:
+      is navigable: false
 - scope:
     path: assets/graphics/header_graphics
   values:
