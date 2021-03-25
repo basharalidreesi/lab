@@ -11,8 +11,8 @@ page header:
   is central: true
   styles: 'mix-blend-mode: difference;'
 page navigation:
-  styles: "--secondary_colour: #39ff14; --text_colour: black; --primary_glow_colour:
-    red; --secondary_glow_colour: transparent;"
+  styles: "--secondary_colour: #39ff14; --text_colour: black; --border_colour: black;
+    --primary_glow_colour: black; --secondary_glow_colour: transparent;"
   is navigable: true
 layout: list
 ---
