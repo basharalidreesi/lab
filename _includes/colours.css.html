@@ -9,9 +9,11 @@
 				{%- assign primary_colour = page.['page colours'].['primary colour'] | color_to_rgb -%}
 				{%- assign secondary_colour = page.['page colours'].['secondary colour'] | color_to_rgb -%}
 				{%- if primary_colour == secondary_colour %}
-				--glow_colour: var(--text_colour);
+				--primary_glow_colour: var(--text_colour);
+				--secondary_glow_colour: var(--border_colour);
 				{%- else %}
-				--glow_colour: var(--primary_colour);
+				--primary_glow_colour: var(--primary_colour);
+				--secondary_glow_colour: var(--secondary_colour);
 				{%- endif %}
 				--placeholder_colour: {{ page.['page colours'].['placeholder colour'] }};
 				--background: linear-gradient(0deg, var(--primary_colour) 10%, var(--secondary_colour) 100%);
