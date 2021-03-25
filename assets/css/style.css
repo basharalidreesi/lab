@@ -576,7 +576,7 @@
 		padding-right: calc(var(--single));
 		width: 100%;
 	}
-	.subnav_wrapper-subnav_item:not(.--subnav_separator):not(.--current_subnav_item) {
+	.subnav_wrapper-subnav_item:not(.--subnav_separator) {
 		overflow: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;
