@@ -9,9 +9,11 @@ page colours:
   text colour: yellow
 page navigation:
   is navigable: true
+page special content:
+  styles: 'border-top: 1px solid var(--border_colour);'
 layout: list
 ---
 
-<!-- style: width: 50vw; height: 50vw; border-radius: 100%; background-color: var(--text_colour); border: none; padding: 0; -->
+<!-- style: width: 50vw; height: 50vw; border-radius: 100%; background-color: var(--text_colour); border: none; padding: 0; margin-top: 2; margin-bottom: 2rem; -->
 
 <!-- break -->
