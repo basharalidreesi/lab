@@ -53,7 +53,7 @@ layout: default
 					{%- endcomment -%}
 					{{- content_index[0] }}
 					{%- unless search_index == empty %}
-					<dl class="main_wrapper-list_wrapper">
+					<dl class="main_wrapper-list_wrapper" {%- if page.['page special content'].styles %} style="{{- page.['page special content'].styles | strip -}}" {%- endif -%}>
 						{%- for node in search_scope -%}
 							{%- for subpage in search_index -%}
 								{%- if node.path == subpage %}
