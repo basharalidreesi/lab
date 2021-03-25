@@ -9,12 +9,10 @@ page colours:
   placeholder colour: blue
 page header:
   is central: true
-  styles: 'mix-blend-mode: difference;'
 page navigation:
-  styles: "--secondary_glow_colour: transparent;"
   is navigable: true
 page footer:
-  styles: 'background-color: blue; --text_colour: peachpuff;'
+  styles: 'background-color: peachpuff;'
 layout: contact
 ---
 
