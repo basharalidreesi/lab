@@ -270,8 +270,8 @@
 				item.classList.remove("--highlighted_list_item");
 				item.previousElementSibling.classList.remove("--active_match");
 				item.nextElementSibling.classList.remove("--active_match");
-				setTimeout(() => { item.previousElementSibling.removeAttribute("style"); }, 100);
-				setTimeout(() => { item.nextElementSibling.removeAttribute("style"); }, 100);
+				setTimeout(() => { item.previousElementSibling.removeAttribute("style"); }, 125);
+				setTimeout(() => { item.nextElementSibling.removeAttribute("style"); }, 125);
 				tags.forEach((tag) => {
 					tag.classList.remove("--highlighted_tag");
 					tag.children[0].removeAttribute("style");
@@ -303,17 +303,17 @@
 			if (entry.intersectionRatio >= 0.5) {
 				entry.target.previousElementSibling.classList.remove("--active_match");
 				entry.target.nextElementSibling.classList.remove("--active_match");
-				setTimeout(() => { entry.target.previousElementSibling.removeAttribute("style"); }, 100);
-				setTimeout(() => { entry.target.nextElementSibling.removeAttribute("style"); }, 100);
+				setTimeout(() => { entry.target.previousElementSibling.removeAttribute("style"); }, 125);
+				setTimeout(() => { entry.target.nextElementSibling.removeAttribute("style"); }, 125);
 			}
 			if (entry.intersectionRatio < 0.5) {
 				if (top < 0) {
 					entry.target.previousElementSibling.style.display = "block";
-					setTimeout(() => { entry.target.previousElementSibling.classList.add("--active_match"); }, 100);
+					setTimeout(() => { entry.target.previousElementSibling.classList.add("--active_match"); }, 125);
 				}
 				if (bottom > end) {
 					entry.target.nextElementSibling.style.display = "block";
-					setTimeout(() => { entry.target.nextElementSibling.classList.add("--active_match"); }, 100);
+					setTimeout(() => { entry.target.nextElementSibling.classList.add("--active_match"); }, 125);
 				}
 			}
 		});
