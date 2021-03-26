@@ -149,7 +149,7 @@
 					</li>
 							{%- else %}
 					<li class="nav_wrapper-nav_item --nav_text_styling --current_nav_item">
-						<span itemprop="name">
+						<span class="--median" itemprop="name">
 							<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}" itemprop="url">
 								{{ node.title }}
 							</a>
@@ -168,7 +168,7 @@
 											{%- assign i = i | plus: 1 %}
 							<li class="subnav_wrapper-subnav_item --subnav_text_styling {%- if page.url == node2.url %} --current_subnav_item {%- endif -%}" itemprop="itemListElement" itemscope="itemscope" itemtype="https://schema.org/ListItem">
 								<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node2.url -}}" itemprop="item">
-									<span itemprop="name">{{ node2.title }}</span>
+									<span class="--median" itemprop="name">{{ node2.title }}</span>
 								</a>
 								<meta itemprop="position" content="{{- i -}}" />
 							</li>
