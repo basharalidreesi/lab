@@ -151,7 +151,7 @@
 						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}" itemprop="url">
 							{{ node.title }}
 						</a>
-						<ul class="nav_item-subnav_wrapper" itemscope itemtype="SiteNavigationElement">
+						<ul class="nav_item-subnav_wrapper" itemscope itemtype="http://schema.org/SiteNavigationElement">
 							{%- for branch in tree -%}
 								{%- assign segment = page.path | split: branch -%}
 								{%- assign current = branch | prepend: segment[0] | append: ".markdown" -%}
