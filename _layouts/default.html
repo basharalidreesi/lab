@@ -163,11 +163,14 @@
 									{%- continue -%}
 								{%- else -%}
 									{%- for node2 in site.documents -%}
-										{%- if node2.path == current %}
-							<li class="subnav_wrapper-subnav_item --subnav_text_styling {%- if page.url == node2.url %} --current_subnav_item {%- endif -%}" itemprop="name itemListElement">
+										{%- assign i = 1 -%}
+										{%- if node2.path == current -%}
+											{%- assign i = i | plus: 1 %}
+							<li class="subnav_wrapper-subnav_item --subnav_text_styling {%- if page.url == node2.url %} --current_subnav_item {%- endif -%}" itemprop="itemListElement name">
 								<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node2.url -}}" itemprop="url">
 									{{ node2.title }}
 								</a>
+								<meta itemprop="position" content="{{- i -}}" />
 							</li>
 											{%- unless last %}
 							<span class="subnav_wrapper-subnav_item --subnav_text_styling --subnav_separator"></span>
