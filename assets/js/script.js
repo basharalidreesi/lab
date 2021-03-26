@@ -340,7 +340,7 @@
 		}
 	}
 
-	const cascade_wrapper = document.querySelectorAll(".main_container-cascade_wrapper")[0];
+	const cascade_wrapper = document.getElementById("cascade_wrapper");
 	function redirectWheel() {
 		let customDeltaX;
 		let customDeltaY;
