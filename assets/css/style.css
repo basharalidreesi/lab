@@ -816,7 +816,7 @@
 		padding-bottom: calc(var(--single));
 		transition: background-color 0.25s;
 	}
-	.list_wrapper-list_item:not(:first-of-type) {
+	.list_wrapper-list_item ~ .list_wrapper-list_item {
 		border-top: 1px dashed var(--border_colour);
 	}
 	.list_item-item_title {
