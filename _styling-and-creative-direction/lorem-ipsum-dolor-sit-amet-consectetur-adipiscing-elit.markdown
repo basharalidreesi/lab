@@ -8,11 +8,8 @@ tags:
 - "\U0001F353 strawberry"
 - "\U0001F351 peach"
 position: 0
-colours:
-  primary colour: black
-  secondary colour: black
-  border colour: "#39ff14"
-  text colour: "#39ff14"
+page layout:
+  is titled: true
 layout: cascade
 ---
 
