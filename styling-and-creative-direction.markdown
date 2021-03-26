@@ -9,8 +9,6 @@ page colours:
   text colour: yellow
 page navigation:
   is navigable: true
-page special content:
-  styles: 'border-top: 1px solid var(--border_colour);'
 layout: list
 ---
 
