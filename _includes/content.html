@@ -127,7 +127,7 @@
 						</h1>
 					</header>
 					{%- endif %}
-					<!-- cascade -->
+					{{ content | strip }}
 					<div style="height: calc(var(--cascade_height)); width: 50vw; background: black;"></div>
 					{%- if footered %}
 					<footer class="cascade_wrapper-footer_card" {%- if page.['page footer'].styles %} style="{{- page.['page footer'].styles | strip -}}" {%- endif -%}>
