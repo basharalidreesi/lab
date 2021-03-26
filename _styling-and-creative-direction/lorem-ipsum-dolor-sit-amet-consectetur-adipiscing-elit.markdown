@@ -8,6 +8,11 @@ tags:
 - "\U0001F353 strawberry"
 - "\U0001F351 peach"
 position: 0
+page colours:
+  primary colour: peachpuff
+  secondary colour: pink
+  border colour: red
+  text colour: red
 page content:
   is titled: true
 layout: cascade
