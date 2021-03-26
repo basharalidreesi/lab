@@ -451,6 +451,9 @@
 		background-repeat: no-repeat;
 		background-attachment: fixed;
 	}
+	body.--cascade_layout {
+		overflow: hidden;
+	}
 	.bodyalt {
 		display: block;
 		position: relative;
