@@ -91,7 +91,8 @@
 		</div>
 		{%- endif %}
 		<div class="mother_container" id="mother_container" {%- if page.['page root'].styles %} style="{{- page.['page root'].styles | strip -}}" {%- endif -%}>
-			<nav class="mother_container-nav_container" id="nav_container" {%- if page.['page navigation'].styles %} style="{{- page.['page navigation'].styles | strip -}}" {%- endif -%}>
+			<nav class="mother_container-nav_container" id="nav_container" itemscope itemtype="http://schema.org/SiteNavigationElement" {%- if page.['page navigation'].styles %} style="{{- page.['page navigation'].styles | strip -}}" {%- endif -%}>
+				<meta itemprop="name" content="Navigation Menu">
 				{%- unless home %}
 				<input type="checkbox" id="supernav_checkbox">
 				<div class="--nav_background"></div>
@@ -106,7 +107,7 @@
 									{%- assign level_one_current = current | remove_first: "_" -%}
 									{%- if node.path == level_one_current %}
 					<span class="supernav_wrapper-supernav_item --supernav_text_styling {%- if page.url == node.url %} --current_supernav_item {%- endif -%}">
-						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
+						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}" itemprop="url">
 							{{ node.title }}
 						</a>
 					</span>
@@ -124,7 +125,7 @@
 								{%- for node in site.documents -%}
 									{%- if node.path == current %}
 					<span class="supernav_wrapper-supernav_item --supernav_text_styling {%- if page.url == node.url %} --current_supernav_item {%- endif -%}">
-						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
+						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}" itemprop="url">
 							{{ node.title }}
 						</a>
 					</span>
@@ -142,13 +143,13 @@
 						{%- if node.['page navigation'].['is navigable'] and tree.size >= 2 -%}
 							{%- unless page.url contains node.url %}
 					<li class="nav_wrapper-nav_item --nav_text_styling">
-						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
+						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}" itemprop="url">
 							{{ node.title }}
 						</a>
 					</li>
 							{%- else %}
 					<li class="nav_wrapper-nav_item --nav_text_styling --current_nav_item">
-						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
+						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}" itemprop="url">
 							{{ node.title }}
 						</a>
 						<ul class="nav_item-subnav_wrapper">
@@ -163,7 +164,7 @@
 									{%- for node2 in site.documents -%}
 										{%- if node2.path == current %}
 							<li class="subnav_wrapper-subnav_item --subnav_text_styling {%- if page.url == node2.url %} --current_subnav_item {%- endif -%}">
-								<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node2.url -}}">
+								<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node2.url -}}" itemprop="url">
 									{{ node2.title }}
 								</a>
 							</li>
@@ -179,7 +180,7 @@
 							{%- endunless -%}
 						{%- elsif node.['page navigation'].['is navigable'] and tree.size < 2 -%}
 					<li class="nav_wrapper-nav_item --nav_text_styling {%- if page.url contains node.url %} --current_nav_item-x {%- endif -%}">
-						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
+						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}" itemprop="url">
 							{{ node.title }}
 						</a>
 					</li>
