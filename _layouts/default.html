@@ -147,9 +147,9 @@
 						</a>
 					</li>
 							{%- else %}
-					<li class="nav_wrapper-nav_item --nav_text_styling --current_nav_item" itemprop="name">
+					<li class="nav_wrapper-nav_item --nav_text_styling --current_nav_item">
 						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}" itemprop="url">
-							{{ node.title }}
+							<span itemprop="name">{{ node.title }}</span>
 						</a>
 						<ul class="nav_item-subnav_wrapper" itemscope itemtype="http://schema.org/SiteNavigationElement">
 							{%- for branch in tree -%}
