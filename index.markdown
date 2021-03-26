@@ -9,6 +9,8 @@ page colours:
   text colour: black
 page header:
   is central: true
+page navigation:
+  styles: "--secondary_glow_colour: lightgrey;"
 layout: showcase
 ---
 
