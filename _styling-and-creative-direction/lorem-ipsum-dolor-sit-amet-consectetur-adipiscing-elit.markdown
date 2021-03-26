@@ -8,7 +8,7 @@ tags:
 - "\U0001F353 strawberry"
 - "\U0001F351 peach"
 position: 0
-page layout:
+page content:
   is titled: true
 layout: cascade
 ---
