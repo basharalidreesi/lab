@@ -40,8 +40,6 @@ defaults:
       title styles: 
       content styles: 
     page layout:
-      is titled: false
-      subtext: 
       styles: 
     page footer:
       is displayed: true
