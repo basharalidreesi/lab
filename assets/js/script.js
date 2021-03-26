@@ -340,7 +340,6 @@
 		}
 	}
 
-	const cascade_wrapper = document.getElementById("cascade_wrapper");
 	function redirectWheel() {
 		let customDeltaX;
 		let customDeltaY;
@@ -352,16 +351,16 @@
 				customDeltaX = 0;
 				customDeltaY = redirectTouchY / -5;
 			}
-			if (window.innerWidth < cascade_wrapper.scrollWidth) { // if cascade is overflowing
+			if (window.innerWidth < document.getElementById("cascade_wrapper").scrollWidth) { // if cascade is overflowing
 				if (window.innerHeight + document.getElementById("bodyalt").scrollTop >= document.getElementById("bodyalt").scrollHeight) { // if at bottom of bodyalt
 					if (customDeltaY > 0 || customDeltaX > 0) { // if going down or right
 						event.preventDefault();
-						cascade_wrapper.scrollLeft += (customDeltaY + customDeltaX);
+						document.getElementById("cascade_wrapper").scrollLeft += (customDeltaY + customDeltaX);
 					} else if (customDeltaY < 0 || customDeltaX < 0) { // if going up or left
-						if (cascade_wrapper.scrollLeft <= 0) {
-						} else if (cascade_wrapper.scrollLeft > 0) {
+						if (document.getElementById("cascade_wrapper").scrollLeft <= 0) {
+						} else if (document.getElementById("cascade_wrapper").scrollLeft > 0) {
 							event.preventDefault();
-							cascade_wrapper.scrollLeft += (customDeltaY + customDeltaX);
+							document.getElementById("cascade_wrapper").scrollLeft += (customDeltaY + customDeltaX);
 						}
 					}
 				}
@@ -383,7 +382,7 @@
 				redirectTouchX = event.changedTouches[0].clientX - touchX;
 				redirectTouchY = event.changedTouches[0].clientY - touchY;
 				if (Math.abs(redirectTouchY) > Math.abs(redirectTouchX)) { // if going up or down
-					if (cascade_wrapper.scrollLeft <= 0 && redirectTouchY > 0) { // if going up and cascade is at its beginning
+					if (document.getElementById("cascade_wrapper").scrollLeft <= 0 && redirectTouchY > 0) { // if going up and cascade is at its beginning
 						// do nothing
 					} else {
 						event.preventDefault();
