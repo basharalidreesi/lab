@@ -14,6 +14,3 @@ page special content:
 layout: list
 ---
 
-<!-- style: width: 50vw; height: 50vw; border-radius: 100%; background-color: var(--text_colour); border: none; padding: 0; margin-top: 2rem; margin-bottom: 2rem; -->
-
-<!-- break -->
