@@ -84,10 +84,11 @@
 					{%- unless processed_article_content == empty -%}
 						{%- assign article_index = "<!-- STYLE INDEX 0 -->" %}
 					<section class="main_wrapper-main_article --article_text_styling --article_before" style="{%- capture style -%} {%- for item in style_index -%} {%- if item contains article_index -%} {{ item | remove: article_index | strip | append: ';' | replace: ';;', ';' | append: ' ' }} {%- endif -%} {%- endfor -%} {%- endcapture -%} {{- style | strip -}}">
-						<h2 class="--section_header">Section {%- if separated %} 1 {%- endif -%}</h2>
 						{%- if separated %}
+						{%- unless page_content_before contains "<h1>" or "<h2>" -%} <h2 class="--section_header">Section 1</h2> {%- endunless -%}
 						{{ page_content_before | strip }}
 						{%- else %}
+						{%- unless content contains "<h1>" or "<h2>" -%} <h2 class="--section_header">Section 1</h2> {%- endunless -%}
 						{{ content | strip }}
 						{%- endif %}
 					</section>
@@ -98,7 +99,7 @@
 						{%- assign processed_article_content = page_content_after | newline_to_br | strip_newlines | remove: "<br />" | strip | remove: " " -%}
 						{%- unless processed_article_content == empty %}
 					<section class="main_wrapper-main_article --article_text_styling --article_after" style="{%- capture style -%} {%- for item in style_index -%} {%- if item contains article_index -%} {{ item | remove: article_index | strip | append: ';' | replace: ';;', ';' | append: ' ' }} {%- endif -%} {%- endfor -%} {%- endcapture -%} {{- style | strip -}}">
-						<h2 class="--section_header">Section {%- unless page.layout == "article" %} 3 {%- else %} 2 {%- endunless -%}</h2>
+						{%- unless page_content_after contains "<h1>" or "<h2>" -%} <h2 class="--section_header">Section {%- unless page.layout == "article" %} 3 {%- else %} 2 {%- endunless -%}</h2> {%- endunless -%}
 						{{ page_content_after | strip }}
 					</section>
 						{%- endunless -%}
@@ -109,7 +110,7 @@
 							{%- assign processed_article_content = article | newline_to_br | strip_newlines | remove: "<br />" | strip | remove: " " -%}
 							{%- unless processed_article_content == empty %}
 					<section class="main_wrapper-main_article --article_text_styling --article_extended" style="{%- capture style -%} {%- for item in style_index -%} {%- if item contains article_index -%} {{ item | remove: article_index | strip | append: ';' | replace: ';;', '; ' | append: ' ' }} {%- endif -%} {%- endfor -%} {%- endcapture -%} {{- style | strip -}}">
-						<h2 class="--section_header">Section {{ article_index | plus: 2 -}}</h2>
+						{%- unless article contains "<h1>" or "<h2>" -%} <h2 class="--section_header">Section {{ article_index | plus: 2 -}}</h2> {%- endunless -%}
 						{{ article | strip }}
 					</section>
 							{%- endunless -%}
