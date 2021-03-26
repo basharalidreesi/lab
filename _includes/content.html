@@ -119,7 +119,7 @@
 					{%- else -%}
 						{%- assign footered = false -%}
 					{%- endif %}
-				<div class="main_container-cascade_wrapper" id="cascade_wrapper">
+				<article class="main_container-cascade_wrapper" id="cascade_wrapper">
 					{%- if titled %}
 					<header class="cascade_wrapper-title_card" {%- if page.['page content'].['title styles'] %} style="{{- page.['page content'].['title styles'] | strip -}}" {%- endif -%}>
 						<h1 class="--article_title_styling">
@@ -138,6 +138,6 @@
 					<footer class="cascade_wrapper-footer_card" {%- if page.['page footer'].styles %} style="{{- page.['page footer'].styles | strip -}}" {%- endif -%}>
 							{%- include footer.html %}					</footer>
 					{%- endif %}
-				</div>
+				</article>
 				{%- endunless %}
 				<!-- end content.html -->
