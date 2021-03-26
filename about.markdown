@@ -9,8 +9,6 @@ page colours:
   placeholder colour: blue
 page navigation:
   is navigable: true
-page content:
-  is titled: true
 page footer:
   styles: 'background-color: peachpuff;'
 layout: contact
