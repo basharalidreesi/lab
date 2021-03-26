@@ -440,6 +440,12 @@
 		padding-left: calc(var(--half));
 		padding-right: calc(var(--half));
 	}
+	.--median {
+		font-family: inherit;
+		font-size: inherit;
+		font-weight: inherit;
+		color: inherit;
+	}
 /*
 ┌───────┐
 │ begin └─────┐
