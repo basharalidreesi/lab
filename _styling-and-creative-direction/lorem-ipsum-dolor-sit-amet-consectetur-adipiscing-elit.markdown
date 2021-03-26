@@ -15,6 +15,7 @@ page colours:
   text colour: red
 page content:
   is titled: true
+  title styles: 'height: 100%; background: blue; display: flex; align-items: center;'
 layout: cascade
 ---
 
