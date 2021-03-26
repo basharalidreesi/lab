@@ -153,7 +153,7 @@
 								{{ node.title }}
 							</a>
 						</span>
-						<ul class="nav_item-subnav_wrapper" itemscope itemtype="http://schema.org/SiteNavigationElement">
+						<ul class="nav_item-subnav_wrapper" itemscope itemtype="http://schema.org/BreadcrumbList">
 							{%- for branch in tree -%}
 								{%- assign segment = page.path | split: branch -%}
 								{%- assign current = branch | prepend: segment[0] | append: ".markdown" -%}
@@ -164,7 +164,7 @@
 								{%- else -%}
 									{%- for node2 in site.documents -%}
 										{%- if node2.path == current %}
-							<li class="subnav_wrapper-subnav_item --subnav_text_styling {%- if page.url == node2.url %} --current_subnav_item {%- endif -%}" itemprop="name">
+							<li class="subnav_wrapper-subnav_item --subnav_text_styling {%- if page.url == node2.url %} --current_subnav_item {%- endif -%}" itemprop="name itemListElement">
 								<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node2.url -}}" itemprop="url">
 									{{ node2.title }}
 								</a>
