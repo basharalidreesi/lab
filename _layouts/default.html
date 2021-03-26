@@ -167,7 +167,7 @@
 										{%- if node2.path == current -%}
 											{%- assign i = i | plus: 1 %}
 							<li class="subnav_wrapper-subnav_item --subnav_text_styling {%- if page.url == node2.url %} --current_subnav_item {%- endif -%}" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-								<span itempop="item name">
+								<span itemprop="item name">
 									<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node2.url -}}" itemprop="url">
 										{{ node2.title }}
 									</a>
