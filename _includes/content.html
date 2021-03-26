@@ -130,10 +130,7 @@
 					<!-- cascade -->
 					{%- if footered %}
 					<footer class="cascade_wrapper-footer_card">
-						<h1 class="--footer_text_styling">
-							{{ page.title | replace: "&" , "and" }}
-						</h1>
-					</footer>
+							{%- include footer.html %}					</footer>
 					{%- endif %}
 				</div>
 				{%- endunless %}
