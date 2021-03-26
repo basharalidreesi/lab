@@ -137,7 +137,7 @@
 						{%- endfor %}
 				</label>
 				{%- endunless -%}
-				{%- assign i = 1 %}
+				{%- assign i = 0 %}
 				<ul class="nav_container-nav_wrapper">
 					{%- for node in pages -%}
 						{%- if node.['page navigation'].['is navigable'] and tree.size >= 2 -%}
