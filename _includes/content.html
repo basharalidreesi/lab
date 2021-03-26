@@ -113,9 +113,28 @@
 						{%- endfor -%}
 					{%- endif %}
 				</article>
-				{%- else %}
-				<div class="main_container-main_wrapper">
+				{%- else -%}
+					{%- if page.['page footer'].['is displayed'] -%}
+						{%- assign footered = true -%}
+					{%- else -%}
+						{%- assign footered = false -%}
+					{%- endif %}
+				<div class="main_container-cascade_wrapper">
+					{%- if titled %}
+					<header class="cascade_wrapper-title_card">
+						<h1 class="--article_title_styling">
+							{{ page.title | replace: "&" , "and" }}
+						</h1>
+					</header>
+					{%- endif %}
 					<!-- cascade -->
+					{%- if footered %}
+					<footer class="cascade_wrapper-footer_card">
+						<h1 class="--footer_text_styling">
+							{{ page.title | replace: "&" , "and" }}
+						</h1>
+					</footer>
+					{%- endif %}
 				</div>
 				{%- endunless %}
 				<!-- end content.html -->

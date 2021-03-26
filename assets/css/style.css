@@ -712,11 +712,6 @@
 		border-top: 1px solid var(--border_colour);
 		border-bottom: 1px solid var(--border_colour);
 	}
-	.--cascade_layout .main_container-main_wrapper {
-		flex-flow: column wrap;
-		overflow-x: auto;
-		/* (...) */
-	}
 	.--central_header .main_wrapper-main_title {
 		border-top: none;
 	}
@@ -989,6 +984,21 @@
 	│ cascade styles │
 	└────────────────┘
 	*/
+	.main_container-cascade_wrapper {
+		display: flex;
+		flex-flow: column wrap;
+		align-items: center;
+		justify-content: center;
+		overflow-x: auto;
+		/* (...) */
+	}
+	.cascade_wrapper-title_card { }
+	
+	.cascade_wrapper-footer_card { }
+
+
+
+
 	.main_container_upper-cascade_wrapper,
 	.main_container_central-cascade_wrapper {
 		display: flex;
