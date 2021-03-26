@@ -3,7 +3,7 @@ title: About
 position: 2
 page colours:
   primary colour: white
-  secondary colour: white
+  secondary colour: peachpuff
   border colour: blue
   text colour: blue
   placeholder colour: blue
