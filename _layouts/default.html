@@ -91,11 +91,11 @@
 		</div>
 		{%- endif %}
 		<div class="mother_container" id="mother_container" {%- if page.['page root'].styles %} style="{{- page.['page root'].styles | strip -}}" {%- endif -%}>
-			<nav class="mother_container-nav_container" id="nav_container" itemscope itemtype="http://schema.org/SiteNavigationElement" {%- if page.['page navigation'].styles %} style="{{- page.['page navigation'].styles | strip -}}" {%- endif -%}>
+			<nav class="mother_container-nav_container" id="nav_container" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" {%- if page.['page navigation'].styles %} style="{{- page.['page navigation'].styles | strip -}}" {%- endif -%}>
 				{%- unless home %}
 				<input type="checkbox" id="supernav_checkbox">
 				<div class="--nav_background"></div>
-				<label for="supernav_checkbox" class="nav_container-supernav_wrapper" itemscope>
+				<label for="supernav_checkbox" class="nav_container-supernav_wrapper" itemscope="itemscope">
 						{%- for branch in tree -%}
 							{%- assign segment = page.path | split: branch -%}
 							{%- assign current = branch | prepend: segment[0] | append: ".markdown" -%}
@@ -136,7 +136,8 @@
 							{%- endif -%}
 						{%- endfor %}
 				</label>
-				{%- endunless %}
+				{%- endunless -%}
+				{%- assign i = 1 %}
 				<ul class="nav_container-nav_wrapper">
 					{%- for node in pages -%}
 						{%- if node.['page navigation'].['is navigable'] and tree.size >= 2 -%}
@@ -153,7 +154,7 @@
 								{{ node.title }}
 							</a>
 						</span>
-						<ul class="nav_item-subnav_wrapper" itemscope itemtype="http://schema.org/BreadcrumbList">
+						<ul class="nav_item-subnav_wrapper" itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList">
 							{%- for branch in tree -%}
 								{%- assign segment = page.path | split: branch -%}
 								{%- assign current = branch | prepend: segment[0] | append: ".markdown" -%}
@@ -163,15 +164,12 @@
 									{%- continue -%}
 								{%- else -%}
 									{%- for node2 in site.documents -%}
-										{%- assign i = 1 -%}
 										{%- if node2.path == current -%}
 											{%- assign i = i | plus: 1 %}
-							<li class="subnav_wrapper-subnav_item --subnav_text_styling {%- if page.url == node2.url %} --current_subnav_item {%- endif -%}" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-								<span itemprop="item name">
-									<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node2.url -}}" itemprop="url">
-										{{ node2.title }}
-									</a>
-								</span>
+							<li class="subnav_wrapper-subnav_item --subnav_text_styling {%- if page.url == node2.url %} --current_subnav_item {%- endif -%}" itemprop="itemListElement" itemscope="itemscope" itemtype="https://schema.org/ListItem">
+								<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node2.url -}}" itemprop="item">
+									<span itemprop="name">{{ node2.title }}</span>
+								</a>
 								<meta itemprop="position" content="{{- i -}}" />
 							</li>
 											{%- unless last %}
