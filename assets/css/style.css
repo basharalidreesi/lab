@@ -993,6 +993,7 @@
 	}
 	.--central_header .main_container-cascade_wrapper {
 		--cascade_height: (var(--screen_height) - var(--header_height));
+		margin-top: calc(var(--nav_height));
 	}
 	.cascade_wrapper-title_card,
 	.cascade_wrapper-footer_card {
