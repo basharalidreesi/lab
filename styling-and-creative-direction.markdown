@@ -5,11 +5,11 @@ position: 1
 page colours:
   primary colour: white
   secondary colour: white
-  border colour: blue
-  text colour: blue
-  placeholder colour: blue
+  border colour: "#2e2e2e"
+  text colour: "#2e2e2e"
+  placeholder colour: "#2e2e2e"
 page root:
-  styles: "--secondary_colour: peachpuff; filter: grayscale(1);"
+  styles: "--secondary_colour: #dfdfdf;"
 page navigation:
   is navigable: true
 layout: list
