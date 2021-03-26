@@ -359,6 +359,9 @@
 	.--article_text_styling iframe:only-child {
 		margin-top: calc(var(--double_negative));
 	}
+	.--article_text_styling iframe + *:not(iframe) {
+		margin-top: calc(var(--double));
+	}
 	/*
 	┌───────┐
 	│ begin └─────┐
