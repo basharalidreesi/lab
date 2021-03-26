@@ -956,6 +956,7 @@
 		display: flex;
 		flex-flow: row wrap;
 		height: 100%;
+		width: 100%;
 		font-size: 0;
 	}
 	.showcase_wrapper-showcase_tile {
