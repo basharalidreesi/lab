@@ -4,7 +4,7 @@
 				{%- comment -%}
 					<!-- begin setup -->
 				{%- endcomment -%}
-					{%- if page.['page title'].['is displayed'] -%}
+					{%- if page.['page content'].['is titled'] -%}
 						{%- assign titled = true -%}
 					{%- else -%}
 						{%- assign titled = false -%}
@@ -71,7 +71,7 @@
 				{%- comment -%}
 					<!-- end setup -->
 				{%- endcomment %}
-				<div class="main_container-main_wrapper" {%- if page.['page special content'].styles and page.layout == "article" %} style="{{- page.['page special content'].styles | strip -}}" {%- endif -%}>
+				<div class="main_container-main_wrapper">
 					{%- if titled %}
 					<header class="main_wrapper-main_title">
 						<h1 class="--article_title_styling">

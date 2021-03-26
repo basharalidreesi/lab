@@ -7,10 +7,10 @@ page colours:
   border colour: blue
   text colour: blue
   placeholder colour: blue
-page header:
-  is central: true
 page navigation:
   is navigable: true
+page content:
+  is titled: true
 page footer:
   styles: 'background-color: peachpuff;'
 layout: contact

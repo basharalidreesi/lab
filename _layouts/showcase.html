@@ -23,7 +23,7 @@ layout: default
 				{%- endcomment -%}
 					{{- content_index[0] }}
 					{%- if showcase_tiles %}
-					<article class="main_wrapper-showcase_wrapper" {%- if page.['page special content'].styles %} style="{{- page.['page special content'].styles | strip -}}" {%- endif -%}>
+					<article class="main_wrapper-showcase_wrapper">
 						{%- for tile in showcase_tiles -%}
 							{%- assign tile_name = tile.name | prepend: "/" -%}
 							{%- assign tile_path = tile.path | remove: "assets/graphics/showcase_tiles/" | remove_first: "/" | remove: tile_name -%}

@@ -33,13 +33,12 @@ defaults:
       styles: 
     page navigation:
       styles: 
-    page title:
-      is displayed: false
-      styles: 
     page content:
-      styles: 
-    page special content:
-      title: 
+      is titled: false
+      title styles: 
+      content styles: 
+    page layout:
+      is titled: false
       subtext: 
       styles: 
     page footer:
