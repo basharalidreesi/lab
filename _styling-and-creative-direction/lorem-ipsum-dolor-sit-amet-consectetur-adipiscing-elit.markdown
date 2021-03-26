@@ -9,10 +9,10 @@ tags:
 - "\U0001F351 peach"
 position: 0
 page colours:
-  primary colour: peachpuff
-  secondary colour: pink
-  border colour: red
-  text colour: red
+  primary colour: white
+  secondary colour: white
+  border colour: black
+  text colour: black
 page content:
   is titled: true
 layout: cascade
