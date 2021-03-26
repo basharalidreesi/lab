@@ -9,9 +9,9 @@ layout: default
 						{%- capture content_html -%}
 							{%- include content.html -%}
 						{%- endcapture -%}
-						{%- assign content_index = content_html -%}
+						{%- assign content_index = content_html | split: "<!-- SETUP BREAK -->" -%}
 					{%- comment -%}
 						<!-- end article setup -->
 					{%- endcomment -%}
-					{{- content_index }}
+					{{- content_index[0] }}
 				<!-- end cascade.html -->
