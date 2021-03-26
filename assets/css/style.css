@@ -993,12 +993,12 @@
 		/* (...) */
 	}
 	.cascade_wrapper-title_card { }
-	
+
 	.cascade_wrapper-footer_card { }
 
 
 
-
+/*
 	.main_container_upper-cascade_wrapper,
 	.main_container_central-cascade_wrapper {
 		display: flex;
@@ -1016,15 +1016,15 @@
 	}
 	.cascade_wrapper-title_card, .cascade_wrapper-footer_card, .cascade_wrapper-text_card {
 		/* flex: 1 0 auto; */
-		display: flex;
+/*		display: flex;
 		flex-flow: column wrap;
 		align-items: center;
 		justify-content: center;
 		/* min-width: calc(var(--cascade_height_upper)); */
 		/* max-width: 75vw; */
-		padding: calc(var(--double));
+	/*	padding: calc(var(--double));
 		overflow: hidden; /* debug */
-	}
+/*	}
 	.cascade_wrapper-title_card, .cascade_wrapper-footer_card {
 		height: auto;
 		width: 100vw;
@@ -1032,7 +1032,7 @@
 	.cascade_wrapper-text_card {
 		height: 100%;
 		/* width: auto; */
-		width: 100vw;
+/*		width: 100vw;
 	}
 	.cascade_wrapper-text_card p {
 		min-width: 50vw;
@@ -1100,13 +1100,13 @@
 		/* flex: 1 0 auto; */
 		/* min-width: calc(var(--cascade_height_upper)); */
 		/* max-width: 75vw; */
-		height: 100%;
+/*		height: 100%;
 		width: 50vw;
 	}
 	.cascade_wrapper-anchored_graphic_card_upper + .cascade_wrapper-anchored_graphic_card_upper,
 	.cascade_wrapper-anchored_graphic_card_central + .cascade_wrapper-anchored_graphic_card_central {
 		margin-left: 0;
-	}
+	} */
 	/*
 	┌───────┐
 	│ begin └───────┐
@@ -1250,11 +1250,11 @@
 
 
 
-
+/*
 	.cascade_wrapper-anchored_graphic_card_upper:hover,
 	.cascade_wrapper-anchored_graphic_card_central:hover {
 		box-shadow: inset 0 0 calc(var(--double)) calc(var(--double)) var(--primary_glow_colour);
-	}
+	} */
 }
 
 /*
@@ -1276,11 +1276,11 @@
 
 
 
-
+/*
 	.cascade_wrapper-anchored_graphic_card_upper,
 	.cascade_wrapper-anchored_graphic_card_central {
 		box-shadow: inset 0 0 calc(var(--double)) calc(var(--double)) var(--primary_glow_colour);
-	}
+	} */
 }
 
 /*
@@ -1524,7 +1524,7 @@
 		│ cascade styles │
 		└────────────────┘
 		*/
-		.cascade_wrapper-anchored_graphic_card_central {
+	/*	.cascade_wrapper-anchored_graphic_card_central {
 			height: calc(100% - var(--double));
 			margin: calc(var(--double));
 			margin-top: 0;
@@ -1532,7 +1532,7 @@
 		.cascade_wrapper-anchored_graphic_card_upper {
 			height: calc(100% - var(--quadruple));
 			margin: calc(var(--double));
-		}
+		} */
 	/*
 	┌───────┐
 	│ begin └──────────────────────┐
