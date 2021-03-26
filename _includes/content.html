@@ -4,62 +4,74 @@
 				{%- comment -%}
 					<!-- begin setup -->
 				{%- endcomment -%}
-					{%- if page.layout == "cascade" -%}
-						{%- assign cascade = true -%}
-					{%- else -%}
-						{%- assign cascade = false -%}
-					{%- endif -%}
 					{%- if page.['page content'].['is titled'] -%}
 						{%- assign titled = true -%}
 					{%- else -%}
 						{%- assign titled = false -%}
-					{%- endif -%}
-					{%- if page.['page footer'].['is displayed'] -%}
-						{%- assign footered = true -%}
-					{%- else -%}
-						{%- assign footered = false -%}
-					{%- endif -%}
+					{%- endif %}
 					{%- capture page_content -%}
 						{{ content }}
 					{%- endcapture -%}
 					{%- assign separator = "<!-- break -->" -%}
-					{%- assign style_declaration = "style:" -%}
-					{%- assign content_declaration = "<!-- content -->" -%}
-					{%- assign blocks = page_content | split: separator -%}
-					{%- comment -%}
-						<!-- begin comment capture -->
-					{%- endcomment %}
-					{%- capture block_index -%}
-						{%- for block in blocks -%}
-							{%- assign current_block = forloop.index0 -%}
-							{%- if block contains "<!--" -%} {%- comment -%} --> {%- endcomment -%}
-								{%- capture current_block_comments -%}
-									{%- assign inlines = block | remove: content_declaration | replace: "<!--", "<!-- COMMENT BREAK PASS -->" | replace: "-->", "<!-- COMMENT BREAK PASS -->" | split: "<!-- COMMENT BREAK PASS -->" -%}
-									{%- for inline in inlines -%}
-										{%- if inline contains style_declaration -%}
-											<!-- STYLE INDEX PASS -->
-												<!-- STYLE INDEX {{ current_block }} --> {{- inline | remove: style_declaration | strip -}}
-											<!-- STYLE INDEX PASS -->
+					{%- if page_content contains separator -%}
+						{%- assign separated = true -%}
+						{%- assign separated_page_content = page_content | split: separator -%}
+						{%- assign page_content_before = separated_page_content[0] -%}
+						{%- assign page_content_after = separated_page_content[1] -%}
+						{%- if separated_page_content[2] -%}
+							{%- assign extended = true -%}
+						{%- else -%}
+							{%- assign extended = false -%}
+						{%- endif -%}
+						{%- comment -%}
+							<!-- begin style capture for separated articles -->
+						{%- endcomment %}
+						{%- capture article_style_index -%}
+							{%- for article in separated_page_content -%}
+								{%- assign article_index = forloop.index0 -%}
+								{%- if article contains "<!--" -%} {%- comment -%} --> {%- endcomment -%}
+									{%- assign separated_article_content = article | replace: "<!--", "<!-- STYLE BREAK PASS -->" | replace: "-->", "<!-- STYLE BREAK PASS -->" | split: "<!-- STYLE BREAK PASS -->" -%}
+									{%- for item in separated_article_content -%}
+										{%- if item contains "style:" -%}
+											<!-- STYLE INDEX PASS --> <!-- STYLE INDEX {{ article_index }} --> {{- item | remove: "style:" | strip -}}
 										{%- endif -%}
 									{%- endfor -%}
-								{%- endcapture -%}
+								{%- endif -%}
+							{%- endfor -%}
+						{%- endcapture -%}
+						{%- comment -%}
+							<!-- end style capture for separated articles -->
+						{%- endcomment %}
+					{%- else -%}
+						{%- assign separated = false -%}
+						{%- comment -%}
+							<!-- begin style capture for non-separated articles -->
+						{%- endcomment %}
+						{%- capture article_style_index -%}
+							{%- if page_content contains "<!--" -%} {%- comment -%} --> {%- endcomment -%}
+								{%- assign separated_article_content = page_content | replace: "<!--", "<!-- STYLE BREAK PASS -->" | replace: "-->", "<!-- STYLE BREAK PASS -->" | split: "<!-- STYLE BREAK PASS -->" -%}
+								{%- for item in separated_article_content -%}
+									{%- if item contains "style:" -%}
+										<!-- STYLE INDEX PASS --> <!-- STYLE INDEX 0 --> {{- item | remove: "style:" | strip -}}
+									{%- endif -%}
+								{%- endfor -%}
 							{%- endif -%}
-						{%- endfor -%}
-					{%- endcapture -%}
-					{%- comment -%}
-						<!-- end comment capture -->
-					{%- endcomment %}
+						{%- endcapture -%}
+						{%- comment -%}
+							<!-- end style capture for non-separated articles -->
+						{%- endcomment %}
+					{%- endif -%}
 					{%- comment -%}
 						<!-- begin style index -->
 					{%- endcomment %}
-					{%- assign style_index = current_block_comments | split: "<!-- STYLE INDEX PASS -->" -%}
+					{%- assign style_index = article_style_index | split: "<!-- STYLE INDEX PASS -->" -%}
 					{%- comment -%}
 						<!-- end style index -->
 					{%- endcomment %}
 				{%- comment -%}
 					<!-- end setup -->
 				{%- endcomment %}
-				{%- unless cascade %}
+				{%- unless page.layout == "cascade" %}
 				<article class="main_container-main_wrapper">
 					{%- if titled %}
 					<header class="main_wrapper-main_title" {%- if page.['page content'].['title styles'] %} style="{{- page.['page content'].['title styles'] | strip -}}" {%- endif -%}>
@@ -68,27 +80,45 @@
 						</h1>
 					</header>
 					{%- endif %}
-					{%- for block in blocks -%}
-						{%- if block contains content_declaration -%}
-						{%- assign content_specified = true -%}
-					<!-- CONTENT BREAK -->
-						{%- endif -%}
-						{%- unless content_specified -%}
-							{%- if forloop.index0 == 1 -%}
-					<!-- CONTENT BREAK -->
-							{%- endif -%}
-						{%- endunless -%}
-						{%- assign current_block = forloop.index0 -%}
-						{%- assign current_block_styles = current_block | prepend: "<!-- STYLE INDEX " | append: " -->" -%}
-						{%- assign processed_article_content = block | newline_to_br | strip_newlines | remove: "<br />" | strip | remove: " " -%}
+					{%- assign processed_article_content = content | newline_to_br | strip_newlines | remove: "<br />" | strip | remove: " " -%}
+					{%- unless processed_article_content == empty -%}
+						{%- assign article_index = "<!-- STYLE INDEX 0 -->" %}
+					<section class="main_wrapper-main_article --article_text_styling --article_before" style="{%- capture style -%} {%- for item in style_index -%} {%- if item contains article_index -%} {{ item | remove: article_index | strip | append: ';' | replace: ';;', ';' | append: ' ' }} {%- endif -%} {%- endfor -%} {%- endcapture -%} {{- style | strip -}}">
+						{%- if separated %}
+						{{ page_content_before | strip }}
+						{%- else %}
+						{{ content | strip }}
+						{%- endif %}
+					</section>
+					{%- endunless %}
+				<!-- CONTENT BREAK -->
+					{%- if separated -%}
+						{%- assign article_index = "<!-- STYLE INDEX 1 -->" -%}
+						{%- assign processed_article_content = page_content_after | newline_to_br | strip_newlines | remove: "<br />" | strip | remove: " " -%}
 						{%- unless processed_article_content == empty %}
-					<section class="main_wrapper-main_article --article_text_styling" style="{%- capture style -%} {%- for item in style_index -%} {%- if item contains current_block_styles -%} {{ item | remove: current_block_styles | strip | append: ';' | replace: ';;', ';' | append: ' ' }} {%- endif -%} {%- endfor -%} {%- endcapture -%} {{- style | strip -}}">
-						{{ block | strip }}
+					<section class="main_wrapper-main_article --article_text_styling --article_after" style="{%- capture style -%} {%- for item in style_index -%} {%- if item contains article_index -%} {{ item | remove: article_index | strip | append: ';' | replace: ';;', ';' | append: ' ' }} {%- endif -%} {%- endfor -%} {%- endcapture -%} {{- style | strip -}}">
+						{{ page_content_after | strip }}
 					</section>
 						{%- endunless -%}
-					{%- endfor %}
+					{%- endif -%}
+					{%- if extended -%}
+						{%- for article in separated_page_content offset: 2 -%}
+							{%- assign article_index = forloop.index0 | plus: 2 | downcase | prepend: "<!-- STYLE INDEX " | append: " -->" -%}
+							{%- assign processed_article_content = article | newline_to_br | strip_newlines | remove: "<br />" | strip | remove: " " -%}
+							{%- unless processed_article_content == empty %}
+					<section class="main_wrapper-main_article --article_text_styling --article_extended" style="{%- capture style -%} {%- for item in style_index -%} {%- if item contains article_index -%} {{ item | remove: article_index | strip | append: ';' | replace: ';;', '; ' | append: ' ' }} {%- endif -%} {%- endfor -%} {%- endcapture -%} {{- style | strip -}}">
+						{{ article | strip }}
+					</section>
+							{%- endunless -%}
+						{%- endfor -%}
+					{%- endif %}
 				</article>
-				{%- else %}
+				{%- else -%}
+					{%- if page.['page footer'].['is displayed'] -%}
+						{%- assign footered = true -%}
+					{%- else -%}
+						{%- assign footered = false -%}
+					{%- endif %}
 				<div class="main_container-cascade_wrapper" id="cascade_wrapper">
 					{%- if titled %}
 					<header class="cascade_wrapper-title_card" {%- if page.['page content'].['title styles'] %} style="{{- page.['page content'].['title styles'] | strip -}}" {%- endif -%}>
