@@ -74,7 +74,7 @@
 				{%- unless page.layout == "cascade" %}
 				<article class="main_container-main_wrapper">
 					{%- if titled %}
-					<header class="main_wrapper-main_title">
+					<header class="main_wrapper-main_title" {%- if page.['page content'].['title styles'] %} style="{{- page.['page content'].['title styles'] | strip -}}" {%- endif -%}>
 						<h1 class="--article_title_styling">
 							{{ page.title | replace: "&" , "and" }}
 						</h1>
@@ -121,7 +121,7 @@
 					{%- endif %}
 				<div class="main_container-cascade_wrapper" id="cascade_wrapper">
 					{%- if titled %}
-					<header class="cascade_wrapper-title_card">
+					<header class="cascade_wrapper-title_card" {%- if page.['page content'].['title styles'] %} style="{{- page.['page content'].['title styles'] | strip -}}" {%- endif -%}>
 						<h1 class="--article_title_styling">
 							{{ page.title | replace: "&" , "and" }}
 						</h1>
@@ -130,7 +130,7 @@
 					<!-- cascade -->
 					<div style="height: calc(var(--cascade_height)); width: 50vw; background: azure;"></div>
 					{%- if footered %}
-					<footer class="cascade_wrapper-footer_card">
+					<footer class="cascade_wrapper-footer_card" {%- if page.['page footer'].styles %} style="{{- page.['page footer'].styles | strip -}}" {%- endif -%}>
 							{%- include footer.html %}					</footer>
 					{%- endif %}
 				</div>

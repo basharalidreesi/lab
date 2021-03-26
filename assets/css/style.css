@@ -990,6 +990,7 @@
 		justify-content: center;
 		height: calc(var(--cascade_height));
 		overflow-x: auto;
+		overflow-y: hidden;
 	}
 	.--central_header .main_container-cascade_wrapper {
 		--cascade_height: (var(--screen_height) - var(--header_height));
