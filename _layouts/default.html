@@ -95,7 +95,7 @@
 				{%- unless home %}
 				<input type="checkbox" id="supernav_checkbox">
 				<div class="--nav_background"></div>
-				<label for="supernav_checkbox" class="nav_container-supernav_wrapper">
+				<label for="supernav_checkbox" class="nav_container-supernav_wrapper" itemscope>
 						{%- for branch in tree -%}
 							{%- assign segment = page.path | split: branch -%}
 							{%- assign current = branch | prepend: segment[0] | append: ".markdown" -%}
