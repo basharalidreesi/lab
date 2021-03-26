@@ -72,7 +72,7 @@
 					<!-- end setup -->
 				{%- endcomment %}
 				{%- unless page.layout == "cascade" %}
-				<div class="main_container-main_wrapper">
+				<article class="main_container-main_wrapper">
 					{%- if titled %}
 					<header class="main_wrapper-main_title">
 						<h1 class="--article_title_styling">
@@ -83,22 +83,24 @@
 					{%- assign processed_article_content = content | newline_to_br | strip_newlines | remove: "<br />" | strip | remove: " " -%}
 					{%- unless processed_article_content == empty -%}
 						{%- assign article_index = "<!-- STYLE INDEX 0 -->" %}
-					<article class="main_wrapper-main_article --article_text_styling --article_before" style="{%- capture style -%} {%- for item in style_index -%} {%- if item contains article_index -%} {{ item | remove: article_index | strip | append: ';' | replace: ';;', ';' | append: ' ' }} {%- endif -%} {%- endfor -%} {%- endcapture -%} {{- style | strip -}}">
+					<section class="main_wrapper-main_article --article_text_styling --article_before" style="{%- capture style -%} {%- for item in style_index -%} {%- if item contains article_index -%} {{ item | remove: article_index | strip | append: ';' | replace: ';;', ';' | append: ' ' }} {%- endif -%} {%- endfor -%} {%- endcapture -%} {{- style | strip -}}">
+						<h2 class="--section_header">Section {%- if separated %} 1 {%- endif -%}</h2>
 						{%- if separated %}
 						{{ page_content_before | strip }}
 						{%- else %}
 						{{ content | strip }}
 						{%- endif %}
-					</article>
+					</section>
 					{%- endunless %}
 				<!-- CONTENT BREAK -->
 					{%- if separated -%}
 						{%- assign article_index = "<!-- STYLE INDEX 1 -->" -%}
 						{%- assign processed_article_content = page_content_after | newline_to_br | strip_newlines | remove: "<br />" | strip | remove: " " -%}
 						{%- unless processed_article_content == empty %}
-					<article class="main_wrapper-main_article --article_text_styling --article_after" style="{%- capture style -%} {%- for item in style_index -%} {%- if item contains article_index -%} {{ item | remove: article_index | strip | append: ';' | replace: ';;', ';' | append: ' ' }} {%- endif -%} {%- endfor -%} {%- endcapture -%} {{- style | strip -}}">
+					<section class="main_wrapper-main_article --article_text_styling --article_after" style="{%- capture style -%} {%- for item in style_index -%} {%- if item contains article_index -%} {{ item | remove: article_index | strip | append: ';' | replace: ';;', ';' | append: ' ' }} {%- endif -%} {%- endfor -%} {%- endcapture -%} {{- style | strip -}}">
+						<h2 class="--section_header">Section {%- unless page.layout == "article" %} 3 {%- else %} 2 {%- endunless -%}</h2>
 						{{ page_content_after | strip }}
-					</article>
+					</section>
 						{%- endunless -%}
 					{%- endif -%}
 					{%- if extended -%}
@@ -106,13 +108,14 @@
 							{%- assign article_index = forloop.index0 | plus: 2 | downcase | prepend: "<!-- STYLE INDEX " | append: " -->" -%}
 							{%- assign processed_article_content = article | newline_to_br | strip_newlines | remove: "<br />" | strip | remove: " " -%}
 							{%- unless processed_article_content == empty %}
-					<article class="main_wrapper-main_article --article_text_styling --article_extended" style="{%- capture style -%} {%- for item in style_index -%} {%- if item contains article_index -%} {{ item | remove: article_index | strip | append: ';' | replace: ';;', '; ' | append: ' ' }} {%- endif -%} {%- endfor -%} {%- endcapture -%} {{- style | strip -}}">
+					<section class="main_wrapper-main_article --article_text_styling --article_extended" style="{%- capture style -%} {%- for item in style_index -%} {%- if item contains article_index -%} {{ item | remove: article_index | strip | append: ';' | replace: ';;', '; ' | append: ' ' }} {%- endif -%} {%- endfor -%} {%- endcapture -%} {{- style | strip -}}">
+						<h2 class="--section_header">Section {{ article_index | plus: 2 -}}</h2>
 						{{ article | strip }}
-					</article>
+					</section>
 							{%- endunless -%}
 						{%- endfor -%}
 					{%- endif %}
-				</div>
+				</article>
 				{%- else %}
 				<div class="main_container-main_wrapper">
 					<!-- cascade -->
