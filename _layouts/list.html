@@ -59,7 +59,7 @@ layout: default
 								{%- if node.path == subpage %}
 						<div class="--match_above --list_tag_styling"></div>
 						<div class="list_wrapper-list_item" itemscope itemtype="https://schema.org/CreativeWork">
-							<dt class="list_item-item_title --list_title_styling" itemprop="name hasPart">
+							<dt class="list_item-item_title --list_title_styling" itemprop="name">
 								<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}" itemprop="url">
 									{{ node.title }}
 								</a>
@@ -67,7 +67,7 @@ layout: default
 									{%- unless node.tags == empty -%}
 										{%- assign tags = node.tags | sort_natural -%}
 										{%- for tag in tags %}
-							<dd class="list_item-item_tag --list_tag_styling" itemprop="keywords isPartOf">
+							<dd class="list_item-item_tag --list_tag_styling" itemprop="keywords">
 								<div class="--untag"><span class="--untag_click"></span></div>
 								{{ tag | strip }}
 							</dd>
