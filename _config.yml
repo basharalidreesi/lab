@@ -44,6 +44,7 @@ defaults:
       subtext: 
       styles: 
     page footer:
+      is displayed: 
       title: 
       subtext: 
       styles: 

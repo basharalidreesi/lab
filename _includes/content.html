@@ -71,7 +71,7 @@
 				{%- comment -%}
 					<!-- end setup -->
 				{%- endcomment %}
-				<!-- SETUP BREAK -->
+				{%- unless page.layout == "cascade" %}
 				<div class="main_container-main_wrapper">
 					{%- if titled %}
 					<header class="main_wrapper-main_title">
@@ -113,4 +113,9 @@
 						{%- endfor -%}
 					{%- endif %}
 				</div>
+				{%- else %}
+				<div class="main_container-main_wrapper">
+					<!-- cascade -->
+				</div>
+				{%- endunless %}
 				<!-- end content.html -->
