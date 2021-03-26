@@ -1538,21 +1538,22 @@
 └────────────────────────────────────┘
 */
 @media only screen and (max-width: 512px) {
-	/*
-	┌───────┐
-	│ begin └────────┐
-	│ content styles │
-	└────────────────┘
-	*/
-		/*
-		┌───────┐
-		│ begin └────────┐
-		│ contact styles │
-		└────────────────┘
-		*/
-		.main_wrapper-contact_wrapper input {
-			width: 100%;
-			margin-left: 0 !important;
-			margin-right: 0 !important;
-		}
+	.main_wrapper-contact_wrapper input {
+		width: 100%;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+}
+/*
+┌───────┐
+│ begin └─────────────────────────────┐
+│ media query: screen height <= 512px │
+└─────────────────────────────────────┘
+*/
+@media only screen and (max-height: 512px) {
+	.--match_above,
+	.--match_below,
+	.--active_match {
+		display: none !important;
+	}
 }
