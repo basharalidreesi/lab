@@ -70,8 +70,14 @@
 					{%- endif %}
 					{%- for block in blocks -%}
 						{%- if block contains content_declaration -%}
+						{%- assign content_specified = true -%}
 					<!-- CONTENT BREAK -->
 						{%- endif -%}
+						{%- unless content_specified -%}
+							{%- if forloop.index0 == 1 -%}
+					<!-- CONTENT BREAK -->
+							{%- endif -%}
+						{%- endunless -%}
 						{%- assign current_block_index = "<!-- STYLE INDEX {{ forloop.index0 }} -->" -%}
 						{%- assign processed_article_content = block | newline_to_br | strip_newlines | remove: "<br />" | strip | remove: " " -%}
 						{%- unless processed_article_content == empty %}
