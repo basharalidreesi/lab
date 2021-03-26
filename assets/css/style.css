@@ -703,6 +703,11 @@
 		border-top: 1px solid var(--border_colour);
 		border-bottom: 1px solid var(--border_colour);
 	}
+	.--cascade_layout .main_container-main_wrapper {
+		flex-flow: column wrap;
+		overflow-x: auto;
+		/* (...) */
+	}
 	.--central_header .main_wrapper-main_title {
 		border-top: none;
 	}
