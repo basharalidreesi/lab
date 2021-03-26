@@ -23,16 +23,17 @@ layout: default
 				{%- endcomment -%}
 					{{- content_index[0] }}
 					{%- if showcase_tiles %}
-					<article class="main_wrapper-showcase_wrapper main_wrapper-special_content">
+					<article class="main_wrapper-showcase_wrapper main_wrapper-special_content" itemscope="itemscope" itemtype="https://schema.org/VisualArtwork">
 						{%- for tile in showcase_tiles -%}
 							{%- assign tile_name = tile.name | prepend: "/" -%}
 							{%- assign tile_path = tile.path | remove: "assets/graphics/showcase_tiles/" | remove_first: "/" | remove: tile_name -%}
 								{%- if tile_path == page_path %}
-						<picture class="showcase_wrapper-showcase_tile">
-							<img class="--showcase_tile" src="{{- site.baseurl -}}{{- tile.path -}}" alt="{{ tile.basename }}" width="33%">
+						<picture class="showcase_wrapper-showcase_tile" itemprop="artform">
+							<img class="--showcase_tile" src="{{- site.baseurl -}}{{- tile.path -}}" alt="{{ tile.basename }}" width="33%" itemprop="image">
 						</picture>
 								{%- endif -%}
 						{%- endfor %}
+						<meta itemprop="name" content="{{- page.title | strip -}}" />
 					</article>
 					{%- endif -%}
 					{{- content_index[1] }}
