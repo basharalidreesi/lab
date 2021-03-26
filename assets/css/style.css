@@ -999,6 +999,9 @@
 		height: auto;
 		width: 100vw;
 	}
+	.--cascade_layout .--article_title_styling {
+		padding: calc(var(--double));
+	}
 
 
 
