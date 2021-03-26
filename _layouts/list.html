@@ -53,21 +53,21 @@ layout: default
 					{%- endcomment -%}
 					{{- content_index[0] }}
 					{%- unless search_index == empty %}
-					<dl class="main_wrapper-list_wrapper main_wrapper-special_content">
+					<dl class="main_wrapper-list_wrapper main_wrapper-special_content" itemscope="itemscope" itemtype="https://schema.org/Collection">
 						{%- for node in search_scope -%}
 							{%- for subpage in search_index -%}
 								{%- if node.path == subpage %}
 						<div class="--match_above --list_tag_styling"></div>
-						<div class="list_wrapper-list_item">
-							<dt class="list_item-item_title --list_title_styling">
-								<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
+						<div class="list_wrapper-list_item" itemscope itemtype="https://schema.org/CreativeWork">
+							<dt class="list_item-item_title --list_title_styling" itemprop="name hasPart">
+								<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}" itemprop="url">
 									{{ node.title }}
 								</a>
 							</dt>
 									{%- unless node.tags == empty -%}
 										{%- assign tags = node.tags | sort_natural -%}
 										{%- for tag in tags %}
-							<dd class="list_item-item_tag --list_tag_styling">
+							<dd class="list_item-item_tag --list_tag_styling" itemprop="keywords isPartOf">
 								<div class="--untag"><span class="--untag_click"></span></div>
 								{{ tag | strip }}
 							</dd>
