@@ -37,6 +37,10 @@ defaults:
       is titled: false
       title styles:
       content styles:
+    page layout:
+      is titled: false
+      subtext:
+      styles:
     page footer:
       title:
       subtext:
