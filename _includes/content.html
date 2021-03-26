@@ -126,8 +126,11 @@
 							{{ page.title | replace: "&" , "and" }}
 						</h1>
 					</header>
-					{%- endif %}
-					{{ content | strip }}
+					{%- endif -%}
+					{%- assign cards = content | split: "<!-- break -->"-%}
+					{%- for card in cards -%}
+					{{ card | strip }}
+					{%- endfor -%}
 					<div style="height: calc(var(--cascade_height)); width: 50vw; background: black;"></div>
 					{%- if footered %}
 					<footer class="cascade_wrapper-footer_card" {%- if page.['page footer'].styles %} style="{{- page.['page footer'].styles | strip -}}" {%- endif -%}>
