@@ -782,9 +782,15 @@
 		.--cascade_layout .article_wrapper-article_section + .article_wrapper-article_section {
 			margin-left: 0;
 		}
+		.--cascade_layout .article_wrapper-article_section img {
+			
+		}
+		.--cascade_layout .article_wrapper-article_section a img {
+
+		}
 		.--cascade_layout .article_wrapper-article_section iframe {
-			height: calc(var(--cascade_height) - var(--quadruple));
-			width: calc((var(--cascade_height) - var(--quadruple)) * 1.77);
+			height: calc(var(--cascade_height) - var(--quadruple) + 1px);
+			width: calc((var(--cascade_height) - var(--quadruple) + 1px) * 1.77);
 			margin: calc(var(--double_negative));
 			background: #000;
 			border-radius: calc(var(--single));
