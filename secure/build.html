@@ -1,5 +1,5 @@
 ---
-layout: none;
+layout: none
 ---
 
 <!DOCTYPE html>
@@ -7,21 +7,9 @@ layout: none;
         <head>
                 <meta charset="utf-8">
                 <meta name="robots" content="noindex">
-                <title></title>
-                <style>
-                        .para-mother { }
-                        .para-settings { }
-                        .para-viewport { }
-                </style>
+                <title>Build</title>
                 <script>
-                        "use strict";
                         const options = ["vertical", "horizontal"];
-                        /*      # Get HTML asynchronously
-                                #
-                                # url: URL to get HTML from
-                                # callback: A callback funtion.
-                                #       Pass in "response" variable to use returned HTML.
-                        */
                         var getHTML = function (url, callback) {
                         	// Feature detection
                         	if ( !window.XMLHttpRequest ) return;
@@ -39,7 +27,6 @@ layout: none;
                         	xhr.send();
 
                         };
-
                         getHTML("/", function(response) {
                                 document.getElementById("viewport").innerHTML = response.querySelector("body").innerHTML;
                         });
