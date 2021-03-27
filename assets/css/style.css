@@ -771,6 +771,10 @@
 		.--cascade_layout .article_wrapper-article_section {
 			width: auto;
 			height: 100%;
+			padding: 0;
+			padding-top: calc(var(--double));
+			padding-left: calc(var(--double));
+			padding-right: calc(var(--double));
 			border: none;
 		}
 	/*
