@@ -999,6 +999,7 @@
 		height: calc(var(--cascade_height));
 		overflow-x: auto;
 		overflow-y: hidden;
+		border-bottom: none;
 	}
 	.--central_header.--cascade_layout .main_container-article_wrapper {
 		--cascade_height: (var(--screen_height) - var(--header_height) - 1px);
@@ -1009,8 +1010,8 @@
 		height: auto;
 		width: 100vw;
 	}
-	.--cascade_layout .--article_header_styling {
-		padding: calc(var(--double));
+	.--cascade_layout .--article_wrapper-article_section {
+		border: none;
 	}
 
 
