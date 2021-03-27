@@ -3,15 +3,5 @@ layout: default
 ---
 
 <!-- begin cascade.html -->
-					{%- comment -%}
-						<!-- begin article setup -->
-					{%- endcomment -%}
-						{%- capture content_html -%}
-							{%- include content.html -%}
-						{%- endcapture -%}
-						{%- assign content_index = content_html -%}
-					{%- comment -%}
-						<!-- end article setup -->
-					{%- endcomment -%}
-					{{- content_index }}
+					<pre>{{ content }}</pre>
 				<!-- end cascade.html -->
