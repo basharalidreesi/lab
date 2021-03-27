@@ -1010,7 +1010,7 @@
 		height: auto;
 		width: 100vw;
 	}
-	.--cascade_layout .--article_wrapper-article_section {
+	.--cascade_layout .article_wrapper-article_section {
 		border: none;
 	}
 
