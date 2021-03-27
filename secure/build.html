@@ -37,7 +37,7 @@
                         };
 
                         getHTML("/", function(response) {
-                                document.getElementById("viewport").innerHTML = response.documentElement.innerHTML;
+                                document.getElementById("viewport").innerHTML = response.querySelector("body").innerHTML;
                         });
                 </script>
         </head>
