@@ -78,7 +78,6 @@
 				{%- endcomment %}
 
 				<article class="main_container-article_wrapper" id="article_wrapper">
-					{%- unless page.layout == "cascade" -%}
 					{%- if titled %}
 					<header class="article_wrapper-article_header" {%- if page.['page content'].['title styles'] %} style="{{- page.['page content'].['title styles'] | strip -}}" {%- endif -%}>
 						<h1 class="--article_header_styling">
@@ -122,8 +121,5 @@
 					<footer class="article_wrapper-article_footer" {%- if page.['page footer'].styles %} style="{{- page.['page footer'].styles | strip -}}" {%- endif -%}>
 							{%- include footer.html %}					</footer>
 					{%- endif %}
-					{%- else %}
-					{{ content | strip }}
-					{%- endunless %}
 				</article>
 				<!-- end content.html -->

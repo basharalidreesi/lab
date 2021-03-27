@@ -724,6 +724,9 @@
 	.--central_header .article_wrapper-article_header {
 		border-top: none;
 	}
+	.main_container-article_wrapper:last-child {
+		border-bottom: none;
+	}
 	.article_wrapper-article_header {
 		width: 100%;
 	}
