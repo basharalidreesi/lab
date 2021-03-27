@@ -64,6 +64,7 @@ defaults:
 - scope:
     path: secure
   values:
+    permalink: "/:path/:basename"
     hidden: true
     sitemap: false
 baseurl: 
