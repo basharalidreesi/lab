@@ -752,6 +752,17 @@
 	.article_wrapper-article_header + .main_wrapper-special_content {
 		border-top: 1px dashed var(--border_colour);
 	}
+		/*
+		┌───────┐
+		│ begin └────────┐
+		│ cascade styles │
+		└────────────────┘
+		*/
+		.--cascade_layout .main_container-article_wrapper {
+			flex-wrap: wrap;
+			height: calc(var(--cascade_height));
+			border-bottom: none;
+		}
 	/*
 	┌───────┐
 	│ begin └────────┐
@@ -988,12 +999,6 @@
 		height: 100%;
 		width: 100%;
 	} */
-	/*
-	┌───────┐
-	│ begin └────────┐
-	│ cascade styles │
-	└────────────────┘
-	*/
 	/*
 	┌───────┐
 	│ begin └───────┐
