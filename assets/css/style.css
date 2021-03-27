@@ -783,8 +783,8 @@
 			margin-left: 0;
 		}
 		.--cascade_layout .article_wrapper-article_section iframe {
-			height: calc(var(--cascade_height) + 1px);
-			width: calc(var(--cascade_height) * 1.64);
+			height: calc(var(--cascade_height) - var(--quadruple));
+			width: calc((var(--cascade_height) - var(--quadruple)) * 1.77);
 			margin: calc(var(--double_negative));
 			background: #000;
 			border-radius: calc(var(--single));
