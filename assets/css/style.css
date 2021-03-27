@@ -1045,6 +1045,7 @@
 	.--cascade_layout .article_wrapper-article_section > blockquote:first-child,
 	.--cascade_layout .article_wrapper-article_section > table:first-child {
 		padding-top: 0;
+		padding-left: 0;
 		margin-top: calc(var(--double));
 		margin-left: calc(var(--double));
 	}
@@ -1052,6 +1053,7 @@
 	.--cascade_layout .article_wrapper-article_section > ul:last-child,
 	.--cascade_layout .article_wrapper-article_section > blockquote:last-child,
 	.--cascade_layout .article_wrapper-article_section > table:last-child {
+		padding-right: 0;
 		margin-right: calc(var(--double));
 	}
 
