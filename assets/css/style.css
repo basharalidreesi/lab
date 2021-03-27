@@ -762,6 +762,7 @@
 			flex-wrap: wrap;
 			height: calc(var(--cascade_height));
 			border-bottom: none;
+			overflow: auto;
 		}
 	/*
 	┌───────┐
