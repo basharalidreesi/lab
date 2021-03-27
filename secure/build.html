@@ -4,6 +4,42 @@
                 <meta charset="utf-8">
                 <meta name="robots" content="noindex">
                 <title></title>
+                <style>
+                        .para-mother { }
+                        .para-settings { }
+                        .para-viewport { }
+                </style>
+                <script>
+                        "use strict";
+                        const options = ["vertical", "horizontal"];
+                        /*      # Get HTML asynchronously
+                                #
+                                # url: URL to get HTML from
+                                # callback: A callback funtion.
+                                #       Pass in "response" variable to use returned HTML.
+                        */
+                        var getHTML = function (url, callback) {
+                        	// Feature detection
+                        	if ( !window.XMLHttpRequest ) return;
+                        	// Create new request
+                        	var xhr = new XMLHttpRequest();
+                        	// Setup callback
+                        	xhr.onload = function() {
+                        		if ( callback && typeof( callback ) === 'function' ) {
+                        			callback( this.responseXML );
+                        		}
+                        	}
+                        	// Get the HTML
+                        	xhr.open( 'GET', url );
+                        	xhr.responseType = 'document';
+                        	xhr.send();
+
+                        };
+
+                        getHTML("/", function(response) {
+                                document.getElementById("viewport").innerHTML = response.documentElement.innerHTML;
+                        });
+                </script>
         </head>
         <body>
                 <div class="para-mother" id="para-mother">
