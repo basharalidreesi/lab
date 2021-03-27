@@ -37,10 +37,16 @@
                         };
 
                         getHTML("/", function(response) {
-                                document.getElementById("viewport").innerHTML = response.querySelector("body").innerHTML;
+                                const body = response.querySelector("body").innerHTML;
+                                document.getElementById("viewport").innerHTML = body;
                         });
                 </script>
-        </head>
+                {%- include colours.css.html -%}
+		{%- include fonts.css.html %}		<script src="{{- site.baseurl -}}/assets/js/svg-inject.min.js"></script>
+		{%- include script.js.html %}		<script src="{{- site.baseurl -}}/assets/js/script.js"></script>
+		<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/style.css" media="screen"/>
+		{%- include style.css.html -%}
+		{%- include noscript.css.html %}	</head>
         <body>
                 <div class="para-mother" id="para-mother">
                         <div class="para-settings" id="settings"></div>
