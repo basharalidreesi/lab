@@ -764,6 +764,15 @@
 			border-bottom: none;
 			overflow: auto;
 		}
+		.--cascade_layout .article_wrapper-article_header,
+		.--cascade_layout .article_wrapper-article_footer {
+			width: 100%;
+		}
+		.--cascade_layout .article_wrapper-article_section {
+			width: auto;
+			height: 100%;
+			border: none;
+		}
 	/*
 	┌───────┐
 	│ begin └────────┐
