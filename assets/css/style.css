@@ -408,7 +408,7 @@
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 		background-size: 100% 2px;
 	}
-	.--article_section_styling a:not(a img) {
+	.--article_section_styling a:not(> img) {
 		font-family: inherit;
 		font-size: inherit;
 		font-weight: inherit;
@@ -721,7 +721,7 @@
 		border-top: 1px solid var(--border_colour);
 		border-bottom: 1px solid var(--border_colour);
 	}
-	.--central_header .article_wrapper-article_header {
+	.--central_header .main_container-article_wrapper {
 		border-top: none;
 	}
 	.main_container-article_wrapper:last-child {
