@@ -1011,7 +1011,17 @@
 		width: 100vw;
 	}
 	.--cascade_layout .article_wrapper-article_section {
-		border: none;
+		height: 100%;
+		max-width: calc(100vw - var(--quadruple));
+		padding: 0;
+		padding-left: calc(var(--double));
+		padding-right: calc(var(--double));
+		margin: calc(var(--double));
+		border: 1px solid var(--border_colour);
+		border-radius: calc(var(--single));
+	}
+	.article_wrapper-article_section > *:first-child {
+		padding-top: calc(var(--double));
 	}
 
 
