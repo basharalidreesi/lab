@@ -774,6 +774,7 @@
 			padding: calc(var(--double));
 			margin: calc(var(--double));
 			border: 1px solid var(--border_colour);
+			border-radius: calc(var(--single));
 		}
 		.--cascade_layout .article_wrapper-article_section + .article_wrapper-article_section {
 			margin-left: 0;
