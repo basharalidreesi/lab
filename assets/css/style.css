@@ -772,7 +772,11 @@
 			width: auto;
 			height: 100%;
 			padding: calc(var(--double));
-			border: none;
+			margin: calc(var(--double));
+			border: 1px solid var(--border_colour);
+		}
+		.--cascade_layout .article_wrapper-article_section + .article_wrapper-article_section {
+			margin-left: 0;
 		}
 	/*
 	┌───────┐
