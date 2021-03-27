@@ -41,8 +41,7 @@ layout: none;
                         };
 
                         getHTML("/", function(response) {
-                                const body = response.querySelector("body").innerHTML;
-                                document.getElementById("viewport").innerHTML = body;
+                                document.getElementById("viewport").innerHTML = response.querySelector("body").innerHTML;
                         });
                 </script>
                 {%- include colours.css.html -%}
