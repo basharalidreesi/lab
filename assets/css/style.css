@@ -1006,6 +1006,7 @@
 	.--central_header.--cascade_layout .main_container-article_wrapper {
 		--cascade_height: (var(--screen_height) - var(--header_height) - 1px);
 		margin-top: calc(var(--nav_height));
+		border-top: 1px solid var(--border_colour);
 	}
 	.--cascade_layout .article_wrapper-article_header,
 	.--cascade_layout .article_wrapper-article_footer {
