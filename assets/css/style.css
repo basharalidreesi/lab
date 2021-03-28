@@ -763,6 +763,7 @@
 		width: calc(100% - var(--quadruple));
 		margin: calc(var(--double));
 		border: 1px solid var(--border_colour);
+		border-radius: calc(var(--single));
 	}
 	.article_wrapper-article_section.--anchored_image img {
 		display: block;
