@@ -16,7 +16,7 @@ layout: default
 							{%- for block in blocks -%}
 								{%- assign index = forloop.index0 -%}
 								{%- if block contains "</p>" -%}
-									{%- if block contains "<img" -%}
+									{%- if block contains "<img" -%} {%- comment -%} > {%- endcomment -%}
 										{%- if block contains "</a>" -%}
 											{%- assign tag = "img a" -%}
 											{%- assign class = "img a" -%}
@@ -41,6 +41,10 @@ layout: default
 									{%- assign tag = "iframe" -%}
 									{%- assign class = "iframe" -%}
 									{%- assign style = "iframe" -%}
+								{%- elsif block contains "</ul>" -%}
+									{%- assign tag = "iframe" -%}
+									{%- assign class = "iframe" -%}
+									{%- assign style = "iframe" -%}
 								{%- else -%}
 									{%- assign tag = "undef" -%}
 									{%- assign class = "undef" -%}
@@ -53,30 +57,59 @@ layout: default
 								<!-- --> STYLE {{ style }} <!-- -->
 							{%- endfor -%}
 						{%- endcapture -%}
+						{%- if page.['page title'].['is displayed'] -%}
+							{%- assign preceded = true -%}
+						{%- else -%}
+							{%- assign preceded = false -%}
+						{%- endif -%}
+						{%- if page.['page footer'].['is displayed'] -%}
+							{%- assign succeeded = true -%}
+						{%- else -%}
+							{%- assign succeeded = false -%}
+						{%- endif -%}
+						{%- if page.layout == "cascade" -%}
+							{%- assign cascade = true -%}
+						{%- else -%}
+							{%- assign cascade = false -%}
+						{%- endif -%}
 						{%- assign block_content = processed_blocks | split: "<!-- BLOCK BREAK -->" -%}
 					{%- comment -%}
 						<!-- end cascade setup -->
-					{%- endcomment -%}
-					{%- for block in blocks %}
-						{%- assign local = forloop.index0 | prepend: "<!-- --> INDEX " | append: " <!-- -->" -%}
-						{%- for data in block_content -%}
-							{%- if data contains local -%}
-								{%- assign separated_data = data | remove: local | split: "<!-- -->" -%}
-								{%- for datum in separated_data -%}
-									{%- if datum contains "TAG" -%}
-										{%- assign tag = datum | remove: "TAG" | strip -%}
-									{%- endif -%}
-									{%- if datum contains "CLASS" -%}
-										{%- assign class = datum | remove: "CLASS" | strip -%}
-									{%- endif -%}
-									{%- if datum contains "STYLE" -%}
-										{%- assign style = datum | remove: "STYLE" | strip -%}
-									{%- endif -%}
-								{%- endfor -%}
-							{%- endif -%}
-						{%- endfor %}
-					<section class="{{ class }}" style="{{ style }}">
-						{{ block | strip_html }}
-					</section>
-					{%- endfor %}
+					{%- endcomment %}
+					<article class="main_container-article_wrapper" id="article_wrapper">
+						{%- if preceded %}
+						<header class="article_wrapper-article_header" {%- if page.['page title'].['styles'] %} style="{{- page.['page title'].['styles'] | strip -}}" {%- endif -%}>
+							<h1 class="--article_header_styling">
+								{{ page.title | replace: "&" , "and" }}
+							</h1>
+						</header>
+						{%- endif -%}
+						{%- for block in blocks -%}
+							{%- assign local = forloop.index0 | prepend: "<!-- --> INDEX " | append: " <!-- -->" -%}
+							{%- for data in block_content -%}
+								{%- if data contains local -%}
+									{%- assign separated_data = data | remove: local | split: "<!-- -->" -%}
+									{%- for datum in separated_data -%}
+										{%- if datum contains "TAG" -%}
+											{%- assign tag = datum | remove: "TAG" | strip -%}
+										{%- endif -%}
+										{%- if datum contains "CLASS" -%}
+											{%- assign class = datum | remove: "CLASS" | strip -%}
+										{%- endif -%}
+										{%- if datum contains "STYLE" -%}
+											{%- assign style = datum | remove: "STYLE" | strip -%}
+										{%- endif -%}
+									{%- endfor -%}
+								{%- endif -%}
+							{%- endfor %}
+						<section class="{{ class }}" style="{{ style }}">
+							<h2>Section {{ local | plus: 1 }}</h2>
+							{{ block | strip_html }}
+						</section>
+						{%- endfor -%}
+						{%- if cascade and succeeded %}
+						<footer class="article_wrapper-article_footer" {%- if page.['page footer'].styles %} style="{{- page.['page footer'].styles | strip -}}" {%- endif -%}>
+								{%- include footer.html %}					</footer>
+						{%- endif %}
+					</article>
 					<!-- end cascade.html -->
