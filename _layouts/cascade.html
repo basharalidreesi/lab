@@ -35,7 +35,12 @@ layout: default
 									{%- assign class = "null" -%}
 								{%- endif -%}
 								{%- if block contains "<!-- style:" -%} {%- comment -%} --> {%- endcomment -%}
-									{%- assign style = "style" -%}
+									{%- assign processed_block = block | replace: "<!--", "<!-- BLOCK STYLE PASS -->" | replace: "-->", "<!-- BLOCK STYLE PASS -->" | split: "<!-- BLOCK STYLE PASS -->" -%}
+									{%- for node in processed_block -%}
+										{%- if node contains "style:" -%}
+											{%- assign style = node | remove: "style:" -%}
+										{%- endif -%}
+									{%- endfor -%}
 								{%- endif -%}
 								<!-- BLOCK BREAK -->
 								<!-- --> PARSE {{ parse }} <!-- -->
