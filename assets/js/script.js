@@ -98,7 +98,7 @@
 		}
 		if (list) {
 			window.addEventListener("DOMContentLoaded", () => {
-				const tags = document.querySelectorAll(".list_item-item_tag");
+				const tags = document.querySelectorAll(".item_description-item_tag");
 				const untags = document.querySelectorAll(".--untag");
 				const matches_above = document.querySelectorAll(".--match_above");
 				const matches_below = document.querySelectorAll(".--match_below");
@@ -246,7 +246,7 @@
 		const items = document.querySelectorAll(".list_wrapper-list_item");
 		items.forEach((item) => {
 			let tag_index = [];
-			let tags = item.querySelectorAll(":scope > .list_item-item_tag");
+			let tags = item.querySelectorAll(":scope .item_description-item_tag");
 			tags.forEach((tag) => {
 				tag_index.push(tag.textContent.trim());
 				tag.style.cursor = "cell";
