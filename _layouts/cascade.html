@@ -21,7 +21,7 @@ layout: default
 										{%- assign tag = "img a" -%}
 										{%- assign class = "img a" -%}
 									{%- else -%}
-										{%- assign prase = "true" -%}
+										{%- assign parse = "true" -%}
 										{%- assign tag = "img" -%}
 										{%- assign class = "img" -%}
 									{%- endif -%}
@@ -111,7 +111,7 @@ layout: default
 								remove: "<p></p>"
 							}}
 						</section>
-							{%-else %}
+							{%- else %}
 						<section class="{{ class }}" style="{{ style }}">
 							<h2>Section {{ count }}</h2>
 							{{ block | strip }}
