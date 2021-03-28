@@ -11,6 +11,8 @@ page navigation:
   is navigable: true
 page title:
   is displayed: false
+page content:
+  content styles: "--secondary_colour: #dfdfdf;"
 page footer:
   styles: 'background: #dfdfdf;'
 layout: contact
