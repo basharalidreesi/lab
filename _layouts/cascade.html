@@ -79,10 +79,10 @@ layout: default
 								{%- if data contains local -%}
 									{%- assign separated_data = data | remove: local | split: "<!-- -->" -%}
 									{%- for datum in separated_data -%}
-										{%- if datum contains "PARSE TRUE" -%}
+										{%- if datum contains "PARSE true" -%}
 											{%- assign parse = true -%}
 										{%- endif -%}
-										{%- if datum contains "PARSE FALSE" -%}
+										{%- if datum contains "PARSE false" -%}
 											{%- assign parse = false -%}
 										{%- endif -%}
 										{%- if datum contains "TAG" -%}
