@@ -13,35 +13,27 @@ page colours:
   secondary colour: lightcyan
   border colour: blue
   text colour: blue
+page title:
+  styles: 'margin: 2rem; padding: 8rem; border: 1px solid blue; border-radius: 100%;'
 layout: cascade
 ---
 
 [![Untitled-1.png](/uploads/Untitled-1.png)](hello)
 
-<!-- style: background: #ffff33; -->
+<!-- break -->
+
+[![Untitled-1.png](/uploads/Untitled-1.png)](hello)
 
 <!-- break -->
 
 [![Untitled-1.png](/uploads/Untitled-1.png)](hello)
 
-<!-- style: background: #ff003f; -->
-
 <!-- break -->
 
 [![Untitled-1.png](/uploads/Untitled-1.png)](hello)
 
-<!-- style: background: #3f00ff; -->
-
 <!-- break -->
 
 [![Untitled-1.png](/uploads/Untitled-1.png)](hello)
-
-<!-- style: background: #360ccc; -->
-
-<!-- break -->
-
-[![Untitled-1.png](/uploads/Untitled-1.png)](hello)
-
-<!-- style: background: #7df9ff; -->
 
 <!-- break -->
