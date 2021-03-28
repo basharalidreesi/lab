@@ -91,11 +91,11 @@ Thus, he tried to get his upper body out of the bed first and turned his head ca
 
 <!-- break -->
 
-![Untitled.png](/uploads/Untitled.png)
+![Screen Shot 2021-03-28 at 23.21.45.png](/uploads/Screen%20Shot%202021-03-28%20at%2023.21.45.png)
 
 <!-- break -->
 
-[![Untitled.png](/uploads/Untitled.png)](http://www.google.com)
+[![Screen Shot 2021-03-28 at 23.21.50.png](/uploads/Screen%20Shot%202021-03-28%20at%2023.21.50.png)](http://google.com)
 
 <!-- break -->
 
