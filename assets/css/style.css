@@ -720,6 +720,7 @@
 	}
 	.article_wrapper-article_header {
 		width: 100%;
+		overflow: hidden;
 	}
 	.article_wrapper-article_header h1 {
 		padding: calc(var(--double));
