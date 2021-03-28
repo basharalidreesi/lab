@@ -19,16 +19,18 @@ layout: default
 									{%- assign tag = "p" -%}
 									{%- assign class = "paragraph" -%}
 									{%- assign style = "lololojniodbab" -%}
-								{%- endif -%}
-								{%- if block contains "</p>" and "<img" -%}
+								{%- elsif block contains "</p>" and block contains "<img" -%}
 									{%- assign tag = "picture" -%}
 									{%- assign class = "picture" -%}
 									{%- assign style = "loololl" -%}
-								{%- endif -%}
-								{%- if block contains "</p>" and "</a>" and "<img" -%} {%- comment -%} > {%- endcomment -%}
+								{%- elsif block contains "</p>" and block contains "</a>" and block contains "<img" -%} {%- comment -%} > {%- endcomment -%}
 									{%- assign tag = "picture" -%}
 									{%- assign class = "picturewithlink" -%}
 									{%- assign style = "lol" -%}
+								{%- else -%}
+									{%- assign tag = "undef" -%}
+									{%- assign class = "undef" -%}
+									{%- assign style = "none" -%}
 								{%- endif -%}
 								<!-- BLOCK BREAK -->
 								<!-- --> INDEX {{ index }} <!-- -->
