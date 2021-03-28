@@ -702,7 +702,7 @@
 	*/
 	.main_container-article_wrapper {
 		display: flex;
-		flex-flow: column nowrap;
+		flex-flow: row wrap;
 		align-items: center;
 		justify-content: center;
 		width: 100%;
@@ -1021,7 +1021,7 @@
 	└────────────────┘
 	*/
 	.--cascade_layout .main_container-article_wrapper {
-		flex-wrap: wrap;
+		flex-flow: column wrap;
 		height: calc(var(--cascade_height));
 		border-bottom: none;
 		overflow: auto;
