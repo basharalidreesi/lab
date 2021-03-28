@@ -208,6 +208,7 @@
 				</div>
 			</header>
 			<main class="mother_container-main_container" id="main_container" {%- if page.['page content'].['content styles'] %} style="{{- page.['page content'].['content styles'] | strip -}}" {%- endif -%}>
+
 				{{ content }}
 			</main>
 			{%- unless cascade -%}
