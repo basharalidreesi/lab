@@ -14,7 +14,6 @@
 							{%- for block in blocks -%}
 								{%- assign index = forloop.index0 -%}
 								{%- assign style = "null" -%}
-								{%- assign special = "false" -%}
 								{%- if block contains "<img" -%} {%- comment -%} > {%- endcomment -%}
 									{%- if block contains "</a>" -%}
 										{%- assign parse = "true" -%}
@@ -42,16 +41,12 @@
 										{%- endif -%}
 									{%- endfor -%}
 								{%- endif -%}
-								{%- if block contains "<!-- special -->" -%}
-									{%- assign special = "true" -%}
-								{%- endif -%}
 								<!-- BLOCK BREAK -->
 								<!-- --> PARSE {{ parse }} <!-- -->
 								<!-- --> INDEX {{ index }} <!-- -->
 								<!-- --> TAG {{ tag }} <!-- -->
 								<!-- --> CLASS {{ class }} <!-- -->
 								<!-- --> STYLE {{ style }} <!-- -->
-								<!-- --> SPECIAL {{ special }} <!-- -->
 							{%- endfor -%}
 						{%- endcapture -%}
 						{%- if page.['page title'].['is displayed'] -%}
@@ -104,11 +99,6 @@
 										{%- else -%}
 											{%- assign style = "null" -%}
 										{%- endunless -%}
-										{%- if datum contains "SPECIAL true" -%}
-											{%- assign special = true -%}
-										{%- else -%}
-											{%- assign special = false -%}
-										{%- endif -%}
 									{%- endfor -%}
 								{%- endif -%}
 							{%- endfor -%}
@@ -128,9 +118,6 @@
 						</section>
 							{%- endif -%}
 						{%- endfor -%}
-							{%- if special -%}
-						<!-- SPECIAL BLOCK BREAK -->
-							{%- endif -%}
 						{%- if cascade and succeeded %}
 						<footer class="article_wrapper-article_footer" {%- if page.['page footer'].styles %} style="{{- page.['page footer'].styles | strip -}}" {%- endif -%}>
 							{%- include footer.html %}						</footer>
