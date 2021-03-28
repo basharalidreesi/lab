@@ -102,6 +102,11 @@
 									{%- endfor -%}
 								{%- endif -%}
 							{%- endfor -%}
+							{%- unless blocks contains "<!-- special -->" -%}
+								{%- if forloop.index0 == 1 %}
+						<!-- special -->
+								{%- endfor -%}
+							{%- endfor -%}
 							{%- if parse %}
 						<section class="article_wrapper-article_section --{{ class }}" {%- unless style == "null" %} style="{{ style }}" {%- endunless -%}>
 								{%- unless tag == "null" %}
