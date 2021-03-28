@@ -110,17 +110,14 @@ layout: default
 								{%- unless tag == "null" %}
 							<{{ tag }}>
 								{%- endunless %}
-							{{ block |
-								remove: "<p>" |
-								remove: "</p>"
-							}}
+							{{ block | remove: "<p>" | remove: "</p>" | strip | tidy }}
 								{%- unless tag == "null" %}
 							</{{ tag }}>
 								{%- endunless %}
 						</section>
 							{%- else %}
 						<section class="article_wrapper-article_section --article_section_styling" {%- unless style == "null" %} style="{{ style }}" {%- endunless -%}>
-							{{ block | strip }}
+							{{ block | strip | tidy }}
 						</section>
 							{%- endif -%}
 						{%- endfor -%}
