@@ -106,9 +106,11 @@ layout: default
 								strip_html |
 								replace: "!TAG!OPEN!p!TAG!CLOSE!!TAG!OPEN!img", "<img" |
 								replace: "/!TAG!CLOSE!!TAG!OPEN!/p!TAG!CLOSE!", "/>" |
+								replace: "!TAG!OPEN!p!TAG!CLOSE!!TAG!OPEN!a", "<a" |
+								replace: "!TAG!CLOSE!!TAG!OPEN!img", "<img" |
+								replace: "/!TAG!CLOSE!!TAG!OPEN!/a!TAG!CLOSE!!TAG!OPEN!/p!TAG!CLOSE!", "/></a>" |
 								replace: "!TAG!OPEN!iframe", "<iframe" |
-								replace: "!TAG!CLOSE!!TAG!OPEN!/iframe!TAG!CLOSE!", "></iframe>" |
-								remove: "<p></p>"
+								replace: "!TAG!CLOSE!!TAG!OPEN!/iframe!TAG!CLOSE!", "></iframe>"
 							}}
 						</section>
 							{%- else %}
