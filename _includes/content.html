@@ -8,8 +8,12 @@
 							{{ content }}
 						{%- endcapture -%}
 						{%- assign separator = "<!-- break -->" -%}
-						{%- assign processed_separator = "!<!-!-! !break! !-!-!>!" -%}
 						{%- assign blocks = page_content | split: separator -%}
+						{%- if blocks contains "<!-- special -->" -%}
+							{%- assign special = true -%}
+						{%- else -%}
+							{%- assign special = false -%}
+						{%- endif -%}
 						{%- capture processed_blocks -%}
 							{%- for block in blocks -%}
 								{%- assign index = forloop.index0 -%}
@@ -102,11 +106,11 @@
 									{%- endfor -%}
 								{%- endif -%}
 							{%- endfor -%}
-							{%- unless blocks contains "<!-- special -->" -%}
-								{%- if forloop.index0 == 1 %}
+							{%- unless special -%}
+								{%- if forloop.index0 == 1-%}
 						<!-- special2 -->
 								{%- endif -%}
-							{%- endunless -%}
+							{%- endif -%}
 							{%- if parse %}
 						<section class="article_wrapper-article_section --{{ class }}" {%- unless style == "null" %} style="{{ style }}" {%- endunless -%}>
 								{%- unless tag == "null" %}
