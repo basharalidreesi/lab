@@ -17,6 +17,3 @@ page title:
 layout: list
 ---
 
-Test
-
-<!-- special -->
