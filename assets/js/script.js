@@ -285,7 +285,7 @@
 			filter_index = [];
 			seeker.disconnect();
 			console.log("Unfiltered all.");
-			const tags = document.querySelectorAll(".list_item-item_tag");
+			const tags = document.querySelectorAll(".item_description-item_tag");
 			tags.forEach((tag) => {
 				tag.removeAttribute("style");
 			});
