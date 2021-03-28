@@ -18,21 +18,21 @@ layout: default
 								{%- if block contains "<img" -%} {%- comment -%} > {%- endcomment -%}
 									{%- if block contains "</a>" -%}
 										{%- assign parse = "true" -%}
-										{%- assign tag = "img a" -%}
+										{%- assign tag = "picture" -%}
 										{%- assign class = "anchored_image" -%}
 									{%- else -%}
 										{%- assign parse = "true" -%}
-										{%- assign tag = "img" -%}
+										{%- assign tag = "picture" -%}
 										{%- assign class = "image" -%}
 									{%- endif -%}
 								{%- elsif block contains "</iframe>" -%}
 									{%- assign parse = "true" -%}
-									{%- assign tag = "iframe" -%}
+									{%- assign tag = "null" -%}
 									{%- assign class = "iframe" -%}
 								{%- else -%}
 									{%- assign parse = "false" -%}
-									{%- assign tag = "undef" -%}
-									{%- assign class = "undef" -%}
+									{%- assign tag = "null" -%}
+									{%- assign class = "null" -%}
 								{%- endif -%}
 								{%- if block contains "<!-- style:" -%} {%- comment -%} --> {%- endcomment -%}
 									{%- assign style = "style" -%}
@@ -99,10 +99,16 @@ layout: default
 							{%- endfor -%}
 							{%- if parse %}
 						<section class="article_wrapper-article_section --{{ class }}" style="{{ style }}">
+								{%- unless tag == "null" %}
+							<{{ tag }}>
+								{%- endunless %}
 							{{ block |
 								remove: "<p>" |
 								remove: "</p>"
 							}}
+								{%- unless tag == "null" %}
+							</{{ tag }}>
+								{%- endunless %}
 						</section>
 							{%- else %}
 						<section class="article_wrapper-article_section --article_section_styling" style="{{ style }}">
