@@ -724,7 +724,7 @@
 	.--central_header .main_container-article_wrapper {
 		border-top: none;
 	}
-	.main_container-article_wrapper:last-child {
+	.mother_container-main_container:last-child .main_container-article_wrapper {
 		border-bottom: none;
 	}
 	.article_wrapper-article_header {
