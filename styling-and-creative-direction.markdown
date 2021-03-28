@@ -8,12 +8,12 @@ page colours:
   border colour: "#2e2e2e"
   text colour: "#2e2e2e"
   placeholder colour: "#2e2e2e"
-page root:
-  styles: "--secondary_colour: #dfdfdf;"
 page navigation:
   is navigable: true
 page title:
   is displayed: false
+page footer:
+  styles: 'background: #dfdfdf;'
 layout: list
 ---
 
