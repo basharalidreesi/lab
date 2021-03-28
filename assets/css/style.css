@@ -318,10 +318,6 @@
 		border: 1px solid var(--border_colour);
 		border-radius: calc(var(--single));
 	}
-	.--article_section_styling img {
-		display: block;
-		width: 100%;
-	}
 	.--article_section_styling table {
 		table-layout: fixed;
 		width: 100%;
@@ -747,6 +743,26 @@
 	.article_wrapper-article_header + .main_wrapper-special_content {
 		border-top: 1px dashed var(--border_colour);
 	}
+
+
+	.article_wrapper-article_section.--image {
+		padding: 0;
+	}
+	.article_wrapper-article_section.--anchored_image {
+
+	}
+	.article_wrapper-article_section picture {
+		height: auto;
+		width: 100%;
+	}
+	.article_wrapper-article_section img {
+		display: block;
+		height: auto;
+		width: 100%;
+	}
+
+
+
 	.article_wrapper-article_section.--iframe {
 		padding: 0;
 	}
