@@ -27,10 +27,10 @@ One morning, when Gregor Samsa woke from troubled dreams, he found himself *tran
 ## The bedding was hardly able to cover it.
 
 It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer a solid fur muff into which her entire forearm disappeared.
-
+<!-- style: -->
 <!-- break -->
 
-<!-- style: width: 50vw; height: 50vw; border-radius: 100%; background-color: var(--text_colour); border: none; padding: 0; margin-bottom: 2rem; -->
+<!-- style: width: 25vw; height: 25vw; border-radius: 100%; background-color: var(--text_colour); border: none; padding: 0; -->
 
 <!-- break -->
 
@@ -77,9 +77,9 @@ It was very easy to throw aside the blanket. He needed only to push himself up a
 
 > At first he wanted to get off the bed with the lower part of his body, but this lower part (which he incidentally had not yet looked at and which he also couldn't picture clearly) proved itself too difficult to move. The attempt went so slowly. When, having become almost frantic, he finally hurled himself forward with all his force and without thinking, he chose his direction incorrectly, and he hit the lower bedpost hard. The violent pain he felt revealed to him that the lower part of his body was at the moment probably the most sensitive.
 
-<!-- break -->
-
 Thus, he tried to get his upper body out of the bed first and turned his head carefully toward the edge of the bed. He managed to do this easily, and in spite of its width and weight his body mass at last slowly followed the turning of his head. But as he finally raised his head outside the bed in the open air, he became anxious about moving forward any further in this manner, for if he allowed himself eventually to fall by this process, it would take a miracle to prevent his head from getting injured. And at all costs he must not lose consciousness right now. He preferred to remain in bed.
+
+<!-- style: background: yellow; -->
 
 <!-- break -->
 
@@ -88,6 +88,14 @@ Thus, he tried to get his upper body out of the bed first and turned his head ca
 <!-- break -->
 
 <iframe src="https://player.vimeo.com/video/27244727?color=ffffff" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+
+<!-- break -->
+
+![Untitled.png](/uploads/Untitled.png)
+
+<!-- break -->
+
+[![Untitled.png](/uploads/Untitled.png)](http://www.google.com)
 
 <!-- break -->
 
