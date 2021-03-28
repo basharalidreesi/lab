@@ -106,6 +106,8 @@ layout: default
 						<section class="{{ class }}" style="{{ style }}">
 							<h2>Section {{ count }}</h2>
 							{{ block | strip_html }}
+							{{ block | strip_html | markdownify }}
+							{{ block }}
 						</section>
 						{%- endfor -%}
 						{%- if cascade and succeeded %}
