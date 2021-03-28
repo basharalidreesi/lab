@@ -860,6 +860,7 @@
 	}
 	.list_wrapper-list_item {
 		width: 100%;
+		transition: background-color 0.25s;
 	}
 	.list_wrapper-list_item ~ .list_wrapper-list_item {
 		border-top: 1px dashed var(--border_colour);
@@ -873,7 +874,6 @@
 		padding: calc(var(--screen_width_third));
 		padding-top: calc(var(--double));
 		padding-bottom: calc(var(--single));
-		transition: background-color 0.25s;
 	}
 	.item_description-item_title {
 		width: 100%;
