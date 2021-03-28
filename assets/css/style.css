@@ -1104,7 +1104,7 @@
 	.--cascade_layout .article_wrapper-article_section.--image + .article_wrapper-article_section {
 		margin-left: calc(var(--double));
 	}
-	* + .--cascade_layout .article_wrapper-article_section.--anchored_image {
+	*:not(.--cascade_layout .article_wrapper-article_section.--image) + .--cascade_layout .article_wrapper-article_section.--anchored_image {
 		margin-left: calc(var(--double_negative));
 	}
 	/*
