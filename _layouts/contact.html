@@ -28,5 +28,9 @@ layout: default
 					{%- comment -%}
 						<!-- end contact setup -->
 					{%- endcomment -%}
-					{{ content_html | replace: "<!-- special -->", contact | replace: "<!-- special2 -->", contact }}
+					{%- if content_html contains "<!-- special -->" %}
+					{{ content_html | replace: "<!-- special -->", contact }}
+					{%- else %}
+					{{ content_html | replace: "<!-- special2 -->", contact }}
+					{%- endif %}
 				<!-- end contact.html -->
