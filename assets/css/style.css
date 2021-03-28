@@ -522,6 +522,9 @@
 	.mother_container-footer_container {
 		order: 4;
 		flex: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 	.mother_container-header_container,
 	.mother_container-nav_container,
