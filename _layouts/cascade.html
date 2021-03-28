@@ -50,6 +50,9 @@ layout: default
 									{%- assign class = "undef" -%}
 									{%- assign style = "none" -%}
 								{%- endif -%}
+								{%- if block contains "<!-- style:" -%} {%- comment -%} --> {%- endcomment -%}
+									{%- assign style = "style" -%}
+								{%- endif -%}
 								<!-- BLOCK BREAK -->
 								<!-- --> INDEX {{ index }} <!-- -->
 								<!-- --> TAG {{ tag }} <!-- -->
