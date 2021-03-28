@@ -25,7 +25,7 @@ It showed a lady fitted out with a fur hat and fur boa who sat upright, raising 
 <!-- style: -->
 <!-- break -->
 
-<!-- style: width: 50vw; height: 50vw; border-radius: 100%; background-color: var(--text_colour); border: none; padding: 0; margin-bottom: 2rem; -->
+<!-- style: width: 25vw; height: 25vw; border-radius: 100%; background-color: var(--text_colour); border: none; padding: 0; -->
 
 <!-- break -->
 
@@ -90,7 +90,7 @@ Thus, he tried to get his upper body out of the bed first and turned his head ca
 
 <!-- break -->
 
-[![Untitled.png](/uploads/Untitled.png)](google.com)
+[![Untitled.png](/uploads/Untitled.png)](http://www.google.com)
 
 <!-- break -->
 
