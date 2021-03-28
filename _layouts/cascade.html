@@ -17,6 +17,8 @@ layout: default
 						<!-- end cascade setup -->
 					{%- endcomment -%}
 					{%- for processed_block in processed_blocks %}
-					{{ processed_block }}
+					<section>
+						{{ processed_block | strip }}
+					</section>
 					{%- endfor %}
 					<!-- end cascade.html -->
