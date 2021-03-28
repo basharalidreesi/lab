@@ -18,30 +18,30 @@ layout: cascade
 
 [![Untitled-1.png](/uploads/Untitled-1.png)](hello)
 
-<!-- style: background: #8878c3; -->
+<!-- style: background: #ffff33; -->
 
 <!-- break -->
 
 [![Untitled-1.png](/uploads/Untitled-1.png)](hello)
 
-<!-- style: background: #b57281; -->
+<!-- style: background: #ff003f; -->
 
 <!-- break -->
 
 [![Untitled-1.png](/uploads/Untitled-1.png)](hello)
 
-<!-- style: background: #009150; -->
+<!-- style: background: #3f00ff; -->
 
 <!-- break -->
 
 [![Untitled-1.png](/uploads/Untitled-1.png)](hello)
 
-<!-- style: background: #ff4466; -->
+<!-- style: background: #360ccc; -->
 
 <!-- break -->
 
 [![Untitled-1.png](/uploads/Untitled-1.png)](hello)
 
-<!-- style: background: #fb4d46; -->
+<!-- style: background: #7df9ff; -->
 
 <!-- break -->
