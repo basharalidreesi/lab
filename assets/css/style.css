@@ -745,8 +745,8 @@
 	}
 	.article_wrapper-article_section.--image {
 		padding: 0;
-		padding-left: calc(var(--screen_width_third) - var(--double));
-		padding-right: calc(var(--screen_width_third) - var(--double));
+		padding-left: calc(var(--screen_width_third));
+		padding-right: calc(var(--screen_width_third));
 	}
 	.article_wrapper-article_section.--image picture {
 		height: auto;
