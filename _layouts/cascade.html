@@ -116,6 +116,9 @@ layout: default
 								replace: "!TAG!OPEN!/em!TAG!CLOSE!", "</em>" |
 								replace: "!TAG!OPEN!p!TAG!CLOSE!", "<p>" |
 								replace: "!TAG!OPEN!/p!TAG!CLOSE!", "</p>" |
+								replace: "<p>!TAG!OPEN!img", "<img" |
+								replace: "/!TAG!CLOSE!</p>", "/>" |
+								remove: "<p></p>"
 							}}
 						</section>
 						{%- endfor -%}
