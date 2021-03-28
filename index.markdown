@@ -11,6 +11,8 @@ page header:
   is central: true
 page navigation:
   styles: "--secondary_glow_colour: lightgrey;"
+page title:
+  is displayed: false
 layout: showcase
 ---
 
