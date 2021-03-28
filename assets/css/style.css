@@ -408,7 +408,7 @@
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 		background-size: 100% 2px;
 	}
-	.--article_section_styling a:not(> img) {
+	.--article_section_styling a {
 		font-family: inherit;
 		font-size: inherit;
 		font-weight: inherit;
