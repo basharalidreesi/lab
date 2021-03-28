@@ -98,7 +98,7 @@ layout: default
 								{%- endif -%}
 							{%- endfor -%}
 							{%- if parse %}
-						<section class="article_wrapper-article_section --{{ class }}" style="{{ style }}">
+						<section class="article_wrapper-article_section --article_text_styling --{{ class }}" style="{{ style }}">
 							<h2>Section {{ count }}</h2>
 							{{ block |
 								replace: "<", "!TAG!OPEN!" |
@@ -114,7 +114,7 @@ layout: default
 							}}
 						</section>
 							{%- else %}
-						<section class="article_wrapper-article_section" style="{{ style }}">
+						<section class="article_wrapper-article_section --article_text_styling" style="{{ style }}">
 							<h2>Section {{ count }}</h2>
 							{{ block | strip }}
 						</section>
