@@ -40,7 +40,7 @@ defaults:
       styles: 
     page content:
       content styles: 
-      layout styles: 
+      special styles: 
     page footer:
       is displayed: true
       styles: 
