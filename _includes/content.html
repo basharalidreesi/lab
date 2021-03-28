@@ -9,7 +9,10 @@
 						{%- endcapture -%}
 						{%- assign separator = "<!-- break -->" -%}
 						{%- assign blocks = page_content | split: separator -%}
-						{%- assign special = 1 -%}
+						{%- assign special = 0 -%}
+						{%- if blocks contains separator -%}
+							{%- assign special = 1 -%}
+						{%- endif -%}
 						{%- for block in blocks -%}
 							{%- if block contains "<!-- special -->" -%}
 								{%- assign special = forloop.index0 -%}
