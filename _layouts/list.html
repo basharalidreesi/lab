@@ -55,7 +55,7 @@ layout: default
 										{%- if node.path == subpage %}
 						<li class="--match_above --list_tag_styling"></li>
 						<li class="list_wrapper-list_item" itemscope itemtype="https://schema.org/CreativeWork">
-							<dl>
+							<dl class="list_wrapper-list_item">
 								<dt class="list_item-item_title --list_title_styling" itemprop="name">
 									<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}" itemprop="url">
 										{{ node.title }}
