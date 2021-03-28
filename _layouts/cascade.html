@@ -85,6 +85,7 @@ layout: default
 						</header>
 						{%- endif -%}
 						{%- for block in blocks -%}
+							{%- assign count = forloop.index -%}
 							{%- assign local = forloop.index0 | prepend: "<!-- --> INDEX " | append: " <!-- -->" -%}
 							{%- for data in block_content -%}
 								{%- if data contains local -%}
@@ -103,7 +104,7 @@ layout: default
 								{%- endif -%}
 							{%- endfor %}
 						<section class="{{ class }}" style="{{ style }}">
-							<h2>Section {{ local | plus: 1 }}</h2>
+							<h2>Section {{ count }}</h2>
 							{{ block | strip_html }}
 						</section>
 						{%- endfor -%}
