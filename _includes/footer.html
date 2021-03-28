@@ -3,16 +3,16 @@
 					{%- assign year = site.time | date: '%Y' %}
 					<address>
 						<p class="--footer_text_styling">
-							{{ site.author }}
+							{{ site.author | strip }}
 						</p>
 						<p class="--footer_text_styling">
 							<a class="--anchor_styling --hyperlink_styling" href="https://www.instagram.com/{{- site.instagram | remove: '@' -}}">
-								{{ site.instagram }}
+								{{ site.instagram | strip }}
 							</a>
 						</p>
 						<p class="--footer_text_styling">
 							<a class="--anchor_styling --hyperlink_styling" href="mailto:{{- site.email -}}">
-								{{ site.email }}
+								{{ site.email | strip }}
 							</a>
 						</p>
 						<p class="--footer_text_styling">
@@ -22,7 +22,7 @@
 							All rights reserved
 						</p>
 						<p class="--footer_text_styling">
-							By <a class="--anchor_styling" href="{{- site.basabees -}}">Basabees</a> for <a class="--anchor_styling" href="{{- site.batabeet -}}">Batabeet</a>
+							{{ site.['footer text'] | strip }}
 						</p>
 					</address>
 					<!-- end footer.html -->
