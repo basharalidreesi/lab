@@ -55,8 +55,8 @@ layout: default
 										{%- if node.path == subpage %}
 						<li class="--match_above --list_tag_styling"></li>
 						<li class="list_wrapper-list_item" itemscope itemtype="https://schema.org/CreativeWork">
-							<dl class="list_wrapper-list_item">
-								<dt class="list_item-item_title --list_title_styling" itemprop="name">
+							<dl class="list_item-item_description">
+								<dt class="item_description-item_title --list_title_styling" itemprop="name">
 									<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}" itemprop="url">
 										{{ node.title }}
 									</a>
@@ -64,7 +64,7 @@ layout: default
 												{%- unless node.tags == empty -%}
 													{%- assign tags = node.tags | sort_natural -%}
 													{%- for tag in tags %}
-								<dd class="list_item-item_tag --list_tag_styling" itemprop="keywords">
+								<dd class="item_description-item_tag --list_tag_styling" itemprop="keywords">
 									<div class="--untag"><span class="--untag_click"></span></div>
 									{{ tag | strip }}
 								</dd>
