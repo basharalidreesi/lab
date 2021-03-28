@@ -504,6 +504,7 @@
 	.mother_container {
 		display: flex;
 		flex-flow: column nowrap;
+		min-height: calc(var(--screen_height));
 	}
 	.mother_container-nav_container {
 		order: 1;
@@ -531,6 +532,8 @@
 	}
 	.mother_container-main_container {
 		order: 3;
+		flex: 1;
+		display: flex;
 	}
 	.mother_container-footer_container {
 		order: 4;
