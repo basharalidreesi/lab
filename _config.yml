@@ -28,24 +28,24 @@ defaults:
       text colour: "#000"
       placeholder colour: grey
     page root:
-      styles: 
+      styles:
     page header:
       is central: false
-      override: 
-      styles: 
+      override:
+      styles:
     page navigation:
-      styles: 
+      styles:
+    page title:
+      is displayed: true
+      styles:
     page content:
-      is titled: false
-      title styles: 
-      content styles: 
-    page layout:
-      styles: 
+      content styles:
+      layout styles:
     page footer:
       is displayed: true
-      title: 
-      subtext: 
-      styles: 
+      title:
+      subtext:
+      styles:
 - scope:
     path: ''
     type: pages
@@ -67,7 +67,7 @@ defaults:
     permalink: "/:path/:basename"
     hidden: true
     sitemap: false
-baseurl: 
+baseurl:
 url: https://jadtoghuj.com
 description: Jad Toghuj | Editorial Stylist | Creative Director | Amman, Jordan
 author: Jad Toghuj
@@ -75,7 +75,7 @@ email: jadtoghuj@gmail.com
 instagram: "@jad.toghuj"
 basabees: http://www.basharalidreesi.com
 batabeet: "/"
-theme: 
+theme:
 plugins:
 - jekyll-feed
 - jekyll-sitemap
