@@ -19,11 +19,11 @@ layout: default
 									{%- if block contains "</a>" -%}
 										{%- assign parse = "true" -%}
 										{%- assign tag = "img a" -%}
-										{%- assign class = "img a" -%}
+										{%- assign class = "anchored_image" -%}
 									{%- else -%}
 										{%- assign parse = "true" -%}
 										{%- assign tag = "img" -%}
-										{%- assign class = "img" -%}
+										{%- assign class = "image" -%}
 									{%- endif -%}
 								{%- elsif block contains "</iframe>" -%}
 									{%- assign parse = "true" -%}
@@ -98,7 +98,7 @@ layout: default
 								{%- endif -%}
 							{%- endfor -%}
 							{%- if parse %}
-						<section class="{{ class }}" style="{{ style }}">
+						<section class="article_wrapper-article_section --{{ class }}" style="{{ style }}">
 							<h2>Section {{ count }}</h2>
 							{{ block |
 								replace: "<", "!TAG!OPEN!" |
@@ -114,7 +114,7 @@ layout: default
 							}}
 						</section>
 							{%- else %}
-						<section class="{{ class }}" style="{{ style }}">
+						<section class="article_wrapper-article_section" style="{{ style }}">
 							<h2>Section {{ count }}</h2>
 							{{ block | strip }}
 						</section>
@@ -122,7 +122,7 @@ layout: default
 						{%- endfor -%}
 						{%- if cascade and succeeded %}
 						<footer class="article_wrapper-article_footer" {%- if page.['page footer'].styles %} style="{{- page.['page footer'].styles | strip -}}" {%- endif -%}>
-								{%- include footer.html %}					</footer>
+							{%- include footer.html %}						</footer>
 						{%- endif %}
 					</article>
 					<!-- end cascade.html -->
