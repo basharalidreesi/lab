@@ -1226,7 +1226,7 @@
 		background-color: var(--text_colour);
 		color: var(--secondary_colour);
 	}
-	.article_wrapper-article_section.--anchored_image:hover {
+	.article_wrapper-article_section.--anchored_image picture:hover {
 		box-shadow: inset 0 0 calc(var(--quadruple)) var(--primary_glow_colour);
 	}
 }
@@ -1244,7 +1244,7 @@
 	.--mobile_background {
 		display: block;
 	}
-	.article_wrapper-article_section.--anchored_image:hover {
+	.article_wrapper-article_section.--anchored_image picture:hover {
 		box-shadow: inset 0 0 calc(var(--quadruple)) var(--primary_glow_colour);
 	}
 }
