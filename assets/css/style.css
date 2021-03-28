@@ -532,6 +532,7 @@
 	}
 	.mother_container-main_container {
 		order: 3;
+		flex: 1;
 	}
 	.mother_container-footer_container {
 		order: 4;
