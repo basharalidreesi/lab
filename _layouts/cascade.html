@@ -100,16 +100,8 @@ layout: default
 							{%- if parse %}
 						<section class="article_wrapper-article_section --{{ class }}" style="{{ style }}">
 							{{ block |
-								replace: "<", "!TAG!OPEN!" |
-								replace: ">", "!TAG!CLOSE!" |
-								strip_html |
-								replace: "!TAG!OPEN!p!TAG!CLOSE!!TAG!OPEN!img", "<img" |
-								replace: "/!TAG!CLOSE!!TAG!OPEN!/p!TAG!CLOSE!", "/>" |
-								replace: "!TAG!OPEN!p!TAG!CLOSE!!TAG!OPEN!a", "<a" |
-								replace: "!TAG!CLOSE!!TAG!OPEN!img", "><img" |
-								replace: "/!TAG!CLOSE!!TAG!OPEN!/a!TAG!CLOSE!!TAG!OPEN!/p!TAG!CLOSE!", "/></a>" |
-								replace: "!TAG!OPEN!iframe", "<iframe" |
-								replace: "!TAG!CLOSE!!TAG!OPEN!/iframe!TAG!CLOSE!", "></iframe>"
+								remove: "<p>" |
+								remove: "</p>"
 							}}
 						</section>
 							{%- else %}
