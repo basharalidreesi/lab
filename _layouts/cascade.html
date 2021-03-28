@@ -15,6 +15,7 @@ layout: default
 						{%- capture processed_blocks -%}
 							{%- for block in blocks -%}
 								{%- assign index = forloop.index0 -%}
+								{%- assign style = "null" -%}
 								{%- if block contains "<img" -%} {%- comment -%} > {%- endcomment -%}
 									{%- if block contains "</a>" -%}
 										{%- assign parse = "true" -%}
@@ -39,8 +40,6 @@ layout: default
 									{%- for node in processed_block -%}
 										{%- if node contains "style:" -%}
 											{%- assign style = node | remove: "style:" -%}
-										{%- else -%}
-											{%- assign style = "null" -%}
 										{%- endif -%}
 									{%- endfor -%}
 								{%- endif -%}
@@ -101,13 +100,13 @@ layout: default
 										{%- unless datum contains "STYLE null" -%}
 											{%- assign style = datum | remove: "STYLE" | strip -%}
 										{%- else -%}
-											{%- assign style = "null: null;" -%}
+											{%- assign style = "null" -%}
 										{%- endunless -%}
 									{%- endfor -%}
 								{%- endif -%}
 							{%- endfor -%}
 							{%- if parse %}
-						<section class="article_wrapper-article_section --{{ class }}" style="{{ style }}">
+						<section class="article_wrapper-article_section --{{ class }}" {%- unless style == "null" %} style="{{ style }}" {%- endunless -%}>
 								{%- unless tag == "null" %}
 							<{{ tag }}>
 								{%- endunless %}
@@ -120,7 +119,7 @@ layout: default
 								{%- endunless %}
 						</section>
 							{%- else %}
-						<section class="article_wrapper-article_section --article_section_styling" style="{{ style }}">
+						<section class="article_wrapper-article_section --article_section_styling" {%- unless style == "null" %} style="{{ style }}" {%- endunless -%}>
 							{{ block | strip }}
 						</section>
 							{%- endif -%}
