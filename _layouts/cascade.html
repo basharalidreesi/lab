@@ -16,17 +16,27 @@ layout: default
 							{%- for block in blocks -%}
 								{%- assign index = forloop.index0 -%}
 								{%- if block contains "</p>" -%}
-									{%- assign tag = "paragraph" -%}
-									{%- assign class = "paragraph" -%}
-									{%- assign style = "paragraph" -%}
-								{%- elsif block contains "<img" -%}
-									{%- assign tag = "img" -%}
-									{%- assign class = "img" -%}
-									{%- assign style = "img" -%}
-								{%- elsif block contains "</a>" -%}
-									{%- assign tag = "anchor" -%}
-									{%- assign class = "anchor" -%}
-									{%- assign style = "anchor" -%}
+									{%- if block contains "<img" -%}
+										{%- if block contains "</a>" -%}
+											{%- assign tag = "img a" -%}
+											{%- assign class = "img a" -%}
+											{%- assign style = "img a" -%}
+										{%- else -%}
+											{%- assign tag = "img" -%}
+											{%- assign class = "img" -%}
+											{%- assign style = "img" -%}
+										{%- endif -%}
+									{%- else -%}
+										{%- if block contains "</a>" -%}
+											{%- assign tag = "p a" -%}
+											{%- assign class = "p a" -%}
+											{%- assign style = "p a" -%}
+										{%- else -%}
+											{%- assign tag = "p" -%}
+											{%- assign class = "p" -%}
+											{%- assign style = "p" -%}
+										{%- endif -%}
+									{%- endif -%}
 								{%- elsif block contains "</iframe>" -%}
 									{%- assign tag = "iframe" -%}
 									{%- assign class = "iframe" -%}
