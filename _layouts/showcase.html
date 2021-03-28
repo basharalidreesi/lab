@@ -36,5 +36,9 @@ layout: default
 				{%- comment -%}
 					<!-- end showcase setup -->
 				{%- endcomment -%}
+				{%- if content_html contains "<!-- special -->" %}
 				{{ content_html | replace: "<!-- special -->", showcase }}
+				{%- else %}
+				{{ content_html | replace: "<!-- special2 -->", showcase }}
+				{%- endif %}
 				<!-- end showcase.html -->
