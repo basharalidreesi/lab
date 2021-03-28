@@ -41,11 +41,11 @@ layout: default
 					{%- comment -%}
 						<!-- end cascade setup -->
 					{%- endcomment -%}
-					{%- for block in block_content %}
+					{%- for block in blocks %}
 						{%- assign local = forloop.index0 | prepend: "<!-- --> INDEX " | append: " <!-- -->" -%}
 						{%- for data in block_content -%}
 							{%- if data contains local -%}
-								{%- assign separated_data = data | split: "<!-- -->" -%}
+								{%- assign separated_data = data | remove: local | split: "<!-- -->" -%}
 								{%- for datum in separated_data -%}
 									{%- if datum contains "TAG" -%}
 										{%- assign tag = datum | remove: "TAG" | strip -%}
@@ -60,7 +60,7 @@ layout: default
 							{%- endif -%}
 						{%- endfor %}
 					<{{ tag }} class="{{ class }}" style="{{ style }}">
-						{{ block }}
+						{{ block | strip_html }}
 					</{{ tag }}>
 					{%- endfor %}
 					<!-- end cascade.html -->
