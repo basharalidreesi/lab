@@ -1003,6 +1003,10 @@
 		border-bottom: none;
 		overflow: auto;
 	}
+	.--central_header.--cascade_layout .man_container-article_wrapper {
+		--cascade_height: (var(--screen_height) - var(--header_height) - 1px);
+		margin-top: calc(var(--nav_height));
+	}
 	.--cascade_layout .article_wrapper-article_header,
 	.--cascade_layout .article_wrapper-article_footer {
 		width: 100%;
@@ -1027,7 +1031,7 @@
 		border: none;
 	}
 	.--cascade_layout .article_wrapper-article_section.--anchored_image {
-		
+
 	}
 	.--cascade_layout .article_wrapper-article_section picture {
 		height: 100%;
