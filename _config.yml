@@ -43,8 +43,6 @@ defaults:
       layout styles: 
     page footer:
       is displayed: true
-      title: 
-      subtext: 
       styles: 
 - scope:
     path: ''
