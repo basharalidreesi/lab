@@ -16,8 +16,7 @@ layout: default
 					{%- comment -%}
 						<!-- end cascade setup -->
 					{%- endcomment -%}
-					{%- for block in blocks %}
-					{{ block }}
-					{{ processed_blocks[forloop.index0] }}
+					{%- for processed_block in processed_blocks %}
+					{{ processed_block }}
 					{%- endfor %}
 					<!-- end cascade.html -->
