@@ -1015,8 +1015,10 @@
 	.--cascade_layout .article_wrapper-article_section {
 		width: auto;
 		height: 100%;
+		max-height: calc(var(--cascade_height) - var(--quadruple));
 		padding: calc(var(--double));
-		margin: calc(var(--double));
+		margin-left: calc(var(--double));
+		margin-right: calc(var(--double));
 		border: 1px solid var(--border_colour);
 		border-radius: calc(var(--single));
 	}
