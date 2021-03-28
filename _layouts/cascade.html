@@ -38,7 +38,7 @@ layout: default
 									{%- assign style = "style" -%}
 								{%- endif -%}
 								<!-- BLOCK BREAK -->
-								<!-- --> PARSE {{ PARSE }} <!-- -->
+								<!-- --> PARSE {{ parse }} <!-- -->
 								<!-- --> INDEX {{ index }} <!-- -->
 								<!-- --> TAG {{ tag }} <!-- -->
 								<!-- --> CLASS {{ class }} <!-- -->
@@ -104,14 +104,10 @@ layout: default
 								replace: "<", "!TAG!OPEN!" |
 								replace: ">", "!TAG!CLOSE!" |
 								strip_html |
-								replace: "!TAG!OPEN!em!TAG!CLOSE!", "<em>" |
-								replace: "!TAG!OPEN!/em!TAG!CLOSE!", "</em>" |
-								replace: "!TAG!OPEN!p!TAG!CLOSE!", "<p>" |
-								replace: "!TAG!OPEN!/p!TAG!CLOSE!", "</p>" |
-								replace: "!TAG!OPEN!a", "<a" |
-								replace: "!TAG!OPEN!/a!TAG!CLOSE!", "</a>" |
 								replace: "<p>!TAG!OPEN!img", "<img" |
 								replace: "/!TAG!CLOSE!</p>", "/>" |
+								replace: "!TAG!OPEN!iframe", "<iframe" |
+								replace: "!TAG!OPEN!/iframe!TAG!CLOSE!", "</iframe>" |
 								remove: "<p></p>"
 							}}
 						</section>
