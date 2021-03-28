@@ -35,12 +35,12 @@ defaults:
       styles: 
     page navigation:
       styles: 
-    page content:
-      is titled: false
-      title styles: 
-      content styles: 
-    page layout:
+    page title:
+      is displayed: true
       styles: 
+    page content:
+      content styles: 
+      layout styles: 
     page footer:
       is displayed: true
       title: 
