@@ -14,7 +14,7 @@ page colours:
   border colour: blue
   text colour: blue
 page title:
-  styles: 'margin: 2rem; padding: 8rem; border: 1px solid blue; border-radius: 100%;
+  styles: 'margin: 2rem; padding: 0; border: 1px solid blue; border-radius: 100%;
     width: calc(100% - 4rem);'
 layout: cascade
 ---
