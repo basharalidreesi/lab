@@ -12,6 +12,8 @@ page root:
   styles: "--secondary_colour: #dfdfdf;"
 page navigation:
   is navigable: true
+page title:
+  is displayed: false
 layout: list
 ---
 
