@@ -107,10 +107,10 @@
 								{%- endif -%}
 							{%- endfor -%}
 							{%- unless special -%}
-								{%- if forloop.index0 == 1-%}
+								{%- if forloop.index0 == 1 -%}
 						<!-- special2 -->
 								{%- endif -%}
-							{%- endif -%}
+							{%- endunless -%}
 							{%- if parse %}
 						<section class="article_wrapper-article_section --{{ class }}" {%- unless style == "null" %} style="{{ style }}" {%- endunless -%}>
 								{%- unless tag == "null" %}
@@ -123,7 +123,7 @@
 						</section>
 							{%- else %}
 						<section class="article_wrapper-article_section --article_section_styling" {%- unless style == "null" %} style="{{ style }}" {%- endunless -%}>
-							{{ block | strip | tidy }}
+							{{ block | strip }}
 						</section>
 							{%- endif -%}
 						{%- endfor -%}
