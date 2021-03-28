@@ -15,45 +15,30 @@ layout: default
 						{%- capture processed_blocks -%}
 							{%- for block in blocks -%}
 								{%- assign index = forloop.index0 -%}
-								{%- if block contains "</p>" -%}
-									{%- if block contains "<img" -%} {%- comment -%} > {%- endcomment -%}
-										{%- if block contains "</a>" -%}
-											{%- assign tag = "img a" -%}
-											{%- assign class = "img a" -%}
-											{%- assign style = "img a" -%}
-										{%- else -%}
-											{%- assign tag = "img" -%}
-											{%- assign class = "img" -%}
-											{%- assign style = "img" -%}
-										{%- endif -%}
+								{%- if block contains "<img" -%} {%- comment -%} > {%- endcomment -%}
+									{%- if block contains "</a>" -%}
+										{%- assign parse = "true" -%}
+										{%- assign tag = "img a" -%}
+										{%- assign class = "img a" -%}
 									{%- else -%}
-										{%- if block contains "</a>" -%}
-											{%- assign tag = "p a" -%}
-											{%- assign class = "p a" -%}
-											{%- assign style = "p a" -%}
-										{%- else -%}
-											{%- assign tag = "p" -%}
-											{%- assign class = "p" -%}
-											{%- assign style = "p" -%}
-										{%- endif -%}
+										{%- assign prase = "true" -%}
+										{%- assign tag = "img" -%}
+										{%- assign class = "img" -%}
 									{%- endif -%}
 								{%- elsif block contains "</iframe>" -%}
+									{%- assign parse = "true" -%}
 									{%- assign tag = "iframe" -%}
 									{%- assign class = "iframe" -%}
-									{%- assign style = "iframe" -%}
-								{%- elsif block contains "</ul>" -%}
-									{%- assign tag = "iframe" -%}
-									{%- assign class = "iframe" -%}
-									{%- assign style = "iframe" -%}
 								{%- else -%}
+									{%- assign parse = "false" -%}
 									{%- assign tag = "undef" -%}
 									{%- assign class = "undef" -%}
-									{%- assign style = "none" -%}
 								{%- endif -%}
 								{%- if block contains "<!-- style:" -%} {%- comment -%} --> {%- endcomment -%}
 									{%- assign style = "style" -%}
 								{%- endif -%}
 								<!-- BLOCK BREAK -->
+								<!-- --> PARSE {{ PARSE }} <!-- -->
 								<!-- --> INDEX {{ index }} <!-- -->
 								<!-- --> TAG {{ tag }} <!-- -->
 								<!-- --> CLASS {{ class }} <!-- -->
@@ -94,6 +79,12 @@ layout: default
 								{%- if data contains local -%}
 									{%- assign separated_data = data | remove: local | split: "<!-- -->" -%}
 									{%- for datum in separated_data -%}
+										{%- if datum contains "PARSE TRUE" -%}
+											{%- assign parse = true -%}
+										{%- endif -%}
+										{%- if datum contains "PARSE FALSE" -%}
+											{%- assign parse = false -%}
+										{%- endif -%}
 										{%- if datum contains "TAG" -%}
 											{%- assign tag = datum | remove: "TAG" | strip -%}
 										{%- endif -%}
@@ -105,7 +96,8 @@ layout: default
 										{%- endif -%}
 									{%- endfor -%}
 								{%- endif -%}
-							{%- endfor %}
+							{%- endfor -%}
+							{%- if parse %}
 						<section class="{{ class }}" style="{{ style }}">
 							<h2>Section {{ count }}</h2>
 							{{ block |
@@ -123,6 +115,12 @@ layout: default
 								remove: "<p></p>"
 							}}
 						</section>
+							{%-else %}
+						<section class="{{ class }}" style="{{ style }}">
+							<h2>Section {{ count }}</h2>
+							{{ block | strip }}
+						</section>
+							{%- endif -%}
 						{%- endfor -%}
 						{%- if cascade and succeeded %}
 						<footer class="article_wrapper-article_footer" {%- if page.['page footer'].styles %} style="{{- page.['page footer'].styles | strip -}}" {%- endif -%}>
