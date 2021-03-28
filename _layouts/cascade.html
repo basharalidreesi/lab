@@ -101,13 +101,13 @@ layout: default
 										{%- unless datum contains "STYLE null" -%}
 											{%- assign style = datum | remove: "STYLE" | strip -%}
 										{%- else -%}
-											{%- assign style = "null" -%}
+											{%- assign style = "null: null;" -%}
 										{%- endunless -%}
 									{%- endfor -%}
 								{%- endif -%}
 							{%- endfor -%}
 							{%- if parse %}
-						<section class="article_wrapper-article_section --{{ class }}" {%- unless style == "null" %} style="{{ style }}" {%- endunless -%}>
+						<section class="article_wrapper-article_section --{{ class }}" style="{{ style }}">
 								{%- unless tag == "null" %}
 							<{{ tag }}>
 								{%- endunless %}
@@ -120,7 +120,7 @@ layout: default
 								{%- endunless %}
 						</section>
 							{%- else %}
-						<section class="article_wrapper-article_section --article_section_styling" {%- unless style == "null" %} style="{{ style }}" {%- endunless -%}>
+						<section class="article_wrapper-article_section --article_section_styling" style="{{ style }}">
 							{{ block | strip }}
 						</section>
 							{%- endif -%}
