@@ -12,13 +12,55 @@ layout: default
 						{%- assign separator = "<!-- break -->" -%}
 						{%- assign processed_separator = "!<!-!-! !break! !-!-!>!" -%}
 						{%- assign blocks = page_content | split: separator -%}
-						{%- assign processed_blocks = page_content | replace: separator, processed_separator | strip_html | split: processed_separator -%}
+						{%- capture processed_blocks -%}
+							{%- for block in blocks -%}
+								{%- assign index = forloop.index0 -%}
+								{%- if block contains "</p>" -%}
+									{%- assign tag = "p" -%}
+									{%- assign class = "paragraph" -%}
+									{%- assign style = "lololojniodbab" -%}
+								{%- endif -%}
+								{%- if block contains "</p>" and "<img" -%}
+									{%- assign tag = "picture" -%}
+									{%- assign class = "picture" -%}
+									{%- assign style = "loololl" -%}
+								{%- endif -%}
+								{%- if block contains "</p>" and "</a>" and "<img" -%} {%- comment -%} > {%- endcomment -%}
+									{%- assign tag = "picture" -%}
+									{%- assign class = "picturewithlink" -%}
+									{%- assign style = "lol" -%}
+								{%- endif -%}
+								<!-- BLOCK BREAK -->
+								<!-- --> INDEX {{ index }} <!-- -->
+								<!-- --> TAG {{ tag }} <!-- -->
+								<!-- --> CLASS {{ class }} <!-- -->
+								<!-- --> STYLE {{ style }} <!-- -->
+							{%- endfor -%}
+						{%- endcapture -%}
+						{%- assign block_content = processed_blocks | split: "<!-- BLOCK BREAK -->" -%}
 					{%- comment -%}
 						<!-- end cascade setup -->
 					{%- endcomment -%}
-					{%- for processed_block in processed_blocks %}
-					<section>
-						{{ processed_block | strip }}
-					</section>
+					{%- for block in block_content %}
+						{%- assign local = forloop.index0 | prepend: "<!-- --> INDEX " | append: " <!-- -->" -%}
+						{%- for data in block_content -%}
+							{%- if data contains local -%}
+								{%- assign separated_data = data | split: "<!-- -->" -%}
+								{%- for datum in separated_data -%}
+									{%- if datum contains "TAG" -%}
+										{%- assign tag = datum | remove: "TAG" | strip -%}
+									{%- endif -%}
+									{%- if datum contains "CLASS" -%}
+										{%- assign class = datum | remove: "CLASS" | strip -%}
+									{%- endif -%}
+									{%- if datum contains "STYLE" -%}
+										{%- assign style = datum | remove: "STYLE" | strip -%}
+									{%- endif -%}
+								{%- endfor -%}
+							{%- endif -%}
+						{%- endfor %}
+					<{{ tag }} class="{{ class }}" style="{{ style }}">
+						{{ block }}
+					</{{ tag }}>
 					{%- endfor %}
 					<!-- end cascade.html -->
