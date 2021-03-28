@@ -765,7 +765,7 @@
 		padding-left: calc(var(--screen_width_third) - var(--double));
 		padding-right: calc(var(--screen_width_third) - var(--double));
 		box-shadow: none;
-		transition: box-shadow;
+		transition: box-shadow 0.25s;
 	}
 	.article_wrapper-article_section.--anchored_image picture {
 		height: auto;
