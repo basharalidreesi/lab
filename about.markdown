@@ -11,6 +11,8 @@ page root:
   styles: "--secondary_colour: peachpuff; filter: grayscale(1);"
 page navigation:
   is navigable: true
+page title:
+  is displayed: false
 page footer:
   styles: 'background-color: peachpuff;'
 layout: contact
