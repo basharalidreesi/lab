@@ -764,6 +764,8 @@
 		padding: 0;
 		padding-left: calc(var(--screen_width_third) - var(--double));
 		padding-right: calc(var(--screen_width_third) - var(--double));
+		box-shadow: none;
+		transition: box-shadow;
 	}
 	.article_wrapper-article_section.--anchored_image picture {
 		height: auto;
@@ -1067,9 +1069,7 @@
 		border: none;
 		max-height: 100%;
 	}
-	.--cascade_layout .article_wrapper-article_section.--anchored_image {
-
-	}
+	.--cascade_layout .article_wrapper-article_section.--anchored_image { }
 	.--cascade_layout .article_wrapper-article_section picture {
 		height: 100%;
 		width: auto;
@@ -1205,13 +1205,16 @@
 └────────────────────┘
 */
 @media (hover: hover) {
-	.--article_section_styling a:hover  {
-		background-color: var(--secondary_colour);
-		color: var(--text_colour);
+	.--anchor_styling:hover {
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 		background-size: 100% 2px;
 	}
-	.--anchor_styling:hover {
+	.--hyperlink_styling:hover {
+		background-color: var(--secondary_colour);
+	}
+	.--article_section_styling a:hover  {
+		background-color: var(--secondary_colour);
+		color: var(--text_colour);
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 		background-size: 100% 2px;
 	}
@@ -1223,10 +1226,8 @@
 		background-color: var(--text_colour);
 		color: var(--secondary_colour);
 	}
-
-
-	.--hyperlink_styling:hover {
-		background-color: var(--secondary_colour);
+	.article_wrapper-article_section.--anchored_image:hover {
+		box-shadow: inset 0 0 calc(var(--quadruple)) var(--primary_glow_colour);
 	}
 }
 
