@@ -1026,15 +1026,12 @@
 		padding: 0;
 		border: none;
 	}
-	.--cascade_layout .article_wrapper-article_section.--image picture {
+	.--cascade_layout .article_wrapper-article_section.--anchored_image {
+		
+	}
+	.--cascade_layout .article_wrapper-article_section picture {
 		height: 100%;
 		width: auto;
-	}
-	.--cascade_layout .article_wrapper-article_section.--anchored_image {
-
-	}
-	.--cascade_layout .article_wrapper-article_section.--anchored_image picture {
-
 	}
 	.--cascade_layout .article_wrapper-article_section img {
 		display: block;
