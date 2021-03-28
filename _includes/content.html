@@ -9,11 +9,6 @@
 						{%- endcapture -%}
 						{%- assign separator = "<!-- break -->" -%}
 						{%- assign blocks = page_content | split: separator -%}
-						{%- if blocks contains "<!-- special -->" -%}
-							{%- assign special = true -%}
-						{%- else -%}
-							{%- assign special = false -%}
-						{%- endif -%}
 						{%- capture processed_blocks -%}
 							{%- for block in blocks -%}
 								{%- assign index = forloop.index0 -%}
@@ -81,10 +76,10 @@
 						</header>
 						{%- endif -%}
 						{%- for block in blocks -%}
-							{%- assign local = forloop.index0 | prepend: "<!-- --> INDEX " | append: " <!-- -->" -%}
+							{%- assign locale = forloop.index0 | prepend: "<!-- --> INDEX " | append: " <!-- -->" -%}
 							{%- for data in block_content -%}
-								{%- if data contains local -%}
-									{%- assign separated_data = data | remove: local | split: "<!-- -->" -%}
+								{%- if data contains locale -%}
+									{%- assign separated_data = data | remove: locale | split: "<!-- -->" -%}
 									{%- for datum in separated_data -%}
 										{%- if datum contains "PARSE true" -%}
 											{%- assign parse = true -%}
@@ -106,9 +101,6 @@
 									{%- endfor -%}
 								{%- endif -%}
 							{%- endfor -%}
-							{%- if forloop.index0 == 0 %}
-						<!-- special2 -->
-							{%- endif -%}
 							{%- if parse %}
 						<section class="article_wrapper-article_section --{{ class }}" {%- unless style == "null" %} style="{{ style }}" {%- endunless -%}>
 								{%- unless tag == "null" %}
