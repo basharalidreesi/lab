@@ -4,15 +4,13 @@ layout: default
 
 <!-- begin article.html -->
 					{%- comment -%}
-						<!-- begin setup -->
+						<!-- begin content setup -->
 					{%- endcomment -%}
 						{%- capture content_html -%}
 							{%- include content.html -%}
 						{%- endcapture -%}
-						{%- assign content_index = content_html | split: "<!-- CONTENT BREAK -->" -%}
 					{%- comment -%}
-						<!-- end setup -->
+						<!-- end content setup -->
 					{%- endcomment -%}
-					{{- content_index[0] }}
-					{{- content_index[1] }}
+					{{ content_html }}
 				<!-- end article.html -->
