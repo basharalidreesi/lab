@@ -1018,6 +1018,9 @@
 	.--cascade_layout .article_wrapper-article_section + .article_wrapper-article_section {
 		margin-left: 0;
 	}
+	.article_wrapper-article_section.--image + .article_wrapper-article_section {
+		margin-left: calc(var(--double));
+	}
 	.--cascade_layout .article_wrapper-article_section.--image {
 		margin: 0;
 		padding: 0;
