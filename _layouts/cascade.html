@@ -118,7 +118,7 @@ layout: default
 								{%- endunless %}
 						</section>
 							{%- else %}
-						<section class="article_wrapper-article_section --article_section_styling" style="{{ style }}">
+						<section class="article_wrapper-article_section --article_section_styling" {%- unless style == "null" %} style="{{ style | strip }}" {%- endunless -%}>
 							{{ block | strip }}
 						</section>
 							{%- endif -%}
