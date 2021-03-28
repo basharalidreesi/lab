@@ -76,4 +76,3 @@ footer text: By <a class='--anchor_styling' href='https://basharalidreesi.com'>B
 plugins:
 - jekyll-feed
 - jekyll-sitemap
-- nokogiri

@@ -110,7 +110,7 @@ layout: default
 								{%- unless tag == "null" %}
 							<{{ tag }}>
 								{%- endunless %}
-							{{ block | remove: "<p>" | remove: "</p>" | strip | tidy }}
+							{{ block | remove: "<p>" | remove: "</p>" | strip }}
 								{%- unless tag == "null" %}
 							</{{ tag }}>
 								{%- endunless %}
