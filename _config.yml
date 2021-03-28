@@ -28,22 +28,22 @@ defaults:
       text colour: "#000"
       placeholder colour: grey
     page root:
-      styles:
+      styles: 
     page header:
       is central: false
-      override:
-      styles:
+      override: 
+      styles: 
     page navigation:
-      styles:
+      styles: 
     page title:
       is displayed: true
-      styles:
+      styles: 
     page content:
-      content styles:
-      layout styles:
+      content styles: 
+      layout styles: 
     page footer:
       is displayed: true
-      styles:
+      styles: 
 - scope:
     path: ''
     type: pages
@@ -65,7 +65,7 @@ defaults:
     permalink: "/:path/:basename"
     hidden: true
     sitemap: false
-baseurl:
+baseurl: 
 url: https://jadtoghuj.com
 description: Jad Toghuj | Editorial Stylist | Creative Director | Amman, Jordan
 author: Jad Toghuj
