@@ -16,17 +16,21 @@ layout: default
 							{%- for block in blocks -%}
 								{%- assign index = forloop.index0 -%}
 								{%- if block contains "</p>" -%}
-									{%- assign tag = "p" -%}
+									{%- assign tag = "paragraph" -%}
 									{%- assign class = "paragraph" -%}
-									{%- assign style = "lololojniodbab" -%}
-								{%- elsif block contains "</p>" and block contains "<img" -%}
-									{%- assign tag = "picture" -%}
-									{%- assign class = "picture" -%}
-									{%- assign style = "loololl" -%}
-								{%- elsif block contains "</p>" and block contains "</a>" and block contains "<img" -%} {%- comment -%} > {%- endcomment -%}
-									{%- assign tag = "picture" -%}
-									{%- assign class = "picturewithlink" -%}
-									{%- assign style = "lol" -%}
+									{%- assign style = "paragraph" -%}
+								{%- elsif block contains "<img" -%}
+									{%- assign tag = "img" -%}
+									{%- assign class = "img" -%}
+									{%- assign style = "img" -%}
+								{%- elsif block contains "</a>" -%}
+									{%- assign tag = "anchor" -%}
+									{%- assign class = "anchor" -%}
+									{%- assign style = "anchor" -%}
+								{%- elsif block contains "</iframe>" -%}
+									{%- assign tag = "iframe" -%}
+									{%- assign class = "iframe" -%}
+									{%- assign style = "iframe" -%}
 								{%- else -%}
 									{%- assign tag = "undef" -%}
 									{%- assign class = "undef" -%}
@@ -61,8 +65,8 @@ layout: default
 								{%- endfor -%}
 							{%- endif -%}
 						{%- endfor %}
-					<{{ tag }} class="{{ class }}" style="{{ style }}">
+					<section class="{{ class }}" style="{{ style }}">
 						{{ block | strip_html }}
-					</{{ tag }}>
+					</section>
 					{%- endfor %}
 					<!-- end cascade.html -->
