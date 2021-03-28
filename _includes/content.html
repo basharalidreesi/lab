@@ -83,7 +83,7 @@
 						{%- endif -%}
 						{%- for block in blocks -%}
 							{%- assign locale = forloop.index0 | prepend: "<!-- --> INDEX " | append: " <!-- -->" -%}
-							{%- assign check = block | newline_to_br | strip_newlines | remove: "<br />" | strip | remove: " " | remove: "<!-- special -->" -%}
+							{%- assign check = block | remove: "<!-- special -->" | newline_to_br | strip_newlines | remove: "<br />" | strip | remove: " " -%}
 							{%- for data in block_content -%}
 								{%- if data contains locale -%}
 									{%- assign separated_data = data | remove: locale | split: "<!-- -->" -%}
