@@ -4,14 +4,13 @@ layout: default
 
 <!-- begin list.html -->
 					{%- comment -%}
-						<!-- begin article setup -->
+						<!-- begin content setup -->
 					{%- endcomment -%}
 						{%- capture content_html -%}
 							{%- include content.html -%}
 						{%- endcapture -%}
-						{%- assign content_index = content_html | split: "<!-- CONTENT BREAK -->" -%}
 					{%- comment -%}
-						<!-- end article setup -->
+						<!-- end content setup -->
 					{%- endcomment -%}
 					{%- comment -%}
 						<!-- begin list setup -->
@@ -48,15 +47,12 @@ layout: default
 						{%- endfor -%}
 						{%- assign search_scope = site[root] | sort: "position" -%}
 						{%- assign search_index = page_index | split: "<!-- SEARCH INDEX PASS -->" -%}
-					{%- comment -%}
-						<!-- end list setup -->
-					{%- endcomment -%}
-					{{- content_index[0] }}
-					{%- unless search_index == empty %}
+						{%- capture list -%}
+							{%- unless search_index == empty %}
 					<dl class="main_wrapper-list_wrapper main_wrapper-special_content" itemscope="itemscope" itemtype="https://schema.org/Collection">
-						{%- for node in search_scope -%}
-							{%- for subpage in search_index -%}
-								{%- if node.path == subpage %}
+								{%- for node in search_scope -%}
+									{%- for subpage in search_index -%}
+										{%- if node.path == subpage %}
 						<div class="--match_above --list_tag_styling"></div>
 						<div class="list_wrapper-list_item" itemscope itemtype="https://schema.org/CreativeWork">
 							<dt class="list_item-item_title --list_title_styling" itemprop="name">
@@ -64,23 +60,27 @@ layout: default
 									{{ node.title }}
 								</a>
 							</dt>
-									{%- unless node.tags == empty -%}
-										{%- assign tags = node.tags | sort_natural -%}
-										{%- for tag in tags %}
+											{%- unless node.tags == empty -%}
+												{%- assign tags = node.tags | sort_natural -%}
+												{%- for tag in tags %}
 							<dd class="list_item-item_tag --list_tag_styling" itemprop="keywords">
 								<div class="--untag"><span class="--untag_click"></span></div>
 								{{ tag | strip }}
 							</dd>
-										{%- endfor -%}
-									{%- else -%}
+												{%- endfor -%}
+											{%- else -%}
 							<dd class="--no_tag"></dd>
-									{%- endunless %}
+											{%- endunless %}
 						</div>
 						<div class="--match_below --list_tag_styling"></div>
-								{%- endif -%}
-							{%- endfor -%}
-						{%- endfor %}
+										{%- endif -%}
+									{%- endfor -%}
+								{%- endfor %}
 					</dl>
-					{%- endunless -%}
-					{{- content_index[1] }}
+							{%- endunless -%}
+						{%- endcapture -%}
+					{%- comment -%}
+						<!-- end list setup -->
+					{%- endcomment -%}
+					{{ content_html | replace: "<!-- SPECIAL CONTENT BREAK -->", list }}
 				<!-- end list.html -->

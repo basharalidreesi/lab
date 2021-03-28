@@ -1,125 +1,139 @@
 
 
-				<!-- begin content.html -->
-				{%- comment -%}
-					<!-- begin setup -->
-				{%- endcomment -%}
-					{%- if page.['page content'].['is titled'] -%}
-						{%- assign titled = true -%}
-					{%- else -%}
-						{%- assign titled = false -%}
-					{%- endif -%}
-					{%- if page.['page footer'].['is displayed'] -%}
-						{%- assign footered = true -%}
-					{%- else -%}
-						{%- assign footered = false -%}
-					{%- endif -%}
-					{%- capture page_content -%}
-						{{ content }}
-					{%- endcapture -%}
-					{%- assign separator = "<!-- break -->" -%}
-					{%- if page_content contains separator -%}
-						{%- assign separated = true -%}
-						{%- assign separated_page_content = page_content | split: separator -%}
-						{%- assign page_content_before = separated_page_content[0] -%}
-						{%- assign page_content_after = separated_page_content[1] -%}
-						{%- if separated_page_content[2] -%}
-							{%- assign extended = true -%}
+					<!-- begin content.html -->
+					{%- comment -%}
+						<!-- begin cascade setup -->
+					{%- endcomment -%}
+						{%- capture page_content -%}
+							{{ content }}
+						{%- endcapture -%}
+						{%- assign separator = "<!-- break -->" -%}
+						{%- assign processed_separator = "!<!-!-! !break! !-!-!>!" -%}
+						{%- assign blocks = page_content | split: separator -%}
+						{%- capture processed_blocks -%}
+							{%- for block in blocks -%}
+								{%- assign index = forloop.index0 -%}
+								{%- assign style = "null" -%}
+								{%- assign special = "false" -%}
+								{%- if block contains "<img" -%} {%- comment -%} > {%- endcomment -%}
+									{%- if block contains "</a>" -%}
+										{%- assign parse = "true" -%}
+										{%- assign tag = "picture" -%}
+										{%- assign class = "anchored_image" -%}
+									{%- else -%}
+										{%- assign parse = "true" -%}
+										{%- assign tag = "picture" -%}
+										{%- assign class = "image" -%}
+									{%- endif -%}
+								{%- elsif block contains "</iframe>" -%}
+									{%- assign parse = "true" -%}
+									{%- assign tag = "null" -%}
+									{%- assign class = "iframe" -%}
+								{%- else -%}
+									{%- assign parse = "false" -%}
+									{%- assign tag = "null" -%}
+									{%- assign class = "null" -%}
+								{%- endif -%}
+								{%- if block contains "<!-- style:" -%} {%- comment -%} --> {%- endcomment -%}
+									{%- assign processed_block = block | replace: "<!--", "<!-- BLOCK STYLE PASS -->" | replace: "-->", "<!-- BLOCK STYLE PASS -->" | split: "<!-- BLOCK STYLE PASS -->" -%}
+									{%- for node in processed_block -%}
+										{%- if node contains "style:" -%}
+											{%- assign style = node | remove: "style:" -%}
+										{%- endif -%}
+									{%- endfor -%}
+								{%- endif -%}
+								{%- if block contains "<!-- special -->" -%}
+									{%- assign special = "true" -%}
+								{%- endif -%}
+								<!-- BLOCK BREAK -->
+								<!-- --> PARSE {{ parse }} <!-- -->
+								<!-- --> INDEX {{ index }} <!-- -->
+								<!-- --> TAG {{ tag }} <!-- -->
+								<!-- --> CLASS {{ class }} <!-- -->
+								<!-- --> STYLE {{ style }} <!-- -->
+								<!-- --> SPECIAL {{ special }} <!-- -->
+							{%- endfor -%}
+						{%- endcapture -%}
+						{%- if page.['page title'].['is displayed'] -%}
+							{%- assign preceded = true -%}
 						{%- else -%}
-							{%- assign extended = false -%}
+							{%- assign preceded = false -%}
 						{%- endif -%}
-						{%- comment -%}
-							<!-- begin style capture for separated articles -->
-						{%- endcomment %}
-						{%- capture article_style_index -%}
-							{%- for article in separated_page_content -%}
-								{%- assign article_index = forloop.index0 -%}
-								{%- if article contains "<!--" -%} {%- comment -%} --> {%- endcomment -%}
-									{%- assign separated_article_content = article | replace: "<!--", "<!-- STYLE BREAK PASS -->" | replace: "-->", "<!-- STYLE BREAK PASS -->" | split: "<!-- STYLE BREAK PASS -->" -%}
-									{%- for item in separated_article_content -%}
-										{%- if item contains "style:" -%}
-											<!-- STYLE INDEX PASS --> <!-- STYLE INDEX {{ article_index }} --> {{- item | remove: "style:" | strip -}}
+						{%- if page.['page footer'].['is displayed'] -%}
+							{%- assign succeeded = true -%}
+						{%- else -%}
+							{%- assign succeeded = false -%}
+						{%- endif -%}
+						{%- if page.layout == "cascade" -%}
+							{%- assign cascade = true -%}
+						{%- else -%}
+							{%- assign cascade = false -%}
+						{%- endif -%}
+						{%- assign block_content = processed_blocks | split: "<!-- BLOCK BREAK -->" -%}
+					{%- comment -%}
+						<!-- end cascade setup -->
+					{%- endcomment %}
+					<article class="main_container-article_wrapper" id="article_wrapper">
+						{%- if preceded %}
+						<header class="article_wrapper-article_header" {%- if page.['page title'].['styles'] %} style="{{- page.['page title'].['styles'] | strip -}}" {%- endif -%}>
+							<h1 class="--article_header_styling">
+								{{ page.title | replace: "&" , "and" }}
+							</h1>
+						</header>
+						{%- endif -%}
+						{%- for block in blocks -%}
+							{%- assign local = forloop.index0 | prepend: "<!-- --> INDEX " | append: " <!-- -->" -%}
+							{%- for data in block_content -%}
+								{%- if data contains local -%}
+									{%- assign separated_data = data | remove: local | split: "<!-- -->" -%}
+									{%- for datum in separated_data -%}
+										{%- if datum contains "PARSE true" -%}
+											{%- assign parse = true -%}
+										{%- endif -%}
+										{%- if datum contains "PARSE false" -%}
+											{%- assign parse = false -%}
+										{%- endif -%}
+										{%- if datum contains "TAG" -%}
+											{%- assign tag = datum | remove: "TAG" | strip -%}
+										{%- endif -%}
+										{%- if datum contains "CLASS" -%}
+											{%- assign class = datum | remove: "CLASS" | strip -%}
+										{%- endif -%}
+										{%- unless datum contains "STYLE null" -%}
+											{%- assign style = datum | remove: "STYLE" | strip -%}
+										{%- else -%}
+											{%- assign style = "null" -%}
+										{%- endunless -%}
+										{%- if datum contains "SPECIAL true" -%}
+											{%- assign special = true -%}
+										{%- else -%}
+											{%- assign special = false -%}
 										{%- endif -%}
 									{%- endfor -%}
 								{%- endif -%}
 							{%- endfor -%}
-						{%- endcapture -%}
-						{%- comment -%}
-							<!-- end style capture for separated articles -->
-						{%- endcomment %}
-					{%- else -%}
-						{%- assign separated = false -%}
-						{%- comment -%}
-							<!-- begin style capture for non-separated articles -->
-						{%- endcomment %}
-						{%- capture article_style_index -%}
-							{%- if page_content contains "<!--" -%} {%- comment -%} --> {%- endcomment -%}
-								{%- assign separated_article_content = page_content | replace: "<!--", "<!-- STYLE BREAK PASS -->" | replace: "-->", "<!-- STYLE BREAK PASS -->" | split: "<!-- STYLE BREAK PASS -->" -%}
-								{%- for item in separated_article_content -%}
-									{%- if item contains "style:" -%}
-										<!-- STYLE INDEX PASS --> <!-- STYLE INDEX 0 --> {{- item | remove: "style:" | strip -}}
-									{%- endif -%}
-								{%- endfor -%}
+							{%- if parse %}
+						<section class="article_wrapper-article_section --{{ class }}" {%- unless style == "null" %} style="{{ style }}" {%- endunless -%}>
+								{%- unless tag == "null" %}
+							<{{ tag }}>
+								{%- endunless %}
+							{{ block | remove: "<p>" | remove: "</p>" | strip }}
+								{%- unless tag == "null" %}
+							</{{ tag }}>
+								{%- endunless %}
+						</section>
+							{%- else %}
+						<section class="article_wrapper-article_section --article_section_styling" {%- unless style == "null" %} style="{{ style }}" {%- endunless -%}>
+							{{ block | strip | tidy }}
+						</section>
 							{%- endif -%}
-						{%- endcapture -%}
-						{%- comment -%}
-							<!-- end style capture for non-separated articles -->
-						{%- endcomment %}
-					{%- endif -%}
-					{%- comment -%}
-						<!-- begin style index -->
-					{%- endcomment %}
-					{%- assign style_index = article_style_index | split: "<!-- STYLE INDEX PASS -->" -%}
-					{%- comment -%}
-						<!-- end style index -->
-					{%- endcomment %}
-				{%- comment -%}
-					<!-- end setup -->
-				{%- endcomment %}
-
-				<article class="main_container-article_wrapper" id="article_wrapper">
-					{%- if titled %}
-					<header class="article_wrapper-article_header" {%- if page.['page content'].['title styles'] %} style="{{- page.['page content'].['title styles'] | strip -}}" {%- endif -%}>
-						<h1 class="--article_header_styling">
-							{{ page.title | replace: "&" , "and" }}
-						</h1>
-					</header>
-					{%- endif %}
-					{%- assign processed_article_content = content | newline_to_br | strip_newlines | remove: "<br />" | strip | remove: " " -%}
-					{%- unless processed_article_content == empty -%}
-						{%- assign article_index = "<!-- STYLE INDEX 0 -->" %}
-					<section class="article_wrapper-article_section --article_section_styling --section_before" style="{%- capture style -%} {%- for item in style_index -%} {%- if item contains article_index -%} {{ item | remove: article_index | strip | append: ';' | replace: ';;', ';' | append: ' ' }} {%- endif -%} {%- endfor -%} {%- endcapture -%} {{- style | strip -}}">
-						{%- if separated %}
-						{{ page_content_before | strip }}
-						{%- else %}
-						{{ content | strip }}
-						{%- endif %}
-					</section>
-					{%- endunless %}
-				<!-- CONTENT BREAK -->
-					{%- if separated -%}
-						{%- assign article_index = "<!-- STYLE INDEX 1 -->" -%}
-						{%- assign processed_article_content = page_content_after | newline_to_br | strip_newlines | remove: "<br />" | strip | remove: " " -%}
-						{%- unless processed_article_content == empty %}
-					<section class="article_wrapper-article_section --article_section_styling --section_after" style="{%- capture style -%} {%- for item in style_index -%} {%- if item contains article_index -%} {{ item | remove: article_index | strip | append: ';' | replace: ';;', ';' | append: ' ' }} {%- endif -%} {%- endfor -%} {%- endcapture -%} {{- style | strip -}}">
-						{{ page_content_after | strip }}
-					</section>
-						{%- endunless -%}
-					{%- endif -%}
-					{%- if extended -%}
-						{%- for article in separated_page_content offset: 2 -%}
-							{%- assign article_index = forloop.index0 | plus: 2 | downcase | prepend: "<!-- STYLE INDEX " | append: " -->" -%}
-							{%- assign processed_article_content = article | newline_to_br | strip_newlines | remove: "<br />" | strip | remove: " " -%}
-							{%- unless processed_article_content == empty %}
-					<section class="article_wrapper-article_section --article_section_styling --section_extended" style="{%- capture style -%} {%- for item in style_index -%} {%- if item contains article_index -%} {{ item | remove: article_index | strip | append: ';' | replace: ';;', '; ' | append: ' ' }} {%- endif -%} {%- endfor -%} {%- endcapture -%} {{- style | strip -}}">
-						{{ article | strip }}
-					</section>
-							{%- endunless -%}
 						{%- endfor -%}
-					{%- endif %}
-					{%- if page.layout == "cascade" and footered %}
-					<footer class="article_wrapper-article_footer" {%- if page.['page footer'].styles %} style="{{- page.['page footer'].styles | strip -}}" {%- endif -%}>
-							{%- include footer.html %}					</footer>
-					{%- endif %}
-				</article>
-				<!-- end content.html -->
+							{%- if special -%}
+						<!-- SPECIAL BLOCK BREAK -->
+							{%- endif -%}
+						{%- if cascade and succeeded %}
+						<footer class="article_wrapper-article_footer" {%- if page.['page footer'].styles %} style="{{- page.['page footer'].styles | strip -}}" {%- endif -%}>
+							{%- include footer.html %}						</footer>
+						{%- endif %}
+					</article>
+					<!-- end content.html -->

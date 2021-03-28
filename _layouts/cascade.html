@@ -4,126 +4,19 @@ layout: default
 
 <!-- begin cascade.html -->
 					{%- comment -%}
+						<!-- begin content setup -->
+					{%- endcomment -%}
+						{%- capture content_html -%}
+							{%- include content.html -%}
+						{%- endcapture -%}
+					{%- comment -%}
+						<!-- end content setup -->
+					{%- endcomment -%}
+					{%- comment -%}
 						<!-- begin cascade setup -->
 					{%- endcomment -%}
-						{%- capture page_content -%}
-							{{ content }}
-						{%- endcapture -%}
-						{%- assign separator = "<!-- break -->" -%}
-						{%- assign processed_separator = "!<!-!-! !break! !-!-!>!" -%}
-						{%- assign blocks = page_content | split: separator -%}
-						{%- capture processed_blocks -%}
-							{%- for block in blocks -%}
-								{%- assign index = forloop.index0 -%}
-								{%- assign style = "null" -%}
-								{%- if block contains "<img" -%} {%- comment -%} > {%- endcomment -%}
-									{%- if block contains "</a>" -%}
-										{%- assign parse = "true" -%}
-										{%- assign tag = "picture" -%}
-										{%- assign class = "anchored_image" -%}
-									{%- else -%}
-										{%- assign parse = "true" -%}
-										{%- assign tag = "picture" -%}
-										{%- assign class = "image" -%}
-									{%- endif -%}
-								{%- elsif block contains "</iframe>" -%}
-									{%- assign parse = "true" -%}
-									{%- assign tag = "null" -%}
-									{%- assign class = "iframe" -%}
-								{%- else -%}
-									{%- assign parse = "false" -%}
-									{%- assign tag = "null" -%}
-									{%- assign class = "null" -%}
-								{%- endif -%}
-								{%- if block contains "<!-- style:" -%} {%- comment -%} --> {%- endcomment -%}
-									{%- assign processed_block = block | replace: "<!--", "<!-- BLOCK STYLE PASS -->" | replace: "-->", "<!-- BLOCK STYLE PASS -->" | split: "<!-- BLOCK STYLE PASS -->" -%}
-									{%- for node in processed_block -%}
-										{%- if node contains "style:" -%}
-											{%- assign style = node | remove: "style:" -%}
-										{%- endif -%}
-									{%- endfor -%}
-								{%- endif -%}
-								<!-- BLOCK BREAK -->
-								<!-- --> PARSE {{ parse }} <!-- -->
-								<!-- --> INDEX {{ index }} <!-- -->
-								<!-- --> TAG {{ tag }} <!-- -->
-								<!-- --> CLASS {{ class }} <!-- -->
-								<!-- --> STYLE {{ style }} <!-- -->
-							{%- endfor -%}
-						{%- endcapture -%}
-						{%- if page.['page title'].['is displayed'] -%}
-							{%- assign preceded = true -%}
-						{%- else -%}
-							{%- assign preceded = false -%}
-						{%- endif -%}
-						{%- if page.['page footer'].['is displayed'] -%}
-							{%- assign succeeded = true -%}
-						{%- else -%}
-							{%- assign succeeded = false -%}
-						{%- endif -%}
-						{%- if page.layout == "cascade" -%}
-							{%- assign cascade = true -%}
-						{%- else -%}
-							{%- assign cascade = false -%}
-						{%- endif -%}
-						{%- assign block_content = processed_blocks | split: "<!-- BLOCK BREAK -->" -%}
 					{%- comment -%}
 						<!-- end cascade setup -->
-					{%- endcomment %}
-					<article class="main_container-article_wrapper" id="article_wrapper">
-						{%- if preceded %}
-						<header class="article_wrapper-article_header" {%- if page.['page title'].['styles'] %} style="{{- page.['page title'].['styles'] | strip -}}" {%- endif -%}>
-							<h1 class="--article_header_styling">
-								{{ page.title | replace: "&" , "and" }}
-							</h1>
-						</header>
-						{%- endif -%}
-						{%- for block in blocks -%}
-							{%- assign count = forloop.index -%}
-							{%- assign local = forloop.index0 | prepend: "<!-- --> INDEX " | append: " <!-- -->" -%}
-							{%- for data in block_content -%}
-								{%- if data contains local -%}
-									{%- assign separated_data = data | remove: local | split: "<!-- -->" -%}
-									{%- for datum in separated_data -%}
-										{%- if datum contains "PARSE true" -%}
-											{%- assign parse = true -%}
-										{%- endif -%}
-										{%- if datum contains "PARSE false" -%}
-											{%- assign parse = false -%}
-										{%- endif -%}
-										{%- if datum contains "TAG" -%}
-											{%- assign tag = datum | remove: "TAG" | strip -%}
-										{%- endif -%}
-										{%- if datum contains "CLASS" -%}
-											{%- assign class = datum | remove: "CLASS" | strip -%}
-										{%- endif -%}
-										{%- unless datum contains "STYLE null" -%}
-											{%- assign style = datum | remove: "STYLE" | strip -%}
-										{%- else -%}
-											{%- assign style = "null" -%}
-										{%- endunless -%}
-									{%- endfor -%}
-								{%- endif -%}
-							{%- endfor -%}
-							{%- if parse %}
-						<section class="article_wrapper-article_section --{{ class }}" {%- unless style == "null" %} style="{{ style }}" {%- endunless -%}>
-								{%- unless tag == "null" %}
-							<{{ tag }}>
-								{%- endunless %}
-							{{ block | remove: "<p>" | remove: "</p>" | strip }}
-								{%- unless tag == "null" %}
-							</{{ tag }}>
-								{%- endunless %}
-						</section>
-							{%- else %}
-						<section class="article_wrapper-article_section --article_section_styling" {%- unless style == "null" %} style="{{ style }}" {%- endunless -%}>
-							{{ block | strip | tidy }}
-						</section>
-							{%- endif -%}
-						{%- endfor -%}
-						{%- if cascade and succeeded %}
-						<footer class="article_wrapper-article_footer" {%- if page.['page footer'].styles %} style="{{- page.['page footer'].styles | strip -}}" {%- endif -%}>
-							{%- include footer.html %}						</footer>
-						{%- endif %}
-					</article>
+					{%- endcomment -%}
+					{{ content_html }}
 					<!-- end cascade.html -->

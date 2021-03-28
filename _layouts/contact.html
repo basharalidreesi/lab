@@ -4,16 +4,18 @@ layout: default
 
 <!-- begin contact.html -->
 					{%- comment -%}
-						<!-- begin article setup -->
+						<!-- begin content setup -->
 					{%- endcomment -%}
 						{%- capture content_html -%}
 							{%- include content.html -%}
 						{%- endcapture -%}
-						{%- assign content_index = content_html | split: "<!-- CONTENT BREAK -->" -%}
 					{%- comment -%}
-						<!-- end article setup -->
+						<!-- end content setup -->
 					{%- endcomment -%}
-					{{- content_index[0] }}
+					{%- comment -%}
+						<!-- begin contact setup -->
+					{%- endcomment -%}
+						{%- capture contact -%}
 					<form class="main_wrapper-contact_wrapper main_wrapper-special_content --article_text_styling" action="https://formspree.io/f/mvovjwlo" method="post">
 						<fieldset>
 							<input name="Name" placeholder="Name" type="text" required>
@@ -22,5 +24,9 @@ layout: default
 							<button type="submit" data-submit="Sending...">Send</button>
 						</fieldset>
 					</form>
-					{{- content_index[1] }}
+						{%- endcapture -%}
+					{%- comment -%}
+						<!-- end contact setup -->
+					{%- endcomment -%}
+					{{ content_html, replace: "<!-- SPECIAL CONTENT BREAK -->", contact }}
 				<!-- end contact.html -->
