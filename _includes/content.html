@@ -2,7 +2,7 @@
 
 					<!-- begin content.html -->
 					{%- comment -%}
-						<!-- begin cascade setup -->
+						<!-- begin content setup -->
 					{%- endcomment -%}
 						{%- capture page_content -%}
 							{{ content }}
@@ -74,7 +74,7 @@
 						{%- endif -%}
 						{%- assign block_content = processed_blocks | split: "<!-- BLOCK BREAK -->" -%}
 					{%- comment -%}
-						<!-- end cascade setup -->
+						<!-- end content setup -->
 					{%- endcomment %}
 					<article class="main_container-article_wrapper" id="article_wrapper">
 						{%- if preceded %}
