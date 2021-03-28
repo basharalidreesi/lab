@@ -3,5 +3,21 @@ layout: default
 ---
 
 <!-- begin cascade.html -->
-					<pre>{{ page.content }}</pre>
-				<!-- end cascade.html -->
+					{%- comment -%}
+						<!-- begin cascade setup -->
+					{%- endcomment -%}
+						{%- capture page_content -%}
+							{{ content }}
+						{%- endcapture -%}
+						{%- assign separator = "<!-- break -->" -%}
+						{%- assign processed_separator = "!<!-!-! !break! !-!-!>!" -%}
+						{%- assign blocks = page_content | split: separator -%}
+						{%- assign processed_blocks = page_content | replace: separator, processed_separator | strip_html | split: processed_separator -%}
+					{%- comment -%}
+						<!-- end cascade setup -->
+					{%- endcomment -%}
+					{%- for block in blocks %}
+					{{ block }}
+					{{ processed_blocks[forloop.index0] }}
+					{%- endfor %}
+					<!-- end cascade.html -->
