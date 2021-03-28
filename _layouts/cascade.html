@@ -98,9 +98,11 @@ layout: default
 										{%- if datum contains "CLASS" -%}
 											{%- assign class = datum | remove: "CLASS" | strip -%}
 										{%- endif -%}
-										{%- if datum contains "STYLE" -%}
+										{%- unless datum contains "STYLE null" -%}
 											{%- assign style = datum | remove: "STYLE" | strip -%}
-										{%- endif -%}
+										{%- else -%}
+											{%- assign style = "null" -%}
+										{%- endunless -%}
 									{%- endfor -%}
 								{%- endif -%}
 							{%- endfor -%}
