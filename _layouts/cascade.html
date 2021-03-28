@@ -105,9 +105,15 @@ layout: default
 							{%- endfor %}
 						<section class="{{ class }}" style="{{ style }}">
 							<h2>Section {{ count }}</h2>
-							{{ block | strip_html }}
-							{{ block | strip_html | markdownify }}
-							{{ block }}
+							{{ block |
+								replace: "<", "!TAG!OPEN!" |
+								replace: ">", "!TAG!CLOSE!" |
+								strip_html |
+								replace: "!TAG!OPEN!em!TAG!CLOSE!", "<em>" |
+								replace: "!TAG!OPEN!/em!TAG!CLOSE!", "</em>" |
+								replace: "!TAG!OPEN!p!TAG!CLOSE!", <p> |
+								replace: "!TAG!OPEN!/p!TAG!CLOSE!", </p>
+							}}
 						</section>
 						{%- endfor -%}
 						{%- if cascade and succeeded %}
