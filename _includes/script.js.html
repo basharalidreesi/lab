@@ -35,8 +35,8 @@
 			let black = false;
 			{%- endif %}
 			let headers = new Array(
-				{%- for header_graphic in header_graphics %}
-				"{{- site.baseurl -}}{{- header_graphic.path -}}"{%- unless forloop.last -%}, {%- endunless -%}
+				{%- for header in site.['header images'] %}
+				"{{- site.baseurl -}}{{- header -}}"{%- unless forloop.last -%}, {%- endunless -%}
 				{%- endfor %}
 			);
 		</script>
