@@ -39,7 +39,7 @@ One morning, when Gregor Samsa woke from troubled dreams, he found himself *tran
 
 <!-- break -->
 
-The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, link waved abouthelplessly as he looked. “What's happened to me?” he thought. It wasn't a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls.
+The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, link waved about helplessly as he looked. “What's happened to me?” he thought. It wasn't a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls.
 
 <!-- break -->
 
@@ -49,10 +49,14 @@ The bedding was hardly able to cover it and seemed ready to slide off any moment
 
 ### Things we know about Gregor's sleeping habits:
 
+<!-- break -->
+
 - He always slept on his right side.
 - He has to get up early (to start another dreadful day).
 - He has a drawer and a alarm clock next to his bed.
 - His mother calls him when he gets up too late.
+
+<!-- style: border: none; -->
 
 <!-- break -->
 
@@ -68,4 +72,4 @@ First he wanted to stand up quietly and undisturbed, get dressed, above all have
 
 <!-- break -->
 
-He remembered that he had already often felt a light pain or other in bed, perhaps the result of an awkward lying position, which later turned out to be purely imaginary when he stood up, and he was eager to see how his present fantasies would gradually dissipate. That the change in his voice was nothing other than the onset of a real chill, an occupational illness of commercial travellers, of that he had not the slightest doubt.
+He remembered that he had already often felt a light pain or other in bed, perhaps the result of an awkward lying position, which later turned out to be purely imaginary when he stood up, and he was eager to see how his present fantasies would gradually dissipate.
