@@ -12,8 +12,6 @@ page colours:
   secondary colour: lightcyan
   border colour: blue
   text colour: blue
-page header:
-  is central: true
 ---
 
 ![Untitled-1.png](/uploads/Untitled-1.png)
