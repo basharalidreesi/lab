@@ -38,7 +38,7 @@
 									{%- assign class = "iframe" -%}
 								{%- else -%}
 									{%- assign parse = "false" -%}
-									{%- assign tag = "null" -%}
+									{%- assign tag = "span" -%}
 									{%- assign class = "null" -%}
 								{%- endif -%}
 								{%- if block contains "<!-- style:" -%} {%- comment -%} --> {%- endcomment -%}
@@ -127,7 +127,11 @@
 						</section>
 								{%- else %}
 						<section class="article_wrapper-article_section --article_section_styling" {%- unless style == "null" %} style="{{ style }}" {%- endunless -%}>
-							{{ block | strip }}
+									{%- unless tag == "null" %}
+							<{{ tag }}>
+								{{ block | strip }}
+							</{{ tag }}>
+									{%- endunless %}
 						</section>
 								{%- endif -%}
 							{%- endunless -%}
