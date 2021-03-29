@@ -126,10 +126,12 @@
 									{%- endunless %}
 						</section>
 								{%- else %}
-						<section class="article_wrapper-article_section --article_section_styling" {%- unless style == "null" %} style="{{ style }}" {%- endunless -%}>
+						<section class="article_wrapper-article_section" {%- unless style == "null" %} style="{{ style }}" {%- endunless -%}>
 									{%- unless tag == "null" %}
-							<{{ tag }}>
+							<{{ tag }} class="article_section-inner_wrapper --article_section_styling">
+									{%- endunless %}
 								{{ block | strip }}
+									{%- unless tag == "null" %}
 							</{{ tag }}>
 									{%- endunless %}
 						</section>
