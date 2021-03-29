@@ -1,7 +1,7 @@
 
 		<!-- begin script.js.html -->
 		<script>
-			{%- assign header_graphics = site.static_files | where: "header_graphic", true -%}
+			{%- assign override = page.['page header'].image | strip_newlines | strip -%}
 			{%- assign text_colour = page.['page colours'].['text colour'] | strip_newlines | strip %}
 			"use strict";
 			{%- if page.url == "/" %}
@@ -14,7 +14,7 @@
 			{%- else %}
 			let central = false;
 			{%- endif -%}
-			{%- if page.['page header'].image != empty %}
+			{%- if override %}
 			let override = true;
 			{%- else %}
 			let override = false;
