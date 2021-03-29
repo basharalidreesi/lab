@@ -144,12 +144,14 @@
 // special purpose functions
 
 	function header() {
-		const header_container = document.getElementById("header_container");
-		const header_graphic = document.getElementById("header_graphic");
-		let x = (Math.floor(Math.random() * headers.length));
-		let random_header = (headers[x]); // array initialised in script.js.html
-		header_graphic.src = random_header;
-		console.log("Headered " + random_header + " from a total number of " + headers.length + " header graphics.");
+		if (!override) {
+			const header_container = document.getElementById("header_container");
+			const header_graphic = document.getElementById("header_graphic");
+			let x = (Math.floor(Math.random() * headers.length));
+			let random_header = (headers[x]); // array initialised in script.js.html
+			header_graphic.src = random_header;
+			console.log("Headered " + random_header + " from a total number of " + headers.length + " header graphics.");	
+		}
 		if(!black) {
 			let extension = random_header.split(".").pop();
 			if (extension === "svg") {

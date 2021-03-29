@@ -14,6 +14,11 @@
 			{%- else %}
 			let central = false;
 			{%- endif -%}
+			{%- if page.['page header'].image != empty %}
+			let override = true;
+			{%- else %}
+			let override = false;
+			{%- endif -%}
 			{%- if page.layout == "contact" %}
 			let contact = true;
 			{%- else %}
