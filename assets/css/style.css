@@ -1059,7 +1059,8 @@
 		padding-top: calc(var(--single));
 		padding-bottom: calc(var(--single));
 		border-top: 1px solid var(--border_colour);
-		overflow: auto;
+		overflow-x: auto;
+		overflow-y: hidden;
 	}
 	.--central_header.--cascade_layout .main_container-article_wrapper {
 		--cascade_height: (var(--screen_height) - var(--header_height));
