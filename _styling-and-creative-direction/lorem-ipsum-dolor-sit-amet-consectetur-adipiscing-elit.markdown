@@ -49,6 +49,8 @@ The bedding was hardly able to cover it and seemed ready to slide off any moment
 
 ### Things we know about Gregor's sleeping habits:
 
+<!-- style: border: none; padding: 0; -->
+
 <!-- break -->
 
 - He always slept on his right side.
@@ -56,7 +58,7 @@ The bedding was hardly able to cover it and seemed ready to slide off any moment
 - He has a drawer and a alarm clock next to his bed.
 - His mother calls him when he gets up too late.
 
-<!-- style: border: none; -->
+<!-- style: border: none; padding: 0; margin-bottom: -2rem; -->
 
 <!-- break -->
 
