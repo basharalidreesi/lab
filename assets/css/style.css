@@ -747,8 +747,6 @@
 	.article_wrapper-article_header + .main_wrapper-special_content {
 		border-top: 1px dashed var(--border_colour);
 	}
-
-
 	.--image,
 	.--anchored_image {
 		height: auto;
@@ -757,6 +755,7 @@
 	.--image picture {
 		height: auto;
 		width: 100%;
+		max-width: calc(var(--screen_width_third) + var(--quadruple));
 	}
 	.--anchored_image picture {
 		height: auto;
@@ -1562,6 +1561,9 @@
 └────────────────────────────────────┘
 */
 @media only screen and (max-width: 768px) {
+	.--image picture {
+		max-width: none;
+	}
 	.--anchored_image picture {
 		max-width: calc(100% - var(--quadruple));
 	}
