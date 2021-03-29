@@ -1135,7 +1135,7 @@
 	.--cascade_layout .article_wrapper-article_section iframe {
 		height: calc(var(--cascade_height) - var(--quadruple));
 		width: calc((var(--cascade_height) - var(--quadruple)) * 1.77);
-		margin: calc(var(--double_negative));
+		margin: calc(var(--single));
 		background: #000;
 		border-radius: calc(var(--single));
 	}
