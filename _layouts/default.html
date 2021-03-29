@@ -198,7 +198,7 @@
 			<header class="mother_container-header_container" id="header_container" itemscope itemtype="https://schema.org/Brand" {%- if page.['page header'].styles %} style="{{- page.['page header'].styles | strip -}}" {%- endif -%}>
 				<div class="header_container-header_wrapper">
 					<a class="header_wrapper-header_anchor" href="{{- site.url -}}{{- site.baseurl -}}">
-						<img class="header_anchor-header_graphic" id="header_graphic" alt="{{- site.author -}}" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" itemprop="logo" />
+						<img class="header_anchor-header_graphic" id="header_graphic" alt="{{- site.author -}}" {%- if page.['page header'].image != empty %} src="{{- page.['page header'].image -}}" {%- else %} src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" {%- endif %} itemprop="logo" />
 						<noscript>
 							<img class="header_anchor-header_graphic" alt="Header" src="{{- site.baseurl -}}{{- header_graphics[0].path -}}" itemprop="logo" />
 						</noscript>

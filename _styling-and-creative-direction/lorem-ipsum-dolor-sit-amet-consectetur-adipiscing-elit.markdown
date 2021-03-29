@@ -8,6 +8,8 @@ tags:
 - "\U0001F353 strawberry"
 - "\U0001F351 peach"
 position: 0
+page header:
+  image: "/uploads/header_graphic-11.svg"
 layout: cascade
 ---
 
