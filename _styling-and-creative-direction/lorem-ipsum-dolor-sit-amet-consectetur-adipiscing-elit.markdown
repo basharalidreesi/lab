@@ -13,6 +13,8 @@ page colours:
   secondary colour: lightcyan
   border colour: blue
   text colour: blue
+page header:
+  is central: true
 page title:
   styles: 'margin: 2rem; padding: 0; border: 1px solid blue; border-radius: 100%;
     width: calc(100% - 4rem);'
