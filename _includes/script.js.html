@@ -14,10 +14,10 @@
 			{%- else %}
 			let central = false;
 			{%- endif -%}
-			{%- if override %}
-			let override = true;
-			{%- else %}
+			{%- if override == empty %}
 			let override = false;
+			{%- else %}
+			let override = true;
 			{%- endif -%}
 			{%- if page.layout == "contact" %}
 			let contact = true;
