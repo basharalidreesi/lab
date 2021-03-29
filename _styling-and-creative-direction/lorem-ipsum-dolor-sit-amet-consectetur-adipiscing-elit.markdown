@@ -21,7 +21,7 @@ page title:
 layout: cascade
 ---
 
-[![Untitled-1.png](/uploads/Untitled-1.png)]
+![Untitled-1.png](/uploads/Untitled-1.png)
 
 <!-- break -->
 
@@ -33,7 +33,7 @@ One morning, when Gregor Samsa woke from troubled dreams, he found himself *tran
 
 <!-- break -->
 
-[![Untitled-1.png](/uploads/Untitled-1.png)]
+![Untitled-1.png](/uploads/Untitled-1.png)
 
 <!-- break -->
 
@@ -45,7 +45,7 @@ The bedding was hardly able to cover it and seemed ready to slide off any moment
 
 <!-- break -->
 
-[![Untitled-1.png](/uploads/Untitled-1.png)]
+![Untitled-1.png](/uploads/Untitled-1.png)
 
 <!-- break -->
 
@@ -62,7 +62,7 @@ The bedding was hardly able to cover it and seemed ready to slide off any moment
 
 <!-- break -->
 
-[![Untitled-1.png](/uploads/Untitled-1.png)]
+![Untitled-1.png](/uploads/Untitled-1.png)
 
 <!-- break -->
 
@@ -70,7 +70,7 @@ First he wanted to stand up quietly and undisturbed, get dressed, above all have
 
 <!-- break -->
 
-[![Untitled-1.png](/uploads/Untitled-1.png)]
+![Untitled-1.png](/uploads/Untitled-1.png)
 
 <!-- break -->
 
