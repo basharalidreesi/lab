@@ -26,3 +26,6 @@ latin:
  - U+AB30–AB6F
  - U+FB00–FB4F
  - U+FF00–FFEF
+control:
+ - U+0020
+ - U+00A0
