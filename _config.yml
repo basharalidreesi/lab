@@ -32,26 +32,29 @@ defaults:
       text colour: "#000"
       placeholder colour: grey
     page font families:
-      primary font family: 'mplus 1p", "--space_control", "kawkab", "--system_sans_serif", sans-serif'
-      secondary font family: '"margo", "--space_control", "kawkab", "--system_serif", serif'
-      tertiary font family: '"code new roman", "--space_control", "kawkab", "--system_monospace", monospace'
+      primary font family: mplus 1p", "--space_control", "kawkab", "--system_sans_serif",
+        sans-serif
+      secondary font family: '"margo", "--space_control", "kawkab", "--system_serif",
+        serif'
+      tertiary font family: '"code new roman", "--space_control", "kawkab", "--system_monospace",
+        monospace'
     page root:
-      styles:
+      styles: 
     page header:
       is central: false
-      image:
-      styles:
+      image: 
+      styles: 
     page navigation:
-      styles:
+      styles: 
     page title:
       is displayed: true
-      styles:
+      styles: 
     page content:
-      content styles:
-      special styles:
+      content styles: 
+      special styles: 
     page footer:
       is displayed: true
-      styles:
+      styles: 
 - scope:
     path: ''
     type: pages
@@ -73,7 +76,7 @@ defaults:
     path: assets/fonts
   values:
     font: true
-baseurl:
+baseurl: 
 url: https://jadtoghuj.com
 description: Jad Toghuj | Editorial Stylist | Creative Director | Amman, Jordan
 author: Jad Toghuj
