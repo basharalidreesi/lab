@@ -1,7 +1,7 @@
 		<!-- begin fonts.css.html -->
 		{%- assign fonts = site.static_files | where: "font", true -%}
-		{%- assign hasBeenIndexed = site.data.arr.arr %}
-		{%- assign index = true -%}
+		{%- assign hasBeenIndexed = site.data.arr.arr -%}
+		{%- assign index = true %}
 		<style>
 			{%- for font in fonts -%}
 				{%- assign font_path = font.path | remove: "/assets/fonts/" | split: "/" -%}
@@ -63,17 +63,13 @@
 							{%- endfor -%}
 						{%- endcapture %}
 						{%- if node_family == font_family and node.basename == font.basename %}
-					url("{{- site.baseurl -}}{{- node.path -}}") format("{{- node.extname | remove_first: '.' -}}"){%- unless forloop.last -%}, {% else -%}; {%- endunless -%}
+					url("{{- site.baseurl -}}{{- node.path -}}") format("{{- node.extname | remove_first: '.' -}}"){%- if forloop.last -%}; {% else -%}; {%- endif -%}
 						{%- endif %}
 					{%- endfor %}
 				font-weight: {{ font_weight -}};
 				font-style: {{ font_style -}};
 			}
-					{{- hasBeenIndexed | push: font_family -}}
-				{%- else -%}
-					<script type="text/javascript">
-						console.log("{{ hasBeenIndexed | inspect }}");
-					</script>
+					{%- assign hasBeenIndexed = hasBeenIndexed | push: font_family -%}
 				{%- endif -%}
 			{%- endfor -%}
 		</style>
