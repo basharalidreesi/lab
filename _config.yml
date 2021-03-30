@@ -32,9 +32,9 @@ defaults:
       text colour: "#000"
       placeholder colour: grey
     page font families:
-      primary font family: "'mplus 1p', '--space_control', 'kawkab', '--system_sans_serif', sans-serif"
-      secondary font family: "'margo', '--space_control', 'kawkab', '--system_serif', serif"
-      tertiary font family: "'code new roman', '--space_control', 'kawkab', '--system_monospace', monospace"
+      primary font family: 'mplus 1p", "--space_control", "kawkab", "--system_sans_serif", sans-serif'
+      secondary font family: '"margo", "--space_control", "kawkab", "--system_serif", serif'
+      tertiary font family: '"code new roman", "--space_control", "kawkab", "--system_monospace", monospace'
     page root:
       styles:
     page header:
