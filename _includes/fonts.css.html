@@ -6,7 +6,7 @@
 			{%- for font in fonts -%}
 				{%- assign font_path = font.path | remove: "/assets/fonts/" | split: "/" -%}
 				{%- assign font_family = font_path[0] | replace: "_", " " -%}
-				{%- assign unicode_range = "U+0000–007F, U+0080–00FF, U+0100–017F, U+0180–024F, U+1E00–1EFF" -%}
+				{%- assign unicode_range = site.data.unicode.latin | join: ", " -%}
 				{%- assign unicode_range_comment = "latin" -%}
 				{%- assign this_instance = font.basename | prepend: "-" | prepend: font_path[2] -%}
 				{%- for node in fonts_indexed -%}
@@ -55,11 +55,11 @@
 					{%- for lang in langs -%}
 						{%- if lang.path contains font_path[0] -%}
 							{%- if lang.basename == "lang-ar" -%}
-								{%- assign unicode_range = "U+0600–06FF, U+0750–077F, U+08A0–08FF, U+FB50–FDFF, U+FE70–FEFF, U+1EE00–1EEFF" -%}
-								{%- assign unicode_range_comment = "ar" -%}
+								{%- assign unicode_range = site.data.unicode.arabic | join: ", " -%}
+								{%- assign unicode_range_comment = "arabic" -%}
 							{%- elsif lang.basename == "lang-ar-latin" or lang.basename == "lang-latin-ar" -%}
-								{%- assign unicode_range = "U+0000–007F, U+0080–00FF, U+0100–017F, U+0180–024F, U+1E00–1EFF, U+0600–06FF, U+0750–077F, U+08A0–08FF, U+FB50–FDFF, U+FE70–FEFF, U+1EE00–1EEFF" -%}
-								{%- assign unicode_range_comment = "latin, ar" -%}
+								{%- assign unicode_range = site.data.unicode.latin | concat: site.data.unicode.arabic | join: ", " -%}
+								{%- assign unicode_range_comment = "latin, arabic" -%}
 							{%- endif -%}
 						{%- endif -%}
 					{%- endfor %}
