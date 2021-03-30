@@ -1,12 +1,12 @@
 		<!-- begin fonts.css.html -->
 		{%- assign fonts = site.static_files | where: "font", true -%}
-		{%- assign unicode_range = "U+0000–007F, U+0080–00FF, U+0100–017F, U+0180–024F, U+1E00–1EFF" -%}
 		{%- assign fonts_indexed = site.data.arr.arr -%}
 		{%- assign index = true %}
 		<style>
 			{%- for font in fonts -%}
 				{%- assign font_path = font.path | remove: "/assets/fonts/" | split: "/" -%}
 				{%- assign font_family = font_path[0] | replace: "_", " " -%}
+				{%- assign unicode_range = "U+0000–007F, U+0080–00FF, U+0100–017F, U+0180–024F, U+1E00–1EFF" -%}
 				{%- assign this_instance = font.basename | prepend: "-" | prepend: font_path[2] -%}
 				{%- for node in fonts_indexed -%}
 					{%- if node == this_instance -%}
