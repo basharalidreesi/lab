@@ -10,7 +10,14 @@
 						{{- word | capitalize -}}{%- unless forloop.last %} {% endunless -%}
 					{%- endfor -%}
 				{%- endcapture -%}
-				{%- unless hasBeenIndexed contains font_family -%}
+				{%- for node in hasBeenIndexed -%}
+					{%- if node == font_family -%}
+						{%- assign toIndex = false -%}
+					{%- else -%}
+						{%- assign toIndex = true -%}
+					{%- endif -%}
+				{%- endfor -%}
+				{%- if toIndex == true -%}
 					{%- if font.name contains "-thin." or "-hairline." -%}
 						{%- assign font_weight = 100 -%}
 					{%- elsif font.name contains "-extra_light." or "-ultra_light." or "-extralight." or "-ultralight." -%}
@@ -54,16 +61,14 @@
 							{%- endfor -%}
 						{%- endcapture %}
 						{%- if node_family == font_family and node.basename == font.basename %}
-					url("{{- site.baseurl -}}/{{- node.path -}}") format("{{- node.extname | remove_first: '.' -}}"){%- unless forloop.last -%}, {% else -%}; {%- endunless -%}
+					url("{{- site.baseurl -}}{{- node.path -}}") format("{{- node.extname | remove_first: '.' -}}"){%- unless forloop.last -%}, {% else -%}; {%- endunless -%}
 						{%- endif %}
 					{%- endfor %}
 				font-weight: {{ font_weight -}};
 				font-style: {{ font_style -}};
 			}
 					{{- hasBeenIndexed | push: font_family -}}
-				{%- else -%}
-					{%- continue -%}
-				{%- endunless -%}
+				{%- endif -%}
 			{%- endfor -%}
 		</style>
 		<!-- end fonts.css.html -->
