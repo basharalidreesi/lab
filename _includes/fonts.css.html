@@ -51,12 +51,16 @@
 					{%- for node in fonts -%}
 						{%- assign node_path = node.path | remove: "/assets/fonts/" | split: "/" -%}
 						{%- assign node_family = node_path[0] | replace: "_", " " -%}
-						{%- assign last = true -%}
+						{%- assign still = false -%}
 						{%- if node_family == font_family and node.basename == font.basename -%}
-							{%- assign last = false %}
+							{%- assign still = true %}
 					url("{{- site.baseurl -}}{{- node.path -}}") format("{{- node.extname | remove_first: '.' -}}")
 						{%- endif -%}
-						{%- if last -%};{%- else -%},{%- endif -%}
+						{%- if still -%}
+							,
+						{%- else -%}
+							;
+						{%- endif -%}
 					{%- endfor %}
 				font-weight: {{ font_weight -}};
 				font-style: {{ font_style -}};
