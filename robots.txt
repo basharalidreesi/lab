@@ -2,4 +2,4 @@ User-agent: Googlebot-Image
 Disallow: /
 
 User-agent: *
-Disallow: /guide/
+Disallow: /docs/

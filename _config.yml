@@ -2,8 +2,8 @@
 title: Jad Toghuj
 timezone: UTC
 collections:
-  guide:
-    title: Guide
+  docs:
+    title: Docs
     output: true
     permalink: "/:collection/:path"
   posts:
@@ -57,7 +57,7 @@ defaults:
       is navigable: false
 - scope:
     path: ''
-    type: guide
+    type: docs
   values:
     hidden: true
     sitemap: false
