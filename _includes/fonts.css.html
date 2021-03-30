@@ -62,7 +62,7 @@
 				font-weight: {{ font_weight -}};
 				font-style: {{ font_style -}};
 			}
-					{%- hasBeenIndexed | push: font_family %}
+					{{- hasBeenIndexed | push: font_family -}}
 				{%- else -%}
 					{%- continue -%}
 				{%- endunless -%}
