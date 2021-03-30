@@ -51,12 +51,16 @@
 					{%- for node in fonts -%}
 						{%- assign node_path = node.path | remove: "/assets/fonts/" | split: "/" -%}
 						{%- assign node_family = node_path[0] | replace: "_", " " -%}
-						{%- if node_family == font_family and node.basename == font.basename %}
+						{%- assign last = true -%}
+						{%- if node_family == font_family and node.basename == font.basename -%}
+							{%- assign last = false %}
 					url("{{- site.baseurl -}}{{- node.path -}}") format("{{- node.extname | remove_first: '.' -}}")
-						{%- endif %}
+						{%- endif -%}
+						{%- if last -%};{%- else -%},{%- endif -%}
 					{%- endfor %}
 				font-weight: {{ font_weight -}};
 				font-style: {{ font_style -}};
+				font-display: block;
 			}
 					{%- assign fonts_indexed = fonts_indexed | push: font.basename -%}
 				{%- endif -%}
