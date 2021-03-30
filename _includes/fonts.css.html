@@ -1,13 +1,14 @@
 		<!-- begin fonts.css.html -->
-		{%- assign fonts = site.static_files | where: "font", true -%}
+		{%- assign fonts = site.static_files | where: "font", true | where_exp: "node", "unless node.path contains 'lang-'" -%}
 		{%- assign fonts_indexed = site.data.arr.arr -%}
 		{%- assign index = true %}
 		<style>
 			{%- for font in fonts -%}
 				{%- assign font_path = font.path | remove: "/assets/fonts/" | split: "/" -%}
 				{%- assign font_family = font_path[0] | replace: "_", " " -%}
+				{%- assign this_instance = font.basename | prepend: "-" | prepend: font_path[2] -%}
 				{%- for node in fonts_indexed -%}
-					{%- if node == font.basename -%}
+					{%- if node == this_instance -%}
 						{%- assign index = false -%}
 						{%- break -%}
 					{%- else -%}
@@ -45,13 +46,18 @@
 					{%- else -%}
 						{%- assign font_style = "normal" -%}
 					{%- endif -%}
-					{%- if font.path contains "lang-" -%}
-						{%- if font.path contains "lang-ar" -%}
-							{%- assign unicode_range = "U+0600–06FF, U+FB50–FDFF, U+FE70–FEFF" -%}
+					{%- assign langs = site.static_files | where: "font", true | where_exp: "node", "node.path contains 'lang-'" -%}
+					{%- for lang in langs -%}
+						{%- if lang.path contains font_path[0] -%}
+							{%- if lang.path == "lang-ar" -%}
+								{%- assign unicode_range = "U+0600–06FF, U+FB50–FDFF, U+FE70–FEFF" -%} /* ar */
+							{%- else -%}
+								{%- assign unicode_range = "U+0000–007F, U+0080–00FF, U+0100–017F, U+0180–024F, U+1E00–1EFF" -%} /* en */
+							{%- endif -%}
+						{%- else -%}
+							{%- assign unicode_range = "U+0000–007F, U+0080–00FF, U+0100–017F, U+0180–024F, U+1E00–1EFF" -%} /* en */
 						{%- endif -%}
-					{%- else -%}
-						{%- assign unicode_range = "U+0000–007F, U+0080–00FF, U+0100–017F, U+0180–024F, U+1E00–1EFF" -%}
-					{%- endif %}
+					{%- endfor %}
 			@font-face {
 				font-family: "{{- font_family -}}";
 				src:
@@ -73,7 +79,7 @@
 				font-display: block;
 				unicode-range: {{ unicode_range -}};
 			}
-					{%- assign fonts_indexed = fonts_indexed | push: font.basename -%}
+					{%- assign fonts_indexed = fonts_indexed | push: this_instance -%}
 				{%- endif -%}
 			{%- endfor %}
 		</style>
