@@ -88,12 +88,68 @@
 				{%- endif -%}
 			{%- endfor %}
 			@font-face {
-				font-family: "--control";
+				font-family: "--space_control";
 				src:
-					local("Helvetica Neue"),
-					local("Helvetica"),
-					local("Arial");
+					local("-apple-system"),
+					local("BlinkMacSystemFont"),
+					local("avenir next"),
+					local("avenir"),
+					local("segoe ui"),
+					local("helvetica neue"),
+					local("helvetica"),
+					local("Ubuntu"),
+					local("roboto"),
+					local("noto"),
+					local("arial");
 				unicode-range: {{ site.data.unicode.control }};
+			}
+			@font-face {
+				font-family: "--system_sans_serif";
+				src:
+					local("-apple-system"),
+					local("BlinkMacSystemFont"),
+					local("avenir next"),
+					local("avenir"),
+					local("segoe ui"),
+					local("helvetica neue"),
+					local("helvetica"),
+					local("Ubuntu"),
+					local("roboto"),
+					local("noto"),
+					local("arial");
+				font-weight: normal;
+				font-style: normal;
+			}
+			@font-face {
+				font-family: "--system_serif";
+				src:
+					local("Iowan Old Style"),
+					local("Apple Garamond"),
+					local("Baskerville"),
+					local("Times New Roman"),
+					local("Droid Serif"),
+					local("Times"),
+					local("Source Serif Pro"),
+					local("Apple Color Emoji"),
+					local("Segoe UI Emoji"),
+					local("Segoe UI Symbol");
+				font-weight: normal;
+				font-style: normal;
+			}
+			@font-face {
+				font-family: "--system_monospace";
+				src:
+					local("Menlo"),
+					local("Consolas"),
+					local("Monaco"),
+					local("Liberation Mono"),
+					local("Lucida Console");
+					local("");
+			}
+			:root {
+				--primary_font_family: {{ page.['page font families'].['primary font family'] }};
+				--secondary_font_family: {{ page.['page font families'].['secondary font family'] }};
+				--tertiary_font_family: {{ page.['page font families'].['tertiary font family'] }};
 			}
 		</style>
 		<!-- end fonts.css.html -->
