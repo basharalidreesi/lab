@@ -1,5 +1,5 @@
 		<!-- begin fonts.css.html -->
-		{%- assign fonts = site.static_files | where: "font", true | where_exp: "node", "unless node.path contains 'lang-'" -%}
+		{%- assign fonts = site.static_files | where: "font", true -%}
 		{%- assign fonts_indexed = site.data.arr.arr -%}
 		{%- assign index = true %}
 		<style>
@@ -15,6 +15,9 @@
 						{%- assign index = true -%}
 					{%- endif -%}
 				{%- endfor -%}
+				{%- if font.path contains "lang-" -%}
+					{%- assign index = false -%}
+				{%- endif -%}
 				{%- if index == true -%}
 					{%- if font.path contains "-thin." or font.path contains "-hairline." -%}
 						{%- assign font_weight = 100 -%}
@@ -46,10 +49,10 @@
 					{%- else -%}
 						{%- assign font_style = "normal" -%}
 					{%- endif -%}
-					{%- assign langs = site.static_files | where: "font", true | where_exp: "node", "node.path contains 'lang-'" -%}
+					{%- assign langs = site.static_files | where: "font", true -%}
 					{%- for lang in langs -%}
 						{%- if lang.path contains font_path[0] -%}
-							{%- if lang.path == "lang-ar" -%}
+							{%- if lang.basename == "lang-ar" -%}
 								{%- assign unicode_range = "U+0600–06FF, U+FB50–FDFF, U+FE70–FEFF" -%} /* ar */
 							{%- else -%}
 								{%- assign unicode_range = "U+0000–007F, U+0080–00FF, U+0100–017F, U+0180–024F, U+1E00–1EFF" -%} /* en */
