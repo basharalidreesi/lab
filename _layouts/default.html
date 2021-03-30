@@ -24,7 +24,7 @@
 		{%- assign header_graphics = site.static_files | where: "header_graphic", true %}
 		{%- comment -%}
 			<!-- end default setup -->
-		{%- endcomment -%}
+		{%- endcomment %}
 		<!-- Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-LZCE8Q1HGN"></script>
 		<script>
@@ -71,12 +71,18 @@
 		</title>
 		<meta name="description" content="{{- site.description -}}">
 		<meta name="author" content="{{- site.author -}}">
-		<!-- <link rel="shortcut icon" type="image/jpg" href=""/> -->
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+		<meta name="msapplication-TileColor" content="#000000">
+		<meta name="theme-color" content="#000000">
 		<link rel="canonical" href="{{- site.url -}}{{- site.baseurl -}}{{- page.url -}}">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		{%- include colours.css.html -%}
-		{%- include fonts.css.html %}		<script src="{{- site.baseurl -}}/assets/js/svg-inject.min.js"></script>
-		{%- include script.js.html %}		<script src="{{- site.baseurl -}}/assets/js/script.js"></script>
+		{%- include fonts.css.html %}		<script src="{{- site.baseurl -}}/assets/js/svg-inject.min.js" defer></script>
+		{%- include script.js.html %}		<script src="{{- site.baseurl -}}/assets/js/script.js" defer></script>
 		<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/style.css" media="screen"/>
 		{%- include style.css.html -%}
 		{%- include noscript.css.html %}	</head>
