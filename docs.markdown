@@ -5,6 +5,10 @@ position: 4
 layout: list
 ---
 
+## Notes on the usage of this website
+
+<!-- break -->
+
 ﷽
 
 <!-- break -->
