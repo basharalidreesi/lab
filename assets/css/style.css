@@ -99,7 +99,7 @@
 		left: 0;
 		width: 100%;
 		min-height: 100%;
-		overscroll-behavior: none;
+		overscroll-behavior-y: contain;
 	}
 	* {
 		margin: 0;
@@ -107,7 +107,7 @@
 		font-size: var(--font_size);
 		text-align: left;
 		line-height: 100%;
-		/* overscroll-behavior: none; */ /* for horizontal scrolling */
+		overscroll-behavior-y: contain;
 	}
 	html {
 		box-sizing: border-box;
