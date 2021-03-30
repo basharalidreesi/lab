@@ -96,6 +96,8 @@ header images:
 - "/uploads/header-09.svg"
 - "/uploads/header-10.svg"
 - "/uploads/header-11.svg"
+- "/uploads/header-12.svg"
+- "/uploads/header-13.svg"
 plugins:
 - jekyll-feed
 - jekyll-sitemap
