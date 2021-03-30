@@ -7,7 +7,7 @@
 				{%- assign font_path = font.path | remove: "/assets/fonts/" | split: "/" -%}
 				{%- assign font_family = font_path[0] | replace: "_", " " -%}
 				{%- for node in fonts_indexed -%}
-					{%- if node == font.path -%}
+					{%- if node == font.basename -%}
 						{%- assign index = false -%}
 						{%- break -%}
 					{%- else -%}
@@ -58,7 +58,7 @@
 				font-weight: {{ font_weight -}};
 				font-style: {{ font_style -}};
 			}
-					{%- assign fonts_indexed = fonts_indexed | push: font.path -%}
+					{%- assign fonts_indexed = fonts_indexed | push: font.basename -%}
 				{%- endif -%}
 			{%- endfor %}
 		</style>
