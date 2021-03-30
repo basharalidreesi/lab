@@ -1,7 +1,7 @@
 ---
 title: Understanding CSS
 date: 2021-03-30 13:09:00 Z
-categories:
+tags:
 - content
 - styles
 - documentation
