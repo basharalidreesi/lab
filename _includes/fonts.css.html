@@ -48,17 +48,18 @@
 			@font-face {
 				font-family: "{{- font_family -}}";
 				src:
-					{%- for node in fonts -%}
-						{%- assign node_path = node.path | remove: "/assets/fonts/" | split: "/" -%}
-						{%- assign node_family = node_path[0] | replace: "_", " " -%}
-						{%- assign still = false -%}
-						{%- if node_family == font_family and node.basename == font.basename -%}
-							{%- assign still = true %}
-					url("{{- site.baseurl -}}{{- node.path -}}") format("{{- node.extname | remove_first: '.' -}}")
-						{%- endif -%}
-						{%- if still -%}
-							,
-						{%- endif -%}
+					{%- capture src -%}
+						{%- for node in fonts -%}
+							{%- assign node_path = node.path | remove: "/assets/fonts/" | split: "/" -%}
+							{%- assign node_family = node_path[0] | replace: "_", " " -%}
+							{%- if node_family == font_family and node.basename == font.basename -%}
+						url("{{- site.baseurl -}}{{- node.path -}}") format("{{- node.extname | remove_first: '.' -}}"),
+							{%- endif -%}
+						{%- endfor -%}
+					{%- endcapture -%}
+					{%- assign font_src = src | split: ", " -%}
+					{%- for node in font_src %}
+						{{ node }}{%- unless forloop.last -%} , {%- else -%} ; {%- endunless -%}
 					{%- endfor %}
 				font-weight: {{ font_weight -}};
 				font-style: {{ font_style -}};
