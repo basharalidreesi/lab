@@ -13,6 +13,7 @@
 				{%- for node in hasBeenIndexed -%}
 					{%- if node == font_family -%}
 						{%- assign toIndex = false -%}
+						{%- break -%}
 					{%- else -%}
 						{%- assign toIndex = true -%}
 					{%- endif -%}
