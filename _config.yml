@@ -64,17 +64,17 @@ instagram: "@jad.toghuj"
 footer text: By <a class="--anchor_styling" href="https://basharalidreesi.com">Basabees</a>
   for <a class="--anchor_styling" href="/">Batabeet</a>
 header images:
-- "/uploads/header_graphic-01.svg"
-- "/uploads/header_graphic-02.svg"
-- "/uploads/header_graphic-03.svg"
-- "/uploads/header_graphic-04.svg"
-- "/uploads/header_graphic-05.svg"
-- "/uploads/header_graphic-06.svg"
-- "/uploads/header_graphic-07.svg"
-- "/uploads/header_graphic-08.svg"
-- "/uploads/header_graphic-09.svg"
-- "/uploads/header_graphic-10.svg"
-- "/uploads/header_graphic-11.svg"
+- "/uploads/header-01.svg"
+- "/uploads/header-02.svg"
+- "/uploads/header-03.svg"
+- "/uploads/header-04.svg"
+- "/uploads/header-05.svg"
+- "/uploads/header-06.svg"
+- "/uploads/header-07.svg"
+- "/uploads/header-08.svg"
+- "/uploads/header-09.svg"
+- "/uploads/header-10.svg"
+- "/uploads/header-11.svg"
 plugins:
 - jekyll-feed
 - jekyll-sitemap
