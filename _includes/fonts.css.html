@@ -48,7 +48,6 @@
 			@font-face {
 				font-family: "{{- font_family -}}";
 				src:
-					{%- assign end = false -%}
 					{%- for node in fonts -%}
 						{%- assign node_path = node.path | remove: "/assets/fonts/" | split: "/" -%}
 						{%- assign node_family = node_path[0] | replace: "_", " " -%}
@@ -59,11 +58,6 @@
 						{%- endif -%}
 						{%- if still -%}
 							,
-						{%- else -%}
-							{%- unless end -%}
-								{%- assign end = true -%}
-								;
-							{%- endunless -%}
 						{%- endif -%}
 					{%- endfor %}
 				font-weight: {{ font_weight -}};
