@@ -21,7 +21,7 @@
 		{%- endif -%}
 		{%- assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" -%}
 		{%- assign pages = site.pages | sort: "position" -%}
-		{%- assign header_graphics = site.static_files | where: "header_graphic", true %}
+		{%- assign override = page.['page header'].image | strip_newlines | strip %}
 		{%- comment -%}
 			<!-- end default setup -->
 		{%- endcomment %}
@@ -204,7 +204,7 @@
 			<header class="mother_container-header_container" id="header_container" itemscope="itemscope" itemtype="https://schema.org/Brand" {%- if page.['page header'].styles %} style="{{- page.['page header'].styles | strip -}}" {%- endif -%}>
 				<div class="header_container-header_wrapper">
 					<a class="header_wrapper-header_anchor" href="{{- site.url -}}{{- site.baseurl -}}">
-						<img class="header_anchor-header_graphic" id="header_graphic" alt="{{- site.author -}}" {%- if page.['page header'].image != empty %} src="{{- page.['page header'].image -}}" {%- else %} src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" {%- endif %} itemprop="logo" />
+						<img class="header_anchor-header_graphic" id="header_graphic" alt="{{- site.author -}}" itemprop="logo" {%- if override == empty %} src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" {%- else %} src="{{- page.['page header'].image -}}" {%- endif %} />
 						<noscript>
 							<img class="header_anchor-header_graphic" alt="Header" src="{{- site.baseurl -}}{{- site.['header images'][0] -}}" itemprop="logo" />
 						</noscript>
