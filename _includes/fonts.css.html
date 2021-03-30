@@ -48,9 +48,9 @@
 					{%- if font.path contains "lang-" -%}
 						{%- if font.path contains "lang-ar" -%}
 							{%- assign unicode_range = "U+0600–06FF, U+FB50–FDFF, U+FE70–FEFF" -%}
-						{%- else -%}
-							{%- assign unicode_range = "U+0000–007F, U+0080–00FF, U+0100–017F, U+0180–024F, U+1E00–1EFF" -%}
 						{%- endif -%}
+					{%- else -%}
+						{%- assign unicode_range = "U+0000–007F, U+0080–00FF, U+0100–017F, U+0180–024F, U+1E00–1EFF" -%}
 					{%- endif %}
 			@font-face {
 				font-family: "{{- font_family -}}";
