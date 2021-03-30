@@ -69,7 +69,7 @@
 				font-weight: {{ font_weight -}};
 				font-style: {{ font_style -}};
 			}
-					{{- assign hasBeenIndexed = hasBeenIndexed | push: font_family -%}
+					{%- assign hasBeenIndexed = hasBeenIndexed | push: font_family -%}
 				{%- endif -%}
 			{%- endfor -%}
 		</style>
