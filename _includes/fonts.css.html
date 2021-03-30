@@ -1,60 +1,71 @@
 		<!-- begin fonts.css.html -->
+		{%- assign fonts = site.static_files | where: "font", true -%}
+		{%- assign hasBeenIndexed = "" %}
 		<style>
+
+			{%- for font in fonts -%}
+				{%- assign font_path = font.path | remove: "/assets/fonts/" | split: "/" -%}
+				{%- assign font_name = font_path[0] | split: "_" -%}
+				{%- capture font_family -%}
+					{%- for word in font_name -%}
+						{{- word | capitalize -}}
+						{%- unless last %} {% endunless -%}
+					{%- endfor -%}
+				{%- endcapture -%}
+				{%- unless hasBeenIndexed contains font_family -%}
+					{%- if font.name contains "-thin." or "-hairline." -%}
+						{%- assign font_weight = 100 -%}
+					{%- elsif font.name contains "-extra_light." or "-ultra_light." or "-extralight." or "-ultralight." -%}
+						{%- assign font_weight = 200 -%}
+					{%- elsif font.name contains "-light." -%}
+						{%- assign font_weight = 300 -%}
+					{%- elsif font.name contains "-regular." or "-normal." -%}
+						{%- assign font_weight = 400 -%}
+					{%- elsif font.name contains "-medium." -%}
+						{%- assign font_weight = 500 -%}
+					{%- elsif font.name contains "-semi_bold." or "-demi_bold." or "-semibold." or "-demibold." -%}
+						{%- assign font_weight = 600 -%}
+					{%- elsif font.name contains "-bold." -%}
+						{%- assign font_weight = 700 -%}
+					{%- elsif font.name contains "-extra_bold." or "-ultra_bold." or "-extrabold." or "-ultrabold." -%}
+						{%- assign font_weight = 800 -%}
+					{%- elsif font.name contains "-black." or "-heavy." -%}
+						{%- assign font_weight = 900 -%}
+					{%- elsif font.name contains "-extra_black." or "-ultra_black." or "-extrablack." or "-ultrablack." -%}
+						{%- assign font_weight = 950 -%}
+					{%- else -%}
+						{%- assign font_weight = 400 -%}
+					{%- endif -%}
+					{%- if font.name contains "italic" -%}
+						{%- assign font_style = "italic" -%}
+					{%- elsif font.name contains "oblique" -%}
+						{%- assign font_style = "oblique" -%}
+					{%- else -%}
+						{%- assign font_style = "normal" -%}
+					{%- endif %}
 			@font-face {
-				font-family: "M+ 1p";
+				font-family: "{{- font_family -}}";
 				src:
-					url("{{ site.baseurl }}/assets/fonts/mplus_1p/mplus_1p-light.woff") format("woff"),
-					url("{{ site.baseurl }}/assets/fonts/mplus_1p/mplus_1p-light.woff2") format("woff2");
-				font-weight: 300;
-				font-style: normal;
+					{%- for node in fonts -%}
+						{%- assign node_path = node.path | remove: "/assets/fonts/" | split: "/" -%}
+						{%- assign node_name = node_path[0] | split: "_" -%}
+						{%- capture node_family -%}
+							{%- for word in node_name -%}
+								{{- word | capitalize -}}
+								{%- unless last %} {% endunless -%}
+							{%- endfor -%}
+						{%- endcapture %}
+						{%- if node_family == font_family and node.basename == font.basename %}
+					url("{{- site.baseurl -}}/node.path") format("{{- node.extname | remove_first: '.' -}}"){%- unless last -%}, {% else -%}; {%- endunless -%}
+						{%- endif %}
+					{%- endfor -%}
+				font-weight: {{ font_weight -}};
+				font-style: {{ font_style -}};
 			}
-			@font-face {
-				font-family: "M+ 1p";
-				src:
-					url("{{ site.baseurl }}/assets/fonts/mplus_1p/mplus_1p-regular.woff") format("woff"),
-					url("{{ site.baseurl }}/assets/fonts/mplus_1p/mplus_1p-regular.woff2") format("woff2");
-				font-weight: 400;
-				font-style: normal;
-			}
-			@font-face {
-				font-family: "M+ 1p";
-				src:
-					url("{{ site.baseurl }}/assets/fonts/mplus_1p/mplus_1p-bold.woff") format("woff"),
-					url("{{ site.baseurl }}/assets/fonts/mplus_1p/mplus_1p-bold.woff2") format("woff2");
-				font-weight: 700;
-				font-style: normal;
-			}
-			@font-face {
-				font-family: "Code New Roman";
-				src:
-					url("{{ site.baseurl }}/assets/fonts/code_new_roman/code_new_roman-regular.woff") format("woff"),
-					url("{{ site.baseurl }}/assets/fonts/code_new_roman/code_new_roman-regular.woff2") format("woff2");
-				font-weight: 400;
-				font-style: normal;
-			}
-			@font-face {
-				font-family: "Margo";
-				src:
-					url("{{ site.baseurl }}/assets/fonts/margo/margo-medium.woff") format("woff"),
-					url("{{ site.baseurl }}/assets/fonts/margo/margo-medium.woff2") format("woff2");
-				font-weight: 400;
-				font-style: normal;
-			}
-			@font-face {
-				font-family: "MD IO";
-				src:
-					url("{{ site.baseurl }}/assets/fonts/md_io/md_io-regular.woff") format("woff"),
-					url("{{ site.baseurl }}/assets/fonts/md_io/md_io-regular.woff2") format("woff2");
-				font-weight: 400;
-				font-style: normal;
-			}
-			@font-face {
-				font-family: "MD IO";
-				src:
-					url("{{ site.baseurl }}/assets/fonts/md_io/md_io-bold.woff") format("woff"),
-					url("{{ site.baseurl }}/assets/fonts/md_io/md_io-bold.woff2") format("woff2");
-				font-weight: 700;
-				font-style: normal;
-			}
+					{%- hasBeenIndexed | push: font_family %}
+				{%- else -%}
+					{%- continue -%}
+				{%- endunless -%}
+			{%- endfor -%}
 		</style>
 		<!-- end fonts.css.html -->

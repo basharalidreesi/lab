@@ -52,9 +52,9 @@ defaults:
     page navigation:
       is navigable: false
 - scope:
-    path: assets/graphics/showcase_tiles
+    path: assets/fonts
   values:
-    showcase_tile: true
+    font: true
 baseurl: 
 url: https://jadtoghuj.com
 description: Jad Toghuj | Editorial Stylist | Creative Director | Amman, Jordan
