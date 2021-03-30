@@ -1,16 +1,16 @@
 
 					<!-- begin footer.html -->
 					{%- assign year = site.time | date: '%Y' %}
-					<address>
-						<p class="--footer_text_styling">
+					<address itemscope="itemscope" itemtype="https://schema.org/Person">
+						<p class="--footer_text_styling" itemprop="name">
 							{{ site.author | strip }}
 						</p>
-						<p class="--footer_text_styling">
+						<p class="--footer_text_styling" itemprop="url">
 							<a class="--anchor_styling --hyperlink_styling" href="https://www.instagram.com/{{- site.instagram | remove: '@' -}}">
 								{{ site.instagram | strip }}
 							</a>
 						</p>
-						<p class="--footer_text_styling">
+						<p class="--footer_text_styling" itemprop="email">
 							<a class="--anchor_styling --hyperlink_styling" href="mailto:{{- site.email -}}">
 								{{ site.email | strip }}
 							</a>
