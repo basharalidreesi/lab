@@ -6,6 +6,7 @@ tags:
 - content
 - fonts
 - metadata
-position: 3
+- pages
+position: 4
 ---
 
