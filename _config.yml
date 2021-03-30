@@ -56,6 +56,16 @@ defaults:
     page navigation:
       is navigable: false
 - scope:
+    path: ''
+    type: guide
+  values:
+    hidden: true
+    sitemap: false
+- scope:
+    path: assets
+  values:
+    sitemap: false
+- scope:
     path: assets/fonts
   values:
     font: true
