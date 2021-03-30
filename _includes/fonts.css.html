@@ -2,14 +2,12 @@
 		{%- assign fonts = site.static_files | where: "font", true -%}
 		{%- assign hasBeenIndexed = "" %}
 		<style>
-
 			{%- for font in fonts -%}
 				{%- assign font_path = font.path | remove: "/assets/fonts/" | split: "/" -%}
 				{%- assign font_name = font_path[0] | split: "_" -%}
 				{%- capture font_family -%}
 					{%- for word in font_name -%}
-						{{- word | capitalize -}}
-						{%- unless last %} {% endunless -%}
+						{{- word | capitalize -}}{%- unless forloop.last %} {% endunless -%}
 					{%- endfor -%}
 				{%- endcapture -%}
 				{%- unless hasBeenIndexed contains font_family -%}
@@ -52,13 +50,13 @@
 						{%- capture node_family -%}
 							{%- for word in node_name -%}
 								{{- word | capitalize -}}
-								{%- unless last %} {% endunless -%}
+								{%- unless forloop.last %} {% endunless -%}
 							{%- endfor -%}
 						{%- endcapture %}
 						{%- if node_family == font_family and node.basename == font.basename %}
-					url("{{- site.baseurl -}}/node.path") format("{{- node.extname | remove_first: '.' -}}"){%- unless last -%}, {% else -%}; {%- endunless -%}
+					url("{{- site.baseurl -}}/{{- node.path -}}") format("{{- node.extname | remove_first: '.' -}}"){%- unless forloop.last -%}, {% else -%}; {%- endunless -%}
 						{%- endif %}
-					{%- endfor -%}
+					{%- endfor %}
 				font-weight: {{ font_weight -}};
 				font-style: {{ font_style -}};
 			}
