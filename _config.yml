@@ -3,7 +3,7 @@ title: Jad Toghuj
 timezone: UTC
 collections:
   docs:
-    title: docs
+    title: Docs
     output: true
     permalink: "/:collection/:path"
   posts:
