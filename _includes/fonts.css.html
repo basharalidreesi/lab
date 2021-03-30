@@ -1,5 +1,6 @@
 		<!-- begin fonts.css.html -->
 		{%- assign fonts = site.static_files | where: "font", true -%}
+		{%- assign unicode_range = "U+0000–007F, U+0080–00FF, U+0100–017F, U+0180–024F, U+1E00–1EFF" -%}
 		{%- assign fonts_indexed = site.data.arr.arr -%}
 		{%- assign index = true %}
 		<style>
@@ -15,7 +16,7 @@
 						{%- assign index = true -%}
 					{%- endif -%}
 				{%- endfor -%}
-				{%- if font.path contains "lang-" -%}
+				{%- if font.basename contains "lang-" -%}
 					{%- assign index = false -%}
 				{%- endif -%}
 				{%- if index == true -%}
@@ -53,12 +54,8 @@
 					{%- for lang in langs -%}
 						{%- if lang.path contains font_path[0] -%}
 							{%- if lang.basename == "lang-ar" -%}
-								{%- assign unicode_range = "U+0600–06FF, U+FB50–FDFF, U+FE70–FEFF" -%} /* ar */
-							{%- else -%}
-								{%- assign unicode_range = "U+0000–007F, U+0080–00FF, U+0100–017F, U+0180–024F, U+1E00–1EFF" -%} /* en */
+								{%- assign unicode_range = "U+0600–06FF, U+FB50–FDFF, U+FE70–FEFF" -%}
 							{%- endif -%}
-						{%- else -%}
-							{%- assign unicode_range = "U+0000–007F, U+0080–00FF, U+0100–017F, U+0180–024F, U+1E00–1EFF" -%} /* en */
 						{%- endif -%}
 					{%- endfor %}
 			@font-face {
