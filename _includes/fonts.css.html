@@ -87,5 +87,13 @@
 					{%- assign fonts_indexed = fonts_indexed | push: this_instance -%}
 				{%- endif -%}
 			{%- endfor %}
+			@font-face {
+				font-family: "--control";
+				src:
+					local("Helvetica Neue"),
+					local("Helvetica"),
+					local("Arial");
+				unicode-range: {{ site.data.unicode.control }};
+			}
 		</style>
 		<!-- end fonts.css.html -->
