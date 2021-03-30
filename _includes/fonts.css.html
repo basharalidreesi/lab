@@ -57,7 +57,7 @@
 							{%- endif -%}
 						{%- endfor -%}
 					{%- endcapture -%}
-					{%- assign font_src = src | split: ", " -%}
+					{%- assign font_src = src | split: "," -%}
 					{%- for node in font_src %}
 					{{ node }}{%- unless forloop.last -%} , {%- else -%} ; {%- endunless %}
 					{%- endfor %}
