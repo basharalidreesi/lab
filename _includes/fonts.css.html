@@ -12,7 +12,7 @@
 					{%- endfor -%}
 				{%- endcapture -%}
 				{%- for node in hasBeenIndexed -%}
-					{%- if node == font_family -%}
+					{%- if node == font.name -%}
 						{%- assign index = false -%}
 						{%- break -%}
 					{%- else -%}
@@ -69,8 +69,8 @@
 				font-weight: {{ font_weight -}};
 				font-style: {{ font_style -}};
 			}
-					{%- assign hasBeenIndexed = hasBeenIndexed | push: font_family -%}
+					{%- assign hasBeenIndexed = hasBeenIndexed | push: font.name -%}
 				{%- endif -%}
-			{%- endfor -%}
+			{%- endfor %}
 		</style>
 		<!-- end fonts.css.html -->
