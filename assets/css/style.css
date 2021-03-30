@@ -21,7 +21,7 @@
 	│ nav text │
 	└──────────┘
 	*/
-	--nav_text_font: "M+ 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	--nav_text_font: "mplus 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--nav_text_font_size: 1rem;
 	--nav_text_font_weight: 300;
 	--subnav_text_font_size: 0.75rem;
@@ -31,10 +31,10 @@
 	│ list text │
 	└───────────┘
 	*/
-	--list_title_font: "M+ 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	--list_title_font: "mplus 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--list_title_font_size: 1.25rem;
 	--list_title_font_weight: 400;
-	--list_tag_font: "Code New Roman", monospace;
+	--list_tag_font: "code new roman", monospace;
 	--list_tag_font_size: 1rem;
 	--list_tag_font_weight: 400;
 	/*
@@ -43,10 +43,10 @@
 	│ article text │
 	└──────────────┘
 	*/
-	--article_title_font: "Margo", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	--article_title_font: "margo", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--article_title_font_size: 4rem;
-	--article_title_font_weight: 400;
-	--article_text_font: "M+ 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	--article_title_font_weight: 500;
+	--article_text_font: "mplus 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--article_text_font_size: 1rem;
 	--article_text_font_weight: 300;
 	/*
@@ -55,7 +55,7 @@
 	│ footer text │
 	└─────────────┘
 	*/
-	--footer_text_font: "M+ 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	--footer_text_font: "mplus 1p", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	--footer_text_font_size: 0.75rem;
 	--footer_text_font_weight: 300;
 	/*
@@ -669,7 +669,7 @@
 		position: absolute;
 		left: 0;
 		width: 100%;
-		font-family: "M+ 1p";
+		font-family: "mplus 1p";
 		font-weight: 300;
 		color: var(--text_colour);
 		text-transform: uppercase;
