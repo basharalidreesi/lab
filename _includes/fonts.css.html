@@ -69,6 +69,10 @@
 				font-style: {{ font_style -}};
 			}
 					{{- hasBeenIndexed | push: font_family -}}
+				{%- else -%}
+					<script type="text/javascript">
+						console.log("{{ hasBeenIndexed | inspect }}");
+					</script>
 				{%- endif -%}
 			{%- endfor -%}
 		</style>
