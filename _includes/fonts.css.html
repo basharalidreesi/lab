@@ -1,6 +1,6 @@
 		<!-- begin fonts.css.html -->
 		{%- assign fonts = site.static_files | where: "font", true -%}
-		{%- assign hasBeenIndexed = "" %}
+		{%- assign hasBeenIndexed = site.data.arr.arr %}
 		<style>
 			{%- for font in fonts -%}
 				{%- assign font_path = font.path | remove: "/assets/fonts/" | split: "/" -%}
