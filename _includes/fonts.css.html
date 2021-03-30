@@ -59,7 +59,7 @@
 					{%- endcapture -%}
 					{%- assign font_src = src | split: ", " -%}
 					{%- for node in font_src %}
-						{{ node }}{%- unless forloop.last -%} , {%- else -%} ; {%- endunless %}
+					{{ node }}{%- unless forloop.last -%} , {%- else -%} ; {%- endunless %}
 					{%- endfor %}
 				font-weight: {{ font_weight -}};
 				font-style: {{ font_style -}};
