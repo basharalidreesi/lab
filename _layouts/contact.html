@@ -18,15 +18,15 @@ layout: default
 						{%- capture contact -%}
 					<form class="main_wrapper-contact_wrapper main_wrapper-special_content --article_section_styling" action="https://formspree.io/f/mvovjwlo" method="post">
 						<fieldset>
-							<input name="Name" placeholder="Name" type="text" required>
-							<input name="E-mail" placeholder="E-mail" type="email" required>
-							<textarea name="Message" placeholder="Message" required></textarea>
-							<button type="submit" data-submit="Sending...">Send</button>
+							<input name="Name" placeholder="Name" type="text" required dir="auto">
+							<input name="E-mail" placeholder="E-mail" type="email" required dir="auto">
+							<textarea name="Message" placeholder="Message" required dir="auto"></textarea>
+							<button type="submit" data-submit="Sending..." dir="auto">Send</button>
 						</fieldset>
 					</form>
 						{%- endcapture -%}
 					{%- comment -%}
 						<!-- end contact setup -->
 					{%- endcomment -%}
-					{{ content_html | replace: "<!-- SPECIAL BLOCK BREAK -->", contact }}
+					{{ content_html | replace: "<!-- SPECIAL BLOCK BREAK -->", contact | remove: "<!-- SPECIAL BLOCK BREAK -->" }}
 				<!-- end contact.html -->

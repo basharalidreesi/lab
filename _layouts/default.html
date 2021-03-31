@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en-GB" dir="ltr">
+<html lang="en-GB" dir="auto">
 	<head>
 		{%- comment -%}
 			<!-- begin default setup -->
@@ -111,7 +111,7 @@
 								{%- for node in site.pages -%}
 									{%- assign level_one_current = current | remove_first: "_" -%}
 									{%- if node.path == level_one_current %}
-					<span class="supernav_wrapper-supernav_item --supernav_text_styling {%- if page.url == node.url %} --current_supernav_item {%- endif -%}">
+					<span class="supernav_wrapper-supernav_item --supernav_text_styling {%- if page.url == node.url %} --current_supernav_item {%- endif -%}" dir="auto">
 						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
 							{{ node.title | strip }}
 						</a>
@@ -122,14 +122,14 @@
 									{%- endif -%}
 								{%- endfor -%}
 							{%- elsif level == 1 and current == "404.markdown" %}
-					<span class="supernav_wrapper-supernav_item --supernav_text_styling --current_supernav_item">
+					<span class="supernav_wrapper-supernav_item --supernav_text_styling --current_supernav_item" dir="auto">
 						?
 					</span>
 								{%- break -%}
 							{%- else -%}
 								{%- for node in site.documents -%}
 									{%- if node.path == current %}
-					<span class="supernav_wrapper-supernav_item --supernav_text_styling {%- if page.url == node.url %} --current_supernav_item {%- endif -%}">
+					<span class="supernav_wrapper-supernav_item --supernav_text_styling {%- if page.url == node.url %} --current_supernav_item {%- endif -%}" dir="auto">
 						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}">
 							{{ node.title | strip }}
 						</a>
@@ -148,14 +148,14 @@
 					{%- for node in pages -%}
 						{%- if node.['page nav'].['is navigable'] and tree.size >= 2 -%}
 							{%- unless page.url contains node.url %}
-					<li class="nav_wrapper-nav_item --nav_text_styling" itemprop="name">
+					<li class="nav_wrapper-nav_item --nav_text_styling" dir="auto" itemprop="name">
 						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}" itemprop="url">
 							{{ node.title | strip }}
 						</a>
 					</li>
 							{%- else %}
 					<li class="nav_wrapper-nav_item --nav_text_styling --current_nav_item">
-						<span class="--median" itemprop="name">
+						<span class="--median" dir="auto" itemprop="name">
 							<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}" itemprop="url">
 								{{ node.title | strip }}
 							</a>
@@ -172,7 +172,7 @@
 									{%- for node2 in site.documents -%}
 										{%- if node2.path == current -%}
 											{%- assign i = i | plus: 1 %}
-							<li class="subnav_wrapper-subnav_item --subnav_text_styling {%- if page.url == node2.url %} --current_subnav_item {%- endif -%}" itemprop="itemListElement" itemscope="itemscope" itemtype="https://schema.org/ListItem">
+							<li class="subnav_wrapper-subnav_item --subnav_text_styling {%- if page.url == node2.url %} --current_subnav_item {%- endif -%}" dir="auto" itemprop="itemListElement" itemscope="itemscope" itemtype="https://schema.org/ListItem">
 								<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node2.url -}}" itemprop="item">
 									<span class="--median" itemprop="name">{{ node2.title | strip }}</span>
 								</a>
@@ -189,7 +189,7 @@
 					</li>
 							{%- endunless -%}
 						{%- elsif node.['page nav'].['is navigable'] and tree.size < 2 %}
-					<li class="nav_wrapper-nav_item --nav_text_styling {%- if page.url contains node.url %} --current_nav_item-x {%- endif -%}" itemprop="name">
+					<li class="nav_wrapper-nav_item --nav_text_styling {%- if page.url contains node.url %} --current_nav_item-x {%- endif -%}" dir="auto" itemprop="name">
 						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}" itemprop="url">
 							{{ node.title | strip }}
 						</a>
