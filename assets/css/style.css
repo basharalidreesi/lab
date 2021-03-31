@@ -654,11 +654,11 @@
 		align-items: center;
 		justify-content: center;
 		width: 100%;
-		max-width: calc(var(--screen_width_third) + var(--quadruple));
 		overflow: hidden;
 	}
 	.article_wrapper-article_header h1 {
 		width: 100%;
+		max-width: calc(var(--screen_width_third) + var(--quadruple));
 		padding: calc(var(--double));
 	}
 	.article_wrapper-article_section {
@@ -944,32 +944,37 @@
 	│ showcase styles │
 	└─────────────────┘
 	*/
-	.main_wrapper-showcase_wrapper {
-		display: flex;
-		flex-flow: row wrap;
-		height: 100%;
-		width: 100%;
-		font-size: 0;
+	.--showcase_layout .main_container-article_wrapper > *,
+	.--showcase_layout .article_wrapper-article_section > *,
+	.--showcase_layout .--image img,
+	.--showcase_layout .--anchored_image img {
+		margin: 0;
+		padding: 0;
+		border: none;
+		height: auto;
+		width: auto;
+		max-height: none;
+		max-width: none;
 	}
-	.showcase_wrapper-showcase_tile {
-		flex: 0 0 calc(var(--screen_width_third));
-		height: calc(var(--screen_width_third));
-		user-select: none;
-		-ms-user-select: none;
-		-moz-user-select: none;
-		-webkit-user-select: none;
-		font-size: 0;
-	}
-	.--showcase_tile {
-		height: 100%;
+	.--showcase_layout .article_wrapper-article_header {
 		width: 100%;
-		object-fit: cover;
 	}
-	/* .showcase_wrapper-showcase_tile a {
-		display: block;
-		height: 100%;
+	.--showcase_layout .article_wrapper-article_section,
+	.--showcase_layout .--image,
+	.--showcase_layout .--anchored_image {
+		width: calc(var(--screen_width_third));
+	}
+	.--showcase_layout .--image picture,
+	.--showcase_layout .--anchored_image picture {
+		height: auto;
 		width: 100%;
-	} */
+		margin: 0;
+	}
+	.--showcase_layout .--image img,
+	.--showcase_layout .--anchored_image img {
+		height: auto;
+		width: 100%;
+	}
 	/*
 	┌───────┐
 	│ begin └────────┐
@@ -1421,7 +1426,7 @@
 		.main_container-article_wrapper {
 			border-top: none;
 		}
-		.article_wrapper-article_header {
+		.article_wrapper-article_header h1 {
 			max-width: none;
 		}
 		.article_section-inner_wrapper {
@@ -1508,7 +1513,8 @@
 	.--anchored_image picture {
 		max-width: calc(100% - var(--quadruple));
 	}
-	.--cascade_layout .--anchored_image picture {
+	.--cascade_layout .--anchored_image picture,
+	.--showcase_layout .--anchored_image picture {
 		max-width: none;
 	}
 }
