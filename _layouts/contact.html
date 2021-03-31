@@ -15,13 +15,13 @@ layout: default
 					{%- comment -%}
 						<!-- begin contact setup -->
 					{%- endcomment -%}
-						{%- capture contact -%}
+						{%- capture contact %}
 					<form class="main_wrapper-contact_wrapper main_wrapper-special_content --article_section_styling" action="{{- site.['contact form action'] | strip -}}" method="post" itemprop="isPartOf" itemscope="itemscope" itemtype="https://schema.org/ContactPage">
 						<fieldset itemscope="itemscope" itemtype="https://schema.org/CommunicateAction">
-							<input name="Name" placeholder="Name" type="text" required dir="auto" itemprop="isPartOf">
-							<input name="E-mail" placeholder="E-mail" type="email" required dir="auto" itemprop="isPartOf">
-							<textarea name="Message" placeholder="Message" required dir="auto" itemprop="isPartOf"></textarea>
-							<button type="submit" data-submit="Sending..." dir="auto" itemprop="isPartOf" itemscope="itemscope" itemtype="https://schema.org/SendAction">Send</button>
+							<input name="Name" placeholder="Name" type="text" required dir="auto" itemprop="description">
+							<input name="E-mail" placeholder="E-mail" type="email" required dir="auto" itemprop="description">
+							<textarea name="Message" placeholder="Message" required dir="auto" itemprop="description"></textarea>
+							<button type="submit" data-submit="Sending..." dir="auto" itemprop="potentialAction" itemscope="itemscope" itemtype="https://schema.org/SendAction">Send</button>
 						</fieldset>
 					</form>
 						{%- endcapture -%}
