@@ -3,38 +3,14 @@ layout: default
 ---
 
 <!-- begin showcase.html -->
-				{%- comment -%}
-					<!-- begin content setup -->
-				{%- endcomment -%}
-					{%- capture content_html -%}
-						{%- include content.html -%}
-					{%- endcapture -%}
-				{%- comment -%}
-					<!-- end content setup -->
-				{%- endcomment -%}
-				{%- comment -%}
-					<!-- begin showcase setup -->
-				{%- endcomment -%}
-					{%- assign showcase_tiles = site.static_files | where: "showcase_tile", true -%}
-					{%- assign page_path = page.path | replace: "index.md", "home" | replace: "index.markdown", "home" | replace: "index.html", "home" | remove_first: "_" | remove: ".md" | remove: ".markdown" | remove: ".html" -%}
-					{%- capture showcase -%}
-						{%- if showcase_tiles %}
-					<article class="main_wrapper-showcase_wrapper main_wrapper-special_content" itemscope="itemscope" itemtype="https://schema.org/VisualArtwork">
-							{%- for tile in showcase_tiles -%}
-								{%- assign tile_name = tile.name | prepend: "/" -%}
-								{%- assign tile_path = tile.path | remove: "assets/graphics/showcase_tiles/" | remove_first: "/" | remove: tile_name -%}
-									{%- if tile_path == page_path %}
-						<picture class="showcase_wrapper-showcase_tile" itemprop="artform">
-							<img class="--showcase_tile" src="{{- site.baseurl -}}{{- tile.path -}}" alt="{{ tile.basename }}" width="33%" itemprop="image">
-						</picture>
-									{%- endif -%}
-							{%- endfor %}
-						<meta itemprop="name" content="{{- page.title | strip -}}" />
-					</article>
-						{%- endif -%}
-					{%- endcapture -%}
-				{%- comment -%}
-					<!-- end showcase setup -->
-				{%- endcomment -%}
-				{{ content_html | replace: "<!-- SPECIAL BLOCK BREAK -->", showcase }}
+					{%- comment -%}
+						<!-- begin content setup -->
+					{%- endcomment -%}
+						{%- capture content_html -%}
+							{%- include content.html -%}
+						{%- endcapture -%}
+					{%- comment -%}
+						<!-- end content setup -->
+					{%- endcomment -%}
+					{{ content_html | remove: "<!-- SPECIAL BLOCK BREAK -->" }}
 				<!-- end showcase.html -->
