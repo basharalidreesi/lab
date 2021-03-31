@@ -398,10 +398,18 @@
 	}
 
 	function fixIframeScroll() {
-		const iframes = document.querySelectorAll(".--iframe");
+		const frames = document.querySelectorAll(".--iframe");
 		const barricade = document.createElement("div");
 		barricade.classList.add("--barricade");
+		frames.forEach((frame) => {
+			frame.appendChild(barricade);
+		});
+		const iframes = document.querySelectorAll("iframe");
 		iframes.forEach((iframe) => {
-			iframe.appendChild(barricade);
+			if (iframe.src.contains("vimeo.com")) {
+				iframe.src += "&api=1";
+			} else if (iframe.src.contains("youtube.com") || iframe.src.contains("youtu.be")) {
+				iframe.src += "&enablejsapi=1";
+			}
 		});
 	}
