@@ -34,7 +34,7 @@
 									{%- endif -%}
 								{%- elsif block contains "</iframe>" -%}
 									{%- assign parse = "true" -%}
-									{%- assign tag = "null" -%}
+									{%- assign tag = "div" -%}
 									{%- assign class = "iframe" -%}
 								{%- else -%}
 									{%- assign parse = "false" -%}
@@ -124,14 +124,8 @@
 						<section class="article_wrapper-article_section --{{ class }}" {%- unless style == "null" %} style="{{ style }}" {%- endunless -%} itemprop="isPartOf">
 									{%- unless tag == "null" %}
 							<{{ tag }} dir="auto">
-									{%- endunless -%}
-										{%- if page.layout == "showcase" and class == "iframe" %}
-								<div class="--median">
-										{%- endif %}
+									{%- endunless %}
 								{{ block | remove: "<p>" | remove: "</p>" | strip }}
-										{%- if page.layout == "showcase" and class == "iframe" %}
-								</div>
-										{%- endif -%}
 									{%- unless tag == "null" %}
 							</{{ tag }}>
 									{%- endunless %}
