@@ -398,10 +398,10 @@
 	}
 
 	function fixIframeScroll() {
-		const iframes = document.querySelectorAll(".--iframe");
-		const barrier = document.createElement("div");
-		barrier.classList.add("--barricade");
-		iframes.forEach((iframe) => {
-			iframe.appendChild(barrier);
-		});
+	//	const iframes = document.querySelectorAll(".--iframe");
+	//	const barrier = document.createElement("div");
+	//	barrier.classList.add("--barrier");
+	//	iframes.forEach((iframe) => {
+	//		iframe.appendChild(barrier);
+	//	});
 	}
