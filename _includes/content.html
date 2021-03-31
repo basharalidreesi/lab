@@ -80,7 +80,12 @@
 						{%- if preceded %}
 						<header class="article_wrapper-article_header" {%- if page.['page title'].['styles'] %} style="{{- page.['page title'].['styles'] | strip -}}" {%- endif -%} dir="auto">
 							<h1 class="--article_header_styling">
-								{{ page.title | replace: "&" , "and" }}
+								{%- assign title_text = page.['page title'].['title text'] | newline_to_br | strip_newlines | remove: "<br />" | strip | remove: " " -%}
+								{%- if title_text == empty %}
+								{{ page.title | strip | replace: "&" , "and" }}
+								{%- else %}
+								{{ page.['page title'].['title text'] | strip }}
+								{%- endif %}
 							</h1>
 						</header>
 						{%- endif -%}
