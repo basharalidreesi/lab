@@ -5,6 +5,6 @@ tags:
 - metadata
 - content
 - styles
-position: 5
+position: 4
 ---
 
