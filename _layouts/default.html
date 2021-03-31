@@ -144,7 +144,7 @@
 				</label>
 				{%- endunless -%}
 				{%- assign i = 0 %}
-				<ul class="nav_container-nav_wrapper">
+				<ul class="nav_container-nav_wrapper" dir="auto">
 					{%- for node in pages -%}
 						{%- if node.['page nav'].['is navigable'] and tree.size >= 2 -%}
 							{%- unless page.url contains node.url %}
