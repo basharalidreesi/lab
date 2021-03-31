@@ -12,6 +12,8 @@
 	└────────────┘
 	*/
 	--font_size: 15px;
+	--font_weight: 400;
+	--line_height: 100%;
 	--universal_answer: 1rem;
 	--universal_answer_multiplier: 2;
 	--single: (var(--universal_answer) * var(--universal_answer_multiplier) / 2);
@@ -64,9 +66,9 @@
 		font-family: var(--font_family);
 		font-weight: var(--font_weight);
 		font-size: var(--font_size);
+		line-height: var(--line_height);
 		font-synthesis: none;
 		text-align: left;
-		line-height: 100%;
 		overscroll-behavior-y: contain;
 	}
 	html {
@@ -512,8 +514,7 @@
 	}
 	.nav_wrapper-nav_item {
 		flex: 1;
-		padding-top: calc(var(--double));
-		padding-bottom: calc(var(--double));
+		padding: calc(var(--double));
 		overflow: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;
@@ -1383,6 +1384,10 @@
 		#supernav_checkbox:checked ~ .nav_container-supernav_wrapper .supernav_wrapper-supernav_item:not(.--supernav_separator) {
 			padding-top: calc(var(--single));
 			padding-bottom: calc(var(--single));
+		}
+		#supernav_checkbox:checked ~ .nav_container-supernav_wrapper .supernav_wrapper-supernav_item:not(.--supernav_separator):not(.--current_supernav_item) {
+			padding-left: calc(var(--double));
+			padding-right: calc(var(--double));
 		}
 		#supernav_checkbox:checked ~ .nav_container-supernav_wrapper .supernav_wrapper-supernav_item:last-of-type {
 			padding-top: calc(var(--double));
