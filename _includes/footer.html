@@ -1,6 +1,7 @@
 
 					<!-- begin footer.html -->
-					{%- assign year = site.time | date: '%Y' %}
+					{%- assign year = site.time | date: '%Y' -%}
+					{%- assign footer_text = page.['page footer'].['footer text'] | newline_to_br | strip_newlines | remove: "<br />" | strip | remove: " " %}
 					<address itemscope="itemscope" itemtype="https://schema.org/Person">
 						<p class="--footer_text_styling" itemprop="name">
 							{{ site.author | strip }}
@@ -22,7 +23,11 @@
 							All rights reserved
 						</p>
 						<p class="--footer_text_styling">
+							{%- if footer_text == empty %}
 							{{ site.['footer text'] | strip }}
+							{%- else %}
+							{{ page.['page footer'].['footer text'] | strip }}
+							{%- endif %}
 						</p>
 					</address>
 					<!-- end footer.html -->

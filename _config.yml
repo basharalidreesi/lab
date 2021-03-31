@@ -64,12 +64,14 @@ defaults:
       styles: 
     page title:
       is displayed: true
+      title text: 
       styles: 
     page content:
       content styles: 
       special styles: 
     page footer:
       is displayed: true
+      footer text: 
       styles: 
 - scope:
     path: ''
