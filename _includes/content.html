@@ -78,7 +78,7 @@
 					{%- endcomment %}
 					<article class="main_container-article_wrapper" id="article_wrapper">
 						{%- if preceded %}
-						<header class="article_wrapper-article_header" {%- if page.['page title'].['styles'] %} style="{{- page.['page title'].['styles'] | strip -}}" {%- endif -%}>
+						<header class="article_wrapper-article_header" {%- if page.['page title'].['styles'] %} style="{{- page.['page title'].['styles'] | strip -}}" {%- endif -%} dir="auto">
 							<h1 class="--article_header_styling">
 								{{ page.title | replace: "&" , "and" }}
 							</h1>
@@ -126,7 +126,7 @@
 									{%- endunless %}
 						</section>
 								{%- else %}
-						<section class="article_wrapper-article_section" {%- unless style == "null" %} style="{{ style }}" {%- endunless -%}>
+						<section class="article_wrapper-article_section" {%- unless style == "null" %} style="{{ style }}" {%- endunless -%} dir="auto">
 									{%- unless tag == "null" %}
 							<{{ tag }} class="article_section-inner_wrapper --article_section_styling">
 									{%- endunless %}
@@ -139,7 +139,7 @@
 							{%- endunless -%}
 						{%- endfor -%}
 						{%- if cascade and succeeded %}
-						<footer class="article_wrapper-article_footer" {%- if page.['page footer'].styles %} style="{{- page.['page footer'].styles | strip -}}" {%- endif -%}>
+						<footer class="article_wrapper-article_footer" {%- if page.['page footer'].styles %} style="{{- page.['page footer'].styles | strip -}}" {%- endif -%} dir="auto">
 							{%- include footer.html %}						</footer>
 						{%- endif %}
 					</article>
