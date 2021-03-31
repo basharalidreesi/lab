@@ -38,13 +38,29 @@ defaults:
         serif'
       tertiary font family: '"code new roman", "--space_control", "kawkab", "--system_monospace",
         monospace'
+    page font sizes:
+      nav font size: 1rem
+      subnav font size: 0.75rem
+      list font size: 1.25rem
+      tag font size: 1rem
+      title font size: 4rem
+      content font size: 1rem
+      footer font size: 0.75rem
+    page font weights:
+      nav font weight: 300
+      subnav font weight: 300
+      list font weight: 400
+      tag font weight: 400
+      title font weight: 500
+      content font weight: 400
+      footer font weight: 300
     page root:
       styles: 
     page header:
       is central: false
       image: 
       styles: 
-    page navigation:
+    page nav:
       styles: 
     page title:
       is displayed: true
@@ -60,7 +76,7 @@ defaults:
     type: pages
   values:
     permalink: "/:basename"
-    page navigation:
+    page nav:
       is navigable: false
 - scope:
     path: ''
