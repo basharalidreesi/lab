@@ -64,6 +64,7 @@
 		font-family: var(--font_family);
 		font-weight: var(--font_weight);
 		font-size: var(--font_size);
+		font-synthesis: none;
 		text-align: left;
 		line-height: 100%;
 		overscroll-behavior-y: contain;
@@ -125,16 +126,17 @@
 	.--subnav_text_styling,
 	.--supernav_text_styling {
 		--font_family: var(--primary_font_family);
-		--font_weight: 300;
 		color: var(--text_colour);
 		text-align: center;
 	}
 	.--nav_text_styling,
 	.--supernav_text_styling {
-		--font_size: 1rem;
+		--font_size: var(--nav_font_size);
+		--font_weight: var(--nav_font_weight);
 	}
 	.--subnav_text_styling {
-		--font_size: 0.75rem;
+		--font_size: var(--subnav_font_size);
+		--font_weight: var(--subnav_font_weight);
 	}
 	/*
 	┌───────┐
@@ -144,8 +146,8 @@
 	*/
 	.--list_title_styling {
 		--font_family: var(--primary_font_family);
-		--font_size: 1.25rem;
-		--font_weight: 400;
+		--font_size: var(--list_font_size);
+		--font_weight: var(--list_font_weight);
 		color: var(--text_colour);
 		text-align: center;
 		line-height: 150%;
@@ -158,8 +160,8 @@
 	}
 	.--list_tag_styling {
 		--font_family: var(--tertiary_font_family);
-		--font_size: 1rem;
-		--font_weight: 400;
+		--font_size: var(--tag_font_size);
+		--font_weight: var(--tag_font_weight);
 		color: var(--text_colour);
 		text-align: center;
 	}
@@ -171,8 +173,8 @@
 	*/
 	.--article_header_styling {
 		--font_family: var(--secondary_font_family);
-		--font_size: 4rem;
-		--font_weight: 500;
+		--font_size: var(--title_font_size);
+		--font_weight: var(--title_font_weight);
 		color: var(--text_colour);
 		text-align: center;
 		hyphens: auto;
@@ -197,8 +199,8 @@
 	.--article_section_styling textarea,
 	.--article_section_styling button {
 		--font_family: var(--primary_font_family);
-		--font_size: 1rem;
-		--font_weight: 300;
+		--font_size: var(--content_font_size);
+		--font_weight: var(--content_font_weight);
 		color: var(--text_colour);
 		text-align: justify;
 		text-align-last: center;
@@ -218,19 +220,19 @@
 	.--article_section_styling h5,
 	.--article_section_styling h6 {
 		--font_family: var(--secondary_font_family);
-		--font_weight: 500;
+		--font_weight: var(--title_font_weight);
 		text-align: center;
 		line-height: 100%;
 	}
 	.--article_section_styling h1 {
-		--font_size: 3rem; /* temp */
+		--font_size: calc(var(--title_font_size) * 0.75);
 	}
 	.--article_section_styling h2,
 	.--article_section_styling h3,
 	.--article_section_styling h4,
 	.--article_section_styling h5,
 	.--article_section_styling h6 {
-		--font_size: 2rem; /* temp */
+		--font_size: calc(var(--title_font_size) * 0.75);
 	}
 	.--article_section_styling ul,
 	.--article_section_styling ol {
@@ -253,10 +255,7 @@
 		border-bottom: none;
 	}
 	.--article_section_styling strong {
-		--font_weight: 700; /* temp */
-	}
-	.--article_section_styling em {
-		font-style: normal; /* temp */
+		--font_weight: bolder;
 	}
 	.--article_section_styling blockquote {
 		padding: calc(var(--single));
@@ -282,7 +281,7 @@
 		border-radius: calc(var(--single));
 	}
 	.--article_section_styling th {
-		--font_weight: 700;
+		--font_weight: bolder;
 		padding: calc(var(--single));
 		border-bottom: 1px solid var(--border_colour);
 	}
@@ -308,8 +307,8 @@
 	*/
 	.--footer_text_styling {
 		--font_family: var(--primary_font_family);
-		--font_size: 0.75rem;
-		--font_weight: 300;
+		--font_size: var(--footer_font_size);
+		--font_weight: var(--footer_font_weight);
 		color: var(--text_colour);
 		text-align: center;
 		line-height: 250%;

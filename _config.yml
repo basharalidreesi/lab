@@ -39,44 +39,44 @@ defaults:
       tertiary font family: '"code new roman", "--space_control", "kawkab", "--system_monospace",
         monospace'
     page font sizes:
-      navigation font size: 1rem
-      subnavigation font size: 0.75rem
+      nav font size: 1rem
+      subnav font size: 0.75rem
       list font size: 1.25rem
       tag font size: 1rem
       title font size: 4rem
       content font size: 1rem
       footer font size: 0.75rem
     page font weights:
-      navigation font weight: 300
-      subnavigation font weight: 300
+      nav font weight: 300
+      subnav font weight: 300
       list font weight: 400
       tag font weight: 400
       title font weight: 500
       content font weight: 400
       footer font weight: 300
     page root:
-      styles: 
+      styles:
     page header:
       is central: false
-      image: 
-      styles: 
-    page navigation:
-      styles: 
+      image:
+      styles:
+    page nav:
+      styles:
     page title:
       is displayed: true
-      styles: 
+      styles:
     page content:
-      content styles: 
-      special styles: 
+      content styles:
+      special styles:
     page footer:
       is displayed: true
-      styles: 
+      styles:
 - scope:
     path: ''
     type: pages
   values:
     permalink: "/:basename"
-    page navigation:
+    page nav:
       is navigable: false
 - scope:
     path: ''
@@ -92,7 +92,7 @@ defaults:
     path: assets/fonts
   values:
     font: true
-baseurl: 
+baseurl:
 url: https://jadtoghuj.com
 description: Jad Toghuj | Editorial Stylist | Creative Director | Amman, Jordan
 author: Jad Toghuj

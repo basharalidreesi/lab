@@ -97,7 +97,7 @@
 		</div>
 		{%- endif %}
 		<div class="mother_container" id="mother_container" {%- if page.['page root'].styles %} style="{{- page.['page root'].styles | strip -}}" {%- endif -%}>
-			<nav class="mother_container-nav_container" id="nav_container" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" {%- if page.['page navigation'].styles %} style="{{- page.['page navigation'].styles | strip -}}" {%- endif -%}>
+			<nav class="mother_container-nav_container" id="nav_container" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" {%- if page.['page nav'].styles %} style="{{- page.['page nav'].styles | strip -}}" {%- endif -%}>
 				{%- unless home %}
 				<input type="checkbox" id="supernav_checkbox">
 				<div class="--nav_background"></div>
@@ -146,7 +146,7 @@
 				{%- assign i = 0 %}
 				<ul class="nav_container-nav_wrapper">
 					{%- for node in pages -%}
-						{%- if node.['page navigation'].['is navigable'] and tree.size >= 2 -%}
+						{%- if node.['page nav'].['is navigable'] and tree.size >= 2 -%}
 							{%- unless page.url contains node.url %}
 					<li class="nav_wrapper-nav_item --nav_text_styling" itemprop="name">
 						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}" itemprop="url">
@@ -188,7 +188,7 @@
 						</ul>
 					</li>
 							{%- endunless -%}
-						{%- elsif node.['page navigation'].['is navigable'] and tree.size < 2 %}
+						{%- elsif node.['page nav'].['is navigable'] and tree.size < 2 %}
 					<li class="nav_wrapper-nav_item --nav_text_styling {%- if page.url contains node.url %} --current_nav_item-x {%- endif -%}" itemprop="name">
 						<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}" itemprop="url">
 							{{ node.title | strip }}
