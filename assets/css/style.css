@@ -1278,7 +1278,7 @@
 	.--mobile_background {
 		display: block;
 	}
-	.article_wrapper-article_section.--anchored_image picture:hover {
+	.article_wrapper-article_section.--anchored_image picture {
 		box-shadow: inset 0 0 calc(var(--quadruple)) var(--primary_glow_colour);
 	}
 }
