@@ -124,8 +124,14 @@
 						<section class="article_wrapper-article_section --{{ class }}" {%- unless style == "null" %} style="{{ style }}" {%- endunless -%} itemprop="isPartOf">
 									{%- unless tag == "null" %}
 							<{{ tag }} dir="auto">
-									{%- endunless %}
-									{{ block | remove: "<p>" | remove: "</p>" | strip }}
+									{%- endunless -%}
+										{%- if page.layout == "showcase" and tag == "iframe" %}
+								<div class="--median">
+										{%- endif %}
+								{{ block | remove: "<p>" | remove: "</p>" | strip }}
+										{%- if page.layout == "showcase" and tag == "iframe" %}
+								</div>
+										{%- endif -%}
 									{%- unless tag == "null" %}
 							</{{ tag }}>
 									{%- endunless %}

@@ -972,6 +972,22 @@
 		height: auto;
 		width: 100%;
 	}
+	.--showcase_layout .--iframe {
+		position: relative;
+	}
+	.--showcase_layout .--iframe .--median {
+		padding-top: 56.25%;
+	}
+	.--showcase_layout .--iframe iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100% !important;
+		margin: 0;
+		padding: 0;
+		background: #000;
+	}
 	/*
 	┌───────┐
 	│ begin └────────┐
