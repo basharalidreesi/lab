@@ -204,7 +204,7 @@
 		color: var(--text_colour);
 		text-align: justify;
 		text-align-last: center;
-		text-justify: inter-word;
+		text-justify: auto;
 		hyphens: auto;
 		-ms-hyphens: auto;
 		-webkit-hyphens: auto;
