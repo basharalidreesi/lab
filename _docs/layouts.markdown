@@ -1,9 +1,9 @@
 ---
 title: Layouts
-date: 2021-03-30 14:03:00 Z
+date: 2021-03-31 19:50:00 Z
 tags:
 - "✍\U0001F3FD content"
-position: 4
+position: 5
+layout: list
 ---
 
-{% include content.md %}
