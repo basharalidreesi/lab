@@ -1,7 +1,7 @@
 ---
 title: About
 position: 2
-page navigation:
+page nav:
   is navigable: true
 page title:
   is displayed: false
