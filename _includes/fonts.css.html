@@ -21,6 +21,11 @@
 					{%- assign index = false -%}
 				{%- endif -%}
 				{%- if index == true -%}
+				{%- if
+					page.['page font families'].['primary font family'] contains font_family
+					or page.['page font families'].['secondary font family'] contains font_family
+					or page.['page font families'].['tertiary font family'] contains font_family
+				-%}
 					{%- if font.path contains "-thin." or font.path contains "-hairline." -%}
 						{%- assign font_weight = 100 -%}
 					{%- elsif font.path contains "-extra_light." or font.path contains "-ultra_light." or font.path contains "-extralight." or font.path contains "-ultralight." -%}
@@ -85,6 +90,7 @@
 				unicode-range: {{ unicode_range -}}; /* {{ unicode_range_comment }} */
 			}
 					{%- assign fonts_indexed = fonts_indexed | push: this_instance -%}
+				{%- endif -%}
 				{%- endif -%}
 			{%- endfor %}
 			@font-face {
