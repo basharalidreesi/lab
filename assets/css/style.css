@@ -265,13 +265,10 @@
 		border: 1px solid var(--border_colour);
 		border-radius: calc(var(--single));
 	}
-	.--article_section_styling blockquote p {
-		padding-bottom: 0;
-	}
 	.--article_section_styling code {
 		display: block;
 		--font_family: var(--tertiary_font_family);
-		padding: calc(var(--single));
+		padding: calc(var(--double));
 		border: 1px solid var(--border_colour);
 		border-radius: calc(var(--single));
 	}
