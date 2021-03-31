@@ -16,7 +16,7 @@ layout: default
 						<!-- begin contact setup -->
 					{%- endcomment -%}
 						{%- capture contact -%}
-					<form class="main_wrapper-contact_wrapper main_wrapper-special_content --article_section_styling" action="{{- site.['contact form action'] | strip -}}" method="post" itemprop="isPartOf">
+					<form class="main_wrapper-contact_wrapper main_wrapper-special_content --article_section_styling" action="{{- site.['contact form action'] | strip -}}" method="post" itemprop="isPartOf" itemscope="itemscope" itemtype="https://schema.org/CommunicateAction">
 						<fieldset>
 							<input name="Name" placeholder="Name" type="text" required dir="auto">
 							<input name="E-mail" placeholder="E-mail" type="email" required dir="auto">
