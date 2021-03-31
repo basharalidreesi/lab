@@ -13,7 +13,7 @@ One morning, when Gregor Samsa woke from troubled dreams, he found himself *tran
 
 <!-- break -->
 
-[animal](https://placeimg.com/640/480/animals)
+![animal](https://placeimg.com/640/480/animals)
 
 <!-- break -->
 
@@ -25,7 +25,7 @@ It showed a lady fitted out with a fur hat and fur boa who sat upright, raising 
 
 <!-- break -->
 
-[animal](https://placeimg.com/640/480/animals)
+![animal](https://placeimg.com/640/480/animals)
 
 <!-- break -->
 
@@ -38,7 +38,7 @@ It showed a lady fitted out with a fur hat and fur boa who sat upright, raising 
 
 <!-- break -->
 
-[animal](https://placeimg.com/640/480/animals?t=1617198271563)
+![animal](https://placeimg.com/640/480/animals?t=1617198271563)
 
 <!-- break -->
 
@@ -50,7 +50,7 @@ It showed a lady fitted out with a fur hat and fur boa who sat upright, raising 
 
 <!-- break -->
 
-[animal](https://placeimg.com/640/480/animals?t=1617198388562)
+![animal](https://placeimg.com/640/480/animals?t=1617198388562)
 
 <!-- break -->
 
@@ -62,7 +62,7 @@ It showed a lady fitted out with a fur hat and fur boa who sat upright, raising 
 
 <!-- break -->
 
-[animal](https://placeimg.com/640/480/animals?t=1617198370627)
+![animal](https://placeimg.com/640/480/animals?t=1617198370627)
 
 <!-- break -->
 
@@ -70,7 +70,7 @@ First he wanted to stand up quietly and undisturbed, get dressed, above all have
 
 <!-- break -->
 
-[animal](https://placeimg.com/640/480/animals?t=1617198356323)
+![animal](https://placeimg.com/640/480/animals?t=1617198356323)
 
 <!-- break -->
 
@@ -82,7 +82,7 @@ First he wanted to stand up quietly and undisturbed, get dressed, above all have
 
 <!-- break -->
 
-[animal](https://placeimg.com/640/480/animals?t=1617198346238)
+![animal](https://placeimg.com/640/480/animals?t=1617198346238)
 
 <!-- break -->
 
@@ -90,7 +90,7 @@ It was very easy to throw aside the blanket. He needed only to push himself up a
 
 <!-- break -->
 
-[animal](https://placeimg.com/640/480/animals?t=1617198327815)
+![animal](https://placeimg.com/640/480/animals?t=1617198327815)
 
 <!-- break -->
 
@@ -100,7 +100,7 @@ Thus, he tried to get his upper body out of the bed first and turned his head ca
 
 <!-- break -->
 
-[animal](https://placeimg.com/640/480/animals?t=1617198315193)
+![animal](https://placeimg.com/640/480/animals?t=1617198315193)
 
 <!-- break -->
 
