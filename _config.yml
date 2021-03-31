@@ -55,22 +55,22 @@ defaults:
       content font weight: 400
       footer font weight: 300
     page root:
-      styles:
+      styles: 
     page header:
       is central: false
-      image:
-      styles:
+      image: 
+      styles: 
     page nav:
-      styles:
+      styles: 
     page title:
       is displayed: true
-      styles:
+      styles: 
     page content:
-      content styles:
-      special styles:
+      content styles: 
+      special styles: 
     page footer:
       is displayed: true
-      styles:
+      styles: 
 - scope:
     path: ''
     type: pages
@@ -92,7 +92,7 @@ defaults:
     path: assets/fonts
   values:
     font: true
-baseurl:
+baseurl: 
 url: https://jadtoghuj.com
 description: Jad Toghuj | Editorial Stylist | Creative Director | Amman, Jordan
 author: Jad Toghuj
