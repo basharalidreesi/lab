@@ -92,6 +92,10 @@ Thus, he tried to get his upper body out of the bed first and turned his head ca
 
 <!-- break -->
 
+[![animal](https://placeimg.com/640/480/animals)](https://en.wikipedia.org/wiki/Animal)
+
+<!-- break -->
+
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/yAoLSRbwxL8?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <!-- break -->
