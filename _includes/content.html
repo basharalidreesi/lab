@@ -125,11 +125,11 @@
 									{%- unless tag == "null" %}
 							<{{ tag }} dir="auto">
 									{%- endunless -%}
-										{%- if page.layout == "showcase" and tag == "iframe" %}
+										{%- if page.layout == "showcase" and class == "iframe" %}
 								<div class="--median">
 										{%- endif %}
 								{{ block | remove: "<p>" | remove: "</p>" | strip }}
-										{%- if page.layout == "showcase" and tag == "iframe" %}
+										{%- if page.layout == "showcase" and class == "iframe" %}
 								</div>
 										{%- endif -%}
 									{%- unless tag == "null" %}
