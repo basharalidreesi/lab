@@ -406,9 +406,9 @@
 		});
 		const iframes = document.querySelectorAll("iframe");
 		iframes.forEach((iframe) => {
-			if (iframe.src.contains("vimeo.com")) {
+			if (iframe.src.indexOf("vimeo.com") != -1) {
 				iframe.src += "&api=1";
-			} else if (iframe.src.contains("youtube.com") || iframe.src.contains("youtu.be")) {
+			} else if (iframe.src.indexOf("youtube.com") != -1 || iframe.src.indexOf("youtu.be") != -1) {
 				iframe.src += "&enablejsapi=1";
 			}
 		});
