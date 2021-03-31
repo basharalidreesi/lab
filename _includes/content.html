@@ -76,9 +76,9 @@
 					{%- comment -%}
 						<!-- end content setup -->
 					{%- endcomment %}
-					<article class="main_container-article_wrapper" id="article_wrapper">
+					<article class="main_container-article_wrapper" id="article_wrapper" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
 						{%- if preceded %}
-						<header class="article_wrapper-article_header" {%- if page.['page title'].['styles'] %} style="{{- page.['page title'].['styles'] | strip -}}" {%- endif -%} dir="auto">
+						<header class="article_wrapper-article_header" {%- if page.['page title'].['styles'] %} style="{{- page.['page title'].['styles'] | strip -}}" {%- endif -%} dir="auto" itemprop="name">
 							<h1 class="--article_header_styling">
 								{%- assign title_text = page.['page title'].['title text'] | newline_to_br | strip_newlines | remove: "<br />" | strip | remove: " " -%}
 								{%- if title_text == empty %}
@@ -121,7 +121,7 @@
 							{%- endif -%}
 							{%- unless check == empty -%}
 								{%- if parse %}
-						<section class="article_wrapper-article_section --{{ class }}" {%- unless style == "null" %} style="{{ style }}" {%- endunless -%}>
+						<section class="article_wrapper-article_section --{{ class }}" {%- unless style == "null" %} style="{{ style }}" {%- endunless -%} itemprop="isPartOf">
 									{%- unless tag == "null" %}
 							<{{ tag }} dir="auto">
 									{%- endunless %}
@@ -131,7 +131,7 @@
 									{%- endunless %}
 						</section>
 								{%- else %}
-						<section class="article_wrapper-article_section" {%- unless style == "null" %} style="{{ style }}" {%- endunless -%}>
+						<section class="article_wrapper-article_section" {%- unless style == "null" %} style="{{ style }}" {%- endunless -%} itemprop="isPartOf">
 									{%- unless tag == "null" %}
 							<{{ tag }} class="article_section-inner_wrapper --article_section_styling" dir="auto">
 									{%- endunless %}
