@@ -118,7 +118,7 @@
 								{%- if parse %}
 						<section class="article_wrapper-article_section --{{ class }}" {%- unless style == "null" %} style="{{ style }}" {%- endunless -%}>
 									{%- unless tag == "null" %}
-							<{{ tag }}>
+							<{{ tag }} dir="auto">
 									{%- endunless %}
 							{{ block | remove: "<p>" | remove: "</p>" | strip }}
 									{%- unless tag == "null" %}
@@ -126,9 +126,9 @@
 									{%- endunless %}
 						</section>
 								{%- else %}
-						<section class="article_wrapper-article_section" {%- unless style == "null" %} style="{{ style }}" {%- endunless -%} dir="auto">
+						<section class="article_wrapper-article_section" {%- unless style == "null" %} style="{{ style }}" {%- endunless -%}>
 									{%- unless tag == "null" %}
-							<{{ tag }} class="article_section-inner_wrapper --article_section_styling">
+							<{{ tag }} class="article_section-inner_wrapper --article_section_styling" dir="auto">
 									{%- endunless %}
 								{{ block | strip }}
 									{%- unless tag == "null" %}
