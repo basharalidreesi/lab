@@ -24,7 +24,7 @@ It showed a lady fitted out with a fur hat and fur boa who sat upright, raising 
 
 <!-- break -->
 
-![animal](https://placeimg.com/640/480/animals)
+[![animal](https://placeimg.com/640/480/animals)](https://en.wikipedia.org/wiki/Animal)
 
 <!-- break -->
 
@@ -49,7 +49,7 @@ It showed a lady fitted out with a fur hat and fur boa who sat upright, raising 
 
 <!-- break -->
 
-![animal](https://placeimg.com/640/480/animals)
+[![animal](https://placeimg.com/640/480/animals)](https://en.wikipedia.org/wiki/Animal)
 
 <!-- break -->
 
@@ -69,7 +69,7 @@ First he wanted to stand up quietly and undisturbed, get dressed, above all have
 
 <!-- break -->
 
-![animal](https://placeimg.com/640/480/animals)
+[![animal](https://placeimg.com/640/480/animals)](https://en.wikipedia.org/wiki/Animal)
 
 <!-- break -->
 
@@ -87,7 +87,7 @@ Thus, he tried to get his upper body out of the bed first and turned his head ca
 
 <!-- break -->
 
-![animal](https://placeimg.com/640/480/animals)
+[![animal](https://placeimg.com/640/480/animals)](https://en.wikipedia.org/wiki/Animal)
 
 <!-- break -->
 
