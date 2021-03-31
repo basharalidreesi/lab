@@ -316,10 +316,6 @@
 		line-height: 250%;
 		overflow: hidden;
 	}
-	.--no_padding {
-		padding-top: 0;
-		padding-bottom: 0;
-	}
 	/*
 	┌───────┐
 	│ begin └─────┐
@@ -392,6 +388,10 @@
 		font-size: inherit;
 		font-weight: inherit;
 		color: inherit;
+	}
+	.--no_padding {
+		padding-top: 0 !important;
+		padding-bottom: 0 !important;
 	}
 /*
 ┌───────┐
