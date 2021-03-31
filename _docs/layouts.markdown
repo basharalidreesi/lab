@@ -4,7 +4,6 @@ date: 2021-03-30 14:03:00 Z
 tags:
 - "✍\U0001F3FD content"
 position: 4
-layout: showcase
 ---
 
 # One morning, when Gregor Samsa woke from troubled dreams.
@@ -38,7 +37,7 @@ It showed a lady fitted out with a fur hat and fur boa who sat upright, raising 
 
 <!-- break -->
 
-![animal](https://placeimg.com/640/480/animals?t=1617198271563)
+![animal](https://placeimg.com/640/480/animals)
 
 <!-- break -->
 
@@ -50,19 +49,7 @@ It showed a lady fitted out with a fur hat and fur boa who sat upright, raising 
 
 <!-- break -->
 
-![animal](https://placeimg.com/640/480/animals?t=1617198388562)
-
-<!-- break -->
-
-| Option | Description |
-| ------:| -----------:|
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
-
-<!-- break -->
-
-![animal](https://placeimg.com/640/480/animals?t=1617198370627)
+![animal](https://placeimg.com/640/480/animals)
 
 <!-- break -->
 
@@ -70,7 +57,7 @@ First he wanted to stand up quietly and undisturbed, get dressed, above all have
 
 <!-- break -->
 
-![animal](https://placeimg.com/640/480/animals?t=1617198356323)
+![animal](https://placeimg.com/640/480/animals)
 
 <!-- break -->
 
@@ -82,7 +69,7 @@ First he wanted to stand up quietly and undisturbed, get dressed, above all have
 
 <!-- break -->
 
-![animal](https://placeimg.com/640/480/animals?t=1617198346238)
+![animal](https://placeimg.com/640/480/animals)
 
 <!-- break -->
 
@@ -90,7 +77,7 @@ It was very easy to throw aside the blanket. He needed only to push himself up a
 
 <!-- break -->
 
-![animal](https://placeimg.com/640/480/animals?t=1617198327815)
+![animal](https://placeimg.com/640/480/animals)
 
 <!-- break -->
 
@@ -100,7 +87,7 @@ Thus, he tried to get his upper body out of the bed first and turned his head ca
 
 <!-- break -->
 
-![animal](https://placeimg.com/640/480/animals?t=1617198315193)
+![animal](https://placeimg.com/640/480/animals)
 
 <!-- break -->
 
