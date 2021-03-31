@@ -120,6 +120,7 @@
 			window.addEventListener("DOMContentLoaded", (event) => {
 				redirectWheel();
 				redirectTouch();
+				fixIframeScroll();
 			});
 		}
 	}
@@ -150,7 +151,7 @@
 			let x = (Math.floor(Math.random() * headers.length));
 			let random_header = (headers[x]); // array initialised in script.js.html
 			header_graphic.src = random_header;
-			console.log("Headered " + random_header + " from a total number of " + headers.length + " header graphics.");	
+			console.log("Headered " + random_header + " from a total number of " + headers.length + " header graphics.");
 		}
 		if(!black) {
 			let extension = random_header.split(".").pop();
@@ -394,4 +395,13 @@
 				}
 			}
 		}, {passive: false});
+	}
+
+	function fixIframeScroll() {
+		const iframes = document.querySelectorAll(".--iframe");
+		const barricade = document.createElement("div");
+		barricade.classList.add("--barricade");
+		iframes.forEach((iframe) => {
+			iframe.appendChild(barricade);
+		});
 	}
