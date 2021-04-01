@@ -22,7 +22,8 @@
 				{%- endif -%}
 				{%- if index == true -%}
 				{%- if
-					page.['page font families'].['primary font family'] contains font_family
+					page.layout == "list"
+					or page.['page font families'].['primary font family'] contains font_family
 					or page.['page font families'].['secondary font family'] contains font_family
 					or page.['page font families'].['tertiary font family'] contains font_family
 				-%}
