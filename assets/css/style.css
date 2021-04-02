@@ -87,6 +87,9 @@
 		text-rendering: geometricPrecision;
 	}
 	a {
+		font-family: inherit;
+		font-size: inherit;
+		font-weight: inherit;
 		color: inherit;
 	}
 	img:not(.header_anchor-header_graphic), svg path {
