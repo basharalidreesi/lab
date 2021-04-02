@@ -7,6 +7,8 @@ page colours:
   secondary colour: white
   border colour: black
   text colour: black
+page header:
+  is central: true
 layout: list
 ---
 
