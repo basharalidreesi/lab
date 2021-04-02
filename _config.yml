@@ -35,18 +35,18 @@ defaults:
       placeholder colour: default
       transferrable: true
     font families:
-      font stack 1: default
-      font stack 2: default
-      font stack 3: default
+      font 1 stack: default
+      font 2 stack: default
+      font 3 stack: default
       transferrable: true
     font sizes:
-      font stack 1: default
-      font stack 2: default
-      font stack 3: default
+      font 1 stack: default
+      font 2 stack: default
+      font 3 stack: default
     font weights:
-      font stack 1: default
-      font stack 2: default
-      font stack 3: default
+      font 1 stack: default
+      font 2 stack: default
+      font 3 stack: default
     page root:
       styles: 
     page header:
@@ -102,18 +102,18 @@ colours:
   border colour: "#000000"
   placeholder colour: "#e1e1e1"
 font families:
-  font stack 1: '"mplus 1p", "--space_control", "kawkab", "--system_sans_serif", sans-serif'
-  font stack 2: '"margo", "--space_control", "dobb", "--system_serif", serif'
-  font stack 3: '"code new roman", "--space_control", "kawkab", "--system_monospace",
+  font 1 stack: '"mplus 1p", "--space_control", "kawkab", "--system_sans_serif", sans-serif'
+  font 2 stack: '"margo", "--space_control", "dobb", "--system_serif", serif'
+  font 3 stack: '"code new roman", "--space_control", "kawkab", "--system_monospace",
     monospace'
 font sizes:
-  font stack 1: 1rem
-  font stack 2: 4rem
-  font stack 3: 1rem
+  font 1 stack: 1rem
+  font 2 stack: 4rem
+  font 3 stack: 1rem
 font weights:
-  font stack 1: 400
-  font stack 2: 500
-  font stack 3: 400
+  font 1 stack: 400
+  font 2 stack: 500
+  font 3 stack: 400
 header images:
 - "/uploads/header-01.svg"
 - "/uploads/header-02.svg"

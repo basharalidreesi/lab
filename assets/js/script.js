@@ -145,16 +145,18 @@
 // special purpose functions
 
 	function header() {
-		var random_header;
+		const header_container = document.getElementById("header_container");
+		const header_graphic = document.getElementById("header_graphic");
+		var header;
 		if (!override) {
-			const header_container = document.getElementById("header_container");
-			const header_graphic = document.getElementById("header_graphic");
 			let x = (Math.floor(Math.random() * headers.length));
-			random_header = (headers[x]); // array initialised in script.js.html
-			header_graphic.src = random_header;
-			console.log("Headered " + random_header + " from a total number of " + headers.length + " header graphics.");
+			header = (headers[x]); // array initialised in script.js.html
+			header_graphic.src = header;
+			console.log("Headered " + header + " from a total number of " + headers.length + " header graphics.");
+		} else {
+			header = header_graphic.src;
 		}
-		let extension = random_header.split(".").pop();
+		let extension = header.split(".").pop();
 		if (extension === "svg") {
 			SVGInject(header_graphic);
 			console.log("SVG header injected.");
