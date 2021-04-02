@@ -435,7 +435,7 @@
 		--font_family: var(--font_1_stack_family);
 		--font_size: var(--font_1_stack_size);
 		--font_weight: var(--font_1_stack_weight);
-		--line_height: 100%; /* temp */
+		--line_height: 100%; /* temp temp */
 	}
 	.mother_container-header_container,
 	.mother_container-nav_container,
