@@ -48,24 +48,24 @@ defaults:
       font stack 2: default
       font stack 3: default
     page root:
-      styles: 
+      styles:
     page header:
       is central: false
-      image: 
-      styles: 
+      image:
+      styles:
     page nav:
-      styles: 
+      styles:
     page title:
       is displayed: true
-      title text: 
-      styles: 
+      title text:
+      styles:
     page content:
-      content styles: 
-      special styles: 
+      content styles:
+      special styles:
     page footer:
       is displayed: true
-      footer text: 
-      styles: 
+      footer text:
+      styles:
 - scope:
     path: ''
     type: pages
@@ -87,7 +87,7 @@ defaults:
     path: assets/fonts
   values:
     font: true
-baseurl: 
+baseurl:
 url: https://jadtoghuj.com
 description: Jad Toghuj | Editorial Stylist | Creative Director | Amman, Jordan
 author: Jad Toghuj
@@ -99,7 +99,7 @@ colours:
   glow 1 colour: "#91a3b0"
   glow 2 colour: "#ffffff"
   text colour: "#000000"
-  border colour: '000000'
+  border colour: '#000000'
   placeholder colour: "#e1e1e1"
 font families:
   font stack 1: '"mplus 1p", "--space_control", "kawkab", "--system_sans_serif", sans-serif'
