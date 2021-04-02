@@ -798,6 +798,8 @@
 		align-items: flex-start;
 		justify-content: center;
 		width: 100%;
+		padding-left: calc(var(--double));
+		padding-right: calc(var(--double));
 	}
 	.item_description-item_title {
 		width: 100%;
@@ -1486,10 +1488,6 @@
 		│ list styles │
 		└─────────────┘
 		*/
-		.list_item-item_description {
-			padding-left: calc(var(--double));
-			padding-right: calc(var(--double));
-		}
 		.--match_above,
 		.--match_below {
 			width: calc(100% - var(--quadruple));
