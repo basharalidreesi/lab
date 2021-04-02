@@ -1,9 +1,7 @@
 
 		<!-- begin script.js.html -->
 		<script>
-			{%- assign override = page.['page header'].image | strip_newlines | strip -%}
-			{%- assign text_colour = page.['page colours'].['text colour'] | strip_newlines | strip %}
-			"use strict";
+			{%- assign override = page.['page header'].image | strip_newlines | strip %}			"use strict";
 			{%- if page.url == "/" %}
 			let home = true;
 			{%- else %}
@@ -34,11 +32,6 @@
 			{%- else %}
 			let cascade = false;
 			{%- endif -%}
-			{%- if text_colour == "#000" or text_colour == "#000000" or text_colour == "black" %}
-			let black = true;
-			{%- else %}
-			let black = false;
-			{%- endif %}
 			let headers = new Array(
 				{%- for header in site.['header images'] %}
 				"{{- site.baseurl -}}{{- header -}}"{%- unless forloop.last -%}, {%- endunless -%}

@@ -153,16 +153,12 @@
 			header_graphic.src = random_header;
 			console.log("Headered " + random_header + " from a total number of " + headers.length + " header graphics.");
 		}
-		if(!black) {
-			let extension = random_header.split(".").pop();
-			if (extension === "svg") {
-				SVGInject(header_graphic);
-				console.log("SVG header injected.");
-			} else {
-				console.log("No SVG header detected. Injection has not occured.");
-			}
+		let extension = random_header.split(".").pop();
+		if (extension === "svg") {
+			SVGInject(header_graphic);
+			console.log("SVG header injected.");
 		} else {
-			console.log("SVG header injection unnecessary.");
+			console.log("No SVG header detected. Injection has not occured.");
 		}
 		document.getElementById("loader").style.animation = "none";
 		document.getElementById("loader").style.width = "100%";
