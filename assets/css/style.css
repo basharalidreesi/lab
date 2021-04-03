@@ -799,6 +799,8 @@
 	}
 	.list_wrapper-list_item {
 		width: 100%;
+		padding-left: calc(var(--double));
+		padding-right: calc(var(--double));
 		transition: background-color 0.25s;
 	}
 	.list_wrapper-list_item ~ .list_wrapper-list_item {
@@ -810,8 +812,7 @@
 		align-items: flex-start;
 		justify-content: center;
 		width: 100%;
-		padding-left: calc(var(--double));
-		padding-right: calc(var(--double));
+		max-width: calc(var(--screen_width_third) * 2);
 	}
 	.item_description-item_title {
 		width: 100%;
@@ -1500,6 +1501,9 @@
 		│ list styles │
 		└─────────────┘
 		*/
+		.list_item-item_description {
+			max-width: none;
+		}
 		.--match_above,
 		.--match_below {
 			width: calc(100% - var(--quadruple));
