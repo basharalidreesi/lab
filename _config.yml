@@ -60,7 +60,8 @@ defaults:
       styles: 
     page content:
       content styles: 
-      special styles: 
+      special styles > 1024: 
+      special styles < 1024: none
     page footer:
       is displayed: true
       footer text: 
