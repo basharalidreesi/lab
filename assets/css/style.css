@@ -351,9 +351,15 @@
 		padding-top: 0 !important;
 		padding-bottom: 0 !important;
 	}
+	.--increased_border {
+		padding-top: calc(var(--quarter)) !important;
+		padding-bottom: calc(var(--quarter)) !important;
+	}
 	.--no_border {
 		border: none !important;
 		border-radius: 0 !important;
+		padding: 0 !important;
+		background-color: transparent !important;
 	}
 /*
 ┌───────┐
