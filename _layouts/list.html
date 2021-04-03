@@ -81,7 +81,7 @@ layout: default
 						<li class="list_wrapper-list_item" {%- if node.colours.transferrable or node.['font families'].transferrable %} style="{{ colours | strip }} {{ fonts | strip }}" {% endif -%} itemscope itemtype="https://schema.org/CreativeWork">
 							<dl class="list_item-item_description">
 								<dt class="item_description-item_title --list_title_styling" dir="auto" itemprop="name">
-									<a class="--anchor_styling" href="{{- site.baseurl -}}{{- node.url -}}" itemprop="url">
+									<a href="{{- site.baseurl -}}{{- node.url -}}" itemprop="url">
 										{{ node.title | strip }}
 									</a>
 								</dt>

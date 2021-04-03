@@ -801,6 +801,7 @@
 		width: 100%;
 		padding-left: calc(var(--double));
 		padding-right: calc(var(--double));
+		background: linear-gradient(0deg, var(--bg_1_colour) -50%, var(--bg_2_colour) 50%);
 	}
 	.item_description-item_title {
 		width: 100%;
