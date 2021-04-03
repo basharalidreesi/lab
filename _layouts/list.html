@@ -49,7 +49,7 @@ layout: default
 						{%- assign search_index = page_index | split: "<!-- SEARCH INDEX PASS -->" -%}
 						{%- capture list -%}
 							{%- unless search_index == empty %}
-					<ul class="main_wrapper-list_wrapper main_wrapper-special_content" {%- if content_html contains "<!-- SPECIAL BLOCK STYLES: " -%} style="{{ content_html | split: '<!-- SPECIAL BLOCK STYLES: ' | join: '' | split: ' -->' | first }}" {%- endif %} itemprop="isPartOf" itemscope="itemscope" itemtype="https://schema.org/Collection">
+					<ul class="main_wrapper-list_wrapper main_wrapper-special_content" {%- if content_html contains "<!-- SPECIAL BLOCK STYLES -->" -%} style="{{ content_html | split: '<!-- SPECIAL BLOCK STYLES -->' | first | strip }}" {%- endif %} itemprop="isPartOf" itemscope="itemscope" itemtype="https://schema.org/Collection">
 								{%- for node in search_scope -%}
 									{%- for subpage in search_index -%}
 										{%- if node.path == subpage -%}

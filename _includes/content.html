@@ -118,7 +118,7 @@
 							{%- endfor -%}
 							{%- if forloop.index0 == special %}
 						<!-- SPECIAL BLOCK BREAK -->
-						{%- unless style == "null" -%} <!-- SPECIAL BLOCK STYLES: {{ style }} --> {%- endunless -%}
+						{%- unless style == "null" -%} <!-- SPECIAL BLOCK STYLES --> {{ style }} <!-- SPECIAL BLOCK STYLES --> {%- endunless -%}
 							{%- endif -%}
 							{%- unless check == empty -%}
 								{%- if parse %}
