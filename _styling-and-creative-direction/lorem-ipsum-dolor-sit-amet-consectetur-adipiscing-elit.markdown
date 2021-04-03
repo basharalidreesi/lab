@@ -9,7 +9,12 @@ tags:
 - "\U0001F351 peach"
 position: 0
 colours:
-  bg 2 colour: pink
+  bg 1 colour: white
+  bg 2 colour: white
+  glow 1 colour: lightcyan
+  glow 2 colour: lightcyan
+  text colour: blue
+  border colour: blue
 font families:
   font 2 stack: '"macabre", "--space_control", "dobb", "--system_sans_serif", sans-serif'
 layout: cascade
