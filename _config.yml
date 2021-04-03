@@ -95,8 +95,8 @@ instagram: "@jad.toghuj"
 colours:
   bg 1 colour: "#91a3b0"
   bg 2 colour: "#ffffff"
-  glow 1 colour: "#91a3b0"
-  glow 2 colour: "#ffffff"
+  glow 1 colour: var(--bg_1_colour)
+  glow 2 colour: var(--bg_2_colour)
   text colour: "#000000"
   border colour: "#000000"
   placeholder colour: "#e1e1e1"
