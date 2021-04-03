@@ -53,34 +53,30 @@ layout: default
 								{%- for node in search_scope -%}
 									{%- for subpage in search_index -%}
 										{%- if node.path == subpage -%}
-											{%- comment -%}
-												{%- if node.colours.transferrable -%}
-													{%- assign bg_1_colour = node.colours.['bg 1 colour'] | replace: "default", site.colours.['bg 1 colour'] -%}
-													{%- assign bg_2_colour = node.colours.['bg 2 colour'] | replace: "default", site.colours.['bg 2 colour'] -%}
-													{%- assign glow_1_colour = node.colours.['glow 1 colour'] | replace: "default", site.colours.['glow 1 colour'] -%}
-													{%- assign glow_2_colour = node.colours.['glow 2 colour'] | replace: "default", site.colours.['glow 2 colour'] -%}
-													{%- assign text_colour = node.colours.['text colour'] | replace: "default", site.colours.['text colour'] -%}
-													{%- assign border_colour = node.colours.['border colour'] | replace: "default", site.colours.['border colour'] -%}
-													{%- assign placeholder_colour = node.colours.['placeholder colour'] | replace: "default", site.colours.['placeholder colour'] -%}
-													{%- capture colours -%}
-														--bg_1_colour: {{ bg_1_colour }}; --bg_2_colour: {{ bg_2_colour }}; --glow_1_colour: {{ glow_1_colour }}; --glow_2_colour: {{ glow_2_colour }}; --text_colour: {{ text_colour }}; --border_colour: {{ border_colour }}; --placeholder_colour: {{ placeholder_colour }};
-													{%- endcapture -%}
-												{%- else -%}
-													{%- assign colours = "" -%}
-												{%- endif -%}
-											{%- endcomment -%}
 											{%- if node.['font families'].transferrable -%}
-												{%- assign font_1_stack = node.['font families'].['font 1 stack'] | replace: "default", site.['font families'].['font 1 stack'] | replace: '"', "'" -%}
-												{%- assign font_2_stack = node.['font families'].['font 2 stack'] | replace: "default", site.['font families'].['font 2 stack'] | replace: '"', "'" -%}
-												{%- assign font_3_stack = node.['font families'].['font 3 stack'] | replace: "default", site.['font families'].['font 3 stack'] | replace: '"', "'" -%}
+												{%- unless node.['font families'].['font 1 stack'] == "default" -%}
+													{%- assign font_1_stack = node.['font families'].['font 1 stack'] | replace: '"', "'" -%}
+												{%- else -%}
+													{%- assign font_1_stack = "" -%}
+												{%- endunless -%}
+												{%- unless node.['font families'].['font 2 stack'] == "default" -%}
+													{%- assign font_2_stack = node.['font families'].['font 2 stack'] | replace: '"', "'" -%}
+												{%- else -%}
+													{%- assign font_2_stack = "" -%}
+												{%- endunless -%}
+												{%- unless node.['font families'].['font 3 stack'] == "default" -%}
+													{%- assign font_3_stack = node.['font families'].['font 3 stack'] | replace: '"', "'" -%}
+												{%- else -%}
+													{%- assign font_3_stack = "" -%}
+												{%- endunless -%}
 												{%- capture fonts -%}
-													--font_1_stack_family: {{ font_1_stack }}; --font_2_stack_family: {{ font_2_stack }}; --font_3_stack_family: {{ font_3_stack }};
+													{%- unless font_1_stack == "" -%} --font_1_stack_family: {{ font_1_stack }}; {% endunless -%} {%- unless font_2_stack == "" %}  --font_2_stack_family: {{ font_2_stack }}; {% endunless -%} {%- unless font_3_stack == "" %} --font_3_stack_family: {{ font_3_stack }}; {% endunless -%}
 												{%- endcapture -%}
 											{%- else -%}
 												{%- assign fonts = "" -%}
 											{%- endif %}
 						<li class="--match_above --list_tag_styling"></li>
-						<li class="list_wrapper-list_item" {%- if node.colours.transferrable or node.['font families'].transferrable %} style="{{ colours | strip }} {{ fonts | strip }}" {% endif -%} itemscope itemtype="https://schema.org/CreativeWork">
+						<li class="list_wrapper-list_item" {%- if node.colours.transferrable or node.['font families'].transferrable %} style="{{ fonts | strip }}" {% endif -%} itemscope itemtype="https://schema.org/CreativeWork">
 							<dl class="list_item-item_description">
 								<dt class="item_description-item_title --list_title_styling" dir="auto" itemprop="name">
 									<a href="{{- site.baseurl -}}{{- node.url -}}" itemprop="url">
