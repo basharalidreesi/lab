@@ -352,8 +352,8 @@
 		padding-bottom: 0 !important;
 	}
 	.--increased_border {
-		padding-top: calc(var(--quarter)) !important;
-		padding-bottom: calc(var(--quarter)) !important;
+		padding-top: calc(var(--quarter) / 2) !important;
+		padding-bottom: calc(var(--quarter) / 2) !important;
 	}
 	.--no_border {
 		border: none !important;
@@ -1240,9 +1240,6 @@
 		color: var(--text_colour);
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 		background-size: 100% 2px;
-	}
-	.list_wrapper-list_item:hover {
-		background-color: var(--bg_2_colour);
 	}
 	.main_wrapper-contact_wrapper button:hover {
 		background-color: var(--text_colour);
