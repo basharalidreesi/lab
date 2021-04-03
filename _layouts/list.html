@@ -68,9 +68,9 @@ layout: default
 												{%- assign colours = "" -%}
 											{%- endif -%}
 											{%- if node.['font families'].transferrable -%}
-												{%- assign font_1_stack = node.['font families'].['font 1 stack'] | replace: "default", site.['font families'].['font 1 stack'] -%}
-												{%- assign font_2_stack = node.['font families'].['font 2 stack'] | replace: "default", site.['font families'].['font 2 stack'] -%}
-												{%- assign font_3_stack = node.['font families'].['font 3 stack'] | replace: "default", site.['font families'].['font 3 stack'] -%}
+												{%- assign font_1_stack = node.['font families'].['font 1 stack'] | replace: "default", site.['font families'].['font 1 stack'] | replace: '"', "'" -%}
+												{%- assign font_2_stack = node.['font families'].['font 2 stack'] | replace: "default", site.['font families'].['font 2 stack'] | replace: '"', "'" -%}
+												{%- assign font_3_stack = node.['font families'].['font 3 stack'] | replace: "default", site.['font families'].['font 3 stack'] | replace: '"', "'" -%}
 												{%- capture fonts -%}
 													--font_1_stack_family: {{ font_1_stack }}; --font_2_stack_family: {{ font_2_stack }}; --font_3_stack_family: {{ font_3_stack }};
 												{%- endcapture -%}
