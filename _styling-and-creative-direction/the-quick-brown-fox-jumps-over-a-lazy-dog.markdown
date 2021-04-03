@@ -7,5 +7,7 @@ tags:
 - "\U0001F34B lemon"
 - "\U0001F34D pineapple"
 position: 1
+font families:
+  font 2 stack: '"pilowlava", "--space_control", "dobb", "--system_sans_serif", sans-serif'
 ---
 
