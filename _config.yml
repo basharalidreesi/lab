@@ -128,8 +128,8 @@ header images:
 - "/uploads/header-12.svg"
 - "/uploads/header-13.svg"
 contact form action: https://formspree.io/f/mvovjwlo
-footer text: By <a class="--anchor_styling" href="https://basharalidreesi.com">Basabees</a>
-  for <a class="--anchor_styling" href="/">Batabeet</a>
+footer text: By <a class="--no_border" href="https://basharalidreesi.com">Basabees</a>
+  for <a class="--no_border" href="/">Batabeet</a>
 plugins:
 - jekyll-feed
 - jekyll-sitemap
