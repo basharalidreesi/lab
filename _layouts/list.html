@@ -53,20 +53,22 @@ layout: default
 								{%- for node in search_scope -%}
 									{%- for subpage in search_index -%}
 										{%- if node.path == subpage -%}
-											{%- if node.colours.transferrable -%}
-												{%- assign bg_1_colour = node.colours.['bg 1 colour'] | replace: "default", site.colours.['bg 1 colour'] -%}
-												{%- assign bg_2_colour = node.colours.['bg 2 colour'] | replace: "default", site.colours.['bg 2 colour'] -%}
-												{%- assign glow_1_colour = node.colours.['glow 1 colour'] | replace: "default", site.colours.['glow 1 colour'] -%}
-												{%- assign glow_2_colour = node.colours.['glow 2 colour'] | replace: "default", site.colours.['glow 2 colour'] -%}
-												{%- assign text_colour = node.colours.['text colour'] | replace: "default", site.colours.['text colour'] -%}
-												{%- assign border_colour = node.colours.['border colour'] | replace: "default", site.colours.['border colour'] -%}
-												{%- assign placeholder_colour = node.colours.['placeholder colour'] | replace: "default", site.colours.['placeholder colour'] -%}
-												{%- capture colours -%}
-													--bg_1_colour: {{ bg_1_colour }}; --bg_2_colour: {{ bg_2_colour }}; --glow_1_colour: {{ glow_1_colour }}; --glow_2_colour: {{ glow_2_colour }}; --text_colour: {{ text_colour }}; --border_colour: {{ border_colour }}; --placeholder_colour: {{ placeholder_colour }};
-												{%- endcapture -%}
-											{%- else -%}
-												{%- assign colours = "" -%}
-											{%- endif -%}
+											{%- comment -%}
+												{%- if node.colours.transferrable -%}
+													{%- assign bg_1_colour = node.colours.['bg 1 colour'] | replace: "default", site.colours.['bg 1 colour'] -%}
+													{%- assign bg_2_colour = node.colours.['bg 2 colour'] | replace: "default", site.colours.['bg 2 colour'] -%}
+													{%- assign glow_1_colour = node.colours.['glow 1 colour'] | replace: "default", site.colours.['glow 1 colour'] -%}
+													{%- assign glow_2_colour = node.colours.['glow 2 colour'] | replace: "default", site.colours.['glow 2 colour'] -%}
+													{%- assign text_colour = node.colours.['text colour'] | replace: "default", site.colours.['text colour'] -%}
+													{%- assign border_colour = node.colours.['border colour'] | replace: "default", site.colours.['border colour'] -%}
+													{%- assign placeholder_colour = node.colours.['placeholder colour'] | replace: "default", site.colours.['placeholder colour'] -%}
+													{%- capture colours -%}
+														--bg_1_colour: {{ bg_1_colour }}; --bg_2_colour: {{ bg_2_colour }}; --glow_1_colour: {{ glow_1_colour }}; --glow_2_colour: {{ glow_2_colour }}; --text_colour: {{ text_colour }}; --border_colour: {{ border_colour }}; --placeholder_colour: {{ placeholder_colour }};
+													{%- endcapture -%}
+												{%- else -%}
+													{%- assign colours = "" -%}
+												{%- endif -%}
+											{%- endcomment -%}
 											{%- if node.['font families'].transferrable -%}
 												{%- assign font_1_stack = node.['font families'].['font 1 stack'] | replace: "default", site.['font families'].['font 1 stack'] | replace: '"', "'" -%}
 												{%- assign font_2_stack = node.['font families'].['font 2 stack'] | replace: "default", site.['font families'].['font 2 stack'] | replace: '"', "'" -%}
