@@ -1231,6 +1231,9 @@
 		/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 		background-size: 100% 2px;
 	}
+	.list_wrapper-list_item:hover {
+		background-color: var(--bg_2_colour);
+	}
 	.main_wrapper-contact_wrapper button:hover {
 		background-color: var(--text_colour);
 		color: var(--bg_2_colour);
