@@ -8,6 +8,8 @@ tags:
 - "\U0001F353 strawberry"
 - "\U0001F351 peach"
 position: 0
+colours:
+  bg 2 colour: pink
 font families:
   font 2 stack: '"macabre", "--space_control", "dobb", "--system_sans_serif", sans-serif'
 layout: cascade
