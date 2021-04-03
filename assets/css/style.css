@@ -67,6 +67,7 @@
 		font-weight: var(--font_weight);
 		font-size: var(--font_size);
 		line-height: var(--line_height);
+		color: var(--text_colour);
 		font-synthesis: none;
 		text-align: center;
 		overscroll-behavior-y: contain;
