@@ -92,6 +92,7 @@
 		font-size: inherit;
 		font-weight: inherit;
 		color: inherit;
+		text-decoration: none;
 	}
 	img:not(.header_anchor-header_graphic), svg path {
 		pointer-events: none;
