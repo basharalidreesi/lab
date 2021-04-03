@@ -351,6 +351,10 @@
 		padding-top: 0 !important;
 		padding-bottom: 0 !important;
 	}
+	.--no_border {
+		border: none !important;
+		border-radius: 0 !important;
+	}
 /*
 ┌───────┐
 │ begin └─────┐
