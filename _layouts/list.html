@@ -76,7 +76,7 @@ layout: default
 												{%- assign fonts = "" -%}
 											{%- endif %}
 						<li class="--match_above --list_tag_styling"></li>
-						<li class="list_wrapper-list_item" {%- if node.colours.transferrable or node.['font families'].transferrable %} style="{{ fonts | strip }}" {% endif -%} itemscope itemtype="https://schema.org/CreativeWork">
+						<li class="list_wrapper-list_item" {%- if node.['font families'].transferrable %} style="{{ fonts | strip }}" {% endif -%} itemscope itemtype="https://schema.org/CreativeWork">
 							<dl class="list_item-item_description">
 								<dt class="item_description-item_title --list_title_styling" dir="auto" itemprop="name">
 									<a href="{{- site.baseurl -}}{{- node.url -}}" itemprop="url">
