@@ -10,7 +10,8 @@ colours:
 page header:
   is central: true
 page content:
-  special styles: 'width: 50%; background: lightcyan; border: 1px solid var(--text_colour);'
+  special styles > 1024: 'width: 50%; background: lightcyan; border: 1px solid var(--text_colour);'
+  special styles < 1024: 'width: 100%; border-left: none; border-right: none;'
 layout: list
 ---
 
