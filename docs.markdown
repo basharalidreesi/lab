@@ -9,6 +9,8 @@ colours:
   glow 2 colour: lightcyan
 page header:
   is central: true
+page content:
+  special styles: 'width: 50%; background: lightcyan; border: 1px solid var(--text_colour);'
 layout: list
 ---
 
@@ -21,6 +23,3 @@ layout: list
 <!-- break -->
 
 <!-- special -->
-<!-- style: width: 50%; background: lightcyan; border: 1px solid var(--text_colour); -->
-
-<!-- break -->
