@@ -38,11 +38,11 @@
 			:root {
 				--bg_1_colour: ;
 				--bg_2_colour: ;
-				--glow_1_colour: var(--bg_1_colour);
-				--glow_2_colour: var(--bg_2_colour);
-				--text_colour: #000000;
-				--border_colour: #000000;
-				--placeholder_colour: #e1e1e1;
+				--glow_1_colour: ;
+				--glow_2_colour: ;
+				--text_colour: ;
+				--border_colour: ;
+				--placeholder_colour: ;
 				--background: linear-gradient(0deg, var(--bg_1_colour) 10%, var(--bg_2_colour) 100%);
 			}
 		</style>
@@ -310,15 +310,15 @@
 					local("Lucida Console");
 			}
 			:root {
-				--font_1_stack_family: "mplus 1p", "--space_control", "kawkab", "--system_sans_serif", sans-serif;
-				--font_2_stack_family: "margo", "--space_control", "dobb", "--system_serif", serif;
-				--font_3_stack_family: "code new roman", "--space_control", "kawkab", "--system_monospace", monospace;
-				--font_1_stack_size: 1rem;
-				--font_2_stack_size: 4rem;
-				--font_3_stack_size: 1rem;
-				--font_1_stack_weight: 400;
-				--font_2_stack_weight: 500;
-				--font_3_stack_weight: 400;
+				--font_1_stack_family: ;
+				--font_2_stack_family: ;
+				--font_3_stack_family: ;
+				--font_1_stack_size: ;
+				--font_2_stack_size: ;
+				--font_3_stack_size: ;
+				--font_1_stack_weight: ;
+				--font_2_stack_weight: ;
+				--font_3_stack_weight: ;
 			}
 		</style>
 		<!-- end fonts.css.html -->
@@ -326,7 +326,7 @@
 		<!-- begin script.js.html -->
 		<script>			"use strict";
 			let home = true;
-			let central = true;
+			let central = false;
 			let override = false;
 			let contact = false;
 			let list = false;
@@ -357,6 +357,15 @@
 		</style>
 		<!-- end style.css.html -->
 
+		<!-- begin 1024.css.html -->
+		<style>
+			@media only screen and (max-width: 1024px) {
+                                .main_wrapper-special_content {
+                                                
+                                }
+                        }
+		</style>
+		<!-- end 1024.css.html -->
 		<!-- begin noscript.css.html -->
 		<noscript>
 			<style>
@@ -439,36 +448,6 @@
 				<!-- end showcase.html -->
 
 			</main>
-			<footer class="mother_container-footer_container">
-				<div class="footer_container-footer_wrapper">
-					<!-- begin footer.html -->
-					<address itemscope="itemscope" itemtype="https://schema.org/Person">
-						<p class="--footer_text_styling" itemprop="name">
-							Jad Toghuj
-						</p>
-						<p class="--footer_text_styling" itemprop="url">
-							<a class="--increased_border" href="https://www.instagram.com/jad.toghuj">
-								@jad.toghuj
-							</a>
-						</p>
-						<p class="--footer_text_styling" itemprop="email">
-							<a class="--increased_border" href="mailto:jadtoghuj@gmail.com">
-								jadtoghuj@gmail.com
-							</a>
-						</p>
-						<p class="--footer_text_styling">
-							&copy; 2021  Jad Toghuj
-						</p>
-						<p class="--footer_text_styling --no_padding">
-							All rights reserved
-						</p>
-						<p class="--footer_text_styling">
-							By <a class="--no_border" href="https://basharalidreesi.com">Basabees</a> for <a class="--no_border" href="/">Batabeet</a>
-						</p>
-					</address>
-					<!-- end footer.html -->
-				</div>
-			</footer>
 		</div>
 	
 	</body>
