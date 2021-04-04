@@ -166,7 +166,7 @@
 	</head>
 	<body class="{{ body | strip }}">{{ bodyalt[0] | strip }}
 		<div class="--body_bg"></div>
-		{{ arrow | strip }}
+		{{ arrow | strip_newlines | strip }}
 		<div class="mother_container">
 			<nav class="nav_container" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 				{{- supernav | strip | remove: "					" }}
