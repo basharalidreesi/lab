@@ -53,9 +53,7 @@
 	{%- endcomment -%}
 		{%- capture alt -%}
 			{%- if page.layout == "cascade" -%}
-				<div class="body">
-				<!-- break -->
-				</div>
+				<div class="body"><!-- break --></div>
 			{%- else -%}
 			{%- endif -%}
 		{%- endcapture -%}
@@ -66,9 +64,7 @@
 	{%- endcomment -%}
 		{%- capture arrow -%}
 			{%- if page.header.['central header'] -%}
-				<div class="--downward_arrow">
-					<div class="--arrow"></div>
-				</div>
+				<div class="--downward_arrow"><div class="--arrow"></div></div>
 			{%- else -%}
 			{%- endif -%}
 		{%- endcapture -%}
@@ -122,7 +118,7 @@
 		<!-- end styles -->
 	</head>
 	<body class="{{ body | strip }}">
-		{{ bodyalt[0] | strip }}
+	{{ bodyalt[0] | strip }}
 		<div class="--background"></div>
 		{{ arrow | strip }}
 		<div class="mother">
