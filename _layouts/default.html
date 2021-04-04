@@ -45,7 +45,7 @@
 		<!-- begin body classes -->
 	{%- endcomment -%}
 		{%- capture body -%}
-			{%- if page.url == "/" -%} --homepage {%- endif -%} {%- if page.header.['is central'] %} --central {%- endif %} --{{- page.layout -}}
+			{%- if page.url == "/" -%} --homepage {%- endif -%} {%- if page.header.['central header'] %} --central {%- endif %} --{{- page.layout -}}
 		{%- endcapture -%}
 	{%- comment -%}
 		<!-- end body classes -->
@@ -56,6 +56,7 @@
 				<div class="body">
 				<!-- break -->
 				</div>
+			{%- else -%}
 			{%- endif -%}
 		{%- endcapture -%}
 		{%- assign bodyalt = alt | split: "<!-- break -->" -%}
@@ -64,11 +65,12 @@
 		<!-- begin arrow -->
 	{%- endcomment -%}
 		{%- capture arrow -%}
-			{%- if page.header.['is central'] -%}
+			{%- if page.header.['central header'] -%}
 				<div class="--downward_arrow">
 					<div class="--arrow"></div>
 				</div>
-			{%- endif %}
+			{%- else -%}
+			{%- endif -%}
 		{%- endcapture -%}
 	{%- comment -%}
 		<!-- end arrow -->
@@ -130,9 +132,9 @@
 		{%- include 1024.css.html -%}
 		{%- include noscript.css.html %}	</head>
 	<body class="{{ body | strip }}">
-		{{- bodyalt[0] }}
+		{{ bodyalt[0] }}
 		<div class="--background"></div>
-		{{- arrow }}
+		{{ arrow }}
 		<div class="mother">
 			<nav class="nav" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 				{%- unless homepage %}
