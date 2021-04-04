@@ -168,12 +168,12 @@
 		<!-- end styles -->
 	</head>
 	<body class="{{ body | strip }}">
-	{{ bodyalt[0] | strip }}
+	{{- bodyalt[0] | strip }}
 		<div class="--body_bg"></div>
-		{{ arrow | strip }}
+		{{- arrow | strip }}
 		<div class="mother_container">
 			<nav class="nav_container" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-				{{ supernav | strip }}
+				{{- supernav | strip }}
 				{%- assign i = 0 %}
 				<ul class="nav" dir="auto">
 					{%- for node in pages -%}
