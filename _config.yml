@@ -26,8 +26,8 @@ defaults:
   values:
     layout: article
     colours:
-      bg 1 colour: default
-      bg 2 colour: default
+      1st colour: default
+      2nd colour: default
       glow 1 colour: default
       glow 2 colour: default
       text colour: default
@@ -47,25 +47,25 @@ defaults:
       font 2 stack: default
       font 3 stack: default
     page root:
-      styles: 
-    page header:
+      styles:
+    header:
       is central: false
-      image: 
-      styles: 
+      image: random
+      styles:
     page nav:
-      styles: 
+      styles:
     page title:
       is displayed: true
-      title text: 
-      styles: 
+      title text:
+      styles:
     page content:
-      content styles: 
-      special styles > 1024: 
+      content styles:
+      special styles > 1024:
       special styles < 1024: none
     page footer:
       is displayed: true
-      footer text: 
-      styles: 
+      footer text:
+      styles:
 - scope:
     path: ''
     type: pages
@@ -87,7 +87,7 @@ defaults:
     path: assets/fonts
   values:
     font: true
-baseurl: 
+baseurl:
 url: https://jadtoghuj.com
 description: Jad Toghuj | Editorial Stylist | Creative Director | Amman, Jordan
 author: Jad Toghuj

@@ -1,41 +1,11 @@
-<!DOCTYPE HTML>
-<html lang="en-GB" dir="auto">
-	<head>
-		{%- comment -%}
-			<!-- begin default setup -->
-		{%- endcomment -%}
-		{%- if page.url == "/" -%}
-			{%- assign home = true -%}
-		{%- else -%}
-			{%- assign home = false -%}
-		{%- endif -%}
-		{%- if page.['page header'].['is central'] -%}
-			{%- assign central = true -%}
-		{%- else -%}
-			{%- assign central = false -%}
-		{%- endif -%}
-		{%- if page.layout == "cascade" %}
-			{%- assign cascade = true -%}
-		{%- else -%}
-			{%- assign cascade = false -%}
-		{%- endif -%}
+{%- comment -%}
+	<!-- begin setup -->
+{%- endcomment -%}
+	{%- comment -%}
+		<!-- begin breadcrumb generation -->
+	{%- endcomment -%}
 		{%- assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" -%}
-		{%- assign pages = site.pages | sort: "position" -%}
-		{%- assign override = page.['page header'].image | strip_newlines | strip %}
-		{%- comment -%}
-			<!-- end default setup -->
-		{%- endcomment %}
-		<!-- begin google analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-LZCE8Q1HGN"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'G-LZCE8Q1HGN');
-		</script>
-		<!-- end google analytics -->
-		<meta charset="utf-8">
-		<title>
+		{%- capture title -%}
 			{{- site.title -}}
 			{%- for branch in tree -%}
 				{%- assign segment = page.path | split: branch -%}
@@ -56,7 +26,7 @@
 					&nbsp;|&nbsp;
 					{%- continue -%}
 				{%- elsif level == 1 and current == "404.markdown" -%}
-					&nbsp;|&nbsp;?&nbsp;
+					&nbsp;|&nbsp;?
 					{%- break -%}
 				{%- else -%}
 					{%- for node in site.documents -%}
@@ -69,18 +39,94 @@
 					{%- endfor -%}
 				{%- endif -%}
 			{%- endfor -%}
-		</title>
-		<meta name="description" content="{{- site.description -}}">
-		<meta name="author" content="{{- site.author -}}">
-		<link rel="preload" as="style" href="{{ site.baseurl }}/assets/css/style.css" />
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-		<link rel="manifest" href="/site.webmanifest">
-		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
-		<meta name="msapplication-TileColor" content="#000000">
-		<meta name="theme-color" content="#000000">
-		<link rel="canonical" href="{{- site.url -}}{{- site.baseurl -}}{{- page.url -}}">
+		{%- endcapture -%}
+	{%- comment -%}
+		<!-- end breadcrumb generation -->
+		<!-- begin body classes -->
+	{%- endcomment -%}
+		{%- capture body -%}
+			{%- if page.url == "/" -%}
+				--homepage&nbsp;
+			{%- endif -%}
+			{%- if page.header.['is central'] -%}
+				--central&nbsp;
+			{%- endif -%}
+			--{{- page.layout -}}&nbsp;
+		{%- endcapture -%}
+	{%- comment -%}
+		<!-- end body classes -->
+		<!-- begin body alt -->
+	{%- endcomment -%}
+		{%- capture alt -%}
+			{%- if page.layout == "horizontal" -%}
+				<div class="body">
+				<!-- break -->
+				</div>
+			{%- endif -%}
+		{%- endcapture -%}
+		{%- assign bodyalt = alt | split: "<!-- break -->" -%}
+	{%- comment -%}
+		<!-- end body alt -->
+		<!-- begin arrow -->
+	{%- endcomment -%}
+		{%- capture arrow -%}
+			{%- if page.header.['is central'] -%}
+				<div class="--downward_arrow">
+					<div class="--arrow"></div>
+				</div>
+			{%- endif %}
+		{%- endcapture -%}
+	{%- comment -%}
+		<!-- end arrow -->
+		<!-- begin nav setup -->
+	{%- endcomment -%}
+		{%- assign pages = site.pages | sort: "position" -%}
+	{%- comment -%}
+		<!-- end nav setup -->
+	{%- endcomment -%}
+	{%- comment -%}
+		<!-- begin header setup -->
+	{%- endcomment -%}
+		{%- assign header = page.header.image | strip -%}
+	{%- comment -%}
+		<!-- end header setup -->
+	{%- endcomment -%}
+{%- comment -%}
+	<!-- end setup -->
+{%- endcomment %}
+<!DOCTYPE HTML>
+<html lang="en-GB" dir="auto">
+	<head>
+		<!-- begin google analytics -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=G-LZCE8Q1HGN"></script>
+			<script>
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+				gtag('config', 'G-LZCE8Q1HGN');
+			</script>
+		<!-- end google analytics -->
+		<!-- begin data -->
+			<meta charset="utf-8">
+			<title>{{- title | strip -}}</title>
+			<meta name="description" content="{{- site.description -}}">
+			<meta name="author" content="{{- site.author -}}">
+			<link rel="canonical" href="{{- site.url -}}{{- site.baseurl -}}{{- page.url -}}">
+		<!-- end data -->
+		<!-- begin icons -->
+			<link rel="preload" as="style" href="{{ site.baseurl }}/assets/css/style.css" />
+			<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+			<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+			<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+			<link rel="manifest" href="/site.webmanifest">
+			<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+			<meta name="msapplication-TileColor" content="#000000">
+			<meta name="theme-color" content="#000000">
+		<!-- end icons -->
+		<!-- begin scripts -->
+		<!-- end scripts -->
+		<!-- begin styles -->
+		<!-- end styles -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		{%- include colours.css.html -%}
 		{%- include fonts.css.html %}		<script src="{{- site.baseurl -}}/assets/js/svg-inject.min.js" defer></script>
@@ -89,19 +135,13 @@
 		{%- include style.css.html -%}
 		{%- include 1024.css.html -%}
 		{%- include noscript.css.html %}	</head>
-	<body class="{%- if home -%} --homepage {% endif -%} {%- if central -%} --central_header {% endif -%} --{{- page.layout -}}_layout">
-	{%- if cascade %}
-	<div class="bodyalt" id="bodyalt">
-	{%- endif %}
-		<div class="--mobile_background"></div>
-		{%- if central %}
-		<div class="--downward_arrow_wrapper" id="arrow_wrapper">
-			<div class="--downward_arrow"></div>
-		</div>
-		{%- endif %}
-		<div class="mother_container" id="mother_container" {%- if page.['page root'].styles %} style="{{- page.['page root'].styles | strip -}}" {%- endif -%}>
-			<nav class="mother_container-nav_container" id="nav_container" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" {%- if page.['page nav'].styles %} style="{{- page.['page nav'].styles | strip -}}" {%- endif -%}>
-				{%- unless home %}
+	<body class="{{ body | strip }}">
+		{{ bodyalt[0] }}
+		<div class="--background"></div>
+		{{ arrow }}
+		<div class="mother" {%- endif -%}>
+			<nav class="nav" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+				{%- unless homepage %}
 				<input type="checkbox" id="supernav_checkbox">
 				<div class="--nav_background"></div>
 				<label for="supernav_checkbox" class="nav_container-supernav_wrapper" itemscope="itemscope">
@@ -229,8 +269,6 @@
 				{%- endif -%}
 			{%- endunless %}
 		</div>
-	{%- if cascade %}
-	</div>
-	{%- endif %}
+	{{ bodyalt[1] }}
 	</body>
 </html>
