@@ -45,13 +45,7 @@
 		<!-- begin body classes -->
 	{%- endcomment -%}
 		{%- capture body -%}
-			{%- if page.url == "/" -%}
-				--homepage&nbsp;
-			{%- endif -%}
-			{%- if page.header.['is central'] -%}
-				--central&nbsp;
-			{%- endif -%}
-			--{{- page.layout -}}&nbsp;
+			{%- if page.url == "/" -%} --homepage {%- endif -%} {%- if page.header.['is central'] %} --central {%- endif %} --{{- page.layout -}}
 		{%- endcapture -%}
 	{%- comment -%}
 		<!-- end body classes -->
@@ -136,9 +130,9 @@
 		{%- include 1024.css.html -%}
 		{%- include noscript.css.html %}	</head>
 	<body class="{{ body | strip }}">
-		{{- bodyalt[0] -}}
+		{{- bodyalt[0] }}
 		<div class="--background"></div>
-		{{- arrow -}}
+		{{- arrow }}
 		<div class="mother">
 			<nav class="nav" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 				{%- unless homepage %}
