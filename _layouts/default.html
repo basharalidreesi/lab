@@ -94,13 +94,6 @@
 <html lang="en-GB" dir="auto">
 	<head>
 		<!-- begin google analytics -->
-			<script async src="https://www.googletagmanager.com/gtag/js?id=G-LZCE8Q1HGN"></script>
-			<script>
-				window.dataLayer = window.dataLayer || [];
-				function gtag(){dataLayer.push(arguments);}
-				gtag('js', new Date());
-				gtag('config', 'G-LZCE8Q1HGN');
-			</script>
 		<!-- end google analytics -->
 		<!-- begin data -->
 			<meta charset="utf-8">
@@ -108,6 +101,7 @@
 			<meta name="description" content="{{- site.description -}}">
 			<meta name="author" content="{{- site.author -}}">
 			<link rel="canonical" href="{{- site.url -}}{{- site.baseurl -}}{{- page.url -}}">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- end data -->
 		<!-- begin icons -->
 			<link rel="preload" as="style" href="{{ site.baseurl }}/assets/css/style.css" />
@@ -120,17 +114,13 @@
 			<meta name="theme-color" content="#000000">
 		<!-- end icons -->
 		<!-- begin scripts -->
+			<script src="{{- site.baseurl -}}/assets/js/svg-inject.min.js" defer></script>
+			<script src="{{- site.baseurl -}}/assets/js/main.js" defer></script>
 		<!-- end scripts -->
 		<!-- begin styles -->
+			<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/main.css" media="screen"/>
 		<!-- end styles -->
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		{%- include colours.css.html -%}
-		{%- include fonts.css.html %}		<script src="{{- site.baseurl -}}/assets/js/svg-inject.min.js" defer></script>
-		{%- include script.js.html %}		<script src="{{- site.baseurl -}}/assets/js/script.js" defer></script>
-		<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/style.css" media="screen"/>
-		{%- include style.css.html -%}
-		{%- include 1024.css.html -%}
-		{%- include noscript.css.html %}	</head>
+	</head>
 	<body class="{{ body | strip }}">
 		{{ bodyalt[0] | strip }}
 		<div class="--background"></div>
