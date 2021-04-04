@@ -76,7 +76,7 @@ defaults:
     path: assets/fonts
   values:
     font: true
-baseurl:
+baseurl: 
 url: https://jadtoghuj.com
 author: Jad Toghuj
 email: jadtoghuj@gmail.com
@@ -89,17 +89,17 @@ colours:
   colour 3: "#000"
 fonts:
   font 1:
-    family: "family 1"
+    family: family 1
     size: 1.0rem
     weight: 400
     height: 1.0
   font 2:
-    family: "family 2"
+    family: family 2
     size: 2.0rem
     weight: 400
     height: 1.0
   font 3:
-    family: "family 3"
+    family: family 3
     size: 1.0rem
     weight: 400
     height: 1.0
