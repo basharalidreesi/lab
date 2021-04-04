@@ -4,7 +4,7 @@
 	{%- comment -%}
 		<!-- begin breadcrumb generation -->
 	{%- endcomment -%}
-		{%- assign tree = page.path | remove: ".md" | remove: ".markdown" | remove: ".html" | split: "/" -%}
+		{%- assign tree = page.path | remove: ".markdown" | split: "/" -%}
 		{%- capture title -%}
 			{{- site.title -}}
 			{%- for branch in tree -%}
@@ -12,7 +12,7 @@
 				{%- assign current = branch | prepend: segment[0] | append: ".markdown" -%}
 				{%- assign level = forloop.index -%}
 				{%- assign last = forloop.last -%}
-				{%- if level == 1 and current != "404.markdown" and current != "index.markdown" and tree.size < 2 -%}
+				{%- if tree.size < 2 and level == 1 and current != "404.markdown" and current != "index.markdown" -%}
 					{%- for node in site.pages -%}
 						{%- assign level_one_current = current | remove_first: "_" -%}
 						{%- if node.path == level_one_current -%}
@@ -22,7 +22,7 @@
 							{%- endunless -%}
 						{%- endif -%}
 					{%- endfor -%}
-				{%- elsif level == 1 and current != "404.markdown" and current != "index.markdown" and tree.size >= 2 -%}
+				{%- elsif tree.size >= 2 and level == 1 and current != "404.markdown" and current != "index.markdown" -%}
 					&nbsp;|&nbsp;
 					{%- continue -%}
 				{%- elsif level == 1 and current == "404.markdown" -%}
