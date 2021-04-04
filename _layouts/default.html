@@ -89,7 +89,7 @@
 	{%- endcomment -%}
 {%- comment -%}
 	<!-- end setup -->
-{%- endcomment %}
+{%- endcomment -%}
 <!DOCTYPE HTML>
 <html lang="en-GB" dir="auto">
 	<head>
@@ -132,9 +132,9 @@
 		{%- include 1024.css.html -%}
 		{%- include noscript.css.html %}	</head>
 	<body class="{{ body | strip }}">
-		{{ bodyalt[0] }}
+		{{ bodyalt[0] | strip }}
 		<div class="--background"></div>
-		{{ arrow }}
+		{{ arrow | strip }}
 		<div class="mother">
 			<nav class="nav" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 				{%- unless homepage %}
