@@ -45,7 +45,7 @@ defaults:
         size: default
         weight: default
         height: default
-      transferrable families: true
+      transfer families: true
     header:
       central header: false
       header image: random
