@@ -96,7 +96,6 @@
 		{%- capture alt -%}
 			{%- if page.layout == "cascade" -%}
 				<div class="body"><!-- break --></div>
-			{%- else -%}
 			{%- endif -%}
 		{%- endcapture -%}
 		{%- assign bodyalt = alt | split: "<!-- break -->" -%}
@@ -107,7 +106,6 @@
 		{%- capture arrow -%}
 			{%- if page.header.['central header'] -%}
 				<div class="--downward_arrow"><div class="--arrow"></div></div>
-			{%- else -%}
 			{%- endif -%}
 		{%- endcapture -%}
 	{%- comment -%}
@@ -122,7 +120,6 @@
 				<label for="supernav" class="supernav" itemscope="itemscope">
 					{{ breadcrumbs[1] | strip }}
 				</label>
-			{%- else -%}
 			{%- endunless -%}
 		{%- endcapture -%}
 	{%- comment -%}
@@ -167,10 +164,9 @@
 			<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/main.css" media="all" />
 		<!-- end styles -->
 	</head>
-	<body class="{{ body | strip }}">
-	{{- bodyalt[0] | strip }}
+	<body class="{{ body | strip }}">{{ bodyalt[0] | strip }}
 		<div class="--body_bg"></div>
-		{{- arrow | strip }}
+		{{ arrow | strip }}
 		<div class="mother_container">
 			<nav class="nav_container" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 				{{- supernav | strip }}
