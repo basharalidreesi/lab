@@ -7,19 +7,15 @@ layout: cascade
 ---
 
 ![_66A2915.jpg](/uploads/66A2915.jpg)
-<!-- style: width: 100%; -->
 
 <!-- break -->
 
 ![_66A2914.jpg](/uploads/66A2914.jpg)
-<!-- style: width: 100%; -->
 
 <!-- break -->
 
 ![_66A2911.jpg](/uploads/66A2911.jpg)
-<!-- style: width: 100%; -->
 
 <!-- break -->
 
 ![_66A2884.jpg](/uploads/66A2884.jpg)
-<!-- style: width: 100%; -->
