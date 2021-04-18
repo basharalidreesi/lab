@@ -7,3 +7,4 @@ layout: showcase
 ---
 
 {% include content.md %}
+![_66A2915.jpg](/uploads/_66A2915.jpg)
