@@ -6,6 +6,4 @@ tags:
 layout: showcase
 ---
 
-![_66A2915.jpg](/uploads/_66A2915.jpg)
-![_66A2914.jpg](/uploads/_66A2914.jpg)
-![_66A2884.jpg](/uploads/_66A2884.jpg)
+{% include content.md %}
