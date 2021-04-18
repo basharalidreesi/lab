@@ -6,16 +6,16 @@ tags:
 layout: cascade
 ---
 
-![_66A2915.jpg](/uploads/66A2915.jpg)
+![66A2915.jpg](/uploads/66A2915.jpg)
 
 <!-- break -->
 
-![_66A2914.jpg](/uploads/66A2914.jpg)
+![66A2914.jpg](/uploads/66A2914.jpg)
 
 <!-- break -->
 
-![_66A2911.jpg](/uploads/66A2911.jpg)
+![66A2911.jpg](/uploads/66A2911.jpg)
 
 <!-- break -->
 
-![_66A2884.jpg](/uploads/66A2884.jpg)
+![66A2884.jpg](/uploads/66A2884.jpg)
