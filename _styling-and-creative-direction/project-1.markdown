@@ -6,16 +6,16 @@ tags:
 layout: showcase
 ---
 
-![_66A2915.jpg](/uploads/_66A2915.jpg)
+![_66A2915.jpg](/uploads/66A2915.jpg)
 
 <!-- break -->
 
-![_66A2914.jpg](/uploads/_66A2914.jpg)
+![_66A2914.jpg](/uploads/66A2914.jpg)
 
 <!-- break -->
 
-![_66A2911.jpg](/uploads/_66A2911.jpg)
+![_66A2911.jpg](/uploads/66A2911.jpg)
 
 <!-- break -->
 
-![_66A2884.jpg](/uploads/_66A2884.jpg)
+![_66A2884.jpg](/uploads/66A2884.jpg)
