@@ -3,8 +3,8 @@ title: Club Kids of the 00s
 date: 2021-04-19 06:03:00 Z
 tags:
 - Experimental
-- Editorial
 - Client
+- editorial
 layout: cascade
 ---
 
