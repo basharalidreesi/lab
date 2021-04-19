@@ -32,7 +32,7 @@ layout: cascade
 
 <!-- break -->
 
-[Q3A3861.JPG](/uploads/_Q3A3861.JPG)
+![Q3A3861.JPG](/uploads/_Q3A3861.JPG)
 
 <!-- break -->
 
