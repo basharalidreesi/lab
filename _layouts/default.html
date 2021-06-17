@@ -10,7 +10,6 @@
 				<!-- 	indices:
 					[0]: title
 					[1]: supernav
-					[2]: subnav
 				-->
 			{%- endcomment -%}
 			{%- for branch in tree -%}
@@ -49,6 +48,11 @@
 					{%- for node in site.pages -%}
 						{%- assign level_one_current = current | remove_first: "_" -%}
 						{%- if node.path == level_one_current -%}
+							<!-- BC1 BREAK -->
+							<!-- --> 404 false <!-- -->
+							<!-- --> TITLE {{ node.title | strip }} <!-- -->
+							<!-- --> URL {{ node.url | strip }} <!-- -->
+							<!-- --> LAST {{ last }} <!-- -->
 							<span class="supernav_item {%- if page.url == node.url %} --current {%- endif -%}" dir="auto">
 								<a href="{{ site.baseurl }}{{ node.url }}">
 									{{ node.title | strip }}
@@ -60,6 +64,9 @@
 						{%- endif -%}
 					{%- endfor -%}
 				{%- elsif level == 1 and current == "404.markdown" -%}
+					<!-- BC1 BREAK -->
+					<!-- --> 404 true <!-- -->
+					?
 					<span class="supernav_item --current" dir="auto">
 						?
 					</span>
@@ -67,6 +74,11 @@
 				{%- else -%}
 					{%- for node in site.documents -%}
 						{%- if node.path == current -%}
+							<!-- BC1 BREAK -->
+							<!-- --> 404 false <!-- -->
+							<!-- --> TITLE {{ node.title | strip }} <!-- -->
+							<!-- --> URL {{ node.url | strip }} <!-- -->
+							<!-- --> LAST {{ last }} <!-- -->
 							<span class="supernav_item {%- if page.url == node.url %} --current {%- endif -%}" dir="auto">
 								<a href="{{ site.baseurl }}{{ node.url }}">
 									{{ node.title | strip }}
@@ -101,15 +113,6 @@
 		{%- assign bodyalt = alt | split: "<!-- break -->" -%}
 	{%- comment -%}
 		<!-- end body alt -->
-		<!-- begin arrow -->
-	{%- endcomment -%}
-		{%- capture arrow -%}
-			{%- if page.header.['central header'] -%}
-				<div class="--downward_arrow"><div class="--arrow"></div></div>
-			{%- endif -%}
-		{%- endcapture -%}
-	{%- comment -%}
-		<!-- end arrow -->
 		<!-- begin nav setup -->
 	{%- endcomment -%}
 		{%- assign pages = site.pages | sort: "position" -%}
@@ -166,7 +169,9 @@
 	</head>
 	<body class="{{ body | strip }}">{{ bodyalt[0] | strip }}
 		<div class="--body_bg"></div>
-		{{ arrow | strip }}
+		{%- if page.header.['central header'] %}
+		<div class="--downward_arrow"><div class="--arrow"></div></div>
+		{%- endif %}
 		<div class="mother_container">
 			<nav class="nav_container" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 				{{ supernav | strip }}
